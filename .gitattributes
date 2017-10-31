@@ -1,0 +1,3 @@
+renames.txt eol=crlf
+*.bsl eol=crlf
+Form.bin binary
