@@ -31,8 +31,8 @@
 	Команда.УстановитьПравильныйКодВозврата(0);
 
 	Если Не ПустаяСтрока(ОдинКаталог) Тогда
-		Если ОдинКаталог = "./epf" Или ОдинКаталог = "vanessa-behavior.epf" ИЛИ ОдинКаталог = "./build/vanessa-behavior.epf" Тогда
-			ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/%2 %1 --ibname /F./build/ibservice", "./epf", "vanessa-behavior.epf");
+		Если ОдинКаталог = "./epf" Или ОдинКаталог = "bddRunner.epf" ИЛИ ОдинКаталог = "./build/bddRunner.epf" Тогда
+			ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/%2 %1 --ibname /F./build/ibservice", "./epf", "bddRunner.epf");
 		Иначе
 			ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/%1 %1", ОдинКаталог);
 		КонецЕсли;
@@ -49,7 +49,7 @@
 		
 		Для каждого Элемент из МассивПутей Цикл
 			Если (Элемент) = "./epf" Тогда
-				ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/%2 %1 --ibname /F./build/ibservice", Элемент, "vanessa-behavior.epf");
+				ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/%2 %1 --ibname /F./build/ibservice", Элемент, "bddRunner.epf");
 			Иначе
 				ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/%1 %1 --ibname /F./build/ibservice", Элемент);
 			КонецЕсли;

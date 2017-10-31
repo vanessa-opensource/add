@@ -87,7 +87,7 @@
 	Сообщить("  Запуск тестирования vanessa-behavior");
 	Сообщить("    inputPath путь к каталогу или к файлу с тестами");
 	Сообщить("    outputPath путь к каталогу с отчетами");
-	Сообщить("    --pathvanessa [env RUNNER_PATHVANESSA] путь к внешней обработке, по умолчанию vendor/vanessa-behavior/vanessa-behavior.epf");
+	Сообщить("    --pathvanessa [env RUNNER_PATHVANESSA] путь к внешней обработке, по умолчанию vendor/vanessa-behavior/bddRunner.epf");
 	Сообщить("                 или переменная окружения RUNNER_PATHVANESSA");
 	Сообщить("    --vanessasettings [env RUNNER_VANESSASETTINGS] путь к файлу настроек");
 	Сообщить("    --workspace [env RUNNER_WORKSPACE] путь к папке, относительно которой будут определятся макросы $workspace");
@@ -742,7 +742,7 @@
 	КонецЕсли;
 	//Конфигуратор.ПутьКПлатформе1С(Конфигуратор.ПутьКТонкомуКлиенту1С());
 	Если ПустаяСтрока(ПутьКИнструментам) Тогда
-		ПутьКИнструментам = "./vanessa-behavior/vanessa-behavior.epf";
+		ПутьКИнструментам = "./vanessa-behavior/bddRunner.epf";
 	КонецЕсли;
 
 	ПутьКИнструментам = ПолныйПуть(ПутьКИнструментам);

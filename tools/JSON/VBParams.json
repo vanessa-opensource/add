@@ -2,8 +2,8 @@
    "ИмяСборки":"Сборка 8.3.10 UF",
    "ВерсияПлатформы":"8.3.10",
    "ВыводитьСообщенияВФайл": "$workspaceRoot/message.txt",
-   "ПутьКVanessaBehavior": "$workspaceRoot/vanessa-behavior.epf",
-   "КаталогФич": "$workspaceRoot/features/",
+   "ПутьКVanessaBehavior": "$workspaceRoot/bddRunner.epf",
+   "КаталогФич": "$workspaceRoot/features/core",
    "КаталогиБиблиотек":[
         "$instrumentsRoot/./features/libraries/"
    ],

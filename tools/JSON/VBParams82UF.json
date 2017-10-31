@@ -5,7 +5,7 @@
    "СтрокаПодключенияКБазе":"/F./build/ServiceBases/v82ServiceBase82",
    "EpfДляИнициализацияБазы": "./build/tools/epf/init.epf",
    "ПараметрыДляИнициализацияБазы": "./tools/epf/init.json",
-   "ПутьКVanessaBehavior": "./build/vanessa-behavior.epf",
+   "ПутьКVanessaBehavior": "./build/bddRunner.epf",
    "КаталогФич": "$workspaceRoot/./features",
    "КаталогиБиблиотек":[
    "$instrumentsRoot/./features/libraries"

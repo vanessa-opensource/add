@@ -309,7 +309,7 @@
 
 	СтрокаЗапуска = СтрШаблон(
 		"runner vanessa --pathvanessa %1 --v8version %2 --ibconnection %3 --vanessasettings %4 --workspace ./build", 
-		"./build/vanessa-behavior.epf --settings ./tools/epf/init.json",
+		"./build/bddRunner.epf --settings ./tools/epf/init.json",
 		ПараметрыСборки["ВерсияПлатформы"], 
 		ПараметрыСборки["СтрокаПодключенияКБазе"],
 		ФайлПараметров.ПолноеИмя);

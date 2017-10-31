@@ -56,12 +56,12 @@
 Сценарий: Запуск в консольном режиме
 Дано Пусть существует файл ".\vb-execute-profile.json"
 И в переменную окружения V83PATH установлено значение "C:\Program Files (x86)\1cv8\8.3.6.2151\bin\1cv8.exe"
-Когда я запускаю командную строку '%V83PATH% /Execute .\vanessa-behavior.epf /C"StartFeaturePlayer;VBParams=.\vb-execute-profile.json'
+Когда я запускаю командную строку '%V83PATH% /Execute .\bddRunner.epf /C"StartFeaturePlayer;VBParams=.\vb-execute-profile.json'
 Тогда появляется файл с результатами '.\BuildStatus.log'
 И в каталоге ".\allurereport" существует HTML отчет о результатах проверки сценариев
 
 Сценарий: Запуск в интерактивном режиме
-Дано Пусть я открыл обработку "vanessa-behavior.epf"
+Дано Пусть я открыл обработку "bddRunner.epf"
 Когда Я нажал кнопку "Загрузить фичи из каталога"
 И указал каталог с требованиями заказчика равным ".\features"
 И затем нажал кнопку "Сгенерировать шаблоны обработок"
@@ -151,7 +151,7 @@
 Профиль запуска предназначен для простого консольного запуска, пример подобной командной строки выглядит так:
 
 ```
-%V83PATH% /Execute C:\vanessa-behavior\vanessa-behavior.epf /C"StartFeaturePlayer;VBParams=C:\VBParams.json"
+%V83PATH% /Execute C:\vanessa-behavior\bddRunner.epf /C"StartFeaturePlayer;VBParams=C:\VBParams.json"
 ```
 
 примеры запуска можно увидеть в соседнем репозитории [Vanessa Runner](https://github.com/silverbulleters/vanessa-runner/blob/master/tools/vanessa.bat)

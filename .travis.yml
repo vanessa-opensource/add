@@ -22,8 +22,8 @@ script:
   # Clean up
   - sudo docker stop "$(cat /tmp/container_id)"
   - sudo docker stop "$(cat /tmp/container_idngrok )"
-  - pushd ./build; sudo tar -czf ../vanessa-behavior.tar.gz ./vanessa-behavior.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd
-  - pushd ./build; sudo zip -r ../vanessa-behavior.zip ./vanessa-behavior.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd
+  - pushd ./build; sudo tar -czf ../vanessa-behavior.tar.gz ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd
+  - pushd ./build; sudo zip -r ../vanessa-behavior.zip ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd
   
 
 notifications:

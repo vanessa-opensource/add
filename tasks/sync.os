@@ -121,7 +121,7 @@
 
 	СоздатьКаталог("./build/vanessa-behavior/epf");
 	Лог.Информация("Перемещаем файлы");
-	ПереместитьФайл("./build/vanessa-behavior/vanessa-behavior.epf", "./build/vanessa-behavior/epf/vanessa-behavior.epf");
+	ПереместитьФайл("./build/vanessa-behavior/bddRunner.epf", "./build/vanessa-behavior/epf/bddRunner.epf");
 	Попытка
 			ПереместитьФайл("./build/vanessa-behavior/vbFeatureReader.epf", "./build/vanessa-behavior/epf/vbfeaturereader.epf");
 
