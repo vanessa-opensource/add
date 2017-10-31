@@ -1,0 +1,30 @@
+﻿{
+   "ИмяСборки":"82OF",
+   "ВерсияПлатформы":"8.2",
+   "КаталогПоискаВерсииПлатформы":"C:\Program Files (x86)\1cv82",
+   "СтрокаПодключенияКБазе":"/F./build/ServiceBases/v82ServiceBase82",
+   "ДополнительныеПараметры":"/RunModeOrdinaryApplication",
+   "ЗапускатьТолстыйКлиент": "Истина",
+   "ПутьКVanessaBehavior": "./build/vanessa-behavior.epf",
+   "КаталогФич": "./build/features",
+   "ВыполнитьСценарии": "Истина",
+   "ДелатьОтчетВФорматеАллюр": "Истина",
+   "ДелатьОтчетВФорматеjUnit": "Истина",
+   "КаталогOutputAllureБазовый": "./build/ServiceBases/allurereport",
+   "КаталогOutputjUnit": "./build/ServiceBases/junitreport",
+   "ЗавершитьРаботуСистемы": "Истина",
+   "ДелатьЛогВыполненияСценариевВЖР": "Истина",
+   "ВыгружатьСтатусВыполненияСценариевВФайл": "Истина",
+   "СоздаватьПодкаталогВКаталогеAllureДляЭтойСборки": "Истина",
+   "ДобавлятьКИмениСценарияУловияВыгрузки": "Истина",
+   "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "./build/ServiceBases/BuildStatus.log",
+   "ВыводитьСообщенияВФайл": "./build/ServiceBases/Messages 8.2 OF.txt",
+   "ВерсияПлатформыДляГенерацииEPF": "C:/Program Files (x86)/1cv8/8.3.10.2252/bin",
+   "СписокТеговИсключение":[
+   "IgnoreOnCIMainBuild",
+   "IgnoreOn82Builds",
+   "IgnoreOnOFBuilds",
+   "Ignore",
+   "Video"
+   ]
+}

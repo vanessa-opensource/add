@@ -1,0 +1,9 @@
+crowdin.yaml
+.vscode
+build/*
+.sonar/*
+.sonarl int/*
+log.txt
+env.json
+oscript_modules/
+*.ospx

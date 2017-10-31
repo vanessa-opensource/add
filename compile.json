@@ -1,0 +1,64 @@
+﻿[
+    {
+        "srctoepf" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./features/", 
+            "outDir":"./build/features/",
+            "name":"srcfeatures",
+            "autoupdate":[
+                {"autoupdate":"epfsrcfeatures"}
+            ]
+
+        }
+
+    },
+    {
+        "epftosrc" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./build/features/", 
+            "outDir":"./features/",
+            "name":"epfsrcfeatures",
+            "autoupdate": "srcfeatures" 
+        }
+
+    },
+    {
+        "srctoepf" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./epf/", 
+            "outDir":"./build/epf/",
+            "name":"srcvanessa",
+            "autoupdate": "epfsrcvanessa"
+        }
+
+    },
+    {
+        "epftosrc" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./build/epf", 
+            "outDir":"./epf",
+            "name":"epfsrcvanessa",
+            "autoupdate": "srcvanessa" 
+        }
+
+    }, 
+    {
+        "srccftoib" : {
+            "connectionstring":"/F./build/ib", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./lib/CF/83NoSync/",
+            "autoupdate":"true"
+        }
+
+    }    
+]
+   

@@ -1,0 +1,28 @@
+﻿[
+    {
+        "srctoepf" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./epf/", 
+            "outDir":"./build/epf/",
+            "name":"srcepf",
+            "autoupdate":[
+                {"autoupdate":"epftosrc"}
+            ]
+        }
+    },
+    {
+        "epftosrc" : {
+            "connectionstring":"/F./build/ibservice", 
+            "user":"", 
+            "password":"", 
+            "inDir":"./build/epf/", 
+            "outDir":"./epf/",
+            "name":"epftosrc",
+            "autoupdate": "srcepf" 
+        }
+
+    }
+]
+   

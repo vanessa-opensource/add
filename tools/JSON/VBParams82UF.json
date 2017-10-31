@@ -1,0 +1,40 @@
+﻿{
+   "ИмяСборки":"82UF",
+   "ВерсияПлатформы":"8.2",
+   "КаталогПоискаВерсииПлатформы":"C:\Program Files (x86)\1cv82",
+   "СтрокаПодключенияКБазе":"/F./build/ServiceBases/v82ServiceBase82",
+   "EpfДляИнициализацияБазы": "./build/tools/epf/init.epf",
+   "ПараметрыДляИнициализацияБазы": "./tools/epf/init.json",
+   "ПутьКVanessaBehavior": "./build/vanessa-behavior.epf",
+   "КаталогФич": "$workspaceRoot/./features",
+   "КаталогиБиблиотек":[
+   "$instrumentsRoot/./features/libraries"
+   ],
+   "ВыполнитьСценарии": "Истина",
+   "ЗавершитьРаботуСистемы": "Истина",
+   "ЗакрытьTestClientПослеЗапускаСценариев": "Истина",
+   "ДелатьЛогВыполненияСценариевВЖР": "Истина",
+   "ДелатьОтчетВФорматеАллюр": "Истина",
+   "ДелатьОтчетВФорматеjUnit": "Истина",
+   "ДелатьОтчетВФорматеCucumberJson": "Ложь",
+   "ДелатьЛогВыполненияСценариевВТекстовыйФайл": "Истина",
+   "КаталогOutputAllureБазовый": "$workspaceRoot/./ServiceBases/allurereport",
+   "КаталогOutputjUnit": "$workspaceRoot/./ServiceBases/junitreport",
+   "КаталогOutputCucumberJson": "$workspaceRoot/./tools/ServiceBases/cucumber",
+   "СоздаватьПодкаталогВКаталогеAllureДляЭтойСборки": "Истина",
+   "ДелатьСкриншотПриВозникновенииОшибки": "Ложь",
+   "КаталогOutputСкриншоты": "$workspaceRoot/./ServiceBases/ScreenShots",
+   "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/./ServiceBases/log.txt",
+   "ВыгружатьСтатусВыполненияСценариевВФайл": "Истина",
+   "ДобавлятьКИмениСценарияУловияВыгрузки": "Истина",
+   "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "$workspaceRoot/./ServiceBases/BuildStatus.log",
+   "ДобавлятьКИмениСценарияУсловияВыгрузки": "Истина",
+   "ВыводитьСообщенияВФайл": "$workspaceRoot/./ServiceBases/Messages 8.2 UF.txt",
+   "ВерсияПлатформыДляГенерацииEPF": "C:/Program Files (x86)/1cv8/8.3.10.2252/bin",
+   "СписокТеговИсключение":[
+   "IgnoreOnCIMainBuild",
+   "IgnoreOn82Builds",
+   "IgnoreOnUFBuilds",
+   "Ignore"
+   ]
+}
