@@ -132,35 +132,27 @@
 		Лог.Ошибка("Код возврат "+Результат.КодВозврата);
 		ВызватьИсключение "Неверный код возврата "+ Результат.КодВозврата;
 	КонецЕсли;
-
-	//СоздатьКаталог("./build/epf");
-	СоздатьКаталог("./build/features");
-	СоздатьКаталог("./build/tools");
-	СоздатьКаталог("./build/lib");
-	СоздатьКаталог("./build/plugins");
-	СоздатьКаталог("./build/vendor");
-	СоздатьКаталог("./build/lib/TemplateEpf");
 	
 	СтрокаЗапуска = "opm run cepf";
 	Лог.Информация(СтрокаЗапуска);
 	ЗапуститьИПодождать(СтрокаЗапуска);
-	СтрокаЗапуска = "oscript ./tools/runner.os compileepf ./tools ./build/tools --ibname /F./build/ibservice";
+	СтрокаЗапуска = "oscript ./tools/runner.os compileepf ./tools ./tools --ibname /F./build/ibservice";
 	Лог.Информация(СтрокаЗапуска);
 	ЗапуститьИПодождать(СтрокаЗапуска);
 
-	СтрокаЗапуска = "oscript ./tools/runner.os compileepf ./lib ./build/lib --ibname /F./build/ibservice";
+	СтрокаЗапуска = "oscript ./tools/runner.os compileepf ./lib ./lib --ibname /F./build/ibservice";
 	Лог.Информация(СтрокаЗапуска);
 	ЗапуститьИПодождать(СтрокаЗапуска);
 
-	СтрокаЗапуска = "oscript ./tools/runner.os compileepf ./lib/TemplateEpf ./build/lib/TemplateEpf --onlycopy --ibname /F./build/ibservice";
+	СтрокаЗапуска = "oscript ./tools/runner.os compileepf ./lib/TemplateEpf ./lib/TemplateEpf --onlycopy --ibname /F./build/ibservice";
 	Лог.Информация(СтрокаЗапуска);
 	ЗапуститьИПодождать(СтрокаЗапуска);
 	
-	СтрокаЗапуска = "oscript ./tools/runner.os compileepf ./lib/TemplateEpfUF ./build/lib/TemplateEpfUF --onlycopy --ibname /F./build/ibservice";
+	СтрокаЗапуска = "oscript ./tools/runner.os compileepf ./lib/TemplateEpfUF ./lib/TemplateEpfUF --onlycopy --ibname /F./build/ibservice";
 	Лог.Информация(СтрокаЗапуска);
 	ЗапуститьИПодождать(СтрокаЗапуска);
 
-	СтрокаЗапуска = "runner run --command VBParams=./tools/epf/init.json --execute ./build/tools/epf/init.epf";
+	СтрокаЗапуска = "runner run --command VBParams=./tools/epf/init.json --execute ./tools/epf/init.epf";
 	Лог.Информация(СтрокаЗапуска);
 	ЗапуститьИПодождать(СтрокаЗапуска);
 	
