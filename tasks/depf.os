@@ -31,10 +31,10 @@
 	Команда.УстановитьПравильныйКодВозврата(0);
 
 	Если Не ПустаяСтрока(ОдинКаталог) Тогда
-		Если ОдинКаталог = "./epf" Или ОдинКаталог = "bddRunner.epf" ИЛИ ОдинКаталог = "./build/bddRunner.epf" Тогда
-			ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/%2 %1 --ibname /F./build/ibservice", "./epf", "bddRunner.epf");
+		Если ОдинКаталог = "./epf" Или ОдинКаталог = "bddRunner.epf" ИЛИ ОдинКаталог = "./epf/bddRunner.epf" Тогда
+			ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./%2 %1 --ibname /F./build/ibservice", "./epf", "bddRunner.epf");
 		Иначе
-			ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/%1 %1", ОдинКаталог);
+			ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./%1 %1", ОдинКаталог);
 		КонецЕсли;
 		Лог.Информация(ШаблонЗапуска);
 		ЗапуститьИПодождать(ШаблонЗапуска);
@@ -49,9 +49,9 @@
 		
 		Для каждого Элемент из МассивПутей Цикл
 			Если (Элемент) = "./epf" Тогда
-				ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/%2 %1 --ibname /F./build/ibservice", Элемент, "bddRunner.epf");
+				ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./%2 %1 --ibname /F./build/ibservice", Элемент, "bddRunner.epf");
 			Иначе
-				ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/%1 %1 --ibname /F./build/ibservice", Элемент);
+				ШаблонЗапуска = СтрШаблон("oscript ./tools/runner.os decompileepf ./%1 %1 --ibname /F./build/ibservice", Элемент);
 			КонецЕсли;
 			Лог.Информация(ШаблонЗапуска);
 			ЗапуститьИПодождать(ШаблонЗапуска);
