@@ -46,7 +46,7 @@
 	КомандныйФайл = Новый КомандныйФайл;
 	КомандныйФайл.УстановитьКодировкуВывода(КодировкаТекста.UTF8);
 	
-	КаталогРабочейКопии = "./build/vanessa-behavior";
+	КаталогРабочейКопии = "./build/vanessa-behavior-sync";
 	АдресРепо = "https://github.com/silverbulleters/vanessa-behavior.git";
 	СоздатьКаталог(КаталогРабочейКопии);
 
@@ -119,11 +119,11 @@
 	Информация = РаспарситьИнформациюОбКоммите(текстФайла);
 
 
-	СоздатьКаталог("./build/vanessa-behavior/epf");
+	СоздатьКаталог("./build/vanessa-behavior-sync/epf");
 	Лог.Информация("Перемещаем файлы");
-	ПереместитьФайл("./build/vanessa-behavior/vanessa-behavior.epf", "./build/vanessa-behavior/epf/vanessa-behavior.epf");
+	ПереместитьФайл("./build/vanessa-behavior-sync/vanessa-behavior.epf", "./build/vanessa-behavior-sync/epf/vanessa-behavior.epf");
 	Попытка
-			ПереместитьФайл("./build/vanessa-behavior/vbFeatureReader.epf", "./build/vanessa-behavior/epf/vbfeaturereader.epf");
+			ПереместитьФайл("./build/vanessa-behavior-sync/vbFeatureReader.epf", "./build/vanessa-behavior-sync/epf/vbfeaturereader.epf");
 
 	Исключение
 	КонецПопытки;
@@ -163,24 +163,24 @@
 	//СоответствиеНрег.Вставить("examples", Истина);
 
 	Для Каждого Элемент из СоответствиеНрег Цикл
-		ПеревестиФайлыВНижнийРегистр(СтрШаблон("./build/vanessa-behavior/%1", Элемент.Ключ));
+		ПеревестиФайлыВНижнийРегистр(СтрШаблон("./build/vanessa-behavior-sync/%1", Элемент.Ключ));
 	КонецЦикла;
 
-	ПереместитьФайл("./build/vanessa-behavior/features/Libraries", "./build/vanessa-behavior/features/libraries");
-	ПереместитьФайл("./build/vanessa-behavior/lib/FeatureReader", "./build/vanessa-behavior/lib/featurereader");
-	//ПереместитьФайл("./build/vanessa-behavior/feature/Libraries", "./build/vanessa-behavior/feature/libraries");
+	ПереместитьФайл("./build/vanessa-behavior-sync/features/Libraries", "./build/vanessa-behavior-sync/features/libraries");
+	ПереместитьФайл("./build/vanessa-behavior-sync/lib/FeatureReader", "./build/vanessa-behavior-sync/lib/featurereader");
+	//ПереместитьФайл("./build/vanessa-behavior-sync/feature/Libraries", "./build/vanessa-behavior-sync/feature/libraries");
 		
 	Для каждого Элемент из МассивФайловДляПеремещения Цикл
-		//ПеревестиФайлыВНижнийРегистр(СтрШаблон("./build/vanessa-behavior/%1", Элемент));
+		//ПеревестиФайлыВНижнийРегистр(СтрШаблон("./build/vanessa-behavior-sync/%1", Элемент));
 		УдалитьФайлы(СтрШаблон("./%1", Элемент));
 		СоздатьКаталог(СтрШаблон("./%1", Элемент));
-		СтрокаВыполнения = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/vanessa-behavior/%1 ./%1", Элемент);
+		СтрокаВыполнения = СтрШаблон("oscript ./tools/runner.os decompileepf ./build/vanessa-behavior-sync/%1 ./%1", Элемент);
 		Лог.Информация(СтрокаВыполнения);
 		ЗапуститьИПодождать(СтрокаВыполнения);
 		//Команда.УстановитьСтрокуЗапуска(СтрокаВыполнения);
 		//Команда.Исполнить();
 
-		УдалитьФайлы(СтрШаблон("./build/vanessa-behavior/%1", Элемент));
+		УдалитьФайлы(СтрШаблон("./build/vanessa-behavior-sync/%1", Элемент));
 	КонецЦикла;
 
 	ВыполнитьДействияВКлонеИЗакомитеть(КаталогРабочейКопии, Информация);
