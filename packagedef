@@ -83,11 +83,13 @@
 	.ВключитьФайл("build/locales")
 	.ВключитьФайл("ospx")
 	.ВключитьФайл("packagedef")
+	.ЗависитОт("1commands", "1.3.0")
 	.ЗависитОт("logos")
 	.ЗависитОт("cmdline")
 	.ЗависитОт("tempfiles")
 	.ЗависитОт("deployka")
 	.ЗависитОт("fs")
+	.ЗависитОт("v8runner")
 	.ОпределяетМодуль("Ванесса", "ospx/vanessaospx.os")
 	.ОпределяетМодуль("Vanessa", "ospx/vanessaospx.os")
 	;
