@@ -6,13 +6,13 @@
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
 				<xr:ObjectId>fcd4c9b7-5f30-4115-afa3-5ddd71a1c140</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.BddRunner" category="Object">
+			<xr:GeneratedType name="ExternalDataProcessorObject.bddRunner" category="Object">
 				<xr:TypeId>b5f066dc-d960-4313-a67c-f5c235cae456</xr:TypeId>
 				<xr:ValueId>5202445a-cd90-4a96-bdf4-778046fd9fcd</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>BddRunner</Name>
+			<Name>bddRunner</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -96,8 +96,8 @@
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<DefaultForm>ExternalDataProcessor.BddRunner.Form.УправляемаяФорма</DefaultForm>
-			<AuxiliaryForm>ExternalDataProcessor.BddRunner.Form.Форма</AuxiliaryForm>
+			<DefaultForm>ExternalDataProcessor.bddRunner.Form.УправляемаяФорма</DefaultForm>
+			<AuxiliaryForm>ExternalDataProcessor.bddRunner.Form.Форма</AuxiliaryForm>
 		</Properties>
 		<ChildObjects>
 			<Attribute uuid="05bfb715-9288-4b87-adbb-dc394cfe21ad">
