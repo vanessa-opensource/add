@@ -140,11 +140,13 @@
 	СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./lib ./%1lib --ibname /F./build/ibservice", ПодкаталогСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
 
-	СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./lib/TemplateEpf ./%1lib/TemplateEpf --onlycopy --ibname /F./build/ibservice", ПодкаталогСборки);
-	ИсполнитьКоманду(СтрокаЗапуска);
-	
-	СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./lib/TemplateEpfUF ./%1lib/TemplateEpfUF --onlycopy --ibname /F./build/ibservice", ПодкаталогСборки);
-	ИсполнитьКоманду(СтрокаЗапуска);
+	Если НЕ Бинарники1СХранятсяРядомСИсходникам Тогда
+		СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./lib/TemplateEpf ./%1lib/TemplateEpf --onlycopy --ibname /F./build/ibservice", ПодкаталогСборки);
+		ИсполнитьКоманду(СтрокаЗапуска);
+		
+		СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./lib/TemplateEpfUF ./%1lib/TemplateEpfUF --onlycopy --ibname /F./build/ibservice", ПодкаталогСборки);
+		ИсполнитьКоманду(СтрокаЗапуска);
+	КонецЕсли;
 
 	СтрокаЗапуска = СтрШаблон("runner run --command VBParams=./tools/epf/init.json --execute ./%1tools/epf/init.epf", ПодкаталогСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
