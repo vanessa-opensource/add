@@ -88,6 +88,7 @@
 	.ЗависитОт("tempfiles")
 	.ЗависитОт("deployka")
 	.ЗависитОт("fs")
+	.ЗависитОт("v8unpack")
 	.ОпределяетМодуль("Ванесса", "ospx/vanessaospx.os")
 	.ОпределяетМодуль("Vanessa", "ospx/vanessaospx.os")
 	;
