@@ -6,13 +6,13 @@
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
 				<xr:ObjectId>017c4bc8-11aa-4681-8ca7-5c56bc1fc509</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.FeatureReader" category="Object">
+			<xr:GeneratedType name="ExternalDataProcessorObject.vbFeatureReader" category="Object">
 				<xr:TypeId>6a228417-d4d5-46ef-93b5-979f99c0a9e6</xr:TypeId>
 				<xr:ValueId>9337738f-ea70-4156-a21b-3da0e26285a4</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>FeatureReader</Name>
+			<Name>vbFeatureReader</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
