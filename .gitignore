@@ -7,4 +7,5 @@ log.txt
 env.json
 oscript_modules/
 *.ospx
+*.epf
 ConfigDumpInfo.xml
