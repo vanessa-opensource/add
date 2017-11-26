@@ -1333,6 +1333,9 @@
 			</TabularSection>
 			<Form>УправляемаяФорма</Form>
 			<Form>Форма</Form>
+			<Form>ФормаУстановкиПодчиненныхРегистраторовПоДереву</Form>
+			<Form>ФормаСтруктурыПодчиненности</Form>
+			<Form>ФормаСтруктурыСсылокОбъекта</Form>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
