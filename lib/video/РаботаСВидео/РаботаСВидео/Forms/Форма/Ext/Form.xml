@@ -4,7 +4,7 @@
 	<Attributes>
 		<Attribute name="Объект" id="1">
 			<Type>
-				<v8:Type>cfg:ExternalDataProcessorObject.ExpectedSteps</v8:Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.РаботаСВидео</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
