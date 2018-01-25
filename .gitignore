@@ -1,6 +1,7 @@
 crowdin.yaml
 .vscode
 build/*
+.forbuild/*
 .sonar/*
 .sonarl int/*
 log.txt
