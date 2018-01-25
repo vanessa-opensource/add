@@ -3,16 +3,17 @@
     "include": [
         "features",
         "lib",
-        "locales",
         "plugins",
         "tests",
         "tools",
         "vendor"
     ],
-    "build": [
+    "opm_build": [
         "features/libraries",
-        "lib",
-        "locales",
+        "lib/featurereader",
+        "lib/TemplateEpfUF",
+        "lib/TemplateEpf",
+        "lib/video",
         "plugins",
         "tests/smoke",
         "tools",
