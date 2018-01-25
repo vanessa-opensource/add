@@ -1,0 +1,12 @@
+{
+    "root": "epf",
+    "include": [
+        "features/libraries",
+        "lib",
+        "locales",
+        "plugins",
+        "tests",
+        "tools",
+        "vendor"
+    ]
+}
