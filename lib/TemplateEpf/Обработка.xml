@@ -6,13 +6,13 @@
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
 				<xr:ObjectId>93aabaca-4237-484c-81ce-6c355735cd38</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.TemplateEpf" category="Object">
+			<xr:GeneratedType name="ExternalDataProcessorObject.Обработка" category="Object">
 				<xr:TypeId>b37f5d7f-99d9-4239-87ea-a4722803c322</xr:TypeId>
 				<xr:ValueId>8c9f996c-1b30-4ca6-87ff-847ba4b6f066</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>TemplateEpf</Name>
+			<Name>Обработка</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
