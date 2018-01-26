@@ -11,8 +11,8 @@
     "opm_build": [
         "features/libraries",
         "lib/featurereader",
-        "lib/TemplateEpfUF",
-        "lib/TemplateEpf",
+        // "lib/TemplateEpfUF",
+        // "lib/TemplateEpf",
         "lib/video",
         "plugins",
         "tests/smoke",
