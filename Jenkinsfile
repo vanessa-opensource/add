@@ -32,7 +32,7 @@ builds.each{
     }
 }
 firsttasks=[:]
-//firsttasks["qa"] = {
+firsttasks["qa"] = {
     node("slave"){
         stage ("sonar QA"){
             unix = isUnix();
@@ -96,7 +96,7 @@ firsttasks=[:]
             }
         }
     }
-//}
+}
 
 // TODO добавить установку правильного движка, например, через ovm и включить задачу linuxbuild
 // firsttasks["linuxbuild"] = {
