@@ -180,6 +180,6 @@ parallel tasks
 
 def cmd(command) {
     // TODO при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001
-    unix = isUnix();
+    isunix = isUnix();
     if (isunix) { sh "${command}" } else {bat "chcp 65001\n${command}"}
 }
