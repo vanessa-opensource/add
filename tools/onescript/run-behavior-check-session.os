@@ -230,7 +230,7 @@
 
 	ПутьКVanessaBehavior = ПараметрыСборки["ПутьКVanessaBehavior"];
 	Ожидаем.Что(Новый Файл(ПутьКVanessaBehavior).Существует(), "Ожидали, что файл существует, а его нет. " + ПутьКVanessaBehavior).ЭтоИстина();
-	
+
 	Стр = Стр + " /Execute " + ПутьКVanessaBehavior + " /C""StartFeaturePlayer;VBParams=" + ФайлПараметров.ПолноеИмя +  """ /TESTMANAGER ";
 
 	Если ПараметрыСборки["ВыводитьСообщенияВФайл"] <> Неопределено Тогда
@@ -305,8 +305,8 @@
 	ФайлПараметров = Новый Файл(ПараметрыСборки["ИмяФайлаСборки"]);
 
 	СтрокаЗапуска = СтрШаблон(
-		"runner vanessa --pathvanessa %1 --v8version %2 --ibconnection %3 --vanessasettings %4 --workspace ./build", 
-		"./build/bddRunner.epf --settings ./tools/epf/init.json",
+		"runner vanessa --pathvanessa %1 --v8version %2 --ibconnection %3 --vanessasettings %4 --workspace .", 
+		"./bddRunner.epf --settings ./tools/epf/init.json",
 		ПараметрыСборки["ВерсияПлатформы"], 
 		ПараметрыСборки["СтрокаПодключенияКБазе"],
 		ФайлПараметров.ПолноеИмя);
