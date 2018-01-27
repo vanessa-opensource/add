@@ -17,7 +17,6 @@ builds.each{
         node ("slave") {
             stage("behavior ${it}") {
                 //cleanWs();
-                //git url: 'https://github.com/silverbulleters/vanessa-behavior2.git'
                 checkout scm
                 unstash "buildResults"
                 bat "chcp 65001\noscript ./tools/onescript/CloseAll1CProcess.os"
@@ -47,7 +46,7 @@ firsttasks=[:]
                     }
                     
                     // Get version
-                    def configurationText = readFile encoding: 'UTF-8', file: 'epf/vanessa-behavior/VanessaBehavior/Ext/ObjectModule.bsl'
+                    def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/bddRunner/Ext/ObjectModule.bsl'
                     def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
                     sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
 
@@ -108,7 +107,6 @@ node("slavelinux"){
                 command = "git config --local core.longpaths true"
                 cmd(command, unix);
             }
-            //git url: 'https://github.com/silverbulleters/vanessa-behavior2.git'
             checkout scm
     
     }
@@ -143,7 +141,6 @@ node("slavelinux"){
 }
 tasks["opmrunclean"] = {
     node("slave"){
-        //git url: 'https://github.com/silverbulleters/vanessa-behavior2.git'
         checkout scm
         bat "opm run clean"
     }
