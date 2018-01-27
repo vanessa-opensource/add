@@ -21,7 +21,7 @@ builds.each{
                 // Для этого отсекаем все, что находится после последнего дефиса
                 // см. https://issues.jenkins-ci.org/browse/JENKINS-40072
             // ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
-            ws(env.WORKSPACE..replaceAll(/(-[^-]+$)/, ""))
+            ws(env.WORKSPACE.replaceAll(/(-[^-]+$)/, ""))
             {
                 //cleanWs();
                 checkout scm
