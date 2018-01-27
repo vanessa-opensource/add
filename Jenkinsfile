@@ -18,7 +18,7 @@ builds.each{
             stage("behavior ${it}") {
                 //cleanWs();
                 checkout scm
-                unstash "buildResults"
+                // unstash "buildResults"
                 bat "chcp 65001\noscript ./tools/onescript/CloseAll1CProcess.os"
                 bat "chcp 65001\noscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
                 try{
