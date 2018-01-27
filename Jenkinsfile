@@ -98,47 +98,49 @@ firsttasks=[:]
     }
 //}
 
-firsttasks["linuxbuild"] = {
-node("slavelinux"){
-    stage ("checkout scm") {
-        //cleanWs();
-        unix = isUnix();
-            if (!unix) {
-                command = "git config --local core.longpaths true"
-                cmd(command, unix);
-            }
-            checkout scm
+// TODO добавить установку правильного движка, например, через ovm и включить задачу linuxbuild
+// firsttasks["linuxbuild"] = {
+// node("slavelinux"){
+//     stage ("checkout scm") {
+//         //cleanWs();
+//         unix = isUnix();
+//             if (!unix) {
+//                 command = "git config --local core.longpaths true"
+//                 cmd(command, unix);
+//             }
+//             checkout scm
     
-    }
-    stage("build"){
-        def unix = isUnix()
-        //sh 'ls -al ./build'
-        cmd("sudo docker pull wernight/ngrok", unix)
-        command = 'sudo docker run --detach -e XVFB_RESOLUTION=1920x1080x24 --volume="${PWD}":/home/ubuntu/code onec32/client:8.3.10.2466 client > /tmp/container_id_${BUILD_NUMBER}';
-        echo command;
-        cmd(command, unix);
-        sh 'sleep 10'
-        sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install && sudo opm update -all"'
-        sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 opm run init && opm run clean"'
-        sh 'sudo rm -f vanessa-behavior*.ospx'
-        sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 opm build ./"'
-        sh 'sudo rm -rf vanessa-behavior.tar.gz && sudo rm -f vanessa-behavior-devel.tar.gz && sudo rm -f vanessa-behavior.zip'
-        sh 'cd ./build; tar -czf ../vanessa-behavior.tar.gz ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; cd ..'
-        sh 'pwd && tar -czf ./vanessa-behavior-devel.tar.gz ./build env.json;'
-        sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 pushd ./build; zip -r ../vanessa-behavior.zip ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd"'
-        sh 'tar -czf ./vanessa-behavior-devel.tar.gz ./build env.json;'
-        sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 pushd ./build; zip -r ../vanessa-behavior.zip ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd"'
-        sh 'sudo docker stop "$(cat /tmp/container_id_${BUILD_NUMBER})"'
-        sh 'sudo docker rm "$(cat /tmp/container_id_${BUILD_NUMBER})"'
+//     }
+//     stage("build"){
+//         def unix = isUnix()
+//         //sh 'ls -al ./build'
+//         cmd("sudo docker pull wernight/ngrok", unix)
+//         command = 'sudo docker run --detach -e XVFB_RESOLUTION=1920x1080x24 --volume="${PWD}":/home/ubuntu/code onec32/client:8.3.10.2466 client > /tmp/container_id_${BUILD_NUMBER}';
+//         echo command;
+//         cmd(command, unix);
+//         sh 'sleep 10'
+//         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install && sudo opm update -all"'
+//         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 opm run init && opm run clean"'
+//         sh 'sudo rm -f vanessa-behavior*.ospx'
+//         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 opm build ./"'
+//         sh 'sudo rm -rf vanessa-behavior.tar.gz && sudo rm -f vanessa-behavior-devel.tar.gz && sudo rm -f vanessa-behavior.zip'
+//         sh 'cd ./build; tar -czf ../vanessa-behavior.tar.gz ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; cd ..'
+//         sh 'pwd && tar -czf ./vanessa-behavior-devel.tar.gz ./build env.json;'
+//         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 pushd ./build; zip -r ../vanessa-behavior.zip ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd"'
+//         sh 'tar -czf ./vanessa-behavior-devel.tar.gz ./build env.json;'
+//         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 pushd ./build; zip -r ../vanessa-behavior.zip ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd"'
+//         sh 'sudo docker stop "$(cat /tmp/container_id_${BUILD_NUMBER})"'
+//         sh 'sudo docker rm "$(cat /tmp/container_id_${BUILD_NUMBER})"'
 
-        stash includes: 'build/**, *.ospx, vanessa-behavior-devel.tar.gz, vanessa-behavior.tar.gz, vanessa-behavior.zip, env.json', excludes: 'build/cache.txt', name: 'buildResults'
-    }
+//         stash includes: 'build/**, *.ospx, vanessa-behavior-devel.tar.gz, vanessa-behavior.tar.gz, vanessa-behavior.zip, env.json', excludes: 'build/cache.txt', name: 'buildResults'
+//     }
 
-    stage("archive"){
-        archiveArtifacts 'vanessa-behavior*.ospx,vanessa-behavior.tar.gz,vanessa-behavior-devel.tar.gz,vanessa-behavior.zip'
-    }
-}
-}
+//     stage("archive"){
+//         archiveArtifacts 'vanessa-behavior*.ospx,vanessa-behavior.tar.gz,vanessa-behavior-devel.tar.gz,vanessa-behavior.zip'
+//     }
+// }
+// }
+
 tasks["opmrunclean"] = {
     node("slave"){
         checkout scm
