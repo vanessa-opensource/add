@@ -19,10 +19,10 @@ builds.each{
                 //cleanWs();
                 checkout scm
                 // unstash "buildResults"
-                bat "chcp 65001\noscript ./tools/onescript/CloseAll1CProcess.os"
-                bat "chcp 65001\noscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
+                cmd "oscript ./tools/onescript/CloseAll1CProcess.os"
+                cmd "oscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
                 try{
-                    bat "chcp 65001\noscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
+                    cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
                 } catch (e) {
                     echo "behavior ${it} status : ${e}"
                 }
@@ -77,7 +77,7 @@ firsttasks["qa"] = {
                     sonarcommand = sonarcommand + " -Dsonar.scm.disabled=true"
                     if (makeAnalyzis) {
                         if (unix) {
-                            cmd(sonarcommand, unix)
+                            cmd(sonarcommand)
                         } else {
                             echo "${sonarcommand}"
                             bat "${sonarcommand}"
@@ -106,7 +106,7 @@ firsttasks["qa"] = {
 //         unix = isUnix();
 //             if (!unix) {
 //                 command = "git config --local core.longpaths true"
-//                 cmd(command, unix);
+//                 cmd(command);
 //             }
 //             checkout scm
     
@@ -114,10 +114,10 @@ firsttasks["qa"] = {
 //     stage("build"){
 //         def unix = isUnix()
 //         //sh 'ls -al ./build'
-//         cmd("sudo docker pull wernight/ngrok", unix)
+//         cmd("sudo docker pull wernight/ngrok")
 //         command = 'sudo docker run --detach -e XVFB_RESOLUTION=1920x1080x24 --volume="${PWD}":/home/ubuntu/code onec32/client:8.3.10.2466 client > /tmp/container_id_${BUILD_NUMBER}';
 //         echo command;
-//         cmd(command, unix);
+//         cmd(command);
 //         sh 'sleep 10'
 //         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install && sudo opm update -all"'
 //         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 opm run init && opm run clean"'
@@ -144,7 +144,7 @@ firsttasks["qa"] = {
 tasks["opmrunclean"] = {
     node("slave"){
         checkout scm
-        bat "opm run clean"
+        cmd "opm run clean"
     }
 }
 parallel firsttasks
@@ -177,7 +177,8 @@ tasks["report"] = {
 
 parallel tasks
 
-def cmd(command, isunix) {
+def cmd(command) {
     // TODO при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001
+    unix = isUnix();
     if (isunix) { sh "${command}" } else {bat "chcp 65001\n${command}"}
 }
