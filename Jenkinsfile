@@ -26,6 +26,8 @@ builds.each{
                 //cleanWs();
                 checkout scm
                 // unstash "buildResults"
+                cmd "set LOGOS_LEVEL=DEBUG"
+                cmd "set"
                 cmd "opm run init"
                 cmd "oscript ./tools/onescript/CloseAll1CProcess.os"
                 cmd "oscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
