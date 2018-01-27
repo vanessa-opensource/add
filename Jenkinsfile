@@ -16,7 +16,7 @@ builds.each{
     tasks["behavior ${it}"] = {
         node ("slave") {
             stage("behavior ${it}") {
-            steps {
+            // steps {
                 // Jenkins под Windows постоянно добавляет в конец папки какую-то мусорную строку.
                 // Для этого отсекаем все, что находится после последнего дефиса
                 // см. https://issues.jenkins-ci.org/browse/JENKINS-40072
@@ -36,7 +36,7 @@ builds.each{
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
             }
-            }
+            // }
             }
         }
     }
