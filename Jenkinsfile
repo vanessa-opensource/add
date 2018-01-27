@@ -19,6 +19,7 @@ builds.each{
                 //cleanWs();
                 checkout scm
                 // unstash "buildResults"
+                cmd "opm run init"
                 cmd "oscript ./tools/onescript/CloseAll1CProcess.os"
                 cmd "oscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
                 try{
