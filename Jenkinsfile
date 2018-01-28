@@ -64,10 +64,10 @@ firsttasks["qa"] = {
                         sonarcommand = sonarcommand + " -Dsonar.host.url=http://sonar.silverbulleters.org -Dsonar.login=${env.SonarOAuth}"
                     }
                     
-                    // Get version
-                    def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
-                    def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
-                    sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
+                    // TODO // Get version
+                    // def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
+                    // def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
+                    // sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
 
                     def makeAnalyzis = true
                     if (env.BRANCH_NAME == "develop") {
