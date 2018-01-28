@@ -17,11 +17,16 @@ builds.each{
         node ("slave") {
             stage("behavior ${it}") {
             // steps {
+                // в среде Multibranch Pipeline Jenkins первращает имена веток в папки
+                // а для веток Gitflow вида release/* экранирует в слэш в %2F
+                //
+                // Поэтому, применяем костыль с кастомным workspace
+                // см. https://issues.jenkins-ci.org/browse/JENKINS-34564
+                //
                 // Jenkins под Windows постоянно добавляет в конец папки какую-то мусорную строку.
                 // Для этого отсекаем все, что находится после последнего дефиса
                 // см. https://issues.jenkins-ci.org/browse/JENKINS-40072
-            // ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
-            ws(env.WORKSPACE.replaceAll(/(-[^-]+$)/, ""))
+            ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
             {
                 //cleanWs();
                 checkout scm
