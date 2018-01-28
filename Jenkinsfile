@@ -31,11 +31,11 @@ builds.each{
                 //cleanWs();
                 checkout scm
                 // unstash "buildResults"
-                // cmd "set LOGOS_LEVEL=DEBUG"
                 cmd "opm update -all"
                 cmd "opm list"
                 cmd "set"
-                cmd "set LOGOS_LEVEL=DEBUG\nopm run init"
+                cmd "opm run init"
+                // cmd "set LOGOS_LEVEL=DEBUG\nopm run init"
                 cmd "oscript ./tools/onescript/CloseAll1CProcess.os"
                 cmd "oscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
                 try{
