@@ -182,7 +182,7 @@ tasks["report"] = {
             try{
                 allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
             } catch (e) {
-                echo "behavior status : ${e}"
+                echo "allure status : ${e}"
             }
             
             junit 'build/ServiceBases/junitreport/*.xml'
