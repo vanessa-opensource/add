@@ -174,7 +174,7 @@ tasks = [:]
 tasks["report"] = {
     node {
         stage("report"){
-            cleanWs();
+            // cleanWs();
             // unstash 'buildResults'
             builds.each{
                 unstash "${it}"
