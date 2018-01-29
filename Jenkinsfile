@@ -61,7 +61,7 @@ firsttasks["qa"] = {
                     println env.QASONAR;
                     def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/Main_Classic/bin/sonar-scanner\""
                     withCredentials([[$class: 'StringBinding', credentialsId: env.SonarOAuthCredentianalID, variable: 'SonarOAuth']]) {
-                        sonarcommand = sonarcommand + " -Dsonar.host.url=http://sonar.silverbulleters.org -Dsonar.login=${env.SonarOAuth}"
+                        sonarcommand = sonarcommand + " -Dsonar.host.url=https://sonar.silverbulleters.org -Dsonar.login=${env.SonarOAuth}"
                     }
                     
                     // TODO // Get version
