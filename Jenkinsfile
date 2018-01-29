@@ -186,9 +186,11 @@ tasks["report"] = {
             } catch (e) {
                 echo "allure status : ${e}"
             }
-            
             junit 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
+            
+            archiveArtifacts 'build/ServiceBases/allurereport/**'
+            archiveArtifacts 'build/ServiceBases/junitreport/*.xml'
         }
     }
 }
