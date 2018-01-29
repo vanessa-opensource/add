@@ -7,11 +7,9 @@
    "EpfДляИнициализацияБазы": "./tools/epf/init.epf",
    "ПараметрыДляИнициализацияБазы": "./tools/epf/init.json",
    "ПутьКVanessaBehavior": "./bddRunner.epf",
-   "КаталогФич": "$workspaceRoot/./features/Core/OpenForm",
-   "КаталогФич_TODO": "$workspaceRoot/./features",
+   "КаталогФич": "$workspaceRoot/./features",
    "КаталогиБиблиотек":[
-    "$instrumentsRoot/./features/libraries",
-    "$workspaceRoot/./features/libraries"
+    "$instrumentsRoot/./features/libraries"
    ],
    "КлиентыТестирования":[
      {
