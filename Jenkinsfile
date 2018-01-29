@@ -33,7 +33,7 @@ builds.each{
                 // unstash "buildResults"
                 cmd "opm update -all"
                 cmd "opm list"
-                cmd "set"
+                //cmd "set"
                 cmd "opm run init"
                 // cmd "set LOGOS_LEVEL=DEBUG\nopm run init"
                 cmd "oscript ./tools/onescript/CloseAll1CProcess.os"
@@ -95,12 +95,12 @@ firsttasks["qa"] = {
                         echo "Анализ SonarQube не выполнен. Ветка ${env.BRANCH_NAME} не подходит по условию проверки веток!"
                         makeAnalyzis = false
                     }
-                    sonarcommand = sonarcommand + " -Dsonar.scm.disabled=true"
+
                     if (makeAnalyzis) {
                         if (unix) {
                             cmd(sonarcommand)
                         } else {
-                            echo "${sonarcommand}"
+                            //echo "${sonarcommand}"
                             bat "${sonarcommand}"
                             //cmd(sonarcommand, unix)
                         }
