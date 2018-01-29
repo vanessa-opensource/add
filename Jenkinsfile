@@ -70,7 +70,8 @@ firsttasks["qa"] = {
                     // sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
 
                     def makeAnalyzis = true
-                    if (env.BRANCH_NAME == "develop") {
+                    // if (env.BRANCH_NAME == "develop") {
+                    if (env.BRANCH_NAME == "feature/ci") {
                         echo 'Analysing develop branch'
                     } else if (env.BRANCH_NAME.startsWith("release/")) {
                         sonarcommand = sonarcommand + " -Dsonar.branch=${BRANCH_NAME}"
@@ -91,6 +92,7 @@ firsttasks["qa"] = {
                         }
                         
                     } else {
+                        echo "Анализ SonarQube не выполнен. Ветка ${env.BRANCH_NAME} не подходит по условию проверки веток!"
                         makeAnalyzis = false
                     }
                     sonarcommand = sonarcommand + " -Dsonar.scm.disabled=true"
