@@ -10,3 +10,9 @@ oscript_modules/
 *.ospx
 *.epf
 ConfigDumpInfo.xml
+ServiceBases/
+tools/Allure/
+tools/HTML/
+tools/jUnit/
+tools/Markdown/
+tools/ScreenShotsTest/
