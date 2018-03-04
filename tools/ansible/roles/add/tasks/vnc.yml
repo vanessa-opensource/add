@@ -1,0 +1,44 @@
+﻿---
+- name: Install TigerVNC
+  win_chocolatey:
+    name: tigervnc
+    state: latest
+  tags: vnc
+
+- name: Configure TigerVNC
+  win_regedit:
+    path: HKLM:\SOFTWARE\TigerVNC\WinVNC4
+    name: '{{ item.name }}'
+    data: '{{ item.data }}'
+    type: '{{ item.type|default("dword") }}'
+  with_items:
+  - { name: AlwaysShared,        data: 1 }
+  - { name: DisableEffects,      data: 1 }
+  - { name: HTTPPortNumber,      data: 5800 }
+  - { name: NeverShared,         data: 0 }
+  - { name: Password,            data: '{{ add_vnc_password }}', type: binary }
+  - { name: QueryConnect,        data: 0 }
+  - { name: QueryOnlyIfLoggedOn, data: 0 }
+  - { name: RemoveWallpaper,     data: 1 }
+  - { name: SecurityTypes,       data: 'VeNCrypt,TLSVnc', type: string }
+  tags: vnc
+
+- name: Configure TigerVNC firewall rule
+  win_firewall_rule:
+    name: VNC Server
+    localport: 5900
+    action: allow
+    direction: in
+    protocol: TCP
+    profile: private
+    enable: yes
+  tags: vnc
+
+- name: Ensure TigerVNC is running
+  win_service:
+    name: TigerVNC
+    startmode: auto
+    state: restarted
+    force_dependent_services: yes
+  tags: vnc
+

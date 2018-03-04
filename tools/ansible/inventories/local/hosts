@@ -1,0 +1,9 @@
+[test1]
+192.168.124.137
+
+[test2]
+192.168.88.245
+
+[add:children]
+test1
+test2

@@ -1,0 +1,17 @@
+﻿---
+- win_region:
+    format: ru-RU
+    unicode_language: ru-RU
+    location: 241
+    copy_settings: True
+  register: result
+
+- win_reboot:
+  when: result.restart_required
+
+- import_tasks: users.yml
+- import_tasks: jenkins-slave.yml
+- import_tasks: choco.yml
+- import_tasks: vnc.yml
+
+- win_reboot:

@@ -1,0 +1,20 @@
+---
+- name: install multiple packages
+  tags: choco
+  win_chocolatey:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+  - imagemagick.app
+  - jdk8
+  - sikulix
+  - tigervnc
+
+- name: install irfanview 
+  win_chocolatey:
+    name: irfanview
+    state: latest
+    params: --x86
+#win_shell: choco install --yes --force --x86 irfanview
+- name: install irfanview
+  win_shell: choco install --yes --force --x86 irfanview

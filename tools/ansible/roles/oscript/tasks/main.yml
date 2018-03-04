@@ -1,0 +1,82 @@
+---
+#
+- name: Create directory structure install's
+  tags: oscript
+  win_file:
+    path: C:\1c\install\
+    state: directory
+
+- name: Del latest oscript
+  tags: oscript
+  win_file:
+    path: C:\1c\install\oscript-setup.exe
+    state: absent
+
+- name: Download oscript to specified path
+  tags: oscript
+  win_get_url:
+    url: http://oscript.io/downloads/night-build/exe
+    dest: C:\1c\install\oscript-setup.exe
+  when: not wgetdownload
+
+- name: Download oscript to specified path latest
+  tags: oscript
+  win_get_url:
+    url: http://oscript.io/downloads/latest/exe
+    dest: C:\1c\install\oscript-setup-latest.exe
+  when: not wgetdownload
+
+- name: Download wget oscript to specified path latest
+  tags: oscript
+  win_shell: cmd /c wget -c -O oscript-setup-latest.exe http://oscript.io/downloads/latest/exe
+  args:
+    chdir: "C:\\1c\\install\\"
+    executable: cmd
+  when: wgetdownload
+
+- name: Download wget oscript to specified path
+  tags: oscript
+  win_shell: cmd /c wget -c -O oscript-setup.exe http://oscript.io/downloads/night-build/exe
+  args:
+    chdir: "C:\\1c\\install\\"
+    executable: cmd
+  when: wgetdownload
+
+#- name: Uninstall the OneScript
+#  tags: oscript
+#  win_package:
+#    product_id: 'OneScript engine_is1'
+#    state: absent
+
+- name: Install the OneScript web
+  tags: oscript
+  win_shell: C:\1c\install\oscript-setup.exe /silent
+
+- name: oscript version
+  tags: oscript
+  win_shell: cmd /c oscript
+  register: oscript_output
+
+- name: debug
+  tags: oscript
+  debug: msg={{oscript_output}}
+  
+- name: run opm update opm
+  tags: oscript
+  win_command: cmd /c opm update opm
+
+- name: run opm update
+  tags: oscript
+  win_command: cmd /c opm update -all
+
+- name: opm install vanessa-runner
+  tags: oscript
+  win_command: cmd /c opm install vanessa-runner
+
+- name: opm install vanessa-behavior
+  tags: oscript
+  win_command: cmd /c opm install vanessa-behavior
+
+- name: opm install precommit1c
+  tags: oscript
+  win_shell: cmd /c opm install precommit1c

@@ -1,0 +1,6 @@
+$A = New-ScheduledTaskAction -Execute "{{add_jenkins_root}}\start.bat" -WorkingDirectory "{{add_jenkins_root}}"
+$T = New-ScheduledTaskTrigger -AtLogon
+$P = New-ScheduledTaskPrincipal "vagrant"
+$S = New-ScheduledTaskSettingsSet
+$D = New-ScheduledTask -Action $A -Principal $P -Trigger $T -Settings $S
+Register-ScheduledTask Task01 -InputObject $D

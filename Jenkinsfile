@@ -30,16 +30,19 @@ builds.each{
             {
                 //cleanWs();
                 checkout scm
-                // unstash "buildResults"
+                unstash "buildResults"
                 cmd "opm update -all"
                 cmd "opm list"
+                cmd "opm run initib file --buildFolderPath ./build --v8version " + buildSerivceConf[it] 
+                //cmd "runner init-dev --src ./lib/CF/83NoSync --ibconnection /F./build/ib --v8version "+buildSerivceConf[it]
                 //cmd "set"
-                cmd "opm run init"
+                //cmd "opm run init"
                 // cmd "set LOGOS_LEVEL=DEBUG\nopm run init"
-                cmd "oscript ./tools/onescript/CloseAll1CProcess.os"
-                cmd "oscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
+                //cmd "oscript ./tools/onescript/CloseAll1CProcess.os"
+                //cmd "oscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
                 try{
-                    cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
+                    cmd "opm run vanessa all --settings ./tools/JSON/VBParams${it}.json";
+                    //cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
                 } catch (e) {
                     echo "behavior ${it} status : ${e}"
                 }
@@ -118,6 +121,22 @@ firsttasks["qa"] = {
     }
 }
 
+firsttasks["slave"] = {
+    node("slave") {
+        stage("checkout scm"){
+            checkout scm
+        }
+        stage("build"){
+            //def unix = isUnix()
+            //cmd "opm run init file --buildFolderPath ./build"
+            //cmd "opm run clean"
+            //cmd "opm build ./"
+            //stash includes: 'build/**', excludes: 'build/cache.txt', name: 'buildResults'           
+            stash includes: 'build/**', name: 'buildResults'
+        }
+    }
+}
+
 // TODO добавить установку правильного движка, например, через ovm и включить задачу linuxbuild
 // firsttasks["linuxbuild"] = {
 // node("slavelinux"){
@@ -175,8 +194,8 @@ tasks = [:]
 tasks["report"] = {
     node {
         stage("report"){
-            // cleanWs();
-            // unstash 'buildResults'
+            cleanWs();
+            unstash 'buildResults'
             builds.each{
                 unstash "${it}"
             }
@@ -190,6 +209,7 @@ tasks["report"] = {
             
             archiveArtifacts 'build/ServiceBases/allurereport/**'
             archiveArtifacts 'build/ServiceBases/junitreport/*.xml'
+            archiveArtifacts 'build/**'
         }
     }
 }

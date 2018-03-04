@@ -1,0 +1,40 @@
+---
+- name: Create directory structure install's
+  tags: allure
+  win_file:
+    path: C:\1c\install\
+    state: directory
+
+- name: Download wget allure to specified path latest
+  tags: allure
+  win_shell: cmd /c wget -c -O allure.zip https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.4.1/allure-2.4.1.zip
+  args:
+    chdir: "C:\\1c\\install\\"
+    executable: cmd
+
+- name: extract allure archive
+  tags: allure
+  win_unzip:
+    src: C:\1c\install\allure.zip
+    dest: C:\1c\install\alluredel\
+  register: of_extract
+
+- name: copy to absolute path
+  tags: allure
+  win_copy:
+    src: c:\1c\install\alluredel\allure-2.4.1\
+    dest: c:\1c\install\allure
+    remote_src: True
+
+- name: remove temp allure 
+  tags: allure
+  win_file:
+    path: c:\1c\install\alluredel
+    state: absent
+
+- name: set env path to allure
+  tags: allure
+  win_path:
+    elements:
+      - 'c:\1c\install\allure\bin'
+
