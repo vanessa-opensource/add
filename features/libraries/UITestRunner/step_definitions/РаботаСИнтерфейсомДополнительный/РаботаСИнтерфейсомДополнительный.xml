@@ -26,6 +26,7 @@
 		<ChildObjects>
 			<Form>Форма</Form>
 			<Template>МакетСправочник3</Template>
+			<Template>МакетСправочник4</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>

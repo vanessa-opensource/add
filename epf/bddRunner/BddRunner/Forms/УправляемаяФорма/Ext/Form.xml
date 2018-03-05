@@ -1392,7 +1392,7 @@
 														<Title>
 															<v8:item>
 																<v8:lang>ru</v8:lang>
-																<v8:content>Выполнить данный сценарий с текущего шага</v8:content>
+																<v8:content>Выполнить с текущего шага</v8:content>
 															</v8:item>
 															<v8:item>
 																<v8:lang>en</v8:lang>
@@ -1479,11 +1479,11 @@
 														<Title>
 															<v8:item>
 																<v8:lang>ru</v8:lang>
-																<v8:content>Выполнить данный сценарий с текущего шага с продолжением</v8:content>
+																<v8:content>Выполнить с текущего шага с продолжением</v8:content>
 															</v8:item>
 															<v8:item>
 																<v8:lang>en</v8:lang>
-																<v8:content>Continue from this step and other scenarios</v8:content>
+																<v8:content>Continue from this step and run other scenarios</v8:content>
 															</v8:item>
 															<v8:item>
 																<v8:lang>am</v8:lang>
@@ -1566,11 +1566,11 @@
 														<Title>
 															<v8:item>
 																<v8:lang>ru</v8:lang>
-																<v8:content>Выполнить данный сценарий с начала</v8:content>
+																<v8:content>Выполнить с начала</v8:content>
 															</v8:item>
 															<v8:item>
 																<v8:lang>en</v8:lang>
-																<v8:content>Invoke only selected scenario</v8:content>
+																<v8:content>Run only selected scenario</v8:content>
 															</v8:item>
 															<v8:item>
 																<v8:lang>am</v8:lang>
@@ -1827,7 +1827,7 @@
 														<Title>
 															<v8:item>
 																<v8:lang>ru</v8:lang>
-																<v8:content>Выполнить один шаг</v8:content>
+																<v8:content>Выполнить шаг</v8:content>
 															</v8:item>
 															<v8:item>
 																<v8:lang>en</v8:lang>
@@ -2705,6 +2705,7 @@
 										<ExtendedTooltip name="ДеревоТестовУправлениеПоискомРасширеннаяПодсказка" id="1282"/>
 									</SearchControlAddition>
 									<Events>
+										<Event name="Selection">ДеревоТестовВыбор</Event>
 										<Event name="BeforeAddRow">ДеревоТестовПередНачаломДобавления</Event>
 										<Event name="BeforeDeleteRow">ДеревоТестовПередУдалением</Event>
 										<Event name="OnActivateRow">ДеревоТестовПриАктивизацииСтроки</Event>
@@ -2724,6 +2725,8 @@
 											</Title>
 											<EditMode>EnterOnInput</EditMode>
 											<Width>3</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>3</MaxWidth>
 											<HorizontalStretch>false</HorizontalStretch>
 											<ValuesPicture>
 												<xr:Abs>ValuesPicture.png</xr:Abs>
@@ -2818,6 +2821,7 @@
 												</v8:item>
 											</Title>
 											<EditMode>EnterOnInput</EditMode>
+											<Width>5</Width>
 											<ContextMenu name="ДеревоТестовИмяКонтекстноеМеню" id="70"/>
 											<ExtendedTooltip name="ДеревоТестовИмяРасширеннаяПодсказка" id="1283"/>
 										</InputField>
@@ -3275,6 +3279,8 @@
 											</Title>
 											<EditMode>EnterOnInput</EditMode>
 											<Width>3</Width>
+											<AutoMaxWidth>false</AutoMaxWidth>
+											<MaxWidth>3</MaxWidth>
 											<ContextMenu name="ДеревоТестовИДСтрокиКонтекстноеМеню" id="1612"/>
 											<ExtendedTooltip name="ДеревоТестовИДСтрокиРасширеннаяПодсказка" id="1613"/>
 										</InputField>
@@ -5236,11 +5242,11 @@
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
-															<v8:content>Получить изменения формы</v8:content>
+															<v8:content>Получить состояние всей формы</v8:content>
 														</v8:item>
 														<v8:item>
 															<v8:lang>en</v8:lang>
-															<v8:content>Get form change</v8:content>
+															<v8:content>Get the state of the whole form</v8:content>
 														</v8:item>
 														<v8:item>
 															<v8:lang>am</v8:lang>
@@ -5316,6 +5322,11 @@
 														</v8:item>
 													</Title>
 													<ExtendedTooltip name="ПолучитьИзмененияФормыGherkinРасширеннаяПодсказка" id="1318"/>
+												</Button>
+												<Button name="ПолучитьСостояниеТекущегоЭлементаФормы" id="1764">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ПолучитьСостояниеТекущегоЭлементаФормы</CommandName>
+													<ExtendedTooltip name="ПолучитьСостояниеТекущегоЭлементаФормыРасширеннаяПодсказка" id="1765"/>
 												</Button>
 											</ChildItems>
 										</Popup>
@@ -5623,6 +5634,11 @@
 																	</Title>
 																	<ExtendedTooltip name="ДобавитьИзвестныйШагРасширеннаяПодсказка" id="1468"/>
 																</Button>
+																<Button name="ПеревестиТекстНаДругойЯзык" id="1766">
+																	<Type>UsualButton</Type>
+																	<CommandName>Form.Command.ПеревестиТекстНаДругойЯзык</CommandName>
+																	<ExtendedTooltip name="ПеревестиТекстНаДругойЯзыкРасширеннаяПодсказка" id="1767"/>
+																</Button>
 															</ChildItems>
 														</UsualGroup>
 														<TextDocumentField name="СгенерированныйСценарий" id="314">
@@ -5748,6 +5764,12 @@
 													</ToolTip>
 													<ExtendedTooltip name="СценарийПоведенияКодРасширеннаяПодсказка" id="1326"/>
 													<ChildItems>
+														<TextDocumentField name="СгенерированныйСценарийКод" id="854">
+															<DataPath>Объект.СгенерированныйСценарийКод</DataPath>
+															<TitleLocation>None</TitleLocation>
+															<ContextMenu name="СгенерированныйСценарийКодКонтекстноеМеню" id="855"/>
+															<ExtendedTooltip name="СгенерированныйСценарийКодРасширеннаяПодсказка" id="1327"/>
+														</TextDocumentField>
 														<UsualGroup name="ГруппаВыполнитьКод" id="1744">
 															<Title>
 																<v8:item>
@@ -5766,7 +5788,7 @@
 															<ChildItems>
 																<Button name="ВыполнитьКодНаКлиенте" id="1746">
 																	<Type>UsualButton</Type>
-																	<CommandName>Form.Command.ВыполнитьКодПоведенияНаКлиенте</CommandName>
+																	<CommandName>Form.Command.ПолучитьСостояниеТекущегоЭлементаФормы</CommandName>
 																	<Title>
 																		<v8:item>
 																			<v8:lang>ru</v8:lang>
@@ -5777,7 +5799,7 @@
 																</Button>
 																<Button name="ВыполнитьКодНаСервере" id="1748">
 																	<Type>UsualButton</Type>
-																	<CommandName>Form.Command.ВыполнитьКодПоведенияНаСервере</CommandName>
+																	<CommandName>Form.Command.ПеревестиТекстНаДругойЯзык</CommandName>
 																	<Title>
 																		<v8:item>
 																			<v8:lang>ru</v8:lang>
@@ -5788,12 +5810,6 @@
 																</Button>
 															</ChildItems>
 														</UsualGroup>
-														<TextDocumentField name="СгенерированныйСценарийКод" id="854">
-															<DataPath>Объект.СгенерированныйСценарийКод</DataPath>
-															<TitleLocation>None</TitleLocation>
-															<ContextMenu name="СгенерированныйСценарийКодКонтекстноеМеню" id="855"/>
-															<ExtendedTooltip name="СгенерированныйСценарийКодРасширеннаяПодсказка" id="1327"/>
-														</TextDocumentField>
 													</ChildItems>
 												</Page>
 												<Page name="КодПроверкиПоведения" id="317">
@@ -6667,8 +6683,21 @@
 														<v8:lang>ru</v8:lang>
 														<v8:content>Начать запись поведения</v8:content>
 													</v8:item>
+													<v8:item>
+														<v8:lang>en</v8:lang>
+														<v8:content>Begin record</v8:content>
+													</v8:item>
 												</Title>
 												<ExtendedTooltip name="ДанныеКлиентовТестированияКонтекстноеМенюНачатьЗаписьДействийПользлователяВВыбранномКлиентеТестированияРасширеннаяПодсказка" id="1572"/>
+											</Button>
+											<Button name="ДанныеКлиентовТестированияКонтекстноеМенюОтключитьВыбранногоКлиентаТестирования" id="1768">
+												<Type>CommandBarButton</Type>
+												<CommandName>Form.Command.ОтключитьВыбранногоКлиентаТестирования</CommandName>
+												<Picture>
+													<xr:Abs>Picture.png</xr:Abs>
+													<xr:LoadTransparent>false</xr:LoadTransparent>
+												</Picture>
+												<ExtendedTooltip name="ДанныеКлиентовТестированияКонтекстноеМенюОтключитьВыбранногоКлиентаТестированияРасширеннаяПодсказка" id="1769"/>
 											</Button>
 										</ChildItems>
 									</ContextMenu>
@@ -7234,6 +7263,9 @@
 													</ChoiceList>
 													<ContextMenu name="ДанныеКлиентовТестированияТипКлиентаКонтекстноеМеню" id="1567"/>
 													<ExtendedTooltip name="ДанныеКлиентовТестированияТипКлиентаРасширеннаяПодсказка" id="1568"/>
+													<Events>
+														<Event name="OnChange">ДанныеКлиентовТестированияТипКлиентаПриИзменении</Event>
+													</Events>
 												</InputField>
 											</ChildItems>
 										</ColumnGroup>
@@ -7245,6 +7277,9 @@
 													<EditMode>EnterOnInput</EditMode>
 													<ContextMenu name="ДанныеКлиентовТестированияИмяКомпьютераКонтекстноеМеню" id="1678"/>
 													<ExtendedTooltip name="ДанныеКлиентовТестированияИмяКомпьютераРасширеннаяПодсказка" id="1679"/>
+													<Events>
+														<Event name="OnChange">ДанныеКлиентовТестированияИмяКомпьютераПриИзменении</Event>
+													</Events>
 												</InputField>
 												<InputField name="ДанныеКлиентовТестированияПорт" id="984">
 													<DataPath>ДанныеКлиентовТестирования.ПортЗапускаТестКлиента</DataPath>
@@ -7919,6 +7954,9 @@
 													</ChoiceList>
 													<ContextMenu name="ЯзыкГенератораGherkinКонтекстноеМеню" id="1695"/>
 													<ExtendedTooltip name="ЯзыкГенератораGherkinРасширеннаяПодсказка" id="1696"/>
+													<Events>
+														<Event name="OnChange">ЯзыкГенератораGherkinПриИзменении</Event>
+													</Events>
 												</InputField>
 												<UsualGroup name="ФлажкиНастроек" id="910">
 													<Title>
@@ -8612,6 +8650,13 @@
 																		<Event name="OnChange">ПроверкаРаботыVanessaBehaviorВРежимеTestClientПриИзменении</Event>
 																	</Events>
 																</CheckBoxField>
+																<CheckBoxField name="ПоказыватьНомерСтрокиДереваПриВозникновенииОшибки" id="1750">
+																	<DataPath>Объект.ПоказыватьНомерСтрокиДереваПриВозникновенииОшибки</DataPath>
+																	<TitleLocation>Right</TitleLocation>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="ПоказыватьНомерСтрокиДереваПриВозникновенииОшибкиКонтекстноеМеню" id="1751"/>
+																	<ExtendedTooltip name="ПоказыватьНомерСтрокиДереваПриВозникновенииОшибкиРасширеннаяПодсказка" id="1752"/>
+																</CheckBoxField>
 															</ChildItems>
 														</UsualGroup>
 													</ChildItems>
@@ -8630,11 +8675,19 @@
 												</UsualGroup>
 												<InputField name="ТаймаутЗапуска1С" id="1672">
 													<DataPath>Объект.ТаймаутЗапуска1С</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
 													<ContextMenu name="ТаймаутЗапуска1СКонтекстноеМеню" id="1673"/>
 													<ExtendedTooltip name="ТаймаутЗапуска1СРасширеннаяПодсказка" id="1674"/>
 												</InputField>
+												<InputField name="КоличествоСекундПоискаОкна" id="1770">
+													<DataPath>Объект.КоличествоСекундПоискаОкна</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ContextMenu name="КоличествоСекундПоискаОкнаКонтекстноеМеню" id="1771"/>
+													<ExtendedTooltip name="КоличествоСекундПоискаОкнаРасширеннаяПодсказка" id="1772"/>
+												</InputField>
 												<InputField name="ДиапазонПортовTestclient" id="1683">
 													<DataPath>Объект.ДиапазонПортовTestclient</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
 													<ContextMenu name="ДиапазонПортовTestclientКонтекстноеМеню" id="1684"/>
 													<ExtendedTooltip name="ДиапазонПортовTestclientРасширеннаяПодсказка" id="1685"/>
 												</InputField>
@@ -8722,6 +8775,7 @@
 															<v8:content>Katalog, araç</v8:content>
 														</v8:item>
 													</Title>
+													<AutoMaxWidth>false</AutoMaxWidth>
 													<ChoiceButton>true</ChoiceButton>
 													<ClearButton>true</ClearButton>
 													<ContextMenu name="КаталогИнструментовКонтекстноеМеню" id="381"/>
@@ -8907,6 +8961,7 @@
 															<v8:content>Dizin projesi</v8:content>
 														</v8:item>
 													</Title>
+													<AutoMaxWidth>false</AutoMaxWidth>
 													<ChoiceButton>true</ChoiceButton>
 													<ClearButton>true</ClearButton>
 													<ContextMenu name="КаталогПроектаКонтекстноеМеню" id="718"/>
@@ -8999,6 +9054,7 @@
 															<v8:content>Aralık adım</v8:content>
 														</v8:item>
 													</Title>
+													<AutoMaxWidth>false</AutoMaxWidth>
 													<ContextMenu name="ИнтервалВыполненияШагаЗаданныйПользователемКонтекстноеМеню" id="524"/>
 													<ExtendedTooltip name="ИнтервалВыполненияШагаЗаданныйПользователемРасширеннаяПодсказка" id="1385"/>
 												</InputField>
@@ -9087,6 +9143,7 @@
 														</v8:item>
 													</Title>
 													<HorizontalAlign>Left</HorizontalAlign>
+													<AutoMaxWidth>false</AutoMaxWidth>
 													<ListChoiceMode>true</ListChoiceMode>
 													<ChoiceList>
 														<xr:Item>
@@ -10450,6 +10507,13 @@
 																<Event name="OnChange">ДелатьЛогВыполненияСценариевВТекстовыйФайлПриИзменении</Event>
 															</Events>
 														</CheckBoxField>
+														<CheckBoxField name="ВыводитьВЛогВыполнениеШагов" id="1773">
+															<DataPath>Объект.ВыводитьВЛогВыполнениеШагов</DataPath>
+															<TitleLocation>Right</TitleLocation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="ВыводитьВЛогВыполнениеШаговКонтекстноеМеню" id="1774"/>
+															<ExtendedTooltip name="ВыводитьВЛогВыполнениеШаговРасширеннаяПодсказка" id="1775"/>
+														</CheckBoxField>
 														<InputField name="ИмяФайлаЛогВыполненияСценариев" id="1547">
 															<DataPath>Объект.ИмяФайлаЛогВыполненияСценариев</DataPath>
 															<ChoiceButton>true</ChoiceButton>
@@ -10457,6 +10521,39 @@
 															<ExtendedTooltip name="ИмяФайлаЛогВыполненияСценариевРасширеннаяПодсказка" id="1549"/>
 															<Events>
 																<Event name="StartChoice">КаталогOutputВнутреннийФорматНачалоВыбора</Event>
+															</Events>
+														</InputField>
+													</ChildItems>
+												</UsualGroup>
+												<UsualGroup name="ГруппаЛогОшибокТекст" id="1753">
+													<ToolTip>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Группа лог текст</v8:content>
+														</v8:item>
+													</ToolTip>
+													<Group>Vertical</Group>
+													<Representation>StrongSeparation</Representation>
+													<ShowTitle>false</ShowTitle>
+													<ExtendedTooltip name="ГруппаЛогОшибокТекстРасширеннаяПодсказка" id="1754"/>
+													<ChildItems>
+														<CheckBoxField name="ДелатьЛогОшибокВТекстовыйФайл" id="1755">
+															<DataPath>Объект.ДелатьЛогОшибокВТекстовыйФайл</DataPath>
+															<TitleLocation>Right</TitleLocation>
+															<CheckBoxType>Auto</CheckBoxType>
+															<ContextMenu name="ДелатьЛогОшибокВТекстовыйФайлКонтекстноеМеню" id="1756"/>
+															<ExtendedTooltip name="ДелатьЛогОшибокВТекстовыйФайлРасширеннаяПодсказка" id="1757"/>
+															<Events>
+																<Event name="OnChange">ДелатьЛогОшибокВТекстовыйФайлПриИзменении</Event>
+															</Events>
+														</CheckBoxField>
+														<InputField name="ИмяКаталогаЛогОшибок" id="1758">
+															<DataPath>Объект.ИмяКаталогаЛогОшибок</DataPath>
+															<ChoiceButton>true</ChoiceButton>
+															<ContextMenu name="ИмяКаталогаЛогОшибокКонтекстноеМеню" id="1759"/>
+															<ExtendedTooltip name="ИмяКаталогаЛогОшибокРасширеннаяПодсказка" id="1760"/>
+															<Events>
+																<Event name="StartChoice">ИмяКаталогаЛогОшибокНачалоВыбора</Event>
 															</Events>
 														</InputField>
 													</ChildItems>
@@ -13761,9 +13858,15 @@
 														<Event name="OnChange">РежимСамотестированияПриИзменении</Event>
 													</Events>
 												</CheckBoxField>
+												<CheckBoxField name="ПриравниватьPendingКFailed" id="1761">
+													<DataPath>Объект.ПриравниватьPendingКFailed</DataPath>
+													<CheckBoxType>Auto</CheckBoxType>
+													<ContextMenu name="ПриравниватьPendingКFailedКонтекстноеМеню" id="1762"/>
+													<ExtendedTooltip name="ПриравниватьPendingКFailedРасширеннаяПодсказка" id="1763"/>
+												</CheckBoxField>
 												<Button name="СохранитьНастройкиКлиент" id="1670">
 													<Type>UsualButton</Type>
-													<CommandName>Form.Command.КомандаСохранитьНастройки</CommandName>
+													<CommandName>Form.Command.СохранитьНастройкиКлиент</CommandName>
 													<Title>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
@@ -14431,7 +14534,31 @@
 							</v8:StringQualifiers>
 						</Type>
 					</Column>
-					<Column name="ДополнительныеДанные" id="8">
+					<Column name="ТекстОшибки" id="8">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Текст ошибки</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:string</v8:Type>
+							<v8:StringQualifiers>
+								<v8:Length>0</v8:Length>
+								<v8:AllowedLength>Variable</v8:AllowedLength>
+							</v8:StringQualifiers>
+						</Type>
+					</Column>
+					<Column name="ПроизвольныеЗначения" id="9">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Произвольные значения</v8:content>
+							</v8:item>
+						</Title>
+						<Type/>
+					</Column>
+					<Column name="ДополнительныеДанные" id="10">
 						<Title>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
@@ -15398,6 +15525,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сценарии загружены</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Scenarios loaded</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -15408,6 +15539,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сценарии выполнены</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Scenarios done</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -15434,6 +15569,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>PID этого сеанса</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>PID</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -17061,6 +17200,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Подключить выбранного клиента тестирования</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Connect the selected test client</v8:content>
+				</v8:item>
 			</ToolTip>
 			<Action>ПодключитьВыбранногоКлиентаТестирования</Action>
 		</Command>
@@ -17075,6 +17218,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Начать запись действий пользлователя в выбранном клиенте тестирования</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Start recording the user actions of the selected test client</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>НачатьЗаписьДействийПользлователяВВыбранномКлиентеТестирования</Action>
@@ -17166,6 +17313,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Отключить выбранного клиента тестирования</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Disconnect the selected test client</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ОтключитьВыбранногоКлиентаТестирования</Action>
@@ -18073,6 +18224,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Вычислить PIDЭтого сеанса</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Get PID</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
@@ -18186,6 +18341,7 @@
 					<v8:content>Исследователь формы</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Shortcut>Alt+E</Shortcut>
 			<Action>ИсследовательФормы</Action>
 		</Command>
 		<Command name="ПолучитьМакетПоТаблице" id="66">
@@ -18245,35 +18401,58 @@
 			</ToolTip>
 			<Action>ОчиститьСгенерированныйСценарий</Action>
 		</Command>
-		<Command name="ВыполнитьКодПоведенияНаКлиенте" id="69">
+		<Command name="ПолучитьСостояниеТекущегоЭлементаФормы" id="69">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Выполнить код поведения на клиенте</v8:content>
+					<v8:content>Получить состояние текущего элемента формы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Get the state of the current form element</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Выполняет введенный код на клиенте, автоматически присвоив переменной Ванесса = ЭтаФорма</v8:content>
+					<v8:content>Получить изменения формы gherkin</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>ВыполнитьКодНаКлиенте</Action>
+			<Action>ПолучитьСостояниеТекущегоЭлементаФормыКнопка</Action>
 		</Command>
-		<Command name="ВыполнитьКодПоведенияНаСервере" id="70">
+		<Command name="ПеревестиТекстНаДругойЯзык" id="70">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Выполнить код поведения на сервере</v8:content>
+					<v8:content>Перевести</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Translate</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Выполнить код поведения на сервере</v8:content>
+					<v8:content>Перевести текст на другой язык</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>ВыполнитьКодНаСервере</Action>
+			<Action>ПеревестиТекстНаДругойЯзык</Action>
+		</Command>
+		<Command name="СохранитьНастройкиКлиент" id="63">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки клиент</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Сохранить настройки клиент</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СохранитьНастройкиКлиент</Action>
 		</Command>
 	</Commands>
 </Form>
