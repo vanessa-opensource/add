@@ -1,0 +1,37 @@
+---
+- name: Create directory structure install's
+  tags: vlc
+  win_file:
+    path: C:\1c\install\
+    state: directory
+
+- name: Download wget balabolka to specified path latest
+  tags: vlc
+  win_shell: cmd /c wget -c -O balcon.zip http://balabolka.site/balcon.zip
+  args:
+    chdir: "C:\\1c\\install\\"
+    executable: cmd
+
+- name: extract balcon.zip archive
+  tags: vlc
+  win_unzip:
+    src: C:\1c\install\balcon.zip
+    dest: C:\1c\balcon\
+  register: of_extract
+
+- name: set env path to allure
+  tags: vlc
+  win_path:
+    elements:
+      - 'c:\1c\balcon'
+
+- name: Download wget vlc to specified path latest
+  tags: vlc
+  win_shell: cmd /c wget -c -O vlc-2.1.5-win32.exe https://get.videolan.org/vlc/2.1.5/win32/vlc-2.1.5-win32.exe
+  args:
+    chdir: "C:\\1c\\install\\"
+    executable: cmd
+
+- name: install vlc
+  tags: vlc
+  win_shell: cmd /c C:\\1c\\install\\vlc-2.1.5-win32.exe /S

@@ -13,5 +13,6 @@
 - import_tasks: jenkins-slave.yml
 - import_tasks: choco.yml
 - import_tasks: vnc.yml
+- import_tasks: vlc.yml
 
 - win_reboot:

@@ -31,7 +31,7 @@ builds.each{
                 //cleanWs();
                 checkout scm
                 unstash "buildResults"
-                cmd "opm update -all"
+                //cmd "opm update -all"
                 cmd "opm list"
                 cmd "opm run initib file --buildFolderPath ./build --v8version " + buildSerivceConf[it] 
                 //cmd "runner init-dev --src ./lib/CF/83NoSync --ibconnection /F./build/ib --v8version "+buildSerivceConf[it]
@@ -128,7 +128,7 @@ firsttasks["slave"] = {
         }
         stage("build"){
             //def unix = isUnix()
-            //cmd "opm run init file --buildFolderPath ./build"
+            cmd "opm run init file --buildFolderPath ./build"
             //cmd "opm run clean"
             //cmd "opm build ./"
             //stash includes: 'build/**', excludes: 'build/cache.txt', name: 'buildResults'           
