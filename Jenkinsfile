@@ -46,9 +46,8 @@ builds.each{
                     //cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
                 } catch (e) {
                     echo "behavior ${it} status : ${e}"
-                    cmd "7z a build${it}.zip ./build/"
-                    //stash "allowEmpty": true, includes: "build${it}.zip", name: "build${it}"
-                    //errorsStash.put("build${it}", "build${it}.zip")
+                    sleep 61
+                    cmd("7z a -ssw build${it}.zip ./build/", true)
                     archiveArtifacts "build${it}.zip"
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
@@ -236,8 +235,8 @@ tasks["report"] = {
 
 parallel tasks
 
-def cmd(command) {
+def cmd(command, status = false) {
     // TODO при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001
     isunix = isUnix();
-    if (isunix) { sh "${command}" } else {bat "chcp 65001\n${command}"}
+    if (isunix) { sh returnStatus: status, script: "${command}" } else {bat returnStatus: status, script: "chcp 65001\n${command}"}
 }
