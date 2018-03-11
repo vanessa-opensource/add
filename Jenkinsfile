@@ -6,6 +6,7 @@ def buildSerivceConf = ["836UF":"8.3.6", "837UF":"8.3.7", "838UF":"8.3.8", "839U
 //builds = ["82OF", "82UF", "836OF", "836UF", "837UF", "838UF", "839UF", "8310UF"]
 //builds = ["836UF", "837UF", "838UF", "839UF", "8310UF"]
 builds = ["8310UF"]
+errorsStash = [:]
 
 if (env.filterBuilds && env.filterBuilds.length() > 0 ) {
     println "filter build";
@@ -14,7 +15,7 @@ if (env.filterBuilds && env.filterBuilds.length() > 0 ) {
 builds.each{
 
     tasks["behavior ${it}"] = {
-        node ("slave") {
+        node ("${it}") {
             stage("behavior ${it}") {
             // steps {
                 // в среде Multibranch Pipeline Jenkins первращает имена веток в папки
@@ -31,9 +32,9 @@ builds.each{
                 //cleanWs();
                 checkout scm
                 unstash "buildResults"
-                //cmd "opm update -all"
+                cmd "opm install"
                 cmd "opm list"
-                cmd "opm run initib file --buildFolderPath ./build --v8version " + buildSerivceConf[it] 
+                cmd "opm run initib file --buildFolderPath ./build --v8version " + buildSerivceConf[it]
                 //cmd "runner init-dev --src ./lib/CF/83NoSync --ibconnection /F./build/ib --v8version "+buildSerivceConf[it]
                 //cmd "set"
                 //cmd "opm run init"
@@ -45,11 +46,26 @@ builds.each{
                     //cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
                 } catch (e) {
                     echo "behavior ${it} status : ${e}"
+                    cmd "7z a build${it}.zip ./build/"
+                    //stash "allowEmpty": true, includes: "build${it}.zip", name: "build${it}"
+                    //errorsStash.put("build${it}", "build${it}.zip")
+                    archiveArtifacts "build${it}.zip"
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
             }
             // }
             }
+        }
+    }
+}
+tasks["buildRelease"] = {
+    node("slave"){
+        stage("build release"){
+            checkout scm
+            cleanWs(patterns: [[pattern: '*.ospx', type: 'INCLUDE']])
+            cmd "opm build ./"
+            archiveArtifacts '*.ospx'
+
         }
     }
 }
@@ -128,6 +144,7 @@ firsttasks["slave"] = {
         }
         stage("build"){
             //def unix = isUnix()
+            cleanWs(patterns: [[pattern: 'build/ServiceBases/**', type: 'INCLUDE']])
             cmd "opm run init file --buildFolderPath ./build"
             //cmd "opm run clean"
             //cmd "opm build ./"
@@ -207,9 +224,9 @@ tasks["report"] = {
             junit 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
             
-            archiveArtifacts 'build/ServiceBases/allurereport/**'
-            archiveArtifacts 'build/ServiceBases/junitreport/*.xml'
-            archiveArtifacts 'build/**'
+            //archiveArtifacts 'build/ServiceBases/allurereport/**'
+            //archiveArtifacts 'build/ServiceBases/junitreport/*.xml'
+            //archiveArtifacts 'build/**'
         }
     }
 }
