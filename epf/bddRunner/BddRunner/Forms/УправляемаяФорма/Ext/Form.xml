@@ -5783,30 +5783,19 @@
 																	<v8:content>Группа выполнить код</v8:content>
 																</v8:item>
 															</ToolTip>
+															<Group>Horizontal</Group>
 															<ShowTitle>false</ShowTitle>
 															<ExtendedTooltip name="ГруппаВыполнитьКодРасширеннаяПодсказка" id="1745"/>
 															<ChildItems>
-																<Button name="ВыполнитьКодНаКлиенте" id="1746">
+																<Button name="ВыполнитьКодНаКлиенте" id="1776">
 																	<Type>UsualButton</Type>
-																	<CommandName>Form.Command.ПолучитьСостояниеТекущегоЭлементаФормы</CommandName>
-																	<Title>
-																		<v8:item>
-																			<v8:lang>ru</v8:lang>
-																			<v8:content>Выполнить на клиенте</v8:content>
-																		</v8:item>
-																	</Title>
-																	<ExtendedTooltip name="ВыполнитьКодНаКлиентеРасширеннаяПодсказка" id="1747"/>
+																	<CommandName>Form.Command.ВыполнитьКодНаКлиенте</CommandName>
+																	<ExtendedTooltip name="ВыполнитьКодНаКлиентеРасширеннаяПодсказка" id="1777"/>
 																</Button>
-																<Button name="ВыполнитьКодНаСервере" id="1748">
+																<Button name="ВыполнитьКодНаСервере" id="1778">
 																	<Type>UsualButton</Type>
-																	<CommandName>Form.Command.ПеревестиТекстНаДругойЯзык</CommandName>
-																	<Title>
-																		<v8:item>
-																			<v8:lang>ru</v8:lang>
-																			<v8:content>Выполнить на сервере</v8:content>
-																		</v8:item>
-																	</Title>
-																	<ExtendedTooltip name="ВыполнитьКодНаСервереРасширеннаяПодсказка" id="1749"/>
+																	<CommandName>Form.Command.ВыполнитьКодНаСервере</CommandName>
+																	<ExtendedTooltip name="ВыполнитьКодНаСервереРасширеннаяПодсказка" id="1779"/>
 																</Button>
 															</ChildItems>
 														</UsualGroup>
@@ -18453,6 +18442,36 @@
 				</v8:item>
 			</ToolTip>
 			<Action>СохранитьНастройкиКлиент</Action>
+		</Command>
+		<Command name="ВыполнитьКодНаСервере" id="71">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить код на сервере</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить код на сервере</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьКодНаСервере</Action>
+		</Command>
+		<Command name="ВыполнитьКодНаКлиенте" id="72">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить код на клиенте</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Выполнить код на клиенте</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ВыполнитьКодНаКлиенте</Action>
 		</Command>
 	</Commands>
 </Form>
