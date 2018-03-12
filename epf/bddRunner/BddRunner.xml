@@ -4511,7 +4511,7 @@
 			<Form>ЗаписьJSON</Form>
 			<Form>РедактированиеТаблицы</Form>
 			<Form>ИсследовательФормы</Form>
-			<Form>ТекстОшибки</Form>
+			<Form>ДеталиОшибки</Form>
 			<Template>ОтчетТестирования</Template>
 			<Template>ШаблонПеревода</Template>
 			<Template>ПереводСообщений</Template>
