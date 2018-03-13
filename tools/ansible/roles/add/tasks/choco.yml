@@ -5,10 +5,11 @@
     name: '{{ item }}'
     state: latest
   with_items:
-  - imagemagick.app
+  - imagemagick.tool
   - jdk8
   - sikulix
   - tigervnc
+  - ffmpeg
 
 - name: install irfanview 
   win_chocolatey:

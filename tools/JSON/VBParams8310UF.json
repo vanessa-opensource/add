@@ -55,7 +55,7 @@
    "ЗаписьВидеоКаталогДляВременныхФайлов": "./tools/VideoTemp",
    "ЗаписьВидеоФайлВодянойЗнак": "./tools/VideoTools/logoSB.png",
    "ЗаписьВидеоКомандаFfmpeg": "ffmpeg",
-   "ЗаписьВидеоКомандаConvert": "C:\Program Files\ImageMagick-6.9.3-Q16\convert.exe",
+   "ЗаписьВидеоКомандаConvert": "convert.exe",
    "ЗаписьВидеоКаталогМузыки": "./tools/../../vanessa-ci/MakeVideoInstr/music",
    "ЗаписьВидеоДелатьНаложениеTTS": "Истина",
    "ЗаписьВидеоПутьКДвижкуTTS": "balcon",
