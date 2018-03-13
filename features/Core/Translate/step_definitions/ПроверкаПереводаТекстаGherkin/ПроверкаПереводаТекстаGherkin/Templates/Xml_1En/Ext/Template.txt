@@ -34,3 +34,4 @@ Script: <script description>
 	And I change "Реквизит булево" checkbox in "ТабличнаяЧасть1" table
 	And I finish line editing in "ТабличнаяЧасть1" table
 	And I click "Записать и закрыть" button
+
