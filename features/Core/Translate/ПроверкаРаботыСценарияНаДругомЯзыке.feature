@@ -37,14 +37,14 @@
 		| ''        | 'СлужебнаяФичаEN1.feature'                                             |
 		| ''        | 'СлужебнаяФичаEN1'                                                     |
 		| ''        | 'Контекст'                                                             |
-		| ''        | 'Given I connect to the TestClient or reconnect the existing'           |
-		| 'Success' | 'Given I opened new TestClient session or connected the existing one' |
-		| 'Success' | 'And I closed all client application windows'                      |
+		| ''        | 'Given I launch TestClient opening script or connect the existing one' |
+		| 'Success' | 'Given I opened new TestClient session or connected the existing one'  |
+		| 'Success' | 'And I closed all client application windows'                          |
 		| 'Success' | 'Create record in spr1'                                                |
 		| 'Success' | 'And in the command interface I select "Основная" "Справочник1"'       |
 		| 'Success' | 'Then "Справочник1" window is opened'                                  |
 		| 'Success' | 'And I click the button named "ФормаСоздать"'                          |
-		| 'Success' | 'Then "Справочник1 (создание)" window is opened'                      |
+		| 'Success' | 'Then "Справочник1 (создание)" window is opened'                       |
 		| 'Success' | 'And I input "111" in the field called "Наименование"'                 |
 		| 'Success' | 'And I click on the "Записать и закрыть" button'                       |
 		| 'Success' | 'Close TestClient'                                                     |
