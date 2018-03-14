@@ -38,7 +38,7 @@
 		| ''        | 'СлужебнаяФичаEN1'                                                     |
 		| ''        | 'Контекст'                                                             |
 		| ''        | 'Given I launch TestClient opening script or connect the existing one' |
-		| 'Success' | 'Given I opened new TestClient session or connected the existing one'  |
+		| 'Success' | 'Given I open new TestClient session or connect the existing one'      |
 		| 'Success' | 'And I closed all client application windows'                          |
 		| 'Success' | 'Create record in spr1'                                                |
 		| 'Success' | 'And in the command interface I select "Основная" "Справочник1"'       |
