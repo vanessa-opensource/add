@@ -39,16 +39,16 @@
 		| ''        | 'Контекст'                                                             |
 		| ''        | 'Given I launch TestClient opening script or connect the existing one' |
 		| 'Success' | 'Given I open new TestClient session or connect the existing one'      |
-		| 'Success' | 'And I closed all client application windows'                          |
+		| 'Success' | 'And I close all client application windows'                           |
 		| 'Success' | 'Create record in spr1'                                                |
-		| 'Success' | 'And in the command interface I select "Основная" "Справочник1"'       |
+		| 'Success' | 'And In the command interface I select "Основная" "Справочник1"'       |
 		| 'Success' | 'Then "Справочник1" window is opened'                                  |
 		| 'Success' | 'And I click the button named "ФормаСоздать"'                          |
 		| 'Success' | 'Then "Справочник1 (создание)" window is opened'                       |
-		| 'Success' | 'And I input "111" in the field called "Наименование"'                 |
-		| 'Success' | 'And I click on the "Записать и закрыть" button'                       |
+		| 'Success' | 'And I input "111" text in the field named "Наименование"'             |
+		| 'Success' | 'And I click "Записать и закрыть" button'                       |
 		| 'Success' | 'Close TestClient'                                                     |
-		| 'Success' | 'Given I close the session TESTCLIENT'                                 |
+		| 'Success' | 'And I close TestClient session'                                 |
 
 Сценарий: Закрытие слубеного сеанса TestEN
 	И я закрываю TestClient "TestEN"
