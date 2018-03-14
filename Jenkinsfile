@@ -73,8 +73,8 @@ firsttasks["qa"] = {
     node("slave"){
         stage ("sonar QA"){
             unix = isUnix();
-            checkout scm
             if (env.QASONAR) {
+                checkout scm
                 //try{
                     println env.QASONAR;
                     def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/Main_Classic/bin/sonar-scanner\""
@@ -145,10 +145,7 @@ firsttasks["slave"] = {
             //def unix = isUnix()
             cleanWs(patterns: [[pattern: 'build/ServiceBases/**', type: 'INCLUDE']])
             cmd "opm run init file --buildFolderPath ./build"
-            //cmd "opm run clean"
-            //cmd "opm build ./"
-            //stash includes: 'build/**', excludes: 'build/cache.txt', name: 'buildResults'           
-            stash includes: 'build/**', name: 'buildResults'
+            stash includes: 'build/**',  excludes: 'build/cache.txt', name: 'buildResults'
         }
     }
 }
