@@ -145,7 +145,8 @@ firsttasks["slave"] = {
             //def unix = isUnix()
             cleanWs(patterns: [[pattern: 'build/ServiceBases/**', type: 'INCLUDE']])
             cmd "opm run init file --buildFolderPath ./build"
-            stash includes: 'build/**',  excludes: 'build/cache.txt', name: 'buildResults'
+            //stash includes: 'build/**',  excludes: 'build/cache.txt', name: 'buildResults'
+            stash includes: 'build/**', name: 'buildResults'
         }
     }
 }
@@ -193,21 +194,21 @@ firsttasks["slave"] = {
 // }
 // }
 
-tasks["opmrunclean"] = {
-    node("slave"){
-        checkout scm
-        cmd "opm run clean"
-    }
-}
-parallel firsttasks
+//tasks["opmrunclean"] = {
+//    node("slave"){
+//        checkout scm
+//        cmd "opm run clean"
+//    }
+//}
 
+parallel firsttasks
 parallel tasks
 
 tasks = [:]
 tasks["report"] = {
     node {
         stage("report"){
-            cleanWs();
+            cleanWs(patterns: [[pattern: 'build/ServiceBases/**', type: 'INCLUDE']]);
             unstash 'buildResults'
             builds.each{
                 unstash "${it}"
