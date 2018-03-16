@@ -16,3 +16,8 @@ tools/HTML/
 tools/jUnit/
 tools/Markdown/
 tools/ScreenShotsTest/
+*.zip
+*.7z
+*.tar.gz
+*.tar.bz2
+*.tar
