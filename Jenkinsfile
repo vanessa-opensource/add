@@ -61,9 +61,13 @@ tasks["buildRelease"] = {
     node("slave"){
         stage("build release"){
             checkout scm
-            cleanWs(patterns: [[pattern: '*.ospx', type: 'INCLUDE']])
+            cleanWs(patterns: [[pattern: '*.ospx, add.tar.gz, add.tar.bz2, add.7z', type: 'INCLUDE']])
             cmd "opm build ./"
-            archiveArtifacts '*.ospx'
+            cmd "7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
+            cmd "7z a add.7z ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
+            cmd "7z a add.tar.gz add.tar"
+            cmd "7z a add.tar.bz2 add.tar"
+            archiveArtifacts '*.ospx, add.tar.gz, add.tar.bz2, add.7z'
 
         }
     }
