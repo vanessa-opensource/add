@@ -47,8 +47,8 @@ builds.each{
                 } catch (e) {
                     echo "behavior ${it} status : ${e}"
                     sleep 61
-                    cmd("7z a -ssw build${it}.zip ./build/", true)
-                    archiveArtifacts "build${it}.zip"
+                    cmd("7z a -ssw build${it}.7z ./build/ -xr!*.cfl", true)
+                    archiveArtifacts "build${it}.7z"
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
             }
@@ -61,7 +61,7 @@ tasks["buildRelease"] = {
     node("slave"){
         stage("build release"){
             checkout scm
-            cleanWs(patterns: [[pattern: '*.ospx, add.tar.gz, add.tar.bz2, add.7z', type: 'INCLUDE']])
+            cleanWs(patterns: [[pattern: '*.ospx, add.tar.gz, add.tar.bz2, add.7z, add.tar', type: 'INCLUDE']])
             cmd "opm build ./"
             cmd "7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
             cmd "7z a add.7z ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
