@@ -58,7 +58,7 @@
    "ЗаписьВидеоКомандаConvert": "C:\Program Files\ImageMagick-6.9.3-Q16\convert.exe",
    "ЗаписьВидеоКаталогМузыки": "./tools/../../vanessa-ci/MakeVideoInstr/music",
    "ЗаписьВидеоДелатьНаложениеTTS": "Истина",
-   "ЗаписьВидеоПутьКДвижкуTTS": "balabolka_console",
+   "ЗаписьВидеоПутьКДвижкуTTS": "balcon",
    "ЗаписьВидеоИмяTTS": "Elena",
    "ЗаписьВидеоСловарьЗамен": "./tools/VideoTools/libtts.txt",
    "ЗаписьВидеоЭкранШирина": "1920",

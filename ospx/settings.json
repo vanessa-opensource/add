@@ -5,7 +5,6 @@
         "lib",
         "plugins",
         "tests",
-        "tools",
         "vendor"
     ],
     "opm_build": [
@@ -16,7 +15,6 @@
         "lib/video",
         "plugins",
         "tests/smoke",
-        "tools",
         "vendor"
     ]
 }

@@ -6,6 +6,7 @@ def buildSerivceConf = ["836UF":"8.3.6", "837UF":"8.3.7", "838UF":"8.3.8", "839U
 //builds = ["82OF", "82UF", "836OF", "836UF", "837UF", "838UF", "839UF", "8310UF"]
 //builds = ["836UF", "837UF", "838UF", "839UF", "8310UF"]
 builds = ["8310UF"]
+errorsStash = [:]
 
 if (env.filterBuilds && env.filterBuilds.length() > 0 ) {
     println "filter build";
@@ -14,7 +15,7 @@ if (env.filterBuilds && env.filterBuilds.length() > 0 ) {
 builds.each{
 
     tasks["behavior ${it}"] = {
-        node ("slave") {
+        node ("${it}") {
             stage("behavior ${it}") {
             // steps {
                 // в среде Multibranch Pipeline Jenkins первращает имена веток в папки
@@ -30,18 +31,24 @@ builds.each{
             {
                 //cleanWs();
                 checkout scm
-                // unstash "buildResults"
-                cmd "opm update -all"
+                unstash "buildResults"
+                cmd "opm install"
                 cmd "opm list"
+                cmd "opm run initib file --buildFolderPath ./build --v8version " + buildSerivceConf[it]
+                //cmd "runner init-dev --src ./lib/CF/83NoSync --ibconnection /F./build/ib --v8version "+buildSerivceConf[it]
                 //cmd "set"
-                cmd "opm run init"
+                //cmd "opm run init"
                 // cmd "set LOGOS_LEVEL=DEBUG\nopm run init"
-                cmd "oscript ./tools/onescript/CloseAll1CProcess.os"
-                cmd "oscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
+                //cmd "oscript ./tools/onescript/CloseAll1CProcess.os"
+                //cmd "oscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
                 try{
-                    cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
+                    cmd "opm run vanessa all --settings ./tools/JSON/VBParams${it}.json";
+                    //cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
                 } catch (e) {
                     echo "behavior ${it} status : ${e}"
+                    sleep 61
+                    cmd("7z a -ssw build${it}.7z ./build/ -xr!*.cfl", true)
+                    archiveArtifacts "build${it}.7z"
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
             }
@@ -50,13 +57,48 @@ builds.each{
         }
     }
 }
+tasks["buildRelease"] = {
+    node("slave"){
+        stage("build release"){
+            checkout scm
+            cleanWs(patterns: [[pattern: '*.ospx, add.tar.gz, add.tar.bz2, add.7z, add.tar', type: 'INCLUDE']])
+            cmd "opm build ./"
+            cmd "7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
+            cmd "7z a add.7z ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
+            cmd "7z a add.tar.gz add.tar"
+            cmd "7z a add.tar.bz2 add.tar"
+            archiveArtifacts '*.ospx, add.tar.gz, add.tar.bz2, add.7z'
+
+        }
+    }
+}
+
+tasks["xdd"] = {
+    stage("xdd"){
+        node("8310UF"){
+                checkout scm
+                unstash "buildResults"
+                cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
+                try{
+                    cmd "opm run xdd";
+                    //cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
+                } catch (e) {
+                    echo "xdd ${it} status : ${e}"
+                    sleep 61
+                    cmd("7z a -ssw buildXDD.7z ./build/ -xr!*.cfl", true)
+                    archiveArtifacts "buildXDD.7z"
+                }
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/xdd/**, build/ServiceBases/junitreport/**", name: "xdd"
+        }
+    }
+}
 firsttasks=[:]
 firsttasks["qa"] = {
     node("slave"){
         stage ("sonar QA"){
             unix = isUnix();
-            checkout scm
             if (env.QASONAR) {
+                checkout scm
                 //try{
                     println env.QASONAR;
                     def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/Main_Classic/bin/sonar-scanner\""
@@ -118,6 +160,21 @@ firsttasks["qa"] = {
     }
 }
 
+firsttasks["slave"] = {
+    node("slave") {
+        stage("checkout scm"){
+            checkout scm
+        }
+        stage("build"){
+            //def unix = isUnix()
+            cleanWs(patterns: [[pattern: 'build/ServiceBases/**', type: 'INCLUDE']])
+            cmd "opm run init file --buildFolderPath ./build"
+            //stash includes: 'build/**',  excludes: 'build/cache.txt', name: 'buildResults'
+            stash includes: 'build/**', name: 'buildResults'
+        }
+    }
+}
+
 // TODO добавить установку правильного движка, например, через ovm и включить задачу linuxbuild
 // firsttasks["linuxbuild"] = {
 // node("slavelinux"){
@@ -161,25 +218,26 @@ firsttasks["qa"] = {
 // }
 // }
 
-tasks["opmrunclean"] = {
-    node("slave"){
-        checkout scm
-        cmd "opm run clean"
-    }
-}
-parallel firsttasks
+//tasks["opmrunclean"] = {
+//    node("slave"){
+//        checkout scm
+//        cmd "opm run clean"
+//    }
+//}
 
+parallel firsttasks
 parallel tasks
 
 tasks = [:]
 tasks["report"] = {
     node {
         stage("report"){
-            // cleanWs();
-            // unstash 'buildResults'
+            cleanWs(patterns: [[pattern: 'build/ServiceBases/**', type: 'INCLUDE']]);
+            unstash 'buildResults'
             builds.each{
                 unstash "${it}"
             }
+            unstash "xdd"
             try{
                 allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
             } catch (e) {
@@ -188,8 +246,9 @@ tasks["report"] = {
             junit 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
             
-            archiveArtifacts 'build/ServiceBases/allurereport/**'
-            archiveArtifacts 'build/ServiceBases/junitreport/*.xml'
+            //archiveArtifacts 'build/ServiceBases/allurereport/**'
+            //archiveArtifacts 'build/ServiceBases/junitreport/*.xml'
+            //archiveArtifacts 'build/**'
         }
     }
 }
@@ -199,8 +258,8 @@ tasks["report"] = {
 
 parallel tasks
 
-def cmd(command) {
+def cmd(command, status = false) {
     // TODO при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001
     isunix = isUnix();
-    if (isunix) { sh "${command}" } else {bat "chcp 65001\n${command}"}
+    if (isunix) { sh returnStatus: status, script: "${command}" } else {bat returnStatus: status, script: "chcp 65001\n${command}"}
 }

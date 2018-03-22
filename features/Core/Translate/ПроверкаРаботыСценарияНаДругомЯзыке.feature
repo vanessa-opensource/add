@@ -37,19 +37,18 @@
 		| ''        | 'СлужебнаяФичаEN1.feature'                                             |
 		| ''        | 'СлужебнаяФичаEN1'                                                     |
 		| ''        | 'Контекст'                                                             |
-		| ''        | 'Given I connect to the TestClient or reconnect to existing'           |
-		| 'Success' | 'Given I opened a new TestClient session or connected an existing one' |
-		| 'Success' | 'And I closed all the windows client application'                      |
+		| ''        | 'Given I launch TestClient opening script or connect the existing one' |
+		| 'Success' | 'Given I open new TestClient session or connect the existing one'      |
+		| 'Success' | 'And I close all client application windows'                           |
 		| 'Success' | 'Create record in spr1'                                                |
-		| 'Success' | 'When in command interface group I select "Основная"'                  |
-		| 'Success' | 'And in the function panel I select "Справочник1"'                     |
-		| 'Success' | 'Then I see the window "Справочник1"'                                  |
-		| 'Success' | 'And I click on the "Создать" button'                                  |
-		| 'Success' | 'Then I see the window "Справочник1 (создание)"'                       |
-		| 'Success' | 'And I enter "111" in the field called "Наименование"'                 |
-		| 'Success' | 'And I click on the "Записать и закрыть" button'                       |
+		| 'Success' | 'And In the command interface I select "Основная" "Справочник1"'       |
+		| 'Success' | 'Then "Справочник1" window is opened'                                  |
+		| 'Success' | 'And I click the button named "ФормаСоздать"'                          |
+		| 'Success' | 'Then "Справочник1 (создание)" window is opened'                       |
+		| 'Success' | 'And I input "111" text in the field named "Наименование"'             |
+		| 'Success' | 'And I click "Записать и закрыть" button'                       |
 		| 'Success' | 'Close TestClient'                                                     |
-		| 'Success' | 'Given I close the session TESTCLIENT'                                 |
+		| 'Success' | 'And I close TestClient session'                                 |
 
 Сценарий: Закрытие слубеного сеанса TestEN
 	И я закрываю TestClient "TestEN"

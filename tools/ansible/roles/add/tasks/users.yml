@@ -1,0 +1,26 @@
+---
+- name: Create local "{{ add_user }}" user
+  win_user:
+    fullname: "{{ add_user }}"
+    name: "{{ add_user }}"
+    description: Used for Ansible automated tasks
+    password: '{{ add_password }}'
+    #      password: '{{ ictadmin_password }}'
+    password_expired: no
+    password_never_expires: yes
+    groups: [ '{{ add_user_group }}' ]
+    state: present
+  tags: users
+    #, Administrators
+
+- name: Configure autologin {{ add_user }}
+  win_regedit:
+    path: HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion\winlogon
+    name: '{{ item.name }}'
+    data: '{{ item.data }}'
+    type: '{{ item.type|default("dword") }}'
+  with_items:
+  - { name: AutoAdminLogon,      data: 1, type: string }
+  - { name: DefaultUserName,     data: '{{add_user}}', type: string }
+  - { name: DefaultPassword,     data: '{{ add_password }}', type: string }
+  tags: users

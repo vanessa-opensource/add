@@ -26,6 +26,11 @@
 		<ChildObjects>
 			<Form>Форма</Form>
 			<Template>Макет</Template>
+			<Template>СтрокиТабличнаяЧасть1</Template>
+			<Template>НеСтрокиТабличнаяЧасть1</Template>
+			<Template>МакетСПервойСтрокой</Template>
+			<Template>МакетТабличнаяЧасть1</Template>
+			<Template>МакетТабличнаяЧасть1СОшибкой</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>

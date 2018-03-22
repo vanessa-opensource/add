@@ -9,11 +9,6 @@
 			<description>Русский</description>
 		</languageInfo>
 		<languageInfo>
-			<id>uk</id>
-			<code>Українська</code>
-			<description>Українська</description>
-		</languageInfo>
-		<languageInfo>
 			<id>en</id>
 			<code>English</code>
 			<description>English</description>

@@ -1,0 +1,116 @@
+---
+- name: Registry configuration
+  win_regedit:
+    path: '{{ item.path }}'
+    name: '{{ item.name }}'
+    data: '{{ item.data|default(None) }}'
+    type: '{{ item.type|default("dword") }}'
+    state: '{{ item.state|default("present") }}'
+  with_items:
+    # Show all folders in Explorer including Recycle Bin, Desktop, Control Panel
+    - path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+      name: NavPaneShowAllFolders
+      data: 0
+    
+    # Show hidden files and folders
+    - path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+      name: Hidden
+      data: 1
+
+    # Hide empty drives in My Computer folder
+    - path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+      name: HideDrivesWithNoMedia
+      data: 0
+    # Do not hide file extensions
+    - path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+      name: HideFileExt
+      data: 0
+
+    # Show hidden Operating System files
+    - path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+      name: ShowSuperHidden
+      data: 2
+
+    # Do not show notifications/adverts (OneDrive & new features) in Windows Explorer
+    - path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+      name: ShowSyncProviderNotifications
+      data: 0
+
+    # Do not slow down search by including all public folders
+    - path: HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced
+      name: Start_SearchFiles
+      data: 1
+
+    # Remove Homegroup from Explorer
+    - path: HKLM:\SOFTWARE\Classes\{B4FB3F98-C1EA-428d-A78A-D1F5659CBA93}
+      name: System.IsPinnedToNameSpaceTree
+      data: 0
+
+    # Prevent "Suggested Applications" to return
+    - path: HKLM:\SOFTWARE\Policies\Microsoft\Windows\Cloud Content
+      name: DisableWindowsConsumerFeatures
+      data: 1
+    - path: HKLM:\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters
+      name: TcpTimedWaitDelay
+      data: 30
+  tags: 
+    - registry
+    - winconfig
+
+
+- name: Disabling Microsoft account logon sign-in option, eg. logging in without having to use local credentials and using microsoft online accounts
+  win_regedit:
+    key: HKLM:\Software\Microsoft\PolicyManager\default\Settings\AllowYourAccount
+    value: value
+    data: 0
+    datatype: dword
+  tags: winconfig
+
+- name: Disable Windows Store - Ensure Turn off Automatic Download and Install ofupdates is set to Disabled
+  win_regedit:
+    key: HKLM:\Software\Policies\Microsoft\WindowsStore
+    value: "{{ item.v }}"
+    data: "{{ item.d }}"
+    datatype: dword
+  with_items:
+    - { v: 'AutoDownload', d: 4 }
+    - { v: 'DisableOSUpgrade', d: 1 }
+  tags: winconfig
+
+- name: Disable indexing encrypted files
+  win_regedit:
+    key: HKLM:\Software\Policies\Microsoft\Windows\Windows Search
+    value: AllowIndexingEncryptedStoresOrItems
+    data: 0
+  datatype: dword
+  tags: winconfig
+
+- name: Disable default services
+  win_service:
+    name: '{{ item }}'
+    start_mode: disabled
+    state: stopped
+  with_items:
+    - diagnosticshub.standardcollector.service # Microsoft (R) Diagnostics Hub Standard Collector Service
+    - DiagTrack                                # Diagnostics Tracking Service
+    - dmwappushservice                         # WAP Push Message Routing Service (see known issues)
+    - HomeGroupListener                        # HomeGroup Listener
+    - HomeGroupProvider                        # HomeGroup Provider
+    - lfsvc                                    # Geolocation Service
+    - MapsBroker                               # Downloaded Maps Manager
+    #- NetTcpPortSharing                        # Net.Tcp Port Sharing Service
+    #- RemoteAccess                             # Routing and Remote Access
+    #- RemoteRegistry                           # Remote Registry
+    #- SharedAccess                             # Internet Connection Sharing (ICS)
+    - TrkWks                                   # Distributed Link Tracking Client
+    - WbioSrvc                                 # Windows Biometric Service
+    #- WlanSvc                                 # WLAN AutoConfig
+    - WMPNetworkSvc                            # Windows Media Player Network Sharing Service
+    #- wscsvc                                   # Windows Security Center Service
+    #- WSearch                                 # Windows Search
+    - XblAuthManager                           # Xbox Live Auth Manager
+    - XblGameSave                              # Xbox Live Game Save Service
+    - XboxNetApiSvc                            # Xbox Live Networking Service
+  tags: 
+    - services
+    - winconfig
