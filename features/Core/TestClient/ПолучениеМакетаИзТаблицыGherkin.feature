@@ -6,6 +6,9 @@
 @IgnoreOn836
 @IgnoreOn837
 @IgnoreOn838
+@Ignore
+
+# Работу с таблицей проверяем в файле РедактированиеТаблицыGherkin
 
 @tree
 
