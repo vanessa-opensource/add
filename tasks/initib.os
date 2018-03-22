@@ -120,6 +120,12 @@
 	
 	СтрокаЗапуска = СтрШаблон("runner run --command VBParams=./tools/epf/init.json --execute %1tools/epf/init.epf", КаталогСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
+
+	СтрокаВыполнения = "runner init-dev --src ./lib/CF/83xdd --ibconnection /F./build/ibservicexdd --nocacheuse";
+	ИсполнитьКоманду(СтрокаВыполнения);
+
+	СтрокаЗапуска = "runner run --command СоздатьАдминистратора --ibconnection /F./build/ibservicexdd";
+	ИсполнитьКоманду(СтрокаЗапуска);
 	
 	Лог.Информация("ВСЕ!");
 КонецПроцедуры

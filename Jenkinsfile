@@ -72,6 +72,26 @@ tasks["buildRelease"] = {
         }
     }
 }
+
+tasks["xdd"] = {
+    stage("xdd"){
+        node("8310UF"){
+                checkout scm
+                unstash "buildResults"
+                cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
+                try{
+                    cmd "opm run xdd";
+                    //cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
+                } catch (e) {
+                    echo "xdd ${it} status : ${e}"
+                    sleep 61
+                    cmd("7z a -ssw buildXDD.7z ./build/ -xr!*.cfl", true)
+                    archiveArtifacts "buildXDD.7z"
+                }
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/xdd/**, build/ServiceBases/junitreport/**", name: "xdd"
+        }
+    }
+}
 firsttasks=[:]
 firsttasks["qa"] = {
     node("slave"){
@@ -217,6 +237,7 @@ tasks["report"] = {
             builds.each{
                 unstash "${it}"
             }
+            unstash "xdd"
             try{
                 allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
             } catch (e) {

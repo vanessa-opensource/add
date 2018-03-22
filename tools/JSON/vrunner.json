@@ -1,0 +1,16 @@
+{
+    "default": {
+        "--ibconnection": "/F./build/ibservice",
+        "--db-user": "",
+        "--db-pwd": "",
+        "--ordinaryapp": "0"
+    },
+    "xunit": {
+        "--xddConfig": "./tools/JSON/xUnitParams.json",
+        "testsPath": "tests",
+        "--reportsxunit": "ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXML{build/allure/allure-testsuite.xml}",
+        "--xddExitCodePath": "build/xddExitCodePath.txt",
+        "--pathxunit": "xddTestRunner.epf",
+        "--additional": "/DisplayAllFunctions /L ru"
+    }
+}

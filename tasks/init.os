@@ -103,6 +103,9 @@
 	СтрокаВыполнения = "runner init-dev --dev --src ./lib/CF/83NoSync --ibconnection /F./build/ibservice --nocacheuse";
 	ИсполнитьКоманду(СтрокаВыполнения);
 
+	СтрокаВыполнения = "runner init-dev --src ./lib/CF/83xdd --ibconnection /F./build/ibservicexdd --nocacheuse";
+	ИсполнитьКоманду(СтрокаВыполнения);
+
 	Если НЕ Новый Файл("./build/1Cv8.cf").Существует() Тогда
 		ИсполнитьКоманду("runner unload ./build/1Cv8.cf --ibconnection /F./build/ibservice");
 		// ИсполнитьКоманду("runner compile");
@@ -151,7 +154,10 @@
 
 	СтрокаЗапуска = СтрШаблон("runner run --command VBParams=./tools/epf/init.json --execute %1tools/epf/init.epf", КаталогСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
-	
+
+	СтрокаЗапуска = "runner run --command СоздатьАдминистратора --ibconnection /F./build/ibservicexdd";
+	ИсполнитьКоманду(СтрокаЗапуска);
+
 	Лог.Информация("ВСЕ!");
 КонецПроцедуры
 

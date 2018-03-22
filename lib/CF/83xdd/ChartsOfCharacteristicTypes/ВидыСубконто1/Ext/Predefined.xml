@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PlanOfCharacteristicKindPredefinedItems" version="2.4">
+	<Item id="ada7690c-bc98-47d4-a26a-c7f806bc54b9">
+		<Name>Субконто1</Name>
+		<Code>000000001</Code>
+		<Description>Субконто1</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПростойСправочник2</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПростойСправочник</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СправочникСТабЧастью</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СправочникСоСсылкойНаСамогоСебя</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ИерархическийСправочник</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+	<Item id="72bd3370-b62a-4814-9324-70ff2ea7b87f">
+		<Name>Субконто2</Name>
+		<Code>000000002</Code>
+		<Description>Субконто2</Description>
+		<Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПростойСправочник2</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ПростойСправочник</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СправочникСТабЧастью</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.СправочникСоСсылкойНаСамогоСебя</v8:Type>
+			<v8:Type xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise/current-config">d4p1:CatalogRef.ИерархическийСправочник</v8:Type>
+		</Type>
+		<IsFolder>false</IsFolder>
+	</Item>
+</PredefinedData>

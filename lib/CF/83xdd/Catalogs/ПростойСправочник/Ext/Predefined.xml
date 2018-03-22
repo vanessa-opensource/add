@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CatalogPredefinedItems" version="2.4">
+	<Item id="634e552d-b43a-4bc8-a150-d009f83269e1">
+		<Name>ПредопределенноеЗначение1</Name>
+		<Code xsi:type="xs:decimal">1</Code>
+		<Description>Предопределенное значение</Description>
+		<IsFolder>false</IsFolder>
+	</Item>
+</PredefinedData>
