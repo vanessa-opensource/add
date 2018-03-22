@@ -1,4 +1,5 @@
 {
+    "$schema": "https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/vanessa-runner-schema.json",
     "default": {
         "--ibconnection": "/F./build/ibservice",
         "--db-user": "",
