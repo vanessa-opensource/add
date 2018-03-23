@@ -29,21 +29,13 @@ builds.each{
                 // см. https://issues.jenkins-ci.org/browse/JENKINS-40072
             ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
             {
-                //cleanWs();
                 checkout scm
                 unstash "buildResults"
                 cmd "opm install"
                 cmd "opm list"
                 cmd "opm run initib file --buildFolderPath ./build --v8version " + buildSerivceConf[it]
-                //cmd "runner init-dev --src ./lib/CF/83NoSync --ibconnection /F./build/ib --v8version "+buildSerivceConf[it]
-                //cmd "set"
-                //cmd "opm run init"
-                // cmd "set LOGOS_LEVEL=DEBUG\nopm run init"
-                //cmd "oscript ./tools/onescript/CloseAll1CProcess.os"
-                //cmd "oscript ./tools/onescript/build-service-conf.os "+buildSerivceConf[it];
                 try{
                     cmd "opm run vanessa all --settings ./tools/JSON/VBParams${it}.json";
-                    //cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
                 } catch (e) {
                     echo "behavior ${it} status : ${e}"
                     sleep 61
@@ -74,14 +66,13 @@ tasks["buildRelease"] = {
 }
 
 tasks["xdd"] = {
-    stage("xdd"){
-        node("8310UF"){
+    node("8310UF"){
+        stage("xdd"){
                 checkout scm
                 unstash "buildResults"
                 cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
                 try{
                     cmd "opm run xdd";
-                    //cmd "oscript ./tools/onescript/run-behavior-check-session.os ./tools/JSON/Main.json ./tools/JSON/VBParams${it}.json"
                 } catch (e) {
                     echo "xdd ${it} status : ${e}"
                     sleep 61
