@@ -7,6 +7,7 @@
 @IgnoreOn837
 @IgnoreOn838
 @Ignore
+@IgnoreOnCIMainBuild
 
 # Работу с таблицей проверяем в файле РедактированиеТаблицыGherkin
 
