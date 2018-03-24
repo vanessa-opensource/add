@@ -1,0 +1,69 @@
+---
+- name: add shedule start slave
+  win_scheduled_task:
+    name: StartJenkinsSlave
+    state: present
+    actions:
+    - path: start.exe
+      arguments: '{{ add_jenkins_root }}\start.bat'
+    trigers:
+      - type: logon
+        user_id: "vagrant"
+    user: '{{ add_user }}'
+    
+- name: get stat of existing folder with task
+  win_scheduled_task_stat:
+    name: StartJenkinsSlave
+  register: stat_folder_with_task
+
+- name: Check if Jenkins JNLP slave variables are defined
+  assert:
+    that:
+      - "add_jenkins_master is defined"
+      - "add_jenkins_slave_secret is defined"
+  tags:
+    - jenkins-slave
+
+- name: Create directory structure install's
+  win_file:
+    path: '{{ add_jenkins_root }}'
+    state: directory
+
+- name: dowload slave.jar
+  win_get_url:
+    url: '{{add_jenkins_master}}/jnlpJars/slave.jar'
+    dest: '{{add_jenkins_root}}\slave.jar'
+    #force: no
+
+- name: set start.bat
+  win_template:
+    src: jenkins.bat.j2
+    dest: '{{ add_jenkins_root }}\start.bat'
+  #newline_sequence: \r\n
+
+- name: set start.bat
+  win_template:
+    src: createtask.ps1.j2
+    dest: '{{ add_jenkins_root }}\createtask.ps1'
+
+- name: add shell task
+  win_shell: Set-ExecutionPolicy Unrestricted -Scope CurrentUser
+
+- name: add shell task
+  win_shell: '{{ add_jenkins_root }}\createtask.ps1'
+
+#- name: start agent 
+#  win_shell: start '{{ add_jenkins_root }}\start.bat'
+#- name: add shedule start slave
+#  win_scheduled_task:
+#    name: StartJenkinsSlave
+#    state: present
+#    actions:
+#    - path: start.exe
+#      arguments: '{{ add_jenkins_root }}\start.bat'
+#    trigers:
+#    - type: logon
+#      user_id: localhost\vagrant
+#    user: '{{ add_user }}'
+#    #logon_type: interactive_token
+    

@@ -1,9 +1,23 @@
 crowdin.yaml
 .vscode
 build/*
+.forbuild/*
 .sonar/*
 .sonarl int/*
 log.txt
 env.json
 oscript_modules/
 *.ospx
+*.epf
+ConfigDumpInfo.xml
+ServiceBases/
+tools/Allure/
+tools/HTML/
+tools/jUnit/
+tools/Markdown/
+tools/ScreenShotsTest/
+*.zip
+*.7z
+*.tar.gz
+*.tar.bz2
+*.tar

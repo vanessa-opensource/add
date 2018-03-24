@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html;charset=utf-8" http-equiv="content-type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.10570.1001"></meta></head><body>
+<p><a href="https://github.com/xDrivenDevelopment/xUnitFor1C/wiki">https://github.com/xDrivenDevelopment/xUnitFor1C/wiki</a></p>
+<h1></h1>
+<p>xUnitFor1C - набор инструментов для выполнения тестирования (модульного/юнит, приемочного, сценарного для 1С 8.3, интеграционного) в 1С:Предприятии 8.</p>
+<p>xUnitFor1C работает с любыми конфигурациями, полностью независима, но может быть встроена в конфигурацию.</p>
+<p>Позволяет открывать/тестировать в разных режимах - обычное приложение, тонкий и толстый клиент управляемого приложения. </p>
+<p>Тесты могут быть как во внешних обработках, так и во встроенных обработках. </p>
+<p>Любые наборы тестов могут прогоняться в полностью автоматическом режиме через <a href="https://github.com/xDrivenDevelopment/xUnitFor1C/wiki/%D0%97%D0%B0%D0%BF%D1%83%D1%81%D0%BA-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2-%D0%B8%D0%B7-%D0%BA%D0%BE%D0%BC%D0%B0%D0%BD%D0%B4%D0%BD%D0%BE%D0%B9-%D1%81%D1%82%D1%80%D0%BE%D0%BA%D0%B8-%D0%B8-%D0%BF%D0%BE%D0%BB%D1%83%D1%87%D0%B5%D0%BD%D0%B8%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2-%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%BE%D0%B2">специальную командную строку запуска</a>. Автозапуск используется в различных build-серверах и в системах Continuous Integration.</p>
+<p><a href="https://github.com/xDrivenDevelopment/xUnitFor1C/wiki">Для дополнительной информации см. Wiki проекта</a></p>
+<h2><a aria-hidden="true" class="anchor" href="#%D0%A7%D1%82%D0%BE-%D0%BA-%D1%87%D0%B5%D0%BC%D1%83" name="user-content-%D0%A7%D1%82%D0%BE-%D0%BA-%D1%87%D0%B5%D0%BC%D1%83"><span class="octicon octicon-link"></span></a>Что к чему</h2>
+<ul class="task-list"><em>
+<li style="BOX-SIZING: border-box"><em style="BOX-SIZING: border-box">xddTestRunner.epf</em><span class="Apple-converted-space"> </span>- браузер и исполнитель тестов для обычного приложения и управляемого приложения 1С:Предприятия 8 (толстый и тонкий клиенты) 
+</li><li style="BOX-SIZING: border-box"><em style="BOX-SIZING: border-box">xddDataFixtureGen.epf</em><span class="Apple-converted-space"> </span>- генерация макета данных для использования в тестах. Макет можно генерить из боевой базы на основе реальных данных. 
+</li><li style="BOX-SIZING: border-box"><em style="BOX-SIZING: border-box">xddTestRunner.js</em><span class="Apple-converted-space"> </span>- скрипт для Снегопата, позволяющий выполнять тесты прямо из конфигуратора 
+</li><li style="BOX-SIZING: border-box"><em style="BOX-SIZING: border-box">Tests/</em><span class="Apple-converted-space"> </span>- каталог с примерами тестов и с тестами для самотестирования xddTestRunner.epf (подпапка selftests) 
+</li><li style="BOX-SIZING: border-box"><em style="BOX-SIZING: border-box">Tests\CommonApp\тесты_ОткрытиеФормКонфигурации.epf</em><span class="Apple-converted-space"> </span>- тесты открытия всех форм справочников, документов, отчетов и обработок. Для справочников и документов в транзакции создаются новые или копируются или перезаписываются существующие элементы. 
+</li><li style="BOX-SIZING: border-box"><em style="BOX-SIZING: border-box">Tests\CommonApp\Тест_ЗапускТестовВСеансеДругихПользователей.epf</em><span class="Apple-converted-space"> </span>- примеры запуска тестов для пользователей с ограниченными правами. Пользователи создаются на лету из простых макетов. 
+</li><li style="BOX-SIZING: border-box"><em style="BOX-SIZING: border-box">Tests\CommonApp\Тест_ПроверитьОтчетНаСоответствиеЭталону.epf</em><span class="Apple-converted-space"> </span>- пример теста отчета путем сравнения с эталонным ожиданием из макета.</li></em></ul><h2><a aria-hidden="true" class="anchor" href="#%D0%92%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8-unittestrunnerepf" name="user-content-%D0%92%D0%BE%D0%B7%D0%BC%D0%BE%D0%B6%D0%BD%D0%BE%D1%81%D1%82%D0%B8-unittestrunnerepf"><span class="octicon octicon-link"></span></a>Как помочь проекту</h2>
+<p>Мы рады любой помощи: </p>
+<ol class="task-list"><li>
+<p>Если вы занимаетесь разработкой на 1С:Преприятии 8 пробуйте писать и выполнять тесты при помощи xUnitFor1C, сообщайте нам об обнаруженных ошибках, пишите пожелания. Для управления сообщениями об ошибках и пожеланиями мы используем <a href="https://github.com/kuntashov/1CUnit/issues?sort=created&amp;state=open">баг-трекер GitHub'а</a>.</p>
+</li><li>
+<p>Если у вас есть время разобраться в исходном коде, вы можете взять на себя реализацию одной из <a href="https://github.com/kuntashov/xUnitFor1C/issues?sort=created&amp;state=open">открытых задач</a>.</p>
+</li><li>
+<p>Если вы уже используете xUnitFor1C на практике, напишите об этом статью, например, на <a href="http://infostart.ru">Инфостарте</a>.</p></li></ol><h2><a aria-hidden="true" class="anchor" href="#%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2" name="user-content-%D0%A1%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5-%D1%84%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2"><span class="octicon octicon-link"></span></a>Создание файлов-тестов</h2>
+<p class="markdown-body">Создаем новую внешнюю обработку, т.н. <strong>тестовый набор</strong></p>
+<p class="markdown-body">В модуле этой обработки размещаются <strong>тестовые случаи</strong> (экспортные методы без параметров, чье имя начинается на Тест)</p>
+<p class="markdown-body">Тестовый случай считается успешно выполненным, если в процессе его выполнения не было исключения.</p>
+<p class="markdown-body">Соответственно, для того, чтобы тест упал, нужно выбросить исключение 1С. Для этого используются вызовы специальных методов-утверждений из фреймворка xUnitFor1C. См. <a href="https://github.com/xUnitFor1C/xUnitFor1C/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F">Методы проверки/утверждений</a></p>
+<h2 class="markdown-body"><a aria-hidden="true" class="anchor" href="#%D0%9F%D1%80%D0%B5%D0%B4%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D1%82%D0%B5%D1%81%D1%82%D0%B0" name="user-content-%D0%9F%D1%80%D0%B5%D0%B4%D0%BE%D0%BF%D1%80%D0%B5%D0%B4%D0%B5%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D1%82%D0%B5%D1%81%D1%82%D0%B0"><span class="octicon octicon-link"></span></a>Предопределенные методы теста</h2>
+<div class="markdown-body">
+<ul class="task-list"><li>
+<p>Переменная ЮТест</p>
+<ul class="task-list"><li>содержит в себе ссылку на экземпляр фреймворка xUnitFor1C - объект обработки UnitTestRunner 
+</li><li>с помощью этой переменной можно использовать предопределенные методы xUnitFor1C. Например, см. <a href="https://github.com/xUnitFor1C/xUnitFor1C/wiki/%D0%9C%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D0%BF%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B8-%D1%83%D1%82%D0%B2%D0%B5%D1%80%D0%B6%D0%B4%D0%B5%D0%BD%D0%B8%D1%8F">Методы проверки/утверждений</a> 
+</li><li>имя ЮТест необязательно, можно использовать любое другое имя переменной 
+</li><li>значение этой переменной должно быть заполнено в методе ПолучитьСписокТестов </li></ul></li><li>
+<p>Метод ПолучитьСписокТестов</p>
+<ul class="task-list"><li>должен вернуть массив описаний тестовых случаев 
+</li><li>именно этот массив и является списком выполняемых тестов </li></ul></li><li>
+<p>Метод ПередЗапускомТеста</p>
+<ul class="task-list"><li>вызывается <em>перед запуском каждого теста</em> </li></ul></li><li>
+<p>ПослеЗапускаТеста</p>
+<ul class="task-list"><li>вызывается <em>после запуска каждого теста</em> 
+</li><li>метод вызывается независимо от того, успешно прошел тест или упал. </li></ul></li></ul></div>
+<h2><a aria-hidden="true" class="anchor" href="#%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BF%D1%80%D0%B8%D0%B5%D0%BC%D1%8B-%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2" name="user-content-%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B5-%D0%BF%D1%80%D0%B8%D0%B5%D0%BC%D1%8B-%D0%BD%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D1%8F-%D1%82%D0%B5%D1%81%D1%82%D0%BE%D0%B2"><span class="octicon octicon-link"></span></a>Базовые приемы написания тестов</h2>
+<p>Для гарантирования независимости тестов (это одно из основных требований к тестам) рекомендуется использовать <strong>механизм транзакций</strong>.</p>
+<p>Перед запуском теста начинаем транзакцию, после выполнения теста транзакция отменяется. В итоге в базе не остается никаких следов тестирования и тесты работают независимо.</p>
+<p>Можно использовать следующий шаблон методов теста</p>
+<div class="highlight highlight-sh"><pre>Процедура ПередЗапускомТеста<span class="o">()</span> Экспорт
+    НачатьТранзакцию<span class="o">()</span><span class="p">;</span>
+КонецПроцедуры
+
+Процедура ПослеЗапускаТеста<span class="o">()</span> Экспорт
+    Если ТранзакцияАктивна<span class="o">()</span> Тогда
+        ОтменитьТранзакцию<span class="o">()</span><span class="p">;</span>
+    КонецЕсли<span class="p">;</span>
+КонецПроцедуры
+</pre></div>
+<h2><a aria-hidden="true" class="anchor" href="#%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D1%82%D0%B5%D1%81%D1%82%D0%B0" name="user-content-%D0%91%D0%B0%D0%B7%D0%BE%D0%B2%D1%8B%D0%B9-%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD-%D1%84%D0%B0%D0%B9%D0%BB%D0%B0-%D1%82%D0%B5%D1%81%D1%82%D0%B0"><span class="octicon octicon-link"></span></a>Базовый шаблон файла-теста</h2>
+<div class="highlight highlight-sh"><pre>Перем ЮТест<span class="p">;</span> // ссылка на экземпляр фреймворка xUnitFor1C - объект обработки UnitTestRunner
+
+//<span class="o">{</span> основная процедура для юнит-тестирования xUnitFor1C
+Функция ПолучитьСписокТестов<span class="o">(</span>ЮнитТестирование<span class="o">)</span> Экспорт
+
+    ЮТест <span class="o">=</span> ЮнитТестирование<span class="p">;</span>
+
+    ВсеТесты <span class="o">=</span> Новый Массив<span class="p">;</span>
+
+    ВсеТесты.Добавить<span class="o">(</span><span class="s2">"ТестДолжен_СложитьДваИДва"</span><span class="o">)</span><span class="p">;</span>
+
+
+    Возврат ВсеТесты<span class="p">;</span>
+
+КонецФункции
+//<span class="o">}</span>
+
+//<span class="o">{</span> ОСНОВНОЙ БЛОК
+
+//<span class="o">}</span> КОНЕЦ ОСНОВНОГО БЛОКА
+
+//<span class="o">{</span> БЛОК ЮНИТ-ТЕСТОВ - сами тесты
+
+Процедура ПередЗапускомТеста<span class="o">()</span> Экспорт
+    НачатьТранзакцию<span class="o">()</span><span class="p">;</span>
+КонецПроцедуры
+
+Процедура ПослеЗапускаТеста<span class="o">()</span> Экспорт
+    Если ТранзакцияАктивна<span class="o">()</span> Тогда
+        ОтменитьТранзакцию<span class="o">()</span><span class="p">;</span>
+    КонецЕсли<span class="p">;</span>
+КонецПроцедуры
+
+Процедура ТестДолжен_СложитьДваИДва<span class="o">()</span> Экспорт
+    ЮТест.ПроверитьРавенство<span class="o">(</span><span class="m">2</span> + 2, 4, <span class="s2">"2 + 2, 4"</span><span class="o">)</span><span class="p">;</span>
+КонецПроцедуры
+
+//<span class="o">}</span> КОНЕЦ БЛОКА ЮНИТ-ТЕСТОВ
+</pre></div></body></html>

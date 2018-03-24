@@ -1,0 +1,2 @@
+cd {{ add_jenkins_root }}
+java -Dfile.encoding=UTF-8 -jar slave.jar -jnlpUrl {{ add_jenkins_master }}/computer/{{ add_jenkins_slave_name }}/slave-agent.jnlp -secret {{add_jenkins_slave_secret}}

@@ -1,0 +1,45 @@
+---
+- name: Add a powershell module
+  win_psmodule:
+    name: Pscx
+    state: present
+    allow_clobber: True
+
+- name: install multiple packages
+  tags: choco
+  win_chocolatey:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+  - 7zip.install
+  - git
+  - 7zip
+  - visualstudiocode
+  - curl
+  - wget
+  - nssm
+  #- sourcetree
+  - gitextensions
+  - git-credential-manager-for-windows
+  - nircmd
+  - kdiff3
+
+- name: install irfanview
+  win_shell: choco install --yes --force --x86 irfanview
+
+- name: install multiple packages for behavior tests
+  tags: choco
+  win_chocolatey:
+    name: '{{ item }}'
+    state: latest
+  with_items:
+  - imagemagick.app
+  - jdk8
+  - sikulix
+
+
+- name: config git quotepath
+  win_shell: cmd /c git config --system core.quotepath false
+
+- name: config git longpaths
+  win_shell: cmd /c git config --system core.longpaths false

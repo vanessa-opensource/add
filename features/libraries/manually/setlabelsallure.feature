@@ -1,5 +1,6 @@
 @IgnoreOn82Builds
 @IgnoreOnOFBuilds
+@IgnoreOnCIMainBuild
 
 Функционал: Добавлять различные метки в отчет allure через вызов служебного шага
 	Как Разработчик я хочу добавить готовые шаги для установки уровня серьезности выполнения или ошибки фичи *Я устанавливаю severity 'blocker/critical/normal/'*

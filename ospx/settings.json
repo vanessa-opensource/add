@@ -1,0 +1,20 @@
+{
+    "root": "epf",
+    "include": [
+        "features",
+        "lib",
+        "plugins",
+        "tests",
+        "vendor"
+    ],
+    "opm_build": [
+        "features/libraries",
+        "lib/featurereader",
+        // "lib/TemplateEpfUF",
+        // "lib/TemplateEpf",
+        "lib/video",
+        "plugins",
+        "tests/smoke",
+        "vendor"
+    ]
+}
