@@ -1,7 +1,7 @@
 ﻿# ADD
 
 [![Открытый чат проекта https://gitter.im/silverbulleters/vanessa-behavoir](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/silverbulleters/vanessa-behavoir?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](http://ci.silverbulleters.org/buildStatus/icon?job=ADD test/develop)](http://ci.silverbulleters.org/job/ADD%20test/job/develop/)
+[![Build Status](http://ci.silverbulleters.org/buildStatus/icon?job=ADD%20test/develop)](http://ci.silverbulleters.org/job/ADD%20test/job/develop/)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/vanessa-services/localized.svg)](https://crowdin.com/project/vanessa-services)
 
 ## Tests/behavior (TDD & BDD) for 1С:Enterprise
