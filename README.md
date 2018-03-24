@@ -1,36 +1,68 @@
-﻿# vanessa-behavior
+﻿# ADD
 
 [![Открытый чат проекта https://gitter.im/silverbulleters/vanessa-behavoir](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/silverbulleters/vanessa-behavoir?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](http://ci.silverbulleters.org/buildStatus/icon?job=Vanessa-Behavior-Develop)](http://ci.silverbulleters.org/job/Vanessa-Behavior-Develop/)
+[![Build Status](http://ci.silverbulleters.org/buildStatus/icon?job=ADD test/develop)](http://ci.silverbulleters.org/job/ADD%20test/job/develop/)
 [![Crowdin](https://d322cqt584bo4o.cloudfront.net/vanessa-services/localized.svg)](https://crowdin.com/project/vanessa-services)
 
-## BDD for 1С:Enterprise
+## Tests/behavior (TDD & BDD) for 1С:Enterprise
 
-Текущий релиз в разделе  [Releases](https://github.com/silverbulleters/vanessa-behavior2/releases/latest)
+Продукт ADD (Automation Driven Development) есть набор инструментов для проверки качества решений на платформе 1С:Предприятие.
+
+ADD is a set of testing tools for 1C:Enterprise 8 platform (http://v8.1c.ru).
+
+Миссия продукта - повышение качества разработки.
+
+Продукт позволяет проверять поведение различных систем на базе 1С и проверяет/гарантирует качество функциональности системы и ее составных частей.
+
+Возможности:
+
++ различные виды тестирования (модульного/юнит, приемочного, сценарного для 1С 8.3, интеграционного, TDD)
++ проверка поведения (BDD/Gherkin)
++ формирование автодокументации в формате Markdown и видео.
+
+ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior).
+
+## Установка
+
+Текущий релиз в разделе  [Releases](https://github.com/silverbulleters/add/releases/latest)
 
 Ночная сборка ветки **develop**:
-1. [zip](http://ci.silverbulleters.org/job/vanessa-behavior2/job/develop/lastSuccessfulBuild/artifact/vanessa-behavior.zip) - `unzip -o ./vanessa-behavior.zip`
-2. [tar.gz](http://ci.silverbulleters.org/job/vanessa-behavior2/job/develop/lastSuccessfulBuild/artifact/vanessa-behavior.tar.gz) - `tar xfv ./vanessa-behavior.tar.gz`
+1. [7z](http://ci.silverbulleters.org/job/ADD%20test/job/develop/lastSuccessfulBuild/artifact/add.7z) - `unzip -o ./add.7z`
+2. [tar.gz](http://ci.silverbulleters.org/job/ADD%20test/job/develop/lastSuccessfulBuild/artifact/add.tar.gz) - `tar xfv ./add.tar.gz`
+
+Порядок установки ADD:
+
+Автоматическая установка (через установщик пакетов OneScript ):
+
++ Выполнить `opm install add`
++ После выполнения пакет будет установлен в каталог <УстановленныйOneScript>/lib/add 
+
+Автоматическая установка (при установке пакета vanessa-runner через установщик пакетов OneScript ):
+
++ Выполнить `opm install vanessa-runner`
++ После выполнения пакет будет установлен в каталог <УстановленныйOneScript>/lib/add 
+
+Ручная установка:
+
++ Перейти в [раздел релизы](https://github.com/silverbulleters/add/releases)
++ Скачать архив с последним стабильным релизом
++ Распаковать архив.
+
+Обязательно ознакомьтесь с:
+
++ руководством контрибьютора [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
++ моделью спонсорства [DONATIONS.md](./DONATIONS.md)
++ известные проблемы [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
 
 Проект использует принцип формирования автодокументации в формате Markdown и видео.
 * Markdown инструкции лежат [здесь](https://github.com/silverbulleters/vanessa-services/tree/master/ru-RU/behavior/Features) 
 * Видео инструкции лежат [здесь](https://www.youtube.com/channel/UC2mJ4LlMG-FF4qkc_kqN_iQ) 
 * Прочие инструкции сгруппированы [в этом плейлисте YouTube](https://www.youtube.com/playlist?list=PL2zlgf113YhFG_uRARjDtP1_Obj55UmY4) 
 * Также рекомендуется посмотреть вот [этот вебинар](http://infostart.ru/webinars/537546/) 
-* Возможно вам поможет [этот FAQ](https://github.com/silverbulleters/vanessa-behavior/blob/develop/F.A.Q.MD)
+* Возможно вам поможет [этот FAQ](https://github.com/silverbulleters/add/blob/develop/F.A.Q.MD)
 
-Чтобы у вас работало создание автовидеоинструкций необходимо установить дополнительный софт. Инструкция [здесь](https://github.com/silverbulleters/vanessa-behavior/blob/develop/MakeAutoVideo.md) 
+Чтобы у вас работало создание автовидеоинструкций необходимо установить дополнительный софт. Инструкция [здесь](https://github.com/silverbulleters/add/blob/develop/MakeAutoVideo.md) 
 Также по автовидеоинструкциям есть вот это замечательное [видео](https://www.youtube.com/watch?v=BfXowJH5uP0)
-
-Порядок установки Vanessa-Behavior:
-
-Перейти в [раздел релизы](https://github.com/silverbulleters/vanessa-behavior-new/releases) и скачать архив с последним стабильным релизом и распаковать архив. 
-
-Обязательно ознакомьтесь с:
-
-* руководством контрибьютора [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
-* моделью спонсорства [DONATIONS.md](./DONATIONS.md)
-* известные проблемы [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
 
 ## Описание простого использования
 
@@ -134,7 +166,7 @@
 
 ```
 {
-"КаталогФич": "C:\vanessa-behavior\features",
+"КаталогФич": "C:\add\features",
 "ВыполнитьСценарии": "Истина",
 "ДелатьОтчетВФорматеАллюр": "Истина",
 "КаталогOutputAllureБазовый": "C:\allurereport",
@@ -151,7 +183,7 @@
 Профиль запуска предназначен для простого консольного запуска, пример подобной командной строки выглядит так:
 
 ```
-%V83PATH% /Execute C:\vanessa-behavior\bddRunner.epf /C"StartFeaturePlayer;VBParams=C:\VBParams.json"
+%V83PATH% /Execute C:\add\bddRunner.epf /C"StartFeaturePlayer;VBParams=C:\VBParams.json"
 ```
 
 примеры запуска можно увидеть в соседнем репозитории [Vanessa Runner](https://github.com/silverbulleters/vanessa-runner/blob/master/tools/vanessa.bat)
