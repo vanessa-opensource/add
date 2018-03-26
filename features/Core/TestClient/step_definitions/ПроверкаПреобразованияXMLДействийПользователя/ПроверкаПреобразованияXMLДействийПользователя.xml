@@ -6,25 +6,27 @@
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
 				<xr:ObjectId>29d2f52d-0ed1-4254-a6bc-bbc6bc333ab1</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.ВТаблицеЯПерехожуКСтрокеСодержащейПодстроки" category="Object">
+			<xr:GeneratedType name="ExternalDataProcessorObject.ПроверкаПреобразованияXMLДействийПользователя" category="Object">
 				<xr:TypeId>503de865-4645-4496-b5dd-2e4a76236095</xr:TypeId>
 				<xr:ValueId>4d213f80-34d7-4f82-80f0-c17b4f80d887</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>ВТаблицеЯПерехожуКСтрокеСодержащейПодстроки</Name>
+			<Name>ПроверкаПреобразованияXMLДействийПользователя</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>В таблице я перехожу к строке содержащей подстроки</v8:content>
+					<v8:content>ПроверкаПреобразованияXMLДействийПользователя</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<DefaultForm>ExternalDataProcessor.ВТаблицеЯПерехожуКСтрокеСодержащейПодстроки.Form.Форма</DefaultForm>
+			<DefaultForm>ExternalDataProcessor.ПроверкаПреобразованияXMLДействийПользователя.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
 			<Form>Форма</Form>
+			<Template>Xml_1</Template>
+			<Template>Xml_1Сценарий</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
