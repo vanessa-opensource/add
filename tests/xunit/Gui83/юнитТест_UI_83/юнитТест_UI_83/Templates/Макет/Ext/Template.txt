@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<uilog xmlns:d1p1="http://v8.1c.ru/8.3/uilog">
+	<ClientApplicationWindow isMain="true">
+		<executeCommand url="e1cib/command/Обработка.ПоказатьГУИД.Команда.Открыть"/>
+	</ClientApplicationWindow>
+	<ClientApplicationWindow caption="Показать ГУИД">
+		<close/>
+	</ClientApplicationWindow>
+	<ClientApplicationWindow isMain="true">
+		<executeCommand url="e1cib/command/Справочник.ПростойСправочник.Команда.ОткрытьСписок"/>
+		<executeCommand url="e1cib/command/Обработка.ПоказатьГУИД.Команда.Открыть"/>
+	</ClientApplicationWindow>
+	<ClientApplicationWindow caption="Показать ГУИД">
+		<close/>
+	</ClientApplicationWindow>
+	<ClientApplicationWindow isMain="true">
+		<Form title="Простой справочник">
+			<activate/>
+		</Form>
+	</ClientApplicationWindow>
+</uilog>

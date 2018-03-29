@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<ExternalDataProcessor uuid="e5530449-dd2d-4841-821e-38808447be38">
+		<InternalInfo>
+			<xr:ContainedObject>
+				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
+				<xr:ObjectId>aad28daf-f05d-42da-9bf6-51e89ff6a46b</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:GeneratedType name="ExternalDataProcessorObject.Тест_КонвертацияТестов_в_версию4" category="Object">
+				<xr:TypeId>57ce6eef-6a19-4072-ac8d-1e182077323a</xr:TypeId>
+				<xr:ValueId>884bd83a-385d-4381-a7cd-4b51de43f593</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>Тест_КонвертацияТестов_в_версию4</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест конвертация тестов в версию 4</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<DefaultForm/>
+			<AuxiliaryForm/>
+		</Properties>
+		<ChildObjects>
+			<Template>БазовыйТест_v3</Template>
+			<Template>БазовыйТест_v3_Результат</Template>
+			<Template>БазовыйТест_v3_ДваТеста</Template>
+			<Template>БазовыйТест_v3_ДваТеста_Результат</Template>
+			<Template>БазовыйТест_v3_ДваТеста_ИКодВокруг</Template>
+			<Template>БазовыйТест_v3_ДваТеста_ИКодВокруг_Результат</Template>
+			<Template>ФайлСОднимТестом</Template>
+			<Template>ФайлСОднимТестомУФ</Template>
+			<Template>v8unpack</Template>
+			<Template>БазовыйТест_v3_УФ</Template>
+			<Template>БазовыйТест_v3_УФ_Результат</Template>
+			<Template>БазовыйТест_v3_УФ_ДвеКавычки</Template>
+			<Template>БазовыйТест_v3_УФ_ДвеКавычки_Результат</Template>
+			<Template>БазовыйТест_v3_УФ_ДваТеста</Template>
+			<Template>БазовыйТест_v3_УФ_ДваТеста_Результат</Template>
+			<Template>БазовыйТест_v3_УФ_ДваТеста_ИКодВокруг</Template>
+			<Template>БазовыйТест_v3_УФ_ДваТеста_ИКодВокруг_Результат</Template>
+			<Template>БазовыйТест_v3_ЕстьУтверждения</Template>
+			<Template>БазовыйТест_v3_ЕстьУтверждения_Результат</Template>
+			<Template>РазныйРегистр</Template>
+			<Template>РазныйРегистр_Результат</Template>
+			<Template>БазовыйТест_v3_ЕстьУтверждения_УФ</Template>
+			<Template>БазовыйТест_v3_ЕстьУтверждения_УФ_Результат</Template>
+		</ChildObjects>
+	</ExternalDataProcessor>
+</MetaDataObject>

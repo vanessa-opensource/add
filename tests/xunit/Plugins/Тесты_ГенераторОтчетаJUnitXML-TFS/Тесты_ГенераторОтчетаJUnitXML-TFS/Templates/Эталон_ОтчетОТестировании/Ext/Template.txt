@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="КонтейнерКорень" time="0" tests="4" failures="1" errors="1" disabled="1">
+	<testsuite name="Контейнер" tests="4">
+		<testcase classname="Контейнер" name="Отсутствующий метод" time="0.001" status="disabled">
+			<disabled/>
+		</testcase>
+		<testcase classname="Контейнер" name="МетодПадающийПоУтверждению" time="0.003" status="failure">
+			<failure message="{ВнешняяОбработка.xddTestRunner.МодульОбъекта(473)}: [Failed] БАБАХ!!!
+	ВызватьИсключение Префикс + &quot; &quot; + СообщениеОшибки;"/>
+		</testcase>
+		<testcase classname="Контейнер" name="МетодПадающийПоНеизвестнойОшибке" time="0.001" status="error">
+			<error message="{ВнешняяОбработка.Тесты_ГенераторОтчетаJUnitXML_TFS.МодульОбъекта(122)}: Ошибка!!!
+	ВызватьИсключение &quot;Ошибка!!!&quot;;"/>
+		</testcase>
+		<testcase classname="Контейнер" name="УспешныйМетод" time="0.001" status="passed"/>
+	</testsuite>
+</testsuites>
