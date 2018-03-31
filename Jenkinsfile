@@ -151,15 +151,18 @@ firsttasks["qa"] = {
                         echo "Анализ SonarQube не выполнен. Ветка ${env.BRANCH_NAME} не подходит по условию проверки веток!"
                         makeAnalyzis = false
                     }
-
-                    if (makeAnalyzis) {
-                        if (unix) {
-                            cmd(sonarcommand)
-                        } else {
-                            //echo "${sonarcommand}"
-                            bat "${sonarcommand}"
-                            //cmd(sonarcommand, unix)
+                    try {
+                        if (makeAnalyzis) {
+                            if (unix) {
+                                cmd(sonarcommand)
+                            } else {
+                                //echo "${sonarcommand}"
+                                bat "${sonarcommand}"
+                                //cmd(sonarcommand, unix)
+                            }
                         }
+                    } catch (e) {
+                        echo "sonar status : ${e}" 
                     }
         
                 //} catch (e) {
