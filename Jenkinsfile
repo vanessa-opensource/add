@@ -56,6 +56,7 @@ tasks["behavior video write"] = {
             ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
             {
                 checkout scm
+                cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
                 unstash "buildResults"
                 cmd "opm install"
                 cmd "opm list"
@@ -65,7 +66,7 @@ tasks["behavior video write"] = {
                 } catch (e) {
                     echo "behavior status : ${e}"
                 }
-                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/8310UF/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "video"
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/8310UF/**", name: "video"
             }
             // }
             
