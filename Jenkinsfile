@@ -42,10 +42,33 @@ builds.each{
                     cmd("7z a -ssw build${it}.7z ./build/ -xr!*.cfl", true)
                     archiveArtifacts "build${it}.7z"
                 }
-                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/8310UF/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "video"
             }
             // }
             }
+        }
+    }
+}
+
+tasks["behavior video write"] = {
+        node ("video") {
+            stage("behavior video") {
+            ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
+            {
+                checkout scm
+                unstash "buildResults"
+                cmd "opm install"
+                cmd "opm list"
+                cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
+                try{
+                    cmd "opm run vanessa all --tag video --settings ./tools/JSON/VBParams8310UF.json";
+                } catch (e) {
+                    echo "behavior status : ${e}"
+                }
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
+            }
+            // }
+            
         }
     }
 }
@@ -228,6 +251,7 @@ tasks["report"] = {
             builds.each{
                 unstash "${it}"
             }
+            unstash "video"
             unstash "xdd"
             try{
                 allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]

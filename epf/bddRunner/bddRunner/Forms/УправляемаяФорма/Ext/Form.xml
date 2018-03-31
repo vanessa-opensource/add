@@ -4402,6 +4402,11 @@
 														</Title>
 														<ExtendedTooltip name="КомандаСохранитьНастройки2РасширеннаяПодсказка" id="1619"/>
 													</Button>
+													<Button name="КаталогиБиблиотекОчистить" id="1780">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ОчиститьСтрокиВСпискеБиблиотек</CommandName>
+														<ExtendedTooltip name="КаталогиБиблиотекОчиститьРасширеннаяПодсказка" id="1781"/>
+													</Button>
 												</ChildItems>
 											</AutoCommandBar>
 											<ExtendedTooltip name="КаталогиБиблиотекРасширеннаяПодсказка" id="1297"/>
@@ -18472,6 +18477,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ВыполнитьКодНаКлиенте</Action>
+		</Command>
+		<Command name="ОчиститьСтрокиВСпискеБиблиотек" id="73">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Очистить строки в списке библиотек</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ОчиститьСтрокиВСпискеБиблиотек</Action>
 		</Command>
 	</Commands>
 </Form>
