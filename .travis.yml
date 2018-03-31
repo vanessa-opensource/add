@@ -3,9 +3,29 @@ sudo: required
 services:
   - docker
 
+addons:
+  apt:
+    packages:
+      # 7z is used for packaging (see before_deploy)
+      - p7zip-full
+
+
+cache:
+  directories:
+    - '$HOME/.m2/repository'
+    - '$HOME/.sonar/cache'
+    - '$HOME/docker'
+before_cache: 
+  # Save tagged docker images
+  - >
+    mkdir -p $HOME/docker && docker images -a --filter='dangling=false' --format '{{.Repository}}:{{.Tag}} {{.ID}}'
+    | xargs -n 2 -t sh -c 'test -e $HOME/docker/$1.tar.gz || docker save $0 | gzip -2 > $HOME/docker/$1.tar.gz'
+
+
 before_install:
+  - if [[ -d $HOME/docker ]]; then ls $HOME/docker/*.tar.gz | xargs -I {file} sh -c "zcat {file} | docker load"; fi
   # Fetch base image and build new container
-  - wget -nv --continue -O - $URL_TARCLIENT | xz -d | docker load
+  - docker images -a --filter=reference='onec32/client:8.3.10.2639' --format '{{.ID}}' || wget -nv --continue -O - $URL_TARCLIENT | xz -d | docker load
   #- wget --continue -O ./build/client32.tar.xz $URL_TARCLIENT
   #- xz -dc ./build/client32.tar.xz | docker load
   - docker pull wernight/ngrok
@@ -22,8 +42,10 @@ script:
   # Clean up
   - sudo docker stop "$(cat /tmp/container_id)"
   - sudo docker stop "$(cat /tmp/container_idngrok )"
-  - pushd ./build; sudo tar -czf ../vanessa-behavior.tar.gz ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd
-  - pushd ./build; sudo zip -r ../vanessa-behavior.zip ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd
+  - sudo 7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf
+  - sudo 7z a add.7z ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf
+  - sudo 7z a add.tar.gz add.tar
+  - sudo 7z a add.tar.bz2 add.tar
   
 
 notifications:
@@ -32,12 +54,15 @@ notifications:
 deploy:
   provider: releases
   api_key:
-    secure: "$APIPUBLISHKEY"
+    secure: "$GITHUB_OAUTH_TOKEN"
   file:
-    - "vanessa-behavior.tar.gz"
-    - "vanessa-behavior.zip"
-    - "vanessa-behavior-*.ospx"
+    - "add.tar.gz"
+    - "add.7z"
+    - "add-*.ospx"
+    - "add.tar.bz2"
   file_glob: "true" 
   skip_cleanup: true
   on:
     tags: true
+    branch: master
+
