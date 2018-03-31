@@ -42,7 +42,7 @@ builds.each{
                     cmd("7z a -ssw build${it}.7z ./build/ -xr!*.cfl", true)
                     archiveArtifacts "build${it}.7z"
                 }
-                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/8310UF/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "video"
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
             }
             // }
             }
@@ -65,7 +65,7 @@ tasks["behavior video write"] = {
                 } catch (e) {
                     echo "behavior status : ${e}"
                 }
-                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/8310UF/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "video"
             }
             // }
             
