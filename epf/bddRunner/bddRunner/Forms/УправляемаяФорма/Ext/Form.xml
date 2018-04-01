@@ -7603,8 +7603,12 @@
 																	<v8:content>İstisna listesi etiketleri</v8:content>
 																</v8:item>
 															</Title>
+															<ClearButton>true</ClearButton>
 															<ContextMenu name="СписокТеговИсключение1КонтекстноеМеню" id="222"/>
 															<ExtendedTooltip name="СписокТеговИсключение1РасширеннаяПодсказка" id="1363"/>
+															<Events>
+																<Event name="Clearing">СписокТеговИсключение1Очистка</Event>
+															</Events>
 														</InputField>
 														<InputField name="СписокТеговОтбор1" id="224">
 															<DataPath>Объект.СписокТеговОтбор</DataPath>
@@ -7690,6 +7694,7 @@
 																	<v8:content>Etiketler başlatmak için</v8:content>
 																</v8:item>
 															</Title>
+															<ClearButton>true</ClearButton>
 															<ContextMenu name="СписокТеговОтбор1КонтекстноеМеню" id="225"/>
 															<ExtendedTooltip name="СписокТеговОтбор1РасширеннаяПодсказка" id="1364"/>
 														</InputField>
