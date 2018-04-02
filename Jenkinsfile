@@ -49,6 +49,30 @@ builds.each{
         }
     }
 }
+
+tasks["behavior video write"] = {
+        node ("video") {
+            stage("behavior video") {
+            ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
+            {
+                checkout scm
+                cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
+                unstash "buildResults"
+                cmd "opm install"
+                cmd "opm list"
+                cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
+                try{
+                    cmd "opm run vanessa all --path ./build/features/Core/TestClient/  --tag video --settings ./tools/JSON/VBParams8310UF.json";
+                } catch (e) {
+                    echo "behavior status : ${e}"
+                }
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/8310UF/**", name: "video"
+            }
+            // }
+            
+        }
+    }
+}
 tasks["buildRelease"] = {
     node("slave"){
         stage("build release"){
@@ -127,15 +151,18 @@ firsttasks["qa"] = {
                         echo "Анализ SonarQube не выполнен. Ветка ${env.BRANCH_NAME} не подходит по условию проверки веток!"
                         makeAnalyzis = false
                     }
-
-                    if (makeAnalyzis) {
-                        if (unix) {
-                            cmd(sonarcommand)
-                        } else {
-                            //echo "${sonarcommand}"
-                            bat "${sonarcommand}"
-                            //cmd(sonarcommand, unix)
+                    try {
+                        if (makeAnalyzis) {
+                            if (unix) {
+                                cmd(sonarcommand)
+                            } else {
+                                //echo "${sonarcommand}"
+                                bat "${sonarcommand}"
+                                //cmd(sonarcommand, unix)
+                            }
                         }
+                    } catch (e) {
+                        echo "sonar status : ${e}" 
                     }
         
                 //} catch (e) {
@@ -228,6 +255,7 @@ tasks["report"] = {
             builds.each{
                 unstash "${it}"
             }
+            unstash "video"
             unstash "xdd"
             try{
                 allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
