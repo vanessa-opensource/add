@@ -1,0 +1,48 @@
+---
+- name: Установка сервера приложений 1с предприятия
+  hosts: appsrv-win
+ 
+  tasks:
+    - name: Создание учетной записи для службы сервера приложений
+      win_user:
+        name: usr1cv8
+        password: Pa$$w0rd
+        state: present
+        groups:
+          - Users
+
+    - name: Установка прав
+      win_user_right:
+        name: SeServiceLogonRight
+        users:
+        - '.\usr1cv8'
+        action: add
+
+
+    - name: Инсталляция дистрибутива
+      win_package: 
+        path: 'C:\vagrant\ansible\packadges\win64srv\1CEnterprise 8 Server (x86-64).msi'
+        arguments: TRANSFORMS=1049.mst INSTALLSRVRASSRVC=0
+        product_id: "5B45E100-2264-4E9A-AD67-B596DBBE2379"
+        state: present
+        
+
+    - name: Создаем службу для сервера приложений 1С
+      win_service:
+        name: 1C server 8.3.10.2466
+        path: 'C:\Program Files\1cv8\8.3.10.2466\bin\ragent.exe -srvc -agent -regport 1541 -port 1540'
+        display_name: 1C server 8.3.10.2466
+        username: .\usr1cv8
+        password: Pa$$w0rd
+        start_mode: auto
+        state: started
+
+    - name: Создаем службу для сервера удаленного администрирования
+      win_service:
+        name: 1C RAS server 8.3.10.2466
+        path: 'C:\Program Files\1cv8\8.3.10.2466\bin\ras.exe cluster --service'
+        display_name: 1C RAS server 8.3.10.2466
+        username: .\usr1cv8
+        password: Pa$$w0rd
+        start_mode: auto
+        state: started
