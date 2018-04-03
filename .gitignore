@@ -22,3 +22,5 @@ tools/ScreenShotsTest/
 *.tar.bz2
 *.tar
 allure-report/
+.vagrant
+tools/ansible/*.log

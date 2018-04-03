@@ -67,6 +67,7 @@
 * Для linux создаем sh файл с примером как указан в web 
 * Для windows создаем bat с такой же строкой, только с добавлением UTF-8 в параметрах ```java -Dfile.encoding=UTF-8 -jar slave.jar -jnlpUrl http://localhost:8484/computer/test/slave-agent.jnlp -secret 404de7b92b55b9663571bb91a4ca7110e147697b052cae99a0eada47a12fe70f ```
 
+Для автоматизации задачи настройки сборочной ноды подготовлено несколько сценариев (ролей) для системы управления конфигурациями [Ansible](http://docs.ansible.com/ansible/latest/index.html). Подробнее см. [ansible](../ansible/README.md)
 
 ## Создание задачи для запуска тестов
 
