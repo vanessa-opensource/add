@@ -23,4 +23,4 @@ tools/ScreenShotsTest/
 *.tar
 allure-report/
 .vagrant
-tools/ansible/*.log
+*.log

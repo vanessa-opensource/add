@@ -14,6 +14,9 @@
 sudo apt-add-repository ppa:ansible/ansible
 sudo apt-get update
 sudo apt-get install ansible
+sudo apt-get install python-pip git libffi-dev libssl-dev -y
+pip install pywinrm
+
 ```
 
 Также можно воспользоваться vagrant.
@@ -76,9 +79,13 @@ ssh-copy-id hostname|ip-adress
 
 
 
+
+
+
+
 Проверим что есть связь
 ```
-ansible web -m ping
+ansible test1 -m ping
 ```
 
 Проверим плейбук
