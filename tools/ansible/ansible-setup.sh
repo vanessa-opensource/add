@@ -10,4 +10,6 @@ if [ ! -f /etc/ansible/ansible.cfg ]; then
 
   /usr/bin/apt-get install ansible -y
 
+ sudo apt-get install python-pip git libffi-dev libssl-dev -y
+ pip install pywinrm
 fi
