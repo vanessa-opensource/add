@@ -61,39 +61,46 @@ ssh-copy-id hostname|ip-adress
 Для управления windows нодами ansible использует WinRM. Соответственно его необходимо корректно настроить.
 
 
+Проверяем, запущен ли WinRM:
+
+> winrm enumerate winrm/config/listener
+
+Если команда вернула пустой результат, необходимо включить WinRM следующей командой:
+
+> winrm quickconfig
+
+Система запросит подтверждение на создание прослушивателя и добавление правила в брандмауэр. Соглашаемся, введя Y
+
+Теперь запускаем от администратора обычную командную строку и вводим последовательно следующие 3 команды:
+
+> winrm set winrm/config/client/auth @{Basic="true"}
+
+> winrm set winrm/config/service/auth @{Basic="true"}
+
+> winrm set winrm/config/service @{AllowUnencrypted="true"}
 
 
+После этого нужно вписать имя хоста или его ip адрес в [инвентарный файл](inventories/local/hosts)
+
+А также заполнить следующие данные:
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Проверим что есть связь
+Проверим что есть связь:
 ```
 ansible test1 -m ping
+ansible test1 -m setup
 ```
 
-Проверим плейбук
+Проверим выполнение плейбука
 ```
-ansible-playbook playbooks/setup_web1c.yml --check
+ansible-playbook playbooks/setup-win-node-add.yml --check
 ```
 
 И применим его
 ```
-ansible-playbook playbooks/setup_web1c.yml
+ansible-playbook playbooks/setup-win-node-add.yml --check
 ```
+
+Общая схема работы плейбука такова:
+
+Ко всем хостам группа add следующие роли: windowsconfig choco oscript allure add
