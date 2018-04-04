@@ -8,8 +8,7 @@ if [ ! -f /etc/ansible/ansible.cfg ]; then
 
   /usr/bin/apt-get update
 
-  /usr/bin/apt-get install ansible -y
+  /usr/bin/apt-get install ansible python-pip git libffi-dev libssl-dev -y
 
- sudo apt-get install python-pip git libffi-dev libssl-dev -y
- pip install pywinrm
+  pip install pywinrm
 fi
