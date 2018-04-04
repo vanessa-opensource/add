@@ -130,12 +130,12 @@ jobs:
           branch: master
       - provider: script
         skip_cleanup: true
-        script: docker exec -it -v $(pwd):/work_dir onec32/client:${ONECVERSION} sh -c 'cd /work_dir; opm push --token $GITHUB_OAUTH_TOKEN --channel dev --file ./add-*.ospx; exit'
+        script: docker run -it -v $(pwd):/work_dir onec32/client:${ONECVERSION} sh -c 'cd /work_dir; opm push --token $GITHUB_OAUTH_TOKEN --channel dev --file ./add-*.ospx; exit'
         on:
           branch: develop
       - provider: script
         skip_cleanup: true
-        script: docker exec -it -v $(pwd):/work_dir onec32/client:${ONECVERSION} sh -c 'cd /work_dir; opm push --token $GITHUB_OAUTH_TOKEN --channel stable --file ./add-*.ospx; exit'
+        script: docker run -it -v $(pwd):/work_dir onec32/client:${ONECVERSION} sh -c 'cd /work_dir; opm push --token $GITHUB_OAUTH_TOKEN --channel stable --file ./add-*.ospx; exit'
         on:
           branch: master
           tags: true
