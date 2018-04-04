@@ -87,7 +87,7 @@ ssh-copy-id hostname|ip-adress
 
 Проверим что есть связь:
 ```
-ansible test1 -m ping
+ansible test1 -m win_ping
 ansible test1 -m setup
 ```
 
@@ -98,7 +98,7 @@ ansible-playbook playbooks/setup-win-node-add.yml --check
 
 И применим его
 ```
-ansible-playbook playbooks/setup-win-node-add.yml --check
+ansible-playbook playbooks/setup-win-node-add.yml
 ```
 
 Общая схема работы плейбука такова:
