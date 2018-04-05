@@ -8,13 +8,14 @@ def buildSerivceConf = ["836UF":"8.3.6", "837UF":"8.3.7", "838UF":"8.3.8", "839U
 builds = ["8310UF"]
 errorsStash = [:]
 paths = ["StepsRunner":"StepsRunner",
-    "StepsProgramming":"StepsProgramming",
+    //fixme до выяснения, почему зависает.
+    //"StepsProgramming":"StepsProgramming",
     "Core/FeatureLoad": "FeatureLoad",
-    "Core/FeatureReader": "FeatureReader",
+    //"Core/FeatureReader": "FeatureReader",
     "Core/FeatureWriter": "FeatureWriter",
-    "Core/OpenForm": "OpenForm",
-    "libraries": "libraries",
-    "Core/TestClients": "TestClients"
+    "Core/OpenForm": "OpenForm"//,
+    //"libraries": "libraries",
+    //"Core/TestClients": "TestClients"
     ]
 
 
