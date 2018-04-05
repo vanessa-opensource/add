@@ -285,7 +285,7 @@ tasks["report"] = {
                 currentBuild.result = 'UNSTABLE'
             }
             junit 'build/ServiceBases/junitreport/**/*.xml'
-            junit 'build/ServiceBases/junitreport/*.xml'
+            //junit 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
             
             //archiveArtifacts 'build/ServiceBases/allurereport/**'
