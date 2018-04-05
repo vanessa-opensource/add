@@ -57,6 +57,7 @@ tasks["behavior video write"] = {
             ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
             {
                 checkout scm
+                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
                 unstash "buildResults"
                 cmd "opm install"
@@ -79,6 +80,8 @@ tasks["buildRelease"] = {
     node("slave"){
         stage("build release"){
             checkout scm
+            cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
+            cleanWs(patterns: [[pattern: './.forbuild/**', type: 'INCLUDE']]);
             cleanWs(patterns: [[pattern: '*.ospx, add.tar.gz, add.tar.bz2, add.7z, add.tar', type: 'INCLUDE']])
             cmd "opm build ./"
             cmd "7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
@@ -96,6 +99,7 @@ tasks["xdd"] = {
     node("8310UF"){
         stage("xdd"){
                 checkout scm
+                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 unstash "buildResults"
                 cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
                 try{
