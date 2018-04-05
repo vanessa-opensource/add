@@ -7,47 +7,56 @@ def buildSerivceConf = ["836UF":"8.3.6", "837UF":"8.3.7", "838UF":"8.3.8", "839U
 //builds = ["836UF", "837UF", "838UF", "839UF", "8310UF"]
 builds = ["8310UF"]
 errorsStash = [:]
+paths = ["./features/StepsRunner/":"StepsRunner"
+    "StepsProgramming":"StepsProgramming",
+    "Core/FeatureLoad": "FeatureLoad",
+    "Core/FeatureReader": "FeatureReader",
+    "Core/FeatureWriter": "FeatureWriter",
+    "Core/OpenForm": "OpenForm",
+    "libraries": "libraries"
+    ]
+
 
 if (env.filterBuilds && env.filterBuilds.length() > 0 ) {
     println "filter build";
     builds = builds.findAll{it.contains(env.filterBuilds) || env.filterBuilds.contains(it)};
 }
-builds.each{
 
-    tasks["behavior ${it}"] = {
-        node ("${it}") {
-            stage("behavior ${it}") {
-            // steps {
-                // в среде Multibranch Pipeline Jenkins первращает имена веток в папки
-                // а для веток Gitflow вида release/* экранирует в слэш в %2F
-                //
-                // Поэтому, применяем костыль с кастомным workspace
-                // см. https://issues.jenkins-ci.org/browse/JENKINS-34564
-                //
-                // Jenkins под Windows постоянно добавляет в конец папки какую-то мусорную строку.
-                // Для этого отсекаем все, что находится после последнего дефиса
-                // см. https://issues.jenkins-ci.org/browse/JENKINS-40072
-            ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
-            {
+def behaviortask(build, path, suffix, version){
+    return {
+
+        node ("${build}") {
+            stage("behavior ${build} ${suffix}") {
+                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 checkout scm
                 unstash "buildResults"
-                cmd "opm install"
-                cmd "opm list"
-                cmd "opm run initib file --buildFolderPath ./build --v8version " + buildSerivceConf[it]
+               
                 try{
-                    cmd "opm run vanessa all --settings ./tools/JSON/VBParams${it}.json";
+                    cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
+                    //def pathreport = "Core/TestClient"
+                    withEnv(["VANESSA_JUNITPATH=./build/ServiceBases/junitreport/${path}", "VANESSA_JUNITPATH=./build/ServiceBases/cucumber/${path}"]) {
+                        echo "========= ${path} ====================="
+                        cmd "opm run vanessa all --path ./features/${path} --settings ./tools/JSON/VBParams${build}.json";
+                    }
                 } catch (e) {
-                    echo "behavior ${it} status : ${e}"
+                    echo "behavior ${build} ${path} ${suffix} status : ${e}"
                     sleep 61
-                    cmd("7z a -ssw build${it}.7z ./build/ -xr!*.cfl", true)
-                    archiveArtifacts "build${it}.7z"
+                    cmd("7z a -ssw build${build}${suffix}.7z ./build/ -xr!*.cfl", true)
+                    archiveArtifacts "build${build}${suffix}.7z"
                     currentBuild.result = 'UNSTABLE'
                 }
-                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
-            }
-            // }
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${build}/**, build/ServiceBases/cucumber/${suffix}/**, build/ServiceBases/junitreport/${suffix}/**", name: "${build}${suffix}"
             }
         }
+
+    }
+}
+
+builds.each{
+
+    build = it;
+    paths.each{
+        tasks["behavior ${build} ${it.value}"] = behaviortask(build, it.key, it.value, buildSerivceConf[build])
     }
 }
 
@@ -261,7 +270,10 @@ tasks["report"] = {
             cleanWs(patterns: [[pattern: 'build/ServiceBases/**', type: 'INCLUDE']]);
             unstash 'buildResults'
             builds.each{
-                unstash "${it}"
+                build = it;
+                paths.each{
+                    unstash "${build}${it.value}"
+                }
             }
             unstash "video"
             unstash "xdd"
@@ -271,7 +283,7 @@ tasks["report"] = {
                 echo "allure status : ${e}"
                 currentBuild.result = 'UNSTABLE'
             }
-            junit 'build/ServiceBases/junitreport/*.xml'
+            junit 'build/ServiceBases/junitreport/**/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
             
             //archiveArtifacts 'build/ServiceBases/allurereport/**'
