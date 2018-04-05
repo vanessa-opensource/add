@@ -7,14 +7,17 @@ def buildSerivceConf = ["836UF":"8.3.6", "837UF":"8.3.7", "838UF":"8.3.8", "839U
 //builds = ["836UF", "837UF", "838UF", "839UF", "8310UF"]
 builds = ["8310UF"]
 errorsStash = [:]
-paths = ["StepsRunner":"StepsRunner",
+paths = [ "StepsGenerator": "StepsGenerator",
+    "StepsRunner":"StepsRunner",
     "StepsProgramming":"StepsProgramming",
     "Core/FeatureLoad": "FeatureLoad",
     "Core/FeatureReader": "FeatureReader",
     "Core/FeatureWriter": "FeatureWriter",
     "Core/OpenForm": "OpenForm",
     "libraries": "libraries",
-    "Core/TestClients": "TestClients"
+    "Core/TestClient": "TestClient",
+    "Core/Translate": "Translate",
+    "Core/ExpectedSomething": "ExpectedSomething"
     ]
 
 
@@ -72,7 +75,7 @@ tasks["behavior video write"] = {
                 cmd "opm list"
                 cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
                 try{
-                    cmd "opm run vanessa all --path ./build/features/Core/TestClient/  --tag video --settings ./tools/JSON/VBParams8310UF.json";
+                    cmd "opm run vanessa all --path ./features/Core/TestClient/  --tag video --settings ./tools/JSON/VBParams8310UF.json";
                 } catch (e) {
                     echo "behavior status : ${e}"
                     currentBuild.result = 'UNSTABLE'
@@ -285,7 +288,7 @@ tasks["report"] = {
                 currentBuild.result = 'UNSTABLE'
             }
             junit 'build/ServiceBases/junitreport/**/*.xml'
-            junit 'build/ServiceBases/junitreport/*.xml'
+            //junit 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
             
             //archiveArtifacts 'build/ServiceBases/allurereport/**'
