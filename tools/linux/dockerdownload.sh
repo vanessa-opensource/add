@@ -11,7 +11,12 @@ if [[ -f ${HOME}/docker/onec32_client_${ONECVERSION}.tar.xz ]]; then
     echo "found"
 else
     echo "${HOME}/docker/onec32_client_${ONECVERSION}.tar.xz"
-    wget -nv --continue -O ${HOME}/docker/onec32_client_${ONECVERSION}.tar.xz $URL_TARCLIENT
+    if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then 
+        wget -nv --continue -O ${HOME}/docker/onec32_client_${ONECVERSION}.tar.xz http://bit.ly/2El7sy5    
+    fi
+    if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then 
+        wget -nv --continue -O ${HOME}/docker/onec32_client_${ONECVERSION}.tar.xz $URL_TARCLIENT
+    fi
 fi
 if [[ -z $dockerid ]]; then
     
