@@ -14,7 +14,7 @@ paths = ["StepsRunner":"StepsRunner",
     "Core/FeatureWriter": "FeatureWriter",
     "Core/OpenForm": "OpenForm",
     "libraries": "libraries",
-    "Core/TestClients": "TestClients"
+    "Core/TestClient": "TestClient"
     ]
 
 
