@@ -7,7 +7,8 @@ def buildSerivceConf = ["836UF":"8.3.6", "837UF":"8.3.7", "838UF":"8.3.8", "839U
 //builds = ["836UF", "837UF", "838UF", "839UF", "8310UF"]
 builds = ["8310UF"]
 errorsStash = [:]
-paths = [ "StepsGenerator": "StepsGenerator",
+paths = [ "Core/TestClient": "TestClient",
+    "StepsGenerator": "StepsGenerator",
     "StepsRunner":"StepsRunner",
     "StepsProgramming":"StepsProgramming",
     "Core/FeatureLoad": "FeatureLoad",
@@ -15,7 +16,6 @@ paths = [ "StepsGenerator": "StepsGenerator",
     "Core/FeatureWriter": "FeatureWriter",
     "Core/OpenForm": "OpenForm",
     "libraries": "libraries",
-    "Core/TestClient": "TestClient",
     "Core/Translate": "Translate",
     "Core/ExpectedSomething": "ExpectedSomething"
     ]
