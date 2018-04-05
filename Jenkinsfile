@@ -13,7 +13,8 @@ paths = ["StepsRunner":"StepsRunner",
     "Core/FeatureReader": "FeatureReader",
     "Core/FeatureWriter": "FeatureWriter",
     "Core/OpenForm": "OpenForm",
-    "libraries": "libraries"
+    "libraries": "libraries",
+    "Core/TestClients": "TestClients"
     ]
 
 
@@ -26,27 +27,25 @@ def behaviortask(build, path, suffix, version){
     return {
 
         node ("${build}") {
-            stage("behavior ${build} ${suffix}") {
+                echo "====== ${build} ${suffix} ====="
                 cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 checkout scm
                 unstash "buildResults"
                
                 try{
                     cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
-                    //def pathreport = "Core/TestClient"
                     withEnv(["VANESSA_JUNITPATH=./build/ServiceBases/junitreport/${path}", "VANESSA_JUNITPATH=./build/ServiceBases/cucumber/${path}"]) {
                         echo "========= ${path} ====================="
                         cmd "opm run vanessa all --path ./features/${path} --settings ./tools/JSON/VBParams${build}.json";
                     }
                 } catch (e) {
                     echo "behavior ${build} ${path} ${suffix} status : ${e}"
-                    sleep 61
+                    sleep 2
                     cmd("7z a -ssw build${build}${suffix}.7z ./build/ -xr!*.cfl", true)
                     archiveArtifacts "build${build}${suffix}.7z"
                     currentBuild.result = 'UNSTABLE'
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${build}/**, build/ServiceBases/cucumber/${suffix}/**, build/ServiceBases/junitreport/${suffix}/**", name: "${build}${suffix}"
-            }
         }
 
     }
@@ -115,7 +114,7 @@ tasks["xdd"] = {
                     cmd "opm run xdd";
                 } catch (e) {
                     echo "xdd ${it} status : ${e}"
-                    sleep 61
+                    sleep 2
                     cmd("7z a -ssw buildXDD.7z ./build/ -xr!*.cfl", true)
                     archiveArtifacts "buildXDD.7z"
                     currentBuild.result = 'UNSTABLE'
@@ -261,7 +260,9 @@ firsttasks["slave"] = {
 //}
 
 parallel firsttasks
-parallel tasks
+stage('tests'){
+    parallel tasks
+}
 
 tasks = [:]
 tasks["report"] = {
