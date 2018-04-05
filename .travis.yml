@@ -109,7 +109,6 @@ jobs:
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb http://oscript.io/downloads/night-build/onescript-engine_1.0.20_all.deb  && sudo dpkg -i /tmp/oscript.deb"
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install > /dev/null 2>&1 && sudo opm update -all > /dev/null 2>&1"
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm build ./"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm build ./"
       - sudo chown $USER -R ./
       - 7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/tests/smoke ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf
       - 7z a add.7z ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/tests/smoke/ .forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf
@@ -129,14 +128,14 @@ jobs:
         on:
           tags: true
           branch: master
-      - provider: script
-        skip_cleanup: true
-        script: docker run -it -e GITHUB_OAUTH_TOKEN -v $(pwd):/work_dir onec32/client:${ONECVERSION} sh -c 'cd /work_dir; opm push --token $GITHUB_OAUTH_TOKEN --channel dev --file ./add-*.ospx; exit'
-        on:
-          branch: develop
-      - provider: script
-        skip_cleanup: true
-        script: docker run -it -e GITHUB_OAUTH_TOKEN -v $(pwd):/work_dir onec32/client:${ONECVERSION} sh -c 'cd /work_dir; opm push --token $GITHUB_OAUTH_TOKEN --channel stable --file ./add-*.ospx; exit'
-        on:
-          branch: master
-          tags: true
+      #- provider: script
+      #  skip_cleanup: true
+      #  script: docker run -it -e GITHUB_OAUTH_TOKEN -v $(pwd):/work_dir onec32/client:${ONECVERSION} sh -c 'cd /work_dir; opm push --token $GITHUB_OAUTH_TOKEN --channel dev --file ./add-*.ospx; exit'
+      #  on:
+      #    branch: develop
+      #- provider: script
+      #  skip_cleanup: true
+      #  script: docker run -it -e GITHUB_OAUTH_TOKEN -v $(pwd):/work_dir onec32/client:${ONECVERSION} sh -c 'cd /work_dir; opm push --token $GITHUB_OAUTH_TOKEN --channel stable --file ./add-*.ospx; exit'
+      #  on:
+      #    branch: master
+      #    tags: true
