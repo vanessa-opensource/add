@@ -72,7 +72,7 @@ tasks["behavior video write"] = {
                 cmd "opm list"
                 cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
                 try{
-                    cmd "opm run vanessa all --path ./build/features/Core/TestClient/  --tag video --settings ./tools/JSON/VBParams8310UF.json";
+                    cmd "opm run vanessa all --path ./features/Core/TestClient/  --tag video --settings ./tools/JSON/VBParams8310UF.json";
                 } catch (e) {
                     echo "behavior status : ${e}"
                     currentBuild.result = 'UNSTABLE'
