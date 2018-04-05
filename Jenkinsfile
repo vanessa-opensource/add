@@ -12,7 +12,7 @@ paths = ["StepsRunner":"StepsRunner",
     "Core/FeatureLoad": "FeatureLoad",
     "Core/FeatureReader": "FeatureReader",
     "Core/FeatureWriter": "FeatureWriter",
-    "Core/OpenForm": "OpenForm"//,
+    "Core/OpenForm": "OpenForm",
     "libraries": "libraries",
     "Core/TestClients": "TestClients"
     ]
