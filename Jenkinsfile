@@ -41,6 +41,7 @@ builds.each{
                     sleep 61
                     cmd("7z a -ssw build${it}.7z ./build/ -xr!*.cfl", true)
                     archiveArtifacts "build${it}.7z"
+                    currentBuild.result = 'UNSTABLE'
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
             }
@@ -65,6 +66,7 @@ tasks["behavior video write"] = {
                     cmd "opm run vanessa all --path ./build/features/Core/TestClient/  --tag video --settings ./tools/JSON/VBParams8310UF.json";
                 } catch (e) {
                     echo "behavior status : ${e}"
+                    currentBuild.result = 'UNSTABLE'
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/8310UF/**", name: "video"
             }
@@ -84,6 +86,7 @@ tasks["buildRelease"] = {
             cmd "7z a add.tar.gz add.tar"
             cmd "7z a add.tar.bz2 add.tar"
             archiveArtifacts '*.ospx, add.tar.gz, add.tar.bz2, add.7z'
+            stash allowEmpty: false, includes: "*.ospx, add.tar.gz, add.tar.bz2, add.7z", name: "deploy"
 
         }
     }
@@ -102,6 +105,7 @@ tasks["xdd"] = {
                     sleep 61
                     cmd("7z a -ssw buildXDD.7z ./build/ -xr!*.cfl", true)
                     archiveArtifacts "buildXDD.7z"
+                    currentBuild.result = 'UNSTABLE'
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/xdd/**, build/ServiceBases/junitreport/**", name: "xdd"
         }
@@ -261,6 +265,7 @@ tasks["report"] = {
                 allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
             } catch (e) {
                 echo "allure status : ${e}"
+                currentBuild.result = 'UNSTABLE'
             }
             junit 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
@@ -276,6 +281,40 @@ tasks["report"] = {
 //}
 
 parallel tasks
+
+stage('Deploy') {
+    if (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
+        if (currentBuild.result == null || currentBuild.result == 'SUCCESS') {
+            def userInput;
+            try {
+                timeout(time: 1, unit: 'DAYS') { 
+                    userInput = input("Deploy ${env.BRANCH_NAME}?")
+                }
+            } catch (err) {
+                userInput = false;
+                echo "Aborted by: [${user}]"
+            }
+            if (userInput == true ) {
+                node("slave") {
+                    unstash "deploy"
+                    withCredentials([[$class: 'StringBinding', credentialsId: 'GITHUB_OAUTH_TOKEN_ADD', variable: 'GITHUB_OAUTH_TOKEN']]) {
+                        if(env.BRANCH_NAME == 'master'){
+                            echo "master "
+                            cmd("opm push --token $GITHUB_OAUTH_TOKEN --channel stable --file ./add-*.ospx")
+                            sh "echo $GITHUB_TOKEN"
+                        } else if (env.BRANCH_NAME == 'develop') {
+                            echo "develop"
+                            cmd("opm push --token $GITHUB_OAUTH_TOKEN --channel dev --file ./add-*.ospx")
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
 
 def cmd(command, status = false) {
     // TODO при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001
