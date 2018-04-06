@@ -7,7 +7,8 @@ def buildSerivceConf = ["836UF":"8.3.6", "837UF":"8.3.7", "838UF":"8.3.8", "839U
 //builds = ["836UF", "837UF", "838UF", "839UF", "8310UF"]
 builds = ["8310UF"]
 errorsStash = [:]
-paths = [ "StepsGenerator": "StepsGenerator",
+paths = [ "Core/TestClient": "TestClient",
+    "StepsGenerator": "StepsGenerator",
     "StepsRunner":"StepsRunner",
     "StepsProgramming":"StepsProgramming",
     "Core/FeatureLoad": "FeatureLoad",
@@ -15,7 +16,6 @@ paths = [ "StepsGenerator": "StepsGenerator",
     "Core/FeatureWriter": "FeatureWriter",
     "Core/OpenForm": "OpenForm",
     "libraries": "libraries",
-    "Core/TestClient": "TestClient",
     "Core/Translate": "Translate",
     "Core/ExpectedSomething": "ExpectedSomething"
     ]
@@ -37,7 +37,10 @@ def behaviortask(build, path, suffix, version){
                
                 try{
                     cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
-                    withEnv(["VANESSA_JUNITPATH=./build/ServiceBases/junitreport/${path}", "VANESSA_JUNITPATH=./build/ServiceBases/cucumber/${path}"]) {
+                    withEnv(["VANESSA_JUNITPATH=./ServiceBases/junitreport/${suffix}", "VANESSA_cucumberreportpath=./ServiceBases/cucumber/${suffix}"]) {
+                        //Маленький хак, переход в dir автоматом создает каталог и не надо писать кроссплатформенный mkdir -p 
+                        dir("build/ServiceBases/junitreport/${suffix}"){}
+                        dir("build/ServiceBases/cucumber/${suffix}"){}
                         echo "========= ${path} ====================="
                         cmd "opm run vanessa all --path ./features/${path} --settings ./tools/JSON/VBParams${build}.json";
                     }
@@ -70,6 +73,7 @@ tasks["behavior video write"] = {
                 checkout scm
                 cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
+                dir("build/ServiceBases/allurereport/8310UF"){}
                 unstash "buildResults"
                 cmd "opm install"
                 cmd "opm list"
