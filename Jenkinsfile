@@ -37,7 +37,7 @@ def behaviortask(build, path, suffix, version){
                
                 try{
                     cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
-                    withEnv(["VANESSA_JUNITPATH=./ServiceBases/junitreport/${suffix}", "VANESSA_JUNITPATH=./ServiceBases/cucumber/${suffix}"]) {
+                    withEnv(["VANESSA_JUNITPATH=./ServiceBases/junitreport/${suffix}", "VANESSA_cucumberreportpath=./ServiceBases/cucumber/${suffix}"]) {
                         //Маленький хак, переход в dir автоматом создает каталог и не надо писать кроссплатформенный mkdir -p 
                         dir("build/ServiceBases/junitreport/${suffix}"){}
                         dir("build/ServiceBases/cucumber/${suffix}"){}
