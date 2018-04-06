@@ -37,7 +37,10 @@ def behaviortask(build, path, suffix, version){
                
                 try{
                     cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
-                    withEnv(["VANESSA_JUNITPATH=./build/ServiceBases/junitreport/${path}", "VANESSA_JUNITPATH=./build/ServiceBases/cucumber/${path}"]) {
+                    withEnv(["VANESSA_JUNITPATH=./build/ServiceBases/junitreport/${suffix}", "VANESSA_JUNITPATH=./build/ServiceBases/cucumber/${suffix}"]) {
+                        //Маленький хак, переход в dir автоматом создает каталог и не надо писать кроссплатформенный mkdir -p 
+                        dir("build/ServiceBases/junitreport/${suffix}"){}
+                        dir("build/ServiceBases/cucumber/${suffix}"){}
                         echo "========= ${path} ====================="
                         cmd "opm run vanessa all --path ./features/${path} --settings ./tools/JSON/VBParams${build}.json";
                     }
@@ -70,6 +73,7 @@ tasks["behavior video write"] = {
                 checkout scm
                 cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
+                dir("build/ServiceBases/allurereport/8310UF"){}
                 unstash "buildResults"
                 cmd "opm install"
                 cmd "opm list"
