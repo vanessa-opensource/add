@@ -20,7 +20,7 @@ ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1c.ru).
 + проверка поведения (BDD/Gherkin)
 + формирование автодокументации в формате Markdown и видео.
 
-ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior).
+ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior). Совместимость с VB 1.Х и xUnitFor1C 4.Х гарантирована.
 
 ## Установка
 

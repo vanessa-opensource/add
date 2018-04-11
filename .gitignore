@@ -21,3 +21,4 @@ tools/ScreenShotsTest/
 *.tar.gz
 *.tar.bz2
 *.tar
+allure-report/

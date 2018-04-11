@@ -4,6 +4,7 @@
 @IgnoreOnOFBuilds
 @IgnoreOnWeb
 @IgnoreIfNotIrfanView
+@IgnoreOnLinux
 
 
 
@@ -15,7 +16,7 @@
 
 
 Контекст: 
-	Дано Я запускаю сценарий открытия TestClient или подключаю уже существующий
+	Дано Я запускаю сценарий открытия TestClient или подключаю уже существующий с закрытием всех окон кроме "* Vanessa behavior"
 
 Сценарий: Проверка отчета Markdown
 	Когда Я открываю VanessaBehavior в режиме TestClient

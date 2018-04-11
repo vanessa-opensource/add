@@ -46,7 +46,8 @@
         "IgnoreOnCIMainBuild",
         "IgnoreOn8310",
         "IgnoreOnUFBuilds",
-        "Ignore"
+        "Ignore",
+	"Video"
     ],
     "ДополнительныеПараметры": {
         "КаталогФичДляVBManager": "$workspaceRoot/./features"
