@@ -1,5 +1,6 @@
 ﻿{
-   "ИмяСборки":"839UF",
+  "$schema":"https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/behavior-schema.json",
+  "ИмяСборки":"839UF",
    "ВерсияПлатформы":"8.3.9",
    "ВыводитьСообщенияВФайл": "./ServiceBases/Messages 8.3.9 UF.txt",
    "КаталогПоискаВерсииПлатформы":"C:\Program Files (x86)\1cv8",

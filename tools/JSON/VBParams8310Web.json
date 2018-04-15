@@ -1,5 +1,6 @@
 ﻿{
-   "ИмяСборки":"8310web",
+  "$schema":"https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/behavior-schema.json",
+  "ИмяСборки":"8310web",
    "ВерсияПлатформы":"8.3.10",
    "ВыводитьСообщенияВФайл": "./ServiceBases/Messages 8.3.10 Web.txt",
    "КаталогПоискаВерсииПлатформы":"C:\Program Files (x86)\1cv8",

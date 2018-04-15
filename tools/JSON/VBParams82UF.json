@@ -1,4 +1,5 @@
 ﻿{
+    "$schema":"https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/behavior-schema.json",
    "ИмяСборки":"82UF",
    "ВерсияПлатформы":"8.2",
    "КаталогПоискаВерсииПлатформы":"C:\Program Files (x86)\1cv82",
