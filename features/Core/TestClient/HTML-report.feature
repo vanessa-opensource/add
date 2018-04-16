@@ -4,6 +4,7 @@
 @IgnoreOnOFBuilds
 @IgnoreOnWeb
 @IgnoreIfNotIrfanView
+@IgnoreOnLinux
 
 
 

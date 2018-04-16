@@ -6,4 +6,4 @@
 -
 -
 
-@silverbulleters/collaborator - просьба прокомментировать и проверить
+@silverbulleters/Collaborators - просьба прокомментировать и проверить

@@ -24,3 +24,4 @@ tools/ScreenShotsTest/
 allure-report/
 .vagrant
 *.log
+tools/JSON/env.json.file
