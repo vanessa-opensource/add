@@ -16,5 +16,8 @@
         "plugins",
         "tests/smoke",
         "vendor"
+    ],
+    "opm_build_exclude": [
+        "features/libraries/VB"
     ]
 }
