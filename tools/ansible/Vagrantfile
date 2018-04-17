@@ -1,0 +1,34 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+VAGRANTFILE_API_VERSION = "2"
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.ssh.private_key_path = ["keys/vagrant", "~/.vagrant.d/insecure_private_key"]
+  config.ssh.insert_key = false 
+  config.vm.box = "bessonovevgen/ubuntu-server-16"
+  # config.vm.box = "ubuntu/xenial64"
+  # config.vm.box_url = "https://atlas.hashicorp.com/ubuntu/boxes/trusty64"
+
+  if Vagrant.has_plugin?("vagrant-timezone")
+    config.timezone.value = "Russian Standard Time"
+  end
+
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--memory", 512]
+  end
+  
+  config.vm.define :ansible do |ansible|
+    ansible.vm.hostname = 'ansible'
+    ansible.vm.provider "virtualbox" do |ansible|
+      ansible.name = "ansible"
+    end
+    ansible.vm.network :private_network, ip: "172.28.33.13"
+    ansible.vm.provision "file", source: "keys/vagrant.pub", destination: "~/.ssh/authorized_keys"
+    ansible.vm.provision "file", source: "keys/vagrant", destination: "~/.ssh/id_rsa"
+    ansible.vm.provision "shell",
+      inline: "chmod 500 /home/vagrant/.ssh/id_rsa"
+    ansible.vm.provision :shell, :path => "ansible-setup.sh"
+  end
+
+end

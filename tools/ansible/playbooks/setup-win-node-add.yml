@@ -1,0 +1,9 @@
+---
+- name: Установка инструментов на сборочную ноду Windows
+  hosts: add
+  roles:
+    - windowsconfig
+    - choco
+    - oscript
+    - allure
+    - add
