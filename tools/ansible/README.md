@@ -30,7 +30,7 @@ cd /vagrant
 
 TODO Набор файлов для Ansible
 
-``` 
+```bash
 ansible.cfg - главный конфиг файл
 inventory - файл с перечислением управляемых хостов
 logs - каталог с логами выполнения задач
@@ -105,6 +105,31 @@ ansible-playbook playbooks/setup-win-node-add.yml --check
 ansible-playbook playbooks/setup-win-node-add.yml
 ```
 
-Общая схема работы плейбука такова:
+Для выполнения только некоторых шагов есть возможность использовать параметры `--tags` и `--skip-tags`
+
+``` bash
+ansible-playbook playbooks/setup-win-node-add.yml --tags "oscript"
+```
+
+Выполнятся только задачи с тегом oscript
+
+``` bash
+ansible-playbook playbooks/setup-win-node-add.yml --skip-tags "oscript"
+```
+
+Выполнятся все задачи кроме тех у которых указан тег oscript.
+
+Список используемых тегов:
+
+    allure
+    choco
+    registry
+    services
+    users
+    vlc
+    vnc
+    winconfig
+
+### Общая схема работы плейбука
 
 Ко всем хостам группа add следующие роли: windowsconfig choco oscript allure add
