@@ -1,15 +1,15 @@
 
-                            vanessa-behavior
+                                   ADD
                             =================
 
-Please visit the vanessa-behavior web site for more information:
+Please visit the ADD web site for more information:
 
-  * https://github.com/silverbulleters/vanessa-behavior
+  * https://github.com/silverbulleters/add
 
-Copyright 2014 The SilverBulleters, LLC
+Copyright 2017 The SilverBulleters, LLC
 
-The Vanessa-behavior Project licenses this file to you under the BSD License,
-version 3.0 (the "License"); you may not use this file except in compliance
+The Vanessa-behavior Project licenses this file to you under the Mozilla Public License,
+version 2.0 (the "License"); you may not use this file except in compliance
 with the License. You may obtain a copy of the License at:
 
    license/LICENSE.txt
