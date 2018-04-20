@@ -12,6 +12,7 @@
   - ffmpeg
 
 - name: install irfanview 
+  tags: choco
   win_chocolatey:
     name: irfanview
     state: latest
