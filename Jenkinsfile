@@ -31,6 +31,7 @@ def behaviortask(build, path, suffix, version){
 
         node ("${build}") {
                 echo "====== ${build} ${suffix} ====="
+                sleep 5
                 cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 checkout scm
                 unstash "buildResults"
