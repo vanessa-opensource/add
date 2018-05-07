@@ -316,9 +316,9 @@ builds.each{
 parallel firsttasks
 
 // parallel buildtasks
-// stage('build'){
-//     initbuildtask("8310UF", "8.3.10")
-// }
+stage('build'){
+    initbuildtask("8310UF", "8.3.10")
+}
 
 stage('tests'){
     parallel tasks
