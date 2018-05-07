@@ -62,6 +62,7 @@ def initbuildtask(build, version){
     return {
 
         node ("${build}") {
+            stage('build'){
                 echo "====== initbuildtask ${build} ====="
                 sleep 5
                 cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
@@ -86,6 +87,7 @@ def initbuildtask(build, version){
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${build}/**", name: "${build}"
                 // stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${build}/**, build/ServiceBases/cucumber/${suffix}/**, build/ServiceBases/junitreport/${suffix}/**", name: "${build}${suffix}"
+            }
         }
 
     }
@@ -313,9 +315,7 @@ builds.each{
 
 parallel firsttasks
 
-stage('build'){
-    parallel buildtasks
-}
+parallel buildtasks
 
 stage('tests'){
     parallel tasks
