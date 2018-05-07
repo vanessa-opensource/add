@@ -31,13 +31,9 @@ def behaviortask(build, path, suffix, version){
 
         node ("${build}") {
                 echo "====== ${build} ${suffix} ====="
-                // sleep 5
-                // cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
-                // checkout scm
                 unstash "buildResults"
                
                 try{
-                    // cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
                     withEnv(["VANESSA_JUNITPATH=./ServiceBases/junitreport/${suffix}", "VANESSA_cucumberreportpath=./ServiceBases/cucumber/${suffix}"]) {
                         //Маленький хак, переход в dir автоматом создает каталог и не надо писать кроссплатформенный mkdir -p 
                         dir("build/ServiceBases/junitreport/${suffix}"){}
@@ -71,13 +67,6 @@ def initbuildtask(build, version){
                
                 try{
                     cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
-                    // withEnv(["VANESSA_JUNITPATH=./ServiceBases/junitreport/${suffix}", "VANESSA_cucumberreportpath=./ServiceBases/cucumber/${suffix}"]) {
-                    //     //Маленький хак, переход в dir автоматом создает каталог и не надо писать кроссплатформенный mkdir -p 
-                    //     dir("build/ServiceBases/junitreport/${suffix}"){}
-                    //     dir("build/ServiceBases/cucumber/${suffix}"){}
-                    //     echo "========= ${path} ====================="
-                    //     cmd "opm run vanessa all --path ./features/${path} --settings ./tools/JSON/VBParams${build}.json";
-                    // }
                 } catch (e) {
                     echo "init behavior ${build} status : ${e}"
                     sleep 2
@@ -86,7 +75,6 @@ def initbuildtask(build, version){
                     currentBuild.result = 'UNSTABLE'
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${build}/**", name: "${build}"
-                // stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${build}/**, build/ServiceBases/cucumber/${suffix}/**, build/ServiceBases/junitreport/${suffix}/**", name: "${build}${suffix}"
             }
         }
 
@@ -149,10 +137,7 @@ tasks["buildRelease"] = {
 tasks["xdd"] = {
     node("8310UF"){
         stage("xdd"){
-                // checkout scm
-                // cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 unstash "buildResults"
-                // cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
                 try{
                     cmd "opm run xdd";
                 } catch (e) {
