@@ -31,13 +31,9 @@ def behaviortask(build, path, suffix, version){
 
         node ("${build}") {
                 echo "====== ${build} ${suffix} ====="
-                sleep 5
-                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
-                checkout scm
                 unstash "buildResults"
                
                 try{
-                    cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
                     withEnv(["VANESSA_JUNITPATH=./ServiceBases/junitreport/${suffix}", "VANESSA_cucumberreportpath=./ServiceBases/cucumber/${suffix}"]) {
                         //Маленький хак, переход в dir автоматом создает каталог и не надо писать кроссплатформенный mkdir -p 
                         dir("build/ServiceBases/junitreport/${suffix}"){}
@@ -53,6 +49,33 @@ def behaviortask(build, path, suffix, version){
                     currentBuild.result = 'UNSTABLE'
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${build}/**, build/ServiceBases/cucumber/${suffix}/**, build/ServiceBases/junitreport/${suffix}/**", name: "${build}${suffix}"
+        }
+
+    }
+}
+
+def initbuildtask(build, version){
+    return {
+
+        node ("${build}") {
+            stage('build'){
+                echo "====== initbuildtask ${build} ====="
+                sleep 5
+                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
+                checkout scm
+                unstash "buildResults"
+               
+                try{
+                    cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
+                } catch (e) {
+                    echo "init behavior ${build} status : ${e}"
+                    sleep 2
+                    cmd("7z a -ssw build${build}.7z ./build/ -xr!*.cfl", true)
+                    archiveArtifacts "build${build}.7z"
+                    currentBuild.result = 'UNSTABLE'
+                }
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${build}/**", name: "${build}"
+            }
         }
 
     }
@@ -114,10 +137,7 @@ tasks["buildRelease"] = {
 tasks["xdd"] = {
     node("8310UF"){
         stage("xdd"){
-                checkout scm
-                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 unstash "buildResults"
-                cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
                 try{
                     cmd "opm run xdd";
                 } catch (e) {
@@ -131,7 +151,9 @@ tasks["xdd"] = {
         }
     }
 }
+
 firsttasks=[:]
+
 firsttasks["qa"] = {
     node("slave"){
         stage ("sonar QA"){
@@ -217,6 +239,15 @@ firsttasks["slave"] = {
     }
 }
 
+buildtasks=[:]
+
+builds.each{
+
+    build = it;
+    buildtasks["init behavior-xdd ${build}"] = initbuildtask(build, buildSerivceConf[build])
+
+}
+
 // TODO добавить установку правильного движка, например, через ovm и включить задачу linuxbuild
 // firsttasks["linuxbuild"] = {
 // node("slavelinux"){
@@ -268,6 +299,9 @@ firsttasks["slave"] = {
 //}
 
 parallel firsttasks
+
+parallel buildtasks
+
 stage('tests'){
     parallel tasks
 }
