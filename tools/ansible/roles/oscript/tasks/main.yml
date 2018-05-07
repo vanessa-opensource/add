@@ -26,6 +26,13 @@
     dest: C:\1c\install\oscript-setup-latest.exe
   when: not wgetdownload
 
+- name: Download v8unpack.exe
+  tags: oscript
+  win_get_url:
+    url: https://ci.appveyor.com/api/projects/dmpas/v8unpack/artifacts/Release%2Fv8unpack.exe?branch=master
+    dest: C:\Program Files (x86)\OneScript\bin\v8unpack.exe
+  when: not wgetdownload
+
 - name: Download wget oscript to specified path latest
   tags: oscript
   win_shell: cmd /c wget -c -O oscript-setup-latest.exe http://oscript.io/downloads/latest/exe
@@ -39,6 +46,14 @@
   win_shell: cmd /c wget -c -O oscript-setup.exe http://oscript.io/downloads/night-build/exe
   args:
     chdir: "C:\\1c\\install\\"
+    executable: cmd
+  when: wgetdownload
+
+- name: Download wget v8unpack.exe
+  tags: oscript
+  win_shell: cmd /c wget -c -O v8unpack.exe https://ci.appveyor.com/api/projects/dmpas/v8unpack/artifacts/Release%2Fv8unpack.exe?branch=master
+  args:
+    chdir: "C://Program Files (x86)//OneScript//bin//"
     executable: cmd
   when: wgetdownload
 
