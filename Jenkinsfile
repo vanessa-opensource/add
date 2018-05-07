@@ -315,10 +315,7 @@ builds.each{
 
 parallel firsttasks
 
-// parallel buildtasks
-stage('build'){
-    initbuildtask("8310UF", "8.3.10")
-}
+parallel buildtasks
 
 stage('tests'){
     parallel tasks
