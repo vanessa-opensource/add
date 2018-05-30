@@ -4,7 +4,13 @@
         "--ibconnection": "/F./build/ibservice",
         "--db-user": "",
         "--db-pwd": "",
-        "--ordinaryapp": "0"
+        "--ordinaryapp": "-1"
+    },
+    "vanessa": {
+        "--vanessasettings": "./tools/JSON/VBParams8310UF.json",
+        "--workspace": ".",
+        "--pathvanessa": "./bddRunner.epf",
+        "--additional": "/DisplayAllFunctions /Lru /iTaxi"
     },
     "xunit": {
         "--xddConfig": "./tools/JSON/xUnitParams.json",
