@@ -2,7 +2,7 @@
 - win_region:
     format: ru-RU
     unicode_language: ru-RU
-    location: 241
+    location: "{{ win_location }}"
     copy_settings: True
   register: result
 
