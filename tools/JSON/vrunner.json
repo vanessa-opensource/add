@@ -6,12 +6,18 @@
         "--db-pwd": "",
         "--ordinaryapp": "0"
     },
+    "vanessa": {
+        "--vanessasettings": "./tools/JSON/VBParams.json",
+        "--workspace": ".",
+        "--pathvanessa": "bddRunner.epf",
+        "--additional": "/DisplayAllFunctions /Lru /iTaxi"
+    },
     "xunit": {
         "--xddConfig": "./tools/JSON/xUnitParams.json",
         "testsPath": "tests",
         "--reportsxunit": "ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXML{build/allure/allure-testsuite.xml}",
         "--xddExitCodePath": "build/xddExitCodePath.txt",
         "--pathxunit": "xddTestRunner.epf",
-        "--additional": "/DisplayAllFunctions /L ru"
+        "--additional": "/DisplayAllFunctions /Lru ",
     }
 }
