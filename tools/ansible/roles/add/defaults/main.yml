@@ -1,6 +1,6 @@
 add_vnc_password: hex:11,61,5C,69,CD,04,05,45
 add_user: vagrant
-add_password: vagrant
+add_password: Q1w2e3r4
 add_user_group: Администраторы
 add_jenkins_slave_name: "test" 
 add_jenkins_root: c:\j
