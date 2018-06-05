@@ -1,2 +1,3 @@
 add_jenkins_slave_secret: 421ba797470b5dd8632bbc60dc52205a414efe7cb7e4aa249902ac3950adabb8
 add_jenkins_slave_name: Fashion
+win_location: 241

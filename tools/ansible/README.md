@@ -132,4 +132,12 @@ ansible-playbook playbooks/setup-win-node-add.yml --skip-tags "oscript"
 
 ### Общая схема работы плейбука
 
-Ко всем хостам группа add следующие роли: windowsconfig choco oscript allure add
+Ко всем хостам группы add следующие роли: windowsconfig choco oscript allure add
+
+### Последовательность работы
+
+- На Jenkins мастере создать новую ноду
+- Внести изменения в файл hosts
+- Создать в папке `group_vars` файл в соответствии с именем ноды
+- В созданном файле заполнить значение переменной `add_jenkins_slave_name`
+- При необходимости переопределить значения переменных которые определены в `all`

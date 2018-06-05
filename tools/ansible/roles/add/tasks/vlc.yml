@@ -27,7 +27,7 @@
 
 - name: Download wget vlc to specified path latest
   tags: vlc
-  win_shell: cmd /c wget -c -O vlc-2.1.5-win32.exe https://get.videolan.org/vlc/2.1.5/win32/vlc-2.1.5-win32.exe
+  win_shell: cmd /c wget -c --no-check-certificate -O vlc-2.1.5-win32.exe https://get.videolan.org/vlc/2.1.5/win32/vlc-2.1.5-win32.exe
   args:
     chdir: "C:\\1c\\install\\"
     executable: cmd

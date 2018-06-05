@@ -5,3 +5,5 @@ ansible_connection: winrm
 ansible_winrm_server_cert_validation: ignore
 ansible_winrm_scheme: http
 ansible_winrm_transport: basic
+add_jenkins_master: https://ci.jenkins.io
+win_location: 203
