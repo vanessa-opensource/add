@@ -7,7 +7,7 @@
 
 - name: Download wget allure to specified path latest
   tags: allure
-  win_shell: cmd /c wget -c -O allure.zip https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.4.1/allure-2.4.1.zip
+  win_shell: cmd /c wget -c --no-check-certificate -O allure.zip https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.4.1/allure-2.4.1.zip
   args:
     chdir: "C:\\1c\\install\\"
     executable: cmd

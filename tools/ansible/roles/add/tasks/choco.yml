@@ -10,6 +10,7 @@
   - sikulix
   - tigervnc
   - ffmpeg
+  - far
 
 - name: install irfanview 
   tags: choco
