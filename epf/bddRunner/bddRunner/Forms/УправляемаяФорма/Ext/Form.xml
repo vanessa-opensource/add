@@ -43,7 +43,6 @@
 							<v8:content>Функциональность закладки</v8:content>
 						</v8:item>
 					</ToolTip>
-					<PagesRepresentation>TabsOnRightHorizontal</PagesRepresentation>
 					<ExtendedTooltip name="ФункциональностьЗакладкиРасширеннаяПодсказка" id="1261"/>
 					<ChildItems>
 						<Page name="ГруппаЗапускТестов" id="44">
@@ -4406,6 +4405,93 @@
 														<Type>CommandBarButton</Type>
 														<CommandName>Form.Command.ОчиститьСтрокиВСпискеБиблиотек</CommandName>
 														<ExtendedTooltip name="КаталогиБиблиотекОчиститьРасширеннаяПодсказка" id="1781"/>
+													</Button>
+													<Button name="ДобавитьИзвестныйШаг1" id="1782">
+														<Type>CommandBarButton</Type>
+														<CommandName>Form.Command.ДобавитьИзвестныйШаг</CommandName>
+														<Title>
+															<v8:item>
+																<v8:lang>ru</v8:lang>
+																<v8:content>Добавить известный шаг</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Known steps</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>am</v8:lang>
+																<v8:content>ያክሉ የታወቀ ደረጃ</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>az</v8:lang>
+																<v8:content>Əlavə tanınan addım</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>bg</v8:lang>
+																<v8:content>Добави известен стъпка</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>et</v8:lang>
+																<v8:content>Lisa tuntud samm</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>fr</v8:lang>
+																<v8:content>Ajouter le célèbre étape</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ka</v8:lang>
+																<v8:content>რჩეულებში ცნობილია ნაბიჯი</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>de</v8:lang>
+																<v8:content>Hinzufügen der berühmte Schritt</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>hu</v8:lang>
+																<v8:content>Adjunk hozzá egy ismert lépés</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>it</v8:lang>
+																<v8:content>Aggiungere il famoso passo</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>lv</v8:lang>
+																<v8:content>Pievienot zināms solis</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>lt</v8:lang>
+																<v8:content>Pridėti žinomas žingsnis</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>mn</v8:lang>
+																<v8:content>Нэмэх нь мэдэгдэж алхам</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>pl</v8:lang>
+																<v8:content>Dodaj znany krok</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>ro</v8:lang>
+																<v8:content>Adauga cunoscut pas</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>sl</v8:lang>
+																<v8:content>Dodajanje znan korak</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>es</v8:lang>
+																<v8:content>Agregar el famoso paso</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>sv</v8:lang>
+																<v8:content>Lägg till en känd steg</v8:content>
+															</v8:item>
+															<v8:item>
+																<v8:lang>tr</v8:lang>
+																<v8:content>Eklemek ünlü adım</v8:content>
+															</v8:item>
+														</Title>
+														<ExtendedTooltip name="ДобавитьИзвестныйШаг1РасширеннаяПодсказка" id="1783"/>
 													</Button>
 												</ChildItems>
 											</AutoCommandBar>
