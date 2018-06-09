@@ -8764,6 +8764,12 @@
 													<ContextMenu name="ТаймаутЗапуска1СКонтекстноеМеню" id="1673"/>
 													<ExtendedTooltip name="ТаймаутЗапуска1СРасширеннаяПодсказка" id="1674"/>
 												</InputField>
+												<InputField name="ТаймаутДляАсинхронныхШагов" id="1784">
+													<DataPath>Объект.ТаймаутДляАсинхронныхШагов</DataPath>
+													<AutoMaxWidth>false</AutoMaxWidth>
+													<ContextMenu name="ТаймаутДляАсинхронныхШаговКонтекстноеМеню" id="1785"/>
+													<ExtendedTooltip name="ТаймаутДляАсинхронныхШаговРасширеннаяПодсказка" id="1786"/>
+												</InputField>
 												<InputField name="КоличествоСекундПоискаОкна" id="1770">
 													<DataPath>Объект.КоличествоСекундПоискаОкна</DataPath>
 													<AutoMaxWidth>false</AutoMaxWidth>
