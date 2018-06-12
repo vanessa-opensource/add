@@ -15,7 +15,7 @@
 		</languageInfo>
 	</languageSettings>
 	<columns>
-		<size>8</size>
+		<size>7</size>
 		<columnsItem>
 			<index>0</index>
 			<column>
@@ -35,9 +35,15 @@
 			</column>
 		</columnsItem>
 		<columnsItem>
-			<index>4</index>
+			<index>3</index>
 			<column>
 				<formatIndex>4</formatIndex>
+			</column>
+		</columnsItem>
+		<columnsItem>
+			<index>4</index>
+			<column>
+				<formatIndex>2</formatIndex>
 			</column>
 		</columnsItem>
 		<columnsItem>
@@ -47,7 +53,7 @@
 			</column>
 		</columnsItem>
 		<columnsItem>
-			<index>7</index>
+			<index>6</index>
 			<column>
 				<formatIndex>6</formatIndex>
 			</column>
@@ -58,7 +64,7 @@
 		<row>
 			<c>
 				<c>
-					<f>7</f>
+					<f>1</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -80,7 +86,7 @@
 			</c>
 			<c>
 				<c>
-					<f>7</f>
+					<f>8</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -91,7 +97,7 @@
 			</c>
 			<c>
 				<c>
-					<f>7</f>
+					<f>9</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -102,7 +108,7 @@
 			</c>
 			<c>
 				<c>
-					<f>7</f>
+					<f>10</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -113,7 +119,7 @@
 			</c>
 			<c>
 				<c>
-					<f>7</f>
+					<f>11</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -124,22 +130,11 @@
 			</c>
 			<c>
 				<c>
-					<f>7</f>
+					<f>12</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Режим</v8:content>
-						</v8:item>
-					</tl>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-					<tl>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>ДополнительныйТипЗначения</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -151,61 +146,48 @@
 		<row>
 			<c>
 				<c>
-					<f>7</f>
+					<f>1</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>ПланВидовХарактеристик</v8:content>
+							<v8:content>Документ</v8:content>
 						</v8:item>
 					</tl>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>7</f>
+					<f>0</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>ВидыСубконто1</v8:content>
+							<v8:content>Документ1</v8:content>
 						</v8:item>
 					</tl>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>7</f>
+					<f>0</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>ПВХ1</v8:content>
+							<v8:content>Документ</v8:content>
 						</v8:item>
 					</tl>
 				</c>
 			</c>
 			<c>
+				<i>5</i>
 				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
+					<f>0</f>
 					<tl/>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>7</f>
+					<f>0</f>
+					<tl/>
 				</c>
 			</c>
 		</row>
@@ -214,56 +196,26 @@
 		<index>2</index>
 		<row>
 			<c>
+				<i>4</i>
 				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
+					<f>10</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Наименование</v8:content>
+							<v8:content>Дата</v8:content>
 						</v8:item>
 					</tl>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>7</f>
+					<f>11</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>ПВХ 1</v8:content>
+							<v8:content>20180601</v8:content>
 						</v8:item>
 					</tl>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-					<tl/>
 				</c>
 			</c>
 		</row>
@@ -272,28 +224,14 @@
 		<index>3</index>
 		<row>
 			<c>
+				<i>3</i>
 				<c>
-					<f>7</f>
+					<f>0</f>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
+					<f>0</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -304,24 +242,24 @@
 			</c>
 			<c>
 				<c>
-					<f>7</f>
+					<f>8</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>c898eb9e-c125-11e6-8d3b-e41f131c6950</v8:content>
+							<v8:content>a72ec81b-d17d-4d2f-9a47-2ffb2e3234c4</v8:content>
 						</v8:item>
 					</tl>
 				</c>
 			</c>
 			<c>
 				<c>
-					<f>7</f>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>7</f>
-					<tl/>
+					<f>6</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Гуид</v8:content>
+						</v8:item>
+					</tl>
 				</c>
 			</c>
 		</row>
@@ -330,51 +268,94 @@
 		<index>4</index>
 		<row>
 			<c>
-				<i>4</i>
+				<i>3</i>
 				<c>
 					<f>0</f>
 					<tl>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>РеквизитБулево</v8:content>
-						</v8:item>
-					</tl>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>0</f>
-					<tl>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Истина</v8:content>
+							<v8:content>Состав</v8:content>
 						</v8:item>
 					</tl>
 				</c>
 			</c>
 		</row>
 	</rowsItem>
+	<rowsItem>
+		<index>5</index>
+		<row>
+			<c>
+				<i>4</i>
+				<c>
+					<f>13</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>РеквизитЧисло</v8:content>
+						</v8:item>
+					</tl>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>13</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>1</v8:content>
+						</v8:item>
+					</tl>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>6</f>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
 	<templateMode>true</templateMode>
-	<defaultFormatIndex>7</defaultFormatIndex>
-	<height>5</height>
-	<vgRows>5</vgRows>
+	<defaultFormatIndex>14</defaultFormatIndex>
+	<height>6</height>
+	<vgRows>6</vgRows>
 	<format>
-		<width>163</width>
+		<width>80</width>
 	</format>
 	<format>
-		<width>103</width>
+		<width>136</width>
 	</format>
 	<format>
-		<width>109</width>
+		<width>143</width>
+	</format>
+	<format>
+		<width>41</width>
+	</format>
+	<format>
+		<width>253</width>
+	</format>
+	<format>
+		<width>49</width>
+	</format>
+	<format>
+		<width>202</width>
+	</format>
+	<format>
+		<width>129</width>
+	</format>
+	<format>
+		<width>24</width>
 	</format>
 	<format>
 		<width>97</width>
 	</format>
 	<format>
-		<width>246</width>
+		<width>155</width>
 	</format>
 	<format>
-		<width>187</width>
+		<width>123</width>
+	</format>
+	<format>
+		<width>109</width>
 	</format>
 	<format>
 		<width>72</width>

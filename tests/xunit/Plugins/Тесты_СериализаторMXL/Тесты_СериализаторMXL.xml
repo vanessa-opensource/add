@@ -65,6 +65,7 @@
 			<Template>СозданиеПростогоСправочникаПоГуидСсылки</Template>
 			<Template>СозданиеПростогоСправочникаПоГуид</Template>
 			<Template>НайтиИПерезаполнитьПростойСправочникПоГуидСсылки</Template>
+			<Template>СозданиеПростогоСправочника_НеЗаданРеквизитБулево</Template>
 			<Template>СозданиеСправочникаСРеквизитом_ПланСчетов</Template>
 			<Template>СозданиеСправочника2_с_РеквизитомСоставногоТипа</Template>
 			<Template>СозданиеСправочника2_с_РеквизитомСоставногоТипа_и_ПустойСсылкой</Template>
@@ -84,6 +85,9 @@
 			<Template>СозданиеПВХ</Template>
 			<Template>СозданиеСчета</Template>
 			<Template>СозданиеВидаРасчета</Template>
+			<Template>СозданиеДокументаПоГуид</Template>
+			<Template>ПерезаполнениеДокументаПоГуид</Template>
+			<Template>ПерезаполнениеПВХ</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
