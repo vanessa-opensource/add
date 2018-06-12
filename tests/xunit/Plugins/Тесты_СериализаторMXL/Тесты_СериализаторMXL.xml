@@ -87,6 +87,7 @@
 			<Template>СозданиеВидаРасчета</Template>
 			<Template>СозданиеДокументаПоГуид</Template>
 			<Template>ПерезаполнениеДокументаПоГуид</Template>
+			<Template>ПерезаполнениеПВХ</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
