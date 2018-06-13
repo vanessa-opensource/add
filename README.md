@@ -24,13 +24,6 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 
 ## Установка
 
-Текущий релиз в разделе  [Releases](https://github.com/silverbulleters/add/releases/latest)
-
-Ночная сборка ветки **develop**:
-
-1. [7z](http://ci.silverbulleters.org/job/ADD%20test/job/develop/lastSuccessfulBuild/artifact/add.7z) - `unzip -o ./add.7z`
-2. [tar.gz](http://ci.silverbulleters.org/job/ADD%20test/job/develop/lastSuccessfulBuild/artifact/add.tar.gz) - `tar xfv ./add.tar.gz`
-
 Порядок установки ADD:
 
 Автоматическая установка (через установщик пакетов OneScript ):
@@ -46,7 +39,7 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 Ручная установка:
 
 + Перейти в [раздел релизы](https://github.com/silverbulleters/add/releases)
-+ Скачать архив с последним стабильным релизом
++ Скачать архив с последним стабильным релизом - прямая ссылка [Releases](https://github.com/silverbulleters/add/releases/latest)
 + Распаковать архив.
 
 Обязательно ознакомьтесь с:
@@ -54,6 +47,11 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 + руководством контрибьютора [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
 + моделью спонсорства [DONATIONS.md](./DONATIONS.md)
 + известные проблемы [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
+
+Ночная сборка ветки **develop**:
+
+1. [7z](http://ci.silverbulleters.org/job/ADD%20test/job/develop/lastSuccessfulBuild/artifact/add.7z) - `unzip -o ./add.7z`
+2. [tar.gz](http://ci.silverbulleters.org/job/ADD%20test/job/develop/lastSuccessfulBuild/artifact/add.tar.gz) - `tar xfv ./add.tar.gz`
 
 Проект использует принцип формирования автодокументации в формате Markdown и видео.
 
