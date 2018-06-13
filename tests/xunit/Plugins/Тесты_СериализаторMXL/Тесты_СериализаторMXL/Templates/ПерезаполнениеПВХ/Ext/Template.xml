@@ -326,38 +326,10 @@
 			</c>
 		</row>
 	</rowsItem>
-	<rowsItem>
-		<index>4</index>
-		<row>
-			<c>
-				<i>4</i>
-				<c>
-					<f>0</f>
-					<tl>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>РеквизитБулево</v8:content>
-						</v8:item>
-					</tl>
-				</c>
-			</c>
-			<c>
-				<c>
-					<f>0</f>
-					<tl>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Истина</v8:content>
-						</v8:item>
-					</tl>
-				</c>
-			</c>
-		</row>
-	</rowsItem>
 	<templateMode>true</templateMode>
 	<defaultFormatIndex>7</defaultFormatIndex>
-	<height>5</height>
-	<vgRows>5</vgRows>
+	<height>4</height>
+	<vgRows>4</vgRows>
 	<format>
 		<width>163</width>
 	</format>
