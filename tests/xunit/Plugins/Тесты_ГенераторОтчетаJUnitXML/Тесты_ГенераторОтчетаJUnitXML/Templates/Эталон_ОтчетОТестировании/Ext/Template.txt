@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Контейнер" time="0" tests="4" failures="1" errors="1" skipped="1">
+	<testsuite name="Контейнер">
+		<testcase classname="C:\Projects\xUnitFor1C\Tests\Plugins\Тесты_ГенераторОтчетаJUnitXML.epf" name="УспешныйМетод" time="0" status="passed"/>
+		<testcase classname="C:\Projects\xUnitFor1C\Tests\Plugins\Тесты_ГенераторОтчетаJUnitXML.epf" name="МетодПадающийПоУтверждению" time="0.001" status="failure">
+			<failure message="{ВнешняяОбработка.УтвержденияBDD.МодульОбъекта(283)}: [Failed] Ожидали, что проверяемое значение (БАБАХ!!!) РАВНО ().ВызватьИсключение Префикс + &quot; &quot; + СообщениеОшибки;"/>
+		</testcase>
+		<testcase classname="C:\Projects\xUnitFor1C\Tests\Plugins\Тесты_ГенераторОтчетаJUnitXML.epf" name="МетодПадающийПоНеизвестнойОшибке" time="0.001" status="error">
+			<failure message="{ВнешняяОбработка.Тесты_ГенераторОтчетаJUnitXML.МодульОбъекта(108)}: Ошибка!!!
+	ВызватьИсключение &quot;Ошибка1!!!&quot;;"/>
+		</testcase>
+		<testcase classname="C:\Projects\xUnitFor1C\Tests\Plugins\Тесты_ГенераторОтчетаJUnitXML.epf" name="Отсутствующий метод" time="0" status="skipped">
+			<skipped/>
+		</testcase>
+	</testsuite>
+</testsuites>
