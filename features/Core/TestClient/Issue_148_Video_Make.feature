@@ -7,6 +7,7 @@
 @IgnoreOn838
 @IgnoreOnWeb
 @Video
+@IgnoreOnLinux
 
 
 Функционал: Проверка формирования файла видео

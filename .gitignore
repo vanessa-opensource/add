@@ -21,3 +21,7 @@ tools/ScreenShotsTest/
 *.tar.gz
 *.tar.bz2
 *.tar
+allure-report/
+.vagrant
+*.log
+tools/JSON/env.json.file

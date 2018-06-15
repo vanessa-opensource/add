@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<ExternalDataProcessor uuid="eab4f8c5-602e-4d5a-bdfa-910323eb3c1f">
+		<InternalInfo>
+			<xr:ContainedObject>
+				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
+				<xr:ObjectId>6641570f-5fe8-41b8-9fdd-a7d1b233a01c</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:GeneratedType name="ExternalDataProcessorObject.xddTestsConvertIntoRebornFormat" category="Object">
+				<xr:TypeId>2bd25281-0454-4bf1-9b52-a17b78c7834f</xr:TypeId>
+				<xr:ValueId>0de42236-0e00-4267-adec-f129a632c3d5</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>xddTestsConvertIntoRebornFormat</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конвертация тестов xUnitFor1C в версию4 из формата версии 3</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<DefaultForm>ExternalDataProcessor.xddTestsConvertIntoRebornFormat.Form.Форма</DefaultForm>
+			<AuxiliaryForm>ExternalDataProcessor.xddTestsConvertIntoRebornFormat.Form.УправляемаяФорма</AuxiliaryForm>
+		</Properties>
+		<ChildObjects>
+			<Form>Форма</Form>
+			<Form>УправляемаяФорма</Form>
+			<Template>ШаблонТеста</Template>
+			<Template>v8unpack</Template>
+			<Template>БазовыеУтверждения</Template>
+			<Template>ГенераторТестовыхДанных</Template>
+			<Template>ЗапросыИзБД</Template>
+			<Template>УтвержденияПроверкаТаблиц</Template>
+			<Template>КонтекстЯдра</Template>
+		</ChildObjects>
+	</ExternalDataProcessor>
+</MetaDataObject>

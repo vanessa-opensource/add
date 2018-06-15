@@ -1,51 +1,94 @@
 #!groovy
 
-properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10'))])
+properties([disableConcurrentBuilds(), buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10'))])
 def tasks = [:]
 def buildSerivceConf = ["836UF":"8.3.6", "837UF":"8.3.7", "838UF":"8.3.8", "839UF":"8.3.9", "8310UF":"8.3.10"];
 //builds = ["82OF", "82UF", "836OF", "836UF", "837UF", "838UF", "839UF", "8310UF"]
 //builds = ["836UF", "837UF", "838UF", "839UF", "8310UF"]
 builds = ["8310UF"]
 errorsStash = [:]
+paths = [ "Core/TestClient": "TestClient",
+    "StepsGenerator": "StepsGenerator",
+    "StepsRunner":"StepsRunner",
+    "StepsProgramming":"StepsProgramming",
+    "Core/FeatureLoad": "FeatureLoad",
+    "Core/FeatureReader": "FeatureReader",
+    "Core/FeatureWriter": "FeatureWriter",
+    "Core/OpenForm": "OpenForm",
+    "libraries": "libraries",
+    "Core/Translate": "Translate",
+    "Core/ExpectedSomething": "ExpectedSomething"
+    ]
+
 
 if (env.filterBuilds && env.filterBuilds.length() > 0 ) {
     println "filter build";
     builds = builds.findAll{it.contains(env.filterBuilds) || env.filterBuilds.contains(it)};
 }
+
+def behaviortask(build, path, suffix, version){
+    return {
+
+        node ("${build}") {
+                echo "====== ${build} ${suffix} ====="
+                sleep 5
+                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
+                checkout scm
+                unstash "buildResults"
+               
+                try{
+                    cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
+                    withEnv(["VANESSA_JUNITPATH=./ServiceBases/junitreport/${suffix}", "VANESSA_cucumberreportpath=./ServiceBases/cucumber/${suffix}"]) {
+                        //Маленький хак, переход в dir автоматом создает каталог и не надо писать кроссплатформенный mkdir -p 
+                        dir("build/ServiceBases/junitreport/${suffix}"){}
+                        dir("build/ServiceBases/cucumber/${suffix}"){}
+                        echo "========= ${path} ====================="
+                        cmd "opm run vanessa all --path ./features/${path} --settings ./tools/JSON/VBParams${build}.json";
+                    }
+                } catch (e) {
+                    echo "behavior ${build} ${path} ${suffix} status : ${e}"
+                    sleep 2
+                    cmd("7z a -ssw build${build}${suffix}.7z ./build/ -xr!*.cfl", true)
+                    archiveArtifacts "build${build}${suffix}.7z"
+                    currentBuild.result = 'UNSTABLE'
+                }
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${build}/**, build/ServiceBases/cucumber/${suffix}/**, build/ServiceBases/junitreport/${suffix}/**", name: "${build}${suffix}"
+        }
+
+    }
+}
+
 builds.each{
 
-    tasks["behavior ${it}"] = {
-        node ("${it}") {
-            stage("behavior ${it}") {
-            // steps {
-                // в среде Multibranch Pipeline Jenkins первращает имена веток в папки
-                // а для веток Gitflow вида release/* экранирует в слэш в %2F
-                //
-                // Поэтому, применяем костыль с кастомным workspace
-                // см. https://issues.jenkins-ci.org/browse/JENKINS-34564
-                //
-                // Jenkins под Windows постоянно добавляет в конец папки какую-то мусорную строку.
-                // Для этого отсекаем все, что находится после последнего дефиса
-                // см. https://issues.jenkins-ci.org/browse/JENKINS-40072
+    build = it;
+    paths.each{
+        tasks["behavior ${build} ${it.value}"] = behaviortask(build, it.key, it.value, buildSerivceConf[build])
+    }
+}
+
+tasks["behavior video write"] = {
+        node ("video") {
+            stage("behavior video") {
             ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
             {
                 checkout scm
+                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
+                cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
+                dir("build/ServiceBases/allurereport/8310UF"){}
                 unstash "buildResults"
                 cmd "opm install"
                 cmd "opm list"
-                cmd "opm run initib file --buildFolderPath ./build --v8version " + buildSerivceConf[it]
+                cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
                 try{
-                    cmd "opm run vanessa all --settings ./tools/JSON/VBParams${it}.json";
+                    cmd "opm run vanessa all --path ./features/Core/TestClient/  --tag video --settings ./tools/JSON/VBParams8310UF.json";
                 } catch (e) {
-                    echo "behavior ${it} status : ${e}"
-                    sleep 61
-                    cmd("7z a -ssw build${it}.7z ./build/ -xr!*.cfl", true)
-                    archiveArtifacts "build${it}.7z"
+                    echo "behavior status : ${e}"
+                    currentBuild.result = 'UNSTABLE'
                 }
-                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/${it}/**, build/ServiceBases/cucumber/**, build/ServiceBases/junitreport/**", name: "${it}"
+                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/8310UF/**", name: "video"
             }
             // }
-            }
+            
         }
     }
 }
@@ -53,6 +96,8 @@ tasks["buildRelease"] = {
     node("slave"){
         stage("build release"){
             checkout scm
+            cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
+            cleanWs(patterns: [[pattern: './.forbuild/**', type: 'INCLUDE']]);
             cleanWs(patterns: [[pattern: '*.ospx, add.tar.gz, add.tar.bz2, add.7z, add.tar', type: 'INCLUDE']])
             cmd "opm build ./"
             cmd "7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
@@ -60,6 +105,7 @@ tasks["buildRelease"] = {
             cmd "7z a add.tar.gz add.tar"
             cmd "7z a add.tar.bz2 add.tar"
             archiveArtifacts '*.ospx, add.tar.gz, add.tar.bz2, add.7z'
+            stash allowEmpty: false, includes: "*.ospx, add.tar.gz, add.tar.bz2, add.7z", name: "deploy"
 
         }
     }
@@ -69,15 +115,17 @@ tasks["xdd"] = {
     node("8310UF"){
         stage("xdd"){
                 checkout scm
+                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 unstash "buildResults"
                 cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
                 try{
                     cmd "opm run xdd";
                 } catch (e) {
                     echo "xdd ${it} status : ${e}"
-                    sleep 61
+                    sleep 2
                     cmd("7z a -ssw buildXDD.7z ./build/ -xr!*.cfl", true)
                     archiveArtifacts "buildXDD.7z"
+                    currentBuild.result = 'UNSTABLE'
                 }
                 stash allowEmpty: true, includes: "build/ServiceBases/allurereport/xdd/**, build/ServiceBases/junitreport/**", name: "xdd"
         }
@@ -127,15 +175,18 @@ firsttasks["qa"] = {
                         echo "Анализ SonarQube не выполнен. Ветка ${env.BRANCH_NAME} не подходит по условию проверки веток!"
                         makeAnalyzis = false
                     }
-
-                    if (makeAnalyzis) {
-                        if (unix) {
-                            cmd(sonarcommand)
-                        } else {
-                            //echo "${sonarcommand}"
-                            bat "${sonarcommand}"
-                            //cmd(sonarcommand, unix)
+                    try {
+                        if (makeAnalyzis) {
+                            if (unix) {
+                                cmd(sonarcommand)
+                            } else {
+                                //echo "${sonarcommand}"
+                                bat "${sonarcommand}"
+                                //cmd(sonarcommand, unix)
+                            }
                         }
+                    } catch (e) {
+                        echo "sonar status : ${e}" 
                     }
         
                 //} catch (e) {
@@ -217,7 +268,9 @@ firsttasks["slave"] = {
 //}
 
 parallel firsttasks
-parallel tasks
+stage('tests'){
+    parallel tasks
+}
 
 tasks = [:]
 tasks["report"] = {
@@ -226,15 +279,21 @@ tasks["report"] = {
             cleanWs(patterns: [[pattern: 'build/ServiceBases/**', type: 'INCLUDE']]);
             unstash 'buildResults'
             builds.each{
-                unstash "${it}"
+                build = it;
+                paths.each{
+                    unstash "${build}${it.value}"
+                }
             }
+            unstash "video"
             unstash "xdd"
             try{
                 allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
             } catch (e) {
                 echo "allure status : ${e}"
+                currentBuild.result = 'UNSTABLE'
             }
-            junit 'build/ServiceBases/junitreport/*.xml'
+            junit 'build/ServiceBases/junitreport/**/*.xml'
+            //junit 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
             
             //archiveArtifacts 'build/ServiceBases/allurereport/**'
@@ -248,6 +307,40 @@ tasks["report"] = {
 //}
 
 parallel tasks
+
+stage('Deploy') {
+    if (env.BRANCH_NAME == 'master' || env.BRANCH_NAME == 'develop') {
+        if (currentBuild.result == null || currentBuild.result == 'SUCCESS') {
+            def userInput;
+            try {
+                timeout(time: 1, unit: 'DAYS') { 
+                    userInput = input("Deploy ${env.BRANCH_NAME}?")
+                }
+            } catch (err) {
+                userInput = false;
+                echo "Aborted by: [${user}]"
+            }
+            if (userInput == true ) {
+                node("slave") {
+                    unstash "deploy"
+                    withCredentials([[$class: 'StringBinding', credentialsId: 'GITHUB_OAUTH_TOKEN_ADD', variable: 'GITHUB_OAUTH_TOKEN']]) {
+                        if(env.BRANCH_NAME == 'master'){
+                            echo "master "
+                            cmd("opm push --token $GITHUB_OAUTH_TOKEN --channel stable --file ./add-*.ospx")
+                            sh "echo $GITHUB_TOKEN"
+                        } else if (env.BRANCH_NAME == 'develop') {
+                            echo "develop"
+                            cmd("opm push --token $GITHUB_OAUTH_TOKEN --channel dev --file ./add-*.ospx")
+
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
 
 def cmd(command, status = false) {
     // TODO при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001

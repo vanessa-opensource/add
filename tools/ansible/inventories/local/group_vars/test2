@@ -1,3 +1,4 @@
 add_jenkins_slave_secret: 80e52b84c02d5b6c5081fa0b4090b9d5f4371b5ffd35025d585307ecc2143b86
 add_jenkins_slave_name: name
 add_user_group: Administrators
+win_location: 203
