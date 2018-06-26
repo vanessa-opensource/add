@@ -278,29 +278,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Configuration.xUnitFor1C</name>
-		<right>
-			<name>ThinClient</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>ThickClient</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>AllFunctionsMode</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>SaveUserData</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>Output</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
 		<name>Catalog.СправочникСТабЧастью</name>
 		<right>
 			<name>Read</name>

@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="PlanOfCharacteristicKindPredefinedItems" version="2.4">
+	<Item id="42d701a8-ba82-4b0a-a5c4-e3c8dff88804">
+		<Name>Группа1</Name>
+		<Code>000000003</Code>
+		<Description>Группа1</Description>
+		<Type/>
+		<IsFolder>true</IsFolder>
+	</Item>
 	<Item id="ada7690c-bc98-47d4-a26a-c7f806bc54b9">
 		<Name>Субконто1</Name>
 		<Code>000000001</Code>
