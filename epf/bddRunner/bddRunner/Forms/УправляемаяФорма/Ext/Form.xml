@@ -1366,6 +1366,12 @@
 											</ToolTip>
 											<ExtendedTooltip name="ГруппаВнешниеИнструментыРасширеннаяПодсказка" id="1788"/>
 											<ChildItems>
+												<Button name="ВнешнийИнструментБраузерТестов_xddTestRunner" id="1797">
+													<Type>CommandBarButton</Type>
+													<Visible>false</Visible>
+													<CommandName>Form.Command.ВнешнийИнструментБраузерТестов_xddTestRunner</CommandName>
+													<ExtendedTooltip name="ВнешнийИнструментБраузерТестов_xddTestRunnerРасширеннаяПодсказка" id="1798"/>
+												</Button>
 												<Button name="КомандаГенераторМакетовДанных" id="1789">
 													<Type>CommandBarButton</Type>
 													<CommandName>Form.Command.ГенераторМакетовДанных</CommandName>
@@ -18670,6 +18676,25 @@
 				</v8:item>
 			</ToolTip>
 			<Action>КонвертерТестов</Action>
+		</Command>
+		<Command name="ВнешнийИнструментБраузерТестов_xddTestRunner" id="78">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть браузер тестов xddTestRunner</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открыть браузер тестов xddTestRunner</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.GeographicalSchema</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ВнешнийИнструментБраузерТестов_xddTestRunner</Action>
 		</Command>
 	</Commands>
 </Form>
