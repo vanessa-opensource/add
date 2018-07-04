@@ -1,17 +1,22 @@
 ---
-name: Feature request
-about: Suggest an idea for this project
+name: Добавление новой функциональности
+about: предложение новой идеи или функциональности к разработке
 
 ---
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+**Существует проблема**
+Описание существующей проблемы [...]
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
+**Хотелось бы иметь следующую функциональность**
+Вариант реализации  [...]
 
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
+**Дополнительный контекст**
+Любая дополнительная информация
 
-**Additional context**
-Add any other context or screenshots about the feature request here.
+<!---
+Заявление от команды активных контрибьюторов
+
+Данный проект развивается силами нескольких людей последние 10 лет, разработка ведется на условиях краудсорсинга в связи с чем 
+Если вы не собираетесь реализовывать данную функциональность сами, просьба идеи и предложения обсуждать на форуме в специализированном разделе https://xdd.silverbulleters.org/c/razrabotka или в рамках вашего контракта на поддержку OpenSource продуктов
+
+-->
