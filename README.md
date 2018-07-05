@@ -1,10 +1,9 @@
 ﻿<a id="markdown-add" name="add"></a>
 # ADD
 
-[![Открытый чат проекта https://gitter.im/silverbulleters/vanessa-behavoir](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/silverbulleters/vanessa-behavoir?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![Build Status](http://ci.silverbulleters.org/buildStatus/icon?job=ADD%20test/develop)](http://ci.silverbulleters.org/job/ADD%20test/job/develop/)
-[![Crowdin](https://d322cqt584bo4o.cloudfront.net/vanessa-services/localized.svg)](https://crowdin.com/project/vanessa-services)
-
+| [![Build Status](http://ci.silverbulleters.org/job/ADD%20(CI-CD%20v1)/job/master/badge/icon)](http://ci.silverbulleters.org/job/ADD%20(CI-CD%20v1)/job/master/) | [![Build Status](http://ci.silverbulleters.org/job/ADD%20(CI-CD%20v1)/job/develop/badge/icon)](http://ci.silverbulleters.org/job/ADD%20(CI-CD%20v1)/job/develop/) |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| сборка релиза                                                                                                                                                   | ночная сборка                                                                                                                                                     |
 <!-- TOC insertAnchor:true -->
 
 - [ADD](#add)
@@ -32,23 +31,26 @@
 <a id="markdown-введение" name="введение"></a>
 ## Введение 
 
-Продукт ADD (Automation Driven Development) есть набор инструментов для проверки качества решений на платформе 1С:Предприятие.
+Продукт ADD (Automation Driven Development) это набор инструментов для проверки качества решений на платформе 1С:Предприятие.
 
-ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1c.ru) - Tests/behavior (TDD & BDD) for 1С:Enterprise.
+ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1c.ru) - Tests/Behavior (TDD & BDD) for 1С:Enterprise.
 
-Миссия продукта - повышение качества разработки.
+Миссия продукта - повышение качества разработки и вовлечение в процесс разработки всей команды - от аналитиков до релиз-инженеров
 
 Продукт позволяет проверять поведение различных систем на базе 1С и проверяет/гарантирует качество функциональности системы и ее составных частей.
 
 Возможности:
 
-+ различные виды тестирования (модульного/юнит, приемочного, сценарного для 1С 8.3, интеграционного, TDD)
 + проверка поведения (BDD/Gherkin)
++ различные виды тестирования (модульного/юнит, приемочного, сценарного для 1С 8.3, интеграционного, TDD)
 + формирование автодокументации в формате Markdown и видео.
 
 ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior). Совместимость с VB 1.Х и xUnitFor1C 4.Х гарантирована.
 
+[Более подробно можно ознакомится в сообществе пользоваталей и разработчиков продукта](https://xdd.silverbulleters.org/c/razrabotka/xdrivendevelopment)
+
 <a id="markdown-установка" name="установка"></a>
+
 ## Установка
 
 Порядок установки ADD:
@@ -77,8 +79,8 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 
 Ночная сборка ветки **develop**:
 
-1. [7z](http://ci.silverbulleters.org/job/ADD%20test/job/develop/lastSuccessfulBuild/artifact/add.7z) - `unzip -o ./add.7z`
-2. [tar.gz](http://ci.silverbulleters.org/job/ADD%20test/job/develop/lastSuccessfulBuild/artifact/add.tar.gz) - `tar xfv ./add.tar.gz`
+1. [7z](http://ci.silverbulleters.org/job/ADD%20(CI-CD%20v1)/job/develop/lastSuccessfulBuild/artifact/add.7z) - `unzip -o ./add.7z`
+2. [tar.gz](http://ci.silverbulleters.org/job/ADD%20(CI-CD%20v1)/job/develop/lastSuccessfulBuild/artifact/add.tar.gz) - `tar xfv ./add.tar.gz`
 
 <a id="markdown-описание-использования" name="описание-использования"></a>
 ## Описание использования
@@ -86,6 +88,8 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 После установки через `opm install` файл продукта расположены по адресу КаталогУстановкиОСкрипт/lib/add
 
 Как правило, в Windows это `C:\Program Files (x86)\OneScript\lib\add`.
+
+> Рекомендуем добавить ярлык на рабочий стол на эту папку или добавить эту папку в панель быстрого дсотупа в Windows
 
 Возможно тестирование 2-х видов:
 
@@ -110,13 +114,17 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 <a id="markdown-подготовка-автодокументации" name="подготовка-автодокументации"></a>
 ## Подготовка автодокументации
 
-Проект использует принцип формирования автодокументации в формате Markdown и видео.
+Проект использует принцип формирования автодокументации в формате Markdown и в формате видеофайлов.
 
+<!--
+к рефакторингу
 + Markdown инструкции лежат [здесь](https://github.com/silverbulleters/vanessa-services/tree/master/ru-RU/behavior/Features)
 + Видео инструкции лежат [здесь](https://www.youtube.com/channel/UC2mJ4LlMG-FF4qkc_kqN_iQ)
 + Прочие инструкции сгруппированы [в этом плейлисте YouTube](https://www.youtube.com/playlist?list=PL2zlgf113YhFG_uRARjDtP1_Obj55UmY4)
 + Также рекомендуется посмотреть вот [этот вебинар](http://infostart.ru/webinars/537546/)
 + Возможно вам поможет [этот FAQ](https://github.com/silverbulleters/add/blob/develop/F.A.Q.MD)
+```
+-->
 
 Чтобы у вас работало создание автовидеоинструкций, необходимо установить дополнительный софт.
 
@@ -128,7 +136,6 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 
 + пишем feature-файлы в формате Gherkin
   + обычно используется редактор Visual Studio Code с расширением для Gherkin-файлов
-  + или связанный проект **vanessa-bdd-editor**
 
 ```Gherkin
 # language: ru
@@ -148,8 +155,10 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 
 Сценарий: Запуск в консольном режиме
   Дано Пусть существует файл ".\vb-execute-profile.json"
-  И в переменную окружения V83PATH установлено значение "C:\Program Files (x86)\1cv8\8.3.6.2151\bin\1cv8.exe"
-  Когда я запускаю командную строку '%V83PATH% /Execute .\bddRunner.epf /C"StartFeaturePlayer;VBParams=.\vb-execute-profile.json'
+  И в переменную окружения V83PATH установлено значение 
+                 "C:\Program Files (x86)\1cv8\8.3.6.2151\bin\1cv8.exe"
+  Когда я запускаю командную строку '%V83PATH% /Execute 
+                .\bddRunner.epf /C"StartFeaturePlayer;VBParams=.\vb-execute-profile.json'
   Тогда появляется файл с результатами '.\BuildStatus.log'
   И в каталоге ".\allurereport" существует HTML отчет о результатах проверки сценариев
 
@@ -159,7 +168,8 @@ ADD является наследником 2-х продуктов - [xUnitFor1
   И указал каталог ".\features" с требованиями заказчика
   И затем нажал кнопку "Сгенерировать шаблоны обработок"
   Также в каталоге ".\features" возникли epf-файлы, идентичные имени feature файла
-  И при нажатии кнопки "Запустить сценарии" я вижу автоматизированный запуск обработок с признаком "pending" (ожидает реализации)
+  И при нажатии кнопки "Запустить сценарии" 
+                я вижу автоматизированный запуск обработок с признаком "pending" (ожидает реализации)
 ```
 
 <a id="markdown-классический-вариант-использования-без-интерактивного-режима" name="классический-вариант-использования-без-интерактивного-режима"></a>
@@ -202,9 +212,7 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 
 Для редактирования feature-файлов используется
 
-+ либо Visual Studio Code с расширением для Gherkin-файлов
-+ либо проект [По автоматизации сбора требований](https://github.com/silverbulleters/vanessa-bdd-editor)
-  - на текущий момент имеет статус *beta*
++ Visual Studio Code с расширением для Gherkin-файлов
 
 Если вы не уверены в правильности ожидаемого поведения, используйте для этого системы тэгов, например:
 
@@ -264,30 +272,22 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 Много примеров json-файлов есть в каталоге `tools` проекта.
 
 <a id="markdown-создается-при-финансовой-поддержке" name="создается-при-финансовой-поддержке"></a>
-## Создается при финансовой поддержке
-
-как попасть в этот раздел ? смотри [DONATIONS.md](./DONATIONS.md)
 
 <a id="markdown-замечания" name="замечания"></a>
 ## Замечания:
 
-+ пожелания к использованию можно фиксировать в виде Github Issues
-+ структура каталогов проекта соответствует [шаблону bootstrap]( https://github.com/silverbulleters/vanessa-bootstrap)
++ пожелания к использованию можно фиксировать в виде Github Issues только в том чслучае если вы планируете данную функциональность реализовать сами, в противном случае создайте обсуждение на [форуме сообщества пользователей и разработчиков](https://xdd.silverbulleters.org/c/razrabotka/xdrivendevelopment)
+
 
 <a id="markdown-известные-публикации" name="известные-публикации"></a>
-## Известные публикации
-
-+ [Первичная публикация](http://habrahabr.ru/post/252473/)
-+ [Пример отчета Allure на основе тестов](http://youtu.be/982gF1wY8sM)
 
 <a id="markdown-вдохновение-черпается" name="вдохновение-черпается"></a>
-## Вдохновение черпается
+## При разработке мы обращаем внимание на 
 
-+ [Огурец](https://cukes.info/)
++ [Cucumber](https://cukes.info/)
 + [Автоматизированное тестирование 1С](http://v8.1c.ru/overview/Term_000000816.htm)
 + [Yandex Allure](http://allure.qatools.ru/)
 + [Silenium](http://docs.seleniumhq.org/)
-+ [ТРИЗ](https://ru.wikipedia.org/wiki/Теория_решения_изобретательских_задач)
 + [Дэн Норт](http://en.wikipedia.org/wiki/Acceptance_test-driven_development)
 
 <a id="markdown-заметки-для-желающих-поучаствовать-в-доработке" name="заметки-для-желающих-поучаствовать-в-доработке"></a>
@@ -301,25 +301,17 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 <a id="markdown-лицензии" name="лицензии"></a>
 ## Лицензии
 
-+ основная лицензия продукта - BSD v3
++ основная лицензия продукта - Mozilla Public License Version 2.0
 + лицензии стороннего кода - Apache License, GitHub CLA, Freeware, etc
 
 <a id="markdown-поддержка-opensource-команды" name="поддержка-opensource-команды"></a>
 ## Поддержка OpenSource команды
 
-+ мы используем https://salt.bountysource.com/checkout/amount?team=silverbulleters
++ мы используем https://opencollective.com/vanessa-oscript-foundation в качестве портала поддержки команды разработки
+
 
 <a id="markdown-простой-faq-по-использованию" name="простой-faq-по-использованию"></a>
 ## Простой FAQ по использованию
-
-+ **Q: много ли команд используют такой подход ?**
-+ **A:** из известных нам - 63 команды
-
-+ **Q: можно ли тестировать производительность с помощью BDD ?**
-+ **A:** для этого существует другой закрытый инструментарий, который использует vanessa-behavior как клиента тестирования - используется в Enterprise проектах.
-
-+ **Q: Что вы думаете о сценарном тестировании ?**
-+ **A:** сценарное тестирование слишком дорого по савокупной стоимости владения, поэтому пусть живет своей жизнью вместе с СППР, обратите внимание, что учебный центр №1 думает провести подготовку слушателей [по функционалу тестирования в 1С:Предприятии (ссылка на Facebook](https://www.facebook.com/1631718833760014/posts/1715544585377438/) - если Вас интересует функционал сценарного тестирования, возможно стоит записаться именно на этот курс, а не ходить по GitHub ссылкам.
 
 + **Q: А где более подробный FAQ**
 + **A: Полный FAQ находится [в файле F.A.Q.MD](F.A.Q.MD).
@@ -333,12 +325,5 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 + обучение навыкам написания на языке Gherkin
 + обучение навыкам написания сценариев проверки поведения
 
-для заказа платной поддержки необходимо отравить заявку на адрес education@silverbulleters.org
-или
-по телефону +7-(499)-346-70-19.
-
-[![ZenHub](https://raw.githubusercontent.com/ZenHubIO/support/master/zenhub-badge.png)](https://zenhub.io)
-
-Контура сборки предоставлены
-
-[![DOcean](https://www.digitalocean.com/assets/media/logos-badges/png/DO_Logo_Horizontal_Blue-3db19536.png)](https://m.do.co/c/2a3a0769ac84)
+для заказа платной поддержки необходимо отравить заявку на адрес b2b@silverbulleters.org
+или по телефону +7-(499)-346-70-19.
