@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<Events>
@@ -20,26 +20,26 @@
 			</AutoCommandBar>
 			<ExtendedTooltip name="СписокСПометкамиРасширеннаяПодсказка" id="4"/>
 			<SearchStringAddition name="СписокСПометкамиСтрокаПоиска" id="5">
-				<Source>
-					<lf:elementId>1</lf:elementId>
-					<lf:additionId>0</lf:additionId>
-				</Source>
+				<AdditionSource>
+					<Item>СписокСПометками</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
 				<ContextMenu name="СписокСПометкамиСтрокаПоискаКонтекстноеМеню" id="6"/>
 				<ExtendedTooltip name="СписокСПометкамиСтрокаПоискаРасширеннаяПодсказка" id="7"/>
 			</SearchStringAddition>
 			<ViewStatusAddition name="СписокСПометкамиСостояниеПросмотра" id="8">
-				<Source>
-					<lf:elementId>1</lf:elementId>
-					<lf:additionId>1</lf:additionId>
-				</Source>
+				<AdditionSource>
+					<Item>СписокСПометками</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
 				<ContextMenu name="СписокСПометкамиСостояниеПросмотраКонтекстноеМеню" id="9"/>
 				<ExtendedTooltip name="СписокСПометкамиСостояниеПросмотраРасширеннаяПодсказка" id="10"/>
 			</ViewStatusAddition>
 			<SearchControlAddition name="СписокСПометкамиУправлениеПоиском" id="11">
-				<Source>
-					<lf:elementId>1</lf:elementId>
-					<lf:additionId>2</lf:additionId>
-				</Source>
+				<AdditionSource>
+					<Item>СписокСПометками</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
 				<ContextMenu name="СписокСПометкамиУправлениеПоискомКонтекстноеМеню" id="12"/>
 				<ExtendedTooltip name="СписокСПометкамиУправлениеПоискомРасширеннаяПодсказка" id="13"/>
 			</SearchControlAddition>
