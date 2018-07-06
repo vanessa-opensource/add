@@ -46,7 +46,7 @@
 				<v8:Type>cfg:CatalogRef.СправочникСоСсылкойНаСамогоСебя</v8:Type>
 				<v8:Type>cfg:CatalogRef.ИерархическийСправочник</v8:Type>
 			</Type>
-			<Hierarchical>false</Hierarchical>
+			<Hierarchical>true</Hierarchical>
 			<FoldersOnTop>true</FoldersOnTop>
 			<CodeLength>9</CodeLength>
 			<CodeAllowedLength>Variable</CodeAllowedLength>

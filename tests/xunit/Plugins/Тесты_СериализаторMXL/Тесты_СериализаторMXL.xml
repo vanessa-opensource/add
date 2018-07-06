@@ -84,6 +84,7 @@
 			<Template>СозданиеГруппыСЭлементамиТолькоДляГруппы</Template>
 			<Template>СозданиеУзлаПланаОбмена</Template>
 			<Template>СозданиеПВХ</Template>
+			<Template>СозданиеПВХ_ПредопределеннаяГруппа</Template>
 			<Template>СозданиеСчета</Template>
 			<Template>СозданиеВидаРасчета</Template>
 			<Template>СозданиеДокументаПоГуид</Template>

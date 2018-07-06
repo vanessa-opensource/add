@@ -5,6 +5,7 @@
         "lib",
         "plugins",
         "tests",
+        "tools/epf",
         "vendor"
     ],
     "opm_build": [
@@ -15,6 +16,7 @@
         "lib/video",
         "plugins",
         "tests/smoke",
+        "tools/epf",
         "vendor"
     ],
     "opm_build_exclude": [

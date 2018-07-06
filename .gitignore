@@ -25,3 +25,5 @@ allure-report/
 .vagrant
 *.log
 tools/JSON/env.json.file
+opm-metadata.xml
+lib.config

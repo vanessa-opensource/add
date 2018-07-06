@@ -20,8 +20,8 @@
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<DefaultForm/>
-			<AuxiliaryForm>ExternalDataProcessor.Тесты_ОткрытиеФормКонфигурации.Form.УправляемаяФорма</AuxiliaryForm>
+			<DefaultForm>ExternalDataProcessor.Тесты_ОткрытиеФормКонфигурации.Form.УправляемаяФорма</DefaultForm>
+			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
 			<Attribute uuid="0d576d83-e0f1-4407-8839-678e97084eb9">

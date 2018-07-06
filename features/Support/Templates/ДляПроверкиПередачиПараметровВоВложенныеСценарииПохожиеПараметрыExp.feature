@@ -1,5 +1,4 @@
-
-
+#language: ru
 
 @IgnoreOnCIMainBuild
 @ExportScenarios

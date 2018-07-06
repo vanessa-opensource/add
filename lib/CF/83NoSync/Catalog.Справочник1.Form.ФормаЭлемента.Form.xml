@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
 	<WindowOpeningMode>LockOwnerWindow</WindowOpeningMode>
 	<UseForFoldersAndItems>Items</UseForFoldersAndItems>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
@@ -8,13 +8,11 @@
 				<Type>CommandBarButton</Type>
 				<OnlyInAllActions>false</OnlyInAllActions>
 				<CommandName>Form.Command.ДобавитьМногострочнуюСтрокуВТЧ</CommandName>
-				<Parameter xsi:nil="true"/>
 				<ExtendedTooltip name="ФормаДобавитьМногострочнуюСтрокуВТЧРасширеннаяПодсказка" id="172"/>
 			</Button>
 			<Button name="ФормаКоманда1" id="179">
 				<Type>CommandBarButton</Type>
 				<CommandName>Form.Command.ВызватьИсключение</CommandName>
-				<Parameter xsi:nil="true"/>
 				<ExtendedTooltip name="ФормаКоманда1РасширеннаяПодсказка" id="180"/>
 			</Button>
 		</ChildItems>
@@ -50,7 +48,6 @@
 									<Button name="НаименованиеКонтекстноеМенюКонтекстноеМенюНаименование" id="181">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.КонтекстноеМенюНаименование</CommandName>
-										<Parameter xsi:nil="true"/>
 										<ExtendedTooltip name="НаименованиеКонтекстноеМенюКонтекстноеМенюНаименованиеРасширеннаяПодсказка" id="182"/>
 									</Button>
 								</ChildItems>
@@ -160,7 +157,6 @@
 									<Button name="ТабличнаяЧасть1КонтекстноеМенюКонтекстноеМенюТабличнаяЧасть1" id="183">
 										<Type>CommandBarButton</Type>
 										<CommandName>Form.Command.КонтекстноеМенюТабличнаяЧасть1</CommandName>
-										<Parameter xsi:nil="true"/>
 										<ExtendedTooltip name="ТабличнаяЧасть1КонтекстноеМенюКонтекстноеМенюТабличнаяЧасть1РасширеннаяПодсказка" id="184"/>
 									</Button>
 								</ChildItems>
@@ -168,26 +164,26 @@
 							<AutoCommandBar name="ТабличнаяЧасть1КоманднаяПанель" id="15"/>
 							<ExtendedTooltip name="ТабличнаяЧасть1РасширеннаяПодсказка" id="16"/>
 							<SearchStringAddition name="ТабличнаяЧасть1СтрокаПоиска" id="17">
-								<Source>
-									<lf:elementId>13</lf:elementId>
-									<lf:additionId>0</lf:additionId>
-								</Source>
+								<AdditionSource>
+									<Item>ТабличнаяЧасть1</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
 								<ContextMenu name="ТабличнаяЧасть1СтрокаПоискаКонтекстноеМеню" id="18"/>
 								<ExtendedTooltip name="ТабличнаяЧасть1СтрокаПоискаРасширеннаяПодсказка" id="19"/>
 							</SearchStringAddition>
 							<ViewStatusAddition name="ТабличнаяЧасть1СостояниеПросмотра" id="20">
-								<Source>
-									<lf:elementId>13</lf:elementId>
-									<lf:additionId>1</lf:additionId>
-								</Source>
+								<AdditionSource>
+									<Item>ТабличнаяЧасть1</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
 								<ContextMenu name="ТабличнаяЧасть1СостояниеПросмотраКонтекстноеМеню" id="21"/>
 								<ExtendedTooltip name="ТабличнаяЧасть1СостояниеПросмотраРасширеннаяПодсказка" id="22"/>
 							</ViewStatusAddition>
 							<SearchControlAddition name="ТабличнаяЧасть1УправлениеПоиском" id="23">
-								<Source>
-									<lf:elementId>13</lf:elementId>
-									<lf:additionId>2</lf:additionId>
-								</Source>
+								<AdditionSource>
+									<Item>ТабличнаяЧасть1</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
 								<ContextMenu name="ТабличнаяЧасть1УправлениеПоискомКонтекстноеМеню" id="24"/>
 								<ExtendedTooltip name="ТабличнаяЧасть1УправлениеПоискомРасширеннаяПодсказка" id="25"/>
 							</SearchControlAddition>
@@ -266,26 +262,26 @@
 							<AutoCommandBar name="ТабличнаяЧасть2КоманднаяПанель" id="95"/>
 							<ExtendedTooltip name="ТабличнаяЧасть2РасширеннаяПодсказка" id="96"/>
 							<SearchStringAddition name="ТабличнаяЧасть2СтрокаПоиска" id="97">
-								<Source>
-									<lf:elementId>93</lf:elementId>
-									<lf:additionId>0</lf:additionId>
-								</Source>
+								<AdditionSource>
+									<Item>ТабличнаяЧасть2</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
 								<ContextMenu name="ТабличнаяЧасть2СтрокаПоискаКонтекстноеМеню" id="98"/>
 								<ExtendedTooltip name="ТабличнаяЧасть2СтрокаПоискаРасширеннаяПодсказка" id="99"/>
 							</SearchStringAddition>
 							<ViewStatusAddition name="ТабличнаяЧасть2СостояниеПросмотра" id="100">
-								<Source>
-									<lf:elementId>93</lf:elementId>
-									<lf:additionId>1</lf:additionId>
-								</Source>
+								<AdditionSource>
+									<Item>ТабличнаяЧасть2</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
 								<ContextMenu name="ТабличнаяЧасть2СостояниеПросмотраКонтекстноеМеню" id="101"/>
 								<ExtendedTooltip name="ТабличнаяЧасть2СостояниеПросмотраРасширеннаяПодсказка" id="102"/>
 							</ViewStatusAddition>
 							<SearchControlAddition name="ТабличнаяЧасть2УправлениеПоиском" id="103">
-								<Source>
-									<lf:elementId>93</lf:elementId>
-									<lf:additionId>2</lf:additionId>
-								</Source>
+								<AdditionSource>
+									<Item>ТабличнаяЧасть2</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
 								<ContextMenu name="ТабличнаяЧасть2УправлениеПоискомКонтекстноеМеню" id="104"/>
 								<ExtendedTooltip name="ТабличнаяЧасть2УправлениеПоискомРасширеннаяПодсказка" id="105"/>
 							</SearchControlAddition>
@@ -364,6 +360,7 @@
 									<v8:content>Сворачиваемая группа</v8:content>
 								</v8:item>
 							</ToolTip>
+							<Group>Vertical</Group>
 							<Behavior>Collapsible</Behavior>
 							<ExtendedTooltip name="СворачиваемаяГруппаРасширеннаяПодсказка" id="74"/>
 							<ChildItems>
@@ -465,7 +462,6 @@
 						<Button name="ЗаполнитьРекСтрока1" id="135">
 							<Type>UsualButton</Type>
 							<CommandName>Form.Command.ЗаполнитьРекСтрока1</CommandName>
-							<Parameter xsi:nil="true"/>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -477,7 +473,6 @@
 						<Button name="ЗаполнитьРекСтрока2" id="137">
 							<Type>UsualButton</Type>
 							<CommandName>Form.Command.ЗаполнитьРекСтрока2</CommandName>
-							<Parameter xsi:nil="true"/>
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
@@ -489,19 +484,16 @@
 						<Button name="ВывестиПредупреждение" id="156">
 							<Type>UsualButton</Type>
 							<CommandName>Form.Command.ВывестиПредупреждение</CommandName>
-							<Parameter xsi:nil="true"/>
 							<ExtendedTooltip name="ВывестиПредупреждениеРасширеннаяПодсказка" id="157"/>
 						</Button>
 						<Button name="ВвестиВНаименованиеИмяПользовтаеля" id="158">
 							<Type>UsualButton</Type>
 							<CommandName>Form.Command.ВвестиВНаименованиеИмяПользовтаеля</CommandName>
-							<Parameter xsi:nil="true"/>
 							<ExtendedTooltip name="ВвестиВНаименованиеИмяПользовтаеляРасширеннаяПодсказка" id="159"/>
 						</Button>
 						<Button name="ОткрытьСписокЗначениейСПометками" id="166">
 							<Type>UsualButton</Type>
 							<CommandName>Form.Command.ОткрытьСписокЗначениейСПометками</CommandName>
-							<Parameter xsi:nil="true"/>
 							<ExtendedTooltip name="ОткрытьСписокЗначениейСПометкамиРасширеннаяПодсказка" id="167"/>
 						</Button>
 					</ChildItems>

@@ -521,25 +521,6 @@
 		</right>
 	</object>
 	<object>
-		<name>Configuration.xUnitFor1C</name>
-		<right>
-			<name>Administration</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>DataAdministration</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>Automation</name>
-			<value>true</value>
-		</right>
-		<right>
-			<name>InteractiveOpenExtDataProcessors</name>
-			<value>true</value>
-		</right>
-	</object>
-	<object>
 		<name>Catalog.СправочникСТабЧастью.Attribute.РеквизитСоставногоТипа</name>
 		<right>
 			<name>View</name>
