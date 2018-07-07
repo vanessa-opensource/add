@@ -71,6 +71,7 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 
 Обязательно ознакомьтесь с:
 
++ часто задаваемыми вопросами [FAQ.md](./F.A.Q.md)
 + руководством контрибьютора [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
 + моделью спонсорства [DONATIONS.md](./DONATIONS.md)
 + известные проблемы [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
