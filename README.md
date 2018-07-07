@@ -66,8 +66,8 @@ ADD является наследником 2-х продуктов - [xUnitFor1
 Ручная установка:
 
 + Перейти в [раздел релизы](https://github.com/silverbulleters/add/releases)
-+ Скачать архив с последним стабильным релизом - прямая ссылка [Releases](https://github.com/silverbulleters/add/releases/latest)
-+ Распаковать архив.
++ Скачать архив `add-x.x.x.zip` с последним стабильным релизом - прямая ссылка [Releases](https://github.com/silverbulleters/add/releases/latest)
++ Распаковать указанный архив в нужную папку.
 
 Обязательно ознакомьтесь с:
 
