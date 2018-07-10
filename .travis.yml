@@ -50,7 +50,7 @@ jobs:
       - sudo docker run --detach -e XVFB_RESOLUTION=1920x1080x24 --volume="${PWD}":/home/ubuntu/code onec32/client:${ONECVERSION} client > /tmp/container_id
       - sudo docker ps && sleep 5
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb http://oscript.io/downloads/night-build/onescript-engine_1.0.21_all.deb  && sudo dpkg -i /tmp/oscript.deb"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install  > /dev/null 2>&1 && sudo opm update -all  > /dev/null 2>&1"
+      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install opm@0.13.1 && sudo opm install"
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run init file --buildFolderPath ./build"
       - sudo docker stop "$(cat /tmp/container_id)"
 
