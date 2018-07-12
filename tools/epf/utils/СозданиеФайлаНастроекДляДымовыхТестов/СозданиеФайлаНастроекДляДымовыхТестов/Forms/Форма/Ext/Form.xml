@@ -37,10 +37,17 @@
 		</UsualGroup>
 		<Table name="ДеревоМетаданных" id="8">
 			<Representation>Tree</Representation>
+			<ChangeRowSet>false</ChangeRowSet>
+			<ChangeRowOrder>false</ChangeRowOrder>
 			<AutoInsertNewRow>true</AutoInsertNewRow>
 			<EnableStartDrag>true</EnableStartDrag>
 			<EnableDrag>true</EnableDrag>
 			<DataPath>ДеревоМетаданных</DataPath>
+			<CommandSet>
+				<ExcludedCommand>Copy</ExcludedCommand>
+				<ExcludedCommand>Delete</ExcludedCommand>
+				<ExcludedCommand>Add</ExcludedCommand>
+			</CommandSet>
 			<ContextMenu name="ДеревоМетаданныхКонтекстноеМеню" id="9"/>
 			<AutoCommandBar name="ДеревоМетаданныхКоманднаяПанель" id="10"/>
 			<ExtendedTooltip name="ДеревоМетаданныхРасширеннаяПодсказка" id="11"/>
