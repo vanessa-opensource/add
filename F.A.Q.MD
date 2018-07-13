@@ -14,6 +14,11 @@
 	* например:
 		* одинарный слеш `\` не разрешен - используйте или `\\` или `/`
 		* или одинарные кавычки \` или ’ не разрешены - используйте `\"`
+		* Пример правильной настройки 
+
+```json
+		"КомандаСделатьСкриншот": "\"C:\\Program Files (x86)\\IrfanView\\i_view32.exe\" /capture=1 /convert=",
+```
 
 	* Разбор проблемы в https://xdd.silverbulleters.org/t/pri-paketnom-zapuske-ne-zagruzhayutsya-i-ne-vypolnyayutsya-fichi-otkryvaetsya-tolko-bddrunner/2132
 
@@ -73,6 +78,10 @@
 
 	+ так и `IrfanView`
 		+ команда `"C:\Program Files (x86)\IrfanView\i_view32.exe" /capture=1 /convert=`
+		+ команда
+```json
+		"\"C:\\Program Files (x86)\\IrfanView\\i_view32.exe\" /capture=1 /convert=",
+```
 
 	+ Важно только устанавливать 32-разрядные версии !!
 
@@ -92,7 +101,7 @@
 	"ДелатьСкриншотПриВозникновенииОшибки": true,
 	"СниматьСкриншотКаждогоОкна1С": true,
 	"КаталогOutputСкриншоты": "$workspaceRoot/build/out/ScreenShots",
-	"КомандаСделатьСкриншот": '"C:\Program Files (x86)\IrfanView\i_view32.exe" /capture=1 /convert='
+	"КомандаСделатьСкриншот": "\"C:\\Program Files (x86)\\IrfanView\\i_view32.exe\" /capture=1 /convert=",
 ```
 
 1. На CI сервере скриншот формируется, но вместо изображения чёрный экран. Как настроить сервер CI?
