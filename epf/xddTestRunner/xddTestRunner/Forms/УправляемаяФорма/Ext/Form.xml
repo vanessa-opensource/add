@@ -137,6 +137,11 @@
 						<CommandName>Form.Command.ПреобразоватьЖурналДействийПользователяВТест</CommandName>
 						<ExtendedTooltip name="ФормаПреобразоватьЖурналДействийПользователяВТестРасширеннаяПодсказка" id="443"/>
 					</Button>
+					<Button name="ФормаИнструментУправленияДымовымиТестами" id="466">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ИнструментУправленияДымовымиТестами</CommandName>
+						<ExtendedTooltip name="ФормаИнструментУправленияДымовымиТестамиРасширеннаяПодсказка" id="467"/>
+					</Button>
 				</ChildItems>
 			</Popup>
 			<Button name="ФормаКомандаПерезагрузитьФорму" id="137">
@@ -653,6 +658,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ЗагрузитьНастройкиИзФайла</Action>
+		</Command>
+		<Command name="ИнструментУправленияДымовымиТестами" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Управление дымовыми тестами</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Инструмент управления дымовыми тестами</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ИнструментУправленияДымовымиТестами</Action>
 		</Command>
 	</Commands>
 	<Parameters>
