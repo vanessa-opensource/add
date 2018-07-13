@@ -6,31 +6,31 @@
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
 				<xr:ObjectId>e30126c8-eb71-4599-b829-003b902f0fcb</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.СозданиеФайлаНастроекДляДымовыхТестов" category="Object">
+			<xr:GeneratedType name="ExternalDataProcessorObject.УправлениеДымовымиТестами" category="Object">
 				<xr:TypeId>ad2d63ee-86f7-4b9d-8554-51242235153f</xr:TypeId>
 				<xr:ValueId>a93ee18f-8524-430a-8c06-e4a15bedb47d</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>СозданиеФайлаНастроекДляДымовыхТестов</Name>
+			<Name>УправлениеДымовымиТестами</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Создание файла настроек для дымовых тестов</v8:content>
+					<v8:content>Управление дымовыми тестами</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<DefaultForm>ExternalDataProcessor.СозданиеФайлаНастроекДляДымовыхТестов.Form.Форма</DefaultForm>
+			<DefaultForm>ExternalDataProcessor.УправлениеДымовымиТестами.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
 			<TabularSection uuid="86e0b96a-e1b4-40ad-a05f-d11dcd7a1067">
 				<InternalInfo>
-					<xr:GeneratedType name="DataProcessorTabularSection.СозданиеФайлаНастроекДляДымовыхТестов.ЗначенияРеквизитовНовых" category="TabularSection">
+					<xr:GeneratedType name="DataProcessorTabularSection.УправлениеДымовымиТестами.ЗначенияРеквизитовНовых" category="TabularSection">
 						<xr:TypeId>efdf3a18-3377-4604-8aef-b03abb387690</xr:TypeId>
 						<xr:ValueId>9481f5c2-2514-448a-bfb7-ae81c40f9498</xr:ValueId>
 					</xr:GeneratedType>
-					<xr:GeneratedType name="DataProcessorTabularSectionRow.СозданиеФайлаНастроекДляДымовыхТестов.ЗначенияРеквизитовНовых" category="TabularSectionRow">
+					<xr:GeneratedType name="DataProcessorTabularSectionRow.УправлениеДымовымиТестами.ЗначенияРеквизитовНовых" category="TabularSectionRow">
 						<xr:TypeId>b6ae8105-d103-4b08-b8e1-0d2a6e3fb212</xr:TypeId>
 						<xr:ValueId>2ddadae4-d3e9-4dc5-a40f-c29da57f0ec4</xr:ValueId>
 					</xr:GeneratedType>
