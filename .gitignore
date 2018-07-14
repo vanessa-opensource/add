@@ -27,3 +27,4 @@ allure-report/
 tools/JSON/env.json.file
 opm-metadata.xml
 lib.config
+.scannerwork/
