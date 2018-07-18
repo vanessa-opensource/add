@@ -10241,7 +10241,7 @@
 																	</Events>
 																</CheckBoxField>
 																<CheckBoxField name="ОтобразитьОтчетAllure" id="1803">
-																	<DataPath>ОтображатьОтчетAllureВБраузере</DataPath>
+																	<DataPath>Объект.ОтображатьОтчетAllureВБраузере</DataPath>
 																	<TitleLocation>Right</TitleLocation>
 																	<CheckBoxType>Auto</CheckBoxType>
 																	<ContextMenu name="ОтобразитьОтчетAllureКонтекстноеМеню" id="1804"/>
@@ -16000,17 +16000,6 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
-			</Type>
-		</Attribute>
-		<Attribute name="ОтображатьОтчетAllureВБраузере" id="39">
-			<Title>
-				<v8:item>
-					<v8:lang>ru</v8:lang>
-					<v8:content>Отображать отчет allure</v8:content>
-				</v8:item>
-			</Title>
-			<Type>
-				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 		<ConditionalAppearance>
