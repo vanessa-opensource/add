@@ -1372,6 +1372,11 @@
 													<CommandName>Form.Command.ВнешнийИнструментБраузерТестов_xddTestRunner</CommandName>
 													<ExtendedTooltip name="ВнешнийИнструментБраузерТестов_xddTestRunnerРасширеннаяПодсказка" id="1798"/>
 												</Button>
+												<Button name="СоздатьОткрытьОтчетAllure" id="1799">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ОтобразитьОтчетAllureВБраузере</CommandName>
+													<ExtendedTooltip name="СоздатьОткрытьОтчетAllureРасширеннаяПодсказка" id="1800"/>
+												</Button>
 												<Button name="КомандаГенераторМакетовДанных" id="1789">
 													<Type>CommandBarButton</Type>
 													<CommandName>Form.Command.ГенераторМакетовДанных</CommandName>
@@ -9843,6 +9848,93 @@
 																<Event name="OnChange">ДелатьСкриншотПриВозникновенииОшибкиПриИзменении</Event>
 															</Events>
 														</CheckBoxField>
+														<InputField name="КомандаСделатьСкриншот" id="500">
+															<DataPath>Объект.КомандаСделатьСкриншот</DataPath>
+															<Title>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Консольная команда создания скриншотов</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>en</v8:lang>
+																	<v8:content>Console command on screenshots create</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>am</v8:lang>
+																	<v8:content>መሥሪያ ትዕዛዝ ለመፍጠር ቅጽበታዊ ገጽ እይታዎች</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>az</v8:lang>
+																	<v8:content>Консольная komanda yaratmaq ekran</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>bg</v8:lang>
+																	<v8:content>Конзолната команда създаване на скрийншоти</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>et</v8:lang>
+																	<v8:content>Konsooli käsk luua ekraanikuvasid</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>fr</v8:lang>
+																	<v8:content>La commande de création de captures d'écran</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ka</v8:lang>
+																	<v8:content>Console command შექმნათ პროფესიონალური</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>de</v8:lang>
+																	<v8:content>Konsolenbefehl erstellen von screenshots</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>hu</v8:lang>
+																	<v8:content>Konzol parancs, hogy hozzon létre screenshotok</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>it</v8:lang>
+																	<v8:content>Riga di comando per la creazione di screenshot</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>lv</v8:lang>
+																	<v8:content>Konsole komanda radītu ekrānšāviņi</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>lt</v8:lang>
+																	<v8:content>Konsolės komanda sukurti vaizdus</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>mn</v8:lang>
+																	<v8:content>Консол тушаал бий болгох дэлгэцийн</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>pl</v8:lang>
+																	<v8:content>Konsola drużyna tworzenia zrzutów ekranu</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>ro</v8:lang>
+																	<v8:content>Consola de comanda a crea capturi de ecran</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>sl</v8:lang>
+																	<v8:content>Konzola ukaz, da ustvarite screenshots</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>es</v8:lang>
+																	<v8:content>Comando de consola crear capturas de pantalla</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>sv</v8:lang>
+																	<v8:content>Console för att skapa skärmdumpar</v8:content>
+																</v8:item>
+																<v8:item>
+																	<v8:lang>tr</v8:lang>
+																	<v8:content>Konsol komutu oluşturmak ekran görüntüleri</v8:content>
+																</v8:item>
+															</Title>
+															<ContextMenu name="КомандаСделатьСкриншотКонтекстноеМеню" id="501"/>
+															<ExtendedTooltip name="КомандаСделатьСкриншотРасширеннаяПодсказка" id="1402"/>
+														</InputField>
 														<CheckBoxField name="СниматьСкриншотКаждогоОкна1С" id="1581">
 															<DataPath>Объект.СниматьСкриншотКаждогоОкна1С</DataPath>
 															<Title>
@@ -10038,98 +10130,125 @@
 													<ShowTitle>false</ShowTitle>
 													<ExtendedTooltip name="ГруппаAllureРасширеннаяПодсказка" id="1537"/>
 													<ChildItems>
-														<CheckBoxField name="ДелатьОтчетВФорматеАллюр" id="138">
-															<DataPath>Объект.ДелатьОтчетВФорматеАллюр</DataPath>
+														<UsualGroup name="ГруппаНастройкаAllure" id="1801">
 															<Title>
 																<v8:item>
 																	<v8:lang>ru</v8:lang>
-																	<v8:content>Формировать данные для отчета Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>en</v8:lang>
-																	<v8:content>Create data for Allure QA Report</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>am</v8:lang>
-																	<v8:content>አንድ ውሂብ ሪፖርቱ Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>az</v8:lang>
-																	<v8:content>Formalaşdırmaq üçün məlumat hesabatının Məlumat</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>bg</v8:lang>
-																	<v8:content>Формиране на данни за доклад на Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>et</v8:lang>
-																	<v8:content>Kujundada aruande andmed Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>fr</v8:lang>
-																	<v8:content>Former les données pour le rapport de l'Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>ka</v8:lang>
-																	<v8:content>გენერირება მონაცემები ანგარიშში Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>de</v8:lang>
-																	<v8:content>Die formung der Daten für den Bericht Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>hu</v8:lang>
-																	<v8:content>Generál adatokat a jelentés Varázsa</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>it</v8:lang>
-																	<v8:content>Modellare i dati per il report Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>lv</v8:lang>
-																	<v8:content>Veidot atskaites dati Vilinājums</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>lt</v8:lang>
-																	<v8:content>Formuoti duomenis ataskaitai Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>mn</v8:lang>
-																	<v8:content>Бий болгох мэдээллийг тайлан Зүйлсээр</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>pl</v8:lang>
-																	<v8:content>Kształtować dane do raportu Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>ro</v8:lang>
-																	<v8:content>Forma de date pentru raportul Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>sl</v8:lang>
-																	<v8:content>Za generiranje podatkov za poročilo Vabiti</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>es</v8:lang>
-																	<v8:content>Construcción de la información para el informe de Allure</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>sv</v8:lang>
-																	<v8:content>För att generera data för rapporten Locka</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>tr</v8:lang>
-																	<v8:content>Şekil verileri için rapor Allure</v8:content>
+																	<v8:content>Группа настройка allure</v8:content>
 																</v8:item>
 															</Title>
-															<TitleLocation>Right</TitleLocation>
-															<CheckBoxType>Auto</CheckBoxType>
-															<ContextMenu name="ДелатьОтчетВФорматеАллюрКонтекстноеМеню" id="139"/>
-															<ExtendedTooltip name="ДелатьОтчетВФорматеАллюрРасширеннаяПодсказка" id="1392"/>
-															<Events>
-																<Event name="OnChange">ДелатьОтчетВФорматеАллюрПриИзменении</Event>
-															</Events>
-														</CheckBoxField>
+															<ToolTip>
+																<v8:item>
+																	<v8:lang>ru</v8:lang>
+																	<v8:content>Группа настройка allure</v8:content>
+																</v8:item>
+															</ToolTip>
+															<Group>Horizontal</Group>
+															<Representation>None</Representation>
+															<ShowTitle>false</ShowTitle>
+															<ExtendedTooltip name="ГруппаНастройкаAllureРасширеннаяПодсказка" id="1802"/>
+															<ChildItems>
+																<CheckBoxField name="ДелатьОтчетВФорматеАллюр" id="138">
+																	<DataPath>Объект.ДелатьОтчетВФорматеАллюр</DataPath>
+																	<Title>
+																		<v8:item>
+																			<v8:lang>ru</v8:lang>
+																			<v8:content>Формировать данные для отчета Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>en</v8:lang>
+																			<v8:content>Create data for Allure QA Report</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>am</v8:lang>
+																			<v8:content>አንድ ውሂብ ሪፖርቱ Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>az</v8:lang>
+																			<v8:content>Formalaşdırmaq üçün məlumat hesabatının Məlumat</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>bg</v8:lang>
+																			<v8:content>Формиране на данни за доклад на Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>et</v8:lang>
+																			<v8:content>Kujundada aruande andmed Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>fr</v8:lang>
+																			<v8:content>Former les données pour le rapport de l'Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>ka</v8:lang>
+																			<v8:content>გენერირება მონაცემები ანგარიშში Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>de</v8:lang>
+																			<v8:content>Die formung der Daten für den Bericht Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>hu</v8:lang>
+																			<v8:content>Generál adatokat a jelentés Varázsa</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>it</v8:lang>
+																			<v8:content>Modellare i dati per il report Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>lv</v8:lang>
+																			<v8:content>Veidot atskaites dati Vilinājums</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>lt</v8:lang>
+																			<v8:content>Formuoti duomenis ataskaitai Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>mn</v8:lang>
+																			<v8:content>Бий болгох мэдээллийг тайлан Зүйлсээр</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>pl</v8:lang>
+																			<v8:content>Kształtować dane do raportu Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>ro</v8:lang>
+																			<v8:content>Forma de date pentru raportul Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>sl</v8:lang>
+																			<v8:content>Za generiranje podatkov za poročilo Vabiti</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>es</v8:lang>
+																			<v8:content>Construcción de la información para el informe de Allure</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>sv</v8:lang>
+																			<v8:content>För att generera data för rapporten Locka</v8:content>
+																		</v8:item>
+																		<v8:item>
+																			<v8:lang>tr</v8:lang>
+																			<v8:content>Şekil verileri için rapor Allure</v8:content>
+																		</v8:item>
+																	</Title>
+																	<TitleLocation>Right</TitleLocation>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="ДелатьОтчетВФорматеАллюрКонтекстноеМеню" id="139"/>
+																	<ExtendedTooltip name="ДелатьОтчетВФорматеАллюрРасширеннаяПодсказка" id="1392"/>
+																	<Events>
+																		<Event name="OnChange">ДелатьОтчетВФорматеАллюрПриИзменении</Event>
+																	</Events>
+																</CheckBoxField>
+																<CheckBoxField name="ОтобразитьОтчетAllure" id="1803">
+																	<DataPath>ОтображатьОтчетAllureВБраузере</DataPath>
+																	<TitleLocation>Right</TitleLocation>
+																	<CheckBoxType>Auto</CheckBoxType>
+																	<ContextMenu name="ОтобразитьОтчетAllureКонтекстноеМеню" id="1804"/>
+																	<ExtendedTooltip name="ОтобразитьОтчетAllureРасширеннаяПодсказка" id="1805"/>
+																</CheckBoxField>
+															</ChildItems>
+														</UsualGroup>
 														<InputField name="КаталогOutputAllure" id="141">
 															<DataPath>Объект.КаталогOutputAllure</DataPath>
 															<Title>
@@ -10893,95 +11012,6 @@
 													<Group>Vertical</Group>
 													<ShowTitle>false</ShowTitle>
 													<ExtendedTooltip name="СтраницыАвтоИнструкцииОсновныеРасширеннаяПодсказка" id="1401"/>
-													<ChildItems>
-														<InputField name="КомандаСделатьСкриншот" id="500">
-															<DataPath>Объект.КомандаСделатьСкриншот</DataPath>
-															<Title>
-																<v8:item>
-																	<v8:lang>ru</v8:lang>
-																	<v8:content>Консольная команда создания скриншотов</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>en</v8:lang>
-																	<v8:content>Console command on screenshots create</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>am</v8:lang>
-																	<v8:content>መሥሪያ ትዕዛዝ ለመፍጠር ቅጽበታዊ ገጽ እይታዎች</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>az</v8:lang>
-																	<v8:content>Консольная komanda yaratmaq ekran</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>bg</v8:lang>
-																	<v8:content>Конзолната команда създаване на скрийншоти</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>et</v8:lang>
-																	<v8:content>Konsooli käsk luua ekraanikuvasid</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>fr</v8:lang>
-																	<v8:content>La commande de création de captures d'écran</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>ka</v8:lang>
-																	<v8:content>Console command შექმნათ პროფესიონალური</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>de</v8:lang>
-																	<v8:content>Konsolenbefehl erstellen von screenshots</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>hu</v8:lang>
-																	<v8:content>Konzol parancs, hogy hozzon létre screenshotok</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>it</v8:lang>
-																	<v8:content>Riga di comando per la creazione di screenshot</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>lv</v8:lang>
-																	<v8:content>Konsole komanda radītu ekrānšāviņi</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>lt</v8:lang>
-																	<v8:content>Konsolės komanda sukurti vaizdus</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>mn</v8:lang>
-																	<v8:content>Консол тушаал бий болгох дэлгэцийн</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>pl</v8:lang>
-																	<v8:content>Konsola drużyna tworzenia zrzutów ekranu</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>ro</v8:lang>
-																	<v8:content>Consola de comanda a crea capturi de ecran</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>sl</v8:lang>
-																	<v8:content>Konzola ukaz, da ustvarite screenshots</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>es</v8:lang>
-																	<v8:content>Comando de consola crear capturas de pantalla</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>sv</v8:lang>
-																	<v8:content>Console för att skapa skärmdumpar</v8:content>
-																</v8:item>
-																<v8:item>
-																	<v8:lang>tr</v8:lang>
-																	<v8:content>Konsol komutu oluşturmak ekran görüntüleri</v8:content>
-																</v8:item>
-															</Title>
-															<ContextMenu name="КомандаСделатьСкриншотКонтекстноеМеню" id="501"/>
-															<ExtendedTooltip name="КомандаСделатьСкриншотРасширеннаяПодсказка" id="1402"/>
-														</InputField>
-													</ChildItems>
 												</UsualGroup>
 												<UsualGroup name="HTMLИMarkdown" id="658">
 													<Title>
@@ -15972,6 +16002,17 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
+		<Attribute name="ОтображатьОтчетAllureВБраузере" id="39">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отображать отчет allure</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
 		<ConditionalAppearance>
 			<dcsset:item>
 				<dcsset:selection>
@@ -18695,6 +18736,21 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>ВнешнийИнструментБраузерТестов_xddTestRunner</Action>
+		</Command>
+		<Command name="ОтобразитьОтчетAllureВБраузере" id="79">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отобразить отчет Allure в браузере</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Отобразить отчет allure в браузере</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>СоздатьОткрытьОтчетAllure</Action>
 		</Command>
 	</Commands>
 </Form>
