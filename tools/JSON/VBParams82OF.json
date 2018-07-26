@@ -2,7 +2,7 @@
     "$schema":"https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/behavior-schema.json",
    "ИмяСборки":"82OF",
    "ВерсияПлатформы":"8.2",
-   "КаталогПоискаВерсииПлатформы":"C:\Program Files (x86)\1cv82",
+   "КаталогПоискаВерсииПлатформы":"C:/Program Files (x86)/1cv82",
    "СтрокаПодключенияКБазе":"/F./build/ServiceBases/v82ServiceBase82",
    "ДополнительныеПараметры":"/RunModeOrdinaryApplication",
    "ЗапускатьТолстыйКлиент": "Истина",
