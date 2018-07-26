@@ -3,34 +3,34 @@
 Пути к внутренним файлам задаются относительно каталога tools
 Например:
 ```
-   .\JSON\VBParams82OF.json
+   ./JSON/VBParams82OF.json
 ```
 
 #### Пример json файла для одного Сборки
-```
+```json
 {
    "ИмяСборки":"Сборка 8.2",
    "ВерсияПлатформы":"8.2",
-   "КаталогПоискаВерсииПлатформы":"C:\Program Files (x86)\1cv82",
-   "СтрокаПодключенияКБазе":"ENTERPRISE /F.\..\Distr\v82ServiceBase /RunModeOrdinaryApplication",
-   "ПутьКVanessaBehavior": ".\..\bddRunner.epf",
-   "КаталогФич": ".\..\features",
+   "КаталогПоискаВерсииПлатформы":"C:\\Program Files (x86)\\1cv82",
+   "СтрокаПодключенияКБазе":"ENTERPRISE /F.\\Distr\\v82ServiceBase /RunModeOrdinaryApplication",
+   "ПутьКVanessaBehavior": "./bddRunner.epf",
+   "КаталогФич": "./features",
    "КаталогиБиблиотек":[
-   ".\..\features\libraries"
+   "./features/libraries"
    ],
-   "EpfДляИнициализацияБазы": ".\epf\init.epf",
-   "ПараметрыДляИнициализацияБазы": ".\epf\init.json",
+   "EpfДляИнициализацияБазы": "./epf/init.epf",
+   "ПараметрыДляИнициализацияБазы": "./epf/init.json",
    "ВыполнитьСценарии": "Истина",
    "ДелатьОтчетВФорматеАллюр": "Истина",
-   "КаталогOutputAllureБазовый": ".\..\distr\allurereport",
+   "КаталогOutputAllureБазовый": "./distr/allurereport",
    "ЗавершитьРаботуСистемы": "Истина",
    "ЗакрытьTestClientПослеЗапускаСценариев": "Истина",
    "ДелатьЛогВыполненияСценариевВЖР": "Истина",
    "ДелатьСкриншотПриВозникновенииОшибки": "Истина",
-   "КаталогOutputСкриншоты": ".\ServiceBases\ScreenShots",
-   "КомандаСделатьСкриншот": '"C:\\Program Files (x86)\\IrfanView\\i_view32.exe" /capture=1 /convert=',
+   "КаталогOutputСкриншоты": "./ServiceBases/ScreenShots",
+   "КомандаСделатьСкриншот": "\"C:\\Program Files (x86)\\IrfanView\\i_view32.exe\" /capture=1 /convert=",
    "ВыгружатьСтатусВыполненияСценариевВФайл": "Истина",
-   "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": ".\..\distr\BuildStatus.log",
+   "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "./distr/BuildStatus.log",
    "СоздаватьПодкаталогВКаталогеAllureДляЭтойСборки": "Истина",
    "ДобавлятьКИмениСценарияУсловияВыгрузки": "Истина",
    "СписокТеговИсключение":[
