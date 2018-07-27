@@ -1,5 +1,5 @@
 ﻿<a id="markdown-add" name="add"></a>
-# ADD
+# Vanessa-ADD ( ADD )
 
 [![Открытый чат проекта https://gitter.im/silverbulleters/vanessa-behavoir](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/silverbulleters/vanessa-behavoir?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](http://ci.silverbulleters.org/buildStatus/icon?job=ADD%20test/develop)](http://ci.silverbulleters.org/job/ADD%20test/job/develop/)
@@ -7,7 +7,7 @@
 
 <!-- TOC insertAnchor:true -->
 
-- [ADD](#add)
+- [Vanessa-ADD](#vanessa-add)
     - [Введение](#введение)
     - [Установка](#установка)
     - [Описание использования](#описание-использования)
@@ -32,9 +32,9 @@
 <a id="markdown-введение" name="введение"></a>
 ## Введение 
 
-Продукт ADD (Automation Driven Development) есть набор инструментов для проверки качества решений на платформе 1С:Предприятие.
+Продукт Vanessa-ADD (Automation Driven Development) есть набор инструментов для проверки качества решений на платформе 1С:Предприятие.
 
-ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1c.ru) - Tests/behavior (TDD & BDD) for 1С:Enterprise.
+Vanessa-ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1c.ru) - Tests/behavior (TDD & BDD) for 1С:Enterprise.
 
 Миссия продукта - повышение качества разработки.
 
@@ -46,7 +46,7 @@ ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1c.ru) - 
 + проверка поведения (BDD/Gherkin)
 + формирование автодокументации в формате Markdown и видео.
 
-ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior). Совместимость с VB 1.Х и xUnitFor1C 4.Х гарантирована.
+Vanessa-ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior). Совместимость с VB 1.Х и xUnitFor1C 4.Х гарантирована.
 
 <a id="markdown-установка" name="установка"></a>
 ## Установка
