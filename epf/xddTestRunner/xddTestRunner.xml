@@ -20,8 +20,8 @@
 				</v8:item>
 			</Synonym>
 			<Comment>https://github.com/silverbulleters/add</Comment>
-			<DefaultForm>ExternalDataProcessor.xddTestRunner.Form.Форма</DefaultForm>
-			<AuxiliaryForm>ExternalDataProcessor.xddTestRunner.Form.УправляемаяФорма</AuxiliaryForm>
+			<DefaultForm>ExternalDataProcessor.xddTestRunner.Form.УправляемаяФорма</DefaultForm>
+			<AuxiliaryForm>ExternalDataProcessor.xddTestRunner.Form.Форма</AuxiliaryForm>
 		</Properties>
 		<ChildObjects>
 			<Attribute uuid="c1ba54a0-a096-4a11-bc8b-5199576eca67">
