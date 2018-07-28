@@ -16,10 +16,10 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Тестирование для 1С:Предприятия 8, xUnitFor1C</v8:content>
+					<v8:content>Тестирование для 1С:Предприятия 8, Vanessa-ADD</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment>https://github.com/xDrivenDevelopment/xUnitFor1C</Comment>
+			<Comment>https://github.com/silverbulleters/add</Comment>
 			<DefaultForm>ExternalDataProcessor.xddTestRunner.Form.Форма</DefaultForm>
 			<AuxiliaryForm>ExternalDataProcessor.xddTestRunner.Form.УправляемаяФорма</AuxiliaryForm>
 		</Properties>
