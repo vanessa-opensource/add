@@ -5,7 +5,8 @@
         "--db-user": "",
         "--db-pwd": "",
         "--workspace": ".",
-        "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
+        "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
+        // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
         "--ordinaryapp": "-1"
     },
     "vanessa": {
