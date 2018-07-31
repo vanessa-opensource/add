@@ -28,3 +28,6 @@ tools/JSON/env.json.file
 opm-metadata.xml
 lib.config
 .scannerwork/
+tools/VideoTools/FrameShow.exe
+tools/VideoTools/KeyboardType.exe
+tools/VideoTools/MouseMove.exe
