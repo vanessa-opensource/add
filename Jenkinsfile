@@ -138,7 +138,7 @@ firsttasks["qa"] = {
             unix = isUnix();
             if (env.QASONAR) {
                 checkout scm
-                //try{
+                try{
                     println env.QASONAR;
                     def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/Main_Classic/bin/sonar-scanner\""
                     withCredentials([[$class: 'StringBinding', credentialsId: env.SonarOAuthCredentianalID, variable: 'SonarOAuth']]) {
@@ -189,9 +189,9 @@ firsttasks["qa"] = {
                         echo "sonar status : ${e}" 
                     }
         
-                //} catch (e) {
-                //    echo "sonar status : ${e}"
-                //}
+                } catch (e) {
+                    echo "sonar status : ${e}"
+                }
 
                 
             } else {
@@ -210,9 +210,10 @@ firsttasks["slave"] = {
         stage("build"){
             //def unix = isUnix()
             cleanWs(patterns: [[pattern: 'build/ServiceBases/**', type: 'INCLUDE']])
+            cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']])
             cmd "opm run init file --buildFolderPath ./build"
-            //stash includes: 'build/**',  excludes: 'build/cache.txt', name: 'buildResults'
-            stash includes: 'build/**', name: 'buildResults'
+            stash excludes: 'build/cache.txt,build/ib/**,build/ibservice/**, build/ibservicexdd/**', includes: 'build/**', name: 'buildResults'
+            //stash includes: 'build/**', name: 'buildResults'
         }
     }
 }
