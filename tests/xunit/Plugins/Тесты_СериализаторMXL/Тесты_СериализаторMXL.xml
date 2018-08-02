@@ -90,6 +90,7 @@
 			<Template>СозданиеДокументаПоГуид</Template>
 			<Template>ПерезаполнениеДокументаПоГуид</Template>
 			<Template>ПерезаполнениеПВХ</Template>
+			<Template>СозданиеПростогоСправочникаJSON</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
