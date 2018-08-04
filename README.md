@@ -121,7 +121,7 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 
 Чтобы у вас работало создание автовидеоинструкций, необходимо установить дополнительный софт.
 
-Инструкция [здесь](https://github.com/silverbulleters/add/blob/develop/MakeAutoVideo.md).
+Инструкция, по настройке окружения для формирования автовидеоинструкций [здесь](https://github.com/silverbulleters/add/blob/develop/MakeAutoVideo.md).
 Также по автовидеоинструкциям есть вот это замечательное [видео](https://www.youtube.com/watch?v=BfXowJH5uP0)
 
 <a id="markdown-описание-использования-в-режиме-bdd" name="описание-использования-в-режиме-bdd"></a>
