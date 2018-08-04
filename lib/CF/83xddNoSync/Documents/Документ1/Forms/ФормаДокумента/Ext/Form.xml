@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<VerticalScroll>useIfNecessary</VerticalScroll>
+	<AutoTime>CurrentOrLast</AutoTime>
+	<UsePostingMode>Auto</UsePostingMode>
+	<RepostOnWrite>true</RepostOnWrite>
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="18"/>
+		</InputField>
+		<InputField name="Дата" id="3">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="4"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="19"/>
+		</InputField>
+		<InputField name="ПростойСправочник" id="5">
+			<DataPath>Объект.ПростойСправочник</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПростойСправочникКонтекстноеМеню" id="6"/>
+			<ExtendedTooltip name="ПростойСправочникРасширеннаяПодсказка" id="20"/>
+		</InputField>
+		<Table name="Состав" id="7">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.Состав</DataPath>
+			<SearchStringLocation>None</SearchStringLocation>
+			<ViewStatusLocation>None</ViewStatusLocation>
+			<SearchControlLocation>None</SearchControlLocation>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="СоставКонтекстноеМеню" id="8"/>
+			<AutoCommandBar name="СоставКоманднаяПанель" id="9"/>
+			<ExtendedTooltip name="СоставРасширеннаяПодсказка" id="21"/>
+			<SearchStringAddition name="СоставСтрокаПоиска" id="22">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСтрокаПоискаКонтекстноеМеню" id="23"/>
+				<ExtendedTooltip name="СоставСтрокаПоискаРасширеннаяПодсказка" id="24"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="СоставСостояниеПросмотра" id="25">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставСостояниеПросмотраКонтекстноеМеню" id="26"/>
+				<ExtendedTooltip name="СоставСостояниеПросмотраРасширеннаяПодсказка" id="27"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="СоставУправлениеПоиском" id="28">
+				<AdditionSource>
+					<Item>Состав</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="СоставУправлениеПоискомКонтекстноеМеню" id="29"/>
+				<ExtendedTooltip name="СоставУправлениеПоискомРасширеннаяПодсказка" id="30"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="СоставНомерСтроки" id="10">
+					<DataPath>Объект.Состав.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставНомерСтрокиКонтекстноеМеню" id="11"/>
+					<ExtendedTooltip name="СоставНомерСтрокиРасширеннаяПодсказка" id="31"/>
+				</LabelField>
+				<InputField name="СоставРеквизитЧисло" id="12">
+					<DataPath>Объект.Состав.РеквизитЧисло</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставРеквизитЧислоКонтекстноеМеню" id="13"/>
+					<ExtendedTooltip name="СоставРеквизитЧислоРасширеннаяПодсказка" id="32"/>
+				</InputField>
+				<CheckBoxField name="СоставРеквизитБулево" id="14">
+					<DataPath>Объект.Состав.РеквизитБулево</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<CheckBoxType>Auto</CheckBoxType>
+					<ContextMenu name="СоставРеквизитБулевоКонтекстноеМеню" id="15"/>
+					<ExtendedTooltip name="СоставРеквизитБулевоРасширеннаяПодсказка" id="33"/>
+				</CheckBoxField>
+				<InputField name="СоставПростойСправочник2" id="16">
+					<DataPath>Объект.Состав.ПростойСправочник2</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="СоставПростойСправочник2КонтекстноеМеню" id="17"/>
+					<ExtendedTooltip name="СоставПростойСправочник2РасширеннаяПодсказка" id="34"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DocumentObject.Документ1</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+			<UseAlways>
+				<Field>Объект.RegisterRecords</Field>
+			</UseAlways>
+		</Attribute>
+	</Attributes>
+</Form>
