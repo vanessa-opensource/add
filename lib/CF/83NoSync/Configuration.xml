@@ -140,6 +140,7 @@
 			<Catalog>Товары</Catalog>
 			<Document>Документ1</Document>
 			<Document>ПриходнаяНакладая</Document>
+			<Document>ДокументСДвижениями</Document>
 			<Enum>Перечисление1</Enum>
 			<Report>КомпоновкаТест</Report>
 			<Report>ОтчетПереносСтрок</Report>
@@ -148,6 +149,9 @@
 			<DataProcessor>ВыполнитьПроизвольноеВыражение</DataProcessor>
 			<DataProcessor>ПроверкаСостоянияЭлементов</DataProcessor>
 			<InformationRegister>РегистрСведений1</InformationRegister>
+			<InformationRegister>РСПодчиненРегистраторуПериодический</InformationRegister>
+			<AccumulationRegister>РегистрНакопленияОбороты</AccumulationRegister>
+			<AccumulationRegister>РегистрНакопленияОстатки</AccumulationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
