@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Configuration uuid="9e43bd0b-1880-4740-ae0e-158c4bec23fe">
+		<InternalInfo>
+			<xr:ContainedObject>
+				<xr:ClassId>9cd510cd-abfc-11d4-9434-004095e12fc7</xr:ClassId>
+				<xr:ObjectId>5fafd470-b0a2-485b-b255-a3b8faa26fb7</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:ContainedObject>
+				<xr:ClassId>9fcd25a0-4822-11d4-9414-008048da11f9</xr:ClassId>
+				<xr:ObjectId>6eaeb2c4-c358-4c9b-82bf-b779f300f3e5</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:ContainedObject>
+				<xr:ClassId>e3687481-0a87-462c-a166-9f34594f9bba</xr:ClassId>
+				<xr:ObjectId>579c1543-cef7-4925-bf5c-8d647b10ae9c</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:ContainedObject>
+				<xr:ClassId>9de14907-ec23-4a07-96f0-85521cb6b53b</xr:ClassId>
+				<xr:ObjectId>5b74eae4-4a1c-4e7f-8ffc-15b9dd85359b</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:ContainedObject>
+				<xr:ClassId>51f2d5d8-ea4d-4064-8892-82951750031e</xr:ClassId>
+				<xr:ObjectId>811a0158-e000-4e8b-b55d-3c8ee2db8b5f</xr:ObjectId>
+			</xr:ContainedObject>
+			<xr:ContainedObject>
+				<xr:ClassId>e68182ea-4237-4383-967f-90c1e3370bc7</xr:ClassId>
+				<xr:ObjectId>e4f92e27-7e0f-4b89-81c9-1f942dc7e704</xr:ObjectId>
+			</xr:ContainedObject>
+		</InternalInfo>
+		<Properties>
+			<Name>ADD_TDD</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>ADD/TDD, ver. 5.4.0</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<NamePrefix/>
+			<ConfigurationExtensionCompatibilityMode>Version8_3_10</ConfigurationExtensionCompatibilityMode>
+			<DefaultRunMode>ManagedApplication</DefaultRunMode>
+			<UsePurposes>
+				<v8:Value xsi:type="app:ApplicationUsePurpose">PersonalComputer</v8:Value>
+			</UsePurposes>
+			<ScriptVariant>Russian</ScriptVariant>
+			<DefaultRoles/>
+			<Vendor/>
+			<Version>5.4.0</Version>
+			<UpdateCatalogAddress/>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<UseManagedFormInOrdinaryApplication>true</UseManagedFormInOrdinaryApplication>
+			<UseOrdinaryFormInManagedApplication>true</UseOrdinaryFormInManagedApplication>
+			<AdditionalFullTextSearchDictionaries/>
+			<CommonSettingsStorage/>
+			<ReportsUserSettingsStorage/>
+			<ReportsVariantsStorage/>
+			<FormDataSettingsStorage/>
+			<DynamicListsUserSettingsStorage/>
+			<Content/>
+			<DefaultReportForm>CommonForm.ФормаОтчета</DefaultReportForm>
+			<DefaultReportVariantForm/>
+			<DefaultReportSettingsForm/>
+			<DefaultDynamicListSettingsForm/>
+			<DefaultSearchForm/>
+			<RequiredMobileApplicationPermissions>
+				<v8:pair>
+					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">Multimedia</v8:Key>
+					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+				</v8:pair>
+				<v8:pair>
+					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">Location</v8:Key>
+					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+				</v8:pair>
+				<v8:pair>
+					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">Contacts</v8:Key>
+					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+				</v8:pair>
+				<v8:pair>
+					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">Calendars</v8:Key>
+					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+				</v8:pair>
+				<v8:pair>
+					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">Telephony</v8:Key>
+					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+				</v8:pair>
+				<v8:pair>
+					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">PushNotification</v8:Key>
+					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+				</v8:pair>
+				<v8:pair>
+					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">LocalNotification</v8:Key>
+					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+				</v8:pair>
+				<v8:pair>
+					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">Print</v8:Key>
+					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+				</v8:pair>
+				<v8:pair>
+					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">InAppPurchases</v8:Key>
+					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+				</v8:pair>
+				<v8:pair>
+					<v8:Key xsi:type="app:RequiredMobileApplicationPermissions">Ads</v8:Key>
+					<v8:Value xsi:type="xs:boolean">false</v8:Value>
+				</v8:pair>
+			</RequiredMobileApplicationPermissions>
+			<MainClientApplicationWindowMode>Normal</MainClientApplicationWindowMode>
+			<DefaultInterface/>
+			<DefaultStyle/>
+			<DefaultLanguage>Language.Русский</DefaultLanguage>
+			<BriefInformation/>
+			<DetailedInformation/>
+			<Copyright/>
+			<VendorInformationAddress/>
+			<ConfigurationInformationAddress/>
+			<DataLockControlMode>Managed</DataLockControlMode>
+			<ObjectAutonumerationMode>NotAutoFree</ObjectAutonumerationMode>
+			<ModalityUseMode>DontUse</ModalityUseMode>
+			<SynchronousPlatformExtensionAndAddInCallUseMode>DontUse</SynchronousPlatformExtensionAndAddInCallUseMode>
+			<InterfaceCompatibilityMode>TaxiEnableVersion8_2</InterfaceCompatibilityMode>
+			<CompatibilityMode>Version8_3_8</CompatibilityMode>
+			<DefaultConstantsForm/>
+		</Properties>
+		<ChildObjects>
+			<Language>Русский</Language>
+			<Subsystem>Тестовая</Subsystem>
+			<Subsystem>ПадающаяТестовая</Subsystem>
+			<Subsystem>xUnitFor1C</Subsystem>
+			<Role>ПолныеПрава</Role>
+			<Role>Роль1</Role>
+			<Role>ПраваНеобходимыеДляТестирования</Role>
+			<CommonModule>xddКлиент</CommonModule>
+			<CommonModule>xddСервер</CommonModule>
+			<CommonModule>ЗапускПриложенияКлиент</CommonModule>
+			<CommonModule>ЗапускПриложенияСервер</CommonModule>
+			<ExchangePlan>ПланОбмена1</ExchangePlan>
+			<FunctionalOption>ФункциональнаяОпция1</FunctionalOption>
+			<CommonForm>ФормаОтчета</CommonForm>
+			<Catalog>ПростойСправочник</Catalog>
+			<Catalog>ПростойСправочник2</Catalog>
+			<Catalog>ИерархическийСправочник</Catalog>
+			<Catalog>СправочникСТабЧастью</Catalog>
+			<Catalog>ПодчиненныйСправочник</Catalog>
+			<Catalog>СправочникСоСсылкойНаСамогоСебя</Catalog>
+			<Catalog>ПодчиненныйСДвумяВладельцами</Catalog>
+			<Catalog>СправочникСОбязательнымРеквизитом</Catalog>
+			<Document>Документ1</Document>
+			<Document>Документ2</Document>
+			<Enum>Перечисление1</Enum>
+			<Report>Отчет1</Report>
+			<Report>ТестовыйОтчетСКДДляСравнениеСЭталоном</Report>
+			<Report>Тест_Отчет</Report>
+			<Report>Отчет2</Report>
+			<DataProcessor>xddGuidShow</DataProcessor>
+			<DataProcessor>Тест_Обработка</DataProcessor>
+			<DataProcessor>ТестОбработка_Форма_ИсключениеПриОткрытии</DataProcessor>
+			<DataProcessor>ТестПадающий_Обработка</DataProcessor>
+			<DataProcessor>Тест_ЗагрузчикИзПодсистем_НовыйAPIОбъявленияТестов</DataProcessor>
+			<DataProcessor>xddTestRunner</DataProcessor>
+			<DataProcessor>БазовыеУтверждения</DataProcessor>
+			<DataProcessor>ВременныеФайлы</DataProcessor>
+			<DataProcessor>ГенераторОтчетаJUnitXML</DataProcessor>
+			<DataProcessor>ГенераторОтчетаMXL</DataProcessor>
+			<DataProcessor>ЗагрузчикИзПодсистемКонфигурации</DataProcessor>
+			<DataProcessor>ЗагрузчикКаталога</DataProcessor>
+			<DataProcessor>ЗагрузчикФайла</DataProcessor>
+			<DataProcessor>ЗапросыИзБД</DataProcessor>
+			<DataProcessor>КомандныйФайл</DataProcessor>
+			<DataProcessor>ПарсерКоманднойСтроки</DataProcessor>
+			<DataProcessor>ПостроительДереваТестов</DataProcessor>
+			<DataProcessor>СериализаторMXL</DataProcessor>
+			<DataProcessor>СтроковыеУтилиты</DataProcessor>
+			<DataProcessor>УтвержденияBDD</DataProcessor>
+			<DataProcessor>УтвержденияПроверкаТаблиц</DataProcessor>
+			<DataProcessor>ПреобразованиеЖурналаДействийПользователя</DataProcessor>
+			<DataProcessor>xddTestsConvertIntoRebornFormat</DataProcessor>
+			<InformationRegister>РегистрСведений1</InformationRegister>
+			<InformationRegister>РСПодчиненныйРегистратору</InformationRegister>
+			<AccumulationRegister>РегистрНакопления2</AccumulationRegister>
+			<ChartOfCharacteristicTypes>ВидыСубконто1</ChartOfCharacteristicTypes>
+			<ChartOfAccounts>ПланСчетов1</ChartOfAccounts>
+			<AccountingRegister>РегистрБухгалтерии1</AccountingRegister>
+			<ChartOfCalculationTypes>ПланВидовРасчета1</ChartOfCalculationTypes>
+			<BusinessProcess>БизнесПроцесс1</BusinessProcess>
+			<BusinessProcess>БизнесПроцесс2</BusinessProcess>
+			<Task>Задача1</Task>
+		</ChildObjects>
+	</Configuration>
+</MetaDataObject>
