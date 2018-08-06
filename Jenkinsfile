@@ -296,7 +296,11 @@ tasks["report"] = {
             unstash "video"
             unstash "xdd"
             try{
-                allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
+                allure includeProperties: false, jdk: '', 
+                    results: [
+                        [path: 'build/ServiceBases/allurereport/']
+                    ]
+                // allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
             } catch (e) {
                 echo "allure status : ${e}"
                 currentBuild.result = 'UNSTABLE'
