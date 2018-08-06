@@ -99,13 +99,21 @@ tasks["buildRelease"] = {
             cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
             cleanWs(patterns: [[pattern: './.forbuild/**', type: 'INCLUDE']]);
             cleanWs(patterns: [[pattern: '*.ospx, add.tar.gz, add.tar.bz2, add.7z, add.tar', type: 'INCLUDE']])
-            cmd "opm build ./"
-            cmd "7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
-            cmd "7z a add.7z ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
-            cmd "7z a add.tar.gz add.tar"
-            cmd "7z a add.tar.bz2 add.tar"
-            archiveArtifacts '*.ospx, add.tar.gz, add.tar.bz2, add.7z'
-            stash allowEmpty: false, includes: "*.ospx, add.tar.gz, add.tar.bz2, add.7z", name: "deploy"
+            try{
+                cmd "opm build ./"
+                // cmd "7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
+                // cmd "7z a add.7z ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
+                // cmd "7z a add.tar.gz add.tar"
+                // cmd "7z a add.tar.bz2 add.tar"
+                // archiveArtifacts '*.ospx, add.tar.gz, add.tar.bz2, add.7z'
+                // stash allowEmpty: false, includes: "*.ospx, add.tar.gz, add.tar.bz2, add.7z", name: "deploy"
+                archiveArtifacts '*.ospx, add*.zip'
+            } catch (e) {
+                echo "opm build release status : ${e}"
+                sleep 2
+                currentBuild.result = 'UNSTABLE'
+            }
+            stash allowEmpty: false, includes: "*.ospx, add*.zip", name: "deploy"
 
         }
     }
