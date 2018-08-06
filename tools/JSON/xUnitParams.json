@@ -1,5 +1,9 @@
 {
     "$schema":"https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/xunit-schema.json",
+    "Отладка":false,
+    "ДобавлятьИмяПользователяВПредставлениеТеста":true,
+    "ДелатьЛогВыполненияСценариевВТекстовыйФайл":true,
+    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/build/ServiceBases/log-xunit.txt",
     "smoke": {
         "СтрогийПорядокВыполнения":true,
         "ВыводитьСообщенияВЖурналРегистрации":true,
@@ -39,9 +43,5 @@
             "ОткрытьVanessaBehavior",
             "ТестОбработка_Форма_ИсключениеПриОткрытии"
         ]
-    },
-    "Отладка":false,
-    "ДобавлятьИмяПользователяВПредставлениеТеста":true,
-    "ДелатьЛогВыполненияСценариевВТекстовыйФайл":true,
-    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/build/ServiceBases/log-xunit.txt"
+    }
 }

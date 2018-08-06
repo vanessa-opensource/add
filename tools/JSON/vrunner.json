@@ -5,6 +5,7 @@
         "--db-user": "",
         "--db-pwd": "",
         "--workspace": ".",
+        "--v8version":"8.3.10",
         "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
         // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
         "--ordinaryapp": "-1"
@@ -14,6 +15,9 @@
         "--pathvanessa": "./bddRunner.epf"
     },
     "xunit": {
+        "--ibconnection": "/F./build/ibservicexdd",
+        "--db-user": "Admin",
+        "--db-pwd": "",
         "--xddConfig": "./tools/JSON/xUnitParams.json",
         "testsPath": "./tests",
         "--reportsxunit": "ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXML{build/allure/allure-testsuite.xml}",

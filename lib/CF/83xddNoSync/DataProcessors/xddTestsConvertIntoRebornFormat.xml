@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<DataProcessor uuid="7263f762-cb10-4976-bed6-a4666118bb0f">
+		<InternalInfo>
+			<xr:GeneratedType name="DataProcessorObject.xddTestsConvertIntoRebornFormat" category="Object">
+				<xr:TypeId>708e0251-9a7c-4ba1-bf67-b81769161a18</xr:TypeId>
+				<xr:ValueId>2e229ff5-a332-4c33-9674-0474dd90fb2d</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DataProcessorManager.xddTestsConvertIntoRebornFormat" category="Manager">
+				<xr:TypeId>f94f5915-9170-4dd1-a719-56545bf9b594</xr:TypeId>
+				<xr:ValueId>9f6c7f4c-44ee-47d9-84a2-bbc161f33db5</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>xddTestsConvertIntoRebornFormat</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конвертация тестов xUnitFor1C в версию4 из формата версии 3</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<UseStandardCommands>false</UseStandardCommands>
+			<DefaultForm>DataProcessor.xddTestsConvertIntoRebornFormat.Form.Форма</DefaultForm>
+			<AuxiliaryForm>DataProcessor.xddTestsConvertIntoRebornFormat.Form.УправляемаяФорма</AuxiliaryForm>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<ExtendedPresentation/>
+			<Explanation/>
+		</Properties>
+		<ChildObjects>
+			<Form>Форма</Form>
+			<Form>УправляемаяФорма</Form>
+			<Template>ШаблонТеста</Template>
+			<Template>v8unpack</Template>
+			<Template>БазовыеУтверждения</Template>
+			<Template>ГенераторТестовыхДанных</Template>
+			<Template>ЗапросыИзБД</Template>
+			<Template>УтвержденияПроверкаТаблиц</Template>
+			<Template>КонтекстЯдра</Template>
+		</ChildObjects>
+	</DataProcessor>
+</MetaDataObject>
