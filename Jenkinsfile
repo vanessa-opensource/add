@@ -309,7 +309,24 @@ tasks["report"] = {
             //junit 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
             
-            //archiveArtifacts 'build/ServiceBases/allurereport/**'
+            try{
+                archiveArtifacts 'build/ServiceBases/allurereport/**'
+            } catch (e) {
+                echo "report status : ${e}"
+                currentBuild.result = 'UNSTABLE'
+            }
+            try{
+            archiveArtifacts 'build/ServiceBases/junitreport/**'
+            } catch (e) {
+                echo "report status : ${e}"
+                currentBuild.result = 'UNSTABLE'
+            }
+            try{
+                archiveArtifacts 'build/ServiceBases/**'
+            } catch (e) {
+                echo "report status : ${e}"
+                currentBuild.result = 'UNSTABLE'
+            }
             //archiveArtifacts 'build/ServiceBases/junitreport/*.xml'
             //archiveArtifacts 'build/**'
         }
