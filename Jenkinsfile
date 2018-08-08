@@ -37,7 +37,12 @@ def behaviortask(build, path, suffix, version){
                 unstash "buildResults"
                
                 try{
+                    println "before env.LOGOS_LEVEL = \'DEBUG\' "
+                    env.LOGOS_LEVEL = 'DEBUG'
+                    sh 'printenv'
+
                     cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
+
                     withEnv(["VANESSA_JUNITPATH=./ServiceBases/junitreport/${suffix}", "VANESSA_cucumberreportpath=./ServiceBases/cucumber/${suffix}"]) {
                         //Маленький хак, переход в dir автоматом создает каталог и не надо писать кроссплатформенный mkdir -p 
                         dir("build/ServiceBases/junitreport/${suffix}"){}
@@ -76,10 +81,16 @@ tasks["behavior video write"] = {
                 cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
                 dir("build/ServiceBases/allurereport/8310UF"){}
                 unstash "buildResults"
-                cmd "opm install"
-                cmd "opm list"
-                cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
+
                 try{
+                    println "before env.LOGOS_LEVEL = \'DEBUG\' "
+                    env.LOGOS_LEVEL = 'DEBUG'
+                    sh 'printenv'
+
+                    cmd "opm install"
+                    cmd "opm list"
+                    cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
+
                     cmd "opm run vanessa all --path ./features/Core/TestClient/  --tag video --settings ./tools/JSON/VBParams8310UF.json";
                 } catch (e) {
                     echo "behavior status : ${e}"
@@ -99,13 +110,25 @@ tasks["buildRelease"] = {
             cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
             cleanWs(patterns: [[pattern: './.forbuild/**', type: 'INCLUDE']]);
             cleanWs(patterns: [[pattern: '*.ospx, add.tar.gz, add.tar.bz2, add.7z, add.tar', type: 'INCLUDE']])
-            cmd "opm build ./"
-            cmd "7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
-            cmd "7z a add.7z ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
-            cmd "7z a add.tar.gz add.tar"
-            cmd "7z a add.tar.bz2 add.tar"
-            archiveArtifacts '*.ospx, add.tar.gz, add.tar.bz2, add.7z'
-            stash allowEmpty: false, includes: "*.ospx, add.tar.gz, add.tar.bz2, add.7z", name: "deploy"
+            try{
+                println "before env.LOGOS_LEVEL = \'DEBUG\' "
+                env.LOGOS_LEVEL = 'DEBUG'
+                sh 'printenv'
+
+                cmd "opm build ./"
+                // cmd "7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
+                // cmd "7z a add.7z ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
+                // cmd "7z a add.tar.gz add.tar"
+                // cmd "7z a add.tar.bz2 add.tar"
+                // archiveArtifacts '*.ospx, add.tar.gz, add.tar.bz2, add.7z'
+                // stash allowEmpty: false, includes: "*.ospx, add.tar.gz, add.tar.bz2, add.7z", name: "deploy"
+                archiveArtifacts '*.ospx, add*.zip'
+            } catch (e) {
+                echo "opm build release status : ${e}"
+                sleep 2
+                currentBuild.result = 'UNSTABLE'
+            }
+            stash allowEmpty: false, includes: "*.ospx, add*.zip", name: "deploy"
 
         }
     }
@@ -117,8 +140,13 @@ tasks["xdd"] = {
                 checkout scm
                 cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 unstash "buildResults"
-                cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
                 try{
+                    println "before env.LOGOS_LEVEL = \'DEBUG\' "
+                    env.LOGOS_LEVEL = 'DEBUG'
+                    sh 'printenv'
+
+                    cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
+
                     cmd "opm run xdd";
                 } catch (e) {
                     echo "xdd ${it} status : ${e}"
@@ -211,7 +239,17 @@ firsttasks["slave"] = {
             //def unix = isUnix()
             cleanWs(patterns: [[pattern: 'build/ServiceBases/**', type: 'INCLUDE']])
             cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']])
-            cmd "opm run init file --buildFolderPath ./build"
+            // try{
+
+                println "before env.LOGOS_LEVEL = \'DEBUG\' "
+                env.LOGOS_LEVEL = 'DEBUG'
+                sh 'printenv'
+
+                cmd "opm run init file --buildFolderPath ./build"
+            // } catch (e) {
+            //     echo "opm run init ${it} status : ${e}"
+            //     currentBuild.result = 'UNSTABLE'
+            // }
             stash excludes: 'build/cache.txt,build/ib/**,build/ibservice/**, build/ibservicexdd/**', includes: 'build/**', name: 'buildResults'
             //stash includes: 'build/**', name: 'buildResults'
         }
@@ -288,7 +326,11 @@ tasks["report"] = {
             unstash "video"
             unstash "xdd"
             try{
-                allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
+                allure includeProperties: false, jdk: '', 
+                    results: [
+                        [path: 'build/ServiceBases/allurereport/']
+                    ]
+                // allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
             } catch (e) {
                 echo "allure status : ${e}"
                 currentBuild.result = 'UNSTABLE'
@@ -297,7 +339,24 @@ tasks["report"] = {
             //junit 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
             
-            //archiveArtifacts 'build/ServiceBases/allurereport/**'
+            try{
+                archiveArtifacts 'build/ServiceBases/allurereport/**'
+            } catch (e) {
+                echo "report status : ${e}"
+                currentBuild.result = 'UNSTABLE'
+            }
+            try{
+            archiveArtifacts 'build/ServiceBases/junitreport/**'
+            } catch (e) {
+                echo "report status : ${e}"
+                currentBuild.result = 'UNSTABLE'
+            }
+            try{
+                archiveArtifacts 'build/ServiceBases/**'
+            } catch (e) {
+                echo "report status : ${e}"
+                currentBuild.result = 'UNSTABLE'
+            }
             //archiveArtifacts 'build/ServiceBases/junitreport/*.xml'
             //archiveArtifacts 'build/**'
         }
