@@ -76,13 +76,13 @@ tasks["behavior video write"] = {
             stage("behavior video") {
             ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
             {
-                checkout scm
-                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
-                cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
-                dir("build/ServiceBases/allurereport/8310UF"){}
-                unstash "buildResults"
-
                 try{
+                    checkout scm
+                    cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
+                    cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
+                    dir("build/ServiceBases/allurereport/8310UF"){}
+                    unstash "buildResults"
+
                     println "before env.LOGOS_LEVEL = \'DEBUG\' "
                     env.LOGOS_LEVEL = 'DEBUG'
                     // sh 'printenv'
