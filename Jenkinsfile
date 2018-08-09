@@ -39,7 +39,7 @@ def behaviortask(build, path, suffix, version){
                 try{
                     println "before env.LOGOS_LEVEL = \'DEBUG\' "
                     env.LOGOS_LEVEL = 'DEBUG'
-                    sh 'printenv'
+                    // sh 'printenv'
 
                     cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
 
@@ -85,7 +85,7 @@ tasks["behavior video write"] = {
                 try{
                     println "before env.LOGOS_LEVEL = \'DEBUG\' "
                     env.LOGOS_LEVEL = 'DEBUG'
-                    sh 'printenv'
+                    // sh 'printenv'
 
                     cmd "opm install"
                     cmd "opm list"
@@ -113,7 +113,7 @@ tasks["buildRelease"] = {
             try{
                 println "before env.LOGOS_LEVEL = \'DEBUG\' "
                 env.LOGOS_LEVEL = 'DEBUG'
-                sh 'printenv'
+                // sh 'printenv'
 
                 cmd "opm build ./"
                 // cmd "7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf"
@@ -143,7 +143,7 @@ tasks["xdd"] = {
                 try{
                     println "before env.LOGOS_LEVEL = \'DEBUG\' "
                     env.LOGOS_LEVEL = 'DEBUG'
-                    sh 'printenv'
+                    // sh 'printenv'
 
                     cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
 
@@ -243,7 +243,7 @@ firsttasks["slave"] = {
 
                 println "before env.LOGOS_LEVEL = \'DEBUG\' "
                 env.LOGOS_LEVEL = 'DEBUG'
-                sh 'printenv'
+                // sh 'printenv'
 
                 cmd "opm run init file --buildFolderPath ./build"
             // } catch (e) {
