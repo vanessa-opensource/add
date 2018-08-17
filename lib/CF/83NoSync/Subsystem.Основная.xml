@@ -38,6 +38,9 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ДокументСДвижениями</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.РегистрНакопленияОстатки</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.РСПодчиненРегистраторуПериодический</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfAccounts.ПланСчетов1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfCharacteristicTypes.ВидыСубконто1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccountingRegister.РегистрБухгалтерии1</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
