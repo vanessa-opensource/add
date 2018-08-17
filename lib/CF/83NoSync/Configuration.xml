@@ -158,6 +158,7 @@
 			<ChartOfAccounts>ПланСчетов1</ChartOfAccounts>
 			<AccountingRegister>РегистрБухгалтерии1</AccountingRegister>
 			<ChartOfCalculationTypes>ПланВидовРасчета1</ChartOfCalculationTypes>
+			<CalculationRegister>РегистрРасчета1</CalculationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
