@@ -27,6 +27,8 @@
 			<Form>Форма</Form>
 			<Template>ДокументСДвижениямиПоРегистрамНакопления</Template>
 			<Template>ДокументСДвижениямиПоРегистрамСведений</Template>
+			<Template>ДокументСДвижениямиПоРегистрамБухгалтерии</Template>
+			<Template>ДокументСДвижениямиПоРегистрамРасчета</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>

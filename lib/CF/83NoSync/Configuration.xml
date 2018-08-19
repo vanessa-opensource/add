@@ -138,6 +138,8 @@
 			<Catalog>Склады</Catalog>
 			<Catalog>СправочникСТаблицейЗначенийНаФорме</Catalog>
 			<Catalog>Товары</Catalog>
+			<Catalog>ПростойСправочник</Catalog>
+			<Catalog>ПростойСправочник2</Catalog>
 			<Document>Документ1</Document>
 			<Document>ПриходнаяНакладая</Document>
 			<Document>ДокументСДвижениями</Document>
@@ -152,6 +154,11 @@
 			<InformationRegister>РСПодчиненРегистраторуПериодический</InformationRegister>
 			<AccumulationRegister>РегистрНакопленияОбороты</AccumulationRegister>
 			<AccumulationRegister>РегистрНакопленияОстатки</AccumulationRegister>
+			<ChartOfCharacteristicTypes>ВидыСубконто1</ChartOfCharacteristicTypes>
+			<ChartOfAccounts>ПланСчетов1</ChartOfAccounts>
+			<AccountingRegister>РегистрБухгалтерии1</AccountingRegister>
+			<ChartOfCalculationTypes>ПланВидовРасчета1</ChartOfCalculationTypes>
+			<CalculationRegister>РегистрРасчета1</CalculationRegister>
 		</ChildObjects>
 	</Configuration>
 </MetaDataObject>
