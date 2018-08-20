@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<PredefinedData xmlns="http://v8.1c.ru/8.3/xcf/predef" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ChartOfAccountsPredefinedItems" version="2.4">
+	<Item id="5a608f4c-e4a4-4c19-8f9c-e603c9543dc9">
+		<Name>СчетБезСубконто</Name>
+		<Code>003</Code>
+		<Description>Счет без субконто</Description>
+		<AccountType>ActivePassive</AccountType>
+		<OffBalance>true</OffBalance>
+		<Order/>
+		<AccountingFlags>
+			<Flag ref="ChartOfAccounts.ПланСчетов1.AccountingFlag.Валютный">true</Flag>
+		</AccountingFlags>
+		<ExtDimensionTypes/>
+	</Item>
+	<Item id="cf80846b-1278-48b0-96d5-14e53d41adbf">
+		<Name>Счет01</Name>
+		<Code>01</Code>
+		<Description>Счет01</Description>
+		<AccountType>ActivePassive</AccountType>
+		<OffBalance>false</OffBalance>
+		<Order/>
+		<AccountingFlags>
+			<Flag ref="ChartOfAccounts.ПланСчетов1.AccountingFlag.Валютный">false</Flag>
+		</AccountingFlags>
+		<ExtDimensionTypes>
+			<ExtDimensionType name="ChartOfCharacteristicTypes.ВидыСубконто1.Субконто1">
+				<Turnover>false</Turnover>
+				<AccountingFlags>
+					<Flag ref="ChartOfAccounts.ПланСчетов1.ExtDimensionAccountingFlag.Суммовой">true</Flag>
+				</AccountingFlags>
+			</ExtDimensionType>
+		</ExtDimensionTypes>
+	</Item>
+	<Item id="86f8f8df-6d6c-4169-8a75-25136cec454b">
+		<Name>Счет02</Name>
+		<Code>02</Code>
+		<Description>Счет02</Description>
+		<AccountType>ActivePassive</AccountType>
+		<OffBalance>false</OffBalance>
+		<Order/>
+		<AccountingFlags>
+			<Flag ref="ChartOfAccounts.ПланСчетов1.AccountingFlag.Валютный">false</Flag>
+		</AccountingFlags>
+		<ExtDimensionTypes>
+			<ExtDimensionType name="ChartOfCharacteristicTypes.ВидыСубконто1.Субконто2">
+				<Turnover>false</Turnover>
+				<AccountingFlags>
+					<Flag ref="ChartOfAccounts.ПланСчетов1.ExtDimensionAccountingFlag.Суммовой">true</Flag>
+				</AccountingFlags>
+			</ExtDimensionType>
+			<ExtDimensionType name="ChartOfCharacteristicTypes.ВидыСубконто1.Субконто1">
+				<Turnover>true</Turnover>
+				<AccountingFlags>
+					<Flag ref="ChartOfAccounts.ПланСчетов1.ExtDimensionAccountingFlag.Суммовой">true</Flag>
+				</AccountingFlags>
+			</ExtDimensionType>
+		</ExtDimensionTypes>
+	</Item>
+</PredefinedData>

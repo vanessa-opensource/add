@@ -16,12 +16,12 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Тестирование для 1С:Предприятия 8, xUnitFor1C</v8:content>
+					<v8:content>Тестирование для 1С:Предприятия 8, Vanessa-ADD</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment>https://github.com/xDrivenDevelopment/xUnitFor1C</Comment>
-			<DefaultForm>ExternalDataProcessor.xddTestRunner.Form.Форма</DefaultForm>
-			<AuxiliaryForm>ExternalDataProcessor.xddTestRunner.Form.УправляемаяФорма</AuxiliaryForm>
+			<Comment>https://github.com/silverbulleters/add</Comment>
+			<DefaultForm>ExternalDataProcessor.xddTestRunner.Form.УправляемаяФорма</DefaultForm>
+			<AuxiliaryForm>ExternalDataProcessor.xddTestRunner.Form.Форма</AuxiliaryForm>
 		</Properties>
 		<ChildObjects>
 			<Attribute uuid="c1ba54a0-a096-4a11-bc8b-5199576eca67">
@@ -649,6 +649,40 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Использовать прямые пути файлов</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+					<PasswordMode>false</PasswordMode>
+					<Format/>
+					<EditFormat/>
+					<ToolTip/>
+					<MarkNegatives>false</MarkNegatives>
+					<Mask/>
+					<MultiLine>false</MultiLine>
+					<ExtendedEdit>false</ExtendedEdit>
+					<MinValue xsi:nil="true"/>
+					<MaxValue xsi:nil="true"/>
+					<FillChecking>DontCheck</FillChecking>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks/>
+					<ChoiceParameters/>
+					<QuickChoice>Auto</QuickChoice>
+					<CreateOnInput>Auto</CreateOnInput>
+					<ChoiceForm/>
+					<LinkByType/>
+					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="37362c5d-658e-4c77-bc12-f54e996b5679">
+				<Properties>
+					<Name>ПлагиныЗагружены</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Плагины загружены</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

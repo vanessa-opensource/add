@@ -1,11 +1,14 @@
 {
     "$schema": "https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/vanessa-runner-schema.json",
     "default": {
-        "--ibconnection": "/F./build/ibservice",
+        "--ibconnection": "/F./build/ib",
+        // "--ibconnection": "/F./build/ibservice",
         "--db-user": "",
         "--db-pwd": "",
         "--workspace": ".",
-        "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
+        "--v8version":"8.3.10",
+        "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
+        // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1563",
         "--ordinaryapp": "-1"
     },
     "vanessa": {
@@ -13,6 +16,9 @@
         "--pathvanessa": "./bddRunner.epf"
     },
     "xunit": {
+        "--ibconnection": "/F./build/ibservicexdd",
+        "--db-user": "Admin",
+        "--db-pwd": "",
         "--xddConfig": "./tools/JSON/xUnitParams.json",
         "testsPath": "./tests",
         "--reportsxunit": "ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXML{build/allure/allure-testsuite.xml}",
