@@ -7,8 +7,9 @@
 - Изменить номер версии в метаданных конфигураций для 8.2 и 8.3 из каталога `lib\CF`
     * `<Synonym>` и `<Version>`
     * [bdd 83](W:\repo\SB\add\lib\CF\83\Configuration.xml)
-    * [bdd 83NoSync](W:\repo\SB\add\lib\CF\83NoSync\Configuration.xml)
+    * [bdd 83 NoSync](W:\repo\SB\add\lib\CF\83NoSync\Configuration.xml)
     * [xdd 83](W:\repo\SB\add\lib\CF\83xdd\Configuration.xml)
+    * [xdd 83 NoSync](W:\repo\SB\add\lib\CF\83xddNoSync\Configuration.xml)
 - Выполнить разборку на исходники
 - Выполнить все тесты из папки `tests`. Ошибок быть не должно.
 - Выполнить все фичи из папки `features/libraries`. Ошибок быть не должно.
