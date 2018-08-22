@@ -168,7 +168,7 @@ firsttasks["qa"] = {
                 checkout scm
                 try{
                     println env.QASONAR;
-                    def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin\""
+                    def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner\""
                     withCredentials([[$class: 'StringBinding', credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth']]) {
                         sonarcommand = sonarcommand + " -Dsonar.host.url=https://opensonar.silverbulleters.org -Dsonar.login=${env.SonarOAuth}"
                     }
