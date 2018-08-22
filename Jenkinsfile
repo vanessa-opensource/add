@@ -169,8 +169,8 @@ firsttasks["qa"] = {
                 try{
                     println env.QASONAR;
                     def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/Main_Classic/bin/sonar-scanner\""
-                    withCredentials([[$class: 'StringBinding', credentialsId: env.SonarOAuthCredentianalID, variable: 'SonarOAuth']]) {
-                        sonarcommand = sonarcommand + " -Dsonar.host.url=https://sonar.silverbulleters.org -Dsonar.login=${env.SonarOAuth}"
+                    withCredentials([[$class: 'StringBinding', credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth']]) {
+                        sonarcommand = sonarcommand + " -Dsonar.host.url=https://opensonar.silverbulleters.org -Dsonar.login=${env.SonarOAuth}"
                     }
                     
                     // TODO // Get version
@@ -181,6 +181,7 @@ firsttasks["qa"] = {
                     def makeAnalyzis = true
                     if (env.BRANCH_NAME == "develop") {
                         echo 'Analysing develop branch'
+                        sonarcommand = sonarcommand + " -Dsonar.branch=${BRANCH_NAME}"
                     } else if (env.BRANCH_NAME.startsWith("release/")) {
                         sonarcommand = sonarcommand + " -Dsonar.branch=${BRANCH_NAME}"
                     } else if (env.BRANCH_NAME.startsWith("PR-")) {
