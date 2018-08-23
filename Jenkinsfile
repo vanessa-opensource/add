@@ -180,7 +180,9 @@ firsttasks["qa"] = {
                     // sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
 
                     def makeAnalyzis = true
-                    if (env.BRANCH_NAME == "develop") {
+                    if (env.BRANCH_NAME == "master") {
+                        echo 'Analysing master branch'
+                    } else if (env.BRANCH_NAME == "develop") {
                         echo 'Analysing develop branch'
                         sonarcommand = sonarcommand + " -Dsonar.branch=${BRANCH_NAME}"
                     } else if (env.BRANCH_NAME.startsWith("release/")) {
