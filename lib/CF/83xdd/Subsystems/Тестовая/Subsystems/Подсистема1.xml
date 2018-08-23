@@ -10,7 +10,7 @@
 			<Explanation/>
 			<Picture/>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.xddGuidShow</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">9a427b8a-73d0-4c03-adb8-9eb0137cb57a</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.Тест_Обработка</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Role.Роль1</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.Тест_Отчет</xr:Item>

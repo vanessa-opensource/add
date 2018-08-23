@@ -15,21 +15,21 @@
 			<Explanation/>
 			<Picture/>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.БазовыеУтверждения</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.УтвержденияПроверкаТаблиц</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.УтвержденияBDD</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.СтроковыеУтилиты</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.СериализаторMXL</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ПостроительДереваТестов</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ПарсерКоманднойСтроки</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.КомандныйФайл</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ЗапросыИзБД</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ЗагрузчикФайла</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ЗагрузчикКаталога</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ЗагрузчикИзПодсистемКонфигурации</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ГенераторОтчетаMXL</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ГенераторОтчетаJUnitXML</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ВременныеФайлы</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">dce8aa40-d869-4f56-b676-a21e1c6d463e</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">dac63775-7825-4d71-a1f8-bdf73d7bf54f</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">3d66ae6a-ea75-43c2-b47a-9f8cb9c17b1a</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">9409827b-5515-4841-9cdc-8bf76935147c</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">3ef95a44-6e1f-477e-b160-030dd5dae29f</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">c21ecdbb-2c03-4743-98d7-c0b679c91e45</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">bed67866-3c67-4196-8119-50cc06252df7</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ae8dfa79-d9f9-47e3-b706-134289c1b7a1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">8a71b3b9-e920-4f70-a79c-edcab37d6e22</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">74f67557-b49a-48d7-be59-65e6b5bb7c34</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">370c7cdd-2009-45f5-b8b5-ff1c84add1ad</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">a3884279-6609-40dd-a446-04e4269ddd18</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">d41c5f0f-e918-4b33-9fc2-ff63e59bada6</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">cbd2bc2f-0ffa-401f-b734-8c81b5783fdf</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">d4a8a2b9-9627-4cf4-b252-a02c8a670867</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

@@ -15,7 +15,7 @@
 			<Explanation/>
 			<Picture/>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.xddTestRunner</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">4fd86dc5-89d1-4884-bc05-7a0b8ce9186e</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects>
