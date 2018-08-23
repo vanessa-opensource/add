@@ -168,9 +168,10 @@ firsttasks["qa"] = {
                 checkout scm
                 try{
                     println env.QASONAR;
-                    def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/Main_Classic/bin/sonar-scanner\""
-                    withCredentials([[$class: 'StringBinding', credentialsId: env.SonarOAuthCredentianalID, variable: 'SonarOAuth']]) {
-                        sonarcommand = sonarcommand + " -Dsonar.host.url=https://sonar.silverbulleters.org -Dsonar.login=${env.SonarOAuth}"
+                    def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner\""
+                    
+                    withCredentials([string(credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth')]) {
+                        sonarcommand = sonarcommand + " -Dsonar.host.url=https://opensonar.silverbulleters.org -Dsonar.login=${SonarOAuth}"
                     }
                     
                     // TODO // Get version
@@ -181,6 +182,7 @@ firsttasks["qa"] = {
                     def makeAnalyzis = true
                     if (env.BRANCH_NAME == "develop") {
                         echo 'Analysing develop branch'
+                        sonarcommand = sonarcommand + " -Dsonar.branch=${BRANCH_NAME}"
                     } else if (env.BRANCH_NAME.startsWith("release/")) {
                         sonarcommand = sonarcommand + " -Dsonar.branch=${BRANCH_NAME}"
                     } else if (env.BRANCH_NAME.startsWith("PR-")) {
@@ -195,8 +197,8 @@ firsttasks["qa"] = {
                         }
                         def repository = gitURL.tokenize("/")[2] + "/" + gitURL.tokenize("/")[3]
                         repository = repository.tokenize(".")[0]
-                        withCredentials([[$class: 'StringBinding', credentialsId: env.GithubOAuthCredentianalID, variable: 'githubOAuth']]) {
-                            sonarcommand = sonarcommand + " -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${PRNumber} -Dsonar.github.repository=${repository} -Dsonar.github.oauth=${env.githubOAuth}"
+                        withCredentials([string(credentialsId: env.GithubOAuthCredentianalID, variable: 'githubOAuth')]) {
+                            sonarcommand = sonarcommand + " -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${PRNumber} -Dsonar.github.repository=${repository} -Dsonar.github.oauth=${githubOAuth}"
                         }
                         
                     } else {
