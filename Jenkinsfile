@@ -184,9 +184,9 @@ firsttasks["qa"] = {
                         echo 'Analysing master branch'
                     } else if (env.BRANCH_NAME == "develop") {
                         echo 'Analysing develop branch'
-                        sonarcommand = sonarcommand + " -Dsonar.branch=${BRANCH_NAME}"
+                        sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
                     } else if (env.BRANCH_NAME.startsWith("release/")) {
-                        sonarcommand = sonarcommand + " -Dsonar.branch=${BRANCH_NAME}"
+                        sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
                     } else if (env.BRANCH_NAME.startsWith("PR-")) {
                         // Report PR issues           
                         def PRNumber = env.BRANCH_NAME.tokenize("PR-")[0]

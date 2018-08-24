@@ -3,13 +3,13 @@
 - Изменить номер версии в строке `.Версия("Х.Х.Х.Х")` в файле [packagedef](./packagedef)
 - Изменить номер версии в методе `ПолучитьВерсиюОбработки()` [модуля обработки](./epf/bddRunner/bddRunner/Ext/ObjectModule.bsl) `bddRunner.epf`
 - Изменить номер версии в методе `Версия()` [модуля обработки](./epf/xddTestRunner/xddTestRunner/Ext/ObjectModule.bsl) `xddTestRunner.epf`
-- Изменить номер версии в методе `Версия()` [модуля обработки](./Plugins/СериализаторMXL/СериализаторMXL/Ext/ObjectModule.bsl) `Plugins\СериализаторMXL.epf`
-- Изменить номер версии в метаданных конфигураций для 8.2 и 8.3 из каталога `lib\CF`
+- Изменить номер версии в методе `Версия()` [модуля обработки](./Plugins/СериализаторMXL/СериализаторMXL/Ext/ObjectModule.bsl) `Plugins/СериализаторMXL.epf`
+- Изменить номер версии в метаданных конфигураций для 8.2 и 8.3 из каталога `lib/CF`
     * `<Synonym>` и `<Version>`
-    * [bdd 83](W:\repo\SB\add\lib\CF\83\Configuration.xml)
-    * [bdd 83 NoSync](W:\repo\SB\add\lib\CF\83NoSync\Configuration.xml)
-    * [xdd 83](W:\repo\SB\add\lib\CF\83xdd\Configuration.xml)
-    * [xdd 83 NoSync](W:\repo\SB\add\lib\CF\83xddNoSync\Configuration.xml)
+    * [bdd 83](./lib/CF/83/Configuration.xml)
+    * [bdd 83 NoSync](./lib/CF/83NoSync/Configuration.xml)
+    * [xdd 83](./lib/CF/83xdd/Configuration.xml)
+    * [xdd 83 NoSync](./lib/CF/83xddNoSync/Configuration.xml)
 - Выполнить разборку на исходники
 - Выполнить все тесты из папки `tests`. Ошибок быть не должно.
 - Выполнить все фичи из папки `features/libraries`. Ошибок быть не должно.

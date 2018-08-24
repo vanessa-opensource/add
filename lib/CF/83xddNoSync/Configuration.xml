@@ -32,7 +32,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>ADD/TDD, ver. 5.5.0</v8:content>
+					<v8:content>ADD/TDD, ver. 5.5.5</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -45,7 +45,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor/>
-			<Version>5.5.0</Version>
+			<Version>5.5.5</Version>
 			<UpdateCatalogAddress/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<UseManagedFormInOrdinaryApplication>true</UseManagedFormInOrdinaryApplication>
@@ -151,29 +151,10 @@
 			<Report>ТестовыйОтчетСКДДляСравнениеСЭталоном</Report>
 			<Report>Тест_Отчет</Report>
 			<Report>Отчет2</Report>
-			<DataProcessor>xddGuidShow</DataProcessor>
 			<DataProcessor>Тест_Обработка</DataProcessor>
 			<DataProcessor>ТестОбработка_Форма_ИсключениеПриОткрытии</DataProcessor>
 			<DataProcessor>ТестПадающий_Обработка</DataProcessor>
 			<DataProcessor>Тест_ЗагрузчикИзПодсистем_НовыйAPIОбъявленияТестов</DataProcessor>
-			<DataProcessor>xddTestRunner</DataProcessor>
-			<DataProcessor>БазовыеУтверждения</DataProcessor>
-			<DataProcessor>ВременныеФайлы</DataProcessor>
-			<DataProcessor>ГенераторОтчетаJUnitXML</DataProcessor>
-			<DataProcessor>ГенераторОтчетаMXL</DataProcessor>
-			<DataProcessor>ЗагрузчикИзПодсистемКонфигурации</DataProcessor>
-			<DataProcessor>ЗагрузчикКаталога</DataProcessor>
-			<DataProcessor>ЗагрузчикФайла</DataProcessor>
-			<DataProcessor>ЗапросыИзБД</DataProcessor>
-			<DataProcessor>КомандныйФайл</DataProcessor>
-			<DataProcessor>ПарсерКоманднойСтроки</DataProcessor>
-			<DataProcessor>ПостроительДереваТестов</DataProcessor>
-			<DataProcessor>СериализаторMXL</DataProcessor>
-			<DataProcessor>СтроковыеУтилиты</DataProcessor>
-			<DataProcessor>УтвержденияBDD</DataProcessor>
-			<DataProcessor>УтвержденияПроверкаТаблиц</DataProcessor>
-			<DataProcessor>ПреобразованиеЖурналаДействийПользователя</DataProcessor>
-			<DataProcessor>xddTestsConvertIntoRebornFormat</DataProcessor>
 			<InformationRegister>РегистрСведений1</InformationRegister>
 			<InformationRegister>РСПодчиненныйРегистратору</InformationRegister>
 			<AccumulationRegister>РегистрНакопления2</AccumulationRegister>
