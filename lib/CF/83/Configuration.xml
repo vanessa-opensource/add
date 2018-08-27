@@ -139,7 +139,7 @@
 			<Catalog>СправочникСТаблицейЗначенийНаФорме</Catalog>
 			<Catalog>Товары</Catalog>
 			<Document>Документ1</Document>
-			<Document>ПриходнаяНакладая</Document>
+			<Document>ПриходнаяНакладная</Document>
 			<Enum>Перечисление1</Enum>
 			<Report>КомпоновкаТест</Report>
 			<Report>ОтчетПереносСтрок</Report>
