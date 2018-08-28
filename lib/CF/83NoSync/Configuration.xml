@@ -141,7 +141,7 @@
 			<Catalog>ПростойСправочник</Catalog>
 			<Catalog>ПростойСправочник2</Catalog>
 			<Document>Документ1</Document>
-			<Document>ПриходнаяНакладая</Document>
+			<Document>ПриходнаяНакладная</Document>
 			<Document>ДокументСДвижениями</Document>
 			<Enum>Перечисление1</Enum>
 			<Report>КомпоновкаТест</Report>
