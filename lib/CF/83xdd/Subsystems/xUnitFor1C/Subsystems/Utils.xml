@@ -15,9 +15,9 @@
 			<Explanation/>
 			<Picture/>
 			<Content>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.xddGuidShow</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.xddTestsConvertIntoRebornFormat</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ПреобразованиеЖурналаДействийПользователя</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">9a427b8a-73d0-4c03-adb8-9eb0137cb57a</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">7263f762-cb10-4976-bed6-a4666118bb0f</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">93f7289d-468d-4ffc-9e3c-9b066cf8dae0</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>

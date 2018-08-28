@@ -1,13 +1,14 @@
 {
     "$schema": "https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/vanessa-runner-schema.json",
     "default": {
-        "--ibconnection": "/F./build/ibservice",
+        "--ibconnection": "/F./build/ib",
+        // "--ibconnection": "/F./build/ibservice",
         "--db-user": "",
         "--db-pwd": "",
         "--workspace": ".",
         "--v8version":"8.3.10",
         "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
-        // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
+        // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1563",
         "--ordinaryapp": "-1"
     },
     "vanessa": {

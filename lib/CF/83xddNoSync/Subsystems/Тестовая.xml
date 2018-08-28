@@ -16,9 +16,9 @@
 			<Picture/>
 			<Content>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.Тест_Обработка</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.xddGuidShow</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">9a427b8a-73d0-4c03-adb8-9eb0137cb57a</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.Тест_ЗагрузчикИзПодсистем_НовыйAPIОбъявленияТестов</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.xddTestRunner</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">4fd86dc5-89d1-4884-bc05-7a0b8ce9186e</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.Тест_Отчет</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">2754acfc-5916-4952-9fea-dbbc69db9399</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Report.Отчет2</xr:Item>

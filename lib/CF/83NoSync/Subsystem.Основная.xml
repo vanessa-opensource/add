@@ -32,12 +32,16 @@
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.СправочникСТаблицейЗначенийНаФорме</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Товары</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ВыполнитьПроизвольноеВыражение</xr:Item>
-				<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходнаяНакладая</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ПриходнаяНакладная</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ПроверкаСостоянияЭлементов</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.РегистрНакопленияОбороты</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">Document.ДокументСДвижениями</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.РегистрНакопленияОстатки</xr:Item>
 				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.РСПодчиненРегистраторуПериодический</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfAccounts.ПланСчетов1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfCharacteristicTypes.ВидыСубконто1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccountingRegister.РегистрБухгалтерии1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CalculationRegister.РегистрРасчета1</xr:Item>
 			</Content>
 		</Properties>
 		<ChildObjects/>
