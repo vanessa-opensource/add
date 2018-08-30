@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<DataProcessor uuid="e9b1a1e7-b09b-428e-9e2f-70e3520946c0">
+		<InternalInfo>
+			<xr:GeneratedType name="DataProcessorObject.ТестОбработка_Форма_ИсключениеПриОткрытии" category="Object">
+				<xr:TypeId>180ec78f-ee96-4f83-ab59-3925b9fa0459</xr:TypeId>
+				<xr:ValueId>c7085d33-6531-4a51-8d74-7ec7d8eca33b</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="DataProcessorManager.ТестОбработка_Форма_ИсключениеПриОткрытии" category="Manager">
+				<xr:TypeId>56cc0c9c-bcb8-4a3c-bf89-ff167f1e15aa</xr:TypeId>
+				<xr:ValueId>e0c0f210-399b-4f28-9789-54e56c254095</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ТестОбработка_Форма_ИсключениеПриОткрытии</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тест обработка форма исключение при открытии</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment>баг https://github.com/xDrivenDevelopment/xUnitFor1C/issues/154</Comment>
+			<UseStandardCommands>true</UseStandardCommands>
+			<DefaultForm>DataProcessor.ТестОбработка_Форма_ИсключениеПриОткрытии.Form.ОбычнаяФорма</DefaultForm>
+			<AuxiliaryForm>DataProcessor.ТестОбработка_Форма_ИсключениеПриОткрытии.Form.УправляемаяФорма</AuxiliaryForm>
+			<IncludeHelpInContents>false</IncludeHelpInContents>
+			<ExtendedPresentation/>
+			<Explanation/>
+		</Properties>
+		<ChildObjects>
+			<Form>УправляемаяФорма</Form>
+			<Form>ОбычнаяФорма</Form>
+		</ChildObjects>
+	</DataProcessor>
+</MetaDataObject>
