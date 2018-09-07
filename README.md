@@ -77,7 +77,7 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 
 + **справкой по продукту** [doc/README.md](./doc/README.md)
 
-+ часто задаваемыми вопросами [FAQ.md](./F.A.Q.md)
++ часто задаваемыми вопросами [FAQ.md](./F.A.Q.MD)
 + руководством контрибьютора [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
 + моделью спонсорства [DONATIONS.md](./DONATIONS.md)
 + известными проблемами [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
