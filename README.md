@@ -71,12 +71,13 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 
 Обязательно ознакомьтесь с:
 
++ **справкой по продукту** [doc/README.md](./doc/README.md)
+
 + часто задаваемыми вопросами [FAQ.md](./F.A.Q.md)
 + руководством контрибьютора [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
 + моделью спонсорства [DONATIONS.md](./DONATIONS.md)
 + известные проблемы [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
 
-+ [справкой по продукту](./doc/README.md)
 
 Ночная сборка ветки **develop**:
 
