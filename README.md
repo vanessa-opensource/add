@@ -1,4 +1,4 @@
-﻿<a id="markdown-add" name="add"></a>
+﻿<a id="markdown-vanessa-add--add-" name="vanessa-add--add-"></a>
 # Vanessa-ADD ( ADD )
 
 [![Открытый чат проекта https://gitter.im/silverbulleters/vanessa-behavoir](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/silverbulleters/vanessa-behavoir?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
@@ -7,9 +7,10 @@
 
 <!-- TOC insertAnchor:true -->
 
-- [Vanessa-ADD](#vanessa-add)
+- [Vanessa-ADD ( ADD )](#vanessa-add--add-)
     - [Введение](#введение)
     - [Установка](#установка)
+    - [Справка и полезные ссылки](#справка-и-полезные-ссылки)
     - [Описание использования](#описание-использования)
     - [Подготовка автодокументации](#подготовка-автодокументации)
     - [Описание использования в режиме BDD](#описание-использования-в-режиме-bdd)
@@ -69,12 +70,18 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 + Скачать архив `add-x.x.x.zip` с последним стабильным релизом - прямая ссылка [Releases](https://github.com/silverbulleters/add/releases/latest)
 + Распаковать указанный архив в нужную папку.
 
+<a id="markdown-справка-и-полезные-ссылки" name="справка-и-полезные-ссылки"></a>
+## Справка и полезные ссылки
+
 Обязательно ознакомьтесь с:
 
-+ часто задаваемыми вопросами [FAQ.md](./F.A.Q.md)
++ **справкой по продукту** [doc/README.md](./doc/README.md)
+
++ часто задаваемыми вопросами [FAQ.md](./F.A.Q.MD)
 + руководством контрибьютора [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
 + моделью спонсорства [DONATIONS.md](./DONATIONS.md)
-+ известные проблемы [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
++ известными проблемами [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
+
 
 Ночная сборка ветки **develop**:
 
