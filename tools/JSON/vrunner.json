@@ -8,7 +8,7 @@
         "--workspace": ".",
         "--v8version":"8.3.10",
         "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
-        // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1563",
+        // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
         "--ordinaryapp": "-1"
     },
     "vanessa": {
@@ -21,7 +21,7 @@
         "--db-pwd": "",
         "--xddConfig": "./tools/JSON/xUnitParams.json",
         "testsPath": "./tests",
-        "--reportsxunit": "ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXML{build/allure/allure-testsuite.xml}",
+        "--reportsxunit": "ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}",
         "--xddExitCodePath": "./build/xddExitCodePath.txt",
         "--pathxunit": "./xddTestRunner.epf"
     }
