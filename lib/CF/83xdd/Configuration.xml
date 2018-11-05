@@ -136,14 +136,15 @@
 			<ExchangePlan>ПланОбмена1</ExchangePlan>
 			<FunctionalOption>ФункциональнаяОпция1</FunctionalOption>
 			<CommonForm>ФормаОтчета</CommonForm>
+			<Catalog>ИерархическийСправочник</Catalog>
+			<Catalog>ПодчиненныйСДвумяВладельцами</Catalog>
+			<Catalog>ПодчиненныйСправочник</Catalog>
 			<Catalog>ПростойСправочник</Catalog>
 			<Catalog>ПростойСправочник2</Catalog>
-			<Catalog>ИерархическийСправочник</Catalog>
-			<Catalog>СправочникСТабЧастью</Catalog>
-			<Catalog>ПодчиненныйСправочник</Catalog>
-			<Catalog>СправочникСоСсылкойНаСамогоСебя</Catalog>
-			<Catalog>ПодчиненныйСДвумяВладельцами</Catalog>
+			<Catalog>ПростойСправочник3</Catalog>
 			<Catalog>СправочникСОбязательнымРеквизитом</Catalog>
+			<Catalog>СправочникСоСсылкойНаСамогоСебя</Catalog>
+			<Catalog>СправочникСТабЧастью</Catalog>
 			<Document>Документ1</Document>
 			<Document>Документ2</Document>
 			<Enum>Перечисление1</Enum>
