@@ -6390,13 +6390,8 @@
 			Возврат "call runsikulix -r ";
 		КонецЕсли;
 	Иначе
-		ФайлRunSikulix = Новый Файл(Объект.ПутьКRunSikulix);
-		Если ФайлRunSikulix.Существует() Тогда
-			ПутьККоманде = """" + Объект.ПутьКRunSikulix + """ -r ";
-			Возврат "call " + ПутьККоманде;
-		Иначе
-			Возврат """C:\Program Files (x86)\Java\jre6\bin\java.exe"" -Xms64M -Xmx512M -Dfile.encoding=UTF-8 -Dpython.path=""C:\Program Files (x86)\Sikuli X\sikuli-script.jar/"" -jar ""C:\Program Files (x86)\Sikuli X\sikuli-ide.jar"" -r ";
-		КонецЕсли;
+		ПутьККоманде = """" + Объект.ПутьКRunSikulix + """ -r ";
+		Возврат "call " + ПутьККоманде;
 	КонецЕсли;
 
 КонецФункции
