@@ -1253,7 +1253,9 @@
 	Рез.Вставить(Ключ, Описание);
 
 	Описание = Новый Структура("Р, А, ПоУмолчанию, УстанавливатьЕслиЗаполнено, ЭтоМассив, УстанавливатьЕслиИстина, ПреобразоватьПуть, ПростоУстановить, РазрешаюшийКлюч",
-		"ПутьКRunSikulix", "runsikulixpath", "C:\Program Files (x86)\Java\jre6\bin\java.exe"" -Xms64M -Xmx512M -Dfile.encoding=UTF-8 -Dpython.path=""C:\Program Files (x86)\Sikuli X\sikuli-script.jar/"" -jar ""C:\Program Files (x86)\Sikuli X\sikuli-ide.jar", Истина, Ложь, Ложь, Ложь, Ложь, "");
+		"ПутьКRunSikulix", "runsikulixpath", 
+		"C:\Program Files (x86)\Java\jre6\bin\java.exe"" -Xms64M -Xmx512M -Dfile.encoding=UTF-8 -Dpython.path=""C:\Program Files (x86)\Sikuli X\sikuli-script.jar/"" -jar ""C:\Program Files (x86)\Sikuli X\sikuli-ide.jar", 
+		Истина, Ложь, Ложь, Ложь, Ложь, "");
 	Описание.Вставить("ТипЗапуска", ТипыЗапуска.ВсеВиды);
 	Рез.Вставить("ПутьКRunSikulix", Описание);
 	
