@@ -326,10 +326,54 @@
 			</c>
 		</row>
 	</rowsItem>
+	<rowsItem>
+		<index>4</index>
+		<row>
+			<formatIndex>8</formatIndex>
+			<c>
+				<i>4</i>
+				<c>
+					<f>0</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>ТипЗначения</v8:content>
+						</v8:item>
+					</tl>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>0</f>
+					<tl>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>AQHGAAAAAAAAAO+7v3siIyIsZjVjNjUwNTAtM2JiYi0xMWQ1LWI5ODgtMDA1MGJh
+ZTBhOTVkLA0KeyJQYXR0ZXJuIiwNCnsiIyIsMjIyNzRhZjUtOWM4ZS00MDhlLTg3
+M2QtMDdhN2IzODY3YjZlfSwNCnsiIyIsMjdhOTNhN2MtN2NhMS00ZWJmLTliM2Qt
+NTY4OWE4YjY0NzVmfSwNCnsiIyIsOTZjOGFjNjMtNzA1ZS00NDQ3LWFmMzctZDNh
+MTY1Y2E4NzFmfQ0KfQ0KfQ==</v8:content>
+						</v8:item>
+					</tl>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>0</f>
+				</c>
+			</c>
+			<c>
+				<c>
+					<f>0</f>
+					<tl/>
+				</c>
+			</c>
+		</row>
+	</rowsItem>
 	<templateMode>true</templateMode>
 	<defaultFormatIndex>7</defaultFormatIndex>
-	<height>4</height>
-	<vgRows>4</vgRows>
+	<height>5</height>
+	<vgRows>5</vgRows>
 	<format>
 		<width>163</width>
 	</format>
@@ -350,5 +394,8 @@
 	</format>
 	<format>
 		<width>72</width>
+	</format>
+	<format>
+		<height>40</height>
 	</format>
 </document>

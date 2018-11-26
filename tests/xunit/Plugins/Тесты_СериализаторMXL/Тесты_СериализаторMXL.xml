@@ -91,6 +91,7 @@
 			<Template>ПерезаполнениеДокументаПоГуид</Template>
 			<Template>ПерезаполнениеПВХ</Template>
 			<Template>СозданиеПростогоСправочникаJSON</Template>
+			<Template>СозданиеСправочника3_с_РеквизитомСоставногоТипаТочкиМаршрута</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
