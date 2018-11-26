@@ -1,3 +1,5 @@
+#language:ru
+
 @IgnoreOn82Builds
 @IgnoreOnOFBuilds
 @IgnoreOnCIMainBuild
