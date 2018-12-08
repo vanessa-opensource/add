@@ -329,8 +329,8 @@ tasks["report"] = {
                     unstash "${build}${it.value}"
                 }
             }
-            unstash "video"
-            unstash "xdd"
+            // unstash "video"
+            // unstash "xdd"
             try{
                 allure includeProperties: false, jdk: '',
                     results: [
