@@ -40,7 +40,7 @@ def behaviortask(build, path, suffix, version){
 
                 try{
                     println "before env.LOGOS_LEVEL = \'DEBUG\' "
-                    env.LOGOS_LEVEL = 'DEBUG'
+                    // env.LOGOS_LEVEL = 'DEBUG'
                     // sh 'printenv'
 
                     cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
@@ -114,7 +114,7 @@ tasks["buildRelease"] = {
             cleanWs(patterns: [[pattern: '*.ospx, add.tar.gz, add.tar.bz2, add.7z, add.tar', type: 'INCLUDE']])
             try{
                 println "before env.LOGOS_LEVEL = \'DEBUG\' "
-                env.LOGOS_LEVEL = 'DEBUG'
+                // env.LOGOS_LEVEL = 'DEBUG'
                 // sh 'printenv'
 
                 cmd "opm build ./"
@@ -248,7 +248,7 @@ firsttasks["slave"] = {
             // try{
 
                 println "before env.LOGOS_LEVEL = \'DEBUG\' "
-                env.LOGOS_LEVEL = 'DEBUG'
+                // env.LOGOS_LEVEL = 'DEBUG'
                 // sh 'printenv'
 
                 cmd "opm run init file --buildFolderPath ./build"
