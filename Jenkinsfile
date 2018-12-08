@@ -7,17 +7,19 @@ def buildSerivceConf = ["836UF":"8.3.6", "837UF":"8.3.7", "838UF":"8.3.8", "839U
 //builds = ["836UF", "837UF", "838UF", "839UF", "8310UF"]
 builds = ["8310UF"]
 errorsStash = [:]
-paths = [ "Core/TestClient": "TestClient",
-    "StepsGenerator": "StepsGenerator",
-    "StepsRunner":"StepsRunner",
-    "StepsProgramming":"StepsProgramming",
-    "Core/FeatureLoad": "FeatureLoad",
-    "Core/FeatureReader": "FeatureReader",
-    "Core/FeatureWriter": "FeatureWriter",
-    "Core/OpenForm": "OpenForm",
-    "libraries": "libraries",
-    "Core/Translate": "Translate",
-    "Core/ExpectedSomething": "ExpectedSomething"
+paths = [
+    "libraries/Плагины": "libraries"
+    // "libraries": "libraries"
+    // , "Core/TestClient": "TestClient",
+    // "StepsGenerator": "StepsGenerator",
+    // "StepsRunner":"StepsRunner",
+    // "StepsProgramming":"StepsProgramming",
+    // "Core/FeatureLoad": "FeatureLoad",
+    // "Core/FeatureReader": "FeatureReader",
+    // "Core/FeatureWriter": "FeatureWriter",
+    // "Core/OpenForm": "OpenForm",
+    // "Core/Translate": "Translate",
+    // "Core/ExpectedSomething": "ExpectedSomething"
     ]
 
 
@@ -35,7 +37,7 @@ def behaviortask(build, path, suffix, version){
                 cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
                 checkout scm
                 unstash "buildResults"
-               
+
                 try{
                     println "before env.LOGOS_LEVEL = \'DEBUG\' "
                     env.LOGOS_LEVEL = 'DEBUG'
@@ -44,7 +46,7 @@ def behaviortask(build, path, suffix, version){
                     cmd "opm run initib file --buildFolderPath ./build --v8version ${version}"
 
                     withEnv(["VANESSA_JUNITPATH=./ServiceBases/junitreport/${suffix}", "VANESSA_cucumberreportpath=./ServiceBases/cucumber/${suffix}"]) {
-                        //Маленький хак, переход в dir автоматом создает каталог и не надо писать кроссплатформенный mkdir -p 
+                        //Маленький хак, переход в dir автоматом создает каталог и не надо писать кроссплатформенный mkdir -p
                         dir("build/ServiceBases/junitreport/${suffix}"){}
                         dir("build/ServiceBases/cucumber/${suffix}"){}
                         echo "========= ${path} ====================="
@@ -74,32 +76,32 @@ builds.each{
 tasks["behavior video write"] = {
         node ("video") {
             stage("behavior video") {
-            ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
-            {
-                try{
-                    checkout scm
-                    cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
-                    cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
-                    dir("build/ServiceBases/allurereport/8310UF"){}
-                    unstash "buildResults"
+            // ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
+            // {
+            //     try{
+            //         checkout scm
+            //         cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
+            //         cleanWs(patterns: [[pattern: 'build/ServiceBases/allurereport/8310UF/**', type: 'INCLUDE']]);
+            //         dir("build/ServiceBases/allurereport/8310UF"){}
+            //         unstash "buildResults"
 
-                    println "before env.LOGOS_LEVEL = \'DEBUG\' "
-                    env.LOGOS_LEVEL = 'DEBUG'
-                    // sh 'printenv'
+            //         println "before env.LOGOS_LEVEL = \'DEBUG\' "
+            //         env.LOGOS_LEVEL = 'DEBUG'
+            //         // sh 'printenv'
 
-                    cmd "opm install"
-                    cmd "opm list"
-                    cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
+            //         cmd "opm install"
+            //         cmd "opm list"
+            //         cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
 
-                    cmd "opm run vanessa all --path ./features/Core/TestClient/  --tag video --settings ./tools/JSON/VBParams8310UF.json";
-                } catch (e) {
-                    echo "behavior status : ${e}"
-                    currentBuild.result = 'UNSTABLE'
-                }
-                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/8310UF/**", name: "video"
-            }
+            //         cmd "opm run vanessa all --path ./features/Core/TestClient/  --tag video --settings ./tools/JSON/VBParams8310UF.json";
+            //     } catch (e) {
+            //         echo "behavior status : ${e}"
+            //         currentBuild.result = 'UNSTABLE'
+            //     }
+            //     stash allowEmpty: true, includes: "build/ServiceBases/allurereport/8310UF/**", name: "video"
             // }
-            
+            // }
+
         }
     }
 }
@@ -137,25 +139,25 @@ tasks["buildRelease"] = {
 tasks["xdd"] = {
     node("8310UF"){
         stage("xdd"){
-                checkout scm
-                cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
-                unstash "buildResults"
-                try{
-                    println "before env.LOGOS_LEVEL = \'DEBUG\' "
-                    env.LOGOS_LEVEL = 'DEBUG'
-                    // sh 'printenv'
+                // checkout scm
+                // cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
+                // unstash "buildResults"
+                // try{
+                //     println "before env.LOGOS_LEVEL = \'DEBUG\' "
+                //     env.LOGOS_LEVEL = 'DEBUG'
+                //     // sh 'printenv'
 
-                    cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
+                //     cmd "opm run initib file --buildFolderPath ./build --v8version 8.3.10"
 
-                    cmd "opm run xdd";
-                } catch (e) {
-                    echo "xdd ${it} status : ${e}"
-                    sleep 2
-                    cmd("7z a -ssw buildXDD.7z ./build/ -xr!*.cfl", true)
-                    archiveArtifacts "buildXDD.7z"
-                    currentBuild.result = 'UNSTABLE'
-                }
-                stash allowEmpty: true, includes: "build/ServiceBases/allurereport/xdd/**, build/ServiceBases/junitreport/**", name: "xdd"
+                //     cmd "opm run xdd";
+                // } catch (e) {
+                //     echo "xdd ${it} status : ${e}"
+                //     sleep 2
+                //     cmd("7z a -ssw buildXDD.7z ./build/ -xr!*.cfl", true)
+                //     archiveArtifacts "buildXDD.7z"
+                //     currentBuild.result = 'UNSTABLE'
+                // }
+                // stash allowEmpty: true, includes: "build/ServiceBases/allurereport/xdd/**, build/ServiceBases/junitreport/**", name: "xdd"
         }
     }
 }
@@ -169,11 +171,11 @@ firsttasks["qa"] = {
                 try{
                     println env.QASONAR;
                     def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner\""
-                    
+
                     withCredentials([string(credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth')]) {
                         sonarcommand = sonarcommand + " -Dsonar.host.url=https://opensonar.silverbulleters.org -Dsonar.login=${SonarOAuth}"
                     }
-                    
+
                     // TODO // Get version
                     // def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
                     // def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
@@ -188,21 +190,21 @@ firsttasks["qa"] = {
                     } else if (env.BRANCH_NAME.startsWith("release/")) {
                         sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
                     } else if (env.BRANCH_NAME.startsWith("PR-")) {
-                        // Report PR issues           
+                        // Report PR issues
                         def PRNumber = env.BRANCH_NAME.tokenize("PR-")[0]
                         def gitURLcommand = 'git config --local remote.origin.url'
                         def gitURL = ""
                         if (unix) {
-                            gitURL = sh(returnStdout: true, script: gitURLcommand).trim() 
+                            gitURL = sh(returnStdout: true, script: gitURLcommand).trim()
                         } else {
-                            gitURL = bat(returnStdout: true, script: gitURLcommand).trim() 
+                            gitURL = bat(returnStdout: true, script: gitURLcommand).trim()
                         }
                         def repository = gitURL.tokenize("/")[2] + "/" + gitURL.tokenize("/")[3]
                         repository = repository.tokenize(".")[0]
                         withCredentials([string(credentialsId: env.GithubOAuthCredentianalID, variable: 'githubOAuth')]) {
                             sonarcommand = sonarcommand + " -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${PRNumber} -Dsonar.github.repository=${repository} -Dsonar.github.oauth=${githubOAuth}"
                         }
-                        
+
                     } else {
                         echo "Анализ SonarQube не выполнен. Ветка ${env.BRANCH_NAME} не подходит по условию проверки веток!"
                         makeAnalyzis = false
@@ -218,14 +220,14 @@ firsttasks["qa"] = {
                             }
                         }
                     } catch (e) {
-                        echo "sonar status : ${e}" 
+                        echo "sonar status : ${e}"
                     }
-        
+
                 } catch (e) {
                     echo "sonar status : ${e}"
                 }
 
-                
+
             } else {
                 println env.QASONAR
                 echo "QA runner not installed"
@@ -271,7 +273,7 @@ firsttasks["slave"] = {
 //                 cmd(command);
 //             }
 //             checkout scm
-    
+
 //     }
 //     stage("build"){
 //         def unix = isUnix()
@@ -330,7 +332,7 @@ tasks["report"] = {
             unstash "video"
             unstash "xdd"
             try{
-                allure includeProperties: false, jdk: '', 
+                allure includeProperties: false, jdk: '',
                     results: [
                         [path: 'build/ServiceBases/allurereport/']
                     ]
@@ -342,7 +344,7 @@ tasks["report"] = {
             junit 'build/ServiceBases/junitreport/**/*.xml'
             //junit 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
-            
+
             try{
                 archiveArtifacts 'build/ServiceBases/allurereport/**'
             } catch (e) {
@@ -377,7 +379,7 @@ stage('Deploy') {
         if (currentBuild.result == null || currentBuild.result == 'SUCCESS') {
             def userInput;
             try {
-                timeout(time: 1, unit: 'DAYS') { 
+                timeout(time: 1, unit: 'DAYS') {
                     userInput = input("Deploy ${env.BRANCH_NAME}?")
                 }
             } catch (err) {
