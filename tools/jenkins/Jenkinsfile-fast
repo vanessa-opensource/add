@@ -112,7 +112,7 @@ node("slave") {
     def errors = []
     timestamps {
         try{
-            cmd("vrunner xunit tests\smoke --settings tools/JSON/vrunner.json", isUnix)
+            cmd("vrunner xunit tests/smoke --settings tools/JSON/vrunner.json", isUnix)
         } catch (e) {
             errors << "smoke status : ${e}"
         }
@@ -124,7 +124,7 @@ node("slave") {
     def errors = []
     timestamps {
         try{
-            cmd("vrunner xunit tests\xunit --settings tools/JSON/vrunner.json", isUnix)
+            cmd("vrunner xunit tests/xunit --settings tools/JSON/vrunner.json", isUnix)
         } catch (e) {
             errors << "TDD status : ${e}"
         }
