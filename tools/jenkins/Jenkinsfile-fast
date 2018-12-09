@@ -104,7 +104,8 @@ node("slave") {
     // }
     echo "Сборка бинарных файлов"
     timestamps {
-        cmd("opm run initib file --v8version 8.3.10", isUnix)
+        cmd("opm run init --v8version 8.3.10", isUnix)
+        // cmd("opm run initib file --v8version 8.3.10", isUnix)
     }
   }
 
