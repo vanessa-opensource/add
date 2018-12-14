@@ -311,11 +311,6 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 + основная лицензия продукта - BSD v3
 + лицензии стороннего кода - Apache License, GitHub CLA, Freeware, etc
 
-<a id="markdown-поддержка-opensource-команды" name="поддержка-opensource-команды"></a>
-## Поддержка OpenSource команды
-
-+ мы используем https://salt.bountysource.com/checkout/amount?team=silverbulleters
-
 <a id="markdown-простой-faq-по-использованию" name="простой-faq-по-использованию"></a>
 ## Простой FAQ по использованию
 
