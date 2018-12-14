@@ -31,13 +31,15 @@
 <a id="markdown-введение" name="введение"></a>
 ## Введение 
 
-Продукт Vanessa-ADD (Automation Driven Development) есть набор инструментов для проверки качества решений на платформе 1С:Предприятие.
+Продукт Vanessa-ADD (Vanessa Automation Driven Development) `(далее ADD)` представляет собой набор инструментов для проверки качества решений на платформе 1С:Предприятие.
 
 Vanessa-ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1c.ru) - Tests/behavior (TDD & BDD) for 1С:Enterprise.
 
-Миссия продукта - повышение качества разработки.
+> Миссия продукта - повышение качества разработки.
 
-Продукт позволяет проверять поведение различных систем на базе 1С и проверяет/гарантирует качество функциональности системы и ее составных частей.
+Продукт позволяет проверять поведение различных систем на базе платформы 1С (в режимах совместимости не ниже 8.2.13)  и проверяет/гарантирует качество функциональности системы и ее составных частей на всем протяжении жизненного цикла системы.
+
+> Основной сценарий использования - реализация концепций TDD/BDD/CI в проектах на базе 1С
 
 Возможности:
 
@@ -45,7 +47,7 @@ Vanessa-ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1
 + проверка поведения (BDD/Gherkin)
 + формирование автодокументации в формате Markdown и видео.
 
-Vanessa-ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior). Совместимость с VB 1.Х и xUnitFor1C 4.Х гарантирована.
+Vanessa-ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior). Совместимость с VB 1.Х и xUnitFor1C 4.Х гарантирована (за исключением функциональности циклов и условий в Vanessa Behavior)
 
 <a id="markdown-установка" name="установка"></a>
 ## Установка
@@ -73,40 +75,23 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 
 Обязательно ознакомьтесь с:
 
-+ **справкой по продукту** [doc/README.md](./doc/README.md)
++ **Доементацией по продукту** [doc/README.md](./doc/README.md)
 
 + часто задаваемыми вопросами [FAQ.md](./F.A.Q.MD)
 + руководством контрибьютора [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
-+ моделью спонсорства [DONATIONS.md](./DONATIONS.md)
 + известными проблемами [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
 
+## Ночная сборка ветки **develop**:
 
-Ночная сборка ветки **develop**:
+Продукт помимо основного стабильного релиза, выпускается "ночная сборка" продукта с новым, но еще не стабильным функционалом. Артефакты сборки доступны на сервере сборок в двух форматах:
 
 1. [7z](http://ci.silverbulleters.org/job/ADD%20test/job/develop/lastSuccessfulBuild/artifact/add.7z) - `unzip -o ./add.7z`
 2. [tar.gz](http://ci.silverbulleters.org/job/ADD%20test/job/develop/lastSuccessfulBuild/artifact/add.tar.gz) - `tar xfv ./add.tar.gz`
 
+
+
 <a id="markdown-описание-использования" name="описание-использования"></a>
-## Описание использования
-
-После установки через `opm install` файл продукта расположены по адресу КаталогУстановкиОСкрипт/lib/add
-
-Как правило, в Windows это `C:\Program Files (x86)\OneScript\lib\add`.
-
-Возможно тестирование 2-х видов:
-
-+ тестирование через фичи, применяя методику BDD (ниже)
-+ тестирование через код - например, применяя методику TDD
-
-Для каждого из видов тестирования существуют свои браузеры-запускатели тестирования.
-
-+ BDD-тестирование - `bddTestRunner.epf` (в корне продукта)
-  + аналогично более раннему проекту `vanessa-behavior`
-+ тестирование через код - `xddTestRunner.epf` (в корне продукта)
-  + аналогично более раннему проекту `xUnitFor1C`
-
-Возможен как ручной интерактивный запуск тестирования в режиме 1С:Предприятие,
-так и автоматический прогон тестирования через командную строку с помощью json-файлов настройки. См. ниже раздел `Файлы настройки/профиля запуска обработки`.
+ См. ниже раздел `Файлы настройки/профиля запуска обработки`.
 
 Примеры простого и удобного автоматического запуска через [Vanessa-Runner](https://github.com/silverbulleters/vanessa-runner)
 
