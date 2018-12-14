@@ -1,5 +1,5 @@
 ﻿<a id="markdown-vanessa-add--add-" name="vanessa-add--add-"></a>
-# Vanessa-ADD ( Vanessa Automation Driven Development, ADD )
+# Vanessa Automation Driven Development
 
 [![Открытый форум проекта](https://img.shields.io/discourse/https/xdd.silverbulleters.org/users.svg)](https://xdd.silverbulleters.org/c/razrabotka/xdrivendevelopment)
 
