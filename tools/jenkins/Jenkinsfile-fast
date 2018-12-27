@@ -148,8 +148,13 @@ node("slave") {
 
     showErrors(errors)
 
-    step([$class: 'ArtifactArchiver', artifacts: '**/bdd-exec.xml', fingerprint: true])
-    step([$class: 'JUnitResultArchiver', testResults: '**/bdd*.xml'])
+    // step([$class: 'ArtifactArchiver', artifacts: '**/bdd-exec.xml', fingerprint: true])
+    // step([$class: 'JUnitResultArchiver', testResults: '**/bdd*.xml'])
+    step([$class: 'JUnitResultArchiver', testResults: '**/build/*.xml'])
+    // step([$class: 'JUnitResultArchiver', testResults: '**/build/allure/*.xml'])
+    step([$class: 'JUnitResultArchiver', testResults: '**/ServiceBases/**/junitreport/**.xml'])
+    // step([$class: 'JUnitResultArchiver', testResults: '**/allure/*.xml'])
+    // step([$class: 'JUnitResultArchiver', testResults: '**/ServiceBases/allurereport/**.xml'])
   }
 
     stage('build'){
@@ -158,6 +163,11 @@ node("slave") {
             cmd(command, isUnix)
             step([$class: 'ArtifactArchiver', artifacts: '**/add*.ospx', fingerprint: true])
             step([$class: 'ArtifactArchiver', artifacts: '**/add*.zip', fingerprint: true])
+            step([$class: 'ArtifactArchiver', artifacts: '**/ServiceBases/**/junitreport/**', fingerprint: true])
+            step([$class: 'ArtifactArchiver', artifacts: '**/ServiceBases/**/allurereport/**', fingerprint: true])
+            step([$class: 'ArtifactArchiver', artifacts: '**/build/*.xml', fingerprint: true])
+            step([$class: 'ArtifactArchiver', artifacts: '**/build/allure/*.xml', fingerprint: true])
+            step([$class: 'ArtifactArchiver', artifacts: '**/build/*.txt', fingerprint: true])
         }
     }
 }
