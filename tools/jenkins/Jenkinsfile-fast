@@ -148,9 +148,9 @@ node("slave") {
 
     showErrors(errors)
 
-    // junit 'build/ServiceBases/junitreport/**/*.xml'
     step([$class: 'JUnitResultArchiver', testResults: '**/build/*.xml'])
-    step([$class: 'JUnitResultArchiver', testResults: '**/ServiceBases/**/junitreport/**.xml'])
+    // step([$class: 'JUnitResultArchiver', testResults: '**/ServiceBases/**/junitreport/**/**.xml'])
+    junit 'build/ServiceBases/junitreport/**/*.xml'
   }
 
     stage('build'){
@@ -170,13 +170,12 @@ node("slave") {
             makeArtifacts('**/build/*.xml')
             makeArtifacts('**/build/**/*.txt')
             makeArtifacts('**/build/**/*.xml')
-            // makeArtifacts('**/build/allure/*.xml')
 
             try{
                 // allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
                 allure includeProperties: false, jdk: '',
                     results: [
-                        [path: 'build/ServiceBases/allurereport/'],
+                        [path: 'build/ServiceBases/allurereport/8310uf'],
                         [path: 'build/allure/']
                     ]
             } catch (e) {
