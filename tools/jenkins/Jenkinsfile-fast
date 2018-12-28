@@ -205,7 +205,6 @@ def makeArtifacts(path) {
     try{
         // archiveArtifacts allowEmptyArchive: true, artifacts: '*.xml'
        step([$class: 'ArtifactArchiver', artifacts: path, fingerprint: true, allowEmptyArchive: true])
-        makeArtifacts(path, fingerprint: )
     } catch (e) {
         echo "report status : ${e}"
         currentBuild.result = 'UNSTABLE'
