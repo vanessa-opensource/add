@@ -148,27 +148,41 @@ node("slave") {
 
     showErrors(errors)
 
-    // step([$class: 'ArtifactArchiver', artifacts: '**/bdd-exec.xml', fingerprint: true])
-    // step([$class: 'JUnitResultArchiver', testResults: '**/bdd*.xml'])
+    // junit 'build/ServiceBases/junitreport/**/*.xml'
     step([$class: 'JUnitResultArchiver', testResults: '**/build/*.xml'])
-    // step([$class: 'JUnitResultArchiver', testResults: '**/build/allure/*.xml'])
     step([$class: 'JUnitResultArchiver', testResults: '**/ServiceBases/**/junitreport/**.xml'])
-    // step([$class: 'JUnitResultArchiver', testResults: '**/allure/*.xml'])
-    // step([$class: 'JUnitResultArchiver', testResults: '**/ServiceBases/allurereport/**.xml'])
   }
 
     stage('build'){
         timestamps {
             command = """opm build ./"""
-            cmd(command, isUnix)
-            step([$class: 'ArtifactArchiver', artifacts: '**/add*.ospx', fingerprint: true])
-            step([$class: 'ArtifactArchiver', artifacts: '**/add*.zip', fingerprint: true])
-            step([$class: 'ArtifactArchiver', artifacts: '**/ServiceBases/**/junitreport/**', fingerprint: true])
-            step([$class: 'ArtifactArchiver', artifacts: '**/ServiceBases/**/allurereport/**', fingerprint: true])
-            step([$class: 'ArtifactArchiver', artifacts: '**/build/*.xml', fingerprint: true])
-            step([$class: 'ArtifactArchiver', artifacts: '**/build/**/*.txt', fingerprint: true])
-            step([$class: 'ArtifactArchiver', artifacts: '**/build/**/*.xml', fingerprint: true])
-            // step([$class: 'ArtifactArchiver', artifacts: '**/build/allure/*.xml', fingerprint: true])
+            try{
+                cmd(command, isUnix)
+            } catch (e) {
+                echo "build status : ${e}"
+                currentBuild.result = 'UNSTABLE'
+            }
+
+            makeArtifacts('**/add*.ospx')
+            makeArtifacts('**/add*.zip')
+            makeArtifacts('**/ServiceBases/**/junitreport/**')
+            makeArtifacts('**/ServiceBases/**/allurereport/**')
+            makeArtifacts('**/build/*.xml')
+            makeArtifacts('**/build/**/*.txt')
+            makeArtifacts('**/build/**/*.xml')
+            // makeArtifacts('**/build/allure/*.xml')
+
+            try{
+                // allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
+                allure includeProperties: false, jdk: '',
+                    results: [
+                        [path: 'build/ServiceBases/allurereport/'],
+                        [path: 'build/allure/']
+                    ]
+            } catch (e) {
+                echo "allure status : ${e}"
+                currentBuild.result = 'UNSTABLE'
+            }
         }
     }
 }
@@ -184,5 +198,16 @@ def showErrors(errors) {
         for (int i = 0; i < errors.size(); i++) {
             echo errors[i]
         }
+    }
+}
+
+def makeArtifacts(path) {
+    try{
+        // archiveArtifacts allowEmptyArchive: true, artifacts: '*.xml'
+       step([$class: 'ArtifactArchiver', artifacts: path, fingerprint: true, allowEmptyArchive: true])
+        makeArtifacts(path, fingerprint: )
+    } catch (e) {
+        echo "report status : ${e}"
+        currentBuild.result = 'UNSTABLE'
     }
 }
