@@ -11,6 +11,21 @@
 //
 // Если запускать Jenkins не в режиме UTF-8, тогда нужно поменять метод cmd в конце кода, применив комментарий к методу
 
+paths = [
+    "libraries/Плагины": "libraries"
+    // "libraries": "libraries"
+    // , "Core/TestClient": "TestClient",
+    // "StepsGenerator": "StepsGenerator",
+    "StepsRunner":"StepsRunner",
+    // "StepsProgramming":"StepsProgramming",
+    // "Core/FeatureLoad": "FeatureLoad",
+    // "Core/FeatureReader": "FeatureReader",
+    // "Core/FeatureWriter": "FeatureWriter",
+    // "Core/OpenForm": "OpenForm",
+    // "Core/Translate": "Translate",
+    // "Core/ExpectedSomething": "ExpectedSomething"
+    ]
+
 properties([
     disableConcurrentBuilds(),
     buildDiscarder(
@@ -119,6 +134,7 @@ node("slave") {
         }
     }
     showErrors(errors)
+    makeJunit('build/junit.xml')
   }
 
   stage('TDD Тестирование') {
@@ -131,11 +147,14 @@ node("slave") {
         }
     }
     showErrors(errors)
+    makeJunit('build/junit.xml')
   }
 
-  stage('BDD тестирование'){
+  stage('BDD тестирование (библиотеки)'){
+    def buildKey = "8310uf";
+    def buildPath = "libraries";
 
-    def command = """vrunner vanessa --settings tools/JSON/vrunner.json  --path features/libraries""";
+    def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
 
     def errors = []
     timestamps {
@@ -148,9 +167,33 @@ node("slave") {
 
     showErrors(errors)
 
-    step([$class: 'JUnitResultArchiver', testResults: '**/build/*.xml'])
-    // step([$class: 'JUnitResultArchiver', testResults: '**/ServiceBases/**/junitreport/**/**.xml'])
-    junit 'build/ServiceBases/junitreport/**/*.xml'
+    makeJunit("build/ServiceBases/junitreport/${buildKey}/*.xml")
+    makeAllure("build/ServiceBases/allurereport/${buildKey}")
+  }
+  
+  stage('BDD тестирование (ядро)'){
+
+    paths.each{
+        def buildKey = it.value;
+        def buildPath = it.key;
+        withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
+            def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
+
+            def errors = []
+            timestamps {
+                try{
+                    cmd(command, isUnix)
+                } catch (e) {
+                    errors << "BDD status : ${e}"
+                }
+            }
+
+            showErrors(errors)
+
+            makeJunit("build/ServiceBases/junitreport/${buildKey}/*.xml")
+            makeAllure("build/ServiceBases/allurereport/${buildKey}")
+        }
+    }
   }
 
     stage('build'){
@@ -170,18 +213,6 @@ node("slave") {
             makeArtifacts('**/build/*.xml')
             makeArtifacts('**/build/**/*.txt')
             makeArtifacts('**/build/**/*.xml')
-
-            try{
-                // allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
-                allure includeProperties: false, jdk: '',
-                    results: [
-                        [path: 'build/ServiceBases/allurereport/8310uf'],
-                        [path: 'build/allure/']
-                    ]
-            } catch (e) {
-                echo "allure status : ${e}"
-                currentBuild.result = 'UNSTABLE'
-            }
         }
     }
 }
@@ -206,6 +237,28 @@ def makeArtifacts(path) {
        step([$class: 'ArtifactArchiver', artifacts: path, fingerprint: true, allowEmptyArchive: true])
     } catch (e) {
         echo "report status : ${e}"
+        currentBuild.result = 'UNSTABLE'
+    }
+}
+
+def makeJunit(path) {
+    try{
+        junit allowEmptyResults: true, testResults: path
+    } catch (e) {
+        echo "junit report status : ${e}"
+        currentBuild.result = 'UNSTABLE'
+    }
+}
+
+def makeAllure(resultPath) {
+    try{
+        // allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
+        allure includeProperties: false, jdk: '',
+            results: [
+                [path: resultPath],
+            ]
+    } catch (e) {
+        echo "allure status : ${e}"
         currentBuild.result = 'UNSTABLE'
     }
 }
