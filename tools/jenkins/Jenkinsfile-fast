@@ -89,7 +89,7 @@ node("slave") {
                             cmd(sonarcommand)
                         } else {
                             //echo "${sonarcommand}"
-                            bat "${sonarcommand}"
+                            bat "${sonarcommand} -X"
                             //cmd(sonarcommand, isUnix)
                         }
                     }
