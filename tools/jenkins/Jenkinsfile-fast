@@ -63,7 +63,7 @@ node("slave") {
                     sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
                 } else if (env.BRANCH_NAME.startsWith("release/")) {
                     sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
-                } else if (env.BRANCH_NAME.startsWith("PR-")) {
+                } else if (env.BRANCH_NAME.startsWith("PR-") || env.BRANCH_NAME.startsWith("feature")) {
                     // Report PR issues
                     def PRNumber = env.BRANCH_NAME.tokenize("PR-")[0]
                     def gitURLcommand = 'git config --local remote.origin.url'
