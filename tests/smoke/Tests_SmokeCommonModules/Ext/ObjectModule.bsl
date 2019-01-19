@@ -71,47 +71,54 @@ Procedure Fact_ClientModule(CommonModuleName, Transaction = False) Export
     
     Assertions.ПроверитьТип(Module, "MetadataObject");
      
-    Assertions.ПроверитьЛожь(Module.Global, 
-        NStr("en='Participation in global context creation';
-            |ru='Участие в формировании глобального контекста';
-            |uk='Участь у формуванні глобального контексту';
-            |en_CA='Participation in global context creation'"));
+    Assertions.ПроверитьЛожь(Module.Global, _StrTemplate( 
+        NStr("en='Participation in global context creation {%1}';
+            |ru='Участие в формировании глобального контекста {%1}';
+            |uk='Участь у формуванні глобального контексту {%1}';
+            |en_CA='Participation in global context creation {%1}'"),
+        CommonModuleName));
 
-    Assertions.ПроверитьИстину(Module.ClientManagedApplication, 
-        NStr("en='Use of managed application in the client';
-            |ru='Использование в клиенте управляемого приложения';
-            |uk='Використання в клієнті керованого додатку';
-            |en_CA='Use of managed application in the client'"));
+    Assertions.ПроверитьИстину(Module.ClientManagedApplication, _StrTemplate(
+        NStr("en='Use of managed application in the client {%1}';
+            |ru='Использование в клиенте управляемого приложения {%1}';
+            |uk='Використання в клієнті керованого додатку {%1}';
+            |en_CA='Use of managed application in the client {%1}'"),
+        CommonModuleName));
     
-    Assertions.ПроверитьЛожь(Module.Server, 
-        NStr("en='Run on server in client/server mode';
-            |ru='Выполнение на сервере в клиент-серверном варианте';
-            |uk='Виконання на сервері в клієнт-серверному варіанті';
-            |en_CA='Run on server in client/server mode'"));
+    Assertions.ПроверитьЛожь(Module.Server, _StrTemplate(
+        NStr("en='Run on server in client/server mode {%1}';
+            |ru='Выполнение на сервере в клиент-серверном варианте {%1}';
+            |uk='Виконання на сервері в клієнт-серверному варіанті {%1}';
+            |en_CA='Run on server in client/server mode {%1}'"),
+        CommonModuleName));
     
-    Assertions.ПроверитьЛожь(Module.ExternalConnection, 
-        NStr("en='Use in external connection';
-            |ru='Использование во внешнем соединении';
-            |uk='Використання в зовнішньому з''єднанні';
-            |en_CA='Use in external connection'"));
+    Assertions.ПроверитьЛожь(Module.ExternalConnection, _StrTemplate(
+        NStr("en='Use in external connection {%1}';
+            |ru='Использование во внешнем соединении {%1}';
+            |uk='Використання в зовнішньому з''єднанні {%1}';
+            |en_CA='Use in external connection {%1}'"),
+        CommonModuleName));
     
-    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, 
-        NStr("en='Use of ordinary application in the client';
-            |ru='Использование в клиенте обычного приложения';
-            |uk='Використання в клієнті звичайного додатку';
-            |en_CA='Use of ordinary application in the client'"));
+    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
     
-    Assertions.ПроверитьЛожь(Module.ServerCall,
-        NStr("en='Allows server call';
-            |ru='Разрешает вызов сервера';
-            |uk='Дозволяє виклик сервера';
-            |en_CA='Allows server call'"));
+    Assertions.ПроверитьЛожь(Module.ServerCall, _StrTemplate(
+        NStr("en='Allows server call {%1}';
+            |ru='Разрешает вызов сервера {%1}';
+            |uk='Дозволяє виклик сервера {%1}';
+            |en_CA='Allows server call {%1}'"),
+        CommonModuleName));
         
-    Assertions.ПроверитьЛожь(Module.Privileged,
-        NStr("en='Full access rights granted';
-            |ru='Предоставляются полные права доступа';
-            |uk='Надаються повні права доступу';
-            |en_CA='Full access rights granted'"));
+    Assertions.ПроверитьЛожь(Module.Privileged, _StrTemplate(
+        NStr("en='Full access rights granted {%1}';
+            |ru='Предоставляются полные права доступа {%1}';
+            |uk='Надаються повні права доступу {%1}';
+            |en_CA='Full access rights granted {%1}'"),
+        CommonModuleName));
     
 EndProcedure // Fact_ClientModule()
 
@@ -128,47 +135,54 @@ Procedure Fact_ServerModule(CommonModuleName, Transaction = False) Export
     
     Assertions.ПроверитьТип(Module, "MetadataObject");
      
-    Assertions.ПроверитьЛожь(Module.Global, 
-        NStr("en='Participation in global context creation';
-            |ru='Участие в формировании глобального контекста';
-            |uk='Участь у формуванні глобального контексту';
-            |en_CA='Participation in global context creation'"));
+    Assertions.ПроверитьЛожь(Module.Global, _StrTemplate(
+        NStr("en='Participation in global context creation {%1}';
+            |ru='Участие в формировании глобального контекста {%1}';
+            |uk='Участь у формуванні глобального контексту {%1}';
+            |en_CA='Participation in global context creation {%1}'"),
+        CommonModuleName));
 
-    Assertions.ПроверитьЛожь(Module.ClientManagedApplication, 
-        NStr("en='Use of managed application in the client';
-            |ru='Использование в клиенте управляемого приложения';
-            |uk='Використання в клієнті керованого додатку';
-            |en_CA='Use of managed application in the client'"));
+    Assertions.ПроверитьЛожь(Module.ClientManagedApplication, _StrTemplate(
+        NStr("en='Use of managed application in the client {%1}';
+            |ru='Использование в клиенте управляемого приложения {%1}';
+            |uk='Використання в клієнті керованого додатку {%1}';
+            |en_CA='Use of managed application in the client {%1}'"),
+        CommonModuleName));
     
-    Assertions.ПроверитьИстину(Module.Server, 
-        NStr("en='Run on server in client/server mode';
-            |ru='Выполнение на сервере в клиент-серверном варианте';
-            |uk='Виконання на сервері в клієнт-серверному варіанті';
-            |en_CA='Run on server in client/server mode'"));
+    Assertions.ПроверитьИстину(Module.Server, _StrTemplate(
+        NStr("en='Run on server in client/server mode {%1}';
+            |ru='Выполнение на сервере в клиент-серверном варианте {%1}';
+            |uk='Виконання на сервері в клієнт-серверному варіанті {%1}';
+            |en_CA='Run on server in client/server mode {%1}'"),
+        CommonModuleName));
     
-    Assertions.ПроверитьИстину(Module.ExternalConnection, 
-        NStr("en='Use in external connection';
-            |ru='Использование во внешнем соединении';
-            |uk='Використання в зовнішньому з''єднанні';
-            |en_CA='Use in external connection'"));
+    Assertions.ПроверитьИстину(Module.ExternalConnection, _StrTemplate(
+        NStr("en='Use in external connection {%1}';
+            |ru='Использование во внешнем соединении {%1}';
+            |uk='Використання в зовнішньому з''єднанні {%1}';
+            |en_CA='Use in external connection {%1}'"),
+        CommonModuleName));
     
-    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, 
-        NStr("en='Use of ordinary application in the client';
-            |ru='Использование в клиенте обычного приложения';
-            |uk='Використання в клієнті звичайного додатку';
-            |en_CA='Use of ordinary application in the client'"));
+    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
 
-    Assertions.ПроверитьЛожь(Module.ServerCall,
-        NStr("en='Allows server call';
-            |ru='Разрешает вызов сервера';
-            |uk='Дозволяє виклик сервера';
-            |en_CA='Allows server call'"));
+    Assertions.ПроверитьЛожь(Module.ServerCall, _StrTemplate(
+        NStr("en='Allows server call {%1}';
+            |ru='Разрешает вызов сервера {%1}';
+            |uk='Дозволяє виклик сервера {%1}';
+            |en_CA='Allows server call {%1}'"),
+        CommonModuleName));
     
-    Assertions.ПроверитьЛожь(Module.Privileged,
-        NStr("en='Full access rights granted';
-            |ru='Предоставляются полные права доступа';
-            |uk='Надаються повні права доступу';
-            |en_CA='Full access rights granted'"));
+    Assertions.ПроверитьЛожь(Module.Privileged, _StrTemplate(
+        NStr("en='Full access rights granted {%1}';
+            |ru='Предоставляются полные права доступа {%1}';
+            |uk='Надаються повні права доступу {%1}';
+            |en_CA='Full access rights granted {%1}'"),
+        CommonModuleName));
     
 EndProcedure // Fact_ServerModule()
 
@@ -185,47 +199,54 @@ Procedure Fact_ClientServerModule(CommonModuleName, Transaction = False) Export
     
     Assertions.ПроверитьТип(Module, "MetadataObject");
      
-    Assertions.ПроверитьЛожь(Module.Global, 
-        NStr("en='Participation in global context creation';
-            |ru='Участие в формировании глобального контекста';
-            |uk='Участь у формуванні глобального контексту';
-            |en_CA='Participation in global context creation'"));
+    Assertions.ПроверитьЛожь(Module.Global, _StrTemplate(
+        NStr("en='Participation in global context creation {%1}';
+            |ru='Участие в формировании глобального контекста {%1}';
+            |uk='Участь у формуванні глобального контексту {%1}';
+            |en_CA='Participation in global context creation {%1}'"),
+        CommonModuleName));
 
-    Assertions.ПроверитьИстину(Module.ClientManagedApplication, 
-        NStr("en='Use of managed application in the client';
-            |ru='Использование в клиенте управляемого приложения';
-            |uk='Використання в клієнті керованого додатку';
-            |en_CA='Use of managed application in the client'"));
+    Assertions.ПроверитьИстину(Module.ClientManagedApplication, _StrTemplate( 
+        NStr("en='Use of managed application in the client {%1}';
+            |ru='Использование в клиенте управляемого приложения {%1}';
+            |uk='Використання в клієнті керованого додатку {%1}';
+            |en_CA='Use of managed application in the client {%1}'"),
+        CommonModuleName));
         
-    Assertions.ПроверитьИстину(Module.Server, 
-        NStr("en='Run on server in client/server mode';
-            |ru='Выполнение на сервере в клиент-серверном варианте';
-            |uk='Виконання на сервері в клієнт-серверному варіанті';
-            |en_CA='Run on server in client/server mode'"));
+    Assertions.ПроверитьИстину(Module.Server, _StrTemplate(
+        NStr("en='Run on server in client/server mode {%1}';
+            |ru='Выполнение на сервере в клиент-серверном варианте {%1}';
+            |uk='Виконання на сервері в клієнт-серверному варіанті {%1}';
+            |en_CA='Run on server in client/server mode {%1}'"),
+        CommonModuleName));
         
-    Assertions.ПроверитьИстину(Module.ExternalConnection, 
-        NStr("en='Use in external connection';
-            |ru='Использование во внешнем соединении';
-            |uk='Використання в зовнішньому з''єднанні';
-            |en_CA='Use in external connection'"));
+    Assertions.ПроверитьИстину(Module.ExternalConnection, _StrTemplate(
+        NStr("en='Use in external connection {%1}';
+            |ru='Использование во внешнем соединении {%1}';
+            |uk='Використання в зовнішньому з''єднанні {%1}';
+            |en_CA='Use in external connection {%1}'"),
+        CommonModuleName));
         
-    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, 
-        NStr("en='Use of ordinary application in the client';
-            |ru='Использование в клиенте обычного приложения';
-            |uk='Використання в клієнті звичайного додатку';
-            |en_CA='Use of ordinary application in the client'"));
+    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
 
-    Assertions.ПроверитьЛожь(Module.ServerCall,
-        NStr("en='Allows server call';
-            |ru='Разрешает вызов сервера';
-            |uk='Дозволяє виклик сервера';
-            |en_CA='Allows server call'"));   
+    Assertions.ПроверитьЛожь(Module.ServerCall, _StrTemplate(
+        NStr("en='Allows server call {%1}';
+            |ru='Разрешает вызов сервера {%1}';
+            |uk='Дозволяє виклик сервера {%1}';
+            |en_CA='Allows server call {%1}'"),
+        CommonModuleName));   
     
-    Assertions.ПроверитьЛожь(Module.Privileged,
-        NStr("en='Full access rights granted';
-            |ru='Предоставляются полные права доступа';
-            |uk='Надаються повні права доступу';
-            |en_CA='Full access rights granted'"));
+    Assertions.ПроверитьЛожь(Module.Privileged, _StrTemplate(
+        NStr("en='Full access rights granted {%1}';
+            |ru='Предоставляются полные права доступа {%1}';
+            |uk='Надаються повні права доступу {%1}';
+            |en_CA='Full access rights granted {%1}'"),
+        CommonModuleName));
     
 EndProcedure // Fact_ClientServerModule()
 
@@ -240,7 +261,8 @@ Procedure Fact_ModuleReUse(CommonModuleName, Transaction = False) Export
     
     Module = Metadata.CommonModules.Find(CommonModuleName);
     Assertions.ПроверитьНеРавенство(Module.ReturnValuesReuse, 
-        Metadata.ObjectProperties.ReturnValuesReuse.DontUse);
+        Metadata.ObjectProperties.ReturnValuesReuse.DontUse,
+        CommonModuleName);
     
 EndProcedure // Fact_ModuleReUse() 
 
@@ -255,7 +277,8 @@ Procedure Fact_ModuleReUseDontUse(CommonModuleName, Transaction = False) Export
     
     Module = Metadata.CommonModules.Find(CommonModuleName);
     Assertions.ПроверитьРавенство(Module.ReturnValuesReuse, 
-        Metadata.ObjectProperties.ReturnValuesReuse.DontUse);
+        Metadata.ObjectProperties.ReturnValuesReuse.DontUse, 
+        CommonModuleName);
     
 EndProcedure // Fact_ModuleReUseDontUse() 
     
