@@ -42,49 +42,63 @@ node("slave") {
 
     if (env.QASONAR) {
         timestamps {
-            println env.QASONAR;
-            def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/Main_Classic/bin/sonar-scanner\""
-            withCredentials([[$class: 'StringBinding', credentialsId: env.SonarOAuthCredentianalID, variable: 'SonarOAuth']]) {
-                sonarcommand = sonarcommand + " -Dsonar.host.url=https://sonar.silverbulleters.org -Dsonar.login=${env.SonarOAuth}"
-            }
+            try{
+                println env.QASONAR;
+                def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner\""
 
-            // Get version - в модуле 'src/Модули/ПараметрыСистемы.os' должна быть строка формата Версия = "0.8.1";
-            def configurationText = readFile encoding: 'UTF-8', file: 'src/Модули/ПараметрыСистемы.os'
-            def configurationVersion = (configurationText =~ /Версия\s*=\s*\"([^"]*)\"/)[0][1]
-            sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
+                withCredentials([string(credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth')]) {
+                    sonarcommand = sonarcommand + " -Dsonar.host.url=https://opensonar.silverbulleters.org -Dsonar.login=${SonarOAuth}"
+                }
 
-            def makeAnalyzis = true
-            if (env.BRANCH_NAME == "develop") {
-                echo 'Analysing develop branch'
-            } else if (env.BRANCH_NAME.startsWith("release/")) {
-                sonarcommand = sonarcommand + " -Dsonar.branch=${BRANCH_NAME}"
-            } else if (env.BRANCH_NAME.startsWith("PR-")) {
-                // Report PR issues
-                def PRNumber = env.BRANCH_NAME.tokenize("PR-")[0]
-                def gitURLcommand = 'git config --local remote.origin.url'
-                def gitURL = ""
+                // TODO // Get version
+                // def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
+                // def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
+                // sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
 
-                if (isUnix()) {
-                    gitURL = sh(returnStdout: true, script: gitURLcommand).trim()
+                def makeAnalyzis = true
+                if (env.BRANCH_NAME == "master") {
+                    echo 'Analysing master branch'
+                } else if (env.BRANCH_NAME == "develop") {
+                    echo 'Analysing develop branch'
+                    sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
+                } else if (env.BRANCH_NAME.startsWith("release/")) {
+                    sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
+                } else if (env.BRANCH_NAME.startsWith("PR-")) {
+                    // Report PR issues
+                    def PRNumber = env.BRANCH_NAME.tokenize("PR-")[0]
+                    def gitURLcommand = 'git config --local remote.origin.url'
+                    def gitURL = ""
+                    if (unix) {
+                        gitURL = sh(returnStdout: true, script: gitURLcommand).trim()
+                    } else {
+                        gitURL = bat(returnStdout: true, script: gitURLcommand).trim()
+                    }
+                    def repository = gitURL.tokenize("/")[2] + "/" + gitURL.tokenize("/")[3]
+                    repository = repository.tokenize(".")[0]
+                    withCredentials([string(credentialsId: env.GithubOAuthCredentianalID, variable: 'githubOAuth')]) {
+                        sonarcommand = sonarcommand + " -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${PRNumber} -Dsonar.github.repository=${repository} -Dsonar.github.oauth=${githubOAuth}"
+                    }
+
                 } else {
-                    gitURL = bat(returnStdout: true, script: gitURLcommand).trim()
+                    echo "Анализ SonarQube не выполнен. Ветка ${env.BRANCH_NAME} не подходит по условию проверки веток!"
+                    makeAnalyzis = false
+                }
+                try {
+                    if (makeAnalyzis) {
+                        if (unix) {
+                            cmd(sonarcommand)
+                        } else {
+                            //echo "${sonarcommand}"
+                            bat "${sonarcommand}"
+                            //cmd(sonarcommand, unix)
+                        }
+                    }
+                } catch (e) {
+                    echo "sonar status : ${e}"
                 }
 
-                def repository = gitURL.tokenize("/")[2] + "/" + gitURL.tokenize("/")[3]
-                repository = repository.tokenize(".")[0]
-                withCredentials([[$class: 'StringBinding', credentialsId: env.GithubOAuthCredentianalID, variable: 'githubOAuth']]) {
-                    sonarcommand = sonarcommand + " -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${PRNumber} -Dsonar.github.repository=${repository} -Dsonar.github.oauth=${env.githubOAuth}"
-                }
-            } else {
-                makeAnalyzis = false
-            }
-
-            if (makeAnalyzis) {
-                if (isUnix()) {
-                    sh '${sonarcommand}'
-                } else {
-                    bat "${sonarcommand}"
-                }
+            } catch (e) {
+                echo "sonar status : ${e}"
             }
         }
     } else {
