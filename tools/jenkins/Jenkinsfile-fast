@@ -150,6 +150,7 @@ node("slave") {
     }
     showErrors(errors)
     makeJunit('build/junit.xml')
+    makeAllure("build/allure")
   }
 
   stage('TDD Тестирование') {
@@ -163,6 +164,7 @@ node("slave") {
     }
     showErrors(errors)
     makeJunit('build/junit.xml')
+    makeAllure("build/allure")
   }
 
   stage('BDD тестирование (библиотеки)'){
@@ -182,8 +184,8 @@ node("slave") {
 
     showErrors(errors)
 
-    makeJunit("build/ServiceBases/junitreport/${buildKey}/*.xml")
-    makeAllure("build/ServiceBases/allurereport/${buildKey}")
+    makeJunit("ServiceBases/junitreport/${buildKey}/*.xml")
+    makeAllure("ServiceBases/allurereport/${buildKey}")
   }
 
   stage('BDD тестирование (ядро)'){
@@ -205,8 +207,8 @@ node("slave") {
 
             showErrors(errors)
 
-            makeJunit("build/ServiceBases/junitreport/${buildKey}/*.xml")
-            makeAllure("build/ServiceBases/allurereport/${buildKey}")
+            makeJunit("ServiceBases/junitreport/${buildKey}/*.xml")
+            makeAllure("ServiceBases/allurereport/${buildKey}")
         }
     }
   }
