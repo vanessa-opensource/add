@@ -228,13 +228,13 @@ node("slave") {
         timestamps {
             makeAllure(allureResults)
 
-            command = """opm build ./"""
-            try{
-                cmd(command, isUnix)
-            } catch (e) {
-                echo "build status : ${e}"
-                currentBuild.result = 'UNSTABLE'
-            }
+            // command = """opm build ./"""
+            // try{
+            //     cmd(command, isUnix)
+            // } catch (e) {
+            //     echo "build status : ${e}"
+            //     currentBuild.result = 'UNSTABLE'
+            // }
 
             makeArtifacts('**/add*.ospx')
             makeArtifacts('**/add*.zip')
