@@ -27,6 +27,8 @@ paths = [
     // "Core/ExpectedSomething": "ExpectedSomething"
     ]
 
+// allureResults = [];
+
 properties([
     disableConcurrentBuilds(),
     buildDiscarder(
@@ -151,6 +153,7 @@ node("slave") {
     showErrors(errors)
     makeJunit('build/junit.xml')
     makeAllure("build/allure")
+    // allureResults << [path : "build/allure"]
   }
 
   stage('TDD Тестирование') {
@@ -165,6 +168,7 @@ node("slave") {
     showErrors(errors)
     makeJunit('build/junit.xml')
     makeAllure("build/allure")
+    // allureResults << [path : "build/allure"]
   }
 
   stage('BDD тестирование (библиотеки)'){
@@ -186,6 +190,7 @@ node("slave") {
 
     makeJunit("ServiceBases/junitreport/${buildKey}/*.xml")
     makeAllure("ServiceBases/allurereport/${buildKey}")
+    // allureResults << [path : "ServiceBases/allurereport/${buildKey}"]
   }
 
   stage('BDD тестирование (ядро)'){
@@ -209,12 +214,15 @@ node("slave") {
 
             makeJunit("ServiceBases/junitreport/${buildKey}/*.xml")
             makeAllure("ServiceBases/allurereport/${buildKey}")
+            // allureResults << [path : "ServiceBases/allurereport/${buildKey}"]
         }
     }
   }
 
     stage('Сборка пакета'){
         timestamps {
+            // makeAllure(allureResults)
+
             command = """opm build ./"""
             try{
                 cmd(command, isUnix)
@@ -268,12 +276,15 @@ def makeJunit(path) {
 }
 
 def makeAllure(resultPath) {
+// def makeAllure(allureResults) {
     try{
+        allureResults = [[path : resultPath]]
         // allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
         allure includeProperties: false, jdk: '',
-            results: [
-                [path: "${resultPath}"],
-            ]
+            results: allureResults
+            // results: [
+            //     [path: "${resultPath}"],
+            // ]
     } catch (e) {
         echo "allure status : ${e}"
         currentBuild.result = 'UNSTABLE'
