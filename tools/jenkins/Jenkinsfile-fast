@@ -68,7 +68,7 @@ node("slave") {
                     def PRNumber = env.BRANCH_NAME.tokenize("PR-")[0]
                     def gitURLcommand = 'git config --local remote.origin.url'
                     def gitURL = ""
-                    if (unix) {
+                    if (isUnix) {
                         gitURL = sh(returnStdout: true, script: gitURLcommand).trim()
                     } else {
                         gitURL = bat(returnStdout: true, script: gitURLcommand).trim()
@@ -85,12 +85,12 @@ node("slave") {
                 }
                 try {
                     if (makeAnalyzis) {
-                        if (unix) {
+                        if (isUnix) {
                             cmd(sonarcommand)
                         } else {
                             //echo "${sonarcommand}"
                             bat "${sonarcommand}"
-                            //cmd(sonarcommand, unix)
+                            //cmd(sonarcommand, isUnix)
                         }
                     }
                 } catch (e) {
