@@ -61,7 +61,7 @@ node("slave") {
                 } else if (env.BRANCH_NAME == "develop") {
                     echo 'Analysing develop branch'
                     sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
-                } else if (env.BRANCH_NAME.startsWith("release/") || env.BRANCH_NAME.startsWith("feature")) {
+                } else if (env.BRANCH_NAME.startsWith("release/") || env.BRANCH_NAME.startsWith("feature/")) {
                     sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
                 } else if (env.BRANCH_NAME.startsWith("PR-")) {
                     // Report PR issues
