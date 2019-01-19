@@ -79,6 +79,8 @@
 	СоздатьКаталог("./build/ServiceBases/allurereport/");
 	СоздатьКаталог("./build/ServiceBases/junitreport/");
 	СоздатьКаталог("./build/ServiceBases/cucumber/");
+	СоздатьКаталог("./build/allure");
+	СоздатьКаталог("./build/allure-tdd");
 
 	Если Аргументы.Команда = ВозможныеКоманды.file Тогда
 
