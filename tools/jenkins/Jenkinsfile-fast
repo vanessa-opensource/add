@@ -175,7 +175,7 @@ node("slave") {
   }
 
   stage('BDD тестирование (библиотеки)'){
-    def buildKey = "8310uf";
+    def buildKey = "8310UF";
     def buildPath = "libraries";
 
     def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
@@ -191,9 +191,9 @@ node("slave") {
 
     showErrors(errors)
 
-    makeJunit("ServiceBases/junitreport/${buildKey}*.xml")
+    makeJunit("ServiceBases/junitreport/*.xml")
     // makeAllure("ServiceBases/allurereport/${buildKey}")
-    allureResult = "ServiceBases/allurereport/${buildKey}"
+    allureResult = "ServiceBases/allurereport/${buildKey}/"
     allureResults << [path : allureResult]
   }
 
@@ -216,9 +216,9 @@ node("slave") {
 
             showErrors(errors)
 
-            makeJunit("ServiceBases/junitreport/${buildKey}*.xml")
+            makeJunit("ServiceBases/junitreport/*.xml")
             // makeAllure("ServiceBases/allurereport/${buildKey}")
-            allureResult = "ServiceBases/allurereport/${buildKey}"
+            allureResult = "ServiceBases/allurereport/${buildKey}/"
             allureResults << [path : allureResult]
         }
     }
