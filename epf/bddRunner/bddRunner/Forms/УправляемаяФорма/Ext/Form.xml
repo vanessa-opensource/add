@@ -5776,6 +5776,7 @@
 																</Button>
 																<Button name="ПеревестиТекстНаДругойЯзык" id="1766">
 																	<Type>UsualButton</Type>
+																	<Visible>false</Visible>
 																	<CommandName>Form.Command.ПеревестиТекстНаДругойЯзык</CommandName>
 																	<ExtendedTooltip name="ПеревестиТекстНаДругойЯзыкРасширеннаяПодсказка" id="1767"/>
 																</Button>
