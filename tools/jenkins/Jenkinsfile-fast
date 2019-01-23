@@ -154,7 +154,8 @@ node("slave") {
     showErrors(errors)
     makeJunit('build/junit.xml')
     // makeAllure([[path:"build/allure"]])
-    allureResults << [path : "build/allure"]
+    // allureResults << [path : "build/allure"]
+    prepareForAllure("build/allure/", 'allure-smoke', allureResults)
   }
 
   stage('TDD Тестирование') {
@@ -171,7 +172,7 @@ node("slave") {
     showErrors(errors)
     makeJunit('build/junit-tdd.xml')
     // makeAllure([[path:"build/allure-tdd"]])
-    allureResults << [path : "build/allure-tdd"]
+    prepareForAllure("build/allure-tdd/", 'allure-tdd', allureResults)
   }
 
   stage('BDD тестирование (библиотеки)'){
@@ -193,8 +194,7 @@ node("slave") {
 
     makeJunit("ServiceBases/junitreport/*.xml")
     // makeAllure("ServiceBases/allurereport/${buildKey}")
-    allureResult = "ServiceBases/allurereport/${buildKey}/"
-    allureResults << [path : allureResult]
+    prepareForAllure("ServiceBases/allurereport/${buildKey}/", "allure-${buildKey}", allureResults)
   }
 
   stage('BDD тестирование (ядро)'){
@@ -218,15 +218,29 @@ node("slave") {
 
             makeJunit("ServiceBases/junitreport/*.xml")
             // makeAllure("ServiceBases/allurereport/${buildKey}")
-            allureResult = "ServiceBases/allurereport/${buildKey}/"
-            allureResults << [path : allureResult]
+            prepareForAllure("ServiceBases/allurereport/${buildKey}/", "allure-${buildKey}", allureResults)
         }
     }
   }
 
     stage('Сборка пакета'){
         timestamps {
-            makeAllure(allureResults)
+            resultsForAllure = [];
+
+            allureResults.each{
+                def stashKey = it.key;
+                def allureResultPath = it.value;
+                unstash stashKey
+                resultsForAllure << [path : allureResultPath]
+            }
+            // unstash "allure-smoke"
+            // unstash "allure-tdd"
+            // unstash "allure-8310UF"
+            // paths.each{
+            //     def buildKey = it.value;
+            //     unstash "allure-${buildKey}"
+            // }
+            makeAllure(resultsForAllure)
 
             // command = """opm build ./"""
             // try{
@@ -235,9 +249,10 @@ node("slave") {
             //     echo "build status : ${e}"
             //     currentBuild.result = 'UNSTABLE'
             // }
+            //
+            // makeArtifacts('**/add*.ospx')
+            // makeArtifacts('**/add*.zip')
 
-            makeArtifacts('**/add*.ospx')
-            makeArtifacts('**/add*.zip')
             makeArtifacts('**/ServiceBases/**/junitreport/**')
             makeArtifacts('**/ServiceBases/**/allurereport/**')
             makeArtifacts('**/build/*.xml')
@@ -276,6 +291,17 @@ def makeJunit(path) {
         junit allowEmptyResults: true, testResults: "${path}"
     } catch (e) {
         echo "junit report status : ${e}"
+        currentBuild.result = 'UNSTABLE'
+    }
+}
+
+def prepareForAllure(allureResultPath, stashKey, allureResults) {
+    // allureResults << [path : allureResult]
+    try{
+        allureResults << ["${stashKey}" : allureResultPath]
+        stash includes: "${allureResultPath}*", name: stashKey
+    } catch (e) {
+        echo "prepare allure status : ${e}"
         currentBuild.result = 'UNSTABLE'
     }
 }
