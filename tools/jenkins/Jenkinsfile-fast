@@ -1,0 +1,297 @@
+#!groovy
+
+// ВНИМАНИЕ:
+// Jenkins и его ноды нужно запускать с кодировкой UTF-8
+//      строка конфигурации для запуска Jenkins
+//      <arguments>-Xrs -Xmx256m -Dhudson.lifecycle=hudson.lifecycle.WindowsServiceLifecycle -Dmail.smtp.starttls.enable=true -Dfile.encoding=UTF-8 -jar "%BASE%\jenkins.war" --httpPort=8080 --webroot="%BASE%\war" </arguments>
+//
+//      строка для запуска нод
+//      @"C:\Program Files (x86)\Jenkins\jre\bin\java.exe" -Dfile.encoding=UTF-8 -jar slave.jar -jnlpUrl http://localhost:8080/computer/slave/slave-agent.jnlp -secret XXX
+//      подставляйте свой путь к java, порту Jenkins и секретному ключу
+//
+// Если запускать Jenkins не в режиме UTF-8, тогда нужно поменять метод cmd в конце кода, применив комментарий к методу
+
+paths = [
+    // "libraries/Плагины": "libraries"
+    "StepsRunner":"StepsRunner"
+    // "libraries": "libraries"
+    // , "Core/TestClient": "TestClient",
+    // "StepsGenerator": "StepsGenerator",
+    // "StepsRunner":"StepsRunner"
+    // "StepsProgramming":"StepsProgramming",
+    // "Core/FeatureLoad": "FeatureLoad",
+    // "Core/FeatureReader": "FeatureReader",
+    // "Core/FeatureWriter": "FeatureWriter",
+    // "Core/OpenForm": "OpenForm",
+    // "Core/Translate": "Translate",
+    // "Core/ExpectedSomething": "ExpectedSomething"
+    ]
+
+allureResults = [];
+
+properties([
+    disableConcurrentBuilds(),
+    buildDiscarder(
+        logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10'))
+])
+
+// node("artbear") {
+node("slave") {
+  isUnix = isUnix();
+
+  stage('Контроль технического долга'){
+    //   stage('Контроль технического долга'){
+
+    if (env.QASONAR) {
+        timestamps {
+            try{
+                println env.QASONAR;
+                def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner\""
+
+                withCredentials([string(credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth')]) {
+                    sonarcommand = sonarcommand + " -Dsonar.host.url=https://opensonar.silverbulleters.org -Dsonar.login=${SonarOAuth}"
+                }
+
+                // TODO // Get version
+                // def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
+                // def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
+                // sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
+
+                def makeAnalyzis = true
+                if (env.BRANCH_NAME == "master") {
+                    echo 'Analysing master branch'
+                } else if (env.BRANCH_NAME == "develop") {
+                    echo 'Analysing develop branch'
+                    // sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
+                } else if (env.BRANCH_NAME.startsWith("release/") || env.BRANCH_NAME.startsWith("feature/")) {
+                    // sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
+                } else if (env.BRANCH_NAME.startsWith("PR-")) {
+                    // Report PR issues
+                    def PRNumber = env.BRANCH_NAME.tokenize("PR-")[0]
+                    def gitURLcommand = 'git config --local remote.origin.url'
+                    def gitURL = ""
+                    if (isUnix) {
+                        gitURL = sh(returnStdout: true, script: gitURLcommand).trim()
+                    } else {
+                        gitURL = bat(returnStdout: true, script: gitURLcommand).trim()
+                    }
+                    def repository = gitURL.tokenize("/")[2] + "/" + gitURL.tokenize("/")[3]
+                    repository = repository.tokenize(".")[0]
+                    withCredentials([string(credentialsId: env.GithubOAuthCredentianalID, variable: 'githubOAuth')]) {
+                        sonarcommand = sonarcommand + " -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${PRNumber} -Dsonar.github.repository=${repository} -Dsonar.github.oauth=${githubOAuth}"
+                    }
+
+                } else {
+                    echo "Анализ SonarQube не выполнен. Ветка ${env.BRANCH_NAME} не подходит по условию проверки веток!"
+                    makeAnalyzis = false
+                }
+                try {
+                    if (makeAnalyzis) {
+                        if (isUnix) {
+                            cmd(sonarcommand)
+                        } else {
+                            //echo "${sonarcommand}"
+                            bat "${sonarcommand} -X"
+                            //cmd(sonarcommand, isUnix)
+                        }
+                    }
+                } catch (e) {
+                    echo "sonar status : ${e}"
+                }
+
+            } catch (e) {
+                echo "sonar status : ${e}"
+            }
+        }
+    } else {
+        echo "QA runner not installed"
+    }
+  }
+
+  stage('Получение исходных кодов') {
+    //   stage('checkout scm') {
+        // Wipe the workspace so we are building completely clean
+        deleteDir()
+
+    checkout scm
+    cmd('git config --local core.longpaths true', isUnix);
+
+    //env.LOGOS_CONFIG="logger.rootLogger=DEBUG"; // включение отладки продукта //env.RUNNER_ENV="debug";
+
+    cmd('git submodule update --init', isUnix)
+
+    echo "Текущий каталог"
+    echo pwd()
+
+    // echo "Проверка выполнения oscript -version - находится ли он в PATH?"
+    // timestamps {
+    //     cmd("where oscript", isUnix)
+    //     cmd("oscript -version", isUnix)
+    // }
+
+    // // echo "Установка свежих версий зависимостей библиотек oscript"
+    // timestamps {
+    //     //cmd("opm update -all", isUnix)
+    //      cmd("opm install", isUnix)
+    // }
+    echo "Сборка бинарных файлов"
+    timestamps {
+        cmd("opm run init file --v8version 8.3.10", isUnix)
+        // cmd("opm run initib file --v8version 8.3.10", isUnix)
+    }
+  }
+
+  stage('Дымовое тестирование') {
+    def errors = []
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
+    timestamps {
+        try{
+            cmd("vrunner xunit tests/smoke --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
+        } catch (e) {
+            errors << "smoke status : ${e}"
+        }
+    }
+    showErrors(errors)
+    makeJunit('build/junit.xml')
+    // makeAllure([[path:"build/allure"]])
+    allureResults << [path : "build/allure"]
+  }
+
+  stage('TDD Тестирование') {
+    def errors = []
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\" "
+
+    timestamps {
+        try{
+            cmd("vrunner xunit tests/xunit --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
+        } catch (e) {
+            errors << "TDD status : ${e}"
+        }
+    }
+    showErrors(errors)
+    makeJunit('build/junit-tdd.xml')
+    // makeAllure([[path:"build/allure-tdd"]])
+    allureResults << [path : "build/allure-tdd"]
+  }
+
+  stage('BDD тестирование (библиотеки)'){
+    def buildKey = "8310UF";
+    def buildPath = "libraries";
+
+    def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
+
+    def errors = []
+    timestamps {
+        try{
+            cmd(command, isUnix)
+        } catch (e) {
+            errors << "BDD status : ${e}"
+        }
+    }
+
+    showErrors(errors)
+
+    makeJunit("ServiceBases/junitreport/*.xml")
+    // makeAllure("ServiceBases/allurereport/${buildKey}")
+    allureResult = "ServiceBases/allurereport/${buildKey}/"
+    allureResults << [path : allureResult]
+  }
+
+  stage('BDD тестирование (ядро)'){
+
+    paths.each{
+        def buildKey = it.value;
+        def buildPath = it.key;
+        withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
+            def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
+
+            def errors = []
+            timestamps {
+                try{
+                    cmd(command, isUnix)
+                } catch (e) {
+                    errors << "BDD status : ${e}"
+                }
+            }
+
+            showErrors(errors)
+
+            makeJunit("ServiceBases/junitreport/*.xml")
+            // makeAllure("ServiceBases/allurereport/${buildKey}")
+            allureResult = "ServiceBases/allurereport/${buildKey}/"
+            allureResults << [path : allureResult]
+        }
+    }
+  }
+
+    stage('Сборка пакета'){
+        timestamps {
+            makeAllure(allureResults)
+
+            // command = """opm build ./"""
+            // try{
+            //     cmd(command, isUnix)
+            // } catch (e) {
+            //     echo "build status : ${e}"
+            //     currentBuild.result = 'UNSTABLE'
+            // }
+
+            makeArtifacts('**/add*.ospx')
+            makeArtifacts('**/add*.zip')
+            makeArtifacts('**/ServiceBases/**/junitreport/**')
+            makeArtifacts('**/ServiceBases/**/allurereport/**')
+            makeArtifacts('**/build/*.xml')
+            makeArtifacts('**/build/**/*.txt')
+            makeArtifacts('**/build/**/*.xml')
+        }
+    }
+}
+
+def cmd(command, isUnix) {
+    // при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001
+    if (isUnix) { sh "${command}" } else { bat "chcp 65001\n${command}"}
+}
+
+def showErrors(errors) {
+    if (errors.size() > 0) {
+        currentBuild.result = 'UNSTABLE'
+        for (int i = 0; i < errors.size(); i++) {
+            echo errors[i]
+        }
+    }
+}
+
+def makeArtifacts(path) {
+    try{
+        // archiveArtifacts allowEmptyArchive: true, artifacts: '*.xml'
+       step([$class: 'ArtifactArchiver', artifacts: "${path}", fingerprint: true, allowEmptyArchive: true])
+    } catch (e) {
+        echo "report status : ${e}"
+        currentBuild.result = 'UNSTABLE'
+    }
+}
+
+def makeJunit(path) {
+    try{
+        junit allowEmptyResults: true, testResults: "${path}"
+    } catch (e) {
+        echo "junit report status : ${e}"
+        currentBuild.result = 'UNSTABLE'
+    }
+}
+
+// def makeAllure(resultPath) {
+def makeAllure(allureResults) {
+    try{
+        // allureResults = [[path : resultPath]]
+        // allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
+        allure includeProperties: false, jdk: '',
+            results: allureResults
+            // results: [
+            //     [path: "${resultPath}"],
+            // ]
+    } catch (e) {
+        echo "allure status : ${e}"
+        currentBuild.result = 'UNSTABLE'
+    }
+}

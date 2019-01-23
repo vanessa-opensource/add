@@ -118,7 +118,7 @@
 			<ModalityUseMode>DontUse</ModalityUseMode>
 			<SynchronousPlatformExtensionAndAddInCallUseMode>DontUse</SynchronousPlatformExtensionAndAddInCallUseMode>
 			<InterfaceCompatibilityMode>TaxiEnableVersion8_2</InterfaceCompatibilityMode>
-			<CompatibilityMode>Version8_3_8</CompatibilityMode>
+			<CompatibilityMode>Version8_3_5</CompatibilityMode>
 			<DefaultConstantsForm/>
 		</Properties>
 		<ChildObjects>
@@ -144,6 +144,7 @@
 			<Catalog>СправочникСоСсылкойНаСамогоСебя</Catalog>
 			<Catalog>ПодчиненныйСДвумяВладельцами</Catalog>
 			<Catalog>СправочникСОбязательнымРеквизитом</Catalog>
+			<Catalog>ПростойСправочник3</Catalog>
 			<Document>Документ1</Document>
 			<Document>Документ2</Document>
 			<Enum>Перечисление1</Enum>
