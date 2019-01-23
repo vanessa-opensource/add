@@ -26,8 +26,9 @@ paths = [
     // "Core/Translate": "Translate",
     // "Core/ExpectedSomething": "ExpectedSomething"
     ]
+println paths
 
-allureResults = [];
+allureResults = []
 
 properties([
     disableConcurrentBuilds(),
@@ -230,13 +231,19 @@ node("slave") {
             resultsForAllure = [];
 
             allureResults.each{
-                def stashKey = it.key;
-                def allureResultPath = it.value;
-                unstash stashKey
-                // resultsForAllure << [path : allureResultPath]
-                def map = [:]
-                map.put("path", allureResultPath)
-                resultsForAllure << map
+                it.each{ entry ->
+                    def stashKey = entry.key;
+                    def allureResultPath = entry.value;
+                    println stashKey
+                    println allureResultPath
+                    unstash stashKey
+                    // resultsForAllure << [path : allureResultPath]
+                    def map = [:]
+                    map.put("path", allureResultPath)
+                    resultsForAllure << map
+                    println map
+                    println resultsForAllure
+                }
             }
             // unstash "allure-smoke"
             // unstash "allure-tdd"
