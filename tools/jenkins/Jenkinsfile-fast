@@ -202,6 +202,8 @@ node("slave") {
     paths.each{
         def buildKey = it.value;
         def buildPath = it.key;
+        echo "BDD (core) for ${buildKey}"
+
         withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
             def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
 
@@ -210,7 +212,7 @@ node("slave") {
                 try{
                     cmd(command, isUnix)
                 } catch (e) {
-                    errors << "BDD status : ${e}"
+                    errors << "BDD status for ${buildKey} : ${e}"
                 }
             }
 
@@ -231,7 +233,10 @@ node("slave") {
                 def stashKey = it.key;
                 def allureResultPath = it.value;
                 unstash stashKey
-                resultsForAllure << [path : allureResultPath]
+                // resultsForAllure << [path : allureResultPath]
+                def map = [:]
+                map.put("path", allureResultPath)
+                resultsForAllure << map
             }
             // unstash "allure-smoke"
             // unstash "allure-tdd"
@@ -298,7 +303,11 @@ def makeJunit(path) {
 def prepareForAllure(allureResultPath, stashKey, allureResults) {
     // allureResults << [path : allureResult]
     try{
-        allureResults << ["${stashKey}" : allureResultPath]
+        // allureResults << ["${stashKey}" : allureResultPath]
+        // allureResults.put("${stashKey}", allureResultPath)
+        def map = [:]
+        map.put("${stashKey}", allureResultPath)
+        allureResults << map
         stash includes: "${allureResultPath}*", name: stashKey
     } catch (e) {
         echo "prepare allure status : ${e}"
