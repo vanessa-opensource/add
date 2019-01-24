@@ -324,7 +324,7 @@ def prepareForAllure(allureResultPath, stashKey, allureResults) {
 
 // def makeAllure(resultPath) {
 def makeAllure(allureResults) {
-    // try{
+    try{
         // allureResults = [[path : resultPath]]
         // allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
         allure commandline: 'allure2', includeProperties: false, jdk: '',
@@ -332,8 +332,8 @@ def makeAllure(allureResults) {
             // results: [
             //     [path: "${resultPath}"],
             // ]
-    // } catch (e) {
-    //     echo "allure status : ${e}"
-    //     currentBuild.result = 'UNSTABLE'
-    // }
+    } catch (e) {
+        echo "allure status : ${e}"
+        currentBuild.result = 'UNSTABLE'
+    }
 }
