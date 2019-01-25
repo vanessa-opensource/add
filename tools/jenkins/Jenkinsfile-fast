@@ -136,9 +136,11 @@ node("slave") {
     //      cmd("opm install", isUnix)
     // }
     echo "Сборка бинарных файлов"
-    timestamps {
-        cmd("opm run init file --v8version 8.3.10", isUnix)
-        // cmd("opm run initib file --v8version 8.3.10", isUnix)
+    timeout(30){
+        timestamps {
+            cmd("opm run init file --v8version 8.3.10", isUnix)
+            // cmd("opm run initib file --v8version 8.3.10", isUnix)
+        }
     }
   }
 
@@ -146,10 +148,12 @@ node("slave") {
     def errors = []
     reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
     timestamps {
-        try{
-            cmd("vrunner xunit tests/smoke --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
-        } catch (e) {
-            errors << "smoke status : ${e}"
+        timeout(15){
+            try{
+                cmd("vrunner xunit tests/smoke --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
+            } catch (e) {
+                errors << "smoke status : ${e}"
+            }
         }
     }
     showErrors(errors)
@@ -163,11 +167,13 @@ node("slave") {
     def errors = []
     reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\" "
 
-    timestamps {
-        try{
-            cmd("vrunner xunit tests/xunit --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
-        } catch (e) {
-            errors << "TDD status : ${e}"
+    timeout(15){
+        timestamps {
+            try{
+                cmd("vrunner xunit tests/xunit --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
+            } catch (e) {
+                errors << "TDD status : ${e}"
+            }
         }
     }
     showErrors(errors)
@@ -183,11 +189,13 @@ node("slave") {
     def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
 
     def errors = []
-    timestamps {
-        try{
-            cmd(command, isUnix)
-        } catch (e) {
-            errors << "BDD status : ${e}"
+    timeout(15){
+        timestamps {
+            try{
+                cmd(command, isUnix)
+            } catch (e) {
+                errors << "BDD status : ${e}"
+            }
         }
     }
 
@@ -209,11 +217,13 @@ node("slave") {
             def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
 
             def errors = []
-            timestamps {
-                try{
-                    cmd(command, isUnix)
-                } catch (e) {
-                    errors << "BDD status for ${buildKey} : ${e}"
+            timeout(15){
+                timestamps {
+                    try{
+                        cmd(command, isUnix)
+                    } catch (e) {
+                        errors << "BDD status for ${buildKey} : ${e}"
+                    }
                 }
             }
 
@@ -254,12 +264,14 @@ node("slave") {
             // }
             makeAllure(resultsForAllure)
 
+            // timeout(15){
             // command = """opm build ./"""
             // try{
             //     cmd(command, isUnix)
             // } catch (e) {
             //     echo "build status : ${e}"
             //     currentBuild.result = 'UNSTABLE'
+            // }
             // }
             //
             // makeArtifacts('**/add*.ospx')
