@@ -339,7 +339,8 @@ def makeAllure(allureResults) {
     try{
         // allureResults = [[path : resultPath]]
         // allure commandline: 'allure2', includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport/']]
-        allure commandline: 'allure2', includeProperties: false, jdk: '',
+        allure includeProperties: false, jdk: '',
+        // allure commandline: 'allure2', includeProperties: false, jdk: '',
             results: allureResults
             // results: [
             //     [path: "${resultPath}"],
