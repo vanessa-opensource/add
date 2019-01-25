@@ -157,7 +157,7 @@ node("slave") {
         }
     }
     showErrors(errors)
-    makeJunit('build/junit.xml')
+    makeJunit('build/*.xml')
     // makeAllure([[path:"build/allure"]])
     // allureResults << [path : "build/allure"]
     prepareForAllure("build/allure/", 'allure-smoke', allureResults)
@@ -177,7 +177,7 @@ node("slave") {
         }
     }
     showErrors(errors)
-    makeJunit('build/junit-tdd.xml')
+    makeJunit('build/*.xml')
     // makeAllure([[path:"build/allure-tdd"]])
     prepareForAllure("build/allure-tdd/", 'allure-tdd', allureResults)
   }
