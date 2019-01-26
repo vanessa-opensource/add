@@ -33,7 +33,7 @@ allureResults = []
 properties([
     disableConcurrentBuilds(),
     buildDiscarder(
-        logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10'))
+        logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '30', daysToKeepStr: '', numToKeepStr: '10'))
 ])
 
 node("slave") {
