@@ -147,7 +147,7 @@ node("slave") {
     def errors = []
     reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
     timestamps {
-        timeout(15){
+        timeout(7){
             try{
                 cmd("vrunner xunit tests/smoke --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
             } catch (e) {
@@ -166,7 +166,7 @@ node("slave") {
     def errors = []
     reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\" "
 
-    timeout(15){
+    timeout(10){
         timestamps {
             try{
                 cmd("vrunner xunit tests/xunit --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
