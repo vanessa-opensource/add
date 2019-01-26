@@ -36,7 +36,6 @@ properties([
         logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '10', daysToKeepStr: '', numToKeepStr: '10'))
 ])
 
-// node("artbear") {
 node("slave") {
   isUnix = isUnix();
 
