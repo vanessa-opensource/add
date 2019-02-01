@@ -145,6 +145,7 @@
 			<Catalog>ПодчиненныйСДвумяВладельцами</Catalog>
 			<Catalog>СправочникСОбязательнымРеквизитом</Catalog>
 			<Catalog>ПростойСправочник3</Catalog>
+			<Catalog>СправочникИерархияЭлементов</Catalog>
 			<Document>Документ1</Document>
 			<Document>Документ2</Document>
 			<Enum>Перечисление1</Enum>
