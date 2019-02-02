@@ -1092,6 +1092,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Catalog.СправочникИерархияЭлементов</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.СправочникСТабЧастью.Attribute.РеквизитСоставногоТипа</name>
 		<right>
 			<name>View</name>
