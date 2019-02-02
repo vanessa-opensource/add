@@ -10,8 +10,8 @@
 
 - [Vanessa-ADD ( ADD )](#vanessa-add--add-)
     - [Введение](#введение)
-    - [Установка](#установка)
     - [Справка и полезные ссылки](#справка-и-полезные-ссылки)
+    - [Установка](#установка)
     - [Обсуждения, задачи, сообщения об ошибках](#обсуждения)
     - [Сравнение с другими инструментами](#сравнение-с-другими-инструментами)
     - [Помощь проекту](#how-to-help)
@@ -40,6 +40,17 @@ Vanessa-ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1
 
 Vanessa-ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior). Совместимость с VB 1.Х и xUnitFor1C 4.Х гарантирована (за исключением функциональности циклов и условий в Vanessa Behavior)
 
+<a id="markdown-справка-и-полезные-ссылки" name="справка-и-полезные-ссылки"></a>
+## Справка и полезные ссылки
+
+Обязательно ознакомьтесь с:
+
++ **Документацией по продукту** [doc/README.md](./doc/README.md)
+
++ часто задаваемыми вопросами [FAQ.md](./F.A.Q.MD)
++ руководством контрибьютора [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
++ известными проблемами [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
+
 <a id="markdown-установка" name="установка"></a>
 ## Установка
 
@@ -60,17 +71,6 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 + Перейти в [раздел релизы](https://github.com/silverbulleters/add/releases)
 + Скачать архив `add-x.x.x.zip` с последним стабильным релизом - прямая ссылка [Releases](https://github.com/silverbulleters/add/releases/latest)
 + Распаковать указанный архив в нужную папку.
-
-<a id="markdown-справка-и-полезные-ссылки" name="справка-и-полезные-ссылки"></a>
-## Справка и полезные ссылки
-
-Обязательно ознакомьтесь с:
-
-+ **Документацией по продукту** [doc/README.md](./doc/README.md)
-
-+ часто задаваемыми вопросами [FAQ.md](./F.A.Q.MD)
-+ руководством контрибьютора [CONTRIBUTING.md](./.github/CONTRIBUTING.md)
-+ известными проблемами [KNOWN-PROBLEMS.md](./doc/KNOWN-PROBLEMS.md)
 
 ## Ночная сборка ветки **develop**:
 
