@@ -6,21 +6,21 @@
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
 				<xr:ObjectId>908d0aaf-e4ec-4668-8d14-3e8075d222fd</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.Заглушки" category="Object">
+			<xr:GeneratedType name="ExternalDataProcessorObject.Данные" category="Object">
 				<xr:TypeId>85629dd2-6be4-49c6-9a69-13411102aa57</xr:TypeId>
 				<xr:ValueId>3fdd55c8-e92e-4f99-8b28-3ba8957b50ab</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>Заглушки</Name>
+			<Name>Данные</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Заглушки</v8:content>
+					<v8:content>Данные</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<DefaultForm>ExternalDataProcessor.Заглушки.Form.Форма</DefaultForm>
+			<DefaultForm>ExternalDataProcessor.Данные.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
