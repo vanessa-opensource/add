@@ -14,9 +14,9 @@
 paths = [
     // "libraries/Плагины": "libraries"
     // "libraries": "libraries"
-    "StepsRunner":"StepsRunner"
+    "StepsRunner":"StepsRunner",
     "Core/OpenForm": "OpenForm",
-    , "Core/TestClient": "TestClient",
+    "Core/TestClient": "TestClient",
     "StepsGenerator": "StepsGenerator",
     "StepsProgramming":"StepsProgramming",
     "Core/FeatureLoad": "FeatureLoad",
