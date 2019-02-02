@@ -4,7 +4,7 @@
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
 	<ChildItems>
 		<InputField name="ПоставщикUserSettings" id="10">
-			<DataPath>ПоставщикUserSettings</DataPath>
+			<DataPath>ПоставщикПользовательскихНастроек</DataPath>
 			<ListChoiceMode>true</ListChoiceMode>
 			<ChoiceList>
 				<xr:Item>
@@ -38,7 +38,7 @@
 			<ExtendedTooltip name="ПоставщикUserSettingsРасширеннаяПодсказка" id="12"/>
 		</InputField>
 		<InputField name="ПутьКФайлу" id="7">
-			<DataPath>АдресUserSettings</DataPath>
+			<DataPath>АдресПользовательскихНастроек</DataPath>
 			<ContextMenu name="ПутьКФайлуКонтекстноеМеню" id="8"/>
 			<ExtendedTooltip name="ПутьКФайлуРасширеннаяПодсказка" id="9"/>
 		</InputField>
@@ -55,11 +55,11 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
-		<Attribute name="АдресUserSettings" id="2">
+		<Attribute name="АдресПользовательскихНастроек" id="2">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Адрес user settings</v8:content>
+					<v8:content>Адрес пользовательских настроек</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -70,11 +70,11 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ПоставщикUserSettings" id="3">
+		<Attribute name="ПоставщикПользовательскихНастроек" id="3">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Поставщик user settings</v8:content>
+					<v8:content>Поставщик пользовательских настроек</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

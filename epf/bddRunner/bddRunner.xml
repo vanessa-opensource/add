@@ -4766,11 +4766,11 @@
 			</Attribute>
 			<Attribute uuid="1fd81f17-201f-4b9c-b154-44e4fffff798">
 				<Properties>
-					<Name>АдресUserSettings</Name>
+					<Name>АдресПользовательскихНастроек</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Адрес user settings</v8:content>
+							<v8:content>Адрес пользовательских настроек</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -4804,11 +4804,11 @@
 			</Attribute>
 			<Attribute uuid="625cc538-b977-4a17-a8e3-4344548c655e">
 				<Properties>
-					<Name>ПоставщикUserSettings</Name>
+					<Name>ПоставщикПользовательскихНастроек</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Поставщик user settings</v8:content>
+							<v8:content>Поставщик пользовательских настроек</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

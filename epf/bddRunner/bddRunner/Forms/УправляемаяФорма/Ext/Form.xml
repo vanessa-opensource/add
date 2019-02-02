@@ -9124,7 +9124,7 @@
 													</Events>
 												</InputField>
 												<InputField name="ПоставщикUserSettings" id="1811">
-													<DataPath>Объект.ПоставщикUserSettings</DataPath>
+													<DataPath>Объект.ПоставщикПользовательскихНастроек</DataPath>
 													<ListChoiceMode>true</ListChoiceMode>
 													<ChoiceList>
 														<xr:Item>
@@ -9158,7 +9158,7 @@
 													<ExtendedTooltip name="ПоставщикUserSettingsРасширеннаяПодсказка" id="1813"/>
 												</InputField>
 												<InputField name="АдресUserSettings" id="1814">
-													<DataPath>Объект.АдресUserSettings</DataPath>
+													<DataPath>Объект.АдресПользовательскихНастроек</DataPath>
 													<ContextMenu name="АдресUserSettingsКонтекстноеМеню" id="1815"/>
 													<ExtendedTooltip name="АдресUserSettingsРасширеннаяПодсказка" id="1816"/>
 												</InputField>
