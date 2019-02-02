@@ -115,10 +115,10 @@
 			<ConfigurationInformationAddress/>
 			<DataLockControlMode>Managed</DataLockControlMode>
 			<ObjectAutonumerationMode>NotAutoFree</ObjectAutonumerationMode>
-			<ModalityUseMode>Use</ModalityUseMode>
-			<SynchronousPlatformExtensionAndAddInCallUseMode>Use</SynchronousPlatformExtensionAndAddInCallUseMode>
+			<ModalityUseMode>DontUse</ModalityUseMode>
+			<SynchronousPlatformExtensionAndAddInCallUseMode>DontUse</SynchronousPlatformExtensionAndAddInCallUseMode>
 			<InterfaceCompatibilityMode>TaxiEnableVersion8_2</InterfaceCompatibilityMode>
-			<CompatibilityMode>Version8_3_8</CompatibilityMode>
+			<CompatibilityMode>Version8_3_5</CompatibilityMode>
 			<DefaultConstantsForm/>
 		</Properties>
 		<ChildObjects>
@@ -136,15 +136,15 @@
 			<ExchangePlan>ПланОбмена1</ExchangePlan>
 			<FunctionalOption>ФункциональнаяОпция1</FunctionalOption>
 			<CommonForm>ФормаОтчета</CommonForm>
-			<Catalog>ИерархическийСправочник</Catalog>
-			<Catalog>ПодчиненныйСДвумяВладельцами</Catalog>
-			<Catalog>ПодчиненныйСправочник</Catalog>
 			<Catalog>ПростойСправочник</Catalog>
 			<Catalog>ПростойСправочник2</Catalog>
-			<Catalog>ПростойСправочник3</Catalog>
-			<Catalog>СправочникСОбязательнымРеквизитом</Catalog>
-			<Catalog>СправочникСоСсылкойНаСамогоСебя</Catalog>
+			<Catalog>ИерархическийСправочник</Catalog>
 			<Catalog>СправочникСТабЧастью</Catalog>
+			<Catalog>ПодчиненныйСправочник</Catalog>
+			<Catalog>СправочникСоСсылкойНаСамогоСебя</Catalog>
+			<Catalog>ПодчиненныйСДвумяВладельцами</Catalog>
+			<Catalog>СправочникСОбязательнымРеквизитом</Catalog>
+			<Catalog>ПростойСправочник3</Catalog>
 			<Document>Документ1</Document>
 			<Document>Документ2</Document>
 			<Enum>Перечисление1</Enum>
