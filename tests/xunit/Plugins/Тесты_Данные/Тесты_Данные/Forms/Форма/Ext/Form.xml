@@ -41,7 +41,7 @@
 	<Attributes>
 		<Attribute name="Объект" id="1">
 			<Type>
-				<v8:Type>cfg:ExternalDataProcessorObject.Тесты_Unit_Шаблон</v8:Type>
+				<v8:Type>cfg:ExternalDataProcessorObject.Тесты_Данные</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
