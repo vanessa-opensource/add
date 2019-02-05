@@ -34,9 +34,10 @@ Vanessa-ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1
 
 Возможности:
 
++ готовые универсальные "дымовые тесты" различных видов
 + различные виды тестирования (модульного/юнит, приемочного, сценарного для 1С 8.3, интеграционного, TDD)
 + проверка поведения (BDD/Gherkin)
-+ формирование автодокументации в формате Markdown и видео.
++ формирование автодокументации в формате Html или Markdown или в виде видео-инструкций.
 
 Vanessa-ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior). Совместимость с VB 1.Х и xUnitFor1C 4.Х гарантирована (за исключением функциональности циклов и условий в Vanessa Behavior)
 
