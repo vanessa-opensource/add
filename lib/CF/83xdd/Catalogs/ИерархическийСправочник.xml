@@ -288,7 +288,7 @@
 			<FullTextSearchOnInputByString>DontUse</FullTextSearchOnInputByString>
 			<ChoiceDataGetModeOnInputByString>Directly</ChoiceDataGetModeOnInputByString>
 			<DefaultObjectForm/>
-			<DefaultFolderForm/>
+			<DefaultFolderForm>Catalog.ИерархическийСправочник.Form.ФормаГруппы</DefaultFolderForm>
 			<DefaultListForm/>
 			<DefaultChoiceForm/>
 			<DefaultFolderChoiceForm/>
@@ -542,6 +542,7 @@
 					</Attribute>
 				</ChildObjects>
 			</TabularSection>
+			<Form>ФормаГруппы</Form>
 		</ChildObjects>
 	</Catalog>
 </MetaDataObject>
