@@ -13,18 +13,17 @@
 
 paths = [
     // "libraries/Плагины": "libraries"
-    "StepsRunner":"StepsRunner"
     // "libraries": "libraries"
-    // , "Core/TestClient": "TestClient",
-    // "StepsGenerator": "StepsGenerator",
-    // "StepsRunner":"StepsRunner"
-    // "StepsProgramming":"StepsProgramming",
-    // "Core/FeatureLoad": "FeatureLoad",
-    // "Core/FeatureReader": "FeatureReader",
-    // "Core/FeatureWriter": "FeatureWriter",
-    // "Core/OpenForm": "OpenForm",
-    // "Core/Translate": "Translate",
-    // "Core/ExpectedSomething": "ExpectedSomething"
+    "StepsRunner":"StepsRunner",
+    "Core/OpenForm": "OpenForm",
+    "Core/TestClient": "TestClient",
+    "StepsGenerator": "StepsGenerator",
+    "StepsProgramming":"StepsProgramming",
+    "Core/FeatureLoad": "FeatureLoad",
+    "Core/FeatureReader": "FeatureReader",
+    "Core/FeatureWriter": "FeatureWriter",
+    "Core/Translate": "Translate",
+    "Core/ExpectedSomething": "ExpectedSomething"
     ]
 println paths
 
@@ -40,7 +39,6 @@ node("slave") {
   isUnix = isUnix();
 
   stage('Контроль технического долга'){
-    //   stage('Контроль технического долга'){
 
     if (env.QASONAR) {
         timestamps {
@@ -155,6 +153,16 @@ node("slave") {
             }
         }
     }
+    makeJunit('build/*.xml')
+    timestamps {
+        timeout(15){
+            try{
+                cmd("vrunner xunit tests/smoke --ordinaryapp 1 --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
+            } catch (e) {
+                errors << "smoke (ordinaryapp) status : ${e}"
+            }
+        }
+    }
     showErrors(errors)
     makeJunit('build/*.xml')
     // makeAllure([[path:"build/allure"]])
@@ -172,6 +180,16 @@ node("slave") {
                 cmd("vrunner xunit tests/xunit --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
             } catch (e) {
                 errors << "TDD status : ${e}"
+            }
+        }
+    }
+    makeJunit('build/*.xml')
+    timeout(15){
+        timestamps {
+            try{
+                cmd("vrunner xunit tests/xunit --ordinaryapp 1 --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
+            } catch (e) {
+                errors << "TDD (ordinaryapp) status : ${e}"
             }
         }
     }

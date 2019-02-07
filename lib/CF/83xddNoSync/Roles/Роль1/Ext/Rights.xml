@@ -48,6 +48,13 @@
 		</right>
 	</object>
 	<object>
+		<name>InformationRegister.РСПодчиненРегистраторуПериодический</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>BusinessProcess.БизнесПроцесс2</name>
 		<right>
 			<name>Read</name>
@@ -216,6 +223,13 @@
 		<right>
 			<name>Edit</name>
 			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Справочник3</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
 		</right>
 	</object>
 	<object>
@@ -683,6 +697,13 @@
 		</right>
 	</object>
 	<object>
+		<name>AccumulationRegister.РегистрНакопленияОстатки</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>ChartOfAccounts.ПланСчетов1</name>
 		<right>
 			<name>Read</name>
@@ -1081,6 +1102,13 @@
 		</right>
 	</object>
 	<object>
+		<name>CalculationRegister.РегистрРасчета1</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Document.Документ2.TabularSection.Состав.Attribute.ПростойСправочник2</name>
 		<right>
 			<name>View</name>
@@ -1278,6 +1306,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Document.ДокументСДвижениями</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.ПростойСправочник.Attribute.РеквизитПеречисление</name>
 		<right>
 			<name>View</name>
@@ -1362,6 +1397,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Catalog.Справочник2</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>AccumulationRegister.РегистрНакопления2</name>
 		<right>
 			<name>Read</name>
@@ -1421,6 +1463,13 @@
 		<right>
 			<name>Edit</name>
 			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>Catalog.Справочник1</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
 		</right>
 	</object>
 	<object>
@@ -1636,6 +1685,13 @@
 		<right>
 			<name>Edit</name>
 			<value>false</value>
+		</right>
+	</object>
+	<object>
+		<name>AccumulationRegister.РегистрНакопленияОбороты</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
 		</right>
 	</object>
 </Rights>
