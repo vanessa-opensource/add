@@ -88,9 +88,7 @@ node("slave") {
                         if (isUnix) {
                             cmd(sonarcommand)
                         } else {
-                            //echo "${sonarcommand}"
                             bat "${sonarcommand} -X"
-                            //cmd(sonarcommand, isUnix)
                         }
                     }
                 } catch (e) {
@@ -107,9 +105,7 @@ node("slave") {
   }
 
   stage('Получение исходных кодов') {
-    //   stage('checkout scm') {
-        // Wipe the workspace so we are building completely clean
-        deleteDir()
+    deleteDir()
 
     checkout scm
     cmd('git config --local core.longpaths true', isUnix);
@@ -136,7 +132,6 @@ node("slave") {
     timeout(30){
         timestamps {
             cmd("opm run init file --v8version 8.3.10", isUnix)
-            // cmd("opm run initib file --v8version 8.3.10", isUnix)
         }
     }
   }
@@ -281,18 +276,18 @@ node("slave") {
             // }
             makeAllure(resultsForAllure)
 
-            // timeout(15){
-            // command = """opm build ./"""
-            // try{
-            //     cmd(command, isUnix)
-            // } catch (e) {
-            //     echo "build status : ${e}"
-            //     currentBuild.result = 'UNSTABLE'
-            // }
-            // }
-            //
-            // makeArtifacts('**/add*.ospx')
-            // makeArtifacts('**/add*.zip')
+            timeout(30){
+                command = """opm build ./"""
+                try{
+                    cmd(command, isUnix)
+                } catch (e) {
+                    echo "build status : ${e}"
+                    currentBuild.result = 'UNSTABLE'
+                }
+            }
+            
+            makeArtifacts('**/add*.ospx')
+            makeArtifacts('**/add*.zip')
 
             makeArtifacts('**/ServiceBases/**/junitreport/**')
             makeArtifacts('**/ServiceBases/**/allurereport/**')
@@ -305,6 +300,7 @@ node("slave") {
 
 def cmd(command, isUnix) {
     // при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001
+    //echo "${command}"
     if (isUnix) { sh "${command}" } else { bat "chcp 65001\n${command}"}
 }
 
