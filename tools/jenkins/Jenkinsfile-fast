@@ -38,6 +38,38 @@ properties([
 node("slave") {
   isUnix = isUnix();
 
+  stage('Получение исходных кодов') {
+    deleteDir()
+
+    checkout scm
+    cmd('git config --local core.longpaths true', isUnix);
+
+    //env.LOGOS_CONFIG="logger.rootLogger=DEBUG"; // включение отладки продукта //env.RUNNER_ENV="debug";
+
+    cmd('git submodule update --init', isUnix)
+
+    // echo "Текущий каталог"
+    // echo pwd()
+
+    // echo "Проверка выполнения oscript -version - находится ли он в PATH?"
+    // timestamps {
+    //     cmd("where oscript", isUnix)
+    //     cmd("oscript -version", isUnix)
+    // }
+
+    // // echo "Установка свежих версий зависимостей библиотек oscript"
+    // timestamps {
+    //     //cmd("opm update -all", isUnix)
+    //      cmd("opm install", isUnix)
+    // }
+    echo "Сборка бинарных файлов"
+    timeout(30){
+        timestamps {
+            cmd("opm run init file --v8version 8.3.10", isUnix)
+        }
+    }
+  }
+
   stage('Контроль технического долга'){
 
     if (env.QASONAR) {
@@ -101,38 +133,6 @@ node("slave") {
         }
     } else {
         echo "QA runner not installed"
-    }
-  }
-
-  stage('Получение исходных кодов') {
-    deleteDir()
-
-    checkout scm
-    cmd('git config --local core.longpaths true', isUnix);
-
-    //env.LOGOS_CONFIG="logger.rootLogger=DEBUG"; // включение отладки продукта //env.RUNNER_ENV="debug";
-
-    cmd('git submodule update --init', isUnix)
-
-    echo "Текущий каталог"
-    echo pwd()
-
-    // echo "Проверка выполнения oscript -version - находится ли он в PATH?"
-    // timestamps {
-    //     cmd("where oscript", isUnix)
-    //     cmd("oscript -version", isUnix)
-    // }
-
-    // // echo "Установка свежих версий зависимостей библиотек oscript"
-    // timestamps {
-    //     //cmd("opm update -all", isUnix)
-    //      cmd("opm install", isUnix)
-    // }
-    echo "Сборка бинарных файлов"
-    timeout(30){
-        timestamps {
-            cmd("opm run init file --v8version 8.3.10", isUnix)
-        }
     }
   }
 
