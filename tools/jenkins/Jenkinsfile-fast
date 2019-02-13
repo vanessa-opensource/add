@@ -331,11 +331,13 @@ def makeJunit(path, mask) {
         echo "junit report status : ${e}"
         currentBuild.result = 'UNSTABLE'
     }
-    dir(path) {
-        deleteDir()
-    }    
-    dir(path) {
-    }
+    cmd "rd /s /q ${path} & md ${path}"
+    // dir(path) {
+    //     deleteDir()
+    // }    
+    // dir(path) {
+    //     def tempvar = []
+    // }
 }
 
 def prepareForAllure(allureResultPath, stashKey, allureResults) {
