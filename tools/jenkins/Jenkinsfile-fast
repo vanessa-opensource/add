@@ -138,7 +138,7 @@ node("slave") {
 
   stage('Дымовое тестирование') {
     def errors = []
-    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
     timestamps {
         timeout(7){
             try{
@@ -148,7 +148,7 @@ node("slave") {
             }
         }
     }
-    makeJunit('build/*.xml')
+    makeJunit('build/junit-smoke", "*.xml')
     timestamps {
         timeout(15){
             try{
@@ -159,7 +159,7 @@ node("slave") {
         }
     }
     showErrors(errors)
-    makeJunit('build/*.xml')
+    makeJunit('build/junit-smoke", "*.xml')
     // makeAllure([[path:"build/allure"]])
     // allureResults << [path : "build/allure"]
     prepareForAllure("build/allure/", 'allure-smoke', allureResults)
@@ -167,7 +167,7 @@ node("slave") {
 
   stage('TDD Тестирование') {
     def errors = []
-    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\" "
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\" "
 
     timeout(10){
         timestamps {
@@ -178,7 +178,7 @@ node("slave") {
             }
         }
     }
-    makeJunit('build/*.xml')
+    makeJunit('build/junit-tdd", "*.xml')
     timeout(15){
         timestamps {
             try{
@@ -189,7 +189,7 @@ node("slave") {
         }
     }
     showErrors(errors)
-    makeJunit('build/*.xml')
+    makeJunit('build/junit-tdd", "*.xml')
     // makeAllure([[path:"build/allure-tdd"]])
     prepareForAllure("build/allure-tdd/", 'allure-tdd', allureResults)
   }
@@ -213,7 +213,7 @@ node("slave") {
 
     showErrors(errors)
 
-    makeJunit("ServiceBases/junitreport/*.xml")
+    makeJunit("ServiceBases/junitreport", "*.xml")
     // makeAllure("ServiceBases/allurereport/${buildKey}")
     prepareForAllure("ServiceBases/allurereport/${buildKey}/", "allure-${buildKey}", allureResults)
   }
@@ -241,7 +241,7 @@ node("slave") {
 
             showErrors(errors)
 
-            makeJunit("ServiceBases/junitreport/*.xml")
+            makeJunit("ServiceBases/junitreport", "*.xml")
             // makeAllure("ServiceBases/allurereport/${buildKey}")
             prepareForAllure("ServiceBases/allurereport/${buildKey}/", "allure-${buildKey}", allureResults)
         }
@@ -323,12 +323,18 @@ def makeArtifacts(path) {
     }
 }
 
-def makeJunit(path) {
+def makeJunit(path, mask) {
+    def finallyPath = "${path}/${mask}"
     try{
-        junit allowEmptyResults: true, testResults: "${path}"
+        junit allowEmptyResults: true, testResults: "${finallyPath}"
     } catch (e) {
         echo "junit report status : ${e}"
         currentBuild.result = 'UNSTABLE'
+    }
+    dir(path) {
+        deleteDir()
+    }    
+    dir(path) {
     }
 }
 
