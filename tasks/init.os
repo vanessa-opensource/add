@@ -141,6 +141,12 @@
 	СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./tools %1tools --ibname /F./build/ibservice", КаталогСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
 
+	СтрокаЗапуска = СтрШаблон("runner run --command VBParams=./tools/epf/init.json --execute %1tools/epf/init.epf", КаталогСборки);
+	ИсполнитьКоманду(СтрокаЗапуска);
+
+	СтрокаЗапуска = "runner run --command СоздатьАдминистратора --ibconnection /F./build/ibservicexdd";
+	ИсполнитьКоманду(СтрокаЗапуска);
+
 	СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./lib %1lib --ibname /F./build/ibservice", КаталогСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
 
@@ -155,12 +161,6 @@
 		ИсполнитьКоманду(СтрокаЗапуска);
 
 	КонецЕсли;
-
-	СтрокаЗапуска = СтрШаблон("runner run --command VBParams=./tools/epf/init.json --execute %1tools/epf/init.epf", КаталогСборки);
-	ИсполнитьКоманду(СтрокаЗапуска);
-
-	СтрокаЗапуска = "runner run --command СоздатьАдминистратора --ibconnection /F./build/ibservicexdd";
-	ИсполнитьКоманду(СтрокаЗапуска);
 
 	Лог.Информация("ВСЕ!");
 КонецПроцедуры
