@@ -65,89 +65,89 @@ node("slave") {
     echo "Сборка бинарных файлов"
     timeout(60){
         timestamps {
-            cmd("opm run init file --v8version 8.3.10", isUnix)
+            // cmd("opm run init file --v8version 8.3.10", isUnix)
         }
     }
   }
 
   stage('Контроль технического долга'){
 
-    if (env.QASONAR) {
-        timestamps {
-            try{
-                println env.QASONAR;
-                def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner\""
+    // if (env.QASONAR) {
+    //     timestamps {
+    //         try{
+    //             println env.QASONAR;
+    //             def sonarcommand = "@\"./../../tools/hudson.plugins.sonar.SonarRunnerInstallation/sonar-scanner/bin/sonar-scanner\""
 
-                withCredentials([string(credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth')]) {
-                    sonarcommand = sonarcommand + " -Dsonar.host.url=https://opensonar.silverbulleters.org -Dsonar.login=${SonarOAuth}"
-                }
+    //             withCredentials([string(credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth')]) {
+    //                 sonarcommand = sonarcommand + " -Dsonar.host.url=https://opensonar.silverbulleters.org -Dsonar.login=${SonarOAuth}"
+    //             }
 
-                // Get version
-                def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
-                def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
-                sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
+    //             // Get version
+    //             def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
+    //             def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
+    //             sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
 
-                def makeAnalyzis = true
-                if (env.BRANCH_NAME == "master") {
-                    echo 'Analysing master branch'
-                } else if (env.BRANCH_NAME == "develop") {
-                    echo 'Analysing develop branch'
-                    // sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
-                } else if (env.BRANCH_NAME.startsWith("release/") || env.BRANCH_NAME.startsWith("feature/")) {
-                    // sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
-                } else if (env.BRANCH_NAME.startsWith("PR-")) {
-                    // Report PR issues
-                    def PRNumber = env.BRANCH_NAME.tokenize("PR-")[0]
-                    def gitURLcommand = 'git config --local remote.origin.url'
-                    def gitURL = ""
-                    if (isUnix) {
-                        gitURL = sh(returnStdout: true, script: gitURLcommand).trim()
-                    } else {
-                        gitURL = bat(returnStdout: true, script: gitURLcommand).trim()
-                    }
-                    def repository = gitURL.tokenize("/")[2] + "/" + gitURL.tokenize("/")[3]
-                    repository = repository.tokenize(".")[0]
-                    withCredentials([string(credentialsId: env.GithubOAuthCredentianalID, variable: 'githubOAuth')]) {
-                        sonarcommand = sonarcommand + " -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${PRNumber} -Dsonar.github.repository=${repository} -Dsonar.github.oauth=${githubOAuth}"
-                    }
+    //             def makeAnalyzis = true
+    //             if (env.BRANCH_NAME == "master") {
+    //                 echo 'Analysing master branch'
+    //             } else if (env.BRANCH_NAME == "develop") {
+    //                 echo 'Analysing develop branch'
+    //                 // sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
+    //             } else if (env.BRANCH_NAME.startsWith("release/") || env.BRANCH_NAME.startsWith("feature/")) {
+    //                 // sonarcommand = sonarcommand + " -Dsonar.branch.name=${BRANCH_NAME}"
+    //             } else if (env.BRANCH_NAME.startsWith("PR-")) {
+    //                 // Report PR issues
+    //                 def PRNumber = env.BRANCH_NAME.tokenize("PR-")[0]
+    //                 def gitURLcommand = 'git config --local remote.origin.url'
+    //                 def gitURL = ""
+    //                 if (isUnix) {
+    //                     gitURL = sh(returnStdout: true, script: gitURLcommand).trim()
+    //                 } else {
+    //                     gitURL = bat(returnStdout: true, script: gitURLcommand).trim()
+    //                 }
+    //                 def repository = gitURL.tokenize("/")[2] + "/" + gitURL.tokenize("/")[3]
+    //                 repository = repository.tokenize(".")[0]
+    //                 withCredentials([string(credentialsId: env.GithubOAuthCredentianalID, variable: 'githubOAuth')]) {
+    //                     sonarcommand = sonarcommand + " -Dsonar.analysis.mode=issues -Dsonar.github.pullRequest=${PRNumber} -Dsonar.github.repository=${repository} -Dsonar.github.oauth=${githubOAuth}"
+    //                 }
 
-                } else {
-                    echo "Анализ SonarQube не выполнен. Ветка ${env.BRANCH_NAME} не подходит по условию проверки веток!"
-                    makeAnalyzis = false
-                }
-                try {
-                    if (makeAnalyzis) {
-                        if (isUnix) {
-                            cmd(sonarcommand)
-                        } else {
-                            bat "${sonarcommand} -X"
-                        }
-                    }
-                } catch (e) {
-                    echo "sonar status : ${e}"
-                }
+    //             } else {
+    //                 echo "Анализ SonarQube не выполнен. Ветка ${env.BRANCH_NAME} не подходит по условию проверки веток!"
+    //                 makeAnalyzis = false
+    //             }
+    //             try {
+    //                 if (makeAnalyzis) {
+    //                     if (isUnix) {
+    //                         cmd(sonarcommand)
+    //                     } else {
+    //                         bat "${sonarcommand} -X"
+    //                     }
+    //                 }
+    //             } catch (e) {
+    //                 echo "sonar status : ${e}"
+    //             }
 
-            } catch (e) {
-                echo "sonar status : ${e}"
-            }
-        }
-    } else {
-        echo "QA runner not installed"
-    }
+    //         } catch (e) {
+    //             echo "sonar status : ${e}"
+    //         }
+    //     }
+    // } else {
+    //     echo "QA runner not installed"
+    // }
   }
 
   stage('Дымовое тестирование') {
     def errors = []
-    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
-    timestamps {
-        timeout(7){
-            try{
-                cmd("vrunner xunit tests/smoke --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
-            } catch (e) {
-                errors << "smoke status : ${e}"
-            }
-        }
-    }
+    // reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
+    // timestamps {
+    //     timeout(7){
+    //         try{
+    //             cmd("vrunner xunit tests/smoke --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
+    //         } catch (e) {
+    //             errors << "smoke status : ${e}"
+    //         }
+    //     }
+    // }
     makeJunit('build/junit-smoke", "*.xml')
     timestamps {
         timeout(15){
@@ -160,6 +160,8 @@ node("slave") {
     }
     showErrors(errors)
     makeJunit('build/junit-smoke", "*.xml')
+    throw new Exception("a special fail")
+
     // makeAllure([[path:"build/allure"]])
     // allureResults << [path : "build/allure"]
     prepareForAllure("build/allure/", 'allure-smoke', allureResults)
@@ -325,12 +327,12 @@ def makeArtifacts(path) {
 
 def makeJunit(path, mask) {
     def finallyPath = "${path}/${mask}"
-    try{
-        junit allowEmptyResults: true, testResults: "${finallyPath}"
-    } catch (e) {
-        echo "junit report status : ${e}"
-        currentBuild.result = 'UNSTABLE'
-    }
+    // try{
+    //     junit allowEmptyResults: true, testResults: "${finallyPath}"
+    // } catch (e) {
+    //     echo "junit report status : ${e}"
+    //     currentBuild.result = 'UNSTABLE'
+    // }
     cmd "rd /s /q ${path} & md ${path}"
     // dir(path) {
     //     deleteDir()
