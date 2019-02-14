@@ -38,6 +38,38 @@ properties([
 node("slave") {
   isUnix = isUnix();
 
+  stage('Получение исходных кодов') {
+    deleteDir()
+
+    checkout scm
+    cmd('git config --local core.longpaths true', isUnix);
+
+    //env.LOGOS_CONFIG="logger.rootLogger=DEBUG"; // включение отладки продукта //env.RUNNER_ENV="debug";
+
+    cmd('git submodule update --init', isUnix)
+
+    // echo "Текущий каталог"
+    // echo pwd()
+
+    // echo "Проверка выполнения oscript -version - находится ли он в PATH?"
+    // timestamps {
+    //     cmd("where oscript", isUnix)
+    //     cmd("oscript -version", isUnix)
+    // }
+
+    // // echo "Установка свежих версий зависимостей библиотек oscript"
+    // timestamps {
+    //     //cmd("opm update -all", isUnix)
+    //      cmd("opm install", isUnix)
+    // }
+    echo "Сборка бинарных файлов"
+    timeout(60){
+        timestamps {
+            cmd("opm run init file --v8version 8.3.10", isUnix)
+        }
+    }
+  }
+
   stage('Контроль технического долга'){
 
     if (env.QASONAR) {
@@ -50,10 +82,10 @@ node("slave") {
                     sonarcommand = sonarcommand + " -Dsonar.host.url=https://opensonar.silverbulleters.org -Dsonar.login=${SonarOAuth}"
                 }
 
-                // TODO // Get version
-                // def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
-                // def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
-                // sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
+                // Get version
+                def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
+                def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
+                sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
 
                 def makeAnalyzis = true
                 if (env.BRANCH_NAME == "master") {
@@ -104,41 +136,9 @@ node("slave") {
     }
   }
 
-  stage('Получение исходных кодов') {
-    deleteDir()
-
-    checkout scm
-    cmd('git config --local core.longpaths true', isUnix);
-
-    //env.LOGOS_CONFIG="logger.rootLogger=DEBUG"; // включение отладки продукта //env.RUNNER_ENV="debug";
-
-    cmd('git submodule update --init', isUnix)
-
-    echo "Текущий каталог"
-    echo pwd()
-
-    // echo "Проверка выполнения oscript -version - находится ли он в PATH?"
-    // timestamps {
-    //     cmd("where oscript", isUnix)
-    //     cmd("oscript -version", isUnix)
-    // }
-
-    // // echo "Установка свежих версий зависимостей библиотек oscript"
-    // timestamps {
-    //     //cmd("opm update -all", isUnix)
-    //      cmd("opm install", isUnix)
-    // }
-    echo "Сборка бинарных файлов"
-    timeout(30){
-        timestamps {
-            cmd("opm run init file --v8version 8.3.10", isUnix)
-        }
-    }
-  }
-
   stage('Дымовое тестирование') {
     def errors = []
-    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
     timestamps {
         timeout(7){
             try{
@@ -148,7 +148,7 @@ node("slave") {
             }
         }
     }
-    makeJunit('build/*.xml')
+    makeJunit("build/junit-smoke", "*.xml")
     timestamps {
         timeout(15){
             try{
@@ -159,7 +159,7 @@ node("slave") {
         }
     }
     showErrors(errors)
-    makeJunit('build/*.xml')
+    makeJunit("build/junit-smoke", "*.xml")
     // makeAllure([[path:"build/allure"]])
     // allureResults << [path : "build/allure"]
     prepareForAllure("build/allure/", 'allure-smoke', allureResults)
@@ -167,7 +167,7 @@ node("slave") {
 
   stage('TDD Тестирование') {
     def errors = []
-    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\" "
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\" "
 
     timeout(10){
         timestamps {
@@ -178,7 +178,7 @@ node("slave") {
             }
         }
     }
-    makeJunit('build/*.xml')
+    makeJunit("build/junit-tdd", "*.xml")
     timeout(15){
         timestamps {
             try{
@@ -189,7 +189,7 @@ node("slave") {
         }
     }
     showErrors(errors)
-    makeJunit('build/*.xml')
+    makeJunit("build/junit-tdd", "*.xml")
     // makeAllure([[path:"build/allure-tdd"]])
     prepareForAllure("build/allure-tdd/", 'allure-tdd', allureResults)
   }
@@ -213,7 +213,7 @@ node("slave") {
 
     showErrors(errors)
 
-    makeJunit("ServiceBases/junitreport/*.xml")
+    makeJunit("ServiceBases/junitreport", "*.xml")
     // makeAllure("ServiceBases/allurereport/${buildKey}")
     prepareForAllure("ServiceBases/allurereport/${buildKey}/", "allure-${buildKey}", allureResults)
   }
@@ -241,7 +241,7 @@ node("slave") {
 
             showErrors(errors)
 
-            makeJunit("ServiceBases/junitreport/*.xml")
+            makeJunit("ServiceBases/junitreport", "*.xml")
             // makeAllure("ServiceBases/allurereport/${buildKey}")
             prepareForAllure("ServiceBases/allurereport/${buildKey}/", "allure-${buildKey}", allureResults)
         }
@@ -291,7 +291,8 @@ node("slave") {
 
             makeArtifacts('**/ServiceBases/**/junitreport/**')
             makeArtifacts('**/ServiceBases/**/allurereport/**')
-            makeArtifacts('**/build/*.xml')
+            makeArtifacts('**/build/junit-tdd/*.xml')
+            makeArtifacts('**/build/junit-smoke/*.xml')
             makeArtifacts('**/build/**/*.txt')
             makeArtifacts('**/build/**/*.xml')
         }
@@ -318,17 +319,25 @@ def makeArtifacts(path) {
         // archiveArtifacts allowEmptyArchive: true, artifacts: '*.xml'
        step([$class: 'ArtifactArchiver', artifacts: "${path}", fingerprint: true, allowEmptyArchive: true])
     } catch (e) {
-        echo "report status : ${e}"
+        echo "artifacts status : ${e}"
         currentBuild.result = 'UNSTABLE'
     }
 }
 
-def makeJunit(path) {
+def makeJunit(path, mask) {
+    def finallyPath = "${path}/${mask}"
     try{
-        junit allowEmptyResults: true, testResults: "${path}"
+        junit allowEmptyResults: true, testResults: "${finallyPath}"
     } catch (e) {
         echo "junit report status : ${e}"
         currentBuild.result = 'UNSTABLE'
+    }
+    // cmd "rd /s /q ${path} & md ${path}"
+    dir(path) {
+        deleteDir()
+    }    
+    dir(path) {
+        def tempvar = []
     }
 }
 
