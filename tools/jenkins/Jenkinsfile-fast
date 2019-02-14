@@ -291,7 +291,8 @@ node("slave") {
 
             makeArtifacts('**/ServiceBases/**/junitreport/**')
             makeArtifacts('**/ServiceBases/**/allurereport/**')
-            makeArtifacts('**/build/*.xml')
+            makeArtifacts('**/build/junit-tdd/*.xml')
+            makeArtifacts('**/build/junit-smoke/*.xml')
             makeArtifacts('**/build/**/*.txt')
             makeArtifacts('**/build/**/*.xml')
         }
@@ -318,7 +319,7 @@ def makeArtifacts(path) {
         // archiveArtifacts allowEmptyArchive: true, artifacts: '*.xml'
        step([$class: 'ArtifactArchiver', artifacts: "${path}", fingerprint: true, allowEmptyArchive: true])
     } catch (e) {
-        echo "report status : ${e}"
+        echo "artifacts status : ${e}"
         currentBuild.result = 'UNSTABLE'
     }
 }
