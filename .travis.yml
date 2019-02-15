@@ -100,7 +100,7 @@ jobs:
       - sudo docker stop "$(cat /tmp/container_id)"
       - sudo docker stop "$(cat /tmp/container_idngrok )"
 
-  - stage: delpoy
+  - stage: deploy
     script:
       - sudo docker run --detach -e XVFB_RESOLUTION=1920x1080x24 --volume="${PWD}":/home/ubuntu/code onec32/client:${ONECVERSION} client > /tmp/container_id
       - sudo docker ps && sleep 5

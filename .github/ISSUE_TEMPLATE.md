@@ -1,3 +1,4 @@
+
 > Заполните шаблон обсуждения GIT (GitHub, GitLab, Vanessa Hub)
 
 ```Gherkin

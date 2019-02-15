@@ -32,7 +32,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>ADD/TDD, ver. 5.6.0</v8:content>
+					<v8:content>ADD/TDD, ver. 5.7.0</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -45,7 +45,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor/>
-			<Version>5.6.0</Version>
+			<Version>5.7.0</Version>
 			<UpdateCatalogAddress/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<UseManagedFormInOrdinaryApplication>true</UseManagedFormInOrdinaryApplication>
@@ -118,7 +118,7 @@
 			<ModalityUseMode>Use</ModalityUseMode>
 			<SynchronousPlatformExtensionAndAddInCallUseMode>Use</SynchronousPlatformExtensionAndAddInCallUseMode>
 			<InterfaceCompatibilityMode>TaxiEnableVersion8_2</InterfaceCompatibilityMode>
-			<CompatibilityMode>Version8_3_8</CompatibilityMode>
+			<CompatibilityMode>Version8_3_5</CompatibilityMode>
 			<DefaultConstantsForm/>
 		</Properties>
 		<ChildObjects>
@@ -136,16 +136,22 @@
 			<ExchangePlan>ПланОбмена1</ExchangePlan>
 			<FunctionalOption>ФункциональнаяОпция1</FunctionalOption>
 			<CommonForm>ФормаОтчета</CommonForm>
-			<Catalog>ПростойСправочник</Catalog>
-			<Catalog>ПростойСправочник2</Catalog>
+			<Catalog>Справочник1</Catalog>
+			<Catalog>Справочник2</Catalog>
 			<Catalog>ИерархическийСправочник</Catalog>
 			<Catalog>СправочникСТабЧастью</Catalog>
 			<Catalog>ПодчиненныйСправочник</Catalog>
 			<Catalog>СправочникСоСсылкойНаСамогоСебя</Catalog>
 			<Catalog>ПодчиненныйСДвумяВладельцами</Catalog>
 			<Catalog>СправочникСОбязательнымРеквизитом</Catalog>
+			<Catalog>ПростойСправочник3</Catalog>
+			<Catalog>СправочникИерархияЭлементов</Catalog>
+			<Catalog>Справочник3</Catalog>
+			<Catalog>ПростойСправочник</Catalog>
+			<Catalog>ПростойСправочник2</Catalog>
 			<Document>Документ1</Document>
 			<Document>Документ2</Document>
+			<Document>ДокументСДвижениями</Document>
 			<Enum>Перечисление1</Enum>
 			<Report>Отчет1</Report>
 			<Report>ТестовыйОтчетСКДДляСравнениеСЭталоном</Report>
@@ -157,11 +163,15 @@
 			<DataProcessor>Тест_ЗагрузчикИзПодсистем_НовыйAPIОбъявленияТестов</DataProcessor>
 			<InformationRegister>РегистрСведений1</InformationRegister>
 			<InformationRegister>РСПодчиненныйРегистратору</InformationRegister>
+			<InformationRegister>РСПодчиненРегистраторуПериодический</InformationRegister>
 			<AccumulationRegister>РегистрНакопления2</AccumulationRegister>
+			<AccumulationRegister>РегистрНакопленияОбороты</AccumulationRegister>
+			<AccumulationRegister>РегистрНакопленияОстатки</AccumulationRegister>
 			<ChartOfCharacteristicTypes>ВидыСубконто1</ChartOfCharacteristicTypes>
 			<ChartOfAccounts>ПланСчетов1</ChartOfAccounts>
 			<AccountingRegister>РегистрБухгалтерии1</AccountingRegister>
 			<ChartOfCalculationTypes>ПланВидовРасчета1</ChartOfCalculationTypes>
+			<CalculationRegister>РегистрРасчета1</CalculationRegister>
 			<BusinessProcess>БизнесПроцесс1</BusinessProcess>
 			<BusinessProcess>БизнесПроцесс2</BusinessProcess>
 			<Task>Задача1</Task>
