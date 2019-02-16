@@ -1,5 +1,8 @@
 # language: ru
 
+@IgnoreOnCIMainBuild
+@TODO
+
 @IgnoreOn82Builds
 @IgnoreOn836
 @IgnoreOn837

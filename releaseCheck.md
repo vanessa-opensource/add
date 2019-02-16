@@ -2,11 +2,12 @@
 
 Перед выпуском релиза нужно выполнить операции по следующему чек-листу:
 
-- Изменить номер версии в строке `.Версия("Х.Х.Х.Х")` в файле [packagedef](./packagedef)
+- Изменить номер версии в строке `ВерсияПакета = "Х.Х.Х";` в файле [packagedef](./packagedef)
 - Изменить номер версии в методе `ПолучитьВерсиюОбработки()` [модуля обработки](./epf/bddRunner/bddRunner/Ext/ObjectModule.bsl) `bddRunner.epf`
 - Изменить номер версии в методе `Версия()` [модуля обработки](./epf/xddTestRunner/xddTestRunner/Ext/ObjectModule.bsl) `xddTestRunner.epf`
 - Изменить номер версии в методе `Версия()` [модуля обработки](./Plugins/СериализаторMXL/СериализаторMXL/Ext/ObjectModule.bsl) `Plugins/СериализаторMXL.epf`
 - Изменить номер версии в метаданных конфигураций для 8.2 и 8.3 из каталога `lib/CF`
+    * в 2-х местах - версия конфигурация и синоним конфигурации
     * `<Synonym>` и `<Version>`
     * [bdd 83](./lib/CF/83/Configuration.xml)
     * [bdd 83 NoSync](./lib/CF/83NoSync/Configuration.xml)
