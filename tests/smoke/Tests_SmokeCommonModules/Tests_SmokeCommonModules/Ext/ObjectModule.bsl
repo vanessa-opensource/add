@@ -113,14 +113,130 @@ Procedure Fact_ClientModule(CommonModuleName, Transaction = False) Export
             |en_CA='Allows server call {%1}'"),
         CommonModuleName));
         
-    Assertions.ПроверитьЛожь(Module.Privileged, _StrTemplate(
-        NStr("en='Full access rights granted {%1}';
-            |ru='Предоставляются полные права доступа {%1}';
-            |uk='Надаються повні права доступу {%1}';
-            |en_CA='Full access rights granted {%1}'"),
-        CommonModuleName));
+    Fact_FullAccessRightsGranted(CommonModuleName, Module);
+    Fact_ModuleReuseReturnValues(CommonModuleName, Module);
     
 EndProcedure // Fact_ClientModule()
+
+// Tests whether global common module is set properly.
+//
+// Parameters:
+//  CommonModuleName - String  - common module name.
+//  Transaction      - Boolean - shows if transaction exist. 
+//                      Default value: False.
+//
+Procedure Fact_GlobalModule(CommonModuleName, Transaction = False) Export
+    
+    Module = Metadata.CommonModules.Find(CommonModuleName);
+    
+    Assertions.ПроверитьТип(Module, "MetadataObject");
+     
+    Assertions.ПроверитьИстину(Module.Global, _StrTemplate( 
+        NStr("en='Participation in global context creation {%1}';
+            |ru='Участие в формировании глобального контекста {%1}';
+            |uk='Участь у формуванні глобального контексту {%1}';
+            |en_CA='Participation in global context creation {%1}'"),
+        CommonModuleName));
+
+    Assertions.ПроверитьИстину(Module.ClientManagedApplication, _StrTemplate(
+        NStr("en='Use of managed application in the client {%1}';
+            |ru='Использование в клиенте управляемого приложения {%1}';
+            |uk='Використання в клієнті керованого додатку {%1}';
+            |en_CA='Use of managed application in the client {%1}'"),
+        CommonModuleName));
+    
+    Assertions.ПроверитьЛожь(Module.Server, _StrTemplate(
+        NStr("en='Run on server in client/server mode {%1}';
+            |ru='Выполнение на сервере в клиент-серверном варианте {%1}';
+            |uk='Виконання на сервері в клієнт-серверному варіанті {%1}';
+            |en_CA='Run on server in client/server mode {%1}'"),
+        CommonModuleName));
+    
+    Assertions.ПроверитьЛожь(Module.ExternalConnection, _StrTemplate(
+        NStr("en='Use in external connection {%1}';
+            |ru='Использование во внешнем соединении {%1}';
+            |uk='Використання в зовнішньому з''єднанні {%1}';
+            |en_CA='Use in external connection {%1}'"),
+        CommonModuleName));
+    
+    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
+    
+    Assertions.ПроверитьЛожь(Module.ServerCall, _StrTemplate(
+        NStr("en='Allows server call {%1}';
+            |ru='Разрешает вызов сервера {%1}';
+            |uk='Дозволяє виклик сервера {%1}';
+            |en_CA='Allows server call {%1}'"),
+        CommonModuleName));
+        
+    Fact_FullAccessRightsGranted(CommonModuleName, Module);
+    Fact_ModuleReuseReturnValues(CommonModuleName, Module);
+    
+EndProcedure // Fact_GlobalModule()
+
+// Tests whether server call common module is set properly.
+//
+// Parameters:
+//  CommonModuleName - String  - common module name.
+//  Transaction      - Boolean - shows if transaction exist. 
+//                      Default value: False.
+//
+Procedure Fact_ServerCallModule(CommonModuleName, Transaction = False) Export
+    
+    Module = Metadata.CommonModules.Find(CommonModuleName);
+    
+    Assertions.ПроверитьТип(Module, "MetadataObject");
+     
+    Assertions.ПроверитьЛожь(Module.Global, _StrTemplate(
+        NStr("en='Participation in global context creation {%1}';
+            |ru='Участие в формировании глобального контекста {%1}';
+            |uk='Участь у формуванні глобального контексту {%1}';
+            |en_CA='Participation in global context creation {%1}'"),
+        CommonModuleName));
+
+    Assertions.ПроверитьЛожь(Module.ClientManagedApplication, _StrTemplate(
+        NStr("en='Use of managed application in the client {%1}';
+            |ru='Использование в клиенте управляемого приложения {%1}';
+            |uk='Використання в клієнті керованого додатку {%1}';
+            |en_CA='Use of managed application in the client {%1}'"),
+        CommonModuleName));
+    
+    Assertions.ПроверитьИстину(Module.Server, _StrTemplate(
+        NStr("en='Run on server in client/server mode {%1}';
+            |ru='Выполнение на сервере в клиент-серверном варианте {%1}';
+            |uk='Виконання на сервері в клієнт-серверному варіанті {%1}';
+            |en_CA='Run on server in client/server mode {%1}'"),
+        CommonModuleName));
+    
+    Assertions.ПроверитьЛожь(Module.ExternalConnection, _StrTemplate(
+        NStr("en='Use in external connection {%1}';
+            |ru='Использование во внешнем соединении {%1}';
+            |uk='Використання в зовнішньому з''єднанні {%1}';
+            |en_CA='Use in external connection {%1}'"),
+        CommonModuleName));
+    
+    Assertions.ПроверитьЛожь(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
+
+    Assertions.ПроверитьИстину(Module.ServerCall, _StrTemplate(
+        NStr("en='Allows server call {%1}';
+            |ru='Разрешает вызов сервера {%1}';
+            |uk='Дозволяє виклик сервера {%1}';
+            |en_CA='Allows server call {%1}'"),
+        CommonModuleName));
+    
+    Fact_FullAccessRightsGranted(CommonModuleName, Module);
+    Fact_ModuleReuseReturnValues(CommonModuleName, Module);
+    
+EndProcedure // Fact_ServerCallModule()
 
 // Tests whether server common module is set properly.
 //
@@ -177,12 +293,8 @@ Procedure Fact_ServerModule(CommonModuleName, Transaction = False) Export
             |en_CA='Allows server call {%1}'"),
         CommonModuleName));
     
-    Assertions.ПроверитьЛожь(Module.Privileged, _StrTemplate(
-        NStr("en='Full access rights granted {%1}';
-            |ru='Предоставляются полные права доступа {%1}';
-            |uk='Надаються повні права доступу {%1}';
-            |en_CA='Full access rights granted {%1}'"),
-        CommonModuleName));
+    Fact_FullAccessRightsGranted(CommonModuleName, Module);
+    Fact_ModuleReuseReturnValues(CommonModuleName, Module);
     
 EndProcedure // Fact_ServerModule()
 
@@ -240,51 +352,64 @@ Procedure Fact_ClientServerModule(CommonModuleName, Transaction = False) Export
             |uk='Дозволяє виклик сервера {%1}';
             |en_CA='Allows server call {%1}'"),
         CommonModuleName));   
-    
-    Assertions.ПроверитьЛожь(Module.Privileged, _StrTemplate(
-        NStr("en='Full access rights granted {%1}';
-            |ru='Предоставляются полные права доступа {%1}';
-            |uk='Надаються повні права доступу {%1}';
-            |en_CA='Full access rights granted {%1}'"),
-        CommonModuleName));
+        
+    Fact_FullAccessRightsGranted(CommonModuleName, Module);
+    Fact_ModuleReuseReturnValues(CommonModuleName, Module);
     
 EndProcedure // Fact_ClientServerModule()
 
-// Tests whether reuse option is set properly.
-//
-// Parameters:
-//  CommonModuleName - String  - common module name.
-//  Transaction      - Boolean - shows if transaction exist. 
-//                      Default value: False.
-//
-Procedure Fact_ModuleReUse(CommonModuleName, Transaction = False) Export
-    
-    Module = Metadata.CommonModules.Find(CommonModuleName);
-    Assertions.ПроверитьНеРавенство(Module.ReturnValuesReuse, 
-        Metadata.ObjectProperties.ReturnValuesReuse.DontUse,
-        CommonModuleName);
-    
-EndProcedure // Fact_ModuleReUse() 
-
-// Tests whether reuse option is set properly.
-//
-// Parameters:
-//  CommonModuleName - String  - common module name.
-//  Transaction      - Boolean - shows if transaction exist. 
-//                      Default value: False.
-//
-Procedure Fact_ModuleReUseDontUse(CommonModuleName, Transaction = False) Export
-    
-    Module = Metadata.CommonModules.Find(CommonModuleName);
-    Assertions.ПроверитьРавенство(Module.ReturnValuesReuse, 
-        Metadata.ObjectProperties.ReturnValuesReuse.DontUse, 
-        CommonModuleName);
-    
-EndProcedure // Fact_ModuleReUseDontUse() 
-    
 #EndRegion // TestCases
 
 #Region ServiceProceduresAndFunctions
+
+// Only for internal use.
+//
+Procedure Fact_ModuleReuseReturnValues(CommonModuleName, Module)
+    
+    If Find(CommonModuleName, "ReUse") <> 0
+        Or Find(CommonModuleName, "Cached") <> 0 
+        Or Find(CommonModuleName, "ПовтИсп") <> 0 Then
+        
+        Assertions.ПроверитьНеРавенство(Module.ReturnValuesReuse, 
+            Metadata.ObjectProperties.ReturnValuesReuse.DontUse,
+            CommonModuleName);
+            
+    Else
+
+        Assertions.ПроверитьРавенство(Module.ReturnValuesReuse, 
+            Metadata.ObjectProperties.ReturnValuesReuse.DontUse, 
+            CommonModuleName);
+        
+    EndIf;
+            
+EndProcedure // Fact_ModuleReuseReturnValues() 
+
+// Only for internal use.
+//
+Procedure Fact_FullAccessRightsGranted(CommonModuleName, Module)
+    
+    If Find(CommonModuleName, "FullAccess") <> 0
+        Or Find(CommonModuleName, "ПолныеПрава") <> 0 Then
+        
+        Assertions.ПроверитьИстину(Module.Privileged, _StrTemplate(
+            NStr("en='Full access rights granted {%1}';
+                |ru='Предоставляются полные права доступа {%1}';
+                |uk='Надаються повні права доступу {%1}';
+                |en_CA='Full access rights granted {%1}'"),
+            CommonModuleName));
+            
+    Else
+
+         Assertions.ПроверитьЛожь(Module.Privileged, _StrTemplate(
+            NStr("en='Full access rights granted {%1}';
+                |ru='Предоставляются полные права доступа {%1}';
+                |uk='Надаються повні права доступу {%1}';
+                |en_CA='Full access rights granted {%1}'"),
+            CommonModuleName));
+            
+    EndIf;
+    
+EndProcedure // Fact_FullAccessRightsGranted()
 
 // Loads smoke tests settings. 
 //
@@ -316,14 +441,34 @@ EndProcedure // LoadSettings()
 //
 Procedure AddSmokeCommonModuleTest(TestsSet, CommonModule)
     
+    NameToAnalyze = CommonModule.Name;
+    NameToAnalyze = StrReplace(NameToAnalyze, "Cached", "");
+    NameToAnalyze = StrReplace(NameToAnalyze, "FullAccess", "");   
+    NameToAnalyze = StrReplace(NameToAnalyze, "Overridable", "");
+    NameToAnalyze = StrReplace(NameToAnalyze, "ReUse", "");
+    NameToAnalyze = StrReplace(NameToAnalyze, "Переопределяемый", "");
+    NameToAnalyze = StrReplace(NameToAnalyze, "ПовтИсп", "");
+    NameToAnalyze = StrReplace(NameToAnalyze, "ПолныеПрава", "");
+    SuffixPart = Right(NameToAnalyze, 6); 
+    
     TestParameters = TestsSet.ПараметрыТеста(CommonModule.Name, False);
-    If Find(CommonModule.Name, "ClientServer") <> 0
+    If Find(CommonModule.Name, "ServerCall") <> 0
+        Or Find(CommonModule.Name, "ВызовСервера") <> 0 Then
+        
+        TestName = "Fact_ServerCallModule";
+        
+    ElsIf Find(CommonModule.Name, "ClientServer") <> 0
         Or Find(CommonModule.Name, "КлиентСервер") <> 0 Then
         
         TestName = "Fact_ClientServerModule";
         
-    ElsIf Find(CommonModule.Name, "Client") <> 0 
-        Or Find(CommonModule.Name, "Клиент") <> 0 Then
+    ElsIf Find(CommonModule.Name, "Global") <> 0 
+        Or Find(CommonModule.Name, "Глобальный") <> 0 Then
+        
+        TestName = "Fact_GlobalModule";
+        
+    ElsIf SuffixPart = "Client"
+        Or SuffixPart = "Клиент" Then
         
         TestName = "Fact_ClientModule";
         
@@ -339,25 +484,7 @@ Procedure AddSmokeCommonModuleTest(TestsSet, CommonModule)
             |uk='Загальний модуль : %1 {%2}';
             |en_CA='Common module : %1 {%2}'"), 
         CommonModule.Name, CommonModule.Comment));    
-        
-    If Find(CommonModule.Name, "ReUse") <> 0 
-        Or Find(CommonModule.Name, "ПовтИсп") <> 0 Then
-        
-        TestName = "Fact_ModuleReUse";
-        
-    Else
-        
-        TestName = "Fact_ModuleReUseDontUse";
-        
-    EndIf;
-    
-    TestsSet.Добавить(TestName, TestParameters, _StrTemplate(
-        NStr("en='Common module : %1 {Reuse}';
-            |ru='Общий модуль : %1 {Повторное использование}';
-            |uk='Загальний модуль : %1 {Повторне використання}';
-            |en_CA='Common module : %1 {Reuse}'"), 
-        CommonModule.Name));
-    
+            
 EndProcedure // AddSmokeCommonModuleTest()
 
 // Loads subsystem tests if settings is set.
