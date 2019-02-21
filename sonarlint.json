@@ -1,0 +1,5 @@
+{
+    "$schema": "https://raw.githubusercontent.com/silverbulleters/sonarqube-inject-vsc/master/schemas/sonarlint.json",
+    "serverId": "opensonar.silverbulleters.org",
+    "projectKey": "add"
+}

@@ -521,6 +521,29 @@
 		</right>
 	</object>
 	<object>
+		<name>Configuration.ADD_TDD</name>
+		<right>
+			<name>Administration</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>DataAdministration</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>ThickClient</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>InteractiveOpenExtDataProcessors</name>
+			<value>true</value>
+		</right>
+		<right>
+			<name>Output</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Catalog.СправочникСТабЧастью.Attribute.РеквизитСоставногоТипа</name>
 		<right>
 			<name>View</name>
