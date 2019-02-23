@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoCommandBar name="" id="-1"/>
+	<ChildItems>
+		<InputField name="Номер" id="1">
+			<DataPath>Объект.Number</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="НомерКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="НомерРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<InputField name="Дата" id="4">
+			<DataPath>Объект.Date</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ДатаКонтекстноеМеню" id="5"/>
+			<ExtendedTooltip name="ДатаРасширеннаяПодсказка" id="6"/>
+		</InputField>
+		<InputField name="ВедущаяЗадача" id="7">
+			<DataPath>Объект.HeadTask</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ВедущаяЗадачаКонтекстноеМеню" id="8"/>
+			<ExtendedTooltip name="ВедущаяЗадачаРасширеннаяПодсказка" id="9"/>
+		</InputField>
+		<InputField name="ПростойСправочник" id="10">
+			<DataPath>Объект.ПростойСправочник</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="ПростойСправочникКонтекстноеМеню" id="11"/>
+			<ExtendedTooltip name="ПростойСправочникРасширеннаяПодсказка" id="12"/>
+		</InputField>
+		<Table name="ТабличнаяЧасть1" id="13">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТабличнаяЧасть1</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТабличнаяЧасть1КонтекстноеМеню" id="14"/>
+			<AutoCommandBar name="ТабличнаяЧасть1КоманднаяПанель" id="15"/>
+			<ExtendedTooltip name="ТабличнаяЧасть1РасширеннаяПодсказка" id="16"/>
+			<SearchStringAddition name="ТабличнаяЧасть1СтрокаПоиска" id="17">
+				<AdditionSource>
+					<Item>ТабличнаяЧасть1</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабличнаяЧасть1СтрокаПоискаКонтекстноеМеню" id="18"/>
+				<ExtendedTooltip name="ТабличнаяЧасть1СтрокаПоискаРасширеннаяПодсказка" id="19"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТабличнаяЧасть1СостояниеПросмотра" id="20">
+				<AdditionSource>
+					<Item>ТабличнаяЧасть1</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабличнаяЧасть1СостояниеПросмотраКонтекстноеМеню" id="21"/>
+				<ExtendedTooltip name="ТабличнаяЧасть1СостояниеПросмотраРасширеннаяПодсказка" id="22"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТабличнаяЧасть1УправлениеПоиском" id="23">
+				<AdditionSource>
+					<Item>ТабличнаяЧасть1</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабличнаяЧасть1УправлениеПоискомКонтекстноеМеню" id="24"/>
+				<ExtendedTooltip name="ТабличнаяЧасть1УправлениеПоискомРасширеннаяПодсказка" id="25"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТабличнаяЧасть1НомерСтроки" id="26">
+					<DataPath>Объект.ТабличнаяЧасть1.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТабличнаяЧасть1НомерСтрокиКонтекстноеМеню" id="27"/>
+					<ExtendedTooltip name="ТабличнаяЧасть1НомерСтрокиРасширеннаяПодсказка" id="28"/>
+				</LabelField>
+				<InputField name="ТабличнаяЧасть1Реквизит1" id="29">
+					<DataPath>Объект.ТабличнаяЧасть1.Реквизит1</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТабличнаяЧасть1Реквизит1КонтекстноеМеню" id="30"/>
+					<ExtendedTooltip name="ТабличнаяЧасть1Реквизит1РасширеннаяПодсказка" id="31"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+		<CheckBoxField name="Стартован" id="32">
+			<DataPath>Объект.Started</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="СтартованКонтекстноеМеню" id="33"/>
+			<ExtendedTooltip name="СтартованРасширеннаяПодсказка" id="34"/>
+		</CheckBoxField>
+		<CheckBoxField name="Завершен" id="35">
+			<DataPath>Объект.Completed</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<CheckBoxType>Auto</CheckBoxType>
+			<ContextMenu name="ЗавершенКонтекстноеМеню" id="36"/>
+			<ExtendedTooltip name="ЗавершенРасширеннаяПодсказка" id="37"/>
+		</CheckBoxField>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:BusinessProcessObject.БизнесПроцесс1</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+			<SavedData>true</SavedData>
+		</Attribute>
+	</Attributes>
+</Form>
