@@ -137,6 +137,8 @@
 
 	КонецЕсли;
 
+	СоздатьКаталог(СтрШаблон("%1/vanessa-behavior", КаталогВременныхФайлов()));
+
 	СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./tools %1tools --ibname /F./build/ibservice", КаталогСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
 
