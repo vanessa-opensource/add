@@ -32,7 +32,7 @@ allureResults = []
 properties([
     disableConcurrentBuilds(),
     buildDiscarder(
-        logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '30', daysToKeepStr: '', numToKeepStr: '10'))
+        logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '30', daysToKeepStr: '', numToKeepStr: '30'))
 ])
 
 node("slave") {
@@ -285,7 +285,7 @@ node("slave") {
                     currentBuild.result = 'UNSTABLE'
                 }
             }
-            
+
             makeArtifacts('**/add*.ospx')
             makeArtifacts('**/add*.zip')
 
@@ -335,7 +335,7 @@ def makeJunit(path, mask) {
     // cmd "rd /s /q ${path} & md ${path}"
     dir(path) {
         deleteDir()
-    }    
+    }
     dir(path) {
         def tempvar = []
     }
