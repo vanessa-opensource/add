@@ -149,6 +149,9 @@ node("slave") {
         }
     }
     makeJunit("build/junit-smoke", "*.xml")
+    prepareForAllure("build/allure/", 'allure-smoke', allureResults)
+
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke-ordinaryapp/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-ordinaryapp/allure.xml}\" "
     timestamps {
         timeout(15){
             try{
@@ -159,10 +162,10 @@ node("slave") {
         }
     }
     showErrors(errors)
-    makeJunit("build/junit-smoke", "*.xml")
+    makeJunit("build/junit-smoke-ordinaryapp", "*.xml")
     // makeAllure([[path:"build/allure"]])
     // allureResults << [path : "build/allure"]
-    prepareForAllure("build/allure/", 'allure-smoke', allureResults)
+    prepareForAllure("build/allure-ordinaryapp/", 'allure-smoke-ordinaryapp', allureResults)
   }
 
   stage('TDD Тестирование') {
@@ -179,6 +182,9 @@ node("slave") {
         }
     }
     makeJunit("build/junit-tdd", "*.xml")
+    prepareForAllure("build/allure-tdd/", 'allure-tdd', allureResults)
+
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd-ordinaryapp/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd-ordinaryapp/allure.xml}\" "
     timeout(15){
         timestamps {
             try{
@@ -189,16 +195,16 @@ node("slave") {
         }
     }
     showErrors(errors)
-    makeJunit("build/junit-tdd", "*.xml")
+    makeJunit("build/junit-tdd-ordinaryapp", "*.xml")
     // makeAllure([[path:"build/allure-tdd"]])
-    prepareForAllure("build/allure-tdd/", 'allure-tdd', allureResults)
+    prepareForAllure("build/allure-tdd-ordinaryapp/", 'allure-tdd-ordinaryapp', allureResults)
   }
 
   stage('BDD тестирование (библиотеки)'){
     def buildKey = "8310UF";
     def buildPath = "libraries";
 
-    def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
+    def command = "vrunner vanessa --settings tools/JSON/vrunner.json --path features/${buildPath}";
 
     def errors = []
     timeout(15){
@@ -291,8 +297,9 @@ node("slave") {
 
             makeArtifacts('**/ServiceBases/**/junitreport/**')
             makeArtifacts('**/ServiceBases/**/allurereport/**')
-            makeArtifacts('**/build/junit-tdd/*.xml')
-            makeArtifacts('**/build/junit-smoke/*.xml')
+            makeArtifacts('**/build/junit-tdd*/*.xml')
+            makeArtifacts('**/build/junit-smoke*/*.xml')
+            makeArtifacts('**/build/allure*/**/*.xml')
             makeArtifacts('**/build/**/*.txt')
             makeArtifacts('**/build/**/*.xml')
         }
