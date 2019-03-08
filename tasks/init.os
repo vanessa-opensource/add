@@ -79,10 +79,16 @@
 	СоздатьКаталог("./build/ServiceBases/allurereport/");
 	СоздатьКаталог("./build/ServiceBases/junitreport/");
 	СоздатьКаталог("./build/ServiceBases/cucumber/");
+
 	СоздатьКаталог("./build/allure");
 	СоздатьКаталог("./build/allure-tdd");
 	СоздатьКаталог("./build/junit-smoke");
 	СоздатьКаталог("./build/junit-tdd");
+
+	СоздатьКаталог("./build/allure-ordinaryapp");
+	СоздатьКаталог("./build/allure-tdd-ordinaryapp");
+	СоздатьКаталог("./build/junit-smoke-ordinaryapp");
+	СоздатьКаталог("./build/junit-tdd-ordinaryapp");
 
 	Если Аргументы.Команда = ВозможныеКоманды.file Тогда
 
@@ -136,6 +142,8 @@
 		СоздатьКаталог(СтрШаблон("%1lib/TemplateEpf", КаталогСборки));
 
 	КонецЕсли;
+
+	СоздатьКаталог(СтрШаблон("%1/vanessa-behavior", КаталогВременныхФайлов()));
 
 	СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./tools %1tools --ibname /F./build/ibservice", КаталогСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
