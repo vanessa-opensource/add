@@ -1,12 +1,12 @@
 # language: ru
 
-#https://github.com/silverbulleters/vanessa-behavior/issues/261
+#https://github.com/silverbulleters/vanessa-add/issues/261
 
 @IgnoreOnCIMainBuild
 
 
 Функционал: Тестовая фича, проверяющая получение состояния
- 
+
 
 
 Сценарий:Тестовая фича, проверяющая получение состояния
