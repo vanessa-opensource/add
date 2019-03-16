@@ -19,11 +19,11 @@
 		Когда Я открываю VanessaADD в режиме TestClient
 
 		И В поле с именем "КаталогФичСлужебный" я указываю путь к служебной фиче "ПолучениеСостоянияVanessaADD"
-		И в VanessaBehavoir в TestClient я загружаю и выполняю сценарии
+		И в VanessaADD в TestClient я загружаю и выполняю сценарии
 				И Я нажимаю на кнопку перезагрузить сценарии в Vanessa-ADD TestClient
 				И Я нажимаю на кнопку выполнить сценарии в Vanessa-ADD TestClient
 
-		Тогда в VanessaBehavoir в TestClient снипет заполнился верно
+		Тогда в VanessaADD в TestClient снипет заполнился верно
 			И     таблица формы с именем "ДеревоТестов" стала равной:
 				| 'Статус'  |
 				| ''        |
