@@ -17,7 +17,7 @@
 	Дано Я запускаю сценарий открытия TestClient или подключаю уже существующий с закрытием всех окон кроме "* Vanessa ADD"
 
 Сценарий: Загруза фич без пустых веток
-	Когда Я открываю VanessaBehavior в режиме TestClient
+	Когда Я открываю VanessaADD в режиме TestClient
 	И создал каталог "Temp1\Temp2" если его нет в каталоге "features\Core\OpenForm"
 	И в каталоге "features\Core\OpenForm\Temp1\Temp2" я записываю фичу с тегом "IgnoreFeature"
 	И В поле с именем "КаталогФичСлужебный" я указываю полный путь к относитльному каталогу "features\Core\OpenForm"

@@ -6,7 +6,7 @@
     "СтрокаПодключенияКБазе": "/F./ServiceBases/v83ServiceBase8310",
     "EpfДляИнициализацияБазы": "./tools/epf/init.epf",
     "ПараметрыДляИнициализацияБазы": "./tools/epf/init.json",
-    "ПутьКVanessaBehavior": "./bddRunner.epf",
+    "ПутьКVanessaADD": "./bddRunner.epf",
     "КаталогПроекта": "$workspaceRoot",
     "КаталогФич": "$workspaceRoot/./features",
     "КаталогиБиблиотек": [

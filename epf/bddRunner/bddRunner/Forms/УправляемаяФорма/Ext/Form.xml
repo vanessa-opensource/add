@@ -8705,8 +8705,8 @@
 																	<ContextMenu name="ДелатьЛогВыполненияСценариевВЖРКонтекстноеМеню" id="339"/>
 																	<ExtendedTooltip name="ДелатьЛогВыполненияСценариевВЖРРасширеннаяПодсказка" id="1378"/>
 																</CheckBoxField>
-																<CheckBoxField name="ПроверкаРаботыVanessaBehaviorВРежимеTestClient" id="481">
-																	<DataPath>Объект.ПроверкаРаботыVanessaBehaviorВРежимеTestClient</DataPath>
+																<CheckBoxField name="ПроверкаРаботыVanessaADDВРежимеTestClient" id="481">
+																	<DataPath>Объект.ПроверкаРаботыVanessaADDВРежимеTestClient</DataPath>
 																	<Title>
 																		<v8:item>
 																			<v8:lang>ru</v8:lang>
@@ -8791,10 +8791,10 @@
 																	</Title>
 																	<TitleLocation>Right</TitleLocation>
 																	<CheckBoxType>Auto</CheckBoxType>
-																	<ContextMenu name="ПроверкаРаботыVanessaBehaviorВРежимеTestClientКонтекстноеМеню" id="482"/>
-																	<ExtendedTooltip name="ПроверкаРаботыVanessaBehaviorВРежимеTestClientРасширеннаяПодсказка" id="1379"/>
+																	<ContextMenu name="ПроверкаРаботыVanessaADDВРежимеTestClientКонтекстноеМеню" id="482"/>
+																	<ExtendedTooltip name="ПроверкаРаботыVanessaADDВРежимеTestClientРасширеннаяПодсказка" id="1379"/>
 																	<Events>
-																		<Event name="OnChange">ПроверкаРаботыVanessaBehaviorВРежимеTestClientПриИзменении</Event>
+																		<Event name="OnChange">ПроверкаРаботыVanessaADDВРежимеTestClientПриИзменении</Event>
 																	</Events>
 																</CheckBoxField>
 																<CheckBoxField name="ПоказыватьНомерСтрокиДереваПриВозникновенииОшибки" id="1750">

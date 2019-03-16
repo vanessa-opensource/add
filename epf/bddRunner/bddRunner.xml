@@ -2855,7 +2855,7 @@
 			</Attribute>
 			<Attribute uuid="7bd6467b-8fd5-4ec5-82b5-7470ba5f322c">
 				<Properties>
-					<Name>ПроверкаРаботыVanessaBehaviorВРежимеTestClient</Name>
+					<Name>ПроверкаРаботыVanessaADDВРежимеTestClient</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>

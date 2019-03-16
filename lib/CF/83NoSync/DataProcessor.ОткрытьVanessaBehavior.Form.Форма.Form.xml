@@ -8,7 +8,7 @@
 	<Attributes>
 		<Attribute name="Объект" id="1">
 			<Type>
-				<v8:Type>cfg:DataProcessorObject.ОткрытьVanessaBehavior</v8:Type>
+				<v8:Type>cfg:DataProcessorObject.ОткрытьVanessaADD</v8:Type>
 			</Type>
 			<MainAttribute>true</MainAttribute>
 		</Attribute>
