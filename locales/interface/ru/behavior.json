@@ -1,6 +1,6 @@
 ﻿[
     {
-        "VanessaBehavior": "Vanessa Behavior"
+        "VanessaBehavior": "Vanessa ADD"
     },
     {
         "DebugLog": "Debug log"
@@ -135,7 +135,7 @@
         "ВыводитьТекстМодуляВместоПерегенерацииEPF": "Выводить текст модуля вместо перегенерации EPF"
     },
     {
-        "ПроверкаРаботыVanessaBehaviorВРежимеTestClient": "Проверка работы vanessa behavior в режиме test client"
+        "ПроверкаРаботыVanessaBehaviorВРежимеTestClient": "Проверка работы Vanessa ADD в режиме test client"
     },
     {
         "ИмяТекущейСборки": "Имя текущей сборки"

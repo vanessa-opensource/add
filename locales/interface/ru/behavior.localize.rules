@@ -3,7 +3,7 @@
         "SourcePath": "\\temp\\epfs\\vanessa-behavior\\VanessaBehavior.xml",
         "ElementType": "Properties",
         "ID": "VanessaBehavior",
-        "Descr": "Vanessa Behavior"
+        "Descr": "Vanessa ADD"
     },
     {
         "SourcePath": "\\temp\\epfs\\vanessa-behavior\\VanessaBehavior.xml",
@@ -273,7 +273,7 @@
         "SourcePath": "\\temp\\epfs\\vanessa-behavior\\VanessaBehavior.xml",
         "ElementType": "Properties",
         "ID": "ПроверкаРаботыVanessaBehaviorВРежимеTestClient",
-        "Descr": "Проверка работы vanessa behavior в режиме test client"
+        "Descr": "Проверка работы Vanessa ADD в режиме test client"
     },
     {
         "SourcePath": "\\temp\\epfs\\vanessa-behavior\\VanessaBehavior.xml",
