@@ -150,6 +150,7 @@
 			<DataProcessor>МаксимизироватОкноПриОткрытии</DataProcessor>
 			<DataProcessor>ВыполнитьПроизвольноеВыражение</DataProcessor>
 			<DataProcessor>ПроверкаСостоянияЭлементов</DataProcessor>
+			<DataProcessor>ТаблицыНаФорме</DataProcessor>
 			<InformationRegister>РегистрСведений1</InformationRegister>
 			<InformationRegister>РСПодчиненРегистраторуПериодический</InformationRegister>
 			<AccumulationRegister>РегистрНакопленияОбороты</AccumulationRegister>
