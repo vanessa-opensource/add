@@ -21,7 +21,7 @@ def VyvestiStrokuPosimvolno(stroka):
                 sleep(0.7)
                 if buf == '':
                     break
-            
+
 
 # Паузы
 ShortBreak = 1
@@ -56,12 +56,12 @@ elif step == "2":
     exit(0)
 # Сохранение текста
 elif step == "3":
-    path2VanessaBehavoirFeature = sys.argv[2]
+    path2VanessaVanessaADDFeature = sys.argv[2]
     type('s', KeyModifier.CTRL)
     sleep(2)
     type(Key.DELETE)
     sleep(1)
-    paste(path2VanessaBehavoirFeature)
+    paste(path2VanessaVanessaADDFeature)
     sleep(1)
     exit(0)
 elif step == "4":
@@ -72,4 +72,3 @@ elif step == "4":
     type(Key.F4, KeyModifier.ALT)
     sleep(BigBreak)
     exit(0)
-    

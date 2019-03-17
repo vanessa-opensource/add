@@ -41,16 +41,15 @@ elif step == "2":
     exit(0)
 # Сохранение текста
 elif step == "3":
-    path2VanessaBehavoirFeature = sys.argv[2]
+    path2VanessaVanessaADDFeature = sys.argv[2]
     type('s', KeyModifier.CTRL)
     sleep(1)
     type(Key.DELETE)
     sleep(1)
-    paste(path2VanessaBehavoirFeature)
+    paste(path2VanessaVanessaADDFeature)
     exit(0)
 elif step == "4":
     type(Key.ENTER)
     type(Key.F4, KeyModifier.ALT)
     sleep(BigBreak)
     exit(0)
-    

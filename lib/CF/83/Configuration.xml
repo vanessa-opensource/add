@@ -130,7 +130,7 @@
 			<Role>НедоступнаяРоль</Role>
 			<CommonModule>СлужебныйМодуль</CommonModule>
 			<CommonCommand>ОбщаяКомандаДляСправочника1</CommonCommand>
-			<Constant>ПутьКVanessaBehavior</Constant>
+			<Constant>ПутьКVanessaADD</Constant>
 			<Constant>СлужебныйСчетчик</Constant>
 			<Catalog>Справочник1</Catalog>
 			<Catalog>Справочник2</Catalog>
@@ -143,7 +143,7 @@
 			<Enum>Перечисление1</Enum>
 			<Report>КомпоновкаТест</Report>
 			<Report>ОтчетПереносСтрок</Report>
-			<DataProcessor>ОткрытьVanessaBehavior</DataProcessor>
+			<DataProcessor>ОткрытьVanessaADD</DataProcessor>
 			<DataProcessor>МаксимизироватОкноПриОткрытии</DataProcessor>
 			<DataProcessor>ВыполнитьПроизвольноеВыражение</DataProcessor>
 			<DataProcessor>ПроверкаСостоянияЭлементов</DataProcessor>
