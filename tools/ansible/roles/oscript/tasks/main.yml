@@ -60,7 +60,7 @@
 - name: debug
   tags: oscript
   debug: msg={{oscript_output}}
-  
+
 - name: Download wget v8unpack.exe
   tags: oscript
   win_shell: cmd /c wget -c -O v8unpack.exe https://ci.appveyor.com/api/projects/dmpas/v8unpack/artifacts/Release%2Fv8unpack.exe?branch=master
@@ -88,9 +88,9 @@
   tags: oscript
   win_command: cmd /c opm install vanessa-runner
 
-- name: opm install vanessa-behavior
+- name: opm install add
   tags: oscript
-  win_command: cmd /c opm install vanessa-behavior
+  win_command: cmd /c opm install add
 
 - name: opm install precommit1c
   tags: oscript

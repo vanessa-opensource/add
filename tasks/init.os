@@ -79,8 +79,16 @@
 	СоздатьКаталог("./build/ServiceBases/allurereport/");
 	СоздатьКаталог("./build/ServiceBases/junitreport/");
 	СоздатьКаталог("./build/ServiceBases/cucumber/");
+
 	СоздатьКаталог("./build/allure");
 	СоздатьКаталог("./build/allure-tdd");
+	СоздатьКаталог("./build/junit-smoke");
+	СоздатьКаталог("./build/junit-tdd");
+
+	СоздатьКаталог("./build/allure-ordinaryapp");
+	СоздатьКаталог("./build/allure-tdd-ordinaryapp");
+	СоздатьКаталог("./build/junit-smoke-ordinaryapp");
+	СоздатьКаталог("./build/junit-tdd-ordinaryapp");
 
 	Если Аргументы.Команда = ВозможныеКоманды.file Тогда
 
@@ -135,10 +143,18 @@
 
 	КонецЕсли;
 
-	СтрокаЗапуска = Исходники.СтрокаЗапускаКомандыСборки(Бинарники1СХранятсяРядомСИсходниками, ИмяКаталогаСборки);
-	ИсполнитьКоманду(СтрокаЗапуска);
+	СоздатьКаталог(СтрШаблон("%1/vanessa-add", КаталогВременныхФайлов()));
 
 	СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./tools %1tools --ibname /F./build/ibservice", КаталогСборки);
+	ИсполнитьКоманду(СтрокаЗапуска);
+
+	СтрокаЗапуска = СтрШаблон("runner run --command VBParams=./tools/epf/init.json --execute %1tools/epf/init.epf", КаталогСборки);
+	ИсполнитьКоманду(СтрокаЗапуска);
+
+	СтрокаЗапуска = "runner run --command СоздатьАдминистратора --ibconnection /F./build/ibservicexdd";
+	ИсполнитьКоманду(СтрокаЗапуска);
+
+	СтрокаЗапуска = Исходники.СтрокаЗапускаКомандыСборки(Бинарники1СХранятсяРядомСИсходниками, ИмяКаталогаСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
 
 	СтрокаЗапуска = СтрШаблон("oscript ./tools/runner.os compileepf ./lib %1lib --ibname /F./build/ibservice", КаталогСборки);
@@ -155,12 +171,6 @@
 		ИсполнитьКоманду(СтрокаЗапуска);
 
 	КонецЕсли;
-
-	СтрокаЗапуска = СтрШаблон("runner run --command VBParams=./tools/epf/init.json --execute %1tools/epf/init.epf", КаталогСборки);
-	ИсполнитьКоманду(СтрокаЗапуска);
-
-	СтрокаЗапуска = "runner run --command СоздатьАдминистратора --ibconnection /F./build/ibservicexdd";
-	ИсполнитьКоманду(СтрокаЗапуска);
 
 	Лог.Информация("ВСЕ!");
 КонецПроцедуры

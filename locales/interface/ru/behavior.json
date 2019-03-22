@@ -1,6 +1,6 @@
 ﻿[
     {
-        "VanessaBehavior": "Vanessa Behavior"
+        "VanessaADD": "Vanessa ADD"
     },
     {
         "DebugLog": "Debug log"
@@ -135,7 +135,7 @@
         "ВыводитьТекстМодуляВместоПерегенерацииEPF": "Выводить текст модуля вместо перегенерации EPF"
     },
     {
-        "ПроверкаРаботыVanessaBehaviorВРежимеTestClient": "Проверка работы vanessa behavior в режиме test client"
+        "ПроверкаРаботыVanessaADDВРежимеTestClient": "Проверка работы Vanessa ADD в режиме test client"
     },
     {
         "ИмяТекущейСборки": "Имя текущей сборки"
@@ -438,10 +438,10 @@
         "КаталогиБиблиотекЗначение": "Группа настройки"
     },
     {
-        "КаталогиБиблиотекЗначение": "Проверка работы Vanessa-Behavior в режиме test client"
+        "КаталогиБиблиотекЗначение": "Проверка работы Vanessa-ADD в режиме test client"
     },
     {
-        "КаталогиБиблиотекЗначение": "Check Vanessa-Behavior on 1C test client session"
+        "КаталогиБиблиотекЗначение": "Check Vanessa-ADD on 1C test client session"
     },
     {
         "КаталогиБиблиотекЗначение": "Отчёты о запуске сценариев"
