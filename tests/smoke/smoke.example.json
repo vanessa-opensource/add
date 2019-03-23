@@ -53,5 +53,18 @@
                 "ОперацияПоПлатежнойКарте/ЗаявкаНаРасходованиеДенежныхСредств"
             ]
         }
+    },
+    "SmokeCommonModules": {
+        "Subsystems": ["FoxyLink",
+            "FoxyLink.GeneralSettings",
+	    "FoxyLink.Integration",
+            "FoxyLink.Plugins",
+            "FoxyLink.Plugins.Channels",
+            "FoxyLink.Plugins.EventHandlers",
+            "FoxyLink.Plugins.Formats",
+            "FoxyLink.Tasks",
+            "FoxyLink.*"
+         ],
+         "ExcludedCommonModules": ["SocialNetworks_ExchangeServer"]
     }
 }
