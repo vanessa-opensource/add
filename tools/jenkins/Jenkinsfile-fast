@@ -235,7 +235,7 @@ node("slave") {
             def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
 
             def errors = []
-            timeout(25){
+            timeout(40){
                 timestamps {
                     try{
                         cmd(command, isUnix)
