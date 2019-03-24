@@ -7,7 +7,7 @@
    "СтрокаПодключенияКБазе":"/F./build/ServiceBases/v83ServiceBase836",
    "ДополнительныеПараметры":"/RunModeOrdinaryApplication",
    "ЗапускатьТолстыйКлиент": "Истина",
-   "ПутьКVanessaBehavior": "./build/bddRunner.epf",
+   "ПутьКVanessaADD": "./build/bddRunner.epf",
    "КаталогФич": "./build/features",
    "ВыполнитьСценарии": "Истина",
    "ДелатьОтчетВФорматеАллюр": "Истина",
@@ -26,7 +26,7 @@
    "СписокТеговИсключение":[
    "IgnoreOnCIMainBuild",
    "IgnoreOnOFBuilds",
-   "IgnoreOnOF836", 
+   "IgnoreOnOF836",
    "Ignore"
    ]
 }

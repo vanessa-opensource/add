@@ -8705,16 +8705,16 @@
 																	<ContextMenu name="ДелатьЛогВыполненияСценариевВЖРКонтекстноеМеню" id="339"/>
 																	<ExtendedTooltip name="ДелатьЛогВыполненияСценариевВЖРРасширеннаяПодсказка" id="1378"/>
 																</CheckBoxField>
-																<CheckBoxField name="ПроверкаРаботыVanessaBehaviorВРежимеTestClient" id="481">
-																	<DataPath>Объект.ПроверкаРаботыVanessaBehaviorВРежимеTestClient</DataPath>
+																<CheckBoxField name="ПроверкаРаботыVanessaADDВРежимеTestClient" id="481">
+																	<DataPath>Объект.ПроверкаРаботыVanessaADDВРежимеTestClient</DataPath>
 																	<Title>
 																		<v8:item>
 																			<v8:lang>ru</v8:lang>
-																			<v8:content>Проверка работы Vanessa-Behavior в режиме test client</v8:content>
+																			<v8:content>Проверка работы Vanessa-ADD в режиме test client</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>en</v8:lang>
-																			<v8:content>Check Vanessa-Behavior on 1C test client session</v8:content>
+																			<v8:content>Check Vanessa-ADD on 1C test client session</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>am</v8:lang>
@@ -8722,7 +8722,7 @@
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>az</v8:lang>
-																			<v8:content>Yoxlama iş Vanessa-Behavior rejimində test client</v8:content>
+																			<v8:content>Yoxlama iş Vanessa-ADD rejimində test client</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>bg</v8:lang>
@@ -8730,11 +8730,11 @@
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>et</v8:lang>
-																			<v8:content>Kontroll töö Vanessa-Behavior-režiimis test client</v8:content>
+																			<v8:content>Kontroll töö Vanessa-ADD-režiimis test client</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>fr</v8:lang>
-																			<v8:content>Vérifier le fonctionnement de Vanessa-Behavior en mode de test client</v8:content>
+																			<v8:content>Vérifier le fonctionnement de Vanessa-ADD en mode de test client</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>ka</v8:lang>
@@ -8742,7 +8742,7 @@
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>de</v8:lang>
-																			<v8:content>Überprüfung der Arbeit von Vanessa-Behavior im Modus test client</v8:content>
+																			<v8:content>Überprüfung der Arbeit von Vanessa-ADD im Modus test client</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>hu</v8:lang>
@@ -8750,7 +8750,7 @@
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>it</v8:lang>
-																			<v8:content>Il lavoro di verifica Vanessa-Behavior in modalità test client</v8:content>
+																			<v8:content>Il lavoro di verifica Vanessa-ADD in modalità test client</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>lv</v8:lang>
@@ -8758,7 +8758,7 @@
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>lt</v8:lang>
-																			<v8:content>Veikimo tikrinimas Vanessa-Behavior režimu test client</v8:content>
+																			<v8:content>Veikimo tikrinimas Vanessa-ADD režimu test client</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>mn</v8:lang>
@@ -8766,11 +8766,11 @@
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>pl</v8:lang>
-																			<v8:content>Sprawdzenie działania Vanessa-Behavior w trybie test client</v8:content>
+																			<v8:content>Sprawdzenie działania Vanessa-ADD w trybie test client</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>ro</v8:lang>
-																			<v8:content>Verificarea funcționării Vanessa-Behavior în modul de test client</v8:content>
+																			<v8:content>Verificarea funcționării Vanessa-ADD în modul de test client</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>sl</v8:lang>
@@ -8778,7 +8778,7 @@
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>es</v8:lang>
-																			<v8:content>Verificación del funcionamiento de Vanessa-Behavior en el modo de test client</v8:content>
+																			<v8:content>Verificación del funcionamiento de Vanessa-ADD en el modo de test client</v8:content>
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>sv</v8:lang>
@@ -8786,15 +8786,15 @@
 																		</v8:item>
 																		<v8:item>
 																			<v8:lang>tr</v8:lang>
-																			<v8:content>Çalışma kontrol Vanessa-Behavior modunda test client</v8:content>
+																			<v8:content>Çalışma kontrol Vanessa-ADD modunda test client</v8:content>
 																		</v8:item>
 																	</Title>
 																	<TitleLocation>Right</TitleLocation>
 																	<CheckBoxType>Auto</CheckBoxType>
-																	<ContextMenu name="ПроверкаРаботыVanessaBehaviorВРежимеTestClientКонтекстноеМеню" id="482"/>
-																	<ExtendedTooltip name="ПроверкаРаботыVanessaBehaviorВРежимеTestClientРасширеннаяПодсказка" id="1379"/>
+																	<ContextMenu name="ПроверкаРаботыVanessaADDВРежимеTestClientКонтекстноеМеню" id="482"/>
+																	<ExtendedTooltip name="ПроверкаРаботыVanessaADDВРежимеTestClientРасширеннаяПодсказка" id="1379"/>
 																	<Events>
-																		<Event name="OnChange">ПроверкаРаботыVanessaBehaviorВРежимеTestClientПриИзменении</Event>
+																		<Event name="OnChange">ПроверкаРаботыVanessaADDВРежимеTestClientПриИзменении</Event>
 																	</Events>
 																</CheckBoxField>
 																<CheckBoxField name="ПоказыватьНомерСтрокиДереваПриВозникновенииОшибки" id="1750">
