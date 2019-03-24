@@ -130,9 +130,9 @@
 			<Role>Роль1</Role>
 			<Role>ПраваНеобходимыеДляТестирования</Role>
 			<CommonModule>xddКлиент</CommonModule>
-			<CommonModule>xddСервер</CommonModule>
+			<CommonModule>xddВызовСервера</CommonModule>
 			<CommonModule>ЗапускПриложенияКлиент</CommonModule>
-			<CommonModule>ЗапускПриложенияСервер</CommonModule>
+			<CommonModule>ЗапускПриложенияВызовСервера</CommonModule>
 			<ExchangePlan>ПланОбмена1</ExchangePlan>
 			<FunctionalOption>ФункциональнаяОпция1</FunctionalOption>
 			<CommonForm>ФормаОтчета</CommonForm>
