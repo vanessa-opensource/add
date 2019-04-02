@@ -4507,11 +4507,11 @@
 			</Attribute>
 			<Attribute uuid="71b57c14-28e4-40a5-aeae-2987c6fa9fd3">
 				<Properties>
-					<Name>ВерсияVB</Name>
+					<Name>ВерсияVanessaADD</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Версия VB</v8:content>
+							<v8:content>Версия Vanessa-ADD</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
