@@ -14,7 +14,7 @@ addons:
   apt:
     packages:
       # 7z is used for packaging (see before_deploy)
-      - p7zip-full  
+      - p7zip-full
 
 cache:
   directories:
@@ -37,9 +37,9 @@ before_cache:
   - rm -rf $TRAVIS_BUILD_DIR/build/ib
   - rm -rf $TRAVIS_BUILD_DIR/build/ibservicexdd
   - rm -rf $TRAVIS_BUILD_DIR/build/ServiceBases
-  
-  
-  
+
+
+
 #install:
 #  - docker pull evilbeaver/onescript:1.0.19
 
@@ -123,7 +123,7 @@ jobs:
           - "add.7z"
           - "add-*.ospx"
           - "add.tar.bz2"
-        file_glob: "true" 
+        file_glob: "true"
         skip_cleanup: true
         on:
           tags: true
