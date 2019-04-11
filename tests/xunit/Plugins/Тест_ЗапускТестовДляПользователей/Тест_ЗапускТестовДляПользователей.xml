@@ -23,6 +23,8 @@
 			<DefaultForm/>
 			<AuxiliaryForm/>
 		</Properties>
-		<ChildObjects/>
+		<ChildObjects>
+			<Template>СозданиеОдногоПользователяИБ</Template>
+		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>

@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"><html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"></meta><link rel="stylesheet" type="text/css" href="v8help://service_book/service_style"></link><meta name="GENERATOR" content="MSHTML 11.00.10570.1001"></meta></head><body>
-<p><font size="3" face="Arial">Vanessa-Behavior - это фреймворк для разработки в 1С используя методологию BDD.</font></p>
-<p><font size="3" face="Arial">Страница проекта: <a href="https://github.com/silverbulleters/vanessa-behavior">https://github.com/silverbulleters/vanessa-behavior</a></font></p>
-<p><font size="3" face="Arial">Vanessa-Behavior является аналогом Cucumber для разработки на платформе 1С:Предприятие.</font></p>
+<p><font size="3" face="Arial">Vanessa-ADD - это фреймворк для разработки в 1С используя методологию BDD.</font></p>
+<p><font size="3" face="Arial">Страница проекта: <a href="https://github.com/silverbulleters/add">https://github.com/silverbulleters/add</a></font></p>
+<p><font size="3" face="Arial">Vanessa-ADD является аналогом Cucumber для разработки на платформе 1С:Предприятие.</font></p>
 <p><font size="2" face="Arial">Поддерживаются версии платформы:</font></p>
 <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
 <p><font size="1" face="Arial"> 8.3.6 в режиме совместимости 8.2, 8.3.6, 8.3.7, 8.3.8, 8.3.9, 8.3.10.</font></p></blockquote>
@@ -41,7 +41,7 @@
 <p>15. <a href="#15. Как узнать детали ошибки.">Как узнать детали ошибки.</a></p>
 <p>16. <a href="#16. Работа со сценариями на других языках.">Работа со сценариями на других языках.</a></p>
 <p>17. Список экспортных процедур и функций.</p>
-<p>18. Запуск Vanessa-Behavior на CI.</p>
+<p>18. Запуск Vanessa-ADD на CI.</p>
 <p>19. Инструкция для контрибьютерров.</p>
 <p> </p>
 <p> </p>
@@ -101,7 +101,7 @@
 <p> </p></blockquote>
 <p dir="ltr"><a name="Тег @tree"><font size="2"><strong>1.2 Тег @tree</strong></font></a></p>
 <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
-<p>Vanessa-Behavior умеет работать с <strong>расширенным</strong> синтаксисом языка сценариев <strong>Gherkin</strong>. Назовём его <strong>Turbo Gherkin</strong>.</p>
+<p>Vanessa-ADD умеет работать с <strong>расширенным</strong> синтаксисом языка сценариев <strong>Gherkin</strong>. Назовём его <strong>Turbo Gherkin</strong>.</p>
 <p>Если в заголовке фичи указан тег <strong>@tree</strong>, тогда парсер фич будет особым образом интерпретировать отступы (символы Tab, пробелы недопустимы!!!) в тексте.</p>
 <p>Шаги будут образовывать дерево шагов. Т.е. шаги с большим значением отступа будут считаться вложенными. Как в python.</p>
 <p>Это помогает структурировать текст feature файла.</p>
@@ -118,7 +118,7 @@
 <p align="center"><img src="_files/export01.png"></img></p>
 <p align="left">И рядом с ним (или в подчиненном каталоге, или в каталоге библиотек) лежит другой feature файл, у которого указан тег <strong>@exportscenarios</strong> и в нём есть сценарий с именем <strong>"Я открываю Visual studio code"</strong>.</p>
 <p align="center"><img src="_files/export02.png"></img></p>
-<p align="left">Тогда если загрузить первый сценарий в Vanessa-Behavior - шаг <strong>"Когда Я открываю Visual Studio Code" </strong>загрузится как ветка дерева.</p>
+<p align="left">Тогда если загрузить первый сценарий в Vanessa-ADD - шаг <strong>"Когда Я открываю Visual Studio Code" </strong>загрузится как ветка дерева.</p>
 <p align="center"><img src="_files/export03.png"></img></p>
 <p align="left"> </p>
 <p align="left">Чтобы передать обычный параметр в подчиненный сценарий - надо чтобы строка с именем сценария содержала параметры. Например, есть вот такой сценарий:</p>
@@ -126,16 +126,16 @@
 <p align="left">В него можно передать свой параметр <strong>"ИмяФайла"</strong>. </p>
 <p align="center"><img src="_files/export06.png"></img></p>
 <p align="left"> </p>
-<p align="left">Тогда в Vanessa-Behavior это отобразится вот так:</p>
+<p align="left">Тогда в Vanessa-ADD это отобразится вот так:</p>
 <p align="center"><img src="_files/export07.png"></img></p>
 <p align="left"> </p>
 <p align="left"> </p>
 <p align="left"><font size="2"><strong>2. <a name="Как загрузить feature файл.">Как загрузить feature файл. Тэги.</a></strong></font></p>
 <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
-<p align="left"><font size="1">Vanessa-Behavior позволяет загрузить либо один feature файл (Ctrl+F2), либо feature файлы из каталога (Alt+F2).</font></p>
+<p align="left"><font size="1">Vanessa-ADD позволяет загрузить либо один feature файл (Ctrl+F2), либо feature файлы из каталога (Alt+F2).</font></p>
 <p align="center"><img src="_files/LoadFeature01.png"></img></p>
 <p align="left">Если выбран пункт "Загрузить один файл" - тогда feature файл будет загружен, не смотря на наличие в нём тегов.</p>
-<p align="left">Если выбран пункт "Загрузить файлы из каталога" - тогда возможны варианты, в зависимости от указанных тегов в настройках Vanessa-Behavior.</p>
+<p align="left">Если выбран пункт "Загрузить файлы из каталога" - тогда возможны варианты, в зависимости от указанных тегов в настройках Vanessa-ADD.</p>
 <p align="center"><img src="_files/Tags01.png"></img></p>
 <p align="left">Если заполнен список "Список исключаемых тэгов" - тогда если в feature файле указан такой тэг в заголовке feature, весь feature файл не будет загружен. Если тэг был указан у одного или нескольких сценариев, <br>данные сценарии не будет загружены, а остальные загрузятся.</p>
 <p align="left">Если заполнен список "Тэги для запуска" - тогда если в feature данный тэг не встречается нигде - весь feature файл будет проигнорирован. Если тэг есть в заголовке feature, тогда будут загружены все сценарии из feature.<br>Если тэг указан у одного или нескольких сценариев - тогда будут загружены только эти сценарии.<br><br></p></blockquote>
@@ -144,7 +144,7 @@
 <p dir="ltr" align="left"><font size="1">Что выполнить все сценарии надо нажать на кнопку "<strong>Выполнить сценарии</strong>".</font></p>
 <p dir="ltr" align="left"><font size="1">Если вы внесли изменения в epf или в фичу, тогда надо нажать на кнопку "<strong>Перезагрузить сценарии</strong>". Иначе будут использоваться старые версии фич и обработок.</font></p>
 <p dir="ltr" align="left"><font size="1">При постоянном внесении правок в фичу или в epf - удобно использовать кнопку "<strong>Перезагрузить и выполнить</strong>".</font></p>
-<p dir="ltr" align="left"><font size="1">Также в Vanessa-Behavior можно использовать следующие варианты запуска фич на выполнение (доступно в контекстном меню):</font></p>
+<p dir="ltr" align="left"><font size="1">Также в Vanessa-ADD можно использовать следующие варианты запуска фич на выполнение (доступно в контекстном меню):</font></p>
 <p dir="ltr" align="center"><img src="_files/debug01.png"></img></p>
 <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
 <p dir="ltr" align="left"><font size="1">1. <strong>Выполнить данный сценарий с текущего шага</strong> (Ctrl+F5). Позволяет выполнить сценарий с текущего шага и до конца данного сценария. Другие сценарии выполняться не будут.</font></p>
@@ -183,7 +183,7 @@
 <p dir="ltr" align="left"><strong><font size="3"></font></strong> </p>
 <h2><a name="Быстрое создание файла сценария">8. Запись</a> действий пользователя.</h2>
 <h3>Запись поведения пользователя</h3>
-<p>1. На вкладке «Работа с UI» имеется набор кнопок, отвечающих за взаимодействие с клиентом тестирования из Vanessa Behavior.</p>
+<p>1. На вкладке «Работа с UI» имеется набор кнопок, отвечающих за взаимодействие с клиентом тестирования из Vanessa ADD.</p>
 <p>«Подключит TestClient» - запуск клиента тестирования</p>
 <p>«Начать запись поведения» - запуск клиента тестирования и начало запись журнала действий пользователя.</p>
 <p>«Закончить запись поведения» - останавливает запись журнала действий пользователя и производит автоматическую конвертацию в сценарий на языке Gherkin.</p>
@@ -198,7 +198,7 @@
 <p align="center"><img id="Рисунок 4" src="_files/image004.jpg" width="492" height="82"></img></p>
 <p>4. Откроется файл журнала действий пользователя, который необходимо сохранить и передать разработчику</p>
 <p align="center"><img id="Рисунок 1" src="_files/image005.jpg" width="539" height="285"></img></p>
-<p>5. В дальнейшем для получения сценария на языке Gherkin необходимо в обработке Vanessa Behavior перейти на вкладку «Работа с UI -&gt; Исходный XML». Вставить содержимое журнала действий пользователя в соответствующее окно.</p>
+<p>5. В дальнейшем для получения сценария на языке Gherkin необходимо в обработке Vanessa ADD перейти на вкладку «Работа с UI -&gt; Исходный XML». Вставить содержимое журнала действий пользователя в соответствующее окно.</p>
 <p> </p>
 <p align="center"><img id="Рисунок 5" src="_files/image006.jpg" width="624" height="414"></img></p>
 <p>Нажать кнопку «Преобразовать исходный XML» и получить готовый сценарий.</p>
@@ -234,16 +234,16 @@
 <ul dir="ltr"><li>
 <div>Если у вас версия платформы 8.3.8 и выше, тогда вам доступен метод <strong>ЗаписатьСодержимоеВФайл</strong>().<br>Этот метод позволяет сэмулировать сохранение табличного документа в файл. И таким образом его может получить TestManager для обработки.<br>Но этот метод не работет, когда TestClient запущен как Web клиент.<br>Плюс этот метод не сработает, если табличный документ не доступен для редактирования.<br><br>Поэтому у платформы есть второй метод: <strong>ПолучитьТекстОбласти</strong>(&lt;Область&gt;).<br><br><em>Хорошая новость</em>: этот метод позволяет обратиться к нужной ячейке по её адресу и получить её текст.<br><br><em>Плохая новость</em>: для обхода табличного документа таким способом нужно знать его высоту и ширину.<br><br><em>Хорошая новость</em>: в режиме Web клиента при вызове <strong>УстановитьТекущуюОбласть</strong>(&lt;Область&gt;), при попытке выйти за границы макета происходит возврат на его край.<br>Таким образом можно нащупать где заканчивается макет, и пользователю необязательно указывать его границы.<br><br><em>Плохая новость</em>: в тонком клиенте такой трюк не работает. При попытке активизировать ячейку за границей макета - это и проихсодит.<br><br>Поэтому пользователю надо знать границы макета заранее, чтобы прочитать его по ячейкам в тонком клиенте.<br><br></div>
 </li><li>
-<div>Как прочитать табличный документ в своём сценарии и сравнить с ожидаемым значением:<br>Для чтения макетов VB использует следущие методы:<br><strong>ПолучитьТабличныйДокументTestClient</strong> - возвращает ТабличныйДокумент <br><strong>ПолучитьТабДокИзTestClientКакМассив</strong> - возвращает массив<br><br>Вы можете использовать типовые шаги из поставки VB, такие как:<br><em>И Табличный документ "РеквизитТабличныйДокумент" стал равен макету "ИмяМакета"<br><br>И область "R1C1:R10C10" табличного документа "РеквизитТабличныйДокумент" равна макету "ИмяМакета"<br><br>И табличный документ "РеквизитТабличныйДокумент" стал равен:<br>| Значение1 | Значение2 |<br>| Значение3 | Значение4 |</em></div>
+<div>Как прочитать табличный документ в своём сценарии и сравнить с ожидаемым значением:<br>Для чтения макетов Vanessa.ADD использует следущие методы:<br><strong>ПолучитьТабличныйДокументTestClient</strong> - возвращает ТабличныйДокумент <br><strong>ПолучитьТабДокИзTestClientКакМассив</strong> - возвращает массив<br><br>Вы можете использовать типовые шаги из поставки Vanessa.ADD, такие как:<br><em>И Табличный документ "РеквизитТабличныйДокумент" стал равен макету "ИмяМакета"<br><br>И область "R1C1:R10C10" табличного документа "РеквизитТабличныйДокумент" равна макету "ИмяМакета"<br><br>И табличный документ "РеквизитТабличныйДокумент" стал равен:<br>| Значение1 | Значение2 |<br>| Значение3 | Значение4 |</em></div>
 </li><li>
-<div>Подведем итог выше сказанного:<br>1. Если у вас 8.3.8 и выше (<strong>лучше 8.3.10 и выше</strong>), тогда <strong>вы можете не указывать область чтения макетов</strong>.<br>VB будет их считывать целиком как в тонком клиенте так и в Web.<br><strong>Т.е. вам не придётся делать разные сценарии для тонкого клиента и web клиента.</strong><br>Но макет должнен быть "Доступен" пользователю (метод ТекущаяДоступность()).<br><br>2. Если вы хотите сравнить часть макета с эталоном - используйте шаг<br>    <em>И область "R1C1:R10C10" табличного документа "РеквизитТабличныйДокумент" равна макету "ИмяМакета"</em> или подобные шаги<br><br>3. Если у вас версия платформы меньше 8.3.8 (<strong>не рекомендуется</strong>), тогда даже перед чтением макета целиком, надо будет указывать область чтения через специальный шаг <br>   <em>Когда Я задаю параметры чтения области макета "R1C1:R100C20"<br></em>По умолчанию область чтения задана как "R1C1:R30C20" (30 рядов и 20 колонок).<br><strong>Важно! Если вы изменили область чтения, то она применится и при чтении следующих табличных документов.</strong></div></li></ul><p dir="ltr"><span style="BACKGROUND: yellow"><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"></span></span> </p><span style="BACKGROUND: yellow"><font style="BACKGROUND-COLOR: #ffffff"><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"></span></font></span></font>
+<div>Подведем итог выше сказанного:<br>1. Если у вас 8.3.8 и выше (<strong>лучше 8.3.10 и выше</strong>), тогда <strong>вы можете не указывать область чтения макетов</strong>.<br>Vanessa.ADD будет их считывать целиком как в тонком клиенте так и в Web.<br><strong>Т.е. вам не придётся делать разные сценарии для тонкого клиента и web клиента.</strong><br>Но макет должнен быть "Доступен" пользователю (метод ТекущаяДоступность()).<br><br>2. Если вы хотите сравнить часть макета с эталоном - используйте шаг<br>    <em>И область "R1C1:R10C10" табличного документа "РеквизитТабличныйДокумент" равна макету "ИмяМакета"</em> или подобные шаги<br><br>3. Если у вас версия платформы меньше 8.3.8 (<strong>не рекомендуется</strong>), тогда даже перед чтением макета целиком, надо будет указывать область чтения через специальный шаг <br>   <em>Когда Я задаю параметры чтения области макета "R1C1:R100C20"<br></em>По умолчанию область чтения задана как "R1C1:R30C20" (30 рядов и 20 колонок).<br><strong>Важно! Если вы изменили область чтения, то она применится и при чтении следующих табличных документов.</strong></div></li></ul><p dir="ltr"><span style="BACKGROUND: yellow"><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"></span></span> </p><span style="BACKGROUND: yellow"><font style="BACKGROUND-COLOR: #ffffff"><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"></span></font></span></font>
 <h2><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"><span style="BACKGROUND: yellow">
 <p dir="ltr"><font size="3"></font></p></span> </span></h2></span></span></blockquote>
 <h2 dir="ltr"><font style="BACKGROUND-COLOR: #ffffff"><a name="14. Как создать автовидеоинструкцию.">14. Как создать автовидеоинструкцию.</a></font></h2>
 <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
 <h2 style="MARGIN-RIGHT: 0px" dir="ltr"><font size="+0"><font style="face: Verdana"><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"><strong>Первое что надо сделать:</strong></span></font></font></h2>
 <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
-<h2 style="MARGIN-RIGHT: 0px" dir="ltr"><font size="+0"><font size="+0"><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"><strong>1. Прочитать вот эту инструкцию <a href="https://github.com/silverbulleters/vanessa-behavior/blob/develop/MakeAutoVideo.md">https://github.com/silverbulleters/vanessa-behavior/blob/develop/MakeAutoVideo.md</a></strong></span></font></font></h2>
+<h2 style="MARGIN-RIGHT: 0px" dir="ltr"><font size="+0"><font size="+0"><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"><strong>1. Прочитать вот эту инструкцию <a href="https://github.com/silverbulleters/add/blob/develop/doc/bdd/MakeAutoVideo.md">https://github.com/silverbulleters/add/blob/develop/doc/bdd/MakeAutoVideo.md</a></strong></span></font></font></h2>
 <h2 style="MARGIN-RIGHT: 0px" dir="ltr"><font size="+0"><font size="+0"><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"><strong>2. Посмотреть вот это видео <a href="https://www.youtube.com/watch?v=BfXowJH5uP0">https://www.youtube.com/watch?v=BfXowJH5uP0</a></strong></span></font></font></h2></blockquote>
 <h2 style="MARGIN-RIGHT: 0px" dir="ltr"><font size="+0"><font style="face: Verdana"><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"><strong>Далее изложу основные принципы:</strong></span></font></font></h2>
 <h2 style="MARGIN-RIGHT: 0px" dir="ltr"><font size="+0"><font style="face: Verdana"><span style="FONT-SIZE: 15px; FONT-FAMILY: Arial, Tahoma, Verdana, sans-serif; WHITE-SPACE: normal; WORD-SPACING: 0px; TEXT-TRANSFORM: none; FLOAT: none; FONT-WEIGHT: normal; COLOR: rgb(0,0,0); FONT-STYLE: normal; ORPHANS: 2; WIDOWS: 2; DISPLAY: inline !important; LETTER-SPACING: normal; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; font-variant-ligatures: normal; font-variant-caps: normal; -webkit-text-stroke-width: 0px; text-decoration-style: initial; text-decoration-color: initial"><strong>1. Каждый шаг в видеоинструкции будет озвучен и к нему будут добавлены субтитры.</strong></span></font></font></h2>
@@ -303,11 +303,11 @@
 <p dir="ltr"> </p>
 <h2 dir="ltr"><font style="BACKGROUND-COLOR: #ffffff"><a name="16. Работа со сценариями на других языках.">16. Работа со сценариями на других языках.</a></font></h2>
 <blockquote style="MARGIN-RIGHT: 0px" dir="ltr">
-<p dir="ltr">Vanessa-Behavior позволяет работать со сценариями на разных яхыках.</p>
+<p dir="ltr">Vanessa-ADD позволяет работать со сценариями на разных яхыках.</p>
 <p dir="ltr">1. Чтобы выбрать язык, на котором вы хотите накликать фичу - надо использовать соответствующую настройку.</p>
 <p dir="ltr"><img src="_files/06.png"></img></p>
 <p dir="ltr">2. Далее, при накликиванни фичи ваш сценарий будет автоматически переводится на выбранный язык. Чтобы работал перевод - должен быть заполнен файл перевода шагов, расположенный тут</p>
-<p dir="ltr">{КаталогVB}\locales\Gherkin\  например en.mxl.</p>
+<p dir="ltr">{КаталогVanessaADD}\locales\Gherkin\  например en.mxl.</p>
 <p dir="ltr">3. Также вам станет досупна кнопка перевода сценария с русского языка на выбранный вами язык.</p>
 <p dir="ltr"><img src="_files/07.png"></img></p>
 <p dir="ltr">4. Также при просмотре дерева известных шагов - вы можете выбрать опцию "Показать шаги на Русском"</p>

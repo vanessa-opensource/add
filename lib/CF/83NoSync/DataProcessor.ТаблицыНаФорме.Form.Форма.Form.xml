@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Form xmlns="http://v8.1c.ru/8.3/xcf/logform" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1"/>
+	<ChildItems>
+		<InputField name="СоставнойРеквизит" id="1">
+			<DataPath>Объект.СоставнойРеквизит</DataPath>
+			<EditMode>EnterOnInput</EditMode>
+			<ContextMenu name="СоставнойРеквизитКонтекстноеМеню" id="2"/>
+			<ExtendedTooltip name="СоставнойРеквизитРасширеннаяПодсказка" id="3"/>
+		</InputField>
+		<Table name="ТабличнаяЧасть1" id="4">
+			<Representation>List</Representation>
+			<AutoInsertNewRow>true</AutoInsertNewRow>
+			<EnableStartDrag>true</EnableStartDrag>
+			<EnableDrag>true</EnableDrag>
+			<DataPath>Объект.ТабличнаяЧасть1</DataPath>
+			<RowFilter xsi:nil="true"/>
+			<ContextMenu name="ТабличнаяЧасть1КонтекстноеМеню" id="5"/>
+			<AutoCommandBar name="ТабличнаяЧасть1КоманднаяПанель" id="6"/>
+			<ExtendedTooltip name="ТабличнаяЧасть1РасширеннаяПодсказка" id="7"/>
+			<SearchStringAddition name="ТабличнаяЧасть1СтрокаПоиска" id="8">
+				<AdditionSource>
+					<Item>ТабличнаяЧасть1</Item>
+					<Type>SearchStringRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабличнаяЧасть1СтрокаПоискаКонтекстноеМеню" id="9"/>
+				<ExtendedTooltip name="ТабличнаяЧасть1СтрокаПоискаРасширеннаяПодсказка" id="10"/>
+			</SearchStringAddition>
+			<ViewStatusAddition name="ТабличнаяЧасть1СостояниеПросмотра" id="11">
+				<AdditionSource>
+					<Item>ТабличнаяЧасть1</Item>
+					<Type>ViewStatusRepresentation</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабличнаяЧасть1СостояниеПросмотраКонтекстноеМеню" id="12"/>
+				<ExtendedTooltip name="ТабличнаяЧасть1СостояниеПросмотраРасширеннаяПодсказка" id="13"/>
+			</ViewStatusAddition>
+			<SearchControlAddition name="ТабличнаяЧасть1УправлениеПоиском" id="14">
+				<AdditionSource>
+					<Item>ТабличнаяЧасть1</Item>
+					<Type>SearchControl</Type>
+				</AdditionSource>
+				<ContextMenu name="ТабличнаяЧасть1УправлениеПоискомКонтекстноеМеню" id="15"/>
+				<ExtendedTooltip name="ТабличнаяЧасть1УправлениеПоискомРасширеннаяПодсказка" id="16"/>
+			</SearchControlAddition>
+			<ChildItems>
+				<LabelField name="ТабличнаяЧасть1НомерСтроки" id="17">
+					<DataPath>Объект.ТабличнаяЧасть1.LineNumber</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТабличнаяЧасть1НомерСтрокиКонтекстноеМеню" id="18"/>
+					<ExtendedTooltip name="ТабличнаяЧасть1НомерСтрокиРасширеннаяПодсказка" id="19"/>
+				</LabelField>
+				<InputField name="ТабличнаяЧасть1СоставнойРеквизитТаблицы" id="20">
+					<DataPath>Объект.ТабличнаяЧасть1.СоставнойРеквизитТаблицы</DataPath>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТабличнаяЧасть1СоставнойРеквизитТаблицыКонтекстноеМеню" id="21"/>
+					<ExtendedTooltip name="ТабличнаяЧасть1СоставнойРеквизитТаблицыРасширеннаяПодсказка" id="22"/>
+				</InputField>
+				<InputField name="ТабличнаяЧасть1Реквизит1" id="23">
+					<DataPath>Объект.ТабличнаяЧасть1.Реквизит1</DataPath>
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Рек
+визит
+1</v8:content>
+						</v8:item>
+					</Title>
+					<EditMode>EnterOnInput</EditMode>
+					<ContextMenu name="ТабличнаяЧасть1Реквизит1КонтекстноеМеню" id="24"/>
+					<ExtendedTooltip name="ТабличнаяЧасть1Реквизит1РасширеннаяПодсказка" id="25"/>
+				</InputField>
+			</ChildItems>
+		</Table>
+	</ChildItems>
+	<Attributes>
+		<Attribute name="Объект" id="1">
+			<Type>
+				<v8:Type>cfg:DataProcessorObject.ТаблицыНаФорме</v8:Type>
+			</Type>
+			<MainAttribute>true</MainAttribute>
+		</Attribute>
+	</Attributes>
+</Form>
