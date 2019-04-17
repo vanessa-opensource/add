@@ -68,6 +68,20 @@ node("slave") {
             cmd("opm run init file --v8version 8.3.10", isUnix)
         }
     }
+
+    echo "Сборка пакета"
+    timeout(30){
+        command = """opm build ./"""
+        try{
+            cmd(command, isUnix)
+        } catch (e) {
+            echo "build status : ${e}"
+            currentBuild.result = 'UNSTABLE'
+        }
+    }
+
+    makeArtifacts('**/add*.ospx')
+    makeArtifacts('**/add*.zip')
   }
 
   stage('Контроль технического долга'){
@@ -235,7 +249,7 @@ node("slave") {
             def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
 
             def errors = []
-            timeout(25){
+            timeout(40){
                 timestamps {
                     try{
                         cmd(command, isUnix)
@@ -282,18 +296,18 @@ node("slave") {
             // }
             makeAllure(resultsForAllure)
 
-            timeout(30){
-                command = """opm build ./"""
-                try{
-                    cmd(command, isUnix)
-                } catch (e) {
-                    echo "build status : ${e}"
-                    currentBuild.result = 'UNSTABLE'
-                }
-            }
+            // timeout(30){
+            //     command = """opm build ./"""
+            //     try{
+            //         cmd(command, isUnix)
+            //     } catch (e) {
+            //         echo "build status : ${e}"
+            //         currentBuild.result = 'UNSTABLE'
+            //     }
+            // }
 
-            makeArtifacts('**/add*.ospx')
-            makeArtifacts('**/add*.zip')
+            // makeArtifacts('**/add*.ospx')
+            // makeArtifacts('**/add*.zip')
 
             makeArtifacts('**/ServiceBases/**/junitreport/**')
             makeArtifacts('**/ServiceBases/**/allurereport/**')
