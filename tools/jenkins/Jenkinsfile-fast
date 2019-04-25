@@ -154,7 +154,7 @@ node("slave") {
     def errors = []
     reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
     timestamps {
-        timeout(15){
+        timeout(25){
             try{
                 cmd("vrunner xunit tests/smoke --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
             } catch (e) {
@@ -167,7 +167,7 @@ node("slave") {
 
     reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke-ordinaryapp/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-ordinaryapp/allure.xml}\" "
     timestamps {
-        timeout(15){
+        timeout(25){
             try{
                 cmd("vrunner xunit tests/smoke --ordinaryapp 1 --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
             } catch (e) {
@@ -186,7 +186,7 @@ node("slave") {
     def errors = []
     reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\" "
 
-    timeout(15){
+    timeout(25){
         timestamps {
             try{
                 cmd("vrunner xunit tests/xunit --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
@@ -199,7 +199,7 @@ node("slave") {
     prepareForAllure("build/allure-tdd/", 'allure-tdd', allureResults)
 
     reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd-ordinaryapp/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd-ordinaryapp/allure.xml}\" "
-    timeout(15){
+    timeout(25){
         timestamps {
             try{
                 cmd("vrunner xunit tests/xunit --ordinaryapp 1 --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
@@ -221,7 +221,7 @@ node("slave") {
     def command = "vrunner vanessa --settings tools/JSON/vrunner.json --path features/${buildPath}";
 
     def errors = []
-    timeout(25){
+    timeout(40){
         timestamps {
             try{
                 cmd(command, isUnix)
@@ -249,7 +249,7 @@ node("slave") {
             def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
 
             def errors = []
-            timeout(40){
+            timeout(60){
                 timestamps {
                     try{
                         cmd(command, isUnix)
