@@ -285,22 +285,22 @@ firsttasks["slave"] = {
 //         sh 'sleep 10'
 //         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install && sudo opm update -all"'
 //         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 opm run init && opm run clean"'
-//         sh 'sudo rm -f vanessa-behavior*.ospx'
+//         sh 'sudo rm -f add*.ospx'
 //         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 opm build ./"'
-//         sh 'sudo rm -rf vanessa-behavior.tar.gz && sudo rm -f vanessa-behavior-devel.tar.gz && sudo rm -f vanessa-behavior.zip'
-//         sh 'cd ./build; tar -czf ../vanessa-behavior.tar.gz ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; cd ..'
-//         sh 'pwd && tar -czf ./vanessa-behavior-devel.tar.gz ./build env.json;'
-//         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 pushd ./build; zip -r ../vanessa-behavior.zip ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd"'
-//         sh 'tar -czf ./vanessa-behavior-devel.tar.gz ./build env.json;'
-//         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 pushd ./build; zip -r ../vanessa-behavior.zip ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd"'
+//         sh 'sudo rm -rf add.tar.gz && sudo rm -f add-devel.tar.gz && sudo rm -f add.zip'
+//         sh 'cd ./build; tar -czf ../add.tar.gz ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; cd ..'
+//         sh 'pwd && tar -czf ./add-devel.tar.gz ./build env.json;'
+//         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 pushd ./build; zip -r ../add.zip ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd"'
+//         sh 'tar -czf ./add-devel.tar.gz ./build env.json;'
+//         sh 'sudo docker exec -u ubuntu "$(cat /tmp/container_id_${BUILD_NUMBER})" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 pushd ./build; zip -r ../add.zip ./bddRunner.epf ./lib/ ./features/libraries ./vendor ./plugins ./locales; popd"'
 //         sh 'sudo docker stop "$(cat /tmp/container_id_${BUILD_NUMBER})"'
 //         sh 'sudo docker rm "$(cat /tmp/container_id_${BUILD_NUMBER})"'
 
-//         stash includes: 'build/**, *.ospx, vanessa-behavior-devel.tar.gz, vanessa-behavior.tar.gz, vanessa-behavior.zip, env.json', excludes: 'build/cache.txt', name: 'buildResults'
+//         stash includes: 'build/**, *.ospx, add-devel.tar.gz, add.tar.gz, add.zip, env.json', excludes: 'build/cache.txt', name: 'buildResults'
 //     }
 
 //     stage("archive"){
-//         archiveArtifacts 'vanessa-behavior*.ospx,vanessa-behavior.tar.gz,vanessa-behavior-devel.tar.gz,vanessa-behavior.zip'
+//         archiveArtifacts 'add*.ospx,add.tar.gz,add-devel.tar.gz,add.zip'
 //     }
 // }
 // }

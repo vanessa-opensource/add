@@ -169,6 +169,20 @@
 											<ContextMenu name="ОбменДаннымиКонтекстноеМеню" id="142"/>
 											<ExtendedTooltip name="ОбменДаннымиРасширеннаяПодсказка" id="355"/>
 										</CheckBoxField>
+										<CheckBoxField name="ЗаписыватьОбщиеРеквизиты" id="485">
+											<DataPath>Объект.ЗаписыватьОбщиеРеквизиты</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="ЗаписыватьОбщиеРеквизитыКонтекстноеМеню" id="484"/>
+											<ExtendedTooltip name="ЗаписыватьОбщиеРеквизитыРасширеннаяПодсказка" id="480"/>
+										</CheckBoxField>
+										<CheckBoxField name="НеСоздаватьПредопределенные" id="481">
+											<DataPath>Объект.НеСоздаватьПредопределенные</DataPath>
+											<TitleLocation>Right</TitleLocation>
+											<CheckBoxType>Auto</CheckBoxType>
+											<ContextMenu name="НеСоздаватьПредопределенныеКонтекстноеМеню" id="482"/>
+											<ExtendedTooltip name="НеСоздаватьПредопределенныеРасширеннаяПодсказка" id="483"/>
+										</CheckBoxField>
 										<UsualGroup name="Группа3" id="464">
 											<Group>Horizontal</Group>
 											<Representation>None</Representation>

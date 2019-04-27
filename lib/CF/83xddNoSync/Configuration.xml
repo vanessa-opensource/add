@@ -32,7 +32,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>ADD/TDD, ver. 5.6.0</v8:content>
+					<v8:content>ADD/TDD, ver. 5.8.0</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -45,7 +45,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor/>
-			<Version>5.6.0</Version>
+			<Version>5.8.0</Version>
 			<UpdateCatalogAddress/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<UseManagedFormInOrdinaryApplication>true</UseManagedFormInOrdinaryApplication>
@@ -130,9 +130,9 @@
 			<Role>Роль1</Role>
 			<Role>ПраваНеобходимыеДляТестирования</Role>
 			<CommonModule>xddКлиент</CommonModule>
-			<CommonModule>xddСервер</CommonModule>
+			<CommonModule>xddВызовСервера</CommonModule>
 			<CommonModule>ЗапускПриложенияКлиент</CommonModule>
-			<CommonModule>ЗапускПриложенияСервер</CommonModule>
+			<CommonModule>ЗапускПриложенияВызовСервера</CommonModule>
 			<ExchangePlan>ПланОбмена1</ExchangePlan>
 			<FunctionalOption>ФункциональнаяОпция1</FunctionalOption>
 			<CommonForm>ФормаОтчета</CommonForm>

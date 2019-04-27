@@ -29,7 +29,15 @@
             "xddGuidShow",
             "ТестОбработка_Форма_ИсключениеПриОткрытии",
             "СериализаторMXL.Форма.УправляемаяФорма"
-        ]
+        ],
+        "БизнесПроцессы": {
+            "Списки": [
+                "БизнесПроцесс2"
+            ],
+            "Новые": [
+                "БизнесПроцесс2"
+            ]
+        }
     },
     "ПроверкаЧтенияНеАдминистраторами": [
         "ПолныеПрава",
@@ -45,5 +53,18 @@
                 "ОперацияПоПлатежнойКарте/ЗаявкаНаРасходованиеДенежныхСредств"
             ]
         }
+    },
+    "SmokeCommonModules": {
+        "Subsystems": ["FoxyLink",
+            "FoxyLink.GeneralSettings",
+	    "FoxyLink.Integration",
+            "FoxyLink.Plugins",
+            "FoxyLink.Plugins.Channels",
+            "FoxyLink.Plugins.EventHandlers",
+            "FoxyLink.Plugins.Formats",
+            "FoxyLink.Tasks",
+            "FoxyLink.*"
+         ],
+         "ExcludedCommonModules": ["SocialNetworks_ExchangeServer"]
     }
 }
