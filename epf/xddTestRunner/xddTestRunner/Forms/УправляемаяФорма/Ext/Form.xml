@@ -279,6 +279,12 @@
 							<ContextMenu name="ДеревоТестовПутьКонтекстноеМеню" id="421"/>
 							<ExtendedTooltip name="ДеревоТестовПутьРасширеннаяПодсказка" id="462"/>
 						</InputField>
+						<InputField name="ДеревоТестовУровень" id="468">
+							<DataPath>ДеревоТестов.Уровень</DataPath>
+							<EditMode>EnterOnInput</EditMode>
+							<ContextMenu name="ДеревоТестовУровеньКонтекстноеМеню" id="469"/>
+							<ExtendedTooltip name="ДеревоТестовУровеньРасширеннаяПодсказка" id="470"/>
+						</InputField>
 					</ChildItems>
 				</Table>
 			</ChildItems>
@@ -293,7 +299,7 @@
 		</ProgressBarField>
 	</ChildItems>
 	<Attributes>
-		<Attribute name="Объект" id="1">
+		<Attribute name="Объект" id="471">
 			<Type>
 				<v8:Type>cfg:ExternalDataProcessorObject.xddTestRunner</v8:Type>
 			</Type>
@@ -321,7 +327,7 @@
 				</v8:NumberQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ДеревоТестов" id="2">
+		<Attribute name="ДеревоТестов" id="473">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -332,7 +338,7 @@
 				<v8:Type>v8:ValueTree</v8:Type>
 			</Type>
 			<Columns>
-				<Column name="КоличествоТестов" id="1">
+				<Column name="КоличествоТестов" id="472">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -348,7 +354,7 @@
 						</v8:NumberQualifiers>
 					</Type>
 				</Column>
-				<Column name="Состояние" id="2">
+				<Column name="Состояние" id="474">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -364,7 +370,7 @@
 						</v8:NumberQualifiers>
 					</Type>
 				</Column>
-				<Column name="Имя" id="3">
+				<Column name="Имя" id="475">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -379,7 +385,7 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
-				<Column name="ВремяВыполнения" id="4">
+				<Column name="ВремяВыполнения" id="477">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -395,7 +401,7 @@
 						</v8:NumberQualifiers>
 					</Type>
 				</Column>
-				<Column name="Путь" id="5">
+				<Column name="Путь" id="479">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -410,7 +416,7 @@
 						</v8:StringQualifiers>
 					</Type>
 				</Column>
-				<Column name="ИконкаУзла" id="6">
+				<Column name="ИконкаУзла" id="481">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -426,7 +432,7 @@
 						</v8:NumberQualifiers>
 					</Type>
 				</Column>
-				<Column name="Ключ" id="7">
+				<Column name="Ключ" id="482">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
@@ -437,9 +443,24 @@
 						<v8:Type>v8:UUID</v8:Type>
 					</Type>
 				</Column>
+				<Column name="Уровень" id="483">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Уровень</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
 			</Columns>
 		</Attribute>
-		<Attribute name="ИспользуемоеИмяФайла" id="3">
+		<Attribute name="ИспользуемоеИмяФайла" id="476">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -454,7 +475,7 @@
 				</v8:StringQualifiers>
 			</Type>
 		</Attribute>
-		<Attribute name="ИдентификаторЗагрузчика" id="4">
+		<Attribute name="ИдентификаторЗагрузчика" id="478">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -463,7 +484,7 @@
 			</Title>
 			<Type/>
 		</Attribute>
-		<Attribute name="ДеревоОтЗагрузчика" id="5">
+		<Attribute name="ДеревоОтЗагрузчика" id="480">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
