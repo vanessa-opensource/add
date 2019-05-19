@@ -13,18 +13,17 @@
 
 paths = [
     // "libraries/Плагины": "libraries"
-    "StepsRunner":"StepsRunner"
     // "libraries": "libraries"
-    // , "Core/TestClient": "TestClient",
-    // "StepsGenerator": "StepsGenerator",
-    // "StepsRunner":"StepsRunner"
-    // "StepsProgramming":"StepsProgramming",
-    // "Core/FeatureLoad": "FeatureLoad",
-    // "Core/FeatureReader": "FeatureReader",
-    // "Core/FeatureWriter": "FeatureWriter",
-    // "Core/OpenForm": "OpenForm",
-    // "Core/Translate": "Translate",
-    // "Core/ExpectedSomething": "ExpectedSomething"
+    "StepsRunner":"StepsRunner",
+    "Core/OpenForm": "OpenForm",
+    "Core/TestClient": "TestClient",
+    "StepsGenerator": "StepsGenerator",
+    "StepsProgramming":"StepsProgramming",
+    "Core/FeatureLoad": "FeatureLoad",
+    "Core/FeatureReader": "FeatureReader",
+    "Core/FeatureWriter": "FeatureWriter",
+    "Core/Translate": "Translate",
+    "Core/ExpectedSomething": "ExpectedSomething"
     ]
 println paths
 
@@ -33,14 +32,60 @@ allureResults = []
 properties([
     disableConcurrentBuilds(),
     buildDiscarder(
-        logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '30', daysToKeepStr: '', numToKeepStr: '10'))
+        logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '30', daysToKeepStr: '', numToKeepStr: '30'))
 ])
 
 node("slave") {
   isUnix = isUnix();
 
+  stage('Получение исходных кодов') {
+    deleteDir()
+
+    checkout scm
+    cmd('git config --local core.longpaths true', isUnix);
+
+    // env.LOGOS_CONFIG="logger.rootLogger=DEBUG"; // включение отладки продукта //env.RUNNER_ENV="debug";
+    // env.LOGOS_LEVEL="DEBUG";
+
+    cmd('git submodule update --init', isUnix)
+
+    // echo "Текущий каталог"
+    // echo pwd()
+
+    // echo "Проверка выполнения oscript -version - находится ли он в PATH?"
+    // timestamps {
+    //     cmd("where oscript", isUnix)
+    //     cmd("oscript -version", isUnix)
+    // }
+
+    // // echo "Установка свежих версий зависимостей библиотек oscript"
+    // timestamps {
+    //     //cmd("opm update -all", isUnix)
+    //      cmd("opm install", isUnix)
+    // }
+    echo "Сборка бинарных файлов"
+    timeout(90){
+        timestamps {
+            cmd("opm run init file --v8version 8.3.10", isUnix)
+        }
+    }
+
+    echo "Сборка пакета"
+    timeout(60){
+        command = """opm build ./"""
+        try{
+            cmd(command, isUnix)
+        } catch (e) {
+            echo "build status : ${e}"
+            currentBuild.result = 'UNSTABLE'
+        }
+    }
+
+    makeArtifacts('**/add*.ospx')
+    makeArtifacts('**/add*.zip')
+  }
+
   stage('Контроль технического долга'){
-    //   stage('Контроль технического долга'){
 
     if (env.QASONAR) {
         timestamps {
@@ -52,10 +97,10 @@ node("slave") {
                     sonarcommand = sonarcommand + " -Dsonar.host.url=https://opensonar.silverbulleters.org -Dsonar.login=${SonarOAuth}"
                 }
 
-                // TODO // Get version
-                // def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
-                // def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
-                // sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
+                // Get version
+                def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/BddRunner/Ext/ObjectModule.bsl'
+                def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
+                sonarcommand = sonarcommand + " -Dsonar.projectVersion=${configurationVersion}"
 
                 def makeAnalyzis = true
                 if (env.BRANCH_NAME == "master") {
@@ -90,9 +135,7 @@ node("slave") {
                         if (isUnix) {
                             cmd(sonarcommand)
                         } else {
-                            //echo "${sonarcommand}"
                             bat "${sonarcommand} -X"
-                            //cmd(sonarcommand, isUnix)
                         }
                     }
                 } catch (e) {
@@ -108,46 +151,11 @@ node("slave") {
     }
   }
 
-  stage('Получение исходных кодов') {
-    //   stage('checkout scm') {
-        // Wipe the workspace so we are building completely clean
-        deleteDir()
-
-    checkout scm
-    cmd('git config --local core.longpaths true', isUnix);
-
-    //env.LOGOS_CONFIG="logger.rootLogger=DEBUG"; // включение отладки продукта //env.RUNNER_ENV="debug";
-
-    cmd('git submodule update --init', isUnix)
-
-    echo "Текущий каталог"
-    echo pwd()
-
-    // echo "Проверка выполнения oscript -version - находится ли он в PATH?"
-    // timestamps {
-    //     cmd("where oscript", isUnix)
-    //     cmd("oscript -version", isUnix)
-    // }
-
-    // // echo "Установка свежих версий зависимостей библиотек oscript"
-    // timestamps {
-    //     //cmd("opm update -all", isUnix)
-    //      cmd("opm install", isUnix)
-    // }
-    echo "Сборка бинарных файлов"
-    timeout(30){
-        timestamps {
-            cmd("opm run init file --v8version 8.3.10", isUnix)
-            // cmd("opm run initib file --v8version 8.3.10", isUnix)
-        }
-    }
-  }
-
   stage('Дымовое тестирование') {
     def errors = []
-    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\" "
     timestamps {
-        timeout(7){
+        timeout(25){
             try{
                 cmd("vrunner xunit tests/smoke --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
             } catch (e) {
@@ -155,18 +163,31 @@ node("slave") {
             }
         }
     }
+    makeJunit("build/junit-smoke", "*.xml")
+    prepareForAllure("build/allure/", 'allure-smoke', allureResults)
+
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke-ordinaryapp/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-ordinaryapp/allure.xml}\" "
+    timestamps {
+        timeout(25){
+            try{
+                cmd("vrunner xunit tests/smoke --ordinaryapp 1 --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
+            } catch (e) {
+                errors << "smoke (ordinaryapp) status : ${e}"
+            }
+        }
+    }
     showErrors(errors)
-    makeJunit('build/*.xml')
+    makeJunit("build/junit-smoke-ordinaryapp", "*.xml")
     // makeAllure([[path:"build/allure"]])
     // allureResults << [path : "build/allure"]
-    prepareForAllure("build/allure/", 'allure-smoke', allureResults)
+    prepareForAllure("build/allure-ordinaryapp/", 'allure-smoke-ordinaryapp', allureResults)
   }
 
   stage('TDD Тестирование') {
     def errors = []
-    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\" "
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\" "
 
-    timeout(10){
+    timeout(25){
         timestamps {
             try{
                 cmd("vrunner xunit tests/xunit --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
@@ -175,20 +196,33 @@ node("slave") {
             }
         }
     }
-    showErrors(errors)
-    makeJunit('build/*.xml')
-    // makeAllure([[path:"build/allure-tdd"]])
+    makeJunit("build/junit-tdd", "*.xml")
     prepareForAllure("build/allure-tdd/", 'allure-tdd', allureResults)
+
+    reportKey = "--reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd-ordinaryapp/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd-ordinaryapp/allure.xml}\" "
+    timeout(25){
+        timestamps {
+            try{
+                cmd("vrunner xunit tests/xunit --ordinaryapp 1 --settings tools/JSON/vrunner.json ${reportKey}", isUnix)
+            } catch (e) {
+                errors << "TDD (ordinaryapp) status : ${e}"
+            }
+        }
+    }
+    showErrors(errors)
+    makeJunit("build/junit-tdd-ordinaryapp", "*.xml")
+    // makeAllure([[path:"build/allure-tdd"]])
+    prepareForAllure("build/allure-tdd-ordinaryapp/", 'allure-tdd-ordinaryapp', allureResults)
   }
 
   stage('BDD тестирование (библиотеки)'){
     def buildKey = "8310UF";
     def buildPath = "libraries";
 
-    def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
+    def command = "vrunner vanessa --settings tools/JSON/vrunner.json --path features/${buildPath}";
 
     def errors = []
-    timeout(15){
+    timeout(40){
         timestamps {
             try{
                 cmd(command, isUnix)
@@ -200,7 +234,7 @@ node("slave") {
 
     showErrors(errors)
 
-    makeJunit("ServiceBases/junitreport/*.xml")
+    makeJunit("ServiceBases/junitreport", "*.xml")
     // makeAllure("ServiceBases/allurereport/${buildKey}")
     prepareForAllure("ServiceBases/allurereport/${buildKey}/", "allure-${buildKey}", allureResults)
   }
@@ -216,7 +250,7 @@ node("slave") {
             def command = "vrunner vanessa --settings tools/JSON/vrunner.json  --path features/${buildPath}";
 
             def errors = []
-            timeout(15){
+            timeout(60){
                 timestamps {
                     try{
                         cmd(command, isUnix)
@@ -228,7 +262,7 @@ node("slave") {
 
             showErrors(errors)
 
-            makeJunit("ServiceBases/junitreport/*.xml")
+            makeJunit("ServiceBases/junitreport", "*.xml")
             // makeAllure("ServiceBases/allurereport/${buildKey}")
             prepareForAllure("ServiceBases/allurereport/${buildKey}/", "allure-${buildKey}", allureResults)
         }
@@ -263,22 +297,24 @@ node("slave") {
             // }
             makeAllure(resultsForAllure)
 
-            // timeout(15){
-            // command = """opm build ./"""
-            // try{
-            //     cmd(command, isUnix)
-            // } catch (e) {
-            //     echo "build status : ${e}"
-            //     currentBuild.result = 'UNSTABLE'
+            // timeout(30){
+            //     command = """opm build ./"""
+            //     try{
+            //         cmd(command, isUnix)
+            //     } catch (e) {
+            //         echo "build status : ${e}"
+            //         currentBuild.result = 'UNSTABLE'
+            //     }
             // }
-            // }
-            //
+
             // makeArtifacts('**/add*.ospx')
             // makeArtifacts('**/add*.zip')
 
             makeArtifacts('**/ServiceBases/**/junitreport/**')
             makeArtifacts('**/ServiceBases/**/allurereport/**')
-            makeArtifacts('**/build/*.xml')
+            makeArtifacts('**/build/junit-tdd*/*.xml')
+            makeArtifacts('**/build/junit-smoke*/*.xml')
+            makeArtifacts('**/build/allure*/**/*.xml')
             makeArtifacts('**/build/**/*.txt')
             makeArtifacts('**/build/**/*.xml')
         }
@@ -287,6 +323,7 @@ node("slave") {
 
 def cmd(command, isUnix) {
     // при запуске Jenkins не в режиме UTF-8 нужно написать chcp 1251 вместо chcp 65001
+    //echo "${command}"
     if (isUnix) { sh "${command}" } else { bat "chcp 65001\n${command}"}
 }
 
@@ -304,17 +341,25 @@ def makeArtifacts(path) {
         // archiveArtifacts allowEmptyArchive: true, artifacts: '*.xml'
        step([$class: 'ArtifactArchiver', artifacts: "${path}", fingerprint: true, allowEmptyArchive: true])
     } catch (e) {
-        echo "report status : ${e}"
+        echo "artifacts status : ${e}"
         currentBuild.result = 'UNSTABLE'
     }
 }
 
-def makeJunit(path) {
+def makeJunit(path, mask) {
+    def finallyPath = "${path}/${mask}"
     try{
-        junit allowEmptyResults: true, testResults: "${path}"
+        junit allowEmptyResults: true, testResults: "${finallyPath}"
     } catch (e) {
         echo "junit report status : ${e}"
         currentBuild.result = 'UNSTABLE'
+    }
+    // cmd "rd /s /q ${path} & md ${path}"
+    dir(path) {
+        deleteDir()
+    }
+    dir(path) {
+        def tempvar = []
     }
 }
 

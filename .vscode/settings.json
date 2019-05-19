@@ -1,0 +1,9 @@
+{
+    "gherkin-autocomplete.featureLibraries": [
+        "features/libraries"
+    ],
+    "gherkin-autocomplete.srcBslPath": [
+        "features/libraries"
+    ],
+
+}

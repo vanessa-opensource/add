@@ -16,11 +16,11 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>am</v8:lang>
@@ -28,7 +28,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>az</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>bg</v8:lang>
@@ -36,11 +36,11 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>et</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>fr</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>ka</v8:lang>
@@ -48,7 +48,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>de</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>hu</v8:lang>
@@ -56,15 +56,15 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>it</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>lv</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>lt</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>mn</v8:lang>
@@ -72,11 +72,11 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>pl</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>ro</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sl</v8:lang>
@@ -84,7 +84,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>es</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>sv</v8:lang>
@@ -92,7 +92,7 @@
 				</v8:item>
 				<v8:item>
 					<v8:lang>tr</v8:lang>
-					<v8:content>Vanessa Behavior</v8:content>
+					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment>https://github.com/silverbulleters/add</Comment>
@@ -2855,11 +2855,11 @@
 			</Attribute>
 			<Attribute uuid="7bd6467b-8fd5-4ec5-82b5-7470ba5f322c">
 				<Properties>
-					<Name>ПроверкаРаботыVanessaBehaviorВРежимеTestClient</Name>
+					<Name>ПроверкаРаботыVanessaADDВРежимеTestClient</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Проверка работы vanessa behavior в режиме test client</v8:content>
+							<v8:content>Проверка работы Vanessa ADD в режиме test client</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -4507,11 +4507,11 @@
 			</Attribute>
 			<Attribute uuid="71b57c14-28e4-40a5-aeae-2987c6fa9fd3">
 				<Properties>
-					<Name>ВерсияVB</Name>
+					<Name>ВерсияVanessaADD</Name>
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Версия VB</v8:content>
+							<v8:content>Версия Vanessa-ADD</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -4740,6 +4740,82 @@
 						<v8:Type>xs:string</v8:Type>
 						<v8:StringQualifiers>
 							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<PasswordMode>false</PasswordMode>
+					<Format/>
+					<EditFormat/>
+					<ToolTip/>
+					<MarkNegatives>false</MarkNegatives>
+					<Mask/>
+					<MultiLine>false</MultiLine>
+					<ExtendedEdit>false</ExtendedEdit>
+					<MinValue xsi:nil="true"/>
+					<MaxValue xsi:nil="true"/>
+					<FillChecking>DontCheck</FillChecking>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks/>
+					<ChoiceParameters/>
+					<QuickChoice>Auto</QuickChoice>
+					<CreateOnInput>Auto</CreateOnInput>
+					<ChoiceForm/>
+					<LinkByType/>
+					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="1fd81f17-201f-4b9c-b154-44e4fffff798">
+				<Properties>
+					<Name>АдресПользовательскихНастроек</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Адрес пользовательских настроек</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+					<PasswordMode>false</PasswordMode>
+					<Format/>
+					<EditFormat/>
+					<ToolTip/>
+					<MarkNegatives>false</MarkNegatives>
+					<Mask/>
+					<MultiLine>false</MultiLine>
+					<ExtendedEdit>false</ExtendedEdit>
+					<MinValue xsi:nil="true"/>
+					<MaxValue xsi:nil="true"/>
+					<FillChecking>DontCheck</FillChecking>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks/>
+					<ChoiceParameters/>
+					<QuickChoice>Auto</QuickChoice>
+					<CreateOnInput>Auto</CreateOnInput>
+					<ChoiceForm/>
+					<LinkByType/>
+					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="625cc538-b977-4a17-a8e3-4344548c655e">
+				<Properties>
+					<Name>ПоставщикПользовательскихНастроек</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Поставщик пользовательских настроек</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>100</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
 					</Type>

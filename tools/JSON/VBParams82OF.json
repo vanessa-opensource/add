@@ -6,7 +6,7 @@
    "СтрокаПодключенияКБазе":"/F./build/ServiceBases/v82ServiceBase82",
    "ДополнительныеПараметры":"/RunModeOrdinaryApplication",
    "ЗапускатьТолстыйКлиент": "Истина",
-   "ПутьКVanessaBehavior": "./build/bddRunner.epf",
+   "ПутьКVanessaADD": "./build/bddRunner.epf",
    "КаталогФич": "./build/features",
    "ВыполнитьСценарии": "Истина",
    "ДелатьОтчетВФорматеАллюр": "Истина",
