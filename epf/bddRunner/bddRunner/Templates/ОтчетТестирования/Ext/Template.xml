@@ -261,7 +261,7 @@
 			<endColumn>-1</endColumn>
 		</area>
 	</namedItem>
-	<font faceName="Arial" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+	<font faceName="Arial" height="8" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute"/>
 	<format>
 		<width>48</width>
 	</format>

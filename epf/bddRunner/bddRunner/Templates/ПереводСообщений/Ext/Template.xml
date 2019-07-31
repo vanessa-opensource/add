@@ -950,7 +950,7 @@
 	<defaultFormatIndex>8</defaultFormatIndex>
 	<height>29</height>
 	<vgRows>29</vgRows>
-	<font faceName="Arial" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
+	<font faceName="Arial" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute"/>
 	<format>
 		<width>424</width>
 	</format>
