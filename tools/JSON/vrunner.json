@@ -7,8 +7,9 @@
         "--db-pwd": "",
         "--workspace": ".",
         "--v8version":"8.3.10",
-        "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
+        // "--additional": "/DisplayAllFunctions /Lru  /iTaxi ",
         // "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug /DebuggerURL tcp://localhost:1560",
+        "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug ",
         "--ordinaryapp": "-1"
     },
     "vanessa": {
