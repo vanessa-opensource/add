@@ -21,7 +21,7 @@ paths = [
     "StepsProgramming":"StepsProgramming",
     "Core/FeatureLoad": "FeatureLoad",
     "Core/FeatureReader": "FeatureReader",
-    "Core/FeatureWriter": "FeatureWriter",
+    "Core/FeatureWrite": "FeatureWrite",
     "Core/Translate": "Translate",
     "Core/ExpectedSomething": "ExpectedSomething"
     ]
