@@ -54,7 +54,7 @@ pipeline {
                         docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
                             withDockerContainer(args: '-p 6080:6080 -u root:root', image: "${imageName}") {
                                 cmdRun(xstart_and_novnc)
-                                // cmdRun("opm run init file --v8version ${v8version}")
+                                cmdRun("opm run init file --v8version ${v8version}")
                             }
                         }
                     }
@@ -101,7 +101,7 @@ pipeline {
                     post {
                         always {
                             cmdRun("echo отчет junit-smoke")
-                            junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-smoke/*.xml'
+                            junit allowEmptyResults: true, keepLongStdio: false, testResults: '**/build/junit-smoke/*.xml'
                             allure includeProperties: false, jdk: '', results: [[path: 'build/allure']]
                             // allure includeProperties: false, jdk: '', results: [[path: 'out/allure'], [path: 'out/addallure.xml']]
                         }
@@ -128,7 +128,7 @@ pipeline {
                     post {
                         always {
                             cmdRun("echo отчет junit-tdd")
-                            junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-tdd/*.xml'
+                            junit allowEmptyResults: true, keepLongStdio: false, testResults: '**/build/junit-tdd/*.xml'
                             allure includeProperties: false, jdk: '', results: [[path: 'build/allure-tdd']]
                         }
                     }
@@ -154,7 +154,7 @@ pipeline {
                     post {
                         always {
                             cmdRun("echo отчет bdd-libraries")
-                            junit allowEmptyResults: true, keepLongStdio: true, testResults: 'build/ServiceBases/junitreport/*.xml'
+                            junit allowEmptyResults: true, keepLongStdio: false, testResults: 'build/ServiceBases/junitreport/*.xml'
                             allure includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport']]
                         }
                     }
@@ -189,7 +189,7 @@ pipeline {
                     post {
                         always {
                             cmdRun("echo отчет bdd-core")
-                            junit allowEmptyResults: true, keepLongStdio: true, testResults: 'build/ServiceBases/junitreport/*.xml'
+                            junit allowEmptyResults: true, keepLongStdio: false, testResults: 'build/ServiceBases/junitreport/*.xml'
                             allure includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport']]
                         }
                     }
