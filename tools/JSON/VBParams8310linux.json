@@ -35,21 +35,21 @@
     "ДелатьОтчетВФорматеjUnit": "Истина",
     "ДелатьОтчетВФорматеCucumberJson": "Истина",
     "ДелатьЛогВыполненияСценариевВТекстовыйФайл": "Истина",
-    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/./ServiceBases/log.txt",
+    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/.build/ServiceBases/log.txt",
 
     "СоздаватьПодкаталогВКаталогеAllureДляЭтойСборки": "Истина",
-    "КаталогOutputAllure": "$workspaceRoot/./ServiceBases/allurereport",
-    "КаталогOutputAllureБазовый": "$workspaceRoot/./ServiceBases/allurereport",
-    "КаталогOutputjUnit": "$workspaceRoot/./ServiceBases/junitreport",
-    "КаталогOutputCucumberJson": "$workspaceRoot/./ServiceBases/cucumber",
+    "КаталогOutputAllure": "$workspaceRoot/./build/ServiceBases/allurereport",
+    "КаталогOutputAllureБазовый": "$workspaceRoot/./build/ServiceBases/allurereport",
+    "КаталогOutputjUnit": "$workspaceRoot/./build/ServiceBases/junitreport",
+    "КаталогOutputCucumberJson": "$workspaceRoot/./build/ServiceBases/cucumber",
 
     "ДелатьСкриншотПриВозникновенииОшибки": false,
     "СниматьСкриншотКаждогоОкна1С": false,
-    "КаталогOutputСкриншоты": "$workspaceRoot/./ServiceBases/ScreenShots",
+    "КаталогOutputСкриншоты": "$workspaceRoot/./build/ServiceBases/ScreenShots",
     "КомандаСделатьСкриншот": "import -window root",
 
     "ВыгружатьСтатусВыполненияСценариевВФайл": "Истина",
-    "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "$workspaceRoot/./ServiceBases/BuildStatus.log",
+    "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "$workspaceRoot/./build/ServiceBases/BuildStatus.log",
 
     "ДобавлятьКИмениСценарияУсловияВыгрузки": "Истина",
     "СписокТеговИсключение": [
