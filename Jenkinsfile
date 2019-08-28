@@ -54,7 +54,7 @@ pipeline {
                         docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
                             withDockerContainer(args: '-p 6080:6080 -u root:root', image: "${imageName}") {
                                 cmdRun(xstart_and_novnc)
-                                cmdRun("opm run init file --v8version ${v8version}")
+                                // cmdRun("opm run init file --v8version ${v8version}")
                             }
                         }
                     }
@@ -91,9 +91,7 @@ pipeline {
                                         try{
                                           cmdRun("${vrunner_tdd} tests/smoke --settings tools/JSON/vrunner.json --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\"")
                                         } finally {
-                                          cmdRun("echo отчет junit-smoke")
-                                          stash includes: '**/build/junit-smoke/*.xml', name: 'junit_smoke'
-                                          junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-smoke/*.xml'
+                                          cmdRun("chmod -R 777 ./build")                                          
                                         }
                                     }
                                 }
@@ -103,11 +101,8 @@ pipeline {
                     post {
                         always {
                             cmdRun("echo отчет junit-smoke")
-                            dir("build"){
-                              unstash 'junit_smoke'
-                            }
-                            unstash 'junit_smoke'
                             junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-smoke/*.xml'
+                            allure includeProperties: false, jdk: '', results: [[path: 'build/allure']]
                             // allure includeProperties: false, jdk: '', results: [[path: 'out/allure'], [path: 'out/addallure.xml']]
                         }
                     }
@@ -123,8 +118,7 @@ pipeline {
                                         try{
                                           cmdRun("${vrunner_tdd} tests/xunit --settings tools/JSON/vrunner.json --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\"")
                                         } finally {
-                                          cmdRun("echo отчет junit-tdd")
-                                          junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-tdd/*.xml'
+                                          cmdRun("chmod -R 777 ./build")                                          
                                         }
                                     }
                                 }
@@ -134,8 +128,8 @@ pipeline {
                     post {
                         always {
                             cmdRun("echo отчет junit-tdd")
-                            // junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-tdd/*.xml'
-                            // allure includeProperties: false, jdk: '', results: [[path: 'out/allure'], [path: 'out/addallure.xml']]
+                            junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-tdd/*.xml'
+                            allure includeProperties: false, jdk: '', results: [[path: 'build/allure-tdd']]
                         }
                     }
                 }
@@ -147,10 +141,21 @@ pipeline {
                                 docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
                                     withDockerContainer(args: '-p 6082:6080 -u root:root', image: "${imageName}") {
                                         cmdRun(xstart_and_novnc)
-                                        cmdRun("${vrunner_bdd} features/libraries")
+                                        try{
+                                          cmdRun("${vrunner_bdd} features/libraries")
+                                        } finally {
+                                          cmdRun("chmod -R 777 ./build")                                          
+                                        }
                                     }
                                 }
                             }
+                        }
+                    }
+                    post {
+                        always {
+                            cmdRun("echo отчет bdd-libraries")
+                            junit allowEmptyResults: true, keepLongStdio: true, testResults: 'build/ServiceBases/junitreport/*.xml'
+                            allure includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport']]
                         }
                     }
                 }
@@ -162,19 +167,30 @@ pipeline {
                                 docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
                                     withDockerContainer(args: '-p 6083:6080 -u root:root', image: "${imageName}") {
                                         cmdRun(xstart_and_novnc)
-                                        cmdRun("${vrunner_bdd} features/StepsRunner")
-                                        cmdRun("${vrunner_bdd} features/StepsGenerator")
-                                        cmdRun("${vrunner_bdd} features/StepsProgramming")
-                                        cmdRun("${vrunner_bdd} features/Core/FeatureLoad")
-                                        cmdRun("${vrunner_bdd} features/Core/FeatureReader")
-                                        cmdRun("${vrunner_bdd} features/Core/FeatureWrite")
-                                        cmdRun("${vrunner_bdd} features/Core/ExpectedSomething")
-                                        cmdRun("${vrunner_bdd} features/Core/OpenForm")
-                                        cmdRun("${vrunner_bdd} features/Core/TestClient")
-                                        cmdRun("${vrunner_bdd} features/Core/Translate")
+                                        try{
+                                          cmdRun("${vrunner_bdd} features/StepsRunner")
+                                          cmdRun("${vrunner_bdd} features/StepsGenerator")
+                                          cmdRun("${vrunner_bdd} features/StepsProgramming")
+                                          cmdRun("${vrunner_bdd} features/Core/FeatureLoad")
+                                          cmdRun("${vrunner_bdd} features/Core/FeatureReader")
+                                          cmdRun("${vrunner_bdd} features/Core/FeatureWrite")
+                                          cmdRun("${vrunner_bdd} features/Core/ExpectedSomething")
+                                          cmdRun("${vrunner_bdd} features/Core/OpenForm")
+                                          cmdRun("${vrunner_bdd} features/Core/TestClient")
+                                          cmdRun("${vrunner_bdd} features/Core/Translate")
+                                        } finally {
+                                          cmdRun("chmod -R 777 ./build")                                          
+                                        }
                                     }
                                 }
                             }
+                        }
+                    }
+                    post {
+                        always {
+                            cmdRun("echo отчет bdd-core")
+                            junit allowEmptyResults: true, keepLongStdio: true, testResults: 'build/ServiceBases/junitreport/*.xml'
+                            allure includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport']]
                         }
                     }
                 }
