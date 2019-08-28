@@ -35,17 +35,22 @@
     "ДелатьОтчетВФорматеjUnit": "Истина",
     "ДелатьОтчетВФорматеCucumberJson": "Истина",
     "ДелатьЛогВыполненияСценариевВТекстовыйФайл": "Истина",
+    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/./ServiceBases/log.txt",
+
     "СоздаватьПодкаталогВКаталогеAllureДляЭтойСборки": "Истина",
     "КаталогOutputAllure": "$workspaceRoot/./ServiceBases/allurereport",
     "КаталогOutputAllureБазовый": "$workspaceRoot/./ServiceBases/allurereport",
     "КаталогOutputjUnit": "$workspaceRoot/./ServiceBases/junitreport",
     "КаталогOutputCucumberJson": "$workspaceRoot/./ServiceBases/cucumber",
-    "ДелатьСкриншотПриВозникновенииОшибки": "Истина",
+
+    "ДелатьСкриншотПриВозникновенииОшибки": false,
+    "СниматьСкриншотКаждогоОкна1С": false,
     "КаталогOutputСкриншоты": "$workspaceRoot/./ServiceBases/ScreenShots",
-    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/./ServiceBases/log.txt",
     "КомандаСделатьСкриншот": "import -window root",
+
     "ВыгружатьСтатусВыполненияСценариевВФайл": "Истина",
     "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "$workspaceRoot/./ServiceBases/BuildStatus.log",
+
     "ДобавлятьКИмениСценарияУсловияВыгрузки": "Истина",
     "СписокТеговИсключение": [
         "IgnoreOnCIMainBuild",
@@ -96,7 +101,6 @@
     "КаталогИнструментов": "",
     "ВыполнитьСценарииСТекущегоШага": false,
     "НомерСтрокиДляЗапускаСТекущегоШагаСценария": "",
-    "СниматьСкриншотКаждогоОкна1С": false,
     "ЗапускатьТестКлиентВРежимеОтладки": false,
     "КлючиОтладки": "",
     "АдресОтладчика": "",
