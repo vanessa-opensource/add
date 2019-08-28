@@ -1,7 +1,7 @@
 @Library('jenkins_libs') _
 
 //parameters
-def DOCKER_REGISTRY_USER_CREDENTIONALS_ID  = 'gitlab.sb' //getParameterValue(buildEnv, 'DOCKER_REGISTRY_USER_CREDENTIONALS_ID') 
+def DOCKER_REGISTRY_USER_CREDENTIONALS_ID  = 'gitlab.sb' //getParameterValue(buildEnv, 'DOCKER_REGISTRY_USER_CREDENTIONALS_ID')
 def DOCKER_REGISTRY_URL = 'https://registry.silverbulleters.org' // getParameterValue(buildEnv, 'DOCKER_REGISTRY_URL')
 def v8version = "8.3.15.1489"
 
@@ -13,13 +13,15 @@ def imageNameSonar = 'registry.silverbulleters.org/landscape/ops/isasacode/silve
 def nethasp_fill = " echo >> /opt/1C/v8.3/x86_64/conf/nethasp.ini && echo NH_SERVER_ADDR = ${env.serverHasp} >> /opt/1C/v8.3/x86_64/conf/nethasp.ini "
 // def xstart =            "set -xe && xstart && ${nethasp_fill} && bash"
 def xstart_and_novnc =  "set -xe && xstart && novnc && runxfce4 && ${nethasp_fill} && bash"
-def vrunner_bdd =  "vrunner vanessa --settings tools/JSON/vrunner.json --path "
+
+def bddSettings =  " --vanessasettings tools\JSON\VBParams8310linux.json "
+def vrunner_bdd =  "vrunner vanessa --settings tools/JSON/vrunner.json ${bddSettings} --path "
 def vrunner_tdd =  "vrunner xunit "
 
 pipeline {
 
     agent { label 'docker' }
-    
+
     post {  //Выполняется после сборки
         always {
             cmdRun("echo отчет junit")
@@ -47,7 +49,7 @@ pipeline {
                         }
                     }
                 }
-                
+
             }
         }
 
@@ -146,12 +148,12 @@ pipeline {
 def sonarqubeScan() {
 
     def projectVersion = ""
-    
+
     def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/bddRunner/Ext/ObjectModule.bsl'
     def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
     projectVersion = "-Dsonar.projectVersion=${configurationVersion}"
 
-    
+
     def sonarCommand = "sonar-scanner -X ${projectVersion}"
 
     withCredentials([string(credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth')]) {
@@ -187,5 +189,5 @@ def sonarqubeScan() {
     // }
 
     return sonarCommand
-                
+
 }
