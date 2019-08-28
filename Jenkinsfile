@@ -41,7 +41,11 @@ pipeline {
             junit allowEmptyResults: true, testResults: '**/ServiceBases/junitreport/*.xml'
             cmdRun("echo отчет allure")
             // allure includeProperties: false, jdk: '', results: [[path: 'out/allure'], [path: 'out/addallure.xml']]
-            // allure includeProperties: false, jdk: '', results: [[path: 'out/allure'], [path: 'ServiceBases/allurereport']]
+            allure includeProperties: false, jdk: '', results: [
+              [path: 'build/allure'],
+              [path: 'build/allure-tdd'],
+              [path: 'build/ServiceBases/allurereport']
+            ]
         }
     }
 
@@ -102,7 +106,7 @@ pipeline {
                         always {
                             cmdRun("echo отчет junit-smoke")
                             junit allowEmptyResults: true, keepLongStdio: false, testResults: '**/build/junit-smoke/*.xml'
-                            allure includeProperties: false, jdk: '', results: [[path: 'build/allure']]
+                            // allure includeProperties: false, jdk: '', results: [[path: 'build/allure']]
                             // allure includeProperties: false, jdk: '', results: [[path: 'out/allure'], [path: 'out/addallure.xml']]
                         }
                     }
@@ -129,7 +133,7 @@ pipeline {
                         always {
                             cmdRun("echo отчет junit-tdd")
                             junit allowEmptyResults: true, keepLongStdio: false, testResults: '**/build/junit-tdd/*.xml'
-                            allure includeProperties: false, jdk: '', results: [[path: 'build/allure-tdd']]
+                            // allure includeProperties: false, jdk: '', results: [[path: 'build/allure-tdd']]
                         }
                     }
                 }
@@ -158,7 +162,7 @@ pipeline {
                         always {
                             cmdRun("echo отчет bdd-libraries")
                             junit allowEmptyResults: true, keepLongStdio: false, testResults: 'build/ServiceBases/junitreport/**/*.xml'
-                            allure includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport']]
+                            // allure includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport']]
                         }
                     }
                 }
@@ -196,7 +200,7 @@ pipeline {
                         always {
                             cmdRun("echo отчет bdd-core")
                             junit allowEmptyResults: true, keepLongStdio: false, testResults: 'build/ServiceBases/junitreport/**/*.xml'
-                            allure includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport']]
+                            // allure includeProperties: false, jdk: '', results: [[path: 'build/ServiceBases/allurereport']]
                         }
                     }
                 }
