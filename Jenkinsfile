@@ -67,8 +67,25 @@ pipeline {
             }
         }
 
-        stage('Тестирование') {
+        stage('Тестирование и сборка') {
             parallel {
+                
+                stage('Сборка пакета') {
+                    steps {
+                        timeout(40){
+                            script{
+                                docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
+                                    withDockerContainer(args: '-p 6080:6080 -u root:root', image: "${imageName}") {
+                                        cmdRun("opm build .") 
+                                        archiveArtifacts 'add-*.ospx'
+                                        archiveArtifacts 'add-*.zip'
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
                 stage('Статический анализ') {
                     steps {
                         timeout(30){
