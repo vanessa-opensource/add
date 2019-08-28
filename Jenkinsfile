@@ -1,6 +1,10 @@
 @Library('jenkins_libs') _
 
 //parameters
+// sonarQubeURL=http://172.25.1.254:9000
+// OpenSonarOAuthCredentianalID=SonarOAuth
+// serverHasp=10.77.1.141
+
 def DOCKER_REGISTRY_USER_CREDENTIONALS_ID  = 'gitlab.sb' //getParameterValue(buildEnv, 'DOCKER_REGISTRY_USER_CREDENTIONALS_ID')
 def DOCKER_REGISTRY_URL = 'https://registry.silverbulleters.org' // getParameterValue(buildEnv, 'DOCKER_REGISTRY_URL')
 def v8version = "8.3.15.1489"
@@ -21,6 +25,12 @@ def vrunner_tdd =  "vrunner xunit "
 pipeline {
 
     agent { label 'docker' }
+    options { 
+      buildDiscarder(logRotator(numToKeepStr: '10'))
+      disableConcurrentBuilds()
+      timeout(time: 30, unit: 'MINUTES')
+      timestamps() 
+    }
 
     post {  //Выполняется после сборки
         always {
@@ -73,7 +83,7 @@ pipeline {
 
                 stage('дымовое тестирование') {
                     steps {
-                        timeout(30){
+                        timeout(40){
                             script{
                                 docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
                                     withDockerContainer(args: '-p 6080:6080 -u root:root', image: "${imageName}") {
@@ -82,6 +92,13 @@ pipeline {
                                         }
                                 }
                             }
+                        }
+                    }
+                    post {
+                        always {
+                            cmdRun("echo отчет junit-smoke")
+                            junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-smoke/*.xml'
+                            // allure includeProperties: false, jdk: '', results: [[path: 'out/allure'], [path: 'out/addallure.xml']]
                         }
                     }
                 }
@@ -97,6 +114,13 @@ pipeline {
                                     }
                                 }
                             }
+                        }
+                    }
+                    post {
+                        always {
+                            cmdRun("echo отчет junit-tdd")
+                            junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-tdd/*.xml'
+                            // allure includeProperties: false, jdk: '', results: [[path: 'out/allure'], [path: 'out/addallure.xml']]
                         }
                     }
                 }
