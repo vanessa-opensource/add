@@ -28,7 +28,7 @@ pipeline {
     options { 
       buildDiscarder(logRotator(numToKeepStr: '10'))
       disableConcurrentBuilds()
-      timeout(time: 30, unit: 'MINUTES')
+      timeout(time: 60, unit: 'MINUTES')
       timestamps() 
     }
 
@@ -81,15 +81,21 @@ pipeline {
                     }
                 }
 
-                stage('дымовое тестирование') {
+                stage('Дымовое тестирование') {
                     steps {
                         timeout(40){
                             script{
                                 docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
                                     withDockerContainer(args: '-p 6080:6080 -u root:root', image: "${imageName}") {
                                         cmdRun(xstart_and_novnc)
-                                        cmdRun("${vrunner_tdd} tests/smoke --settings tools/JSON/vrunner.json --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\"")
+                                        try{
+                                          cmdRun("${vrunner_tdd} tests/smoke --settings tools/JSON/vrunner.json --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\"")
+                                        } finally {
+                                          cmdRun("echo отчет junit-smoke")
+                                          stash includes: '**/build/junit-smoke/*.xml', name: 'junit_smoke'
+                                          junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-smoke/*.xml'
                                         }
+                                    }
                                 }
                             }
                         }
@@ -97,6 +103,10 @@ pipeline {
                     post {
                         always {
                             cmdRun("echo отчет junit-smoke")
+                            dir("build"){
+                              unstash 'junit_smoke'
+                            }
+                            unstash 'junit_smoke'
                             junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-smoke/*.xml'
                             // allure includeProperties: false, jdk: '', results: [[path: 'out/allure'], [path: 'out/addallure.xml']]
                         }
@@ -110,7 +120,12 @@ pipeline {
                                 docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
                                     withDockerContainer(args: '-p 6081:6080 -u root:root', image: "${imageName}") {
                                         cmdRun(xstart_and_novnc)
-                                        cmdRun("${vrunner_tdd} tests/xunit --settings tools/JSON/vrunner.json --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\"")
+                                        try{
+                                          cmdRun("${vrunner_tdd} tests/xunit --settings tools/JSON/vrunner.json --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\"")
+                                        } finally {
+                                          cmdRun("echo отчет junit-tdd")
+                                          junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-tdd/*.xml'
+                                        }
                                     }
                                 }
                             }
@@ -119,7 +134,7 @@ pipeline {
                     post {
                         always {
                             cmdRun("echo отчет junit-tdd")
-                            junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-tdd/*.xml'
+                            // junit allowEmptyResults: true, keepLongStdio: true, testResults: '**/build/junit-tdd/*.xml'
                             // allure includeProperties: false, jdk: '', results: [[path: 'out/allure'], [path: 'out/addallure.xml']]
                         }
                     }
