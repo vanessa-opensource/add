@@ -14,7 +14,7 @@ def nethasp_fill = " echo >> /opt/1C/v8.3/x86_64/conf/nethasp.ini && echo NH_SER
 // def xstart =            "set -xe && xstart && ${nethasp_fill} && bash"
 def xstart_and_novnc =  "set -xe && xstart && novnc && runxfce4 && ${nethasp_fill} && bash"
 
-def bddSettings =  " --vanessasettings tools\JSON\VBParams8310linux.json "
+def bddSettings =  " --vanessasettings tools/JSON/VBParams8310linux.json "
 def vrunner_bdd =  "vrunner vanessa --settings tools/JSON/vrunner.json ${bddSettings} --path "
 def vrunner_tdd =  "vrunner xunit "
 
