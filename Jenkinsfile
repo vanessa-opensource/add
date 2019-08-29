@@ -4,7 +4,8 @@
 
 DOCKER_REGISTRY_USER_CREDENTIONALS_ID  = 'gitlab.sb' //getParameterValue(buildEnv, 'DOCKER_REGISTRY_USER_CREDENTIONALS_ID')
 DOCKER_REGISTRY_URL = 'https://registry.silverbulleters.org' // getParameterValue(buildEnv, 'DOCKER_REGISTRY_URL')
-v8version = "8.3.15.1489"
+v8version = "${params.V8VERSION}"
+ordinaryapp = "${params.ORDINARY_APP}" 
 
 imageName = "registry.silverbulleters.org/landscape/ops/isasacode/vanessa-runner:${v8version}-latest"
 imageNameSonar = 'registry.silverbulleters.org/landscape/ops/isasacode/silverbulleters/sonarqube-scanner:latest'
@@ -14,7 +15,7 @@ nethasp_fill = " echo >> /opt/1C/v8.3/x86_64/conf/nethasp.ini && echo NH_SERVER_
 xstart_and_novnc =  "set -xe && xstart && novnc && runxfce4 && ${nethasp_fill} && bash"
 
 bddSettings =  " --vanessasettings tools/JSON/VBParams8310linux.json "
-vrunner_bdd =  "vrunner vanessa --settings tools/JSON/vrunner.json ${bddSettings} --path "
+vrunner_bdd =  "vrunner vanessa --ordinaryapp ${ordinaryapp} --settings tools/JSON/vrunner.json ${bddSettings} --path "
 vrunner_tdd =  "vrunner xunit "
 
 
@@ -39,13 +40,13 @@ running_set = [
 
 def smokeTest(){
     testResultsPath = '**/build/junit-smoke/*.xml'
-    command = "${vrunner_tdd} tests/smoke --settings tools/JSON/vrunner.json --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\""
+    command = "${vrunner_tdd} tests/smoke --settings tools/JSON/vrunner.json --ordinaryapp ${ordinaryapp} --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\""
     runXunitTest(command, testResultsPath)
 }
 
 def ownTest(){
     testResultsPath = '**/build/junit-tdd/*.xml'
-    command = "${vrunner_tdd} tests/xunit --settings tools/JSON/vrunner.json --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\""
+    command = "${vrunner_tdd} tests/xunit --settings tools/JSON/vrunner.json --ordinaryapp ${ordinaryapp} --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\""
     runXunitTest(command, testResultsPath)
 }
 
@@ -119,9 +120,15 @@ pipeline {
     agent { label 'docker' }
     options { 
       buildDiscarder(logRotator(numToKeepStr: '10'))
-      disableConcurrentBuilds()
+    //   disableConcurrentBuilds()
       timeout(time: 120, unit: 'MINUTES')
       timestamps() 
+    }
+
+    parameters {
+        string(description: 'Версия платформы 1С:Предприятие', name: 'V8VERSION')
+        string(defaultValue: "0", description: 'Режим запуска (толстый/тонкий клиент)', name: 'ORDINARY_APP')
+
     }
 
     post {  //Выполняется после сборки
