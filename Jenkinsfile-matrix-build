@@ -1,17 +1,19 @@
 vanessaPlatforms = ["8.3.14.1630", "8.3.15.1489"]
 ordinaryApps = ["0","1"]
 
+childJobNamePrefix = "Vanessa-ADD-Docker-"
+
 pipeline {
 
     agent any
-    
-    options { 
+
+    options {
       buildDiscarder(logRotator(numToKeepStr: '10'))
       disableConcurrentBuilds()
       timeout(time: 120, unit: 'MINUTES')
-      timestamps() 
+      timestamps()
     }
-    
+
     stages {
 
        stage("Matrix") {
@@ -20,10 +22,8 @@ pipeline {
                     parallel getTasks()
                 }
             }
-        }    
-
+        }
     }
-
 }
 
 def getTasks() {
@@ -33,7 +33,7 @@ def getTasks() {
         for(int j=0; j< compatibilityModes.size(); j++) {
             def compatibilityMode = compatibilityModes[j]
             tasks["${vanessaPlatformsValue}/${compatibilityMode}"] = {
-                build job: "Vanessa-ADD-Docker-${vanessaPlatformsValue}",
+                build job: "${childJobNamePrefix}${vanessaPlatformsValue}",
                          parameters:    [[$class: 'StringParameterValue', name: 'V8VERSION', value: "${vanessaPlatformsValue}"],
                                         [$class: 'StringParameterValue', name:'ORDINARY_APP', value: "${compatibilityMode}"]]
             }
@@ -42,5 +42,3 @@ def getTasks() {
     tasks["failFast"]=false
     return tasks
 }
-   
-    
