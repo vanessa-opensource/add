@@ -198,7 +198,7 @@ pipeline {
     agent { label 'docker' }
     options { 
       buildDiscarder(logRotator(numToKeepStr: '10'))
-      disableConcurrentBuilds()
+    //   disableConcurrentBuilds()
       timeout(time: 120, unit: 'MINUTES')
       timestamps() 
     }
