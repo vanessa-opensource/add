@@ -30,12 +30,12 @@ def getTasks() {
     def tasks = [:]
     for(int i=0; i< vanessaPlatforms.size(); i++) {
         def vanessaPlatformsValue = vanessaPlatforms[i]
-        for(int j=0; j< compatibilityModes.size(); j++) {
-            def compatibilityMode = compatibilityModes[j]
-            tasks["${vanessaPlatformsValue}/${compatibilityMode}"] = {
+        for(int j=0; j< ordinaryApps.size(); j++) {
+            def ordinaryApp = ordinaryApps[j]
+            tasks["${vanessaPlatformsValue}/${ordinaryApp}"] = {
                 build job: "${childJobNamePrefix}${vanessaPlatformsValue}",
                          parameters:    [[$class: 'StringParameterValue', name: 'V8VERSION', value: "${vanessaPlatformsValue}"],
-                                        [$class: 'StringParameterValue', name:'ORDINARY_APP', value: "${compatibilityMode}"]]
+                                        [$class: 'StringParameterValue', name:'ORDINARY_APP', value: "${ordinaryApp}"]]
             }
         }
     }
