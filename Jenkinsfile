@@ -204,7 +204,7 @@ pipeline {
     }
 
     parameters {
-        string(defaultValue: "8.3.15.1489", description: 'Версия платформы 1С:Предприятие', name: 'V8VERSION')
+        string(description: 'Версия платформы 1С:Предприятие', name: 'V8VERSION')
         string(defaultValue: "0", description: 'Режим запуска (толстый/тонкий клиент)', name: 'ORDINARY_APP')
 
     }
