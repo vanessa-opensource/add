@@ -19,48 +19,22 @@ vrunner_tdd =  "vrunner xunit "
 
 
 running_set = [
-    "Дымовое_тестирование": {
-        smokeTest()
-    },
-    "Cобственные_TDD_тесты": {
-        ownTest()
-    },
-    "BDD_тестирование_библиотек": {
-        libraryBDDTest()
-    },
-    "stepsRunner": {
-        stepsRunner()
-    },
-    "StepsGenerator": {
-        stepsGenerator()
-    },
-    "StepsProgramming": {
-        stepsProgramming()
-    },
-    "FeatureLoad": {
-        featureLoad()
-    },
-    "featureReader": {
-        featureReader()
-    },
-    "FeatureWrite": {
-        featureWrite()
-    },
-    "ExpectedSomething": {
-        expectedSomething()
-    },
-    "OpenForm": {
-        openForm()
-    },
-    "TestClient": {
-        testClient()
-    },
-    "Translate": {
-        rantslate()
-    },
-    "Сборка_пакета": {
-        build()
-    }
+    "Дымовое_тестирование": {   smokeTest() },
+    "Cобственные_TDD_тесты": {  ownTest() },
+
+    "BDD_тестирование_библиотек": { libraryBDDTest() },
+    "BDD_StepsRunner": {            runVanessaTestCore("StepsRunner", "StepsRunner") },
+    "BDD_StepsGenerator": {         runVanessaTestCore("StepsGenerator", "StepsGenerator") },
+    "BDD_StepsProgramming": {       runVanessaTestCore("StepsProgramming", "StepsProgramming") },
+    "BDD_FeatureLoad": {            runVanessaTestCore("FeatureLoad", "Core/FeatureLoad") },
+    "BDD_FeatureReader": {          runVanessaTestCore("FeatureReader", "Core/FeatureReader") },
+    "BDD_FeatureWrite": {           runVanessaTestCore("FeatureWrite", "Core/FeatureWrite") },
+    "BDD_ExpectedSomething": {      runVanessaTestCore("ExpectedSomething", "Core/ExpectedSomething") },
+    "BDD_OpenForm": {               runVanessaTestCore("OpenForm", "Core/OpenForm") },
+    "BDD_TestClient": {             runVanessaTestCore("TestClient", "Core/TestClient") },
+    "BDD_Translate": {              runVanessaTestCore("Translate", "Core/Translate") },
+
+    "Сборка_пакета": {        build()  }
 ]
 
 def smokeTest(){
@@ -81,66 +55,14 @@ def libraryBDDTest(){
     runVanessaTest(command, testResultsPath)
 }
 
-
-def stepsRunner(){
-    command = "${vrunner_bdd} features/StepsRunner"
-    runVanessaTestCore(command)
-}
-
-def stepsGenerator(){
-    command = "${vrunner_bdd} features/StepsGenerator"
-    runVanessaTestCore(command)
-}
-
-def stepsProgramming(){
-    
-    command = "${vrunner_bdd} features/StepsProgramming"
-    runVanessaTestCore(command)
-}
-
-def featureLoad(){
-     command = "${vrunner_bdd} features/Core/FeatureLoad"
-    runVanessaTestCore(command)
-}
-
-def featureReader(){
-    command = "${vrunner_bdd} features/Core/FeatureReader"
-    runVanessaTestCore(command)
-}
-
-def featureWrite(){
-    command = "${vrunner_bdd} features/Core/FeatureWrite"
-    runVanessaTestCore(command)
-}
-
-def expectedSomething(){
-    command = "${vrunner_bdd} features/Core/ExpectedSomething"
-    runVanessaTestCore(command)
-}
-
-def openForm(){
-    command = "${vrunner_bdd} features/Core/OpenForm"
-    runVanessaTestCore(command)
-}
-
-def testClient(){
-    command = "${vrunner_bdd} features/Core/TestClient"
-    runVanessaTestCore(command)
-}
-
-def rantslate(){
-    command = "${vrunner_bdd} features/Core/Translate"
-    runVanessaTestCore(command)
-}
-
-def runVanessaTestCore(String command){
+def runVanessaTestCore(String buildName, String command){
     docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
         withDockerContainer(args: ' -P -u root:root', image: "${imageName}") {
             cmdRun(xstart_and_novnc)
-            def buildKey = "core";
+            def buildKey = "core-${buildName}";
             withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
                 try{
-                    cmdRun(command)
+                    cmdRun("${vrunner_bdd} features/${command}")
                 } finally {
                     cmdRun("chmod -R 777 ./build")  
                     junit allowEmptyResults: true, keepLongStdio: false, testResults: 'build/ServiceBases/junitreport/**/*.xml'                                        
@@ -213,7 +135,17 @@ pipeline {
             allure includeProperties: false, jdk: '', results: [
               [path: 'build/allure'],
               [path: 'build/allure-tdd'],
-              [path: 'build/ServiceBases/allurereport']
+              [path: 'build/ServiceBases/allurereport/8310UF'], 
+              [path: "build/ServiceBases/allurereport/core-StepsRunner"],
+              [path: "build/ServiceBases/allurereport/core-StepsGenerator"],
+              [path: "build/ServiceBases/allurereport/core-StepsProgramming"],
+              [path: "build/ServiceBases/allurereport/core-FeatureLoad"],
+              [path: "build/ServiceBases/allurereport/core-FeatureReader"],
+              [path: "build/ServiceBases/allurereport/core-FeatureWrite"],
+              [path: "build/ServiceBases/allurereport/core-ExpectedSomething"],
+              [path: "build/ServiceBases/allurereport/core-OpenForm"],
+              [path: "build/ServiceBases/allurereport/core-TestClient"],
+              [path: "build/ServiceBases/allurereport/core-Translate"]
             ]
         }
     }
@@ -262,7 +194,7 @@ pipeline {
 
         stage('Тестирование и сборка') {             
             steps {
-                timeout(120){
+                timeout(60){
                     script{
                         parallel(running_set)
                     }
