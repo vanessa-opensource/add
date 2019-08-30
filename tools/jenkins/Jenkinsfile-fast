@@ -20,10 +20,10 @@ paths = [
     "Core/FeatureLoad": "FeatureLoad",
     "Core/FeatureReader": "FeatureReader",
     "Core/FeatureWrite": "FeatureWrite",
-    "Core/ExpectedSomething": "ExpectedSomething"
-    "Core/OpenForm": "OpenForm",
-    "Core/TestClient": "TestClient",
     "Core/Translate": "Translate",
+    "Core/OpenForm": "OpenForm",
+    "Core/ExpectedSomething": "ExpectedSomething",
+    "Core/TestClient": "TestClient"
     ]
 println paths
 
