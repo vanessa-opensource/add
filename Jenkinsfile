@@ -11,187 +11,32 @@ imageName = "registry.silverbulleters.org/landscape/ops/isasacode/vanessa-runner
 imageNameSonar = 'registry.silverbulleters.org/landscape/ops/isasacode/silverbulleters/sonarqube-scanner:latest'
 
 //constants
+
+running_set = [
+    "Дымовое_тестирование": {   smokeTest() },
+    "Cобственные_TDD_тесты": {  ownTest() },
+
+    "BDD_тестирование_библиотек": { libraryBDDTest() },
+    "BDD_StepsRunner": {            runVanessaTestCore("StepsRunner", "StepsRunner") },
+    "BDD_StepsGenerator": {         runVanessaTestCore("StepsGenerator", "StepsGenerator") },
+    "BDD_StepsProgramming": {       runVanessaTestCore("StepsProgramming", "StepsProgramming") },
+    "BDD_FeatureLoad": {            runVanessaTestCore("FeatureLoad", "Core/FeatureLoad") },
+    "BDD_FeatureReader": {          runVanessaTestCore("FeatureReader", "Core/FeatureReader") },
+    "BDD_FeatureWrite": {           runVanessaTestCore("FeatureWrite", "Core/FeatureWrite") },
+    "BDD_ExpectedSomething": {      runVanessaTestCore("ExpectedSomething", "Core/ExpectedSomething") },
+    "BDD_OpenForm": {               runVanessaTestCore("OpenForm", "Core/OpenForm") },
+    "BDD_TestClient": {             runVanessaTestCore("TestClient", "Core/TestClient") },
+    "BDD_Translate": {              runVanessaTestCore("Translate", "Core/Translate") },
+
+    "Сборка_пакета": {        build()  }
+]
+
 nethasp_fill = " echo >> /opt/1C/v8.3/x86_64/conf/nethasp.ini && echo NH_SERVER_ADDR = ${env.serverHasp} >> /opt/1C/v8.3/x86_64/conf/nethasp.ini "
 xstart_and_novnc =  "set -xe && xstart && novnc && runxfce4 && ${nethasp_fill} && bash"
 
 bddSettings =  " --vanessasettings tools/JSON/VBParams8310linux.json "
-vrunner_bdd =  "vrunner vanessa --ordinaryapp ${ordinaryapp} --settings tools/JSON/vrunner.json ${bddSettings} --path "
+vrunner_bdd =  "vrunner vanessa --ordinaryapp ${ordinaryapp} --settings tools/JSON/vrunner.json ${bddSettings} "
 vrunner_tdd =  "vrunner xunit "
-
-
-running_set = [
-    "Дымовое_тестирование": {
-        smokeTest()
-    },
-    "Cобственные_TDD_тесты": {
-        ownTest()
-    },
-    "BDD_тестирование_библиотек": {
-        libraryBDDTest()
-    },
-    "stepsRunner": {
-        stepsRunner()
-    },
-    "StepsGenerator": {
-        stepsGenerator()
-    },
-    "StepsProgramming": {
-        stepsProgramming()
-    },
-    "FeatureLoad": {
-        featureLoad()
-    },
-    "featureReader": {
-        featureReader()
-    },
-    "FeatureWrite": {
-        featureWrite()
-    },
-    "ExpectedSomething": {
-        expectedSomething()
-    },
-    "OpenForm": {
-        openForm()
-    },
-    "TestClient": {
-        testClient()
-    },
-    "Translate": {
-        rantslate()
-    },
-    "Сборка_пакета": {
-        build()
-    }
-]
-
-def smokeTest(){
-    testResultsPath = '**/build/junit-smoke/*.xml'
-    command = "${vrunner_tdd} tests/smoke --settings tools/JSON/vrunner.json --ordinaryapp ${ordinaryapp} --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\""
-    runXunitTest(command, testResultsPath)
-}
-
-def ownTest(){
-    testResultsPath = '**/build/junit-tdd/*.xml'
-    command = "${vrunner_tdd} tests/xunit --settings tools/JSON/vrunner.json --ordinaryapp ${ordinaryapp} --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\""
-    runXunitTest(command, testResultsPath)
-}
-
-def libraryBDDTest(){
-    testResultsPath = 'build/ServiceBases/junitreport/**/*.xml'
-    command = "${vrunner_bdd} features/libraries"
-    runVanessaTest(command, testResultsPath)
-}
-
-
-def stepsRunner(){
-    command = "${vrunner_bdd} features/StepsRunner"
-    runVanessaTestCore(command)
-}
-
-def stepsGenerator(){
-    command = "${vrunner_bdd} features/StepsGenerator"
-    runVanessaTestCore(command)
-}
-
-def stepsProgramming(){
-    
-    command = "${vrunner_bdd} features/StepsProgramming"
-    runVanessaTestCore(command)
-}
-
-def featureLoad(){
-     command = "${vrunner_bdd} features/Core/FeatureLoad"
-    runVanessaTestCore(command)
-}
-
-def featureReader(){
-    command = "${vrunner_bdd} features/Core/FeatureReader"
-    runVanessaTestCore(command)
-}
-
-def featureWrite(){
-    command = "${vrunner_bdd} features/Core/FeatureWrite"
-    runVanessaTestCore(command)
-}
-
-def expectedSomething(){
-    command = "${vrunner_bdd} features/Core/ExpectedSomething"
-    runVanessaTestCore(command)
-}
-
-def openForm(){
-    command = "${vrunner_bdd} features/Core/OpenForm"
-    runVanessaTestCore(command)
-}
-
-def testClient(){
-    command = "${vrunner_bdd} features/Core/TestClient"
-    runVanessaTestCore(command)
-}
-
-def rantslate(){
-    command = "${vrunner_bdd} features/Core/Translate"
-    runVanessaTestCore(command)
-}
-
-def runVanessaTestCore(String command){
-    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
-        withDockerContainer(args: ' -P -u root:root', image: "${imageName}") {
-            cmdRun(xstart_and_novnc)
-            def buildKey = "core";
-            withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
-                try{
-                    cmdRun(command)
-                } finally {
-                    cmdRun("chmod -R 777 ./build")  
-                    junit allowEmptyResults: true, keepLongStdio: false, testResults: 'build/ServiceBases/junitreport/**/*.xml'                                        
-                }
-            }
-        }
-    }
-}
-
-def runVanessaTest(String command,  String testResultsPath){
-    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
-        withDockerContainer(args: ' -P -u root:root', image: "${imageName}") {
-            cmdRun(xstart_and_novnc)
-            def buildKey = "core";
-            withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
-                try{
-                    cmdRun(command)
-                } finally {
-                    cmdRun("chmod -R 777 ./build") 
-                    junit allowEmptyResults: true, keepLongStdio: false, testResults: testResultsPath                                          
-                }
-            }
-        }
-    }
-}
-
-def runXunitTest(String command, String testResultsPath){
-    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
-        withDockerContainer(args: '-P -u root:root', image: "${imageName}") {
-            cmdRun(xstart_and_novnc)
-            try{
-                cmdRun(command)
-            } finally {
-                cmdRun("chmod -R 777 ./build")
-                junit allowEmptyResults: true, keepLongStdio: false, testResults: testResultsPath                                          
-            }
-        }
-    }
-}
-
-def build(){
-    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
-        withDockerContainer(args: '-P -u root:root', image: "${imageName}") {
-            cmdRun(xstart_and_novnc)
-            cmdRun("opm build .") 
-            archiveArtifacts 'add-*.ospx'
-            archiveArtifacts 'add-*.zip'
-        }
-    }
-}
 
 pipeline {
 
@@ -220,7 +65,17 @@ pipeline {
             allure includeProperties: false, jdk: '', results: [
               [path: 'build/allure'],
               [path: 'build/allure-tdd'],
-              [path: 'build/ServiceBases/allurereport']
+              [path: 'build/ServiceBases/allurereport/8310UF'], 
+              [path: "build/ServiceBases/allurereport/core-StepsRunner"],
+              [path: "build/ServiceBases/allurereport/core-StepsGenerator"],
+              [path: "build/ServiceBases/allurereport/core-StepsProgramming"],
+              [path: "build/ServiceBases/allurereport/core-FeatureLoad"],
+              [path: "build/ServiceBases/allurereport/core-FeatureReader"],
+              [path: "build/ServiceBases/allurereport/core-FeatureWrite"],
+              [path: "build/ServiceBases/allurereport/core-ExpectedSomething"],
+              [path: "build/ServiceBases/allurereport/core-OpenForm"],
+              [path: "build/ServiceBases/allurereport/core-TestClient"],
+              [path: "build/ServiceBases/allurereport/core-Translate"]
             ]
         }
     }
@@ -269,11 +124,11 @@ pipeline {
 
         stage('Тестирование и сборка') {             
             steps {
-                // timeout(120){
+                timeout(180){
                     script{
                         parallel(running_set)
                     }
-                // }
+                }
             }
         }
     }
@@ -326,4 +181,92 @@ def sonarqubeScan() {
 
     return sonarCommand
 
+}
+
+
+def smokeTest(){
+    testResultsPath = '**/build/junit-smoke/*.xml'
+    command = "${vrunner_tdd} tests/smoke --settings tools/JSON/vrunner.json --ordinaryapp ${ordinaryapp} --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-smoke/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}\""
+    runXunitTest(command, testResultsPath)
+}
+
+def ownTest(){
+    testResultsPath = '**/build/junit-tdd/*.xml'
+    command = "${vrunner_tdd} tests/xunit --settings tools/JSON/vrunner.json --ordinaryapp ${ordinaryapp} --reportsxunit \"ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}\""
+    runXunitTest(command, testResultsPath)
+}
+
+// при запуске vrunner vanessa
+// нельзя одновременно указывать ключи запуска --ordinaryapp 1 и --path ПутьХХХ,
+// т.к. Vanessa.ADD в толстом клиенте для обычных форм не поддерживает указание фич через командную строку.
+// старый баг, который никто не починил, т.к. обычные формы никто уже не дорабатывает.
+
+def libraryBDDTest(){
+    testResultsPath = 'build/ServiceBases/junitreport/**/*.xml'
+    command = "${vrunner_bdd} --path features/libraries"
+    if(ordinaryapp == "1") {
+      command = "${vrunner_bdd}"
+    }
+    runVanessaTest(command, testResultsPath)
+}
+
+def runVanessaTestCore(String buildName, String command){
+  if(ordinaryapp != "1") {
+    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
+        withDockerContainer(args: ' -P -u root:root', image: "${imageName}") {
+            cmdRun(xstart_and_novnc)
+            def buildKey = "core-${buildName}";
+            withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
+                try{
+                    cmdRun("${vrunner_bdd} --path features/${command}")
+                } finally {
+                    cmdRun("chmod -R 777 ./build")  
+                    junit allowEmptyResults: true, keepLongStdio: false, testResults: 'build/ServiceBases/junitreport/**/*.xml'                                        
+                }
+            }
+        }
+    }
+  }
+}
+
+def runVanessaTest(String command,  String testResultsPath){
+    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
+        withDockerContainer(args: ' -P -u root:root', image: "${imageName}") {
+            cmdRun(xstart_and_novnc)
+            def buildKey = "core";
+            withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
+                try{
+                    cmdRun(command)
+                } finally {
+                    cmdRun("chmod -R 777 ./build") 
+                    junit allowEmptyResults: true, keepLongStdio: false, testResults: testResultsPath                                          
+                }
+            }
+        }
+    }
+}
+
+def runXunitTest(String command, String testResultsPath){
+    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
+        withDockerContainer(args: '-P -u root:root', image: "${imageName}") {
+            cmdRun(xstart_and_novnc)
+            try{
+                cmdRun(command)
+            } finally {
+                cmdRun("chmod -R 777 ./build")
+                junit allowEmptyResults: true, keepLongStdio: false, testResults: testResultsPath                                          
+            }
+        }
+    }
+}
+
+def build(){
+    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
+        withDockerContainer(args: '-P -u root:root', image: "${imageName}") {
+            cmdRun(xstart_and_novnc)
+            cmdRun("opm build .") 
+            archiveArtifacts 'add-*.ospx'
+            archiveArtifacts 'add-*.zip'
+        }
+    }
 }
