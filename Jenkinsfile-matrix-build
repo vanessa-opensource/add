@@ -1,4 +1,4 @@
-vanessaPlatforms = ["8.3.14.1630", "8.3.15.1489"]
+vanessaPlatforms = ["8.3.15.1489", "8.3.14.1630"]
 ordinaryApps = ["0","1"]
 
 childJobNamePrefix = "Vanessa-ADD-Docker-"
@@ -10,7 +10,7 @@ pipeline {
     options {
       buildDiscarder(logRotator(numToKeepStr: '10'))
       disableConcurrentBuilds()
-      timestamps() 
+      timestamps()
     }
 
     stages {
