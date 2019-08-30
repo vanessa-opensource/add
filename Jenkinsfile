@@ -56,7 +56,7 @@ pipeline {
 
     post {  //Выполняется после сборки
         always {
-            cmdRun("chmod -R 777 .")  
+            // cmdRun("chmod -R 777 .")  
 
             cmdRun("echo отчет junit")
             junit allowEmptyResults: true, testResults: '**/out/junit/*.xml'
