@@ -44,7 +44,7 @@ pipeline {
     options { 
       buildDiscarder(logRotator(numToKeepStr: '10'))
     //   disableConcurrentBuilds()
-    //   timeout(time: 120, unit: 'MINUTES')
+      timeout(time: 90, unit: 'MINUTES')
       timestamps() 
     }
 
@@ -124,10 +124,8 @@ pipeline {
 
         stage('Тестирование и сборка') {             
             steps {
-                timeout(180){
-                    script{
-                        parallel(running_set)
-                    }
+                script{
+                    parallel(running_set)
                 }
             }
         }
@@ -211,6 +209,7 @@ def libraryBDDTest(){
 }
 
 def runVanessaTestCore(String buildName, String command){
+  // 
   if(ordinaryapp != "1") {
     docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
         withDockerContainer(args: ' -P -u root:root', image: "${imageName}") {
