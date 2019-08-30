@@ -56,6 +56,8 @@ pipeline {
 
     post {  //Выполняется после сборки
         always {
+            cmdRun("chmod -R 777 .")  
+
             cmdRun("echo отчет junit")
             junit allowEmptyResults: true, testResults: '**/out/junit/*.xml'
             junit allowEmptyResults: true, testResults: '**/build/junit-smoke/*.xml'
@@ -77,6 +79,7 @@ pipeline {
               [path: "build/ServiceBases/allurereport/core-TestClient"],
               [path: "build/ServiceBases/allurereport/core-Translate"]
             ]
+
         }
     }
 
