@@ -3,10 +3,6 @@
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 	</AutoCommandBar>
-	<Events>
-		<Event name="OnOpen">ПриОткрытии</Event>
-		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
-	</Events>
 	<ChildItems>
 		<Table name="КнопкиКомандногоИнтерфейса" id="1">
 			<Representation>List</Representation>
