@@ -199,7 +199,7 @@ pipeline {
     options { 
       buildDiscarder(logRotator(numToKeepStr: '10'))
     //   disableConcurrentBuilds()
-      timeout(time: 120, unit: 'MINUTES')
+    //   timeout(time: 120, unit: 'MINUTES')
       timestamps() 
     }
 
@@ -269,11 +269,11 @@ pipeline {
 
         stage('Тестирование и сборка') {             
             steps {
-                timeout(120){
+                // timeout(120){
                     script{
                         parallel(running_set)
                     }
-                }
+                // }
             }
         }
     }
