@@ -103,14 +103,9 @@
     },
     
     "SmokeCommonModules": {
-        "Subsystems": ["FoxyLink",
-	        "FoxyLink.Integration",
-            "FoxyLink.Plugins.Channels",
-            "FoxyLink.Tasks",
-            "FoxyLink.*"
+        "Subsystems": [
          ],
         "ExcludedCommonModules": [
-             "SocialNetworks_ExchangeServer"
         ]
     }
 }
