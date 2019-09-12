@@ -98,16 +98,14 @@ Procedure Fact_ClientModule(CommonModuleName, Transaction = False) Export
             |uk='Використання в зовнішньому з''єднанні {%1}';
             |en_CA='Use in external connection {%1}'"),
         CommonModuleName));
-		
-		If Metadata.DefaultRunMode = ClientRunMode.OrdinaryApplication Then
-			Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
-			NStr("en='Use of ordinary application in the client {%1}';
-			|ru='Использование в клиенте обычного приложения {%1}';
-			|uk='Використання в клієнті звичайного додатку {%1}';
-			|en_CA='Use of ordinary application in the client {%1}'"),
-			CommonModuleName));			
-		EndIf; 
-	    
+    
+    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
+    
     Assertions.ПроверитьЛожь(Module.ServerCall, _StrTemplate(
         NStr("en='Allows server call {%1}';
             |ru='Разрешает вызов сервера {%1}';
@@ -160,16 +158,14 @@ Procedure Fact_GlobalModule(CommonModuleName, Transaction = False) Export
             |uk='Використання в зовнішньому з''єднанні {%1}';
             |en_CA='Use in external connection {%1}'"),
         CommonModuleName));
-		
-		If Metadata.DefaultRunMode = ClientRunMode.OrdinaryApplication Then		
-			Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
-			NStr("en='Use of ordinary application in the client {%1}';
-			|ru='Использование в клиенте обычного приложения {%1}';
-			|uk='Використання в клієнті звичайного додатку {%1}';
-			|en_CA='Use of ordinary application in the client {%1}'"),
-			CommonModuleName));
-		EndIf;
-	
+    
+    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
+    
     Assertions.ПроверитьЛожь(Module.ServerCall, _StrTemplate(
         NStr("en='Allows server call {%1}';
             |ru='Разрешает вызов сервера {%1}';
@@ -222,16 +218,14 @@ Procedure Fact_ServerCallModule(CommonModuleName, Transaction = False) Export
             |uk='Використання в зовнішньому з''єднанні {%1}';
             |en_CA='Use in external connection {%1}'"),
         CommonModuleName));
-		
-		If Metadata.DefaultRunMode = ClientRunMode.OrdinaryApplication Then		
-			Assertions.ПроверитьЛожь(Module.ClientOrdinaryApplication, _StrTemplate(
-			NStr("en='Use of ordinary application in the client {%1}';
-			|ru='Использование в клиенте обычного приложения {%1}';
-			|uk='Використання в клієнті звичайного додатку {%1}';
-			|en_CA='Use of ordinary application in the client {%1}'"),
-			CommonModuleName));
-		EndIf;
-	
+    
+    Assertions.ПроверитьЛожь(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
+
     Assertions.ПроверитьИстину(Module.ServerCall, _StrTemplate(
         NStr("en='Allows server call {%1}';
             |ru='Разрешает вызов сервера {%1}';
@@ -284,16 +278,14 @@ Procedure Fact_ServerModule(CommonModuleName, Transaction = False) Export
             |uk='Використання в зовнішньому з''єднанні {%1}';
             |en_CA='Use in external connection {%1}'"),
         CommonModuleName));
-		
-		If Metadata.DefaultRunMode = ClientRunMode.OrdinaryApplication Then		
-			Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
-			NStr("en='Use of ordinary application in the client {%1}';
-			|ru='Использование в клиенте обычного приложения {%1}';
-			|uk='Використання в клієнті звичайного додатку {%1}';
-			|en_CA='Use of ordinary application in the client {%1}'"),
-			CommonModuleName));
-		EndIf;
-	
+    
+    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
+
     Assertions.ПроверитьЛожь(Module.ServerCall, _StrTemplate(
         NStr("en='Allows server call {%1}';
             |ru='Разрешает вызов сервера {%1}';
@@ -346,16 +338,14 @@ Procedure Fact_ClientServerModule(CommonModuleName, Transaction = False) Export
             |uk='Використання в зовнішньому з''єднанні {%1}';
             |en_CA='Use in external connection {%1}'"),
         CommonModuleName));
-		
-		If Metadata.DefaultRunMode = ClientRunMode.OrdinaryApplication Then		
-			Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
-			NStr("en='Use of ordinary application in the client {%1}';
-			|ru='Использование в клиенте обычного приложения {%1}';
-			|uk='Використання в клієнті звичайного додатку {%1}';
-			|en_CA='Use of ordinary application in the client {%1}'"),
-			CommonModuleName));
-		EndIf;
-	
+        
+    Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
+
     Assertions.ПроверитьЛожь(Module.ServerCall, _StrTemplate(
         NStr("en='Allows server call {%1}';
             |ru='Разрешает вызов сервера {%1}';
