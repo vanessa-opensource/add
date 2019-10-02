@@ -151,6 +151,7 @@
 			<Catalog>Справочник3</Catalog>
 			<Catalog>ПростойСправочник</Catalog>
 			<Catalog>ПростойСправочник2</Catalog>
+			<Catalog>дт_ЭлементыСхемРазмещения</Catalog>
 			<Document>Документ1</Document>
 			<Document>Документ2</Document>
 			<Document>ДокументСДвижениями</Document>
@@ -162,6 +163,7 @@
 			<Report>ОтчетСОбщейФормойПоУмолчанию</Report>
 			<Report>ОтчетССобственнымиФормами</Report>
 			<Report>ОтчетБезУказанияФорм</Report>
+			<Report>дт_ЭлементыСхемРазмещения</Report>
 			<DataProcessor>Тест_Обработка</DataProcessor>
 			<DataProcessor>ТестОбработка_Форма_ИсключениеПриОткрытии</DataProcessor>
 			<DataProcessor>ТестПадающий_Обработка</DataProcessor>
