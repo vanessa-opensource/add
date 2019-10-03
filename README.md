@@ -1,9 +1,10 @@
-﻿<a id="markdown-vanessa-add--add-" name="vanessa-add--add-"></a>
+<a id="markdown-vanessa-add--add-" name="vanessa-add--add-"></a>
 # Vanessa Automation Driven Development
 
 | Сообщество продукта | Качество проекта | Статус сборки | Текущий релиз |
 |--------------------|------------------|---------------|---------------|
-| [![Открытый форум проекта](https://img.shields.io/discourse/https/xdd.silverbulleters.org/users.svg)](https://xdd.silverbulleters.org/c/razrabotka/xdrivendevelopment) |  [![Профиль качества](https://opensonar.silverbulleters.org/api/project_badges/measure?project=add&metric=alert_status)](https://opensonar.silverbulleters.org/dashboard?id=add) |  <Новый сервер CI>   | [![](https://img.shields.io/github/release/silverbulleters/add.svg)](https://github.com/silverbulleters/add)   |
+| [![Открытый форум проекта](https://img.shields.io/discourse/https/xdd.silverbulleters.org/users.svg)](https://xdd.silverbulleters.org/c/razrabotka/xdrivendevelopment) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsilverbulleters%2Fadd.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsilverbulleters%2Fadd?ref=badge_shield)
+|  [![Профиль качества](https://opensonar.silverbulleters.org/api/project_badges/measure?project=add&metric=alert_status)](https://opensonar.silverbulleters.org/dashboard?id=add) |  <Новый сервер CI>   | [![](https://img.shields.io/github/release/silverbulleters/add.svg)](https://github.com/silverbulleters/add)   |
 
 
 <!-- TOC insertAnchor:true -->
@@ -134,3 +135,7 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 
 Данная документация распространяется под открытой лицензией <br /><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.<br />
 <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a>
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fsilverbulleters%2Fadd.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fsilverbulleters%2Fadd?ref=badge_large)
