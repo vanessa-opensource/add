@@ -133,6 +133,7 @@
 			<CommonModule>xddВызовСервера</CommonModule>
 			<CommonModule>ЗапускПриложенияКлиент</CommonModule>
 			<CommonModule>ЗапускПриложенияВызовСервера</CommonModule>
+			<CommonAttribute>ОбщийРеквизит1</CommonAttribute>
 			<ExchangePlan>ПланОбмена1</ExchangePlan>
 			<FunctionalOption>ФункциональнаяОпция1</FunctionalOption>
 			<CommonForm>ФормаОтчета</CommonForm>
