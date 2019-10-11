@@ -552,10 +552,10 @@ Procedure AddSmokeCommonModuleTest(TestsSet, CommonModule)
     EndIf;
         
     TestsSet.Добавить(TestName, TestParameters, _StrTemplate(
-        NStr("en='Common module : %1 {%2}';
-            |ru='Общий модуль : %1 {%2}';
+        NStr("en='Common module : %1 {%2} - checking name of common module';
+            |ru='Общий модуль : %1 {%2} - проверка наименования общего модуля';
             |uk='Загальний модуль : %1 {%2}';
-            |en_CA='Common module : %1 {%2}'"), 
+            |en_CA='Common module : %1 {%2} - checking name of common module'"), 
         CommonModule.Name, CommonModule.Comment));    
             
 EndProcedure // AddSmokeCommonModuleTest()
