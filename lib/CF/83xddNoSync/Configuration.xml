@@ -32,7 +32,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>ADD/TDD, ver. 6.2.0</v8:content>
+					<v8:content>ADD/TDD, ver. 6.4.0</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -45,7 +45,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor/>
-			<Version>6.2.0</Version>
+			<Version>6.4.0</Version>
 			<UpdateCatalogAddress/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<UseManagedFormInOrdinaryApplication>true</UseManagedFormInOrdinaryApplication>
@@ -58,8 +58,8 @@
 			<DynamicListsUserSettingsStorage/>
 			<Content/>
 			<DefaultReportForm>CommonForm.ФормаОтчета</DefaultReportForm>
-			<DefaultReportVariantForm/>
-			<DefaultReportSettingsForm/>
+			<DefaultReportVariantForm>CommonForm.ФормаВариантаОтчета</DefaultReportVariantForm>
+			<DefaultReportSettingsForm>CommonForm.ФормаНастроекОтчета</DefaultReportSettingsForm>
 			<DefaultDynamicListSettingsForm/>
 			<DefaultSearchForm/>
 			<RequiredMobileApplicationPermissions>
@@ -133,9 +133,12 @@
 			<CommonModule>xddВызовСервера</CommonModule>
 			<CommonModule>ЗапускПриложенияКлиент</CommonModule>
 			<CommonModule>ЗапускПриложенияВызовСервера</CommonModule>
+			<CommonAttribute>ОбщийРеквизит1</CommonAttribute>
 			<ExchangePlan>ПланОбмена1</ExchangePlan>
 			<FunctionalOption>ФункциональнаяОпция1</FunctionalOption>
 			<CommonForm>ФормаОтчета</CommonForm>
+			<CommonForm>ФормаНастроекОтчета</CommonForm>
+			<CommonForm>ФормаВариантаОтчета</CommonForm>
 			<Catalog>Справочник1</Catalog>
 			<Catalog>Справочник2</Catalog>
 			<Catalog>ИерархическийСправочник</Catalog>
@@ -149,6 +152,7 @@
 			<Catalog>Справочник3</Catalog>
 			<Catalog>ПростойСправочник</Catalog>
 			<Catalog>ПростойСправочник2</Catalog>
+			<Catalog>дт_ЭлементыСхемРазмещения</Catalog>
 			<Document>Документ1</Document>
 			<Document>Документ2</Document>
 			<Document>ДокументСДвижениями</Document>
@@ -157,6 +161,10 @@
 			<Report>ТестовыйОтчетСКДДляСравнениеСЭталоном</Report>
 			<Report>Тест_Отчет</Report>
 			<Report>Отчет2</Report>
+			<Report>ОтчетСОбщейФормойПоУмолчанию</Report>
+			<Report>ОтчетССобственнымиФормами</Report>
+			<Report>ОтчетБезУказанияФорм</Report>
+			<Report>дт_ЭлементыСхемРазмещения</Report>
 			<DataProcessor>Тест_Обработка</DataProcessor>
 			<DataProcessor>ТестОбработка_Форма_ИсключениеПриОткрытии</DataProcessor>
 			<DataProcessor>ТестПадающий_Обработка</DataProcessor>

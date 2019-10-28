@@ -306,6 +306,66 @@ Procedure Fact_ServerModule(CommonModuleName, Transaction = False) Export
     
 EndProcedure // Fact_ServerModule()
 
+// Tests whether server common module with full access rights is set properly.
+//
+// Parameters:
+//  CommonModuleName - String  - common module name.
+//  Transaction      - Boolean - shows if transaction exist. 
+//                      Default value: False.
+//
+Procedure Fact_FullAccessModule(CommonModuleName, Transaction = False) Export
+    
+    Module = Metadata.CommonModules.Find(CommonModuleName);
+    
+    Assertions.ПроверитьТип(Module, "MetadataObject");
+     
+    Assertions.ПроверитьЛожь(Module.Global, _StrTemplate(
+        NStr("en='Participation in global context creation {%1}';
+            |ru='Участие в формировании глобального контекста {%1}';
+            |uk='Участь у формуванні глобального контексту {%1}';
+            |en_CA='Participation in global context creation {%1}'"),
+        CommonModuleName));
+
+    Assertions.ПроверитьЛожь(Module.ClientManagedApplication, _StrTemplate(
+        NStr("en='Use of managed application in the client {%1}';
+            |ru='Использование в клиенте управляемого приложения {%1}';
+            |uk='Використання в клієнті керованого додатку {%1}';
+            |en_CA='Use of managed application in the client {%1}'"),
+        CommonModuleName));
+    
+    Assertions.ПроверитьИстину(Module.Server, _StrTemplate(
+        NStr("en='Run on server in client/server mode {%1}';
+            |ru='Выполнение на сервере в клиент-серверном варианте {%1}';
+            |uk='Виконання на сервері в клієнт-серверному варіанті {%1}';
+            |en_CA='Run on server in client/server mode {%1}'"),
+        CommonModuleName));
+    
+    Assertions.ПроверитьЛожь(Module.ExternalConnection, _StrTemplate(
+        NStr("en='Use in external connection {%1}';
+            |ru='Использование во внешнем соединении {%1}';
+            |uk='Використання в зовнішньому з''єднанні {%1}';
+            |en_CA='Use in external connection {%1}'"),
+        CommonModuleName));
+    
+    Assertions.ПроверитьЛожь(Module.ClientOrdinaryApplication, _StrTemplate(
+        NStr("en='Use of ordinary application in the client {%1}';
+            |ru='Использование в клиенте обычного приложения {%1}';
+            |uk='Використання в клієнті звичайного додатку {%1}';
+            |en_CA='Use of ordinary application in the client {%1}'"),
+        CommonModuleName));
+
+    Assertions.ПроверитьЛожь(Module.ServerCall, _StrTemplate(
+        NStr("en='Allows server call {%1}';
+            |ru='Разрешает вызов сервера {%1}';
+            |uk='Дозволяє виклик сервера {%1}';
+            |en_CA='Allows server call {%1}'"),
+        CommonModuleName));
+    
+    Fact_FullAccessRightsGranted(CommonModuleName, Module);
+    Fact_ModuleReuseReturnValues(CommonModuleName, Module);
+    
+EndProcedure // Fact_FullAccessModule()
+
 // Tests whether client-server common module is set properly.
 //
 // Parameters:
@@ -453,12 +513,10 @@ Procedure AddSmokeCommonModuleTest(TestsSet, CommonModule)
     
     NameToAnalyze = CommonModule.Name;
     NameToAnalyze = StrReplace(NameToAnalyze, "Cached", "");
-    NameToAnalyze = StrReplace(NameToAnalyze, "FullAccess", "");   
     NameToAnalyze = StrReplace(NameToAnalyze, "Overridable", "");
     NameToAnalyze = StrReplace(NameToAnalyze, "ReUse", "");
     NameToAnalyze = StrReplace(NameToAnalyze, "Переопределяемый", "");
     NameToAnalyze = StrReplace(NameToAnalyze, "ПовтИсп", "");
-    NameToAnalyze = StrReplace(NameToAnalyze, "ПолныеПрава", "");
     SuffixPart = Right(NameToAnalyze, 6); 
     
     TestParameters = TestsSet.ПараметрыТеста(CommonModule.Name, False);
@@ -482,6 +540,11 @@ Procedure AddSmokeCommonModuleTest(TestsSet, CommonModule)
         
         TestName = "Fact_ClientModule";
         
+    ElsIf Find(CommonModule.Name, "ПолныеПрава") <> 0
+        Or Find(CommonModule.Name, "FullAccess") <> 0 Then
+        
+        TestName = "Fact_FullAccessModule";
+        
     Else
         
         TestName = "Fact_ServerModule";
@@ -489,10 +552,10 @@ Procedure AddSmokeCommonModuleTest(TestsSet, CommonModule)
     EndIf;
         
     TestsSet.Добавить(TestName, TestParameters, _StrTemplate(
-        NStr("en='Common module : %1 {%2}';
-            |ru='Общий модуль : %1 {%2}';
+        NStr("en='Common module : %1 {%2} - checking name of common module';
+            |ru='Общий модуль : %1 {%2} - проверка наименования общего модуля';
             |uk='Загальний модуль : %1 {%2}';
-            |en_CA='Common module : %1 {%2}'"), 
+            |en_CA='Common module : %1 {%2} - checking name of common module'"), 
         CommonModule.Name, CommonModule.Comment));    
             
 EndProcedure // AddSmokeCommonModuleTest()
