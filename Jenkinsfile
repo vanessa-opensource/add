@@ -2,7 +2,7 @@
 
 
 
-DOCKER_REGISTRY_USER_CREDENTIONALS_ID  = 'gitlab.sb' //getParameterValue(buildEnv, 'DOCKER_REGISTRY_USER_CREDENTIONALS_ID')
+DOCKER_REGISTRY_USER_CREDENTIONALS_ID  = 'ci-bot-for-git.silverbulleters.org' //getParameterValue(buildEnv, 'DOCKER_REGISTRY_USER_CREDENTIONALS_ID')
 DOCKER_REGISTRY_URL = 'https://registry.silverbulleters.org' // getParameterValue(buildEnv, 'DOCKER_REGISTRY_URL')
 v8version = "${params.V8VERSION}"
 ordinaryapp = "${params.ORDINARY_APP}" 
