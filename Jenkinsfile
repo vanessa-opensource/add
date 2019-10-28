@@ -40,7 +40,7 @@ vrunner_tdd =  "vrunner xunit "
 
 pipeline {
 
-    agent { label 'docker' }
+    agent { label 'docker && linux' }
     options { 
       buildDiscarder(logRotator(numToKeepStr: '10'))
     //   disableConcurrentBuilds()
