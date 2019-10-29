@@ -2,14 +2,14 @@
 
 
 
-DOCKER_REGISTRY_USER_CREDENTIONALS_ID  = 'ci-bot-for-git.silverbulleters.org' //getParameterValue(buildEnv, 'DOCKER_REGISTRY_USER_CREDENTIONALS_ID')
-DOCKER_REGISTRY_URL = 'https://registry.silverbulleters.org' // getParameterValue(buildEnv, 'DOCKER_REGISTRY_URL')
+DOCKER_REGISTRY_USER_CREDENTIONALS_ID  = 'ci-bot-for-git.silverbulleters.org' 
+DOCKER_REGISTRY_URL = 'https://registry.silverbulleters.org' 
 SONARQUBE_URL = "https://autoquality.silverbulleter.sonar.vanessa.services"
 v8version = "${params.V8VERSION}"
 ordinaryapp = "${params.ORDINARY_APP}" 
 
 imageName = "registry.silverbulleters.org/products/avtoinfrastruktura/production/sb_vanessa-runner:${v8version}-latest"
-imageNameSonar = 'registry.silverbulleters.org/products/avtoinfrastruktura/production/sb_sonarqube-scanner:latest'
+imageNameSonar = 'registry.silverbulleters.org/landscape/ops/isasacode/silverbulleters/sonarqube-scanner:latest'
 
 //constants
 
@@ -90,7 +90,7 @@ pipeline {
 
     stages {
         stage('First step') {
-
+            
             parallel {
                 stage('Подготовка окружения') {
                     agent {
@@ -120,14 +120,15 @@ pipeline {
                             script{
                                 docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
                                     try{
-                                        sonarCommand = sonarqubeScan()
                                         withDockerContainer(args: '', image: "${imageNameSonar}") {
+                                            sonarCommand = sonarqubeScan()
                                             withSonarQubeEnv("autoquality-sonar") {
-                                                cmdRun(sonarCommand, buildEnv)
+                                                cmdRun(sonarCommand)
                                             }
-                                        } 
+                                        }
+                                        
                                     } catch (err) {
-                                        println 'Ошибка во время выполнения синтаксической проверки'
+                                        println 'Ошибка во время выполнения статического анализа'
                                         currentBuild.result = 'FAILURE'
                                     }   
                                 }
@@ -322,16 +323,14 @@ def sonarqubeScan() {
     def projectVersion = ""
     def configurationText = readFile encoding: 'UTF-8', file: 'epf/bddRunner/bddRunner/Ext/ObjectModule.bsl'
     def configurationVersion = (configurationText =~ /Версия = "(.*)";/)[0][1]
-    projectVersion = "-Dsonar.projectVersion=${configurationVersion}"
+    projectVersion = "-Dsonar.projectVersion=${configurationVersion}"      
 
+    // def scannerHome = tool 'sonar-scanner'
 
-    def scannerHome = tool 'sonar-scanner'       
+    sonarCommand = "sonar-scanner -Dsonar.host.url=${SONARQUBE_URL}"
 
-    withCredentials([string(credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth')]) {
-        sonarCommand = "${scannerHome}/bin/sonar-scanner -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SonarOAuth}"
-    }
-
-    def makeAnalyzis = true
+    println "отладка: sonarCommand: ${sonarCommand}"
+    // def makeAnalyzis = true
     // if (env.BRANCH_NAME == "master") {
     //     echo 'Analysing master branch'
     // } else if (env.BRANCH_NAME == "develop") {
