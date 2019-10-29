@@ -4,6 +4,7 @@
 
 DOCKER_REGISTRY_USER_CREDENTIONALS_ID  = 'ci-bot-for-git.silverbulleters.org' //getParameterValue(buildEnv, 'DOCKER_REGISTRY_USER_CREDENTIONALS_ID')
 DOCKER_REGISTRY_URL = 'https://registry.silverbulleters.org' // getParameterValue(buildEnv, 'DOCKER_REGISTRY_URL')
+SONARQUBE_URL = "https://autoquality.silverbulleter.sonar.vanessa.services"
 v8version = "${params.V8VERSION}"
 ordinaryapp = "${params.ORDINARY_APP}" 
 
@@ -31,7 +32,7 @@ running_set = [
     "Сборка_пакета": {build()}
 ]
 
-nethasp_fill = " echo >> /opt/1C/v8.3/x86_64/conf/nethasp.ini && echo NH_SERVER_ADDR = ${env.serverHasp} >> /opt/1C/v8.3/x86_64/conf/nethasp.ini "
+nethasp_fill = " echo >> /opt/1C/v8.3/x86_64/conf/nethasp.ini && echo NH_SERVER_ADDR = ${env.SERVER_HASP} >> /opt/1C/v8.3/x86_64/conf/nethasp.ini "
 xstart_and_novnc =  "set -xe && xstart && novnc && runxfce4 && ${nethasp_fill} && bash"
 
 bddSettings =  " --vanessasettings tools/JSON/VBParams8310linux.json "
@@ -55,7 +56,11 @@ pipeline {
     }
 
     post {  //Выполняется после сборки
+
         always {
+            agent {
+                label "slave"
+            }
             // cmdRun("chmod -R 777 .")  
 
             cmdRun("echo отчет junit")
@@ -97,7 +102,6 @@ pipeline {
                                 docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
                                     withDockerContainer(args: '-P -u root:root', image: "${imageName}") {
                                         cmdRun(xstart_and_novnc)
-                                        cmdRun("echo opm run init file --v8version ${v8version}") // после отладки убрать
                                         cmdRun("opm run init file --v8version ${v8version}")
                                     }
                                 }
@@ -116,9 +120,11 @@ pipeline {
                             script{
                                 docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
                                     try{
-                                        def sonarCommand = sonarqubeScan()
+                                        sonarCommand = sonarqubeScan()
                                         withDockerContainer(args: '', image: "${imageNameSonar}") {
-                                            cmdRun(sonarCommand)
+                                            withSonarQubeEnv("autoquality-sonar") {
+                                                cmdRun(sonarCommand, buildEnv)
+                                            }
                                         } 
                                     } catch (err) {
                                         println 'Ошибка во время выполнения синтаксической проверки'
@@ -135,6 +141,9 @@ pipeline {
         stage('Паралельное тестирование и сборка (Windows && LInux)') {             
             parallel {
                 stage("Linux (docker)") {
+                    agent {
+                        label "linux && docker"
+                    }
                     steps {
                         script{
                             parallel(running_set)
@@ -152,11 +161,17 @@ pipeline {
                             }
                         }
                         stage("Cобственные_TDD_тесты (Windows)") {
+                            agent {
+                                label "slave"
+                            }
                             steps {
                                 ownTest()
                             }
                         }
                         stage("BDD тестирование (Windows)") {
+                            agent {
+                                label "slave"
+                            }                            
                             steps {
                                     libraryBDDTest() 
                                     runVanessaTestCore("StepsRunner", "StepsRunner") 
@@ -310,10 +325,10 @@ def sonarqubeScan() {
     projectVersion = "-Dsonar.projectVersion=${configurationVersion}"
 
 
-    def sonarCommand = "sonar-scanner -X ${projectVersion}"
+    def scannerHome = tool 'sonar-scanner'       
 
     withCredentials([string(credentialsId: env.OpenSonarOAuthCredentianalID, variable: 'SonarOAuth')]) {
-        sonarCommand = sonarCommand + " -Dsonar.host.url=${env.sonarQubeURL} -Dsonar.login=${SonarOAuth}"
+        sonarCommand = "${scannerHome}/bin/sonar-scanner -Dsonar.host.url=${SONARQUBE_URL} -Dsonar.login=${SonarOAuth}"
     }
 
     def makeAnalyzis = true
@@ -347,3 +362,5 @@ def sonarqubeScan() {
     return sonarCommand
 
 }
+
+
