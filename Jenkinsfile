@@ -41,7 +41,9 @@ vrunner_tdd =  "vrunner xunit "
 
 pipeline {
 
-    agent none
+    agent {
+        label "docker && linux"
+    }
     options { 
       buildDiscarder(logRotator(numToKeepStr: '10'))
     //   disableConcurrentBuilds()
@@ -58,9 +60,6 @@ pipeline {
     post {  //Выполняется после сборки
 
         always {
-            agent {
-                label "slave"
-            }
             // cmdRun("chmod -R 777 .")  
 
             cmdRun("echo отчет junit")
@@ -93,9 +92,6 @@ pipeline {
             
             parallel {
                 stage('Подготовка окружения') {
-                    agent {
-                        label "docker && linux"
-                    }
                     steps {
                         timeout(30){
                             script{
@@ -112,9 +108,6 @@ pipeline {
                 }
                 
                 stage('Статический анализ') {
-                    agent {
-                        label "docker && linux"
-                    }
                     steps {
                         timeout(30){
                             script{
@@ -139,57 +132,12 @@ pipeline {
             }
         }
 
-        stage('Паралельное тестирование и сборка (Windows && LInux)') {             
-            parallel {
-                stage("Linux (docker)") {
-                    agent {
-                        label "linux && docker"
-                    }
-                    steps {
-                        script{
-                            parallel(running_set)
-                        }
-                    } 
+        stage('Паралельное тестирование и сборка (linux && docker)') {             
+            steps {
+                script{
+                    parallel(running_set)
                 }
-                stage("Windows (node)") {
-                    stages{
-                        stage("Дымовое_тестирование (Windows)") {
-                            agent {
-                                label "slave"
-                            }
-                            steps {
-                               smokeTest() 
-                            }
-                        }
-                        stage("Cобственные_TDD_тесты (Windows)") {
-                            agent {
-                                label "slave"
-                            }
-                            steps {
-                                ownTest()
-                            }
-                        }
-                        stage("BDD тестирование (Windows)") {
-                            agent {
-                                label "slave"
-                            }                            
-                            steps {
-                                    libraryBDDTest() 
-                                    runVanessaTestCore("StepsRunner", "StepsRunner") 
-                                    runVanessaTestCore("StepsGenerator", "StepsGenerator") 
-                                    runVanessaTestCore("StepsProgramming", "StepsProgramming") 
-                                    runVanessaTestCore("FeatureLoad", "Core/FeatureLoad") 
-                                    runVanessaTestCore("FeatureReader", "Core/FeatureReader") 
-                                    runVanessaTestCore("FeatureWrite", "Core/FeatureWrite") 
-                                    runVanessaTestCore("ExpectedSomething", "Core/ExpectedSomething") 
-                                    runVanessaTestCore("OpenForm", "Core/OpenForm") 
-                                    runVanessaTestCore("TestClient", "Core/TestClient") 
-                                    runVanessaTestCore("Translate", "Core/Translate") 
-                            }
-                        }
-                    }
-                }
-            }
+            } 
         }
     }
 
@@ -222,10 +170,8 @@ def libraryBDDTest(){
 }
 
 def runVanessaTestCore(String buildName, String command){
-  // 
-  isUnix = isUnix();
-  if(ordinaryapp != "1") {
-    if (isUnix){
+
+    if(ordinaryapp != "1") {
         docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
             withDockerContainer(args: ' -P -u root:root', image: "${imageName}") {
                 cmdRun(xstart_and_novnc)
@@ -240,69 +186,37 @@ def runVanessaTestCore(String buildName, String command){
                 }
             }
         }
-    } else {
-        def buildKey = "core-${buildName}";
-        withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
-            try{
-                cmdRun("${vrunner_bdd} --path features/${command}")
-            } finally { 
-                junit allowEmptyResults: true, testResults: 'build/ServiceBases/junitreport/**/*.xml'                                      
-            }
-        }
     }
-
-  }
 }
 
 def runVanessaTest(String command,  String testResultsPath){
-    
-    isUnix = isUnix();
-    if(isUnix){
-        docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
-            withDockerContainer(args: ' -P -u root:root', image: "${imageName}") {
-                cmdRun(xstart_and_novnc)
-                def buildKey = "core";
-                withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
-                    try{
-                        cmdRun(command)
-                    } finally {
-                        cmdRun("chmod -R 777 ./build") 
-                        junit allowEmptyResults: true, keepLongStdio: false, testResults: testResultsPath                                          
-                    }
-                }
-            }
-        }
-    } else {
-        withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
-            try{
-                cmdRun(command)
-            } finally {
-                junit allowEmptyResults: true, keepLongStdio: false, testResults: testResultsPath                                          
-            }
-        } 
-    }
-}
-
-def runXunitTest(String command, String testResultsPath){
-    isUnix = isUnix();
-    if(isUnix){
-        docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
-            withDockerContainer(args: '-P -u root:root', image: "${imageName}") {
-                cmdRun(xstart_and_novnc)
+    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
+        withDockerContainer(args: ' -P -u root:root', image: "${imageName}") {
+            cmdRun(xstart_and_novnc)
+            def buildKey = "core";
+            withEnv(["VANESSA_BUILDNAME=${buildKey}"]) {
                 try{
                     cmdRun(command)
                 } finally {
-                    cmdRun("chmod -R 777 ./build")
+                    cmdRun("chmod -R 777 ./build") 
                     junit allowEmptyResults: true, keepLongStdio: false, testResults: testResultsPath                                          
                 }
             }
         }
-    } else {
-        try{
-            cmdRun(command)
-        } finally {
-            junit allowEmptyResults: true, keepLongStdio: false, testResults: testResultsPath                                          
-        } 
+    }
+}
+
+def runXunitTest(String command, String testResultsPath){
+    docker.withRegistry(DOCKER_REGISTRY_URL, DOCKER_REGISTRY_USER_CREDENTIONALS_ID) {
+        withDockerContainer(args: '-P -u root:root', image: "${imageName}") {
+            cmdRun(xstart_and_novnc)
+            try{
+                cmdRun(command)
+            } finally {
+                cmdRun("chmod -R 777 ./build")
+                junit allowEmptyResults: true, keepLongStdio: false, testResults: testResultsPath                                          
+            }
+        }
     }
 }
 
