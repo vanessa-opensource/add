@@ -9700,7 +9700,7 @@
 												</InputField>
 												<Button name="СброситьКешИзвестныхStepDefinition" id="1532">
 													<Type>UsualButton</Type>
-													<CommandName>Form.Command.СброситьКешИзвестныхStepDefinition</CommandName>
+													<CommandName>Form.Command.СброситьКешИзвестныхШаговВНастройках</CommandName>
 													<ExtendedTooltip name="СброситьКешИзвестныхStepDefinitionРасширеннаяПодсказка" id="1533"/>
 												</Button>
 											</ChildItems>
@@ -18151,11 +18151,11 @@
 			<Shortcut>F11</Shortcut>
 			<Action>ВыполнитьОдинШагФорма</Action>
 		</Command>
-		<Command name="СброситьКешИзвестныхStepDefinition" id="49">
+		<Command name="СброситьКешИзвестныхШаговВНастройках" id="49">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сбросить кеш известных step definition</v8:content>
+					<v8:content>Сбросить кеш известных шагов</v8:content>
 				</v8:item>
 				<v8:item>
 					<v8:lang>en</v8:lang>
@@ -18237,10 +18237,10 @@
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Сбросить кеш известных step definition</v8:content>
+					<v8:content>Сбросить кеш известных шагов в настройках</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Action>СброситьКешИзвестныхStepDefinition</Action>
+			<Action>СброситьКешИзвестныхШаговВНастройках</Action>
 		</Command>
 		<Command name="ОткрытьКаталогФичи" id="50">
 			<Title>
