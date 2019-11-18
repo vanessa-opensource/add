@@ -1,5 +1,7 @@
 ## Разделы
 
+* [Простое описание языка Gherkin на русском языке](https://wellbehaved.readthedocs.io/Gherkin.html)
+  - Перевод статьи [Writing Features - Gherkin Language - behat.org](https://docs.behat.org/en/v2.5/guides/1.gherkin.html)
 * Описание использования в режиме BDD и т.д.
 * [Подготовка автодокументации - видео-документация и т.п.](https://github.com/silverbulleters/add/blob/develop/doc/bdd/%D0%BF%D0%BE%D0%B4%D0%B3%D0%BE%D1%82%D0%BE%D0%B2%D0%BA%D0%B0-%D0%B0%D0%B2%D1%82%D0%BE%D0%B4%D0%BE%D0%BA%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D0%B0%D1%86%D0%B8%D0%B8.md)
 * Библиотека шагов (известные шаги):
