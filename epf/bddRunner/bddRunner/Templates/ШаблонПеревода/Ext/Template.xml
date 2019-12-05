@@ -100,7 +100,7 @@
 	<defaultFormatIndex>7</defaultFormatIndex>
 	<height>1</height>
 	<vgRows>1</vgRows>
-	<font faceName="Arial" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute"/>
+	<font faceName="Arial" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="Absolute" scale="100"/>
 	<format>
 		<width>454</width>
 		<textPlacement>Wrap</textPlacement>
