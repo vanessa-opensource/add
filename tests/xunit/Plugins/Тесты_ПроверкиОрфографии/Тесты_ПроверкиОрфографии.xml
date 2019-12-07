@@ -6,13 +6,13 @@
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
 				<xr:ObjectId>7a7210c4-37f5-4738-bb5f-07350f119816</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.Тесты_ПроверкиОрфографии" category="Object">
+			<xr:GeneratedType name="ExternalDataProcessorObject.ПроверкиОрфографии" category="Object">
 				<xr:TypeId>f9bc00f2-22df-45c3-82e8-e92c9b51c0b4</xr:TypeId>
 				<xr:ValueId>a53c788b-7ba0-49ae-87c6-2cb2403be79d</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>Тесты_ПроверкиОрфографии</Name>
+			<Name>ПроверкиОрфографии</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -20,7 +20,7 @@
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<DefaultForm>ExternalDataProcessor.Тесты_ПроверкиОрфографии.Form.Форма</DefaultForm>
+			<DefaultForm>ExternalDataProcessor.ПроверкиОрфографии.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
