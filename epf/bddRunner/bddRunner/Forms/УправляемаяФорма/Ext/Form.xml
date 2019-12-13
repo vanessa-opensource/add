@@ -16534,7 +16534,6 @@
 					<v8:content>Перезагрузить</v8:content>
 				</v8:item>
 			</ToolTip>
-			<Shortcut>F4</Shortcut>
 			<Action>Перезагрузить</Action>
 		</Command>
 		<Command name="ЗагрузитьФичиИзКаталога" id="3">
