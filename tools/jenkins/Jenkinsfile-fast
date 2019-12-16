@@ -15,15 +15,15 @@ paths = [
     // "libraries/Плагины": "libraries"
     // "libraries": "libraries"
     "StepsRunner":"StepsRunner",
-    "Core/OpenForm": "OpenForm",
-    "Core/TestClient": "TestClient",
     "StepsGenerator": "StepsGenerator",
     "StepsProgramming":"StepsProgramming",
     "Core/FeatureLoad": "FeatureLoad",
     "Core/FeatureReader": "FeatureReader",
-    "Core/FeatureWriter": "FeatureWriter",
+    "Core/FeatureWrite": "FeatureWrite",
     "Core/Translate": "Translate",
-    "Core/ExpectedSomething": "ExpectedSomething"
+    "Core/OpenForm": "OpenForm",
+    "Core/ExpectedSomething": "ExpectedSomething",
+    "Core/TestClient": "TestClient"
     ]
 println paths
 
@@ -44,7 +44,8 @@ node("slave") {
     checkout scm
     cmd('git config --local core.longpaths true', isUnix);
 
-    //env.LOGOS_CONFIG="logger.rootLogger=DEBUG"; // включение отладки продукта //env.RUNNER_ENV="debug";
+    // env.LOGOS_CONFIG="logger.rootLogger=DEBUG"; // включение отладки продукта //env.RUNNER_ENV="debug";
+    // env.LOGOS_LEVEL="DEBUG";
 
     cmd('git submodule update --init', isUnix)
 
@@ -82,6 +83,7 @@ node("slave") {
 
     makeArtifacts('**/add*.ospx')
     makeArtifacts('**/add*.zip')
+    // makeArtifacts('features')
   }
 
   stage('Контроль технического долга'){
