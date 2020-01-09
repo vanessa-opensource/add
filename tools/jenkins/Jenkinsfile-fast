@@ -15,15 +15,15 @@ paths = [
     // "libraries/Плагины": "libraries"
     // "libraries": "libraries"
     "StepsRunner":"StepsRunner",
-    "Core/OpenForm": "OpenForm",
-    "Core/TestClient": "TestClient",
     "StepsGenerator": "StepsGenerator",
     "StepsProgramming":"StepsProgramming",
     "Core/FeatureLoad": "FeatureLoad",
     "Core/FeatureReader": "FeatureReader",
     "Core/FeatureWrite": "FeatureWrite",
     "Core/Translate": "Translate",
-    "Core/ExpectedSomething": "ExpectedSomething"
+    "Core/OpenForm": "OpenForm",
+    "Core/ExpectedSomething": "ExpectedSomething",
+    "Core/TestClient": "TestClient"
     ]
 println paths
 

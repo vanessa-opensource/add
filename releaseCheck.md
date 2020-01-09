@@ -13,6 +13,7 @@
   * [bdd 83 NoSync](./lib/CF/83NoSync/Configuration.xml)
   * [xdd 83](./lib/CF/83xdd/Configuration.xml)
   * [xdd 83 NoSync](./lib/CF/83xddNoSync/Configuration.xml)
+- убедиться, что изменено 8 файлов
 - Выполнить разборку всех файлов на исходники
 - Выполнить commit и push для своих изменений
 - Выполнить все тесты из папки `tests`. Ошибок быть не должно.

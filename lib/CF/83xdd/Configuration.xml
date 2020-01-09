@@ -32,7 +32,7 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>ADD/TDD, ver. 6.0.1</v8:content>
+					<v8:content>ADD/TDD, ver. 6.5.0</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -45,7 +45,7 @@
 			<ScriptVariant>Russian</ScriptVariant>
 			<DefaultRoles/>
 			<Vendor/>
-			<Version>6.0.1</Version>
+			<Version>6.5.0</Version>
 			<UpdateCatalogAddress/>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<UseManagedFormInOrdinaryApplication>true</UseManagedFormInOrdinaryApplication>

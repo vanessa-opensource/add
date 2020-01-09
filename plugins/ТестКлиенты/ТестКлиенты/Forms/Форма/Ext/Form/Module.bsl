@@ -144,9 +144,7 @@
 		Если ЭтоLinux() Тогда
 			ЗапуститьПриложение("kill -9 `ps aux | grep -ie TESTCLIENT | grep -ie 1cv8c | awk '{print $2}'`");
 		Иначе
-			Scr = Новый COMОбъект("MSScriptControl.ScriptControl");
-			Scr.Language = "vbscript";
-			Scr.AddCode(ТекстСкриптаЗавершитьТестКлиент(ТекЗначение.Порт));
+			ЗапуститьПриложение(ТекстСкриптаЗавершитьТестКлиент(ТекЗначение.Порт));
 		КонецЕсли;
 	КонецЦикла;
 	
@@ -353,19 +351,7 @@
 &НаКлиенте
 Функция ТекстСкриптаЗавершитьТестКлиент(НомерПорта)
 	
-	Результат = "
-	|Option Explicit
-	|
-	|Dim objWMIService, objProcess, colProcess
-	|
-	|Set objWMIService = GetObject(""winmgmts:{impersonationLevel=impersonate}!\\.\root\cimv2"") 
-	|
-	|Set colProcess = objWMIService.ExecQuery(""Select * from Win32_Process Where (CommandLine Like '%/TESTCLIENT%' And ExecutablePath Like '%1cv8c%')"")
-	|
-	|For Each objProcess in colProcess
-	|	objProcess.Terminate()
-	|Next
-	|";
+	Результат = "wmic process where (CommandLine Like ""%/TESTCLIENT%"" And ExecutablePath Like ""%1cv8c%"") call terminate";
 	
 	Если Не ЗначениеЗаполнено(НомерПорта) Тогда
 		Возврат Результат;
