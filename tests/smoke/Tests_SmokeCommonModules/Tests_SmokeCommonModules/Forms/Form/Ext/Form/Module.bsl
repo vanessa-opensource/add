@@ -1,8 +1,11 @@
-﻿Var CoreContext;
+﻿&AtClient
+Var CoreContext;
+&AtClient
 Var Assertions;
 
 #Region ServiceInterface
 
+&AtClient
 // Connects and loads plugins needed for this test data processor.
 //
 // Parameters:
@@ -17,6 +20,7 @@ Procedure Инициализация(CoreContextParam) Export
     
 EndProcedure // Инициализация()
 
+&AtClient
 // Loads tests to the test runner data processor.
 //
 // Parameters:
@@ -24,17 +28,16 @@ EndProcedure // Инициализация()
 //  CoreContextParam - ExternalDataProcessorObject.xddTestRunner  - test runner data processor. 
 // 
 Procedure ЗаполнитьНаборТестов(TestsSet, CoreContextParam) Export
-
-	If CurrentRunMode() = ClientRunMode.ManagedApplication Then
+	
+	If CurrentRunMode() = ClientRunMode.OrdinaryApplication Then
 		Return;	
 	EndIf;
 	
     CoreContext = CoreContextParam;
     
     LoadSettings();
-    LoadSubsystemTests(TestsSet, Settings.Subsystems); 
-    LoadSmokeCommonModuleTests(TestsSet, Settings.Subsystems, 
-        Settings.ExcludedCommonModules);
+    LoadSubsystemTests(TestsSet, Object.Settings.Subsystems); 
+    LoadSmokeCommonModuleTests(TestsSet, Object.Settings.Subsystems, Object.Settings.ExcludedCommonModules);
         
 EndProcedure // ЗаполнитьНаборТестов()
 
@@ -42,6 +45,7 @@ EndProcedure // ЗаполнитьНаборТестов()
 
 #Region TestCases
 
+&AtClient
 // Tests whether subsystem is installed.
 //
 // Parameters:
@@ -53,15 +57,18 @@ EndProcedure // ЗаполнитьНаборТестов()
 //
 Procedure Fact_SubsystemExists(SubsystemName, Transaction = False) Export
     
-    SplitResult = _StrSplit(SubsystemName, ".");    
-    ParentSubsystem = Metadata;
-    For Each ParentName In SplitResult Do
-        ParentSubsystem = ParentSubsystem.Subsystems.Find(ParentName);
-        Assertions.ПроверитьТип(ParentSubsystem, "MetadataObject");
-    EndDo;
+	SplitResult = _StrSplit(SubsystemName, ".");    
+	ParentSubsystemName = "etadata";
+	For Each ParentName In SplitResult Do
+	    ParentSubsystem = FindSubsystem(ParentSubsystem, ParentName);
+		Assertions.ПроверитьИстину(ParentSubsystem <> Undefined, _StrTemplate(
+        NStr("ru='Не удалось найти подсистему {%1}'"),
+        SubsystemName));
+	EndDo;
     
 EndProcedure // Fact_SubsystemExists()
 
+&AtClient
 // Tests whether client common module is set properly.
 //
 // Parameters:
@@ -71,9 +78,7 @@ EndProcedure // Fact_SubsystemExists()
 //
 Procedure Fact_ClientModule(CommonModuleName, Transaction = False) Export
     
-    Module = Metadata.CommonModules.Find(CommonModuleName);
-    
-    Assertions.ПроверитьТип(Module, "MetadataObject");
+    Module = CommonModule(CommonModuleName);
      
     Assertions.ПроверитьЛожь(Module.Global, _StrTemplate( 
         NStr("en='Participation in global context creation {%1}';
@@ -103,7 +108,7 @@ Procedure Fact_ClientModule(CommonModuleName, Transaction = False) Export
             |en_CA='Use in external connection {%1}'"),
         CommonModuleName));
 		
-		If Metadata.DefaultRunMode = ClientRunMode.OrdinaryApplication Then
+		If DefaultRunMode() = ClientRunMode.OrdinaryApplication Then
 			Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
 			NStr("en='Use of ordinary application in the client {%1}';
 			|ru='Использование в клиенте обычного приложения {%1}';
@@ -124,6 +129,7 @@ Procedure Fact_ClientModule(CommonModuleName, Transaction = False) Export
     
 EndProcedure // Fact_ClientModule()
 
+&AtClient
 // Tests whether global common module is set properly.
 //
 // Parameters:
@@ -133,9 +139,7 @@ EndProcedure // Fact_ClientModule()
 //
 Procedure Fact_GlobalModule(CommonModuleName, Transaction = False) Export
     
-    Module = Metadata.CommonModules.Find(CommonModuleName);
-    
-    Assertions.ПроверитьТип(Module, "MetadataObject");
+    Module = CommonModule(CommonModuleName);
      
     Assertions.ПроверитьИстину(Module.Global, _StrTemplate( 
         NStr("en='Participation in global context creation {%1}';
@@ -165,7 +169,7 @@ Procedure Fact_GlobalModule(CommonModuleName, Transaction = False) Export
             |en_CA='Use in external connection {%1}'"),
         CommonModuleName));
 		
-		If Metadata.DefaultRunMode = ClientRunMode.OrdinaryApplication Then		
+		If DefaultRunMode() = ClientRunMode.OrdinaryApplication Then		
 			Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
 			NStr("en='Use of ordinary application in the client {%1}';
 			|ru='Использование в клиенте обычного приложения {%1}';
@@ -186,6 +190,7 @@ Procedure Fact_GlobalModule(CommonModuleName, Transaction = False) Export
     
 EndProcedure // Fact_GlobalModule()
 
+&AtClient
 // Tests whether server call common module is set properly.
 //
 // Parameters:
@@ -195,9 +200,7 @@ EndProcedure // Fact_GlobalModule()
 //
 Procedure Fact_ServerCallModule(CommonModuleName, Transaction = False) Export
     
-    Module = Metadata.CommonModules.Find(CommonModuleName);
-    
-    Assertions.ПроверитьТип(Module, "MetadataObject");
+    Module = CommonModule(CommonModuleName);
      
     Assertions.ПроверитьЛожь(Module.Global, _StrTemplate(
         NStr("en='Participation in global context creation {%1}';
@@ -227,7 +230,7 @@ Procedure Fact_ServerCallModule(CommonModuleName, Transaction = False) Export
             |en_CA='Use in external connection {%1}'"),
         CommonModuleName));
 		
-		If Metadata.DefaultRunMode = ClientRunMode.OrdinaryApplication Then		
+		If DefaultRunMode() = ClientRunMode.OrdinaryApplication Then		
 			Assertions.ПроверитьЛожь(Module.ClientOrdinaryApplication, _StrTemplate(
 			NStr("en='Use of ordinary application in the client {%1}';
 			|ru='Использование в клиенте обычного приложения {%1}';
@@ -248,6 +251,7 @@ Procedure Fact_ServerCallModule(CommonModuleName, Transaction = False) Export
     
 EndProcedure // Fact_ServerCallModule()
 
+&AtClient
 // Tests whether server common module is set properly.
 //
 // Parameters:
@@ -257,9 +261,7 @@ EndProcedure // Fact_ServerCallModule()
 //
 Procedure Fact_ServerModule(CommonModuleName, Transaction = False) Export
     
-    Module = Metadata.CommonModules.Find(CommonModuleName);
-    
-    Assertions.ПроверитьТип(Module, "MetadataObject");
+    Module = CommonModule(CommonModuleName);
      
     Assertions.ПроверитьЛожь(Module.Global, _StrTemplate(
         NStr("en='Participation in global context creation {%1}';
@@ -289,7 +291,7 @@ Procedure Fact_ServerModule(CommonModuleName, Transaction = False) Export
             |en_CA='Use in external connection {%1}'"),
         CommonModuleName));
 		
-		If Metadata.DefaultRunMode = ClientRunMode.OrdinaryApplication Then		
+		If DefaultRunMode() = ClientRunMode.OrdinaryApplication Then		
 			Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
 			NStr("en='Use of ordinary application in the client {%1}';
 			|ru='Использование в клиенте обычного приложения {%1}';
@@ -310,6 +312,7 @@ Procedure Fact_ServerModule(CommonModuleName, Transaction = False) Export
     
 EndProcedure // Fact_ServerModule()
 
+&AtClient
 // Tests whether server common module with full access rights is set properly.
 //
 // Parameters:
@@ -319,9 +322,7 @@ EndProcedure // Fact_ServerModule()
 //
 Procedure Fact_FullAccessModule(CommonModuleName, Transaction = False) Export
     
-    Module = Metadata.CommonModules.Find(CommonModuleName);
-    
-    Assertions.ПроверитьТип(Module, "MetadataObject");
+    Module = CommonModule(CommonModuleName);
      
     Assertions.ПроверитьЛожь(Module.Global, _StrTemplate(
         NStr("en='Participation in global context creation {%1}';
@@ -370,6 +371,7 @@ Procedure Fact_FullAccessModule(CommonModuleName, Transaction = False) Export
     
 EndProcedure // Fact_FullAccessModule()
 
+&AtClient
 // Tests whether client-server common module is set properly.
 //
 // Parameters:
@@ -379,10 +381,8 @@ EndProcedure // Fact_FullAccessModule()
 //
 Procedure Fact_ClientServerModule(CommonModuleName, Transaction = False) Export
     
-    Module = Metadata.CommonModules.Find(CommonModuleName);
-    
-    Assertions.ПроверитьТип(Module, "MetadataObject");
-     
+    Module = CommonModule(CommonModuleName);
+         
     Assertions.ПроверитьЛожь(Module.Global, _StrTemplate(
         NStr("en='Participation in global context creation {%1}';
             |ru='Участие в формировании глобального контекста {%1}';
@@ -411,7 +411,7 @@ Procedure Fact_ClientServerModule(CommonModuleName, Transaction = False) Export
             |en_CA='Use in external connection {%1}'"),
         CommonModuleName));
 		
-		If Metadata.DefaultRunMode = ClientRunMode.OrdinaryApplication Then		
+		If DefaultRunMode() = ClientRunMode.OrdinaryApplication Then		
 			Assertions.ПроверитьИстину(Module.ClientOrdinaryApplication, _StrTemplate(
 			NStr("en='Use of ordinary application in the client {%1}';
 			|ru='Использование в клиенте обычного приложения {%1}';
@@ -434,183 +434,9 @@ EndProcedure // Fact_ClientServerModule()
 
 #EndRegion // TestCases
 
-#Region Internal
-
-// Splits a string into parts according using the specified delimiter.
-//
-// Parameters:
-//  String       - String  - string to be splitted. 
-//  Separator    - String  - character string where every character is 
-//                           an individual delimiter.
-//  IncludeBlank - Boolean - shows if it is required to include the empty 
-//                           strings which can result from a separation of 
-//                           a source string while calculating the result.
-//                      Default value: True.
-//
-// Returns:
-//  Array - array with strings resulting from splitting of the source string.
-//      * ArrayItem - String - part of string.
-//
-Function _StrSplit(Val String, Val Separator, IncludeBlank = True) Export
-    
-    SplitResult = New Array;
-    
-    If IsBlankString(String) Then 
-        If IncludeBlank Then
-            SplitResult.Add(String);
-        EndIf;
-        Return SplitResult;
-    EndIf;
-        
-    Position = Find(String, Separator);
-    While Position > 0 Do
-        Substring = Left(String, Position - 1);
-        If IncludeBlank Or Not IsBlankString(Substring) Then
-            SplitResult.Add(Substring);
-        EndIf;
-        String = Mid(String, Position + StrLen(Separator));
-        Position = Find(String, Separator);
-    EndDo;
-
-    If IncludeBlank Or Not IsBlankString(String) Then
-        SplitResult.Add(String);
-    EndIf;
-
-    Return SplitResult;
-    
-EndFunction // _StrSplit()
-
-// Inserts parameters into string by number.
-//
-// Parameters:
-//  Template    – String – a string containing the substitution markers of type:
-//                         "%1..%N". The markers are numbered starting with 0.
-//  Value<1-10> - String - parameters containing arbitrary values possessing 
-//                         string presentations which should be presented in a 
-//                         template. 
-// Returns:
-//  String – template string with filled parameters.
-//
-Function _StrTemplate(Val Template, Val Value1, Val Value2 = Undefined, 
-    Val Value3 = Undefined, Val Value4 = Undefined, Val Value5 = Undefined, 
-    Val Value6 = Undefined, Val Value7 = Undefined, Val Value8 = Undefined, 
-    Val Value9 = Undefined, Val Value10 = Undefined) Export
- 
-    Template = StrReplace(Template, "%1", String(Value1));
-    Template = StrReplace(Template, "%2", String(Value2));
-    Template = StrReplace(Template, "%3", String(Value3));
-    Template = StrReplace(Template, "%4", String(Value4));
-    Template = StrReplace(Template, "%5", String(Value5));
-    Template = StrReplace(Template, "%6", String(Value6));
-    Template = StrReplace(Template, "%7", String(Value7));
-    Template = StrReplace(Template, "%8", String(Value8));
-    Template = StrReplace(Template, "%9", String(Value9));
-    Template = StrReplace(Template, "%10", String(Value10));
-
-    Return Template;
-
-EndFunction // _StrTemplate()
-
-// Retuns basic smoke common modules settings.
-//
-// Returns:
-//  Structure - basic smoke common modules settings.
-//      * Subsystems - Array - subsystem names collection for which it's needed 
-//                             to run smoke common modules tests. 
-//                             If not set, smoke tests run without any restrictions.
-//          ** ArrayItem - String - subsystem name.
-//      * ExcludedCommonModules - Array - excluded common modules from smoke tests.
-//          ** ArrayItem - String - common module name.
-//
-Function NewSmokeCommonModulesSettings() Export
-    
-    SmokeCommonModulesSettings = New Structure;
-    SmokeCommonModulesSettings.Insert("Subsystems", New Array);
-    SmokeCommonModulesSettings.Insert("ExcludedCommonModules", New Array);
-    SmokeCommonModulesSettings.Subsystems.Add("*");
-    Return SmokeCommonModulesSettings;
-    
-EndFunction // NewSmokeCommonModulesSettings()
-
-Function ReturnValuesReuseDontUse(CommonModuleName) Export
-	CommonModule = Metadata.CommonModules.Find(CommonModuleName);
-	Return CommonModule.ReturnValuesReuse = Metadata.ObjectProperties.ReturnValuesReuse.DontUse;
-EndFunction
-
-Function DefaultRunMode() Export
-	Return Metadata.DefaultRunMode; 
-EndFunction
-
-Function CommonModule(CommonModuleName) Export
-	
-	Result = New Structure;
-	Result.Insert("Global", False);
-	Result.Insert("ClientManagedApplication", False);
-	Result.Insert("Server", False);
-	Result.Insert("ExternalConnection", False);
-	Result.Insert("ServerCall", False);
-	Result.Insert("Privileged", False);
-	
-	FillPropertyValues(Result, Metadata.CommonModules.Find(CommonModuleName));
-	
-	Return Result;
-	
-EndFunction	
-
-Function CommonModules() Export
-	
-	Result = New Array;
-	
-	For Each CommonModule In Metadata.CommonModules Do
-		
-		mCommonModule = New Structure;
-		mCommonModule.Insert("Name", CommonModule.Name);
-		mCommonModule.Insert("Comment", CommonModule.Comment);
-		Result.Add(mCommonModule);
-		
-	EndDo;
-	
-	Return Result;
-	
-EndFunction
-
-Function SubsystemContent(SubsystemName) Export
-	
-	Subsystem = Metadata.Subsystems.Find(SubsystemName);
-	Result = New Array;
-	
-	For Each Item In Subsystem.Content Do
-		mItem = New Structure;
-		mItem.Insert("Name", Item.Name);
-		mItem.Insert("FullName", Item.FullName());
-		mItem.Insert("Comment", Item.Comment);
-		Result.Add(mItem);
-	EndDo;
-	
-	Return Result;
-	
-EndFunction
-
-Function FindSubsystem(ParentSubsystemName, SubsystemName) Export
-	
-	If ParentSubsystemName = "Metadata" Or ParentSubsystemName = Undefined Then
-		ParentSubsystem = Metadata;
-	Else
-		ParentSubsystem = Metadata.Subsystems.Find(ParentSubsystemName);
-	EndIf;
-	ParentSubsystem = ParentSubsystem.Subsystems.Find(SubsystemName);
-	If ParentSubsystem <> Undefined Then
-		Return ParentSubsystem.Name;
-	Else
-		Return Undefined;
-	EndIf;	
-	
-EndFunction
-
-#EndRegion // Internal
-
 #Region ServiceProceduresAndFunctions
 
+&AtClient
 // Only for internal use.
 //
 Procedure Fact_ModuleReuseReturnValues(CommonModuleName, Module)
@@ -619,20 +445,23 @@ Procedure Fact_ModuleReuseReturnValues(CommonModuleName, Module)
         Or Find(CommonModuleName, "Cached") <> 0 
         Or Find(CommonModuleName, "ПовтИсп") <> 0 Then
         
-        Assertions.ПроверитьНеРавенство(Module.ReturnValuesReuse, 
-            Metadata.ObjectProperties.ReturnValuesReuse.DontUse,
+        Assertions.ПроверитьНеРавенство(
+			ReturnValuesReuseDontUse(CommonModuleName), 
+            True,
             CommonModuleName);
             
     Else
 
-        Assertions.ПроверитьРавенство(Module.ReturnValuesReuse, 
-            Metadata.ObjectProperties.ReturnValuesReuse.DontUse, 
+        Assertions.ПроверитьРавенство(
+			ReturnValuesReuseDontUse(CommonModuleName), 
+            True, 
             CommonModuleName);
         
     EndIf;
             
 EndProcedure // Fact_ModuleReuseReturnValues() 
 
+&AtClient
 // Only for internal use.
 //
 Procedure Fact_FullAccessRightsGranted(CommonModuleName, Module)
@@ -660,10 +489,15 @@ Procedure Fact_FullAccessRightsGranted(CommonModuleName, Module)
     
 EndProcedure // Fact_FullAccessRightsGranted()
 
+&AtClient
 // Loads smoke tests settings. 
 //
 Procedure LoadSettings()
-    
+	
+	If ValueIsFilled(Object.Settings) Then
+		Return;
+	EndIf;
+	
     SettingsPath = "SmokeCommonModules";
     SettingsPlugin = CoreContext.Плагин("Настройки");
     SettingsPlugin.Инициализация(CoreContext);
@@ -682,10 +516,11 @@ Procedure LoadSettings()
         Settings.Insert("ExcludedCommonModules", New Array);    
     EndIf;
     
-    Settings = New FixedStructure(Settings);
+    Object.Settings = New FixedStructure(Settings);
     
 EndProcedure // LoadSettings()
 
+&AtClient
 // Only for internal use.
 //
 Procedure AddSmokeCommonModuleTest(TestsSet, CommonModule)
@@ -732,13 +567,14 @@ Procedure AddSmokeCommonModuleTest(TestsSet, CommonModule)
         
     TestsSet.Добавить(TestName, TestParameters, _StrTemplate(
         NStr("en='Common module : %1 {%2} - checking name of common module';
-            |ru='Общий модуль : %1 {%2} - проверка наименования общего модуля';
+            |ru='Общий модуль : %1 {%2}';
             |uk='Загальний модуль : %1 {%2}';
             |en_CA='Common module : %1 {%2} - checking name of common module'"), 
         CommonModule.Name, CommonModule.Comment));    
             
 EndProcedure // AddSmokeCommonModuleTest()
 
+&AtClient
 // Loads subsystem tests if settings is set.
 //
 // Parameters:
@@ -776,6 +612,7 @@ Procedure LoadSubsystemTests(TestsSet, Subsystems)
         
 EndProcedure // LoadSubsystemTests()
 
+&AtClient
 // Only for internal use.
 //
 Procedure LoadSmokeCommonModuleTests(TestsSet, Subsystems, 
@@ -784,7 +621,7 @@ Procedure LoadSmokeCommonModuleTests(TestsSet, Subsystems,
     If Subsystems.Find("*") <> Undefined Then
         
         GroupCommonModulesNotExists = True;
-        For Each CommonModule In Metadata.CommonModules Do
+        For Each CommonModule In CommonModules() Do
             
             If ExcludedCommonModules.Find(CommonModule.Name) <> Undefined Then
                 Continue;
@@ -814,7 +651,7 @@ Procedure LoadSmokeCommonModuleTests(TestsSet, Subsystems,
         
         OnlySubordinate = False;
         AlreadyProcessed = False;
-        ParentSubsystem = Metadata;
+		ParentSubsystemName = "Metadata";
         Path = "";
         
         SplitResult = _StrSplit(SubsystemName, ".");
@@ -825,7 +662,7 @@ Procedure LoadSmokeCommonModuleTests(TestsSet, Subsystems,
                 Break;
             EndIf;
             
-            ParentSubsystem = ParentSubsystem.Subsystems.Find(ParentName);
+            ParentSubsystem = FindSubsystem(ParentSubsystemName, ParentName);
             If ParentSubsystem = Undefined Then
                 Break;
             EndIf;
@@ -862,15 +699,16 @@ Procedure LoadSmokeCommonModuleTests(TestsSet, Subsystems,
          
 EndProcedure // LoadSmokeCommonModuleTests()
 
+&AtClient
 // Only for internal use.
 //
 Procedure LoadSmokeCommonModuleTestsFromSubsystem(TestsSet, Subsystem, 
     SubsystemName, ExcludedCommonModules, GroupCommonModulesNotExists)
 
-    CommonModules = Metadata.CommonModules;
-    For Each Item In Subsystem.Content Do
+    CommonModules = CommonModules();
+    For Each Item In SubsystemContent(SubsystemName) Do
         
-        FullName = Item.FullName();
+        FullName = Item.FullName;
         If Find(FullName, "CommonModule") <> 0
             Or Find(FullName, "ОбщийМодуль") <> 0 Then    
             
@@ -898,6 +736,7 @@ Procedure LoadSmokeCommonModuleTestsFromSubsystem(TestsSet, Subsystem,
         
 EndProcedure // LoadSmokeCommonModuleTestsFromSubsystem()
 
+&AtClient
 // Only for internal use.
 //
 Procedure RecursivelyLoadSmokeCommonModuleTestsFromSubsystem(TestsSet, 
@@ -920,5 +759,100 @@ Procedure RecursivelyLoadSmokeCommonModuleTestsFromSubsystem(TestsSet,
     EndDo;
         
 EndProcedure // RecursivelyLoadSmokeCommonModuleTestsFromSubsystem()
+
+&AtServer
+// Splits a string into parts according using the specified delimiter.
+//
+// Parameters:
+//  String       - String  - string to be splitted. 
+//  Separator    - String  - character string where every character is 
+//                           an individual delimiter.
+//  IncludeBlank - Boolean - shows if it is required to include the empty 
+//                           strings which can result from a separation of 
+//                           a source string while calculating the result.
+//                      Default value: True.
+//
+// Returns:
+//  Array - array with strings resulting from splitting of the source string.
+//      * ArrayItem - String - part of string.
+//
+Function _StrSplit(Val String, Val Separator, IncludeBlank = True)
+    Return Object()._StrSplit(String, Separator, IncludeBlank); 
+EndFunction // _StrSplit()
+
+&AtServer
+// Inserts parameters into string by number.
+//
+// Parameters:
+//  Template    – String – a string containing the substitution markers of type:
+//                         "%1..%N". The markers are numbered starting with 0.
+//  Value<1-10> - String - parameters containing arbitrary values possessing 
+//                         string presentations which should be presented in a 
+//                         template. 
+// Returns:
+//  String – template string with filled parameters.
+//
+Function _StrTemplate(Val Template, Val Value1, Val Value2 = Undefined, 
+    Val Value3 = Undefined, Val Value4 = Undefined, Val Value5 = Undefined, 
+    Val Value6 = Undefined, Val Value7 = Undefined, Val Value8 = Undefined, 
+    Val Value9 = Undefined, Val Value10 = Undefined) 
+	
+	Return Object()._StrTemplate(Template, Value1, Value2, 
+							    Value3, Value4, Value5, 
+							    Value6, Value7, Value8, 
+							    Value9, Value10);
+								
+EndFunction // _StrTemplate()
+
+&AtServer
+// Retuns basic smoke common modules settings.
+//
+// Returns:
+//  Structure - basic smoke common modules settings.
+//      * Subsystems - Array - subsystem names collection for which it's needed 
+//                             to run smoke common modules tests. 
+//                             If not set, smoke tests run without any restrictions.
+//          ** ArrayItem - String - subsystem name.
+//      * ExcludedCommonModules - Array - excluded common modules from smoke tests.
+//          ** ArrayItem - String - common module name.
+//
+Function NewSmokeCommonModulesSettings()
+	Return Object().NewSmokeCommonModulesSettings();
+EndFunction // NewSmokeCommonModulesSettings()
+
+&AtServer
+Function ReturnValuesReuseDontUse(CommonModuleName)
+	Return Object().ReturnValuesReuseDontUse(CommonModuleName);
+EndFunction
+
+&AtServer
+Function DefaultRunMode()
+	Return Object().DefaultRunMode(); 
+EndFunction
+
+&AtServer
+Function CommonModule(CommonModuleName)
+	Return Object().CommonModule(CommonModuleName) ;
+EndFunction	
+
+&AtServer
+Function CommonModules()
+	Return Object().CommonModules();	
+EndFunction
+
+&AtServer
+Function SubsystemContent(SubsystemName)
+	Return Object().SubsystemContent(SubsystemName);	
+EndFunction
+
+&AtServer
+Function FindSubsystem(ParentSubsystemName, SubsystemName)
+	Return Object().FindSubsystem(ParentSubsystemName, SubsystemName);	
+EndFunction
+
+&AtServer
+Function Object()
+	Return FormAttributeToValue("Object");	
+EndFunction
 
 #EndRegion // ServiceProceduresAndFunctions
