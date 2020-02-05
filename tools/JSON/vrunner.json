@@ -12,6 +12,20 @@
         "--additional": "/DisplayAllFunctions /Lru  /iTaxi /Debug ",
         "--ordinaryapp": "-1"
     },
+    "syntax-check": {
+        "--groupbymetadata":true,
+        "--exception-file":"",
+        "--mode": [
+            "-ExtendedModulesCheck",
+            "-ThinClient",
+             "-WebClient",
+             "-Server",
+             "-ExternalConnection",
+             "-ThickClientOrdinaryApplication"
+        ]
+        // "-Extension" : "ИмяРасширения",
+        // "-AllExtensions" : true
+    },
     "vanessa": {
         "--vanessasettings": "./tools/JSON/VBParams8310UF.json",
         "--pathvanessa": "./bddRunner.epf"
