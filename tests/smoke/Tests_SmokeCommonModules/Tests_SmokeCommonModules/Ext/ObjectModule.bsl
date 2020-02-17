@@ -25,6 +25,10 @@ EndProcedure // Инициализация()
 // 
 Procedure ЗаполнитьНаборТестов(TestsSet, CoreContextParam) Export
 
+	If CurrentRunMode() = ClientRunMode.ManagedApplication Then
+		Return;	
+	EndIf;
+	
     CoreContext = CoreContextParam;
     
     LoadSettings();
@@ -430,6 +434,181 @@ EndProcedure // Fact_ClientServerModule()
 
 #EndRegion // TestCases
 
+#Region Internal
+
+// Splits a string into parts according using the specified delimiter.
+//
+// Parameters:
+//  String       - String  - string to be splitted. 
+//  Separator    - String  - character string where every character is 
+//                           an individual delimiter.
+//  IncludeBlank - Boolean - shows if it is required to include the empty 
+//                           strings which can result from a separation of 
+//                           a source string while calculating the result.
+//                      Default value: True.
+//
+// Returns:
+//  Array - array with strings resulting from splitting of the source string.
+//      * ArrayItem - String - part of string.
+//
+Function _StrSplit(Val String, Val Separator, IncludeBlank = True) Export
+    
+    SplitResult = New Array;
+    
+    If IsBlankString(String) Then 
+        If IncludeBlank Then
+            SplitResult.Add(String);
+        EndIf;
+        Return SplitResult;
+    EndIf;
+        
+    Position = Find(String, Separator);
+    While Position > 0 Do
+        Substring = Left(String, Position - 1);
+        If IncludeBlank Or Not IsBlankString(Substring) Then
+            SplitResult.Add(Substring);
+        EndIf;
+        String = Mid(String, Position + StrLen(Separator));
+        Position = Find(String, Separator);
+    EndDo;
+
+    If IncludeBlank Or Not IsBlankString(String) Then
+        SplitResult.Add(String);
+    EndIf;
+
+    Return SplitResult;
+    
+EndFunction // _StrSplit()
+
+// Inserts parameters into string by number.
+//
+// Parameters:
+//  Template    – String – a string containing the substitution markers of type:
+//                         "%1..%N". The markers are numbered starting with 0.
+//  Value<1-10> - String - parameters containing arbitrary values possessing 
+//                         string presentations which should be presented in a 
+//                         template. 
+// Returns:
+//  String – template string with filled parameters.
+//
+Function _StrTemplate(Val Template, Val Value1, Val Value2 = Undefined, 
+    Val Value3 = Undefined, Val Value4 = Undefined, Val Value5 = Undefined, 
+    Val Value6 = Undefined, Val Value7 = Undefined, Val Value8 = Undefined, 
+    Val Value9 = Undefined, Val Value10 = Undefined) Export
+ 
+    Template = StrReplace(Template, "%1", String(Value1));
+    Template = StrReplace(Template, "%2", String(Value2));
+    Template = StrReplace(Template, "%3", String(Value3));
+    Template = StrReplace(Template, "%4", String(Value4));
+    Template = StrReplace(Template, "%5", String(Value5));
+    Template = StrReplace(Template, "%6", String(Value6));
+    Template = StrReplace(Template, "%7", String(Value7));
+    Template = StrReplace(Template, "%8", String(Value8));
+    Template = StrReplace(Template, "%9", String(Value9));
+    Template = StrReplace(Template, "%10", String(Value10));
+
+    Return Template;
+
+EndFunction // _StrTemplate()
+
+// Retuns basic smoke common modules settings.
+//
+// Returns:
+//  Structure - basic smoke common modules settings.
+//      * Subsystems - Array - subsystem names collection for which it's needed 
+//                             to run smoke common modules tests. 
+//                             If not set, smoke tests run without any restrictions.
+//          ** ArrayItem - String - subsystem name.
+//      * ExcludedCommonModules - Array - excluded common modules from smoke tests.
+//          ** ArrayItem - String - common module name.
+//
+Function NewSmokeCommonModulesSettings() Export
+    
+    SmokeCommonModulesSettings = New Structure;
+    SmokeCommonModulesSettings.Insert("Subsystems", New Array);
+    SmokeCommonModulesSettings.Insert("ExcludedCommonModules", New Array);
+    SmokeCommonModulesSettings.Subsystems.Add("*");
+    Return SmokeCommonModulesSettings;
+    
+EndFunction // NewSmokeCommonModulesSettings()
+
+Function ReturnValuesReuseDontUse(CommonModuleName) Export
+	CommonModule = Metadata.CommonModules.Find(CommonModuleName);
+	Return CommonModule.ReturnValuesReuse = Metadata.ObjectProperties.ReturnValuesReuse.DontUse;
+EndFunction
+
+Function DefaultRunMode() Export
+	Return Metadata.DefaultRunMode; 
+EndFunction
+
+Function CommonModule(CommonModuleName) Export
+	
+	Result = New Structure;
+	Result.Insert("Global", False);
+	Result.Insert("ClientManagedApplication", False);
+	Result.Insert("Server", False);
+	Result.Insert("ExternalConnection", False);
+	Result.Insert("ServerCall", False);
+	Result.Insert("Privileged", False);
+	
+	FillPropertyValues(Result, Metadata.CommonModules.Find(CommonModuleName));
+	
+	Return Result;
+	
+EndFunction	
+
+Function CommonModules() Export
+	
+	Result = New Array;
+	
+	For Each CommonModule In Metadata.CommonModules Do
+		
+		mCommonModule = New Structure;
+		mCommonModule.Insert("Name", CommonModule.Name);
+		mCommonModule.Insert("Comment", CommonModule.Comment);
+		Result.Add(mCommonModule);
+		
+	EndDo;
+	
+	Return Result;
+	
+EndFunction
+
+Function SubsystemContent(SubsystemName) Export
+	
+	Subsystem = Metadata.Subsystems.Find(SubsystemName);
+	Result = New Array;
+	
+	For Each Item In Subsystem.Content Do
+		mItem = New Structure;
+		mItem.Insert("Name", Item.Name);
+		mItem.Insert("FullName", Item.FullName());
+		mItem.Insert("Comment", Item.Comment);
+		Result.Add(mItem);
+	EndDo;
+	
+	Return Result;
+	
+EndFunction
+
+Function FindSubsystem(ParentSubsystemName, SubsystemName) Export
+	
+	If ParentSubsystemName = "Metadata" Or ParentSubsystemName = Undefined Then
+		ParentSubsystem = Metadata;
+	Else
+		ParentSubsystem = Metadata.Subsystems.Find(ParentSubsystemName);
+	EndIf;
+	ParentSubsystem = ParentSubsystem.Subsystems.Find(SubsystemName);
+	If ParentSubsystem <> Undefined Then
+		Return ParentSubsystem.Name;
+	Else
+		Return Undefined;
+	EndIf;	
+	
+EndFunction
+
+#EndRegion // Internal
+
 #Region ServiceProceduresAndFunctions
 
 // Only for internal use.
@@ -741,101 +920,5 @@ Procedure RecursivelyLoadSmokeCommonModuleTestsFromSubsystem(TestsSet,
     EndDo;
         
 EndProcedure // RecursivelyLoadSmokeCommonModuleTestsFromSubsystem()
-
-// Splits a string into parts according using the specified delimiter.
-//
-// Parameters:
-//  String       - String  - string to be splitted. 
-//  Separator    - String  - character string where every character is 
-//                           an individual delimiter.
-//  IncludeBlank - Boolean - shows if it is required to include the empty 
-//                           strings which can result from a separation of 
-//                           a source string while calculating the result.
-//                      Default value: True.
-//
-// Returns:
-//  Array - array with strings resulting from splitting of the source string.
-//      * ArrayItem - String - part of string.
-//
-Function _StrSplit(Val String, Val Separator, IncludeBlank = True)
-    
-    SplitResult = New Array;
-    
-    If IsBlankString(String) Then 
-        If IncludeBlank Then
-            SplitResult.Add(String);
-        EndIf;
-        Return SplitResult;
-    EndIf;
-        
-    Position = Find(String, Separator);
-    While Position > 0 Do
-        Substring = Left(String, Position - 1);
-        If IncludeBlank Or Not IsBlankString(Substring) Then
-            SplitResult.Add(Substring);
-        EndIf;
-        String = Mid(String, Position + StrLen(Separator));
-        Position = Find(String, Separator);
-    EndDo;
-
-    If IncludeBlank Or Not IsBlankString(String) Then
-        SplitResult.Add(String);
-    EndIf;
-
-    Return SplitResult;
-    
-EndFunction // _StrSplit()
-
-// Inserts parameters into string by number.
-//
-// Parameters:
-//  Template    – String – a string containing the substitution markers of type:
-//                         "%1..%N". The markers are numbered starting with 0.
-//  Value<1-10> - String - parameters containing arbitrary values possessing 
-//                         string presentations which should be presented in a 
-//                         template. 
-// Returns:
-//  String – template string with filled parameters.
-//
-Function _StrTemplate(Val Template, Val Value1, Val Value2 = Undefined, 
-    Val Value3 = Undefined, Val Value4 = Undefined, Val Value5 = Undefined, 
-    Val Value6 = Undefined, Val Value7 = Undefined, Val Value8 = Undefined, 
-    Val Value9 = Undefined, Val Value10 = Undefined)
- 
-    Template = StrReplace(Template, "%1", String(Value1));
-    Template = StrReplace(Template, "%2", String(Value2));
-    Template = StrReplace(Template, "%3", String(Value3));
-    Template = StrReplace(Template, "%4", String(Value4));
-    Template = StrReplace(Template, "%5", String(Value5));
-    Template = StrReplace(Template, "%6", String(Value6));
-    Template = StrReplace(Template, "%7", String(Value7));
-    Template = StrReplace(Template, "%8", String(Value8));
-    Template = StrReplace(Template, "%9", String(Value9));
-    Template = StrReplace(Template, "%10", String(Value10));
-
-    Return Template;
-
-EndFunction // _StrTemplate()
-
-// Retuns basic smoke common modules settings.
-//
-// Returns:
-//  Structure - basic smoke common modules settings.
-//      * Subsystems - Array - subsystem names collection for which it's needed 
-//                             to run smoke common modules tests. 
-//                             If not set, smoke tests run without any restrictions.
-//          ** ArrayItem - String - subsystem name.
-//      * ExcludedCommonModules - Array - excluded common modules from smoke tests.
-//          ** ArrayItem - String - common module name.
-//
-Function NewSmokeCommonModulesSettings()
-    
-    SmokeCommonModulesSettings = New Structure;
-    SmokeCommonModulesSettings.Insert("Subsystems", New Array);
-    SmokeCommonModulesSettings.Insert("ExcludedCommonModules", New Array);
-    SmokeCommonModulesSettings.Subsystems.Add("*");
-    Return SmokeCommonModulesSettings;
-    
-EndFunction // NewSmokeCommonModulesSettings()
 
 #EndRegion // ServiceProceduresAndFunctions
