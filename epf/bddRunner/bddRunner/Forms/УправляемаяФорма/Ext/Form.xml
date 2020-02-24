@@ -701,6 +701,12 @@
 											</Title>
 											<ExtendedTooltip name="ФормаПерезагрузитьИВыполнитьРасширеннаяПодсказка" id="1259"/>
 										</Button>
+										<Button name="ПроверитьДублированиеСценариев" id="1839">
+											<Type>CommandBarButton</Type>
+											<CommandName>Form.Command.ПроверитьДублированиеСценариев</CommandName>
+											<LocationInCommandBar>InAdditionalSubmenu</LocationInCommandBar>
+											<ExtendedTooltip name="ПроверитьДублированиеСценариевРасширеннаяПодсказка" id="1840"/>
+										</Button>
 										<Button name="ФормаСправка" id="1552">
 											<Type>CommandBarButton</Type>
 											<CommandName>Form.StandardCommand.Help</CommandName>
@@ -1407,6 +1413,7 @@
 									<InitialTreeView>ExpandAllLevels</InitialTreeView>
 									<EnableStartDrag>true</EnableStartDrag>
 									<EnableDrag>true</EnableDrag>
+									<FileDragMode>AsFile</FileDragMode>
 									<DataPath>Объект.ДеревоТестов</DataPath>
 									<RowPictureDataPath>Объект.ДеревоТестов.ТипКартинки</RowPictureDataPath>
 									<RowsPicture>
@@ -2780,6 +2787,7 @@
 												<xr:Abs>ValuesPicture.png</xr:Abs>
 												<xr:LoadTransparent>false</xr:LoadTransparent>
 											</ValuesPicture>
+											<FileDragMode>AsFile</FileDragMode>
 											<ContextMenu name="ДеревоТестовБрейкпоинтКонтекстноеМеню" id="1476"/>
 											<ExtendedTooltip name="ДеревоТестовБрейкпоинтРасширеннаяПодсказка" id="1477"/>
 										</PictureField>
