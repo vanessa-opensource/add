@@ -49,7 +49,7 @@ jobs:
     script:
       - sudo docker run --detach -e XVFB_RESOLUTION=1920x1080x24 --volume="${PWD}":/home/ubuntu/code onec32/client:${ONECVERSION} client > /tmp/container_id
       - sudo docker ps && sleep 5
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb http://oscript.io/downloads/latest/onescript-engine_1.0.21_all.deb  && sudo dpkg -i /tmp/oscript.deb"
+      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb https://oscript.io/downloads/latest/x64/onescript-engine_1.2.0_all.deb  && sudo dpkg -i /tmp/oscript.deb"
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install opm && sudo opm install"
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run init file --buildFolderPath ./build"
       - sudo docker stop "$(cat /tmp/container_id)"
@@ -60,8 +60,8 @@ jobs:
       - sudo docker ps && sleep 5
       - sudo docker run -d -p 4040:4040 --link "$(cat /tmp/container_id)":http wernight/ngrok ngrok http http:6080 > /tmp/container_idngrok
       - sleep 5 && echo $(curl -s http://127.0.0.1:4040/status | grep -P "http://.*?ngrok.io" -oh)"/vnc_auto.html"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb http://oscript.io/downloads/latest/onescript-engine_1.0.21_all.deb  && sudo dpkg -i /tmp/oscript.deb"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install opm && sudo opm install && sudo opm update vanessa-runner"
+      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb https://oscript.io/downloads/latest/x64/onescript-engine_1.2.0_all.deb  && sudo dpkg -i /tmp/oscript.deb"
+      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install opm && sudo opm install && sudo opm update vanessa-runner && sudo opm install v8find"
       - ./tools/linux/travistest.sh ./features/StepsRunner/
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run initib file --buildFolderPath ./build"
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run vanessatravis all --path ./features/StepsRunner/ --settings ./tools/JSON/VBParams8310linux.json"
@@ -76,13 +76,13 @@ jobs:
       - sudo docker ps && sleep 5
       - sudo docker run -d -p 4040:4040 --link "$(cat /tmp/container_id)":http wernight/ngrok ngrok http http:6080 > /tmp/container_idngrok
       - sleep 5 && echo $(curl -s http://127.0.0.1:4040/status | grep -P "http://.*?ngrok.io" -oh)"/vnc_auto.html"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb http://oscript.io/downloads/latest/onescript-engine_1.0.21_all.deb  && sudo dpkg -i /tmp/oscript.deb"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install opm && sudo opm install && sudo opm update vanessa-runner"
+      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb https://oscript.io/downloads/latest/x64/onescript-engine_1.2.0_all.deb  && sudo dpkg -i /tmp/oscript.deb"
+      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install opm && sudo opm install && sudo opm update vanessa-runner && sudo opm install v8find"
       - ./tools/linux/travistest.sh ./features/Core/Translate/
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run initib file --buildFolderPath ./build"
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run vanessatravis all --path ./features/Core/Translate/ --settings ./tools/JSON/VBParams8310linux.json"
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run vanessatravis all --path ./features/Core/FeatureReader/ --settings ./tools/JSON/VBParams8310linux.json"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run vanessatravis all --path ./features/Core/FeatureReader/ --settings ./tools/JSON/VBParams8310linux.json"
+      # - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run vanessatravis all --path ./features/Core/FeatureReader/ --settings ./tools/JSON/VBParams8310linux.json"
       - sudo docker stop "$(cat /tmp/container_id)"
       - sudo docker stop "$(cat /tmp/container_idngrok )"
 
@@ -92,8 +92,8 @@ jobs:
       - sudo docker ps && sleep 5
       - sudo docker run -d -p 4040:4040 --link "$(cat /tmp/container_id)":http wernight/ngrok ngrok http http:6080 > /tmp/container_idngrok
       - sleep 5 && echo $(curl -s http://127.0.0.1:4040/status | grep -P "http://.*?ngrok.io" -oh)"/vnc_auto.html"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb http://oscript.io/downloads/latest/onescript-engine_1.0.21_all.deb  && sudo dpkg -i /tmp/oscript.deb"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install opm && sudo opm install && sudo opm update vanessa-runner"
+      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb https://oscript.io/downloads/latest/x64/onescript-engine_1.2.0_all.deb  && sudo dpkg -i /tmp/oscript.deb"
+      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install opm && sudo opm install && sudo opm update vanessa-runner && sudo opm install v8find"
       - ./tools/linux/travistest.sh ./features/Core/FeatureReader/
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run initib file --buildFolderPath ./build"
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm run vanessatravis all --path ./features/Core/TestClient/ --settings ./tools/JSON/VBParams8310linux.json"
@@ -106,8 +106,8 @@ jobs:
       - sudo docker ps && sleep 5
       - sudo docker run -d -p 4040:4040 --link "$(cat /tmp/container_id)":http wernight/ngrok ngrok http http:6080 > /tmp/container_idngrok
       - sleep 5 && echo $(curl -s http://127.0.0.1:4040/status | grep -P "http://.*?ngrok.io" -oh)"/vnc_auto.html"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb http://oscript.io/downloads/latest/onescript-engine_1.0.21_all.deb  && sudo dpkg -i /tmp/oscript.deb"
-      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install opm && sudo opm install && sudo opm update vanessa-runner"
+      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 wget -q --continue -O /tmp/oscript.deb https://oscript.io/downloads/latest/x64/onescript-engine_1.2.0_all.deb  && sudo dpkg -i /tmp/oscript.deb"
+      - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm install opm && sudo opm install && sudo opm update vanessa-runner && sudo opm install v8find"
       - sudo docker exec -u ubuntu "$(cat /tmp/container_id)" /bin/bash -c "cd /home/ubuntu/code; DISPLAY=:1.0 sudo opm build ./"
       - sudo chown $USER -R ./
       - 7z a add.tar ./.forbuild/features/ ./.forbuild/lib ./.forbuild/locales ./.forbuild/tests/smoke ./.forbuild/plugins ./.forbuild/vendor ./.forbuild/bddRunner.epf ./.forbuild/xddTestRunner.epf

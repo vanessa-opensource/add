@@ -746,6 +746,7 @@
 			</Attribute>
 			<Form>Форма</Form>
 			<Form>УправляемаяФорма</Form>
+			<Form>МодульАсинк</Form>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>

@@ -4881,6 +4881,7 @@
 			<Form>РедактированиеТаблицы</Form>
 			<Form>ИсследовательФормы</Form>
 			<Form>ДеталиОшибки</Form>
+			<Form>МодульАсинк</Form>
 			<Template>ОтчетТестирования</Template>
 			<Template>ШаблонПеревода</Template>
 			<Template>ПереводСообщений</Template>
