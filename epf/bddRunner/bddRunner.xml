@@ -4882,6 +4882,7 @@
 			<Form>ИсследовательФормы</Form>
 			<Form>ДеталиОшибки</Form>
 			<Form>МодульАсинк</Form>
+			<Form>ВыборИзвестногоШагаОФ</Form>
 			<Template>ОтчетТестирования</Template>
 			<Template>ШаблонПеревода</Template>
 			<Template>ПереводСообщений</Template>
