@@ -129,6 +129,7 @@
 			<Role>Админ</Role>
 			<Role>НедоступнаяРоль</Role>
 			<CommonModule>СлужебныйМодуль</CommonModule>
+			<ScheduledJob>РегламентноеЗадание1</ScheduledJob>
 			<CommonCommand>ОбщаяКомандаДляСправочника1</CommonCommand>
 			<Constant>ПутьКVanessaADD</Constant>
 			<Constant>СлужебныйСчетчик</Constant>
