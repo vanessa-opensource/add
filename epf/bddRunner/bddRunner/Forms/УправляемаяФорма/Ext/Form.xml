@@ -1397,6 +1397,11 @@
 													<CommandName>Form.Command.ПреобразоватьЖурналДействийПользователяВТест</CommandName>
 													<ExtendedTooltip name="ФормаПреобразоватьЖурналДействийПользователяВТестРасширеннаяПодсказка" id="1796"/>
 												</Button>
+												<Button name="ПроверитьДублированиеСценариев" id="1839">
+													<Type>CommandBarButton</Type>
+													<CommandName>Form.Command.ПроверитьДублированиеСценариев</CommandName>
+													<ExtendedTooltip name="ПроверитьДублированиеСценариевРасширеннаяПодсказка" id="1840"/>
+												</Button>
 											</ChildItems>
 										</Popup>
 									</ChildItems>
@@ -18894,6 +18899,21 @@
 				</v8:item>
 			</ToolTip>
 			<Action>СоздатьОткрытьОтчетAllure</Action>
+		</Command>
+		<Command name="ПроверитьДублированиеСценариев" id="80">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить дублирование сценариев</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Проверить дублирование сценариев</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>ПроверитьДублированиеСценариев</Action>
 		</Command>
 	</Commands>
 </Form>
