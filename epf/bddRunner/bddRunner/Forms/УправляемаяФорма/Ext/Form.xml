@@ -9123,6 +9123,16 @@
 														<Event name="StartChoice">КаталогПроектаНачалоВыбора</Event>
 													</Events>
 												</InputField>
+												<InputField name="КаталогВнешнихОбработокEDT" id="1839">
+													<DataPath>Объект.КаталогВнешнихОбработокEDT</DataPath>
+													<ChoiceButton>true</ChoiceButton>
+													<ClearButton>true</ClearButton>
+													<ContextMenu name="КаталогВнешнихОбработокEDTКонтекстноеМеню" id="1840"/>
+													<ExtendedTooltip name="КаталогВнешнихОбработокEDTРасширеннаяПодсказка" id="1841"/>
+													<Events>
+														<Event name="StartChoice">КаталогВнешнихОбработокEDTНачалоВыбора</Event>
+													</Events>
+												</InputField>
 												<InputField name="ПоставщикUserSettings" id="1811">
 													<DataPath>Объект.ПоставщикПользовательскихНастроек</DataPath>
 													<ListChoiceMode>true</ListChoiceMode>
