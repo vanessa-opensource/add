@@ -23,6 +23,7 @@
    "КаталогOutputAllureБазовый": "./tools/ServiceBases/allurereport",
    "КаталогOutputjUnit": "./tools/ServiceBases/junitreport",
    "КаталогOutputCucumberJson": "./tools/ServiceBases/cucumber",
+   "КаталогВнешнихОбработокEDT": "./features/Drafts/step_definitions/bin",
    "СоздаватьПодкаталогВКаталогеAllureДляЭтойСборки": "Истина",
    "ДелатьСкриншотПриВозникновенииОшибки": "Истина",
    "СниматьСкриншотКаждогоОкна1С": "Ложь",
