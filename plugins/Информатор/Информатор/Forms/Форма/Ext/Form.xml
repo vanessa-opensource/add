@@ -3,9 +3,10 @@
 	<Title>
 		<v8:item>
 			<v8:lang>ru</v8:lang>
-			<v8:content>Техническая информация</v8:content>
+			<v8:content>Техническая информация Vanessa-ADD</v8:content>
 		</v8:item>
 	</Title>
+	<AutoTitle>false</AutoTitle>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<Autofill>false</Autofill>
 		<ChildItems>
@@ -23,7 +24,7 @@
 	<ChildItems>
 		<TextDocumentField name="ТекстовыйДокумент" id="1">
 			<DataPath>ТекстовыйДокумент</DataPath>
-			<TitleTextColor>-46</TitleTextColor>
+			<TitleTextColor>web:DarkGreen</TitleTextColor>
 			<TitleFont ref="style:NormalTextFont" height="12" bold="true" italic="false" underline="false" strikeout="false" kind="StyleItem"/>
 			<ContextMenu name="ТекстовыйДокументКонтекстноеМеню" id="2"/>
 			<ExtendedTooltip name="ТекстовыйДокументРасширеннаяПодсказка" id="3"/>
