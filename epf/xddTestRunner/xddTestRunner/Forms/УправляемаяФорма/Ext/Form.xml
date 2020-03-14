@@ -75,6 +75,16 @@
 						</ToolTip>
 						<ExtendedTooltip name="ПодменюИсторияЗагрузкиТестовРасширеннаяПодсказка" id="435"/>
 					</Popup>
+					<ButtonGroup name="ФормаГруппа1" id="470">
+						<ExtendedTooltip name="ФормаГруппа1РасширеннаяПодсказка" id="471"/>
+						<ChildItems>
+							<Button name="ТехническаяИнформация1" id="468">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ТехническаяИнформация</CommandName>
+								<ExtendedTooltip name="ТехническаяИнформация1РасширеннаяПодсказка" id="469"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
 				</ChildItems>
 			</Popup>
 			<Button name="КомандаПерезагрузитьТесты" id="31">
@@ -117,31 +127,49 @@
 				</ToolTip>
 				<ExtendedTooltip name="ГруппаВнешниеИнструментыРасширеннаяПодсказка" id="439"/>
 				<ChildItems>
+					<ButtonGroup name="Группа8" id="472">
+						<ExtendedTooltip name="Группа8РасширеннаяПодсказка" id="473"/>
+						<ChildItems>
+							<Button name="ТехническаяИнформация" id="474">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ТехническаяИнформация</CommandName>
+								<ExtendedTooltip name="ТехническаяИнформацияРасширеннаяПодсказка" id="475"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
+					<ButtonGroup name="ФормаГруппа3" id="478">
+						<ExtendedTooltip name="ФормаГруппа3РасширеннаяПодсказка" id="479"/>
+					</ButtonGroup>
 					<Button name="КомандаГенераторМакетовДанных" id="71">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.ГенераторМакетовДанных</CommandName>
 						<ExtendedTooltip name="КомандаГенераторМакетовДанныхРасширеннаяПодсказка" id="440"/>
-					</Button>
-					<Button name="КомандаПоказатьГУИД" id="73">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.ПоказатьГУИД</CommandName>
-						<ExtendedTooltip name="КомандаПоказатьГУИДРасширеннаяПодсказка" id="441"/>
-					</Button>
-					<Button name="ФормаКонвертерТестов" id="430">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.КонвертерТестов</CommandName>
-						<ExtendedTooltip name="ФормаКонвертерТестовРасширеннаяПодсказка" id="442"/>
-					</Button>
-					<Button name="ФормаПреобразоватьЖурналДействийПользователяВТест" id="431">
-						<Type>CommandBarButton</Type>
-						<CommandName>Form.Command.ПреобразоватьЖурналДействийПользователяВТест</CommandName>
-						<ExtendedTooltip name="ФормаПреобразоватьЖурналДействийПользователяВТестРасширеннаяПодсказка" id="443"/>
 					</Button>
 					<Button name="ФормаИнструментУправленияДымовымиТестами" id="466">
 						<Type>CommandBarButton</Type>
 						<CommandName>Form.Command.ИнструментУправленияДымовымиТестами</CommandName>
 						<ExtendedTooltip name="ФормаИнструментУправленияДымовымиТестамиРасширеннаяПодсказка" id="467"/>
 					</Button>
+					<Button name="КомандаПоказатьГУИД" id="73">
+						<Type>CommandBarButton</Type>
+						<CommandName>Form.Command.ПоказатьГУИД</CommandName>
+						<ExtendedTooltip name="КомандаПоказатьГУИДРасширеннаяПодсказка" id="441"/>
+					</Button>
+					<ButtonGroup name="ФормаГруппа2" id="476">
+						<ExtendedTooltip name="ФормаГруппа2РасширеннаяПодсказка" id="477"/>
+						<ChildItems>
+							<Button name="ФормаКонвертерТестов" id="430">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.КонвертерТестов</CommandName>
+								<ExtendedTooltip name="ФормаКонвертерТестовРасширеннаяПодсказка" id="442"/>
+							</Button>
+							<Button name="ФормаПреобразоватьЖурналДействийПользователяВТест" id="431">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.ПреобразоватьЖурналДействийПользователяВТест</CommandName>
+								<ExtendedTooltip name="ФормаПреобразоватьЖурналДействийПользователяВТестРасширеннаяПодсказка" id="443"/>
+							</Button>
+						</ChildItems>
+					</ButtonGroup>
 				</ChildItems>
 			</Popup>
 			<Button name="ФормаКомандаПерезагрузитьФорму" id="137">
@@ -695,6 +723,25 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ИнструментУправленияДымовымиТестами</Action>
+		</Command>
+		<Command name="ТехническаяИнформация" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Техническая информация</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Техническая информация</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ShowData</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
+			<Action>ТехническаяИнформация</Action>
 		</Command>
 	</Commands>
 	<Parameters>
