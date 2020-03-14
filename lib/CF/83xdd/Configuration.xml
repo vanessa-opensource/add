@@ -129,6 +129,7 @@
 			<Role>ПолныеПрава</Role>
 			<Role>Роль1</Role>
 			<Role>ПраваНеобходимыеДляТестирования</Role>
+			<CommonTemplate>ВложеннаяСхема</CommonTemplate>
 			<CommonModule>xddКлиент</CommonModule>
 			<CommonModule>xddВызовСервера</CommonModule>
 			<CommonModule>ЗапускПриложенияКлиент</CommonModule>
@@ -157,6 +158,7 @@
 			<Report>ТестовыйОтчетСКДДляСравнениеСЭталоном</Report>
 			<Report>Тест_Отчет</Report>
 			<Report>Отчет2</Report>
+			<Report>ВложенныеСхемыСКД</Report>
 			<DataProcessor>Тест_Обработка</DataProcessor>
 			<DataProcessor>ТестОбработка_Форма_ИсключениеПриОткрытии</DataProcessor>
 			<DataProcessor>ТестПадающий_Обработка</DataProcessor>
