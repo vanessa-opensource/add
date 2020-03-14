@@ -129,7 +129,7 @@
 			<Role>ПолныеПрава</Role>
 			<Role>Роль1</Role>
 			<Role>ПраваНеобходимыеДляТестирования</Role>
-			<CommonTemplate>ВложеннаяСхема</CommonTemplate>
+			<CommonTemplate>МакетВложеннаяСхема</CommonTemplate>
 			<CommonModule>xddКлиент</CommonModule>
 			<CommonModule>xddВызовСервера</CommonModule>
 			<CommonModule>ЗапускПриложенияКлиент</CommonModule>
