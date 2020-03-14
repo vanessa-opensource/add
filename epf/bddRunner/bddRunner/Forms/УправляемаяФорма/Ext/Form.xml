@@ -18958,6 +18958,10 @@
 					<v8:content>Техническая информация</v8:content>
 				</v8:item>
 			</ToolTip>
+			<Picture>
+				<xr:Ref>StdPicture.ShowData</xr:Ref>
+				<xr:LoadTransparent>true</xr:LoadTransparent>
+			</Picture>
 			<Action>ТехническаяИнформация</Action>
 		</Command>
 	</Commands>
