@@ -10916,7 +10916,7 @@
 															<ContextMenu name="ИмяФайлаЛогВыполненияСценариевКонтекстноеМеню" id="1548"/>
 															<ExtendedTooltip name="ИмяФайлаЛогВыполненияСценариевРасширеннаяПодсказка" id="1549"/>
 															<Events>
-																<Event name="StartChoice">КаталогOutputВнутреннийФорматНачалоВыбора</Event>
+																<Event name="StartChoice">ИмяФайлаЛогВыполненияСценариевНачалоВыбора</Event>
 															</Events>
 														</InputField>
 													</ChildItems>
