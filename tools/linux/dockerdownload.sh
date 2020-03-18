@@ -12,7 +12,7 @@ if [[ -f ${HOME}/docker/onec32_client_${ONECVERSION}.tar.xz ]]; then
 else
     echo "${HOME}/docker/onec32_client_${ONECVERSION}.tar.xz"
     if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
-        wget -nv --continue -O ${HOME}/docker/onec32_client_${ONECVERSION}.tar.xz http://Bit.ly/33bvzxd
+        wget -nv --continue -O ${HOME}/docker/onec32_client_${ONECVERSION}.tar.xz $URL_TARCLIENT
     fi
     if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
         wget -nv --continue -O ${HOME}/docker/onec32_client_${ONECVERSION}.tar.xz $URL_TARCLIENT
