@@ -25,7 +25,11 @@
     ],
     "ВыполнитьСценарии": "Истина",
     "ЗавершитьРаботуСистемы": "Истина",
-    "ЗакрытьTestClientПослеЗапускаСценариев": "Истина",
+    "ЗакрытьTestClientПослеЗапускаСценариев": true,
+    "DebugLog": false,
+    "ПриравниватьPendingКFailed": false,
+    "ВыводитьВЛогВыполнениеШагов": true,
+
     "ДелатьЛогВыполненияСценариевВЖР": "Истина",
     "ДелатьОтчетВФорматеАллюр": "Истина",
     "ДелатьОтчетВФорматеjUnit": "Истина",
@@ -44,12 +48,12 @@
     "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "$workspaceRoot/./ServiceBases/BuildStatus.log",
     "ДобавлятьКИмениСценарияУсловияВыгрузки": "Истина",
     "СписокТеговИсключение": [
-        "IgnoreOnCIMainBuild",
-        "IgnoreOn8310",
-        "IgnoreOnUFBuilds",
-        "Ignore",
-	"Video",
-	"IgnoreOnLinux"
+      "IgnoreOnCIMainBuild",
+      "IgnoreOn8310",
+      "IgnoreOnUFBuilds",
+      "Ignore",
+      "Video",
+      "IgnoreOnLinux"
     ],
     "ДополнительныеПараметры": {
         "КаталогФичДляVBManager": "$workspaceRoot/./features"
