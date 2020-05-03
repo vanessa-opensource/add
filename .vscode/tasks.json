@@ -6,7 +6,13 @@
         {
             "label": "Run current feature in 1C:Enterprise",
             "type": "shell",
-            "command": "vrunner vanessa --settings tools/json/vrunner.json --path ${file}",
+            "command": "vrunner vanessa --settings tools/json/vrunner.json --path ${workspaceFolder}\\${relativeFile}",
+            "problemMatcher": []
+        },
+        {
+            "label": "echo file names",
+            "type": "shell",
+            "command": "echo ${workspaceFolder} - ${fileDirname} - ${relativeFile} - ${workspaceFolder}\\${relativeFile} - ${file}",
             "problemMatcher": []
         }
     ]
