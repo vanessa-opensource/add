@@ -2,11 +2,11 @@
                                    ADD
                             =================
 
-Please visit the ADD web site for more information:
+Please visit the Vanessa-ADD web site for more information:
 
-  * https://github.com/silverbulleters/add
+  * https://github.com/vanessa-opensource/add
 
-Copyright 2018 The SilverBulleters, LLC
+Copyright 2020 Vanessa-OpenSource
 
 The Vanessa-Automation-Driven-Development Project licenses this file to you under the Mozilla Public License,
 version 2.0 (the "License"); you may not use this file except in compliance
@@ -43,4 +43,3 @@ testing framework for 1C, which can be obtained at:
     * license/LICENSE.xunitfor1c.txt (Apache License 2.0)
   * HOMEPAGE:
     * https://github.com/xDrivenDevelopment/xUnitFor1C
-

@@ -6,7 +6,25 @@
         {
             "label": "Run current feature in 1C:Enterprise",
             "type": "shell",
-            "command": "vrunner vanessa --settings tools/json/vrunner.json --path ${file}",
+            "command": "vrunner vanessa --settings tools/json/vrunner.json --path ${workspaceFolder}\\${relativeFile}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Run current feature in 1C:Enterprise + WAIT",
+            "type": "shell",
+            "command": "SET VANESSA_VANESSASHUTDOWN=0 && SET VANESSA_CLOSETESTCLIENT=0 && vrunner vanessa --settings tools/json/vrunner.json --path ${workspaceFolder}\\${relativeFile}",
+            "problemMatcher": []
+        },
+        {
+            "label": "Load current feature in 1C:Enterprise + wait",
+            "type": "shell",
+            "command": "SET VANESSA_VANESSARUN=0 && SET VANESSA_VANESSASHUTDOWN=0 && SET VANESSA_CLOSETESTCLIENT=0 && vrunner vanessa --settings tools/json/vrunner.json --path ${workspaceFolder}\\${relativeFile}",
+            "problemMatcher": []
+        },
+        {
+            "label": "echo file names",
+            "type": "shell",
+            "command": "echo ${workspaceFolder} - ${fileDirname} - ${relativeFile} - ${workspaceFolder}\\${relativeFile} - ${file}",
             "problemMatcher": []
         }
     ]

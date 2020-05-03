@@ -1,0 +1,571 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<DataCompositionSchema xmlns="http://v8.1c.ru/8.1/data-composition-system/schema" xmlns:dcscom="http://v8.1c.ru/8.1/data-composition-system/common" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<dataSource>
+		<name>ИсточникДанных1</name>
+		<dataSourceType>Local</dataSourceType>
+	</dataSource>
+	<dataSet xsi:type="DataSetQuery">
+		<name>НаборДанных1</name>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть1.НомерСтроки</dataPath>
+			<field>ТабличнаяЧасть1.НомерСтроки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>СоставнойРеквизит</dataPath>
+			<field>СоставнойРеквизит</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеквизитДата</dataPath>
+			<field>РеквизитДата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеквизитПереключатель</dataPath>
+			<field>РеквизитПереключатель</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Ссылка</dataPath>
+			<field>Ссылка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть1.РеквизитЧисло</dataPath>
+			<field>ТабличнаяЧасть1.РеквизитЧисло</field>
+		</field>
+		<field xsi:type="DataSetFieldNestedDataSet">
+			<dataPath>ТабличнаяЧасть1</dataPath>
+			<field>ТабличнаяЧасть1</field>
+		</field>
+		<field xsi:type="DataSetFieldNestedDataSet">
+			<dataPath>ТабличнаяЧасть2</dataPath>
+			<field>ТабличнаяЧасть2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть1.РеквизитБыстрыйВыборТЧ</dataPath>
+			<field>ТабличнаяЧасть1.РеквизитБыстрыйВыборТЧ</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеквизитСписок</dataPath>
+			<field>РеквизитСписок</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ИмяПредопределенныхДанных</dataPath>
+			<field>ИмяПредопределенныхДанных</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ВерсияДанных</dataPath>
+			<field>ВерсияДанных</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть1.РеквизитСправочникВыборИзФормыСписка</dataPath>
+			<field>ТабличнаяЧасть1.РеквизитСправочникВыборИзФормыСписка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть1.Ссылка</dataPath>
+			<field>ТабличнаяЧасть1.Ссылка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеквизитЧисло</dataPath>
+			<field>РеквизитЧисло</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть2.РеквизитБулево</dataPath>
+			<field>ТабличнаяЧасть2.РеквизитБулево</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть1.РеквизитДата</dataPath>
+			<field>ТабличнаяЧасть1.РеквизитДата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Предопределенный</dataPath>
+			<field>Предопределенный</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть1.РеквизитСправочник</dataPath>
+			<field>ТабличнаяЧасть1.РеквизитСправочник</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Реквизит1</dataPath>
+			<field>Реквизит1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РекСтрока1</dataPath>
+			<field>РекСтрока1</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Реквизит2</dataPath>
+			<field>Реквизит2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РекСтрока2</dataPath>
+			<field>РекСтрока2</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть1.МногострочнаяСтрока</dataPath>
+			<field>ТабличнаяЧасть1.МногострочнаяСтрока</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Реквизит3</dataPath>
+			<field>Реквизит3</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть1.РеквизитБулево</dataPath>
+			<field>ТабличнаяЧасть1.РеквизитБулево</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть2.РеквизитСправочникВыборИзФормыСписка</dataPath>
+			<field>ТабличнаяЧасть2.РеквизитСправочникВыборИзФормыСписка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть2.НомерСтроки</dataPath>
+			<field>ТабличнаяЧасть2.НомерСтроки</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть1.РеквизитСтрока</dataPath>
+			<field>ТабличнаяЧасть1.РеквизитСтрока</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ПометкаУдаления</dataPath>
+			<field>ПометкаУдаления</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть2.РеквизитЧисло</dataPath>
+			<field>ТабличнаяЧасть2.РеквизитЧисло</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть2.Ссылка</dataPath>
+			<field>ТабличнаяЧасть2.Ссылка</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Реквизит1Копия</dataPath>
+			<field>Реквизит1Копия</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Родитель</dataPath>
+			<field>Родитель</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Наименование</dataPath>
+			<field>Наименование</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть2.РеквизитСправочник</dataPath>
+			<field>ТабличнаяЧасть2.РеквизитСправочник</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>Код</dataPath>
+			<field>Код</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеквизитБыстрыйВыбор</dataPath>
+			<field>РеквизитБыстрыйВыбор</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеквизитБулево</dataPath>
+			<field>РеквизитБулево</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть2.РеквизитСтрока</dataPath>
+			<field>ТабличнаяЧасть2.РеквизитСтрока</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ТабличнаяЧасть2.РеквизитДата</dataPath>
+			<field>ТабличнаяЧасть2.РеквизитДата</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>ЭтоГруппа</dataPath>
+			<field>ЭтоГруппа</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеквизитМеню</dataPath>
+			<field>РеквизитМеню</field>
+		</field>
+		<field xsi:type="DataSetFieldField">
+			<dataPath>РеквизитСтрока</dataPath>
+			<field>РеквизитСтрока</field>
+		</field>
+		<dataSource>ИсточникДанных1</dataSource>
+		<query>ВЫБРАТЬ
+	Справочник1.Ссылка,
+	Справочник1.ВерсияДанных,
+	Справочник1.ПометкаУдаления,
+	Справочник1.Родитель,
+	Справочник1.ЭтоГруппа,
+	Справочник1.Код,
+	Справочник1.Наименование,
+	Справочник1.Реквизит1,
+	Справочник1.Реквизит2,
+	Справочник1.РеквизитСтрока,
+	Справочник1.РеквизитДата,
+	Справочник1.РеквизитБулево,
+	Справочник1.РеквизитЧисло,
+	Справочник1.РеквизитПереключатель,
+	Справочник1.Реквизит3,
+	Справочник1.РекСтрока1,
+	Справочник1.РекСтрока2,
+	Справочник1.СоставнойРеквизит,
+	Справочник1.РеквизитМеню,
+	Справочник1.РеквизитСписок,
+	Справочник1.РеквизитБыстрыйВыбор,
+	Справочник1.Реквизит1Копия,
+	Справочник1.ТабличнаяЧасть1.(
+		Ссылка,
+		НомерСтроки,
+		РеквизитЧисло,
+		РеквизитСтрока,
+		РеквизитДата,
+		РеквизитСправочник,
+		РеквизитБулево,
+		РеквизитСправочникВыборИзФормыСписка,
+		РеквизитБыстрыйВыборТЧ,
+		МногострочнаяСтрока
+	),
+	Справочник1.ТабличнаяЧасть2.(
+		Ссылка,
+		НомерСтроки,
+		РеквизитЧисло,
+		РеквизитСтрока,
+		РеквизитДата,
+		РеквизитСправочник,
+		РеквизитБулево,
+		РеквизитСправочникВыборИзФормыСписка
+	),
+	Справочник1.Предопределенный,
+	Справочник1.ИмяПредопределенныхДанных,
+	Справочник1.Представление
+ИЗ
+	Справочник.Справочник1 КАК Справочник1</query>
+	</dataSet>
+	<nestedSchema>
+		<name>ВложеннаяСхема</name>
+		<title xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вложенная схема</v8:content>
+			</v8:item>
+		</title>
+		<schema>
+			<dataSource>
+				<name>ИсточникДанных1</name>
+				<dataSourceType>Local</dataSourceType>
+			</dataSource>
+			<dataSet xsi:type="DataSetQuery">
+				<name>НаборДанных1</name>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЭтоГруппа</dataPath>
+					<field>ЭтоГруппа</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Код</dataPath>
+					<field>Код</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Ссылка</dataPath>
+					<field>Ссылка</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Предопределенный</dataPath>
+					<field>Предопределенный</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ПометкаУдаления</dataPath>
+					<field>ПометкаУдаления</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ВерсияДанных</dataPath>
+					<field>ВерсияДанных</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Наименование</dataPath>
+					<field>Наименование</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ИмяПредопределенныхДанных</dataPath>
+					<field>ИмяПредопределенныхДанных</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Родитель</dataPath>
+					<field>Родитель</field>
+				</field>
+				<dataSource>ИсточникДанных1</dataSource>
+				<query>ВЫБРАТЬ
+	Справочник2.Ссылка,
+	Справочник2.ВерсияДанных,
+	Справочник2.ПометкаУдаления,
+	Справочник2.Родитель,
+	Справочник2.ЭтоГруппа,
+	Справочник2.Код,
+	Справочник2.Наименование,
+	Справочник2.Предопределенный,
+	Справочник2.ИмяПредопределенныхДанных,
+	Справочник2.Представление
+ИЗ
+	Справочник.Справочник2 КАК Справочник2</query>
+			</dataSet>
+			<nestedSchema>
+				<name>ВложеннаяСхема2</name>
+				<title xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Вложенная схема2</v8:content>
+					</v8:item>
+				</title>
+				<schema>
+					<dataSource>
+						<name>ИсточникДанных1</name>
+						<dataSourceType>Local</dataSourceType>
+					</dataSource>
+					<dataSet xsi:type="DataSetQuery">
+						<name>НаборДанных1</name>
+						<field xsi:type="DataSetFieldField">
+							<dataPath>ЭтоГруппа</dataPath>
+							<field>ЭтоГруппа</field>
+						</field>
+						<field xsi:type="DataSetFieldField">
+							<dataPath>Код</dataPath>
+							<field>Код</field>
+						</field>
+						<field xsi:type="DataSetFieldField">
+							<dataPath>Ссылка</dataPath>
+							<field>Ссылка</field>
+						</field>
+						<field xsi:type="DataSetFieldField">
+							<dataPath>Предопределенный</dataPath>
+							<field>Предопределенный</field>
+						</field>
+						<field xsi:type="DataSetFieldField">
+							<dataPath>ПометкаУдаления</dataPath>
+							<field>ПометкаУдаления</field>
+						</field>
+						<field xsi:type="DataSetFieldField">
+							<dataPath>ВерсияДанных</dataPath>
+							<field>ВерсияДанных</field>
+						</field>
+						<field xsi:type="DataSetFieldField">
+							<dataPath>Наименование</dataPath>
+							<field>Наименование</field>
+						</field>
+						<field xsi:type="DataSetFieldField">
+							<dataPath>ИмяПредопределенныхДанных</dataPath>
+							<field>ИмяПредопределенныхДанных</field>
+						</field>
+						<field xsi:type="DataSetFieldField">
+							<dataPath>Родитель</dataPath>
+							<field>Родитель</field>
+						</field>
+						<dataSource>ИсточникДанных1</dataSource>
+						<query>ВЫБРАТЬ
+	Справочник3.Ссылка,
+	Справочник3.ВерсияДанных,
+	Справочник3.ПометкаУдаления,
+	Справочник3.Родитель,
+	Справочник3.ЭтоГруппа,
+	Справочник3.Код,
+	Справочник3.Наименование,
+	Справочник3.Предопределенный,
+	Справочник3.ИмяПредопределенныхДанных,
+	Справочник3.Представление
+ИЗ
+	Справочник.Справочник3 КАК Справочник3</query>
+					</dataSet>
+					<settingsVariant>
+						<dcsset:name>Основной</dcsset:name>
+						<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+						<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Наименование</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Код</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ВерсияДанных</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:item xsi:type="dcsset:StructureItemGroup">
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+							</dcsset:item>
+						</dcsset:settings>
+					</settingsVariant>
+				</schema>
+				<settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"/>
+			</nestedSchema>
+			<settingsVariant>
+				<dcsset:name>Основной</dcsset:name>
+				<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+				<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Наименование</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Код</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ВерсияДанных</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:settings>
+			</settingsVariant>
+			<settingsVariant>
+				<dcsset:name>ВложеннаяСхема2</dcsset:name>
+				<dcsset:presentation xsi:type="v8:LocalStringType">
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>Вложенная схема 2</v8:content>
+					</v8:item>
+				</dcsset:presentation>
+				<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+					<dcsset:item xsi:type="dcsset:StructureItemNestedObject">
+						<dcsset:objectID>ВложеннаяСхема2</dcsset:objectID>
+						<dcsset:settings>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Наименование</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Код</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ВерсияДанных</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:item xsi:type="dcsset:StructureItemGroup">
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+							</dcsset:item>
+						</dcsset:settings>
+					</dcsset:item>
+				</dcsset:settings>
+			</settingsVariant>
+		</schema>
+		<settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows"/>
+	</nestedSchema>
+	<settingsVariant>
+		<dcsset:name>Основной</dcsset:name>
+		<dcsset:presentation xsi:type="xs:string">Основной</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:selection>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Наименование</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>Код</dcsset:field>
+				</dcsset:item>
+				<dcsset:item xsi:type="dcsset:SelectedItemField">
+					<dcsset:field>ВерсияДанных</dcsset:field>
+				</dcsset:item>
+			</dcsset:selection>
+			<dcsset:item xsi:type="dcsset:StructureItemGroup">
+				<dcsset:order>
+					<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+				</dcsset:order>
+				<dcsset:selection>
+					<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+				</dcsset:selection>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ВложеннаяСхема</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вложенная схема</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:item xsi:type="dcsset:StructureItemNestedObject">
+				<dcsset:objectID>ВложеннаяСхема</dcsset:objectID>
+				<dcsset:settings>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Наименование</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Код</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ВерсияДанных</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemGroup">
+						<dcsset:order>
+							<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+						</dcsset:order>
+						<dcsset:selection>
+							<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+						</dcsset:selection>
+					</dcsset:item>
+				</dcsset:settings>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+	<settingsVariant>
+		<dcsset:name>ВложеннаяСхема2</dcsset:name>
+		<dcsset:presentation xsi:type="v8:LocalStringType">
+			<v8:item>
+				<v8:lang>ru</v8:lang>
+				<v8:content>Вложенная схема 2</v8:content>
+			</v8:item>
+		</dcsset:presentation>
+		<dcsset:settings xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows">
+			<dcsset:item xsi:type="dcsset:StructureItemNestedObject">
+				<dcsset:objectID>ВложеннаяСхема</dcsset:objectID>
+				<dcsset:settings>
+					<dcsset:selection>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Наименование</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>Код</dcsset:field>
+						</dcsset:item>
+						<dcsset:item xsi:type="dcsset:SelectedItemField">
+							<dcsset:field>ВерсияДанных</dcsset:field>
+						</dcsset:item>
+					</dcsset:selection>
+					<dcsset:item xsi:type="dcsset:StructureItemNestedObject">
+						<dcsset:objectID>ВложеннаяСхема2</dcsset:objectID>
+						<dcsset:settings>
+							<dcsset:selection>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Наименование</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>Код</dcsset:field>
+								</dcsset:item>
+								<dcsset:item xsi:type="dcsset:SelectedItemField">
+									<dcsset:field>ВерсияДанных</dcsset:field>
+								</dcsset:item>
+							</dcsset:selection>
+							<dcsset:item xsi:type="dcsset:StructureItemGroup">
+								<dcsset:order>
+									<dcsset:item xsi:type="dcsset:OrderItemAuto"/>
+								</dcsset:order>
+								<dcsset:selection>
+									<dcsset:item xsi:type="dcsset:SelectedItemAuto"/>
+								</dcsset:selection>
+							</dcsset:item>
+						</dcsset:settings>
+					</dcsset:item>
+				</dcsset:settings>
+			</dcsset:item>
+		</dcsset:settings>
+	</settingsVariant>
+</DataCompositionSchema>

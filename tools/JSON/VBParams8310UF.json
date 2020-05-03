@@ -40,6 +40,7 @@
     "КаталогOutputAllureБазовый": "$workspaceRoot/./ServiceBases/allurereport",
     "КаталогOutputjUnit": "$workspaceRoot/./ServiceBases/junitreport",
     "КаталогOutputCucumberJson": "$workspaceRoot/./ServiceBases/cucumber",
+    "КаталогВнешнихОбработокEDT": "./features/Drafts/step_definitions/bin",
     "ДелатьСкриншотПриВозникновенииОшибки": "Истина",
     "КаталогOutputСкриншоты": "$workspaceRoot/./ServiceBases/ScreenShots",
     "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/./ServiceBases/log.txt",

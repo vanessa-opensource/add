@@ -42,7 +42,7 @@
 			Когда Я запускаю сеанс TestManager в служебной базе
 			И Пауза 5
 			И я разворачиваю активное окно на полный экран
-			И Я запускаю Vanessa-ADD интерактивно
+			И Я запускаю Vanessa-ADD интерактивно в режиме TestClient
 			И Я загружаю один feature файл "Support\Instructions\Temp\ФичаВызывающаяОшибку.feature"
 			И Я создаю EPF файл в сеансе служебной базы
 			И В каталоге появилась обработка "Support\Instructions\Temp\step_definitions\ФичаВызывающаяОшибку.epf"
