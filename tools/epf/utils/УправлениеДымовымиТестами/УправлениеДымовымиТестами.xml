@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Управление дымовыми тестами</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Control of smoke tests</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.УправлениеДымовымиТестами.Form.Форма</DefaultForm>
@@ -41,6 +45,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Значения реквизитов новых</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Values details new</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

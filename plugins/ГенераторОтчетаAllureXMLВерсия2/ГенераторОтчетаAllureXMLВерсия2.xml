@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Генератор отчета Allure 2 XML </v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Report generator XML Allure 2</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.ГенераторОтчетаAllureXMLВерсия2.Form.Форма</DefaultForm>
@@ -31,6 +35,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Типы узлов дерева тестов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Types of nodes in the tree test</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -64,6 +72,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Иконки узлов дерева тестов</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Icons of tree nodes tests</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -95,6 +107,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Состояния тестов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>State tests</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

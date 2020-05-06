@@ -20,11 +20,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Отключить интернет поддержку у всех пользователей</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Disable Internet support for all users</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Отключить интернет поддержку у всех пользователей</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Disable Internet support for all users</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ОтключитьИнтернетПоддержкуУВсехПользователей</Action>

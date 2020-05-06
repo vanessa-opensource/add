@@ -73,6 +73,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Кнопки командного интерфейса</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Button command interface</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>v8:ValueTable</v8:Type>
@@ -83,6 +87,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Представление теста</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Test view</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -98,6 +106,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Навигационная ссылка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Navigation link</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -118,11 +130,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Интерактивный тест</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Interactive test</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Интерактивный тест</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Interactive test</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ИнтерактивныйТест</Action>

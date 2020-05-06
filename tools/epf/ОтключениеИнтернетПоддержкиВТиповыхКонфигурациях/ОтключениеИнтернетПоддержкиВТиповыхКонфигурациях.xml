@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Отключение интернет поддержки в типовых конфигурациях</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Disable Internet support typical configurations</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.ОтключениеИнтернетПоддержкиВТиповыхКонфигурациях.Form.Форма</DefaultForm>

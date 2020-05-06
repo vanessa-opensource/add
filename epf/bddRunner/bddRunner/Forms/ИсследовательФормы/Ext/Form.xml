@@ -9,78 +9,6 @@
 			<v8:lang>en</v8:lang>
 			<v8:content>Form explorer</v8:content>
 		</v8:item>
-		<v8:item>
-			<v8:lang>am</v8:lang>
-			<v8:content>ወደ researcher ነው ቅጽ</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>az</v8:lang>
-			<v8:content>Tədqiqatçı formaları</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>bg</v8:lang>
-			<v8:content>Изследовател форма</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>et</v8:lang>
-			<v8:content>Teadlane vormi</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>fr</v8:lang>
-			<v8:content>Le chercheur de la forme</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>ka</v8:lang>
-			<v8:content>მკვლევარი არის ფორმა</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>de</v8:lang>
-			<v8:content>Forscher Formen</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>hu</v8:lang>
-			<v8:content>A kutató a forma</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>it</v8:lang>
-			<v8:content>Ricercatore di forma</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>lv</v8:lang>
-			<v8:content>Pētnieks formas</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>lt</v8:lang>
-			<v8:content>Mokslininkė formos</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>mn</v8:lang>
-			<v8:content>Тус судлаач нь хэлбэр</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>pl</v8:lang>
-			<v8:content>Badacz formy</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>ro</v8:lang>
-			<v8:content>Cercetător forme</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>sl</v8:lang>
-			<v8:content>Raziskovalec je obrazca</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>es</v8:lang>
-			<v8:content>El investigador del formulario</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>sv</v8:lang>
-			<v8:content>Forskaren är den form</v8:content>
-		</v8:item>
-		<v8:item>
-			<v8:lang>tr</v8:lang>
-			<v8:content>Araştırmacı formu</v8:content>
-		</v8:item>
 	</Title>
 	<AutoCommandBar name="ФормаКоманднаяПанель" id="-1">
 		<ChildItems>
@@ -103,83 +31,15 @@
 						<v8:lang>en</v8:lang>
 						<v8:content>Columns</v8:content>
 					</v8:item>
-					<v8:item>
-						<v8:lang>am</v8:lang>
-						<v8:content>.</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>az</v8:lang>
-						<v8:content>Natiqlər</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>bg</v8:lang>
-						<v8:content>Колона</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>et</v8:lang>
-						<v8:content>Kõlarid</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>fr</v8:lang>
-						<v8:content>La colonne</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>ka</v8:lang>
-						<v8:content>მშობლიურ</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>de</v8:lang>
-						<v8:content>Spalte</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>hu</v8:lang>
-						<v8:content>Hangszórók</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>it</v8:lang>
-						<v8:content>Colonna</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>lv</v8:lang>
-						<v8:content>Skaļruņi</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>lt</v8:lang>
-						<v8:content>Kolonėlės</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>mn</v8:lang>
-						<v8:content>Чанга яригч</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>pl</v8:lang>
-						<v8:content>Kolumny</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>ro</v8:lang>
-						<v8:content>Coloana</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>sl</v8:lang>
-						<v8:content>Zvočniki</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>es</v8:lang>
-						<v8:content>La columna</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>sv</v8:lang>
-						<v8:content>Högtalare</v8:content>
-					</v8:item>
-					<v8:item>
-						<v8:lang>tr</v8:lang>
-						<v8:content>Sütun</v8:content>
-					</v8:item>
 				</Title>
 				<ToolTip>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
 						<v8:content>Показать/скрыть колонки</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Show/hide columns</v8:content>
 					</v8:item>
 				</ToolTip>
 				<Picture>
@@ -204,78 +64,6 @@
 							<v8:item>
 								<v8:lang>en</v8:lang>
 								<v8:content>All columns</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>am</v8:lang>
-								<v8:content>ሁሉንም ቀለሞች</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>az</v8:lang>
-								<v8:content>Bütün natiqlər</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>bg</v8:lang>
-								<v8:content>Всички колони</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>et</v8:lang>
-								<v8:content>Kõik kõlarid</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>fr</v8:lang>
-								<v8:content>Toutes les colonnes</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>ka</v8:lang>
-								<v8:content>ყველა სვეტები</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>de</v8:lang>
-								<v8:content>Alle Spalten</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>hu</v8:lang>
-								<v8:content>Az összes oszlop</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>it</v8:lang>
-								<v8:content>Tutti gli altoparlanti</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>lv</v8:lang>
-								<v8:content>Visi skaļruņi</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>lt</v8:lang>
-								<v8:content>Visi garsiakalbiai</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>mn</v8:lang>
-								<v8:content>Бүх багана</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>pl</v8:lang>
-								<v8:content>Wszystkie głośniki</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>ro</v8:lang>
-								<v8:content>Toate coloanele</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>sl</v8:lang>
-								<v8:content>Vse stolpce</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>es</v8:lang>
-								<v8:content>Todos los altavoces</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>sv</v8:lang>
-								<v8:content>Alla kolumner</v8:content>
-							</v8:item>
-							<v8:item>
-								<v8:lang>tr</v8:lang>
-								<v8:content>Tüm sütun</v8:content>
 							</v8:item>
 						</Title>
 						<ExtendedTooltip name="ПоказатьСкрытьВсеКолонкиРасширеннаяПодсказка" id="31"/>
@@ -346,83 +134,15 @@
 					<v8:lang>en</v8:lang>
 					<v8:content>Window and form captions</v8:content>
 				</v8:item>
-				<v8:item>
-					<v8:lang>am</v8:lang>
-					<v8:content>መስኮት እና ቅጾች</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>az</v8:lang>
-					<v8:content>Mövzular windows və formaları</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>bg</v8:lang>
-					<v8:content>Заглавия на прозорци и форми</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>et</v8:lang>
-					<v8:content>Pealkirjad aknad ja vormid</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>fr</v8:lang>
-					<v8:content>Le titre d'une fenêtre et de la forme</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>ფანჯრის სათაური და ფორმები</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Titel des Fensters und Formen</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>hu</v8:lang>
-					<v8:content>Az ablak címét, formái</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>it</v8:lang>
-					<v8:content>I titoli di dialogo e di forma</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Virsraksti logi un formas</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lt</v8:lang>
-					<v8:content>Antraštės, langai ir formos</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>mn</v8:lang>
-					<v8:content>Цонхны нэр, хэлбэр</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>pl</v8:lang>
-					<v8:content>Nagłówki okna i formy</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ro</v8:lang>
-					<v8:content>Titluri de ferestre și forme de</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sl</v8:lang>
-					<v8:content>Naslov okna in obrazci</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Los títulos de las ventanas y de la forma</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sv</v8:lang>
-					<v8:content>Fönsternamnet och former</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>tr</v8:lang>
-					<v8:content>Başlıkları, pencere ve formları</v8:content>
-				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Группа заголовок имя формы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group title the name of the form</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Group>Vertical</Group>
@@ -573,6 +293,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Дерево формы</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Tree form</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>v8:ValueTree</v8:Type>
@@ -587,78 +311,6 @@
 						<v8:item>
 							<v8:lang>en</v8:lang>
 							<v8:content>Name</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>ስም</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Adı</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Име</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Nimi</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>Le nom de</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>დასახელება</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Name</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>Név</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>Il nome</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Nosaukums</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Pavadinimas</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Нэр</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Nazwa</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>Numele</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Ime</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>El nombre de</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>Namn</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Adı</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -679,78 +331,6 @@
 							<v8:lang>en</v8:lang>
 							<v8:content>Synonym</v8:content>
 						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>ተመሳሳዩ</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Sinonimi</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Синоним</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Sünonüüm</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>Synonyme</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>სინონიმი</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Synonym</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>Szinonimája</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>Sinonimo</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Sinonīms</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Sinonimas</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Synonym</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Synonim</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>Sinonim</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Sinonim</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Sinónimo de</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>Synonym</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Eşanlamlı</v8:content>
-						</v8:item>
 					</Title>
 					<Type>
 						<v8:Type>xs:string</v8:Type>
@@ -765,6 +345,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Тип внутр</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type int</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -786,78 +370,6 @@
 							<v8:lang>en</v8:lang>
 							<v8:content>Type</v8:content>
 						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>ዓይነት</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Növü</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Тип</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Tüüp</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>Type</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>ტიპი</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Art</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>Típus</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>Tipo</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Tips</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Tipas</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Төрөл</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Typ</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>Tip</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Vrsta</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>El tipo de</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>Typ</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Türü</v8:content>
-						</v8:item>
 					</Title>
 					<Type>
 						<v8:Type>xs:string</v8:Type>
@@ -872,6 +384,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Вид внутр</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>View internal</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -892,78 +408,6 @@
 						<v8:item>
 							<v8:lang>en</v8:lang>
 							<v8:content>View</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>ዕይታ</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Növü</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Вид</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Vaade</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>Vue</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>კალენდარი</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Blick</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>Nézet</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>Vista</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Skats</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Rūšis</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Харах</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Widok</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>Vedere</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Ogled</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Tipo de</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>Visa</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Görünüm</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -1031,78 +475,6 @@
 					<v8:lang>en</v8:lang>
 					<v8:content>Get the active element from TestClient</v8:content>
 				</v8:item>
-				<v8:item>
-					<v8:lang>am</v8:lang>
-					<v8:content>ጋር ንቁ ይታያል የሚሰጡዋቸውን TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>az</v8:lang>
-					<v8:content>Əldə aktiv maddə TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>bg</v8:lang>
-					<v8:content>Получаване на активен елемент от TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>et</v8:lang>
-					<v8:content>Saada aktiivne element TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>fr</v8:lang>
-					<v8:content>Recevoir un élément actif de TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>აქტიური ნივთის TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Erhalten das aktive Element von Testclient aus</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>hu</v8:lang>
-					<v8:content>Aktív elemet TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>it</v8:lang>
-					<v8:content>Ricevere elemento attivo di TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Saņemt aktīvais elements no TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lt</v8:lang>
-					<v8:content>Gauti aktyvus elementas iš TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>mn</v8:lang>
-					<v8:content>Идэвхтэй авсан эд TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>pl</v8:lang>
-					<v8:content>Coraz aktywny element z TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ro</v8:lang>
-					<v8:content>De a primi activ element din TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sl</v8:lang>
-					<v8:content>Za aktivni element iz TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Obtener el elemento activo de TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sv</v8:lang>
-					<v8:content>För att aktiva objektet från TestClient</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>tr</v8:lang>
-					<v8:content>Almak için bir aktif element, TestClient</v8:content>
-				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -1113,6 +485,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Текст шагов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Text of steps</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1128,78 +504,6 @@
 				<v8:item>
 					<v8:lang>en</v8:lang>
 					<v8:content>Window title</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>am</v8:lang>
-					<v8:content>መስኮት ርዕስ</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>az</v8:lang>
-					<v8:content>Mövzu pəncərə</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>bg</v8:lang>
-					<v8:content>Заглавната лента на прозореца.</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>et</v8:lang>
-					<v8:content>Akna pealkiri</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>fr</v8:lang>
-					<v8:content>Le titre de la fenêtre</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>Window title</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Fenstertitel</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>hu</v8:lang>
-					<v8:content>Az ablak címe</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>it</v8:lang>
-					<v8:content>Il titolo della finestra</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Virsraksts logi</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lt</v8:lang>
-					<v8:content>Lango antraštė</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>mn</v8:lang>
-					<v8:content>Цонхны гарчиг</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>pl</v8:lang>
-					<v8:content>Tytuł okna</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ro</v8:lang>
-					<v8:content>Titlul ferestrei</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sl</v8:lang>
-					<v8:content>Naslov okna</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>El título de la ventana</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sv</v8:lang>
-					<v8:content>Fönstret titel</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>tr</v8:lang>
-					<v8:content>Pencere başlığı</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1220,78 +524,6 @@
 					<v8:lang>en</v8:lang>
 					<v8:content>Form name</v8:content>
 				</v8:item>
-				<v8:item>
-					<v8:lang>am</v8:lang>
-					<v8:content>ስም ቅጽ</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>az</v8:lang>
-					<v8:content>Adı formaları</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>bg</v8:lang>
-					<v8:content>Името на формата</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>et</v8:lang>
-					<v8:content>Vormi nimi</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>fr</v8:lang>
-					<v8:content>Le nom de la forme</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>სახელი ფორმა</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Der name des Formulars</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>hu</v8:lang>
-					<v8:content>Az űrlap nevére</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>it</v8:lang>
-					<v8:content>Il nome del modulo</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Veidlapas nosaukums</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lt</v8:lang>
-					<v8:content>Formos pavadinimas</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>mn</v8:lang>
-					<v8:content>Нэр хэлбэр</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>pl</v8:lang>
-					<v8:content>Nazwa formularza</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ro</v8:lang>
-					<v8:content>Numele de forma</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sl</v8:lang>
-					<v8:content>Ime obrazca</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>El nombre del formulario</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sv</v8:lang>
-					<v8:content>Namnet på den form</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>tr</v8:lang>
-					<v8:content>Form adı</v8:content>
-				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
@@ -1311,78 +543,6 @@
 					<v8:lang>en</v8:lang>
 					<v8:content>Form Header</v8:content>
 				</v8:item>
-				<v8:item>
-					<v8:lang>am</v8:lang>
-					<v8:content>ሰዎች አናት ነው ቅጽ</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>az</v8:lang>
-					<v8:content>Mövzu və forma</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>bg</v8:lang>
-					<v8:content>Заглавие форми</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>et</v8:lang>
-					<v8:content>Vormi pealkiri</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>fr</v8:lang>
-					<v8:content>L'en-tête de la forme</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>Header ფორმა</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Formulartitel</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>hu</v8:lang>
-					<v8:content>A fejléc a forma</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>it</v8:lang>
-					<v8:content>Titolo del modulo</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Virsraksts formas</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lt</v8:lang>
-					<v8:content>Antraštė formos</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>mn</v8:lang>
-					<v8:content>Толгой хэлбэрээр</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>pl</v8:lang>
-					<v8:content>Nagłówek formularza</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ro</v8:lang>
-					<v8:content>Titlul forme de</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sl</v8:lang>
-					<v8:content>V glavi obrazca</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Título del formulario</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sv</v8:lang>
-					<v8:content>Huvudet i form</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>tr</v8:lang>
-					<v8:content>Form üstbilgisi</v8:content>
-				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
@@ -1398,18 +558,17 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Произошла смена строки при изменении текущего элемента в test client</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>There was a change line when you change current item in test client</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 		<Attribute name="КешТаблицаПеревода" id="9">
-			<Title>
-				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Кеш таблица перевода</v8:content>
-				</v8:item>
-			</Title>
+			<Title/>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -1419,12 +578,7 @@
 			</Type>
 		</Attribute>
 		<Attribute name="Язык" id="10">
-			<Title>
-				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Язык</v8:content>
-				</v8:item>
-			</Title>
+			<Title/>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
 				<v8:StringQualifiers>
@@ -1445,83 +599,15 @@
 					<v8:lang>en</v8:lang>
 					<v8:content>Update</v8:content>
 				</v8:item>
-				<v8:item>
-					<v8:lang>am</v8:lang>
-					<v8:content>ማዘመን</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>az</v8:lang>
-					<v8:content>Yenilə</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>bg</v8:lang>
-					<v8:content>Актуализира</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>et</v8:lang>
-					<v8:content>Uuendada</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>fr</v8:lang>
-					<v8:content>Actualiser</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>განახლება</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Aktualisieren</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>hu</v8:lang>
-					<v8:content>Frissítés</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>it</v8:lang>
-					<v8:content>Aggiornare</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Atjaunināt</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lt</v8:lang>
-					<v8:content>Atnaujinti</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>mn</v8:lang>
-					<v8:content>Шинэчлэх</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>pl</v8:lang>
-					<v8:content>Zaktualizować</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ro</v8:lang>
-					<v8:content>Upgrade</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sl</v8:lang>
-					<v8:content>Posodobitev</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Actualizar</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sv</v8:lang>
-					<v8:content>Uppdatering</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>tr</v8:lang>
-					<v8:content>Yenile</v8:content>
-				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Обновить</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Update</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>Обновить</Action>
@@ -1532,11 +618,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать/Скрыть все колонки</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show/Hide all columns</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать скрыть все колонки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show hide all columns</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьСкрытьВсеКолонки</Action>
@@ -1551,83 +645,15 @@
 					<v8:lang>en</v8:lang>
 					<v8:content>Show / Hide Type</v8:content>
 				</v8:item>
-				<v8:item>
-					<v8:lang>am</v8:lang>
-					<v8:content>ለማሳየት/መደበቅ ዓይነት</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>az</v8:lang>
-					<v8:content>Göstər/gizlət növü</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>bg</v8:lang>
-					<v8:content>Показване/скриване на вида на</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>et</v8:lang>
-					<v8:content>Näita/peida tüüp</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>fr</v8:lang>
-					<v8:content>Afficher/masquer le type</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>ჩვენება/დამალვა ტიპი</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Anzeigen/ausblenden Art</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>hu</v8:lang>
-					<v8:content>Megjelenítése/elrejtése típus</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>it</v8:lang>
-					<v8:content>Mostra/nascondi tipo</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Rādīt/slēpt tips</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lt</v8:lang>
-					<v8:content>Rodyti/slėpti tipas</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>mn</v8:lang>
-					<v8:content>Show/hide төрөл</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>pl</v8:lang>
-					<v8:content>Pokaż/ukryj typ</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ro</v8:lang>
-					<v8:content>Arată/ascunde tip</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sl</v8:lang>
-					<v8:content>Prikaži/skrij tip</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Mostrar/ocultar el tipo de</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sv</v8:lang>
-					<v8:content>Visa/dölj typ</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>tr</v8:lang>
-					<v8:content>Göster/gizle türü</v8:content>
-				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать скрыть тип</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show hide type</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьСкрытьТип</Action>
@@ -1642,83 +668,15 @@
 					<v8:lang>en</v8:lang>
 					<v8:content>Show / Hide View</v8:content>
 				</v8:item>
-				<v8:item>
-					<v8:lang>am</v8:lang>
-					<v8:content>ለማሳየት/መደበቅ ሰዎች እይታ</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>az</v8:lang>
-					<v8:content>Göstər/gizlət növü</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>bg</v8:lang>
-					<v8:content>Показване/скриване на вид</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>et</v8:lang>
-					<v8:content>Näita/peida vaade</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>fr</v8:lang>
-					<v8:content>Afficher/masquer la vue</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>ჩვენება/დამალვა view</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Ein - /ausblenden Ansicht</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>hu</v8:lang>
-					<v8:content>Megjelenítése/elrejtése a nézet</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>it</v8:lang>
-					<v8:content>Mostra/nascondi vista</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Rādīt/slēpt skats</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lt</v8:lang>
-					<v8:content>Rodyti/slėpti rūšis</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>mn</v8:lang>
-					<v8:content>Show/hide харах</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>pl</v8:lang>
-					<v8:content>Pokaż/ukryj widok</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ro</v8:lang>
-					<v8:content>Arată/ascunde de vedere</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sl</v8:lang>
-					<v8:content>Prikaži/skrij prikaži</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Mostrar/ocultar vista</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sv</v8:lang>
-					<v8:content>Visa/dölj-visa</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>tr</v8:lang>
-					<v8:content>Göster/gizle görünüm</v8:content>
-				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать скрыть тип</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show hide type</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьСкрытьВид</Action>
@@ -1739,6 +697,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать скрыть доступность</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show hide availability</v8:content>
+				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьСкрытьДоступность</Action>
 		</Command>
@@ -1758,6 +720,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать скрыть видимость</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show hide visibility</v8:content>
+				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьСкрытьВидимость</Action>
 		</Command>
@@ -1776,6 +742,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать скрыть только просмотр</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show hide view-only</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьСкрытьТолькоПросмотр</Action>

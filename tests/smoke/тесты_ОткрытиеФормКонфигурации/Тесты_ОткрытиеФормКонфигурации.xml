@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Тесты "Открытие форм конфигурации"</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Tests are "Open forms"configuration</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.Тесты_ОткрытиеФормКонфигурации.Form.УправляемаяФорма</DefaultForm>
@@ -31,6 +35,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Имена основных форм</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Names of basic shapes</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -64,6 +72,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>М имена основных форм списки</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>M names of the core forms lists</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -95,6 +107,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>М имена основных форм объекты</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>M names of basic forms of objects</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -128,6 +144,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>М получение форм</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>M getting forms</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -159,6 +179,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Выводить сообщения в журнал регистрации</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Print messages to a log</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -194,6 +218,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Настройки</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Settings</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -225,6 +253,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Виды метаданных</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Types of metadata</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -258,6 +290,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Виды проверок</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Types of inspections</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -289,6 +325,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Формы, отключенные через функциональные опции</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Shape, disabled by functional options</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -322,6 +362,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Способы группировки</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Ways of grouping</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -354,6 +398,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Список пропускаемых форм</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>The list of ignored shapes</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -385,6 +433,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Открываем формы на клиенте тестирования</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>The unit on the test client</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

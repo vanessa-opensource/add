@@ -8,6 +8,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Тестовый набор со строгим порядком выполнения</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Test set with a strict execution order</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<TemplateType>BinaryData</TemplateType>

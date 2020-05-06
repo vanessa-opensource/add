@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Тестирование для 1С:Предприятия 8, Vanessa-ADD</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Testing for 1C:Enterprise 8, Vanessa-ADD</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment>https://github.com/silverbulleters/add</Comment>
 			<DefaultForm>ExternalDataProcessor.xddTestRunner.Form.УправляемаяФорма</DefaultForm>
@@ -31,6 +35,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Возможные исключения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Possible exception</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -64,6 +72,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Возможные события</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Possible events</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -95,6 +107,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Настройки</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Settings</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -128,6 +144,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Плагины</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Plugins</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -159,6 +179,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Состояния тестов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>State tests</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -192,6 +216,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Текущий контейнер</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Current container</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -223,6 +251,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Типы плагинов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Types of plugins</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -256,6 +288,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Типы узлов дерева тестов</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Types of nodes in the tree test</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -288,6 +324,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Статусы результата тестирования</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Statuses of the test result</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -319,6 +359,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Это встроенная обработка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>This is a built in processing</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -353,6 +397,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Используемый префикс подсистемы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Used subsystem prefix</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment>Префикс для объектов, встроенных в состав конфигурации. Если браузер тестов, плагины и утилиты встроены в конфигурцаию, то они должны иметь один префикс.</Comment>
@@ -392,6 +440,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Полное имя браузера тестов</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Full name of the browser tests</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -429,6 +481,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Полный путь к файлу браузера тестов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Full path to the file browser test</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -468,6 +524,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Путь файла настроек</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Path of the settings file</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -506,6 +566,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Выводить лог выполнения сценариев в текстовый файл</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Output log of the script execution into a text file</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -539,6 +603,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Имя файла лог выполнения сценариев</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Name of file to log script execution</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -578,6 +646,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Флаг отладки</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Debug flag</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -611,6 +683,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог проекта</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Project path</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -650,6 +726,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Использовать прямые пути файлов</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Used direct file paths</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -684,6 +764,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Плагины загружены</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Plugins loaded</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -717,6 +801,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Это linux</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Is linux</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

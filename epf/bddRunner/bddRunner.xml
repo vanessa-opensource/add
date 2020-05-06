@@ -22,78 +22,6 @@
 					<v8:lang>en</v8:lang>
 					<v8:content>Vanessa ADD</v8:content>
 				</v8:item>
-				<v8:item>
-					<v8:lang>am</v8:lang>
-					<v8:content>ግምገማ ባህሪ</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>az</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>bg</v8:lang>
-					<v8:content>Ванеса Behavior</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>et</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>fr</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ka</v8:lang>
-					<v8:content>Vanessa ქცევა</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>de</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>hu</v8:lang>
-					<v8:content>Vanessa Viselkedés</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>it</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lv</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>lt</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>mn</v8:lang>
-					<v8:content>Ванесса Зан</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>pl</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>ro</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sl</v8:lang>
-					<v8:content>Vanessa Vedenje</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>es</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>sv</v8:lang>
-					<v8:content>Vanessa Beteende</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>tr</v8:lang>
-					<v8:content>Vanessa ADD</v8:content>
-				</v8:item>
 			</Synonym>
 			<Comment>https://github.com/silverbulleters/add</Comment>
 			<DefaultForm>ExternalDataProcessor.bddRunner.Form.УправляемаяФорма</DefaultForm>
@@ -106,6 +34,10 @@
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
+							<v8:content>Debug log</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
 							<v8:content>Debug log</v8:content>
 						</v8:item>
 					</Synonym>
@@ -142,6 +74,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Generate epf</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Generate epf</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -175,6 +111,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Версия платформы для генерации EPF</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Version of platform for generating EPF</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -214,6 +154,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Test run</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Test run</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -246,6 +190,10 @@
 					<Synonym>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
+							<v8:content>Vanessa stack commons</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
 							<v8:content>Vanessa stack commons</v8:content>
 						</v8:item>
 					</Synonym>
@@ -290,78 +238,6 @@
 							<v8:lang>en</v8:lang>
 							<v8:content>Debugger url</v8:content>
 						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>አድራሻ ነው debugger</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Ünvanı var ayıklama</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Адрес за изчистване на грешки</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Aadress siluri</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>Adresse du débogueur</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>მისამართი debugger</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Die Adresse des Debuggers</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>A cím a debugger</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>L'indirizzo del debugger</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Adrese atkļūdotājs</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Adresas debugger</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Хаяг дибаг</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Adres debugera</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>Adresa depanator</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Naslov razhroščevalnik</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>La dirección del depurador</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>Adress debugger</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Adresi hata ayıklayıcı</v8:content>
-						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -400,6 +276,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Выводить текст модуля вместо перегенерации EPF</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Display text module instead of regeneration EPF</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -433,6 +313,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Выгружать статус выполнения сценариев в файл</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Upload status script execution to a file</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -468,6 +352,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Выполнить обработку при открытии</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Perform processing when opening</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -501,6 +389,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Выполнять шаги ассинхронно</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Run steps asynchronously</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -536,6 +428,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Генерировать УФ</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Generate MF</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -569,6 +465,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Делать лог выполнения сценариев в ЖР</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Do log run scripts in ZHR</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -607,78 +507,6 @@
 						<v8:item>
 							<v8:lang>en</v8:lang>
 							<v8:content>Make log to text file</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>ጋር ስለጀመሩ ቅድሚያ የሚሰጡዋቸውን ውስጥ ጽሑፍ ፋይል</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Bunu günlük yerinə ssenarilər mətn faylı</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Правя лог изпълнение на скрипт в текстов файл</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Teha log skriptide täitmise tekstifaili</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>Faire le journal de l'exécution des scripts dans un fichier texte</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>ამის შესვლა აწარმოებს სკრიპტები ტექსტური ფაილი,</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Tun die log-Skripte in einer Textdatei</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>A napló scriptek futtatását egy szöveges fájl</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>Fare un log di esecuzione di script in un file di testo</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Darīt log izpildes skriptu ar teksta failu</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Daryti žurnalo vykdymo scenarijai į tekstinį failą</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Хийх бүртгэлийн ажиллуулах скриптүүд нь текст файл</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Zrobić log z wykonania skryptu w pliku tekstowym</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>A face log script într-un fișier text</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Da ne log zaženete skripte v besedilno datoteko</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Hacer un log de ejecución de secuencias de comandos en un archivo de texto</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>För att göra det loggar köra skript i en textfil</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Yapmak günlük komut dosyası bir metin dosyası</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -752,6 +580,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Делать отчет во внутреннем формате</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Do report in an internal format</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -785,6 +617,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Делать отчет в формате jUnit</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Do report in jUnit format</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -820,6 +656,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Делать отчет в формате аллюр</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Do report in allure format</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -853,6 +693,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Делать отчет в формате cucumber json</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Do report in cucumber json</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -888,6 +732,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Делать скриншот при возникновении ошибки</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Take screenshot when an error occurs</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -921,6 +769,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Делать сообщения транслитом</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Do messages translit</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -956,6 +808,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Дерево тестов</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Tree of tests</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -989,6 +845,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Добавлять к имени сценария условия выгрузки</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Add to the name of scenario conditions of upload</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1024,6 +884,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Закрыть test client после запуска сценариев</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Close the test client after running the script</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1057,6 +921,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Закрыть форму после выполнения обработки</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Close the form after processing</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1092,6 +960,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео делать наложение TTS</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Record a video put the overlay TTS</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1125,6 +997,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео имя TTS</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video name TTS</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1164,6 +1040,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео каталог для временных файлов</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording directory for temporary files</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1202,6 +1082,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео каталог музыки</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording music catalog</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1239,6 +1123,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео количество кадров</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording number of frames</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1279,6 +1167,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео команда convert</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video record convert command</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1316,6 +1208,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео команда ffmpeg</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording command ffmpeg</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1355,6 +1251,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео команда начать запись видео</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording command to start recording video</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1393,6 +1293,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео перемещать курсор мышки к активному элементу формы</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording move the cursor to the active form element</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1426,6 +1330,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео подсвечивать активные элементы форм</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording highlight active form elements</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1461,6 +1369,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео показывать курсор мыши</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Record a video to show the mouse cursor</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1494,6 +1406,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео путь к движку TTS</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording path to the TTS engine</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1533,6 +1449,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео словарь замен</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video dictionary replacements</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1566,6 +1486,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео файл водяной знак</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording file watermark</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1605,6 +1529,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео файл курсора мышки</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording file of the mouse cursor.</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1642,6 +1570,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео экран высота</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording screen height</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1681,6 +1613,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запись видео экран ширина</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Video recording screen width</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1725,78 +1661,6 @@
 							<v8:lang>en</v8:lang>
 							<v8:content>Run TestClient in debug mode</v8:content>
 						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>ቅድሚያ TestClient ውስጥ..</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Run TestClient rejimində debug</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Тичам TestClient в режим на отстраняване на грешки</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Käivitada TestClient silumisrežiimis</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>Exécuter TestClient en mode de débogage</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>აწარმოებს TestClient in გამართვის რეჟიმი</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Ausführen von Testclient im Debugmodus</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>Hogy fut a TestClient debug módban</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>Eseguire TestClient in modalità di debug</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Palaist TestClient atkļūdošanas režīmā</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Paleisti TestClient debug režimu</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Ажиллуулах TestClient д дибаг хийх горим</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Uruchomić TestClient w trybie debugowania</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>Pentru a rula TestClient în modul de depanare</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Če želite zagnati TestClient v debug načinu</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Ejecutar TestClient en modo de depuración</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>Att köra TestClient i debug-läge</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Çalıştırmak TestClient hata ayıklama modunda</v8:content>
-						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1830,6 +1694,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Запуск из командной строки</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Run from command line</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1865,6 +1733,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Идет запись видео</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Recording video</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1899,6 +1771,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Идет выполнение сценариев</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Is scripting</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -1932,6 +1808,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Имя текущей сборки</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Name of current build</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -1970,6 +1850,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Интервал выполнения шага</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Step invoke sleep interval</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2010,6 +1894,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Интервал выполнения шага заданный пользователем</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Interval step is specified by user</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2049,6 +1937,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог output Allure</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Output directory Allure</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2086,6 +1978,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог output jUnit</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>jUnit output directory</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2125,6 +2021,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог output cucumber json</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Directory cucumber json output</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2162,6 +2062,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог оutput инструкция HTML</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Directory оutput manual HTML</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2201,6 +2105,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог оutput инструкция Markdown</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Directory оutput manual Markdown</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2238,6 +2146,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог оutput инструкция видео</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Directory оutput instruction video</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2277,6 +2189,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог output скриншоты</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Output directory screenshots</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2314,6 +2230,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Имя файла для текстового лога</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>File name for text log</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2353,6 +2273,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталоги библиотек</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Library directories</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2386,6 +2310,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог инструментов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>directory for Vanessa Stack</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2425,6 +2353,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог исходников</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Source directory</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2463,6 +2395,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог проекта</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Project path</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2500,6 +2436,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог фич</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Directory features</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2543,78 +2483,6 @@
 							<v8:lang>en</v8:lang>
 							<v8:content>Debug keys</v8:content>
 						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>ቁልፎች መጠቀም</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Düymələri debug</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Ключове за отстраняване на грешки</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Võtmed silumine</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>Les clés de débogage</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>გასაღებები გამართვის</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Schlüssel Debuggen</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>A kulcs, hogy hibakeresés</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>Le chiavi di debug</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Atslēgas atkļūdošanas</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Raktai derinimo</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Түлхүүрүүд нь дибаг хийх</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Klucze debugowania</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>Cheile de depanare</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Tipke za razhroščevanje</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>Las claves de depuración</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>Nycklarna till felsökning</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Anahtarlar hata ayıklama</v8:content>
-						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2652,6 +2520,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Команда сделать скриншот</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Command to take screenshot</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2691,6 +2563,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Надо выполнить сценарии после загрузки фич</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Need to run script after download features</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2724,6 +2600,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Надо выполнить сценарии после загрузки фич один раз</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Need to run scripts after downloading feature once</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2759,6 +2639,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Надо завершить работу системы после выполнения всех сценариев</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>It is necessary to shut down the system after executing all scripts</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2792,6 +2676,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Остановить выполнение шагов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Stop execution of steps</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2827,6 +2715,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Подключить внешние обработки для отладки</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Include external processing for debugging</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2861,6 +2753,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Проверка работы Vanessa ADD в режиме test client</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Check operation of Vanessa ADD mode test client</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2894,6 +2790,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Путь к файлу для выгрузки статуса выполнения сценариев</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Path to the file to upload the status of compliance of scenarios</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -2933,6 +2833,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Режим выполнения сценария с выбранного шага с сохранением контекстов</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Mode run the script with selected step, saving contexts</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -2966,6 +2870,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Режим выполнения данного сценария с текущего шага</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Mode run this script with current step</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3001,6 +2909,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Режим выполнения данного сценария с текущего шага с продолжением</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Mode run this script with current step with continuation</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3034,6 +2946,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Режим выполнения одного шага</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Run mode single step</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3069,6 +2985,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Режим самотестирования</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Self-test mode</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3102,6 +3022,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Создавать закоментированный код для переиспользуемых процедур</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Create sakamotomerry code for reusable procedures</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3137,6 +3061,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Создавать инструкцию HTML</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Create manual HTML</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3170,6 +3098,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Создавать инструкцию markdown</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Create manual markdown</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3205,6 +3137,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Создавать видео инструкцию</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Create a video manual</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3238,6 +3174,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Создавать области при генерации кода</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Create regions with generated step code</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3273,6 +3213,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Сохранять контексты перед выполнением шагов</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Save contexts before step invoke</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3306,6 +3250,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Список тегов исключение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>List of tags an exception</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3341,6 +3289,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Список тегов отбор</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>List of tags selection</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3374,6 +3326,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Строка подключения к базе</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Connection string to database</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3413,6 +3369,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Тек значение операции</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Cur operation value</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3451,6 +3411,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Остановка при возникновении ошибки</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Stop on error</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3484,6 +3448,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Загрузка фич при открытии</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Download of features when you open</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3523,6 +3491,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Сгенерированный XML</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Generated XML</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3560,6 +3532,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Сгенерированный код</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Generated code</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3599,6 +3575,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Сгенерированный сценарий</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Generated script</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3636,6 +3616,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Сгенерированный сценарий код</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Generated script code</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3675,6 +3659,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Выполнение сценария из обработки оповещения</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Script from processing the alert</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -3708,6 +3696,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Снимать скриншот каждого окна1 С</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Take a screenshot of each окна1 With</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3743,6 +3735,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Плагины</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Plugins</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -3775,6 +3771,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Типы плагинов</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Types of plugins</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -3806,6 +3806,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Результат условия</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Result of condition</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3841,6 +3845,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Дополнительные параметры</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Additional options</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -3872,6 +3880,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Плагины загружены</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Plugins loaded</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -3910,78 +3922,6 @@
 						<v8:item>
 							<v8:lang>en</v8:lang>
 							<v8:content>Timeout on TestClient connection</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>ቅድሚያ የታዘዘ TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Fasilə başlamaq TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Изчакване на стартирането TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Timeout käivitada TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>Délai de démarrage TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>დროის აწარმოებს TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Timeout von Testclient starten</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>Timeout fut TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>Il timeout di avvio TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Man. palaišanas TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Osd paleisti TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Хугацааны хувьд ажиллуулах TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Limit czasu uruchomienia TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>Depășirea timpului de pornire TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Časovna omejitev za vožnjo TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>El tiempo de espera de inicio de TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>Timeout köra TestClient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Zaman aşımı başlangıç TestClient</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment>Таймаут запуска TestClient в секундах</Comment>
@@ -4026,78 +3966,6 @@
 							<v8:lang>en</v8:lang>
 							<v8:content>Ports dimension</v8:content>
 						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>ቅድሚያ የታዘዘ ነው ports testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Bir sıra limanları testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Диапазон на портове по testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Portide testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>La plage de ports testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>სპექტრი პორტები testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Portbereich von Testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>A tartomány portok testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>L'intervallo di porte testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Portu diapazonu testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Prievadus testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Тархац портын testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Zakres portów testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>Gama de porturi testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Območju pristanišča testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>El rango de puertos testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>Utbudet av portar testclient</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Bağlantı noktası aralığı testclient</v8:content>
-						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -4135,6 +4003,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>ИДРаннера</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Runner ID</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -4178,78 +4050,6 @@
 							<v8:lang>en</v8:lang>
 							<v8:content>Language of gherkin generator</v8:content>
 						</v8:item>
-						<v8:item>
-							<v8:lang>am</v8:lang>
-							<v8:content>ቋንቋ ቅድሚያ gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>az</v8:lang>
-							<v8:content>Dil generator gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>bg</v8:lang>
-							<v8:content>Език генератор gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>et</v8:lang>
-							<v8:content>Keel generaator gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>fr</v8:lang>
-							<v8:content>La langue de l'alternateur gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ka</v8:lang>
-							<v8:content>ენა გენერატორი gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>de</v8:lang>
-							<v8:content>Sprache gherkin generator</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>hu</v8:lang>
-							<v8:content>Nyelv generátor uborka</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>it</v8:lang>
-							<v8:content>Il linguaggio del generatore gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lv</v8:lang>
-							<v8:content>Valoda ģeneratora gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>lt</v8:lang>
-							<v8:content>Kalba generatorius gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>mn</v8:lang>
-							<v8:content>Хэл generator gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>pl</v8:lang>
-							<v8:content>Język alternatora gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>ro</v8:lang>
-							<v8:content>Limba generator gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sl</v8:lang>
-							<v8:content>Jezik generator kumare za vlaganje</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>es</v8:lang>
-							<v8:content>El idioma del generador gherkin</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>sv</v8:lang>
-							<v8:content>Språket generator gurka</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>tr</v8:lang>
-							<v8:content>Dil jeneratör gherkin</v8:content>
-						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -4287,6 +4087,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Имя файла внешних команд фреймворка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>File name of external command framework</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -4326,6 +4130,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Приравнивать pending к failed</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Equate pending to failed</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -4359,6 +4167,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Количество секунд поиска окна</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Number of seconds for searching window</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -4475,6 +4287,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Имя каталога для лога ошибок</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Name of directory for error log</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -4513,6 +4329,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Версия Vanessa-ADD</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Version Vanessa-ADD</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -4550,6 +4370,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Использовать прямые пути файлов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Used direct file paths</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -4628,6 +4452,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Это встроенная обработка</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>This is a built in processing</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -4662,6 +4490,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Отображать отчет Allure в браузере</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Display Allure report in browser</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -4695,6 +4527,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Командная строка редактирования фичи</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Command line editing features</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -4734,6 +4570,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Путь к runsikulix.cmd</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Path to runsikulix.cmd</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -4771,6 +4611,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Адрес пользовательских настроек</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Address customizations</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -4810,6 +4654,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Поставщик пользовательских настроек</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Supplier of custom settings</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -4848,6 +4696,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Данные аллюр меток</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>These labels allure</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -4881,6 +4733,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Каталог внешних обработок EDT</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Directory external dataprocessors EDT</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

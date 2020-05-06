@@ -58,6 +58,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Шаг оригинал</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Step original</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -68,6 +72,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Описание</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Description</v8:content>
 						</v8:item>
 					</tl>
 				</c>

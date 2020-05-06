@@ -35,6 +35,10 @@
 						<v8:lang>ru</v8:lang>
 						<v8:content>Дополнительные свойства</v8:content>
 					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Additional properties</v8:content>
+					</v8:item>
 				</Title>
 				<ExtendedTooltip name="ФормаДополнительныеСвойстваРасширеннаяПодсказка" id="346"/>
 			</Button>
@@ -67,11 +71,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Группа настройки</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group settings</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Группа настройки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group settings</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Group>Horizontal</Group>
@@ -85,11 +97,19 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Группа страницы</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group page</v8:content>
+						</v8:item>
 					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Группа страницы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group page</v8:content>
 						</v8:item>
 					</ToolTip>
 					<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="348"/>
@@ -97,18 +117,22 @@
 						<Page name="ГруппаМетаданные" id="57">
 							<Title>
 								<v8:item>
-									<v8:lang>en</v8:lang>
-									<v8:content>Metadata</v8:content>
-								</v8:item>
-								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Метаданные</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Metadata</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Группа метаданные</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group metadata</v8:content>
 								</v8:item>
 							</ToolTip>
 							<HorizontalStretch>true</HorizontalStretch>
@@ -119,6 +143,10 @@
 										<v8:item>
 											<v8:lang>ru</v8:lang>
 											<v8:content>Настройки</v8:content>
+										</v8:item>
+										<v8:item>
+											<v8:lang>en</v8:lang>
+											<v8:content>Settings</v8:content>
 										</v8:item>
 									</Title>
 									<ChildrenAlign>None</ChildrenAlign>
@@ -193,12 +221,12 @@
 													<DataPath>Объект.ВариантВстроенногоЯзыкаАнглийский</DataPath>
 													<Title>
 														<v8:item>
-															<v8:lang>en</v8:lang>
-															<v8:content>Script variant English</v8:content>
-														</v8:item>
-														<v8:item>
 															<v8:lang>ru</v8:lang>
 															<v8:content>Язык программирования английский</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Script variant English</v8:content>
 														</v8:item>
 													</Title>
 													<TitleLocation>Right</TitleLocation>
@@ -216,6 +244,12 @@
 `Значение = 1` выгружаем вообще без подчиненных, только явно заданные
 Если значение &gt; 1, то выгружаем подчиненные элементы этого или меньшего уровня зависимости</v8:content>
 														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>If value = 0, then there are no restrictions and unloaded the items with the sign "If necessary"
+`Value = 1` paged even without subordinates, only explicit
+If the value is &gt; 1, then paged the sub-elements of this level or lower according to</v8:content>
+														</v8:item>
 													</ToolTip>
 													<SpinButton>true</SpinButton>
 													<ContextMenu name="УровеньВыгрузкиКонтекстноеМеню" id="436"/>
@@ -232,11 +266,19 @@
 													<v8:lang>ru</v8:lang>
 													<v8:content>Настройка загрузки сохранения группа</v8:content>
 												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>Configure download save group</v8:content>
+												</v8:item>
 											</Title>
 											<ToolTip>
 												<v8:item>
 													<v8:lang>ru</v8:lang>
 													<v8:content>Ппк настройка загрузки сохранения группа</v8:content>
+												</v8:item>
+												<v8:item>
+													<v8:lang>en</v8:lang>
+													<v8:content>PPK setup download save group</v8:content>
 												</v8:item>
 											</ToolTip>
 											<Group>Horizontal</Group>
@@ -331,6 +373,10 @@
 																<v8:lang>ru</v8:lang>
 																<v8:content>Определить данные, выгружаемые по ссылке</v8:content>
 															</v8:item>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>To define the data uploaded on the link</v8:content>
+															</v8:item>
 														</Title>
 														<ExtendedTooltip name="ДеревоМетаданныхПересчитатьВыгружаемыеПоСсылкеРасширеннаяПодсказка" id="358"/>
 													</Button>
@@ -371,11 +417,19 @@
 															<v8:lang>ru</v8:lang>
 															<v8:content>Группа выбора объектов</v8:content>
 														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Group array of objects</v8:content>
+														</v8:item>
 													</Title>
 													<ToolTip>
 														<v8:item>
 															<v8:lang>ru</v8:lang>
 															<v8:content>Группа выбора объектов</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Group array of objects</v8:content>
 														</v8:item>
 													</ToolTip>
 													<Group>InCell</Group>
@@ -437,6 +491,10 @@
 																<v8:lang>ru</v8:lang>
 																<v8:content>Показать выбранные</v8:content>
 															</v8:item>
+															<v8:item>
+																<v8:lang>en</v8:lang>
+																<v8:content>Show selected</v8:content>
+															</v8:item>
 														</Title>
 														<ExtendedTooltip name="КомпоновщикОтборПоказатьРезультатОтбораРасширеннаяПодсказка" id="373"/>
 													</Button>
@@ -479,18 +537,22 @@
 						<Page name="ГруппаТаблицаДанных" id="56">
 							<Title>
 								<v8:item>
-									<v8:lang>en</v8:lang>
-									<v8:content>Table of data</v8:content>
-								</v8:item>
-								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Таблица данных</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Table of data</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Группа таблица данных</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Group data table</v8:content>
 								</v8:item>
 							</ToolTip>
 							<ExtendedTooltip name="ГруппаТаблицаДанныхРасширеннаяПодсказка" id="384"/>
@@ -593,18 +655,22 @@
 						<Page name="ГруппаПользователиИБ" id="143">
 							<Title>
 								<v8:item>
-									<v8:lang>en</v8:lang>
-									<v8:content>Users of database</v8:content>
-								</v8:item>
-								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Пользователи ИБ</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Users of database</v8:content>
 								</v8:item>
 							</Title>
 							<ToolTip>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Группа пользователи ИБ</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Users group IB</v8:content>
 								</v8:item>
 							</ToolTip>
 							<ExtendedTooltip name="ГруппаПользователиИБРасширеннаяПодсказка" id="403"/>
@@ -707,6 +773,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Дополнительные свойства</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Additional properties</v8:content>
+						</v8:item>
 					</Title>
 					<SearchStringLocation>None</SearchStringLocation>
 					<ViewStatusLocation>None</ViewStatusLocation>
@@ -774,11 +844,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Макеты</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Layouts</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Группа макеты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group layouts</v8:content>
 				</v8:item>
 			</ToolTip>
 			<ExtendedTooltip name="ГруппаМакетыРасширеннаяПодсказка" id="469"/>
@@ -789,11 +867,19 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Табличный документ</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Table document</v8:content>
+						</v8:item>
 					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Группа табличный документ</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group table document</v8:content>
 						</v8:item>
 					</ToolTip>
 					<ExtendedTooltip name="ГруппаТабличныйДокументРасширеннаяПодсказка" id="471"/>
@@ -804,6 +890,10 @@
 								<v8:item>
 									<v8:lang>ru</v8:lang>
 									<v8:content>Макет данных</v8:content>
+								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Layout of data</v8:content>
 								</v8:item>
 							</Title>
 							<TitleLocation>None</TitleLocation>
@@ -826,11 +916,19 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>JSON документ</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>JSON document</v8:content>
+						</v8:item>
 					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Группа текстовый документ</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Group text document</v8:content>
 						</v8:item>
 					</ToolTip>
 					<ExtendedTooltip name="ГруппаТекстовыйДокументРасширеннаяПодсказка" id="473"/>
@@ -860,6 +958,10 @@
 								<v8:lang>ru</v8:lang>
 								<v8:content>Данные для выгрузки</v8:content>
 							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Data for uploading</v8:content>
+							</v8:item>
 						</Title>
 						<Type>
 							<v8:Type>xs:string</v8:Type>
@@ -874,6 +976,10 @@
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>Выгружать</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>To upload</v8:content>
 							</v8:item>
 						</Title>
 						<Type>
@@ -891,6 +997,10 @@
 								<v8:lang>ru</v8:lang>
 								<v8:content>Выгружать при необходимости</v8:content>
 							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Unload if necessary</v8:content>
+							</v8:item>
 						</Title>
 						<Type>
 							<v8:Type>xs:decimal</v8:Type>
@@ -906,6 +1016,10 @@
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>Индекс картинки</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Image index</v8:content>
 							</v8:item>
 						</Title>
 						<Type>
@@ -923,6 +1037,10 @@
 								<v8:lang>ru</v8:lang>
 								<v8:content>Развернут</v8:content>
 							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Deployed</v8:content>
+							</v8:item>
 						</Title>
 						<Type>
 							<v8:Type>xs:boolean</v8:Type>
@@ -934,6 +1052,10 @@
 								<v8:lang>ru</v8:lang>
 								<v8:content>Настройки компоновщика</v8:content>
 							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Settings Builder</v8:content>
+							</v8:item>
 						</Title>
 						<Type>
 							<v8:Type>dcsset:Filter</v8:Type>
@@ -944,6 +1066,10 @@
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>Использовать отбор</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Use filter</v8:content>
 							</v8:item>
 						</Title>
 						<Type>
@@ -959,6 +1085,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Макет</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Layout</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type xmlns:mxl="http://v8.1c.ru/8.2/data/spreadsheet">mxl:SpreadsheetDocument</v8:Type>
@@ -970,6 +1100,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Дерево метаданных предыдущая строка</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Metadata tree of previous line</v8:content>
+				</v8:item>
 			</Title>
 			<Type/>
 		</Attribute>
@@ -978,6 +1112,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Путь к файлу настроек</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>The path to the settings file</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -997,6 +1135,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Макет текстовый</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Layout of text</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type xmlns:d5p1="http://v8.1c.ru/8.1/data/txtedt">d5p1:TextDocument</v8:Type>
@@ -1007,6 +1149,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Есть поддержка асинхронных вызовов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Support for asynchronous calls</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -1043,11 +1189,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Создать макет данных</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To create the layout of the data</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Создать макет данных</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To create the layout of the data</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1064,11 +1218,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сохранить макет данных в файл</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save layout data to a file</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сохранить макет данных в файл</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save layout data to a file</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1084,11 +1246,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Протестировать загрузку макета</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To test the loading of the layout</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Протестировать загрузку макета</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To test the loading of the layout</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1104,11 +1274,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Очистить</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Очистить таблицу данных</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Clear table data</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1124,11 +1302,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Пересчитать выгружаемые по ссылке</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To convert the uploaded the link</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Пересчитать выгружаемые по ссылке</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To convert the uploaded the link</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1144,11 +1330,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать результат отбора</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show the result of the selection</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать результат отбора</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show the result of the selection</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьРезультатОтбора</Action>
@@ -1159,11 +1353,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Дополнительные свойства</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Additional properties</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Дополнительные свойства</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Additional properties</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ДополнительныеСвойства</Action>
@@ -1174,11 +1376,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сохранить настройки</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save settings</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сохранить настройки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Save settings</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1194,11 +1404,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить настройки</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load settings</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить настройки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load settings</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1214,11 +1432,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Проставить отборы по подчиненным регистраторам</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Put selections for subordinate registrars</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Проставить отборы по подчиненным регистраторам</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Put selections for subordinate registrars</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1234,11 +1460,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Только выбранные</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Only the selected</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Только выбранные</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Only the selected</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1253,11 +1487,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Подобрать данные по структуре подчиненности</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To find the data on the reporting structure</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Подобрать данные по структуре подчиненности</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To find the data on the reporting structure</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПодобратьДанныеПоСтруктуреПодчиненности</Action>
@@ -1268,11 +1510,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сбросить все</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Reset all</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сбросить все</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Reset all</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1287,11 +1537,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить макет из файла</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load layout from file</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить макет из файла</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load layout from file</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1307,11 +1565,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить данные макета в базу</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To download the data layout in the database</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить данные макета в базу</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To download the data layout in the database</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -1327,11 +1593,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Проставить отбор подчиненных ссылок для объекта</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To put the selection of the subordinate references for the object</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Проставить отбор подчиненных ссылок</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To put the selection of subordinate references</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>

@@ -15,6 +15,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Имя переменной пользователь</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Name of variable user</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:string</v8:Type>
@@ -29,6 +33,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Пользователь имя</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>User name</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -45,6 +53,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Тестовые данные УФ</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Test UV data</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>v8:ValueTable</v8:Type>
@@ -55,6 +67,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Ключ</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Key</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -71,6 +87,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Значение</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Value</v8:content>
+						</v8:item>
 					</Title>
 					<Type>
 						<v8:Type>v8:ValueListType</v8:Type>
@@ -84,6 +104,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Это linux</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Is linux</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -95,6 +119,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Встроена в конфигурацию</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Built-in configuration</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -105,6 +133,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Используемый префикс подсистемы</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Used subsystem prefix</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

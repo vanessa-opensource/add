@@ -28,6 +28,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Тип</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Type</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -38,6 +42,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Вид</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>View</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -72,6 +80,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Реквизит</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Props</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -82,6 +94,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Значение</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Value</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -120,6 +136,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Документ</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Document</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -172,6 +192,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Проведен</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Held</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -211,6 +235,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Ссылка</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Link</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -245,6 +273,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Дата</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -510,6 +542,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Валюта</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Currency</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -638,6 +674,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Статус</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Status</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -2952,6 +2992,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Документ</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Document</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -3003,6 +3047,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Проведен</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Held</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -3042,6 +3090,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Ссылка</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Link</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -3076,6 +3128,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Дата</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -3341,6 +3397,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Валюта</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Currency</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -3469,6 +3529,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Статус</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Status</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -8971,6 +9035,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Документ</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Document</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -9022,6 +9090,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Проведен</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Held</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -9061,6 +9133,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Ссылка</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Link</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -9095,6 +9171,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Дата</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -9134,6 +9214,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Валюта</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Currency</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -14368,6 +14452,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Документ</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Document</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -14419,6 +14507,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Проведен</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Held</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -14458,6 +14550,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Ссылка</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Link</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -14492,6 +14588,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Дата</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Date</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -14665,6 +14765,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Статус</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Status</v8:content>
 						</v8:item>
 					</tl>
 				</c>

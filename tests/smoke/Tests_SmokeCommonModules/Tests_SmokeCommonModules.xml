@@ -15,20 +15,12 @@
 			<Name>Tests_SmokeCommonModules</Name>
 			<Synonym>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Smoke common modules tests</v8:content>
-				</v8:item>
-				<v8:item>
-					<v8:lang>en_CA</v8:lang>
-					<v8:content>Smoke common modules tests</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Дымовые тесты общих модулей</v8:content>
 				</v8:item>
 				<v8:item>
-					<v8:lang>uk</v8:lang>
-					<v8:content>Димові тести загальних модулів</v8:content>
+					<v8:lang>en</v8:lang>
+					<v8:content>Smoke common modules tests</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -41,20 +33,12 @@
 					<Name>Settings</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Settings</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>en_CA</v8:lang>
-							<v8:content>Settings</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Настройки</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>uk</v8:lang>
-							<v8:content>Налаштування</v8:content>
+							<v8:lang>en</v8:lang>
+							<v8:content>Settings</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -64,20 +48,12 @@
 					<EditFormat/>
 					<ToolTip>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>The parameter that contains the smoke test settings.</v8:content>
-						</v8:item>
-						<v8:item>
-							<v8:lang>en_CA</v8:lang>
-							<v8:content>The parameter that contains the smoke test settings.</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Параметр который содержит настройки дымовых тестов.</v8:content>
 						</v8:item>
 						<v8:item>
-							<v8:lang>uk</v8:lang>
-							<v8:content>Параметр який містить налаштування димових тестів.</v8:content>
+							<v8:lang>en</v8:lang>
+							<v8:content>The parameter that contains the smoke test settings.</v8:content>
 						</v8:item>
 					</ToolTip>
 					<MarkNegatives>false</MarkNegatives>

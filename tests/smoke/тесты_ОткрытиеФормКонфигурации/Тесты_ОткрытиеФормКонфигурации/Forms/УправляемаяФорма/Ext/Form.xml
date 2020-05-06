@@ -15,6 +15,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Создаваемый элемент</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>The created element</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:TypeSet>cfg:AnyRef</v8:TypeSet>
@@ -25,6 +29,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Нужно исключение если не найдено документов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Need an exception if no documents found</v8:content>
 				</v8:item>
 			</Title>
 			<Type>

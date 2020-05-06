@@ -15,12 +15,12 @@
 			<Name>UILogToScript</Name>
 			<Synonym>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>User action log convertor</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Преобразование журнала действий пользователя</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>User action log convertor</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
@@ -31,12 +31,7 @@
 			<Attribute uuid="8ec4b72e-e063-4f3f-a314-fad555aaa735">
 				<Properties>
 					<Name>CreatedProcedures</Name>
-					<Synonym>
-						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Created procedures</v8:content>
-						</v8:item>
-					</Synonym>
+					<Synonym/>
 					<Comment/>
 					<Type/>
 					<PasswordMode>false</PasswordMode>
@@ -65,12 +60,12 @@
 					<Name>WindowBeingProcessed</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Window being processed</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Обрабатываемое окно</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Window being processed</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -101,12 +96,12 @@
 					<Name>FormBeingProcessed</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Form being processed</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Обрабатываемая форма</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Form being processed</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -137,12 +132,12 @@
 					<Name>WindowClosed</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Window was closed</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Окно было закрыто</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Window was closed</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -175,12 +170,12 @@
 					<Name>LastProcessedCommand</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Last processed command</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Последняя обработанная команда</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Last processed command</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -217,12 +212,12 @@
 					<Name>LastProcessedControl</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Last processed control</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Последний обработанный элемент управления</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Last processed control</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -259,12 +254,12 @@
 					<Name>MainProcedureName</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Main procedure name</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Имя основной процедуры</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Main procedure name</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -301,12 +296,12 @@
 					<Name>GenerateClientConnectionScript</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Generate client connection script</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Гененировать код подключения к клиенту</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Generate client connection script</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -381,12 +376,12 @@
 					<Name>ConversionVariant</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Convert</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Преобразовывать</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Convert</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -424,12 +419,12 @@
 					<Name>SplitScriptIntoProcedures</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Split scenario into procedures by application windows</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Разбивать результат на процедуры по "границам" окон</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Split scenario into procedures by application windows</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -462,12 +457,12 @@
 					<Name>GetFullHierarchy</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Get full object hierarchy</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Генерировать получение родительских объектов в иерархии</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Get full object hierarchy</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -500,12 +495,12 @@
 					<Name>ObjectSearch</Name>
 					<Synonym>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Object search</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Поиск объектов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Object search</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

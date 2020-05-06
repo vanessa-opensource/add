@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Итератор метаданных</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Iterator metadata</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.ИтераторМетаданных.Form.Форма</DefaultForm>
@@ -31,6 +35,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Допустимые метаданные</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Valid metadata</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -47,6 +55,13 @@
 * КоллекцияОбъектовМетаданных
 * ОбъектМетаданных
 Другие типы значений будут проигнорированы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>The possible types of elements:
+* Collectionachusettes
+* Objectencoding
+Other value types will be ignored</v8:content>
 						</v8:item>
 					</ToolTip>
 					<MarkNegatives>false</MarkNegatives>
@@ -74,6 +89,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Исключаемые метаданные</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Exclude metadata</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type>
@@ -89,6 +108,13 @@
 * КоллекцияОбъектовМетаданных
 * ОбъектМетаданных
 Другие типы значений будут проигнорированы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>The possible types of elements:
+* Collectionachusettes
+* Objectencoding
+Other value types will be ignored</v8:content>
 						</v8:item>
 					</ToolTip>
 					<MarkNegatives>false</MarkNegatives>
@@ -115,6 +141,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Дополнять зависимыми объектами</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Complement dependent objects</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

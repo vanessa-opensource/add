@@ -8,6 +8,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Эталон отчет о тестировании</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Standard testing report</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<TemplateType>TextDocument</TemplateType>
