@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Вывод в лог-файл</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Output in log file</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.ВыводВЛогФайл.Form.Форма</DefaultForm>
@@ -31,6 +35,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Путь файла</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>File path</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -69,6 +77,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Кодировка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Encoding</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

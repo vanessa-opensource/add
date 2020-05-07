@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Юнит-тест UI 8.3</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Unit-test UI 8.3</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment>Автор - Артур Аюханов aka artbear 2013</Comment>
 			<DefaultForm>ExternalDataProcessor.юнитТест_UI_83.Form.Форма</DefaultForm>

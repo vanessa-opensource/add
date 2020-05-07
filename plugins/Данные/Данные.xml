@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Данные</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Data</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.Данные.Form.Форма</DefaultForm>
@@ -31,6 +35,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Имя метаданных служебный</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Metadata service name</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -70,6 +78,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Параметры объекта служебный</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Parameters of object service</v8:content>
+						</v8:item>
 					</Synonym>
 					<Comment/>
 					<Type/>
@@ -101,6 +113,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Параметры метаданных служебный</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Parameters metadata service</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

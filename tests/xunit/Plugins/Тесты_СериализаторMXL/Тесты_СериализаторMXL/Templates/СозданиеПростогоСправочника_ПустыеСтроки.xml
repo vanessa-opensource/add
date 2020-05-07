@@ -8,6 +8,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Создание простого справочника пустые строки</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Create a simple directory empty string</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<TemplateType>SpreadsheetDocument</TemplateType>

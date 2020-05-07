@@ -8,6 +8,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Тест должен получить исключение при попытке создать элемент и заполнить реквизит по неверному коду</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Test should get an exception when trying to create the element and fill the props in the wrong code</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<TemplateType>SpreadsheetDocument</TemplateType>

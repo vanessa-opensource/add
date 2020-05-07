@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Аллюр2 отчет</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Allure2 report</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.Аллюр2Отчет.Form.Форма</DefaultForm>

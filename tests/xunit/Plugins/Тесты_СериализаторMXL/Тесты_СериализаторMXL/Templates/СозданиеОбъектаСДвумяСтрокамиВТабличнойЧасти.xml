@@ -8,6 +8,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Создание объекта с двумя строками в табличной части</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Create object with two rows in the table</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<TemplateType>SpreadsheetDocument</TemplateType>

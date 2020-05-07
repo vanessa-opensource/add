@@ -28,6 +28,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Указывать документ основание</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Specify document base</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -41,11 +45,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Генерация фич</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Generation features</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Генерация фич</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Generation features</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ГенерацияФич</Action>

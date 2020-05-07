@@ -74,6 +74,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Фичи загружены</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Features loaded</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -105,6 +109,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Работаю по сценарию</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Running scenario</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -138,6 +146,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Шаг</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Step</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -169,6 +181,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>не выполнен</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>failed</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -202,6 +218,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Сеанс должен быть запущен с ключом TESTMANAGER.</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>The session must be started with the TESTMANAGER key.</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -233,6 +253,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>TestClient НЕ подключен.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>TestClient is NOT connected.</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -266,6 +290,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Технические данные</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Technical details</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -297,6 +325,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>ИмяФайла</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>FileName</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -330,6 +362,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>ИмяПроцедуры</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>ProcedureName</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -361,6 +397,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>ВерсияVanessaADD</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>VanessaVersion</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -394,6 +434,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>ВерсияПлатформы</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>PlatformVersion</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -425,6 +469,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>РежимСовместимостиTestManager</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>TestManagerCompatibilityMode </v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -458,6 +506,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Не использовать</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Not use</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -489,6 +541,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Выполнение сценариев закончено. Ошибок не было.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>The execution of the scenarios is over. Tthere were no errors.</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -522,6 +578,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Выполнение сценариев закончено. БЫЛИ ОШИБКИ.</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>The execution of the scenarios is over. THERE ARE ERRORS.</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -554,6 +614,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Порт %1 занят или находится вне указанного диапазона, порт подключения изменен на %2</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Port %1 is busy or out of specified range, the connection port is changed to %2</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -584,6 +648,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>TestClient подключен на %1 порту.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>TestClient is connected to the %1 port.</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -616,6 +684,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Построение дерева.</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Building tree.</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -646,6 +718,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Уже открытый TestClient подключен на %1 порту.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>An already open TestClient is connected to the %1 port.</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -678,6 +754,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Получить изменения формы</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Get changes of the form</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -708,6 +788,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Получить состояние всей формы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Get the state of the whole form</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -740,6 +824,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Загрузил снипеты из кеш</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Uploaded snippets from the cache</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -770,6 +858,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Загрузил новую версию</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Uploaded a new version</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -802,6 +894,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Ищу сценарии в каталоге</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Looking for scripts in the directory</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -832,6 +928,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Не смог получить значение из строки запуска</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Could not get value from start line params</v8:content>
 						</v8:item>
 					</tl>
 				</c>
@@ -864,6 +964,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Ищу снипеты в каталоге</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Looking for snippets in the catalog</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -895,6 +999,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Найден активный элемент формы</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Active form element found</v8:content>
+						</v8:item>
 					</tl>
 				</c>
 			</c>
@@ -925,6 +1033,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Активная форма не найдена</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Active form not found</v8:content>
 						</v8:item>
 					</tl>
 				</c>

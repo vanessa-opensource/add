@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Тесты загрузчик из подсистем конфигурации</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Test loader of subsystems configuration</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.Тесты_ЗагрузчикИзПодсистемКонфигурации.Form.Форма</DefaultForm>

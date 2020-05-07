@@ -8,6 +8,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Макет с данными документа Документ2 без движений по РБ и РН</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Layout data of the document Документ2 without movement at RB and RN</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<TemplateType>SpreadsheetDocument</TemplateType>

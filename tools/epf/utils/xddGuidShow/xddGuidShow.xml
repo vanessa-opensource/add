@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать ГУИД</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show GUID</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.xddGuidShow.Form.Форма</DefaultForm>
@@ -31,6 +35,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Ссылка</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Link</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -65,6 +73,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>ГУИД</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>GUID</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

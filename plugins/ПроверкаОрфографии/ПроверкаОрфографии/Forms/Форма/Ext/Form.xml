@@ -10,6 +10,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>http://api.yandex.ru/speller/</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>http://api.yandex.ru/speller/</v8:content>
+				</v8:item>
 			</Title>
 			<Hyperlink>true</Hyperlink>
 			<ContextMenu name="ЯндексКонтекстноеМеню" id="2"/>

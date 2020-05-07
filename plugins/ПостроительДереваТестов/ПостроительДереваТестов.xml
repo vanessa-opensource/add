@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Построитель дерева тестов</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Builder tree of tests</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.ПостроительДереваТестов.Form.Форма</DefaultForm>
@@ -31,6 +35,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Иконки узлов дерева тестов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Icons of tree nodes tests</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>
@@ -63,6 +71,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Типы узлов дерева тестов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Types of nodes in the tree test</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

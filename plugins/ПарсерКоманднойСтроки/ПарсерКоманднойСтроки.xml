@@ -18,6 +18,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Парсер командной строки</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Command line parser</v8:content>
+				</v8:item>
 			</Synonym>
 			<Comment/>
 			<DefaultForm>ExternalDataProcessor.ПарсерКоманднойСтроки.Form.Форма</DefaultForm>
@@ -31,6 +35,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Возможные ключи</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Possible keys</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

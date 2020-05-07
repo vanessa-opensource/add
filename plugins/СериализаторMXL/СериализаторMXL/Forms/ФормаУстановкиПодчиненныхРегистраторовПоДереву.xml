@@ -6,7 +6,11 @@
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Фрма установки подчиненных регистраторов по дереву</v8:content>
+					<v8:content>Форма установки подчиненных регистраторов по дереву</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Form fitting sub-registrars on tree</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>

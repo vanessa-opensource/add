@@ -18,6 +18,10 @@
 						<v8:lang>ru</v8:lang>
 						<v8:content>Загрузить тесты</v8:content>
 					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Load tests</v8:content>
+					</v8:item>
 				</Title>
 				<ExtendedTooltip name="ФормаЗагрузитьТестыПоУмолчаниюРасширеннаяПодсказка" id="432"/>
 			</Button>
@@ -27,11 +31,19 @@
 						<v8:lang>ru</v8:lang>
 						<v8:content>Загрузить ...</v8:content>
 					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Load ...</v8:content>
+					</v8:item>
 				</Title>
 				<ToolTip>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
 						<v8:content>Подменю загрузить тесты</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>Submenus load tests</v8:content>
 					</v8:item>
 				</ToolTip>
 				<Picture>
@@ -46,11 +58,19 @@
 								<v8:lang>ru</v8:lang>
 								<v8:content>Плагины загрузчики</v8:content>
 							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Plugins loaders</v8:content>
+							</v8:item>
 						</Title>
 						<ToolTip>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>Плагины загрузчики</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Plugins loaders</v8:content>
 							</v8:item>
 						</ToolTip>
 						<ExtendedTooltip name="ПлагиныЗагрузчикиРасширеннаяПодсказка" id="434"/>
@@ -66,11 +86,19 @@
 								<v8:lang>ru</v8:lang>
 								<v8:content>Подменю история загрузки тестов</v8:content>
 							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Submenu download history tests</v8:content>
+							</v8:item>
 						</Title>
 						<ToolTip>
 							<v8:item>
 								<v8:lang>ru</v8:lang>
 								<v8:content>История загрузки тестов</v8:content>
+							</v8:item>
+							<v8:item>
+								<v8:lang>en</v8:lang>
+								<v8:content>Download history tests</v8:content>
 							</v8:item>
 						</ToolTip>
 						<ExtendedTooltip name="ПодменюИсторияЗагрузкиТестовРасширеннаяПодсказка" id="435"/>
@@ -118,11 +146,19 @@
 						<v8:lang>ru</v8:lang>
 						<v8:content>Внешние инструменты</v8:content>
 					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>External tools</v8:content>
+					</v8:item>
 				</Title>
 				<ToolTip>
 					<v8:item>
 						<v8:lang>ru</v8:lang>
 						<v8:content>Внешние инструменты</v8:content>
+					</v8:item>
+					<v8:item>
+						<v8:lang>en</v8:lang>
+						<v8:content>External tools</v8:content>
 					</v8:item>
 				</ToolTip>
 				<ExtendedTooltip name="ГруппаВнешниеИнструментыРасширеннаяПодсказка" id="439"/>
@@ -197,11 +233,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Дерево тестов</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Tree of tests</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Дерево тестов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Tree of tests</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Group>Vertical</Group>
@@ -290,6 +334,10 @@
 									<v8:lang>ru</v8:lang>
 									<v8:content>Кол-во</v8:content>
 								</v8:item>
+								<v8:item>
+									<v8:lang>en</v8:lang>
+									<v8:content>Count</v8:content>
+								</v8:item>
 							</Title>
 							<EditMode>EnterOnInput</EditMode>
 							<ContextMenu name="ДеревоТестовКоличествоТестовКонтекстноеМеню" id="409"/>
@@ -339,6 +387,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Индикатор выполнения</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Progress bar</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:decimal</v8:Type>
@@ -355,6 +407,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Дерево тестов</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Tree of tests</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>v8:ValueTree</v8:Type>
@@ -365,6 +421,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Количество тестов</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Tests count</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -382,6 +442,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Состояние</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Condition</v8:content>
+						</v8:item>
 					</Title>
 					<Type>
 						<v8:Type>xs:decimal</v8:Type>
@@ -398,6 +462,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Имя</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Name</v8:content>
+						</v8:item>
 					</Title>
 					<Type>
 						<v8:Type>xs:string</v8:Type>
@@ -412,6 +480,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Время выполнения</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Run time</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -429,6 +501,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Путь</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Path</v8:content>
+						</v8:item>
 					</Title>
 					<Type>
 						<v8:Type>xs:string</v8:Type>
@@ -443,6 +519,10 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Иконка узла</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Icon node</v8:content>
 						</v8:item>
 					</Title>
 					<Type>
@@ -460,6 +540,10 @@
 							<v8:lang>ru</v8:lang>
 							<v8:content>Ключ</v8:content>
 						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Key</v8:content>
+						</v8:item>
 					</Title>
 					<Type>
 						<v8:Type>v8:UUID</v8:Type>
@@ -472,6 +556,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Используемое имя файла</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Used file name</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -488,6 +576,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Идентификатор загрузчика</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Loader ID</v8:content>
+				</v8:item>
 			</Title>
 			<Type/>
 		</Attribute>
@@ -497,6 +589,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Дерево от загрузчика</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Tree from the loader</v8:content>
+				</v8:item>
 			</Title>
 			<Type/>
 		</Attribute>
@@ -505,6 +601,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Это пакетный запуск</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>This batch run</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -517,6 +617,10 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Есть поддержка асинхронных вызовов</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Support for asynchronous calls</v8:content>
+				</v8:item>
 			</Title>
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
@@ -527,6 +631,10 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Есть защита от опасных действий</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>There is protection from threat actions</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -552,11 +660,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Выполнить все тесты (F7)</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run all tests (F7)</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Команда выполнить все тесты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Command to run all tests</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Shortcut>F7</Shortcut>
@@ -569,11 +685,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Перезагрузить</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Restart</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Команда перезагрузить все тесты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Command to restart all tests</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Shortcut>Ctrl+R</Shortcut>
@@ -586,11 +710,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Выполнить выделенные (Ctrl+Enter)</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Run selection (Ctrl+Enter)</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Команда выполнить выделенные тесты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Command to run selected tests</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
@@ -606,11 +738,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Генератор макетов данных</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Generator layout data</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Генератор макетов данных на базе реальных данных</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Generator layout data on the basis of real data</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ГенераторМакетовДанных</Action>
@@ -621,11 +761,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать ГУИД</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show GUID</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Показать ГУИД</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Show GUID</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьГУИД</Action>
@@ -636,11 +784,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить только выделенные тесты</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>To download only the selected tests</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Команда загрузить только выделенные тесты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Command to load only selected tests</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>КомандаЗагрузитьТолькоВыделенныеТесты</Action>
@@ -651,11 +807,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Перезагрузить браузер тестирования</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Restart browser test</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Команда перезагрузить форму</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Command to reload form</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>КомандаПерезагрузитьФорму</Action>
@@ -666,11 +830,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить тесты по умолчанию</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load default tests</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить тесты по умолчанию</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load default tests</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ЗагрузитьТестыПоУмолчанию</Action>
@@ -681,11 +853,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Конвертер тестов в формат 4-й версии</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Converter tests in the format of the 4-th version</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Конвертер тестов</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Converter tests</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>КонвертерТестов</Action>
@@ -696,11 +876,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Преобразовать журнал действий пользователя в тест</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Convert user activity log in the test</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Преобразовать журнал действий пользователя в тест</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Convert user activity log in the test</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ПреобразоватьЖурналДействийПользователяВТест</Action>
@@ -711,11 +899,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить настройки из файла ...</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load settings from file ...</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Загрузить настройки из файла ...</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Load settings from file ...</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ЗагрузитьНастройкиИзФайла</Action>
@@ -726,11 +922,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Управление дымовыми тестами</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Control of smoke tests</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Инструмент управления дымовыми тестами</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Management tool smoke tests</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Action>ИнструментУправленияДымовымиТестами</Action>
@@ -741,11 +945,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Техническая информация</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Technical information</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Техническая информация</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Technical information</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>

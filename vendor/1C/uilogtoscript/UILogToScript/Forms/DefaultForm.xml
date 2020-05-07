@@ -5,12 +5,12 @@
 			<Name>DefaultForm</Name>
 			<Synonym>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Default form</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Основная форма</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Default form</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>

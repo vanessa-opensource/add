@@ -12,11 +12,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Настройки (пути сервер)</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Settings (way server)</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Группа настройки</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group settings</v8:content>
 				</v8:item>
 			</ToolTip>
 			<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="12"/>
@@ -27,11 +35,19 @@
 					<v8:lang>ru</v8:lang>
 					<v8:content>Тесты</v8:content>
 				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Tests</v8:content>
+				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Группа тесты</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Group tests</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Group>Vertical</Group>

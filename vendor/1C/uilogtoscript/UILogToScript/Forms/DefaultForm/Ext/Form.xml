@@ -29,22 +29,22 @@
 		<UsualGroup name="ConversionParameters" id="12">
 			<Title>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Conversion parameters</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Параметры преобразования</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Conversion parameters</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Conversion parameters</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Параметры преобразования</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Conversion parameters</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Group>Vertical</Group>
@@ -65,12 +65,12 @@
 					<DataPath>Object.MainProcedureName</DataPath>
 					<ToolTip>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Name of the procedure required for starting the scenario.</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Имя процедуры, которую необходимо вызвать для запуска сценария.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Name of the procedure required for starting the scenario.</v8:content>
 						</v8:item>
 					</ToolTip>
 					<ContextMenu name="MainProcedureNameContextMenu" id="15"/>
@@ -80,12 +80,12 @@
 					<DataPath>Object.GenerateClientConnectionScript</DataPath>
 					<ToolTip>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Include the script to establish test client connection into the procedure.</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Вставлять процедуру код устанавливающий соединение с тестируемым клиентом.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Include the script to establish test client connection into the procedure.</v8:content>
 						</v8:item>
 					</ToolTip>
 					<CheckBoxType>Auto</CheckBoxType>
@@ -96,12 +96,12 @@
 					<DataPath>Object.SplitScriptIntoProcedures</DataPath>
 					<ToolTip>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Split the script scenario into procedures. Each procedure contains actions with a single window.</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Разделять сценарий на процедуры, в каждой из которых есть только действия относящиеся к одному окну.</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Split the script scenario into procedures. Each procedure contains actions with a single window.</v8:content>
 						</v8:item>
 					</ToolTip>
 					<CheckBoxType>Auto</CheckBoxType>
@@ -134,42 +134,37 @@
 		<Pages name="SourceData" id="42">
 			<Title>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Source data</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Исходные данные</v8:content>
 				</v8:item>
-			</Title>
-			<ToolTip>
 				<v8:item>
 					<v8:lang>en</v8:lang>
 					<v8:content>Source data</v8:content>
 				</v8:item>
-			</ToolTip>
+			</Title>
+			<ToolTip/>
 			<PagesRepresentation>None</PagesRepresentation>
 			<ExtendedTooltip name="SourceDataExtendedToolTip" id="43"/>
 			<ChildItems>
 				<Page name="SourceFiles" id="32">
 					<Title>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Source files</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Исходные файлы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Source files</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTip>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Source files</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Исходные файлы</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Source files</v8:content>
 						</v8:item>
 					</ToolTip>
 					<ExtendedTooltip name="SourceFilesExtendedToolTip" id="59"/>
@@ -201,22 +196,22 @@
 				<Page name="SourceTexts" id="34">
 					<Title>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Source texts</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Исходные тексты</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Source texts</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTip>
 						<v8:item>
-							<v8:lang>en</v8:lang>
-							<v8:content>Source texts</v8:content>
-						</v8:item>
-						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Исходные тексты</v8:content>
+						</v8:item>
+						<v8:item>
+							<v8:lang>en</v8:lang>
+							<v8:content>Source texts</v8:content>
 						</v8:item>
 					</ToolTip>
 					<Group>Horizontal</Group>
@@ -239,16 +234,12 @@
 		<LabelDecoration name="VersionCaption" id="65">
 			<Title formatted="false">
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Version 1.0.3.3</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Версия 1.0.3.1</v8:content>
 				</v8:item>
 				<v8:item>
-					<v8:lang>sys</v8:lang>
-					<v8:content>Версия 1.0.3.1</v8:content>
+					<v8:lang>en</v8:lang>
+					<v8:content>Version 1.0.3.3</v8:content>
 				</v8:item>
 			</Title>
 			<ContextMenu name="VersionCaptionContextMenu" id="66"/>
@@ -274,12 +265,12 @@
 		<Attribute name="SourceFile" id="2">
 			<Title>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Source file</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Преобразовывать журнал</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Source file</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -296,12 +287,12 @@
 		<Attribute name="ResultFile" id="4">
 			<Title>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Result file</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сохранять результат в</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Result file</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -318,12 +309,12 @@
 		<Attribute name="SourceText" id="11">
 			<Title>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>User action log</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Журнал действий пользователя</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>User action log</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -333,12 +324,12 @@
 		<Attribute name="ResultText" id="12">
 			<Title>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Scenario</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Сценарий</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Scenario</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
@@ -350,22 +341,22 @@
 		<Command name="Convert" id="1">
 			<Title>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Convert</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Преобразовать</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Convert</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
 				<v8:item>
-					<v8:lang>en</v8:lang>
-					<v8:content>Convert the user action log into the 1C:Enterprise script scenario</v8:content>
-				</v8:item>
-				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Преобразовать журнал действий во встроенный язык</v8:content>
+				</v8:item>
+				<v8:item>
+					<v8:lang>en</v8:lang>
+					<v8:content>Convert the user action log into the 1C:Enterprise script scenario</v8:content>
 				</v8:item>
 			</ToolTip>
 			<Picture>
