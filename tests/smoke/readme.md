@@ -556,7 +556,7 @@
     {
         "smoke" : {...},
         "SmokeCommonModules": {
-            "Subsystems" : ["*"]
+            "Subsystems" : ["*"],
             "ExcludedCommonModules" : ["SocialNetworks_ExchangeServer"]
         }
     }
@@ -567,7 +567,7 @@
     {
         "smoke" : {...},
         "SmokeCommonModules": {
-            "Subsystems" : []
+            "Subsystems" : [],
             "ExcludedCommonModules" : []
         }
     }
