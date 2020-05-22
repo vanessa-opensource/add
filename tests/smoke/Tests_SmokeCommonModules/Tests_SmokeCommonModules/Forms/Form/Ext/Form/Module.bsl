@@ -777,7 +777,30 @@ EndProcedure // RecursivelyLoadSmokeCommonModuleTestsFromSubsystem()
 //      * ArrayItem - String - part of string.
 //
 Function _StrSplit(Val String, Val Separator, IncludeBlank = True)
-    Return Object()._StrSplit(String, Separator, IncludeBlank); 
+    SplitResult = New Array;
+    
+    If IsBlankString(String) Then 
+        If IncludeBlank Then
+            SplitResult.Add(String);
+        EndIf;
+        Return SplitResult;
+    EndIf;
+        
+    Position = Find(String, Separator);
+    While Position > 0 Do
+        Substring = Left(String, Position - 1);
+        If IncludeBlank Or Not IsBlankString(Substring) Then
+            SplitResult.Add(Substring);
+        EndIf;
+        String = Mid(String, Position + StrLen(Separator));
+        Position = Find(String, Separator);
+    EndDo;
+
+    If IncludeBlank Or Not IsBlankString(String) Then
+        SplitResult.Add(String);
+    EndIf;
+
+    Return SplitResult;
 EndFunction // _StrSplit()
 
 &AtServer
@@ -797,10 +820,18 @@ Function _StrTemplate(Val Template, Val Value1, Val Value2 = Undefined,
     Val Value6 = Undefined, Val Value7 = Undefined, Val Value8 = Undefined, 
     Val Value9 = Undefined, Val Value10 = Undefined) 
 	
-	Return Object()._StrTemplate(Template, Value1, Value2, 
-							    Value3, Value4, Value5, 
-							    Value6, Value7, Value8, 
-							    Value9, Value10);
+    Template = StrReplace(Template, "%1", String(Value1));
+    Template = StrReplace(Template, "%2", String(Value2));
+    Template = StrReplace(Template, "%3", String(Value3));
+    Template = StrReplace(Template, "%4", String(Value4));
+    Template = StrReplace(Template, "%5", String(Value5));
+    Template = StrReplace(Template, "%6", String(Value6));
+    Template = StrReplace(Template, "%7", String(Value7));
+    Template = StrReplace(Template, "%8", String(Value8));
+    Template = StrReplace(Template, "%9", String(Value9));
+    Template = StrReplace(Template, "%10", String(Value10));
+
+    Return Template;
 								
 EndFunction // _StrTemplate()
 
