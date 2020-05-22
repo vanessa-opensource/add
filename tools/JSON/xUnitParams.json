@@ -1,5 +1,5 @@
 {
-    "$schema":"https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/xunit-schema.json",
+    "$schema":"https://github.com/vanessa-opensource/vanessa-runner/develop/xunit-schema.json",
     "Отладка":false,
     "ДобавлятьИмяПользователяВПредставлениеТеста":true,
     "ДелатьЛогВыполненияСценариевВТекстовыйФайл":true,
@@ -74,7 +74,7 @@
         "ОбщиеФормы":[
             "ОбщаяФорма1"
         ],
-        "Справочники": 
+        "Справочники":
             [
                 "ПростойСправочник.Форма.ФормаВыбора"
             ],
@@ -101,7 +101,7 @@
         "ПолныеПрава",
         "АдминистраторСистемы"
     ],
-    
+
     "smokeInputBasedOn": {
         "Исключения": {
             "ДокументыПроведенные": [
@@ -113,7 +113,7 @@
             ]
         }
     },
-    
+
     "SmokeCommonModules": {
         "Subsystems": [
          ],

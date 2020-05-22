@@ -1,18 +1,18 @@
 # language: ru
 
-#https://github.com/silverbulleters/vanessa-behavior/issues/34
+#https://github.com/vanessa-opensource/vanessa-behavior/issues/34
 
 @IgnoreOnCIMainBuild
 
 
 Функционал: Тестовая фича, проверяющая генерацию отчета Allure
- 
+
 
 
 Сценарий: Выполнение первого простого сценария
 	Когда я выполняю простой шаг
 	И     я выполняю ещё простой шаг
-	
+
 Сценарий: Выполнение второго простого сценария
 	Когда я выполняю простой шаг
 	И     я выполняю ещё простой шаг

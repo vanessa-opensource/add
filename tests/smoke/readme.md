@@ -586,7 +586,7 @@
 Для справочников, документов и регистров есть хотя бы одна роль на Чтение метаданных, отличная от ролей с администраторскими/полными привилегиями.
 
 Есть возможность настройки прав, которые являются администраторскими, с помощью файла конфигурации.
-- Пример настройки есть в файле [tests/smoke/smoke.example.json - строка 53](https://github.com/silverbulleters/add/blob/develop/tests/smoke/smoke.example.json#L53)
+- Пример настройки есть в файле [tests/smoke/smoke.example.json - строка 53](https://github.com/vanessa-opensource/add/blob/develop/tests/smoke/smoke.example.json#L53)
 
 ## Проверка режима управления блокировкой данных в транзакции по умолчанию
 

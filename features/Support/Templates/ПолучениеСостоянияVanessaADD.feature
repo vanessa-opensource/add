@@ -1,6 +1,6 @@
 # language: ru
 
-#https://github.com/silverbulleters/vanessa-add/issues/261
+#https://github.com/vanessa-opensource/vanessa-add/issues/261
 
 @IgnoreOnCIMainBuild
 
