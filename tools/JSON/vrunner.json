@@ -41,7 +41,7 @@
         "--xddExitCodePath": "./build/xddExitCodePath.txt",
         "--pathxunit": "./xddTestRunner.epf",
         "--testclient" : "::47003",
-        "--testclient-additional" : "/Lru  /iTaxi"
+        "--testclient-additional" : "/iTaxi"
         // "--testclient-additional" : "/Debug /DebuggerURL tcp://localhost:1561"
         // "--testclient-additional" : "/debug -http -attach /debuggerURL http://127.0.0.1:2550"
     }
