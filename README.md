@@ -23,7 +23,7 @@
 <a id="markdown-введение" name="введение"></a>
 ## Введение
 
-Продукт Vanessa-ADD (Vanessa Automation Driven Development) `(далее ADD)` представляет собой набор инструментов для проверки качества решений на платформе 1С:Предприятие.
+Продукт Vanessa-ADD (Vanessa Automation Driven Development) `(далее Vanessa-ADD)` представляет собой набор инструментов для проверки качества решений на платформе 1С:Предприятие.
 
 Vanessa-ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1c.ru) - Tests/behavior (TDD & BDD) for 1С:Enterprise.
 
@@ -56,7 +56,7 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 <a id="markdown-установка" name="установка"></a>
 ## Установка
 
-Порядок установки ADD:
+Порядок установки Vanessa-ADD:
 
 Автоматическая установка (через установщик пакетов OneScript ):
 
