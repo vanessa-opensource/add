@@ -1,6 +1,11 @@
 ﻿<a id="markdown-vanessa-automation-driven-development" name="vanessa-automation-driven-development"></a>
 # Vanessa Automation Driven Development
 
+[![telegram](https://img.shields.io/badge/telegram-chat-green.svg)](https://t.me/vanessa_opensource)
+[![Release](https://img.shields.io/github/release/vanessa-opensource/add.svg?style=flat)](https://github.com/vanessa-opensource/add/releases/latest)
+[![GitHub Releases](https://img.shields.io/github/downloads/vanessa-opensource/add/latest/total?style=flat-square)](https://github.com/vanessa-opensource/add/releases)
+[![GitHub All Releases](https://img.shields.io/github/downloads/vanessa-opensource/add/total?style=flat-square)](https://github.com/vanessa-opensource/add/releases)
+
 <!-- TOC insertAnchor:true -->
 
 - [Vanessa Automation Driven Development](#vanessa-automation-driven-development)
