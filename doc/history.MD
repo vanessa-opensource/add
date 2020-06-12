@@ -67,7 +67,7 @@
   - добавлена сортировка тестов по алфавиту
   - добавлен строгий порядок выполнения тестов друг за другом #584
 
-- Тесты проверки режима блокировки - Исключены общие реквизиты из проверки #583 #590 
+- Тесты проверки режима блокировки - Исключены общие реквизиты из проверки #583 #590
   - Спасибо @SergeyKud
   - добавлено понятное сообщение об ошибке для дымовых тестов проверки режима блокировки данных #442
 
@@ -177,7 +177,7 @@
   - или `И я выполняю произвольный шаг с параметром "$$Моя глобальная переменная$$"`
   - или `И я выполняю произвольный шаг с параметром "$МояПеременная$"`
   - или `И я выполняю произвольный шаг с параметром "$$МояГлобальнаяПеременная$$"`
-- Подробные примеры смотрите [в фиче "ПроверкаВычисленияПеременных.feature"](https://github.com/silverbulleters/add/blob/develop/features/Core/FeatureReader/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%D0%92%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85.feature)
+- Подробные примеры смотрите [в фиче "ПроверкаВычисленияПеременных.feature"](https://github.com/vanessa-opensource/add/blob/develop/features/Core/FeatureReader/%D0%9F%D1%80%D0%BE%D0%B2%D0%B5%D1%80%D0%BA%D0%B0%D0%92%D1%8B%D1%87%D0%B8%D1%81%D0%BB%D0%B5%D0%BD%D0%B8%D1%8F%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D1%85.feature)
 
 - **ВНИМАНИЕ: Добавлена несовместимость с шагами**
   - в шагах ниже нужно явно заключать переменные контекст внутри знаков доллара ($) в кавычки для правильной обработки
@@ -218,7 +218,7 @@
 ## Файловые шаги с подробной документацией - 39 шагов !!
 
 - Новые шаги работы с файлами/каталогами для файловых операций аналогично шагам из 1bdd #469
-  - Смотрите [Файловые операции](https://github.com/silverbulleters/add/blob/master/doc/bdd/steps/files.md)
+  - Смотрите [Файловые операции](https://github.com/vanessa-opensource/add/blob/master/doc/bdd/steps/files.md)
   - Также есть шаги, использующие многострочный текст
 
   - Например, это шаги создания файлов и проверки текста файла
@@ -299,9 +299,9 @@
 ## Расширена документация
 
 - Документация на новые дымовые тесты #455
-  - Смотрите [Дымовые тесты](https://github.com/silverbulleters/add/blob/master/tests/smoke/readme.md)
+  - Смотрите [Дымовые тесты](https://github.com/vanessa-opensource/add/blob/master/tests/smoke/readme.md)
 - Документация на шаги работы с файлами/каталогами аналогично шагам из 1bdd #469
-  - Смотрите [Файловые операции](https://github.com/silverbulleters/add/blob/master/doc/bdd/steps/files.md)
+  - Смотрите [Файловые операции](https://github.com/vanessa-opensource/add/blob/master/doc/bdd/steps/files.md)
 - Подправлена нумерация в FAQ #437
 - Исправлены ссылки на документацию bdd #477 #378
 - Дополнена документация #453 #470
@@ -513,23 +513,23 @@
 
 ## Дымовые тесты
 
-+ Исправлена ошибка удаления существующих объектов при запуске дымовых https://github.com/silverbulleters/add/issues/293
-+ Дымовые тесты выдают ошибку, если в json-файле отсутствует ключ "ПропускаемыеИсключения" https://github.com/silverbulleters/add/issues/296
++ Исправлена ошибка удаления существующих объектов при запуске дымовых https://github.com/vanessa-opensource/add/issues/293
++ Дымовые тесты выдают ошибку, если в json-файле отсутствует ключ "ПропускаемыеИсключения" https://github.com/vanessa-opensource/add/issues/296
 
 ## TDD
 
-+ Исправлено: Не работает простая перегрузка для перегрузки текущего теста, а требуется перезагрузка всего браузера тестов https://github.com/silverbulleters/add/issues/288
-+ Доработана загрузка тестов из истории для случае асинхронного режима https://github.com/silverbulleters/add/issues/303
-+ Удален встроенный в конфигурацию xUnitFor1C https://github.com/silverbulleters/add/issues/304
++ Исправлено: Не работает простая перегрузка для перегрузки текущего теста, а требуется перезагрузка всего браузера тестов https://github.com/vanessa-opensource/add/issues/288
++ Доработана загрузка тестов из истории для случае асинхронного режима https://github.com/vanessa-opensource/add/issues/303
++ Удален встроенный в конфигурацию xUnitFor1C https://github.com/vanessa-opensource/add/issues/304
 
 ## BDD
 
-+ Исправлена проблема неверных файлов шагов после установки релиза silverbulleters/add#291
++ Исправлена проблема неверных файлов шагов после установки релиза vanessa-opensource/add#291
 
-[Подробное описание изменений релиза v5.5.5](https://github.com/silverbulleters/add/milestone/8?closed=1)
+[Подробное описание изменений релиза v5.5.5](https://github.com/vanessa-opensource/add/milestone/8?closed=1)
 
 Изменения/коммиты после последнего релиза 5.5.5:
-https://github.com/silverbulleters/add/compare/5.5.0...5.5.5
+https://github.com/vanessa-opensource/add/compare/5.5.0...5.5.5
 
 # v5.5.0 Асинхронность TDD (и дымовых) + Дымовые тесты + Генератор данных + новые возможности и шаги в BDD
 
@@ -601,7 +601,7 @@ https://github.com/silverbulleters/add/compare/5.5.0...5.5.5
 * УФ: Добавление автопоказа отчета allure - по отдельной команде или через флаг в настройках #233  #245
 
 * Набор шагов и методов для работы с Fake-SMTP-Server для тестирования отправки почты #278 #280
-    * [Документация](https://github.com/silverbulleters/add/blob/master/features/libraries/%D0%9F%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD%D1%8B/step_definitions/README.md)
+    * [Документация](https://github.com/vanessa-opensource/add/blob/master/features/libraries/%D0%9F%D0%BB%D0%B0%D0%B3%D0%B8%D0%BD%D1%8B/step_definitions/README.md)
     * спасибо @KrapivinAndrey
 
 * Новые и доработанные шаги работы с БД #251
@@ -694,10 +694,10 @@ https://github.com/silverbulleters/add/compare/5.5.0...5.5.5
 
 - Исправлена ошибка загрузки макетов в режиме совместимости 8.2 #212 #242
 
-[Подробное описание изменений релиза v5.4.0](https://github.com/silverbulleters/add/milestone/5?closed=1)
+[Подробное описание изменений релиза v5.4.0](https://github.com/vanessa-opensource/add/milestone/5?closed=1)
 
 Изменения/коммиты после последнего релиза 5.3.1:
-https://github.com/silverbulleters/add/compare/5.4.0...5.3.1
+https://github.com/vanessa-opensource/add/compare/5.4.0...5.3.1
 
 # v5.3.1 Внешние инструменты + исправления - Генератор макетов + Английская локализация  + Дымовые тесты + браузер фич
 
@@ -727,10 +727,10 @@ https://github.com/silverbulleters/add/compare/5.4.0...5.3.1
 + Исправлено: При пакетном запуске не загружаются и не выполняются фичи, открывается только bddRunner #222
 + Исправлено: Очищается папка проекта, если не указать --xddExitCodePath #213
 
-[Подробное описание изменений релиза v5.3.1](https://github.com/silverbulleters/add/milestone/3?closed=1)
+[Подробное описание изменений релиза v5.3.1](https://github.com/vanessa-opensource/add/milestone/3?closed=1)
 
 Изменения/коммиты после последнего релиза 5.1.1.0:
-https://github.com/silverbulleters/add/compare/5.1.1.0...5.3.1
+https://github.com/vanessa-opensource/add/compare/5.1.1.0...5.3.1
 
 # v5.1.1.0 Генератор данных + работа в обычном приложении
 
@@ -745,10 +745,10 @@ https://github.com/silverbulleters/add/compare/5.1.1.0...5.3.1
 + Исправлено: ОФ: не формируется отчет Аллюр при запуске в bddRunner, а в VB 1.1.131 формируется при тех же настройках #194
 
 
-[Подробное описание изменений релиза v5.1.1.0](https://github.com/silverbulleters/add/milestone/4?closed=1)
+[Подробное описание изменений релиза v5.1.1.0](https://github.com/vanessa-opensource/add/milestone/4?closed=1)
 
 Изменения/коммиты после последнего релиза 5.1.0.0:
-https://github.com/silverbulleters/add/compare/5.1.0.0...5.1.1.0
+https://github.com/vanessa-opensource/add/compare/5.1.0.0...5.1.1.0
 
 # v5.1.0.0 - Отладка + Дымовые + Генерация данных + Настройка
 
@@ -862,15 +862,15 @@ https://github.com/silverbulleters/add/compare/5.1.0.0...5.1.1.0
 + Исправлены ошибки параллельной сборки на Jenklins-сервере #135
 + Исправление запуска сборки через команды opm #90
 
-[Подробное описание изменений релиза v5.1.0.0](https://github.com/silverbulleters/add/milestone/2?closed=1)
+[Подробное описание изменений релиза v5.1.0.0](https://github.com/vanessa-opensource/add/milestone/2?closed=1)
 
 Изменения/коммиты после последнего релиза 5.0.0.124:
-https://github.com/silverbulleters/add/compare/5.0.0.124...5.1.0.0
+https://github.com/vanessa-opensource/add/compare/5.0.0.124...5.1.0.0
 
 <a id="markdown-vanessa-add-50xxx" name="vanessa-add-50xxx"></a>
 ### Vanessa-ADD 5.0.XXX
 
-* Начало истории Vanessa-ADD - https://github.com/silverbulleters/add
+* Начало истории Vanessa-ADD - https://github.com/vanessa-opensource/add
 
 <a id="markdown-vanessa-behavior-11131" name="vanessa-behavior-11131"></a>
 ### Vanessa-Behavior 1.1.131
@@ -899,7 +899,7 @@ https://github.com/silverbulleters/add/compare/5.0.0.124...5.1.0.0
 ### 1.1.127
 * Добавил параметр - позволяющий указать свой таймаут для асинхронных шагов. ТаймаутДляАсинхронныхШагов.
 * Исправил ошибку загрузки Структуры сценария на английском языке
-* Исправил https://github.com/silverbulleters/vanessa-behavior/issues/695
+* Исправил https://github.com/vanessa-opensource/vanessa-behavior/issues/695
 * Доработал механизм сравнения таблиц.
 * Добавил шаг: И в таблице "ТабличнаяЧасть1" я устанавливаю флаг с именем "ТабличнаяЧасть1РеквизитБулево"
 * Добавил шаг: И в таблице "ТабличнаяЧасть1" я снимаю флаг с именем "ТабличнаяЧасть1РеквизитБулево"

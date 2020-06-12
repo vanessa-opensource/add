@@ -1,5 +1,5 @@
 ﻿{
-    "$schema":"https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/behavior-schema.json",
+    "$schema":"https://github.com/vanessa-opensource/vanessa-runner/develop/behavior-schema.json",
    "ИмяСборки":"Сборка 8.3.6 UF no sync",
    "ВерсияПлатформы":"8.3.6",
    "ВыводитьСообщенияВФайл": "./ServiceBases/Messages 8.3.6 UF no sync.txt",

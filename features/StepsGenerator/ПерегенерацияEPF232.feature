@@ -4,7 +4,7 @@
 @OneThread
 @IgnoreOnWeb
 
-#https://github.com/silverbulleters/vanessa-behavior/issues/232
+#https://github.com/vanessa-opensource/vanessa-behavior/issues/232
 
 
 Функционал: Проверка перегенерации EPF в режиме обычных форм 232

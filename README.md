@@ -1,13 +1,29 @@
 ﻿<a id="markdown-vanessa-automation-driven-development" name="vanessa-automation-driven-development"></a>
 # Vanessa Automation Driven Development
 
+[![telegram](https://img.shields.io/badge/telegram-chat-green.svg)](https://t.me/vanessa_opensource)
+[![Release](https://img.shields.io/github/release/vanessa-opensource/add.svg?style=flat)](https://github.com/vanessa-opensource/add/releases/latest)
+[![GitHub Releases](https://img.shields.io/github/downloads/vanessa-opensource/add/latest/total?style=flat-square)](https://github.com/vanessa-opensource/add/releases)
+[![GitHub All Releases](https://img.shields.io/github/downloads/vanessa-opensource/add/total?style=flat-square)](https://github.com/vanessa-opensource/add/releases)
 
-<!-- TOC insertAnchor:true -->autoauto- [Vanessa Automation Driven Development](#vanessa-automation-driven-development)auto    - [Введение](#введение)auto    - [Справка и полезные ссылки](#справка-и-полезные-ссылки)auto    - [Установка](#установка)auto    - [Ночная сборка ветки **develop**:](#ночная-сборка-ветки-develop)auto    - [Запросы функциональности, задачи, сообщения об ошибках:](#запросы-функциональности-задачи-сообщения-об-ошибках)auto    - [Сравнение с другими инструментами тестирования](#сравнение-с-другими-инструментами-тестирования)auto    - [Как помочь проекту](#как-помочь-проекту)auto    - [Лицензии и права](#лицензии-и-права)autoauto<!-- /TOC -->
+<!-- TOC insertAnchor:true -->
+
+- [Vanessa Automation Driven Development](#vanessa-automation-driven-development)
+    - [Введение](#введение)
+    - [Справка и полезные ссылки](#справка-и-полезные-ссылки)
+    - [Установка](#установка)
+    - [Ночная сборка ветки **develop**:](#ночная-сборка-ветки-develop)
+    - [Запросы функциональности, задачи, сообщения об ошибках:](#запросы-функциональности-задачи-сообщения-об-ошибках)
+    - [Сравнение с другими инструментами тестирования](#сравнение-с-другими-инструментами-тестирования)
+    - [Как помочь проекту](#как-помочь-проекту)
+    - [Лицензии и права](#лицензии-и-права)
+
+<!-- /TOC -->
 
 <a id="markdown-введение" name="введение"></a>
 ## Введение
 
-Продукт Vanessa-ADD (Vanessa Automation Driven Development) `(далее ADD)` представляет собой набор инструментов для проверки качества решений на платформе 1С:Предприятие.
+Продукт Vanessa-ADD (Vanessa Automation Driven Development) `(далее Vanessa-ADD)` представляет собой набор инструментов для проверки качества решений на платформе 1С:Предприятие.
 
 Vanessa-ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1c.ru) - Tests/behavior (TDD & BDD) for 1С:Enterprise.
 
@@ -24,7 +40,7 @@ Vanessa-ADD is a set of testing tools for [1C:Enterprise 8 platform](http://v8.1
 + проверка поведения (BDD/Gherkin)
 + формирование автодокументации в формате Html или Markdown или в виде видео-инструкций.
 
-Vanessa-ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/silverbulleters/vanessa-behavior). Совместимость с VB 1.Х и xUnitFor1C 4.Х гарантирована (за исключением функциональности циклов и условий в Vanessa-ADD)
+Vanessa-ADD является наследником 2-х продуктов - [xUnitFor1C](https://github.com/xDrivenDevelopment/xUnitFor1C) и [Vanessa-Behavior](https://github.com/vanessa-opensource/vanessa-behavior). Совместимость с VB 1.Х и xUnitFor1C 4.Х гарантирована (за исключением функциональности циклов и условий в Vanessa-ADD)
 
 <a id="markdown-справка-и-полезные-ссылки" name="справка-и-полезные-ссылки"></a>
 ## Справка и полезные ссылки
@@ -40,7 +56,7 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 <a id="markdown-установка" name="установка"></a>
 ## Установка
 
-Порядок установки ADD:
+Порядок установки Vanessa-ADD:
 
 Автоматическая установка (через установщик пакетов OneScript ):
 
@@ -54,8 +70,8 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 
 Ручная установка:
 
-+ Перейти в [раздел релизы](https://github.com/silverbulleters/add/releases)
-+ Скачать архив `add-x.x.x.zip` с последним стабильным релизом - прямая ссылка [Releases](https://github.com/silverbulleters/add/releases/latest)
++ Перейти в [раздел релизы](https://github.com/vanessa-opensource/add/releases)
++ Скачать архив `add-x.x.x.zip` с последним стабильным релизом - прямая ссылка [Releases](https://github.com/vanessa-opensource/add/releases/latest)
 + Распаковать указанный архив в нужную папку.
 
 <a id="markdown-ночная-сборка-ветки-develop" name="ночная-сборка-ветки-develop"></a>
@@ -66,13 +82,13 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 <a id="markdown-запросы-функциональности-задачи-сообщения-об-ошибках" name="запросы-функциональности-задачи-сообщения-об-ошибках"></a>
 ## Запросы функциональности, задачи, сообщения об ошибках:
 
-Пожелания к использованию можно фиксировать в виде [Github Issues](https://github.com/silverbulleters/add/issues/new/choose)
+Пожелания к использованию можно фиксировать в виде [Github Issues](https://github.com/vanessa-opensource/add/issues/new/choose)
 
 Обсуждения категоризируются на 3 вида
 
-* [Сообщение об ошибке](https://github.com/silverbulleters/add/issues/new?template=bug_report.md)
-* [Запрос новой функциональности](https://github.com/silverbulleters/add/issues/new?template=feature_request.md)
-* [Запрос поддержки](https://github.com/silverbulleters/add/issues/new?template=help_request)
+* [Сообщение об ошибке](https://github.com/vanessa-opensource/add/issues/new?template=bug_report.md)
+* [Запрос новой функциональности](https://github.com/vanessa-opensource/add/issues/new?template=feature_request.md)
+* [Запрос поддержки](https://github.com/vanessa-opensource/add/issues/new?template=help_request)
 
 Для удобства использования для каждой категории создан специальный шаблон, доступные для редактирования в каталоге [Шаблоны обсуждений](./.github/ISSUE_TEMPLATE/)
 
@@ -94,7 +110,7 @@ Vanessa-ADD является наследником 2-х продуктов - [x
 
 * сообществом независимых разработчиков через концепцию краудсорсинга при помощи
   * [руководства контрибьютора](./.github/CONTRIBUTING.md)
-  * [технологию ответвления](https://github.com/silverbulleters/add/network/members) и [отправки запросов на слияния](https://github.com/silverbulleters/add/pulls)
+  * [технологию ответвления](https://github.com/vanessa-opensource/add/network/members) и [отправки запросов на слияния](https://github.com/vanessa-opensource/add/pulls)
 
 Поэтому:
 

@@ -12,7 +12,6 @@
 * ознакомьтесь с каталогом features для понимания уже существующего и стабильного функционала
 * будьте в курсе изменений по проекту
   * нажмите `watch` и `star`, чтобы получать оповещения об изменениях
-* зарегистрируйтесь на форуме XDD и подпишитесь на получение новостей из раздела [ADD](https://xdd.silverbulleters.org/c/razrabotka/xdrivendevelopment)
 
 ### Старайтесь создавать задачи в формате `BDD`
 
@@ -73,7 +72,7 @@
 * склонируйте репозитарий себе на машину ```git clone https://github.com/*ТУТИМЯВАШЕГОПОЛЬЗОВАТЕЛЯ*/add.git ```
 * переходим в склонированный каталог через `cd add` и выполняем несколько магических комманд
 ```
-git remote add upstream https://github.com/silverbulleters/add.git
+git remote add upstream https://github.com/vanessa-opensource/add.git
 git fetch upstream
 git checkout -b develop upstream/develop
 git pull upstream develop
@@ -183,7 +182,7 @@ git checkout -b feature/issue-9999
   * Фиксируем изменения с комментарием `git commit -m "Наш комментарий!"`
 
 * Отправляем все изменения своей ветки на github ```git push origin feature/issue-9999```
-* Далее формируем `pull-request` в [интерфейсе github](https://github.com/silverbulleters/add/pulls)
+* Далее формируем `pull-request` в [интерфейсе github](https://github.com/vanessa-opensource/add/pulls)
 
 
 ### Участие в архитектурных обсуждениях
@@ -191,21 +190,19 @@ git checkout -b feature/issue-9999
 если вы методолог или архитектор
 
 * сделайте свой первый `pull-request`, в том числе в документацию
-* создайте обсуждение https://github.com/silverbulleters/add/issues с описанием противоречия
+* создайте обсуждение https://github.com/vanessa-opensource/add/issues с описанием противоречия
 * участвуйте, обосновывайте, приводите примеры
 * используйте ТРИЗ для построения непротиворечивых решений
 
 # BSD v3 License
 
-Наша лицензия поощряет коллективное участие в разработке всего стэка продуктов `Vanessa Stack`, однако не поощряет использование брендов (с) `SilverBulleters`, `vanessa-stack`, `vanessa-behavior`, `vanessa-add` и остальных для развития своих неофициальных имплементаций.
+Наша лицензия поощряет коллективное участие в разработке всего стэка продуктов `Vanessa Stack`.
 
 Поэтому:
 
-* используйте, дорабатывайте через концепцию `fork` и `pull-request` официальный продукт `silverbulleters/add`
+* используйте, дорабатывайте через концепцию `fork` и `pull-request` официальный продукт `vanessa-opensource/add`
 * если вы хотите создать свой продукт на основе `vanessa-add`, это разрешено и не противоречит лицензии `BSD v3`
-* однако, если вы хотите использовать для рекламирования и продвижения своего продукта бренды ``"SilverBulleters"``, ``"Vanessa ADD"`` или ``"Vanessa ADD"`` или ``"Vanessa"``, вам необходимо получить у нас разрешение на это, написав на адрес `team@silverbulleters.org` или создать `Issue` на `GitHub`
-
-Поэтому интернет-маркетологов просим быть осторожней при использовании символики `Vanessa` и `SilverBulleters`
+* однако, если вы хотите использовать для рекламирования и продвижения своего продукта бренды ``"Vanessa ADD"`` или ``"Vanessa ADD"``, вам необходимо получить у нас разрешение на это, создав `Issue` на `GitHub`
 
 # CLA - лицензия на коллективное участие
 
@@ -214,5 +211,4 @@ git checkout -b feature/issue-9999
 
 # Если ничего не понятно
 
-* используйте [форум XDD](https://xdd.silverbulleters.org) для того, чтобы задать вопрос
-* запишитесь на практические занятия по правильной разработке 1С
+* запишитесь на практические занятия по правильной разработке 1С у Артур Аюханова aka artbear.

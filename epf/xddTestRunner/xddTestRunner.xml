@@ -19,7 +19,7 @@
 					<v8:content>Тестирование для 1С:Предприятия 8, Vanessa-ADD</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment>https://github.com/silverbulleters/add</Comment>
+			<Comment>https://github.com/vanessa-opensource/add</Comment>
 			<DefaultForm>ExternalDataProcessor.xddTestRunner.Form.УправляемаяФорма</DefaultForm>
 			<AuxiliaryForm>ExternalDataProcessor.xddTestRunner.Form.Форма</AuxiliaryForm>
 		</Properties>
