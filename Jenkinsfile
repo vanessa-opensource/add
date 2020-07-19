@@ -74,7 +74,7 @@ builds.each{
 }
 
 tasks["behavior video write"] = {
-        node ("video") {
+    // node ("video") {
             stage("behavior video") {
             // ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
             // {
@@ -103,7 +103,7 @@ tasks["behavior video write"] = {
             // }
 
         }
-    }
+    // }
 }
 tasks["buildRelease"] = {
     node("slave"){
