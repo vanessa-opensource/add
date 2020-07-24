@@ -6,16 +6,21 @@
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
 				<xr:ObjectId>3b680f02-9b75-44c2-8590-1741f742db6a</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.РаботаСПеременнымиОкружения" category="Object">
+			<xr:GeneratedType name="ExternalDataProcessorObject.ПеременныеОкружения" category="Object">
 				<xr:TypeId>77ed8537-5340-4da0-8beb-76079f7351fe</xr:TypeId>
 				<xr:ValueId>103c31a5-7006-47ca-8551-b28598154fe1</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>РаботаСПеременнымиОкружения</Name>
-			<Synonym/>
+			<Name>ПеременныеОкружения</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Переменные окружения</v8:content>
+				</v8:item>
+			</Synonym>
 			<Comment/>
-			<DefaultForm>ExternalDataProcessor.РаботаСПеременнымиОкружения.Form.Форма</DefaultForm>
+			<DefaultForm>ExternalDataProcessor.ПеременныеОкружения.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
