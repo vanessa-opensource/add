@@ -311,14 +311,50 @@
 				</Table>
 			</ChildItems>
 		</UsualGroup>
-		<ProgressBarField name="ИндикаторВыполнения" id="129">
-			<DataPath>ИндикаторВыполнения</DataPath>
-			<TitleLocation>None</TitleLocation>
-			<Representation>Broken</Representation>
-			<ShowPercent>true</ShowPercent>
-			<ContextMenu name="ИндикаторВыполненияКонтекстноеМеню" id="130"/>
-			<ExtendedTooltip name="ИндикаторВыполненияРасширеннаяПодсказка" id="463"/>
-		</ProgressBarField>
+		<UsualGroup name="ГруппаИнформацияПодвал" id="480">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа информация подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа информация подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИнформацияПодвалРасширеннаяПодсказка" id="481"/>
+			<ChildItems>
+				<ProgressBarField name="ИндикаторВыполнения" id="129">
+					<DataPath>ИндикаторВыполнения</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Representation>Broken</Representation>
+					<ShowPercent>true</ShowPercent>
+					<ContextMenu name="ИндикаторВыполненияКонтекстноеМеню" id="130"/>
+					<ExtendedTooltip name="ИндикаторВыполненияРасширеннаяПодсказка" id="463"/>
+				</ProgressBarField>
+				<LabelDecoration name="ДекорацияНастройкиЗагружены" id="482">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;Настройки не загружены&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="ДекорацияНастройкиЗагруженыКонтекстноеМеню" id="483"/>
+					<ExtendedTooltip name="ДекорацияНастройкиЗагруженыРасширеннаяПодсказка" id="484"/>
+					<Events>
+						<Event name="Click">ЗагрузитьНастройкиИзФайла</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
