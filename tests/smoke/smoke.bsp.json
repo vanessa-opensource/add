@@ -1,5 +1,5 @@
 {
-    "$schema":"https://github.com/vanessa-opensource/vanessa-runner/develop/xunit-schema.json",
+    "$schema":"https://raw.githubusercontent.com/vanessa-opensource/vanessa-runner/develop/xunit-schema.json",
     "Отладка":false,
     "ДобавлятьИмяПользователяВПредставлениеТеста":true,
     "ДелатьЛогВыполненияСценариевВТекстовыйФайл":true,
@@ -205,5 +205,9 @@
             "СхемаКомпоновкиДанных",
             "*Макет*"
         ]
+    },
+
+    "РежимУправленияБлокировкойДанных" : {
+        "Используется" : false
     }
 }
