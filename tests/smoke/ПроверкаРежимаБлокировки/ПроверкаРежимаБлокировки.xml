@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
-	<ExternalDataProcessor uuid="fd6d9ecc-2745-4e4c-b8bf-4d2bd5fe785b">
+	<ExternalDataProcessor uuid="3b8e9c72-1099-4e25-a661-f2521a78b0ee">
 		<InternalInfo>
 			<xr:ContainedObject>
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
-				<xr:ObjectId>0966cc50-c47b-497e-adc8-f21eebacff8d</xr:ObjectId>
+				<xr:ObjectId>acae7c85-2063-43d5-b99a-7d8d2a6ed3fb</xr:ObjectId>
 			</xr:ContainedObject>
 			<xr:GeneratedType name="ExternalDataProcessorObject.ПроверкаРежимаБлокировки" category="Object">
-				<xr:TypeId>40de5826-8f25-4b00-a777-0a1a8f271cee</xr:TypeId>
-				<xr:ValueId>8e434fe6-7ceb-4cf8-b1bf-61ccffcf22c0</xr:ValueId>
+				<xr:TypeId>0e8aedc8-9d5e-491f-bbee-e77d3e26920e</xr:TypeId>
+				<xr:ValueId>7ccf7a70-70d9-4203-9ecc-2e94ddf484fc</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -23,6 +23,39 @@
 			<DefaultForm/>
 			<AuxiliaryForm/>
 		</Properties>
-		<ChildObjects/>
+		<ChildObjects>
+			<Attribute uuid="cbdc9b0a-bda7-4e56-9bc3-62c72864e7c5">
+				<Properties>
+					<Name>Настройки</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Настройки</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type/>
+					<PasswordMode>false</PasswordMode>
+					<Format/>
+					<EditFormat/>
+					<ToolTip/>
+					<MarkNegatives>false</MarkNegatives>
+					<Mask/>
+					<MultiLine>false</MultiLine>
+					<ExtendedEdit>false</ExtendedEdit>
+					<MinValue xsi:nil="true"/>
+					<MaxValue xsi:nil="true"/>
+					<FillChecking>DontCheck</FillChecking>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks/>
+					<ChoiceParameters/>
+					<QuickChoice>Auto</QuickChoice>
+					<CreateOnInput>Auto</CreateOnInput>
+					<ChoiceForm/>
+					<LinkByType/>
+					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+				</Properties>
+			</Attribute>
+		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
