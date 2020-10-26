@@ -74,7 +74,7 @@ builds.each{
 }
 
 tasks["behavior video write"] = {
-        node ("video") {
+    // node ("video") {
             stage("behavior video") {
             // ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
             // {
@@ -103,7 +103,7 @@ tasks["behavior video write"] = {
             // }
 
         }
-    }
+    // }
 }
 tasks["buildRelease"] = {
     node("slave"){
@@ -341,8 +341,8 @@ tasks["report"] = {
                 echo "allure status : ${e}"
                 currentBuild.result = 'UNSTABLE'
             }
-            junit 'build/ServiceBases/junitreport/**/*.xml'
-            //junit 'build/ServiceBases/junitreport/*.xml'
+            junit allowEmptyResults: true, testResults: 'build/ServiceBases/junitreport/**/*.xml'
+            //junit allowEmptyResults: true, testResults: 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
 
             try{
