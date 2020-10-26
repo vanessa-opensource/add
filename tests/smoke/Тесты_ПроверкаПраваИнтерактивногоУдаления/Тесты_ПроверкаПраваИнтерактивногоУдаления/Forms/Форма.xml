@@ -16,7 +16,6 @@
 				<v8:Value xsi:type="app:ApplicationUsePurpose">PersonalComputer</v8:Value>
 				<v8:Value xsi:type="app:ApplicationUsePurpose">MobileDevice</v8:Value>
 			</UsePurposes>
-			<ExtendedPresentation/>
 		</Properties>
 	</Form>
 </MetaDataObject>
