@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
-	<ExternalDataProcessor uuid="fbc9b956-9ee2-47a5-a5c2-fba02953bf69">
+	<ExternalDataProcessor uuid="bc9fa001-0cf8-4d64-b38c-286a196be8a9">
 		<InternalInfo>
 			<xr:ContainedObject>
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
-				<xr:ObjectId>5c338ed2-4038-4fb8-b34a-3074bcd8f7af</xr:ObjectId>
+				<xr:ObjectId>eaa9b243-248a-4d9e-bd07-1f0431064923</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.тесты_ПроверкаМакетовСКД" category="Object">
-				<xr:TypeId>1567cdb3-b5a9-45d6-8830-5d836128e75e</xr:TypeId>
-				<xr:ValueId>ef68c847-d316-417d-b22f-63222cf79cfb</xr:ValueId>
+			<xr:GeneratedType name="ExternalDataProcessorObject.Тесты_ПроверкаМакетовСКД" category="Object">
+				<xr:TypeId>048c5350-84a3-4fcf-b366-083824f10d98</xr:TypeId>
+				<xr:ValueId>5cae0e2c-3563-42d1-bd09-d4738d222b19</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>тесты_ПроверкаМакетовСКД</Name>
+			<Name>Тесты_ПроверкаМакетовСКД</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -20,11 +20,11 @@
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<DefaultForm/>
+			<DefaultForm>ExternalDataProcessor.Тесты_ПроверкаМакетовСКД.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
-			<Attribute uuid="f8e3f466-8df4-4741-9696-3595370b2c2b">
+			<Attribute uuid="a25fedff-ec4e-40be-9e57-4428cb280048">
 				<Properties>
 					<Name>Настройки</Name>
 					<Synonym>
@@ -56,6 +56,7 @@
 					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
 				</Properties>
 			</Attribute>
+			<Form>Форма</Form>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
