@@ -52,8 +52,8 @@ stages:
 Восстановление epf-файлов:
 
   stage: Подготовка
-  variables:
-    GIT_STRATEGY: none
+  # variables:
+  #   GIT_STRATEGY: none
   allow_failure: false
   script:
     - chcp 65001
