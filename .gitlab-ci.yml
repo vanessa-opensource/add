@@ -51,15 +51,15 @@ stages:
   artifacts:
     paths:
       - .\build\ib\1Cv8.1CD
-      - .\*.epf
-      - .\epf\**\*.*
-      - .\lib\**\*.*
-      - .\plugins\**\*.*
-      - .\features\**\*.*
-      - .\ospx\**\*.*
-      - .\tests\**\*.*
-      - .\tools\**\*.*
-      - .\vendor\**\*.*
+      - .\**\*.epf
+      # - .\epf\**\*.epf
+      # - .\lib\**\*.epf
+      # - .\plugins\**\*.epf
+      # - .\features\**\*.epf
+      # - .\ospx\**\*.epf
+      # - .\tests\**\*.epf
+      # - .\tools\**\*.epf
+      # - .\vendor\**\*.epf
   tags:
     - vanessa-add
   only:
