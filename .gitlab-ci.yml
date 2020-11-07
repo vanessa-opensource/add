@@ -57,7 +57,7 @@ stages:
   allow_failure: false
   script:
     - chcp 65001
-    - robocopy %EPF_CACHE_PATH% . *.epf cache.json /S /XA:H /NP /NFL /NDL /NOCOPY /NODCOPY /UNICODE
+    - robocopy %EPF_CACHE_PATH% . *.epf cache.json /S /XA:H /NP /UNICODE
   tags:
     - vanessa-add
   artifacts:
@@ -276,7 +276,7 @@ Allure:
   allow_failure: true
   script:
     - chcp 65001
-    - robocopy . %EPF_CACHE_PATH% *.epf cache.json /MIR /XA:H /NP /NFL /NDL /UNICODE
+    - robocopy . %EPF_CACHE_PATH% *.epf cache.json /MIR /XA:H /NP /UNICODE
   when: always
   artifacts:
     when: always
