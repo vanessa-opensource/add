@@ -196,7 +196,7 @@ BDD тестирование (библиотеки):
   stage: Тестирование
   script:
     - chcp 65001
-    - vrunner vanessa %CI_VRUNNER_SETTINGS% --path features/libraries"
+    - vrunner vanessa %CI_VRUNNER_SETTINGS% --path features/libraries
   artifacts:
     when: always
     paths:
