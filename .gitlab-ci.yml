@@ -54,10 +54,6 @@ stages:
   script:
     - chcp 65001
     - robocopy %EPF_CACHE_PATH% . *.epf cache.json /MIR /XA:H /NP /NFL /NDL /XO /UNICODE
-  artifacts:
-    when: always
-    paths:
-      - build/allure-result
   tags:
     - vanessa-add
   only:
