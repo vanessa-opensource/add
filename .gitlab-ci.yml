@@ -53,7 +53,8 @@ stages:
   allow_failure: false
   script:
     - chcp 65001
-    - robocopy %EPF_CACHE_PATH% . *.epf cache.json /MIR /XA:H /NP /NFL /NDL /XO /UNICODE
+    # для успешной отработки в гитлабе в команде есть & echo xxx 
+    - robocopy %EPF_CACHE_PATH% . *.epf cache.json /MIR /XA:H /NP /NFL /NDL /NOCOPY /XO /UNICODE & echo success !
   tags:
     - vanessa-add
   only:
