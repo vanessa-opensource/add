@@ -52,8 +52,8 @@ stages:
 Восстановление epf-файлов:
 
   stage: Подготовка
-  # variables:
-  #   GIT_STRATEGY: none
+  variables:
+    GIT_STRATEGY: fetch
   allow_failure: false
   script:
     - chcp 65001
@@ -82,6 +82,8 @@ stages:
 
 Сборка файлов:
   stage: Подготовка
+  variables:
+    GIT_STRATEGY: none
   allow_failure: false
   script:
     - chcp 65001
@@ -117,6 +119,8 @@ stages:
 
 Сборка пакета:
   stage: Сборка пакета
+  variables:
+    GIT_STRATEGY: none
   script:
     - chcp 65001
     - opm build .
@@ -142,6 +146,8 @@ stages:
 
 Модульные тесты:
   stage: Тестирование
+  variables:
+    GIT_STRATEGY: none
   script:
     - chcp 65001
     - call vrunner xunit tests %CI_VRUNNER_SETTINGS% --reportsxunit "ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}"
@@ -172,6 +178,8 @@ stages:
 
 Дымовые тесты:
   stage: Тестирование
+  variables:
+    GIT_STRATEGY: none
   script:
     - chcp 65001
     - call vrunner xunit tests/smoke %CI_VRUNNER_SETTINGS% --reportsxunit "ГенераторОтчетаJUnitXML{build/junit-smoke/junit-smoke.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-smoke/allure.xml}"
@@ -202,6 +210,8 @@ stages:
 
 BDD тестирование (библиотеки):
   stage: Тестирование
+  variables:
+    GIT_STRATEGY: none
   script:
     - chcp 65001
     - vrunner vanessa %CI_VRUNNER_SETTINGS% --path features/libraries
