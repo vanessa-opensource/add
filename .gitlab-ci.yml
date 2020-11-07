@@ -1,5 +1,6 @@
 variables:
   CI_VRUNNER_SETTINGS: "--settings ./tools/JSON/gitlab-ci.env.json"
+  EPF_CACHE_PATH: E:\vanessa-add-artifacts\develop
 
 stages:
   - Подготовка
@@ -7,6 +8,7 @@ stages:
   - Статический анализ
   - Тестирование
   - Allure
+  - Сохранение собранных файлов во внешнем хранилище
 
 Проверка окружения:
 
@@ -27,6 +29,35 @@ stages:
     - call opm list
     - where vrunner
     - call vrunner version
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/**/*
+      - ospx/**/*
+      - tests/**/*
+      - tools/**/*
+      - vendor/**/*
+      - .gitlab-ci.yml
+      
+Восстановление epf-файлов:
+
+  stage: Подготовка
+  variables:
+    GIT_STRATEGY: none
+  allow_failure: false
+  script:
+    - chcp 65001
+    - robocopy %EPF_CACHE_PATH% . *.epf cache.json /MIR /XA:H /NP /NFL /NDL /XO /UNICODE
+  artifacts:
+    when: always
+    paths:
+      - build/allure-result
   tags:
     - vanessa-add
   only:
@@ -200,6 +231,35 @@ Allure:
   script:
     - call allure generate build/allure-tdd build/allure-smoke ServiceBases/allurereport -c -o build/allure-result
     - echo Allure results - %CI_JOB_URL%/artifacts/file/build/allure-result/index.html
+  artifacts:
+    when: always
+    paths:
+      - build/allure-result
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/**/*
+      - ospx/**/*
+      - tests/**/*
+      - tools/**/*
+      - vendor/**/*
+      - .gitlab-ci.yml
+
+Сохранение epf-файлов:
+
+  stage: Сохранение собранных файлов во внешнем хранилище
+  variables:
+    GIT_STRATEGY: none
+  allow_failure: true
+  script:
+    - chcp 65001
+    - robocopy . %EPF_CACHE_PATH% *.epf cache.json /MIR /XA:H /NP /NFL /NDL /UNICODE
   artifacts:
     when: always
     paths:
