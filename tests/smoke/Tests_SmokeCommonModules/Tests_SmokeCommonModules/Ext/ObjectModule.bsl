@@ -546,6 +546,7 @@ Function CommonModule(CommonModuleName) Export
 	Result = New Structure;
 	Result.Insert("Global", False);
 	Result.Insert("ClientManagedApplication", False);
+	Result.Insert("ClientOrdinaryApplication", False);
 	Result.Insert("Server", False);
 	Result.Insert("ExternalConnection", False);
 	Result.Insert("ServerCall", False);
