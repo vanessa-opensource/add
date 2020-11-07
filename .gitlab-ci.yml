@@ -10,6 +10,10 @@ stages:
   - Allure
   - Сохранение собранных файлов во внешнем хранилище
 
+# cache:
+#   paths:
+#     - build/cache.json
+
 Проверка окружения:
 
   stage: Подготовка
@@ -57,6 +61,9 @@ stages:
     - robocopy %EPF_CACHE_PATH% . *.epf cache.json /MIR /XA:H /NP /NFL /NDL /NOCOPY /XO /UNICODE & echo success !
   tags:
     - vanessa-add
+  artifacts:
+    paths:
+      - .\build\cache.json
   only:
     refs:
       - develop
@@ -73,12 +80,14 @@ stages:
 
 Сборка файлов:
   stage: Подготовка
+  allow_failure: false
   script:
     - chcp 65001
     - opm run init file --v8version 8.3.10
   artifacts:
     paths:
       - .\build\ib\1Cv8.1CD
+      - .\build\cache.json
       - .\**\*.epf
       # - .\epf\**\*.epf
       # - .\lib\**\*.epf
@@ -257,6 +266,7 @@ Allure:
   script:
     - chcp 65001
     - robocopy . %EPF_CACHE_PATH% *.epf cache.json /MIR /XA:H /NP /NFL /NDL /UNICODE
+  when: always
   artifacts:
     when: always
     paths:
