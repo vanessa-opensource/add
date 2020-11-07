@@ -62,8 +62,10 @@ stages:
   tags:
     - vanessa-add
   artifacts:
+    name: "%CI_JOB_STAGE%-%CI_COMMIT_REF_NAME%-epf"
     paths:
       - .\build\cache.json
+      - .\**\*.epf
   only:
     refs:
       - develop
@@ -87,8 +89,8 @@ stages:
   artifacts:
     paths:
       - .\build\ib\1Cv8.1CD
-      - .\build\cache.json
-      - .\**\*.epf
+      # - .\build\cache.json
+      # - .\**\*.epf
       # - .\epf\**\*.epf
       # - .\lib\**\*.epf
       # - .\plugins\**\*.epf
