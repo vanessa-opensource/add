@@ -6,7 +6,7 @@
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
 				<xr:ObjectId>eaa9b243-248a-4d9e-bd07-1f0431064923</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.Тесты_ПроверкаМакетовСКД" category="Object">
+			<xr:GeneratedType name="ExternalDataProcessorObject.тесты_ПроверкаМакетовСКД" category="Object">
 				<xr:TypeId>048c5350-84a3-4fcf-b366-083824f10d98</xr:TypeId>
 				<xr:ValueId>5cae0e2c-3563-42d1-bd09-d4738d222b19</xr:ValueId>
 			</xr:GeneratedType>
@@ -20,7 +20,7 @@
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<DefaultForm>ExternalDataProcessor.Тесты_ПроверкаМакетовСКД.Form.Форма</DefaultForm>
+			<DefaultForm>ExternalDataProcessor.тесты_ПроверкаМакетовСКД.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
