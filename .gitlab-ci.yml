@@ -90,6 +90,8 @@ stages:
   artifacts:
     paths:
       - .\build\ib\1Cv8.1CD
+      - .\build\ibservicexdd\1Cv8.1CD
+      - .\build\ibservice\1Cv8.1CD
       # - .\build\cache.json
       # - .\**\*.epf
       # - .\epf\**\*.epf
@@ -203,7 +205,7 @@ stages:
     GIT_STRATEGY: none
   script:
     - chcp 65001
-    - call vrunner xunit tests %CI_VRUNNER_SETTINGS% --reportsxunit "ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}"
+    - call vrunner xunit tests/xunit %CI_VRUNNER_SETTINGS% --reportsxunit "ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}"
   artifacts:
     when: always
     paths:
