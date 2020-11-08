@@ -274,7 +274,7 @@ BDD тестирование (библиотеки):
     when: always
     paths:
       - ServiceBases/junitreport/*.xml
-      - ServiceBases/allurereport/*.*
+      - ServiceBases/allurereport/**/*.*
     reports:
       junit:
         - ServiceBases/junitreport/*.xml
