@@ -56,8 +56,8 @@ stages:
   allow_failure: true
   script:
     - chcp 65001
-    - cmd /c "robocopy %EPF_CACHE_PATH% . *.epf cache.json /S /XA:H /NP /UNICODE & dir *.yml & echo success!"
-    - cmd /c "robocopy %EPF_CACHE_PATH%\.forbuild .\.forbuild *.* /S /XA:H /NP /UNICODE & dir *.yml & echo success!"
+    - cmd /c "robocopy %EPF_CACHE_PATH% . *.epf cache.json /S /XA:H /NP /XD .git /UNICODE & dir *.yml & echo success!"
+    - cmd /c "robocopy %EPF_CACHE_PATH%\.forbuild .\.forbuild *.* /S /XA:H /NP /XD .git /UNICODE & dir *.yml & echo success!"
   tags:
     - vanessa-add
   artifacts:
@@ -127,7 +127,7 @@ stages:
   allow_failure: true
   script:
     - chcp 65001
-    - cmd /c "robocopy . %EPF_CACHE_PATH% *.epf cache.json /MIR /XA:H /NP /UNICODE" & dir *.yml & echo success"
+    - cmd /c "robocopy . %EPF_CACHE_PATH% *.epf cache.json /MIR /XA:H /NP /XD .git /UNICODE" & dir *.yml & echo success"
   when: always
   tags:
     - vanessa-add
@@ -182,8 +182,8 @@ stages:
   allow_failure: true
   script:
     - chcp 65001
-    - cmd /c "robocopy .\.forbuild %EPF_CACHE_PATH%\.forbuild *.* /MIR /XA:H /NP /UNICODE" & dir *.yml & echo success"
-    - cmd /c "robocopy .\build %EPF_CACHE_PATH%\build cache.json /XA:H /NP /UNICODE" & dir *.yml & echo success"
+    - cmd /c "robocopy .\.forbuild %EPF_CACHE_PATH%\.forbuild *.* /MIR /XA:H /NP /XD .git /UNICODE" & dir *.yml & echo success"
+    - cmd /c "robocopy .\build %EPF_CACHE_PATH%\build cache.json /XA:H /NP /XD .git /UNICODE" & dir *.yml & echo success"
   when: always
   tags:
     - vanessa-add
