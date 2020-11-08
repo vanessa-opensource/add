@@ -2,6 +2,11 @@ variables:
   CI_VRUNNER_SETTINGS: "--settings ./tools/JSON/gitlab-ci-env.json"
   EPF_CACHE_PATH: E:\vanessa-add-artifacts\develop
 
+cache:
+  paths:
+    - .\build\cache.json
+    - .\**\*.epf
+
 stages:
   - Подготовка
   - Сборка пакета
