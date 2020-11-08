@@ -47,7 +47,7 @@ stages:
       - tools/**/*
       - vendor/**/*
       - .gitlab-ci.yml
-      
+
 Восстановление epf-файлов:
 
   stage: Подготовка
@@ -57,6 +57,7 @@ stages:
   script:
     - chcp 65001
     - cmd /c "robocopy %EPF_CACHE_PATH% . *.epf cache.json /S /XA:H /NP /UNICODE & dir *.yml & echo success!"
+    - cmd /c "robocopy %EPF_CACHE_PATH%\.forbuild .\.forbuild *.* /S /XA:H /NP /UNICODE & dir *.yml & echo success!"
   tags:
     - vanessa-add
   artifacts:
@@ -167,6 +168,33 @@ stages:
       - tests/smoke/**/*
       - tools/**/*
       # - vendor/**/*
+      - .gitlab-ci.yml
+
+Сохранение epf-файлов для сборки пакета:
+
+  stage: Подготовка
+  variables:
+    GIT_STRATEGY: none
+  allow_failure: true
+  script:
+    - chcp 65001
+    - cmd /c "robocopy .\.forbuild %EPF_CACHE_PATH%\.forbuild *.* /MIR /XA:H /NP /UNICODE" & dir *.yml & echo success"
+    - cmd /c "robocopy .\build %EPF_CACHE_PATH%\build cache.json /XA:H /NP /UNICODE" & dir *.yml & echo success"
+  when: always
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/**/*
+      - ospx/**/*
+      - tests/**/*
+      - tools/**/*
+      - vendor/**/*
       - .gitlab-ci.yml
 
 Модульные тесты:
