@@ -1,4 +1,4 @@
-﻿Var CreatedInWindowAndFormVariables;
+﻿Var CreatedInWindow)AndFormVariables;
 Var Indent;
 
 Function Convert(TextToConvert) Export
@@ -187,10 +187,10 @@ Procedure ConvertIntoScenario(Reader, Writer)
 		Indent = Indent + 1;
 
 		AddLine(Writer, ? (ScriptVariant = "en", "TestApplication = New TestedApplication();", "ТестовоеПриложение = Новый ТестируемоеПриложение();"));
-		AddLine(Writer, ? (ScriptVariant = "en", "TimeOut = CurrentDate() + 60;", "ВремяОкончанияОжидания = ТекущаяДата() + 60;"));
+		AddLine(Writer, ? (ScriptVariant = "en", "TimeOut = CurrentDate() + 60;", "ВремяОкончанияОжидания = ТекущаяДатаСеанса() + 60;"));
 		AddLine(Writer, ? (ScriptVariant = "en", "Connected = False;", "Подключен = Ложь;"));
 		AddLine(Writer, ? (ScriptVariant = "en", "ConnectionErrorDescription = """";", "ОписаниеОшибкиСоединения = """";"));
-		AddLine(Writer, ? (ScriptVariant = "en", "While Not CurrentDate() >= TimeOut Do", "Пока Не ТекущаяДата() >= ВремяОкончанияОжидания Цикл"));
+		AddLine(Writer, ? (ScriptVariant = "en", "While Not CurrentDate() >= TimeOut Do", "Пока Не ТекущаяДатаСеанса() >= ВремяОкончанияОжидания Цикл"));
 		AddLine(Writer, ? (ScriptVariant = "en", "	Try", "	Попытка"));
 		AddLine(Writer, ? (ScriptVariant = "en", "		TestApplication.Connect();", "		ТестовоеПриложение.УстановитьСоединение();"));
 		AddLine(Writer, ? (ScriptVariant = "en", "		Connected = True;", "		Подключен = Истина;"));
