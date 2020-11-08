@@ -53,10 +53,10 @@ stages:
   stage: Подготовка
   variables:
     GIT_STRATEGY: fetch
-  allow_failure: false
+  allow_failure: true
   script:
     - chcp 65001
-    - robocopy %EPF_CACHE_PATH% . *.epf cache.json /S /XA:H /NP /UNICODE
+    - cmd /c "robocopy %EPF_CACHE_PATH% . *.epf cache.json /S /XA:H /NP /UNICODE & dir *.yml & echo success!"
   tags:
     - vanessa-add
   artifacts:
@@ -123,12 +123,8 @@ stages:
   allow_failure: true
   script:
     - chcp 65001
-    - robocopy . %EPF_CACHE_PATH% *.epf cache.json /MIR /XA:H /NP /UNICODE
+    - cmd /c "robocopy . %EPF_CACHE_PATH% *.epf cache.json /MIR /XA:H /NP /UNICODE" & dir *.yml & echo success"
   when: always
-  artifacts:
-    when: always
-    paths:
-      - build/allure-result
   tags:
     - vanessa-add
   only:
@@ -149,6 +145,7 @@ stages:
   stage: Сборка пакета
   variables:
     GIT_STRATEGY: none
+  allow_failure: true
   script:
     - chcp 65001
     - opm build .
