@@ -172,7 +172,7 @@ stages:
 
 Сохранение epf-файлов для сборки пакета:
 
-  stage: Подготовка
+  stage: Сборка пакета
   variables:
     GIT_STRATEGY: none
   allow_failure: true
