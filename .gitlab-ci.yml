@@ -88,6 +88,7 @@ stages:
     - chcp 65001
     - opm run init file --v8version 8.3.10
   artifacts:
+    name: "%CI_JOB_STAGE%-%CI_COMMIT_REF_NAME%-ib"
     paths:
       - .\build\ib\1Cv8.1CD
       - .\build\ibservicexdd\1Cv8.1CD
@@ -153,6 +154,7 @@ stages:
     - chcp 65001
     - opm build .
   artifacts:
+    name: "%CI_JOB_STAGE%-%CI_COMMIT_REF_NAME%-opm-build"
     paths:
       - .\add-*.zip
       - .\add-*.ospx
@@ -207,6 +209,7 @@ stages:
     - chcp 65001
     - call vrunner xunit tests/xunit %CI_VRUNNER_SETTINGS% --reportsxunit "ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}"
   artifacts:
+    name: "%CI_JOB_STAGE%-%CI_COMMIT_REF_NAME%-tdd"
     when: always
     paths:
       - build/junit-tdd/*.xml
@@ -240,6 +243,7 @@ stages:
     - call vrunner xunit tests/smoke %CI_VRUNNER_SETTINGS% --reportsxunit "ГенераторОтчетаJUnitXML{build/junit-smoke/junit-smoke.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-smoke/allure.xml}"
   artifacts:
     when: always
+    name: "%CI_JOB_STAGE%-%CI_COMMIT_REF_NAME%-smoke"
     paths:
       - build/junit-smoke/*.xml
       - build/allure-smoke/*.*
@@ -272,6 +276,7 @@ BDD тестирование (библиотеки):
     - vrunner vanessa %CI_VRUNNER_SETTINGS% --path features/libraries
   artifacts:
     when: always
+    name: "%CI_JOB_STAGE%-%CI_COMMIT_REF_NAME%-bdd-libs"
     paths:
       - ServiceBases/junitreport/*.xml
       - ServiceBases/allurereport/**/*.*
@@ -307,6 +312,7 @@ Allure:
     - echo Allure results - %CI_JOB_URL%/artifacts/file/build/allure-result/index.html
   artifacts:
     when: always
+    name: "%CI_JOB_STAGE%-%CI_COMMIT_REF_NAME%-allure"
     paths:
       - build/allure-result
   tags:
