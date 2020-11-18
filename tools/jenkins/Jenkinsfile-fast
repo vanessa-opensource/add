@@ -35,7 +35,7 @@ properties([
         logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '30', daysToKeepStr: '', numToKeepStr: '30'))
 ])
 
-node("slave") {
+node("vanessa-add") {
   isUnix = isUnix();
 
   stage('Получение исходных кодов') {

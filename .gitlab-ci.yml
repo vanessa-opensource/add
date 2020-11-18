@@ -1,0 +1,326 @@
+variables:
+  CI_VRUNNER_SETTINGS: "--settings ./tools/JSON/gitlab-ci-env.json"
+  EPF_CACHE_PATH: E:\vanessa-add-artifacts\develop
+
+stages:
+  - Подготовка
+  - Сборка пакета
+  - Статический анализ
+  - Тестирование
+  - Allure
+
+# cache:
+#   paths:
+#     - build/cache.json
+
+Проверка окружения:
+
+  stage: Подготовка
+  variables:
+    GIT_STRATEGY: none
+    # LOGOS_LEVEL: "DEBUG"
+  tags:
+    - vanessa-add
+  script:
+    - chcp 65001
+    - set PATH
+    - set
+    - where oscript
+    - oscript -version
+    - where opm
+    - call opm version
+    - call opm list
+    - where vrunner
+    - call vrunner version
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/**/*
+      - ospx/**/*
+      - tests/**/*
+      - tools/**/*
+      - vendor/**/*
+      - .gitlab-ci.yml
+
+Восстановление epf-файлов:
+
+  stage: Подготовка
+  variables:
+    GIT_STRATEGY: fetch
+  allow_failure: true
+  script:
+    - chcp 65001
+    - cmd /c "robocopy %EPF_CACHE_PATH% . *.epf cache.json /S /XA:H /NP /UNICODE & dir *.yml & echo success!"
+    - cmd /c "robocopy %EPF_CACHE_PATH%\.forbuild .\.forbuild *.* /S /XA:H /NP /UNICODE & dir *.yml & echo success!"
+  tags:
+    - vanessa-add
+  artifacts:
+    name: "%CI_JOB_STAGE%-%CI_COMMIT_REF_NAME%-epf"
+    paths:
+      - .\build\cache.json
+      - .\**\*.epf
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/**/*
+      - ospx/**/*
+      - tests/**/*
+      - tools/**/*
+      - vendor/**/*
+      - .gitlab-ci.yml
+
+Сборка файлов:
+  stage: Подготовка
+  variables:
+    GIT_STRATEGY: none
+  allow_failure: false
+  script:
+    - chcp 65001
+    - opm run init file --v8version 8.3.10
+  artifacts:
+    paths:
+      - .\build\ib\1Cv8.1CD
+      - .\build\ibservicexdd\1Cv8.1CD
+      - .\build\ibservice\1Cv8.1CD
+      # - .\build\cache.json
+      # - .\**\*.epf
+      # - .\epf\**\*.epf
+      # - .\lib\**\*.epf
+      # - .\plugins\**\*.epf
+      # - .\features\**\*.epf
+      # - .\ospx\**\*.epf
+      # - .\tests\**\*.epf
+      # - .\tools\**\*.epf
+      # - .\vendor\**\*.epf
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/**/*
+      - ospx/**/*
+      - tests/**/*
+      - tools/**/*
+      - vendor/**/*
+      - .gitlab-ci.yml
+
+Сохранение epf-файлов:
+
+  stage: Подготовка
+  variables:
+    GIT_STRATEGY: none
+  allow_failure: true
+  script:
+    - chcp 65001
+    - cmd /c "robocopy . %EPF_CACHE_PATH% *.epf cache.json /MIR /XA:H /NP /UNICODE" & dir *.yml & echo success"
+  when: always
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/**/*
+      - ospx/**/*
+      - tests/**/*
+      - tools/**/*
+      - vendor/**/*
+      - .gitlab-ci.yml
+
+Сборка пакета:
+  stage: Сборка пакета
+  variables:
+    GIT_STRATEGY: none
+  allow_failure: true
+  script:
+    - chcp 65001
+    - opm build .
+  artifacts:
+    paths:
+      - .\add-*.zip
+      - .\add-*.ospx
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/libraries/**/*
+      - ospx/**/*
+      - tests/smoke/**/*
+      - tools/**/*
+      # - vendor/**/*
+      - .gitlab-ci.yml
+
+Сохранение epf-файлов для сборки пакета:
+
+  stage: Сборка пакета
+  variables:
+    GIT_STRATEGY: none
+  allow_failure: true
+  script:
+    - chcp 65001
+    - cmd /c "robocopy .\.forbuild %EPF_CACHE_PATH%\.forbuild *.* /MIR /XA:H /NP /UNICODE" & dir *.yml & echo success"
+    - cmd /c "robocopy .\build %EPF_CACHE_PATH%\build cache.json /XA:H /NP /UNICODE" & dir *.yml & echo success"
+  when: always
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/**/*
+      - ospx/**/*
+      - tests/**/*
+      - tools/**/*
+      - vendor/**/*
+      - .gitlab-ci.yml
+
+Модульные тесты:
+  stage: Тестирование
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - chcp 65001
+    - call vrunner xunit tests/xunit %CI_VRUNNER_SETTINGS% --reportsxunit "ГенераторОтчетаJUnitXML{build/junit-tdd/junit-tdd.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-tdd/allure.xml}"
+  artifacts:
+    when: always
+    paths:
+      - build/junit-tdd/*.xml
+      - build/allure-tdd/*.*
+    reports:
+      junit:
+        - build/junit-tdd/*.xml
+  allow_failure: true
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      # - features/**/*
+      # - ospx/**/*
+      - tests/**/*
+      - tools/**/*
+      # - vendor/**/*
+      - .gitlab-ci.yml
+
+Дымовые тесты:
+  stage: Тестирование
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - chcp 65001
+    - call vrunner xunit tests/smoke %CI_VRUNNER_SETTINGS% --reportsxunit "ГенераторОтчетаJUnitXML{build/junit-smoke/junit-smoke.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure-smoke/allure.xml}"
+  artifacts:
+    when: always
+    paths:
+      - build/junit-smoke/*.xml
+      - build/allure-smoke/*.*
+    reports:
+      junit:
+        - build/junit-smoke/*.xml
+  allow_failure: true
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/xdd*/**/*
+      # - lib/**/*
+      - plugins/**/*
+      # - features/**/*
+      # - ospx/**/*
+      - tests/smoke/**/*
+      - tools/**/*
+      # - vendor/**/*
+      - .gitlab-ci.yml
+
+BDD тестирование (библиотеки):
+  stage: Тестирование
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - chcp 65001
+    - vrunner vanessa %CI_VRUNNER_SETTINGS% --path features/libraries
+  artifacts:
+    when: always
+    paths:
+      - ServiceBases/junitreport/*.xml
+      - ServiceBases/allurereport/*.*
+    reports:
+      junit:
+        - ServiceBases/junitreport/*.xml
+  allow_failure: true
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/bdd*/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/**/*
+      # - ospx/**/*
+      # - tests/smoke/**/*
+      - tools/**/*
+      - vendor/**/*
+      - .gitlab-ci.yml
+
+Allure:
+
+  stage: Allure
+  variables:
+    GIT_STRATEGY: none
+  when: always
+  allow_failure: true
+  script:
+    - call allure generate build/allure-tdd build/allure-smoke ServiceBases/allurereport -c -o build/allure-result
+    - echo Allure results - %CI_JOB_URL%/artifacts/file/build/allure-result/index.html
+  artifacts:
+    when: always
+    paths:
+      - build/allure-result
+  tags:
+    - vanessa-add
+  only:
+    refs:
+      - develop
+    changes:
+      - epf/**/*
+      - lib/**/*
+      - plugins/**/*
+      - features/**/*
+      - ospx/**/*
+      - tests/**/*
+      - tools/**/*
+      - vendor/**/*
+      - .gitlab-ci.yml

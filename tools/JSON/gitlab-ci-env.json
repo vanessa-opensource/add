@@ -1,0 +1,45 @@
+﻿{
+    "$schema": "https://github.com/vanessa-opensource/vanessa-runner/blob/develop/vanessa-runner-schema.json",
+    "default": {
+        "--ibconnection": "/F./build/ib",
+        "--db-user": "",
+        "--db-pwd": "",
+        "--workspace": ".",
+        "--v8version": "8.3.10",
+        "--additional": "/DisplayAllFunctions /Lru /iTaxi"
+        // "--additional": "/DisplayAllFunctions /Lru /iTaxi /TESTMANAGER /Debug /DebuggerURL tcp://localhost:1561"
+    },
+    "vanessa": {
+        "--vanessasettings": "./tools/JSON/VBParams8310UF.json",
+        "--pathvanessa": "./bddRunner.epf"
+    },
+    "compileepf": {
+        "--ibconnection": "/F./build/ibservice",
+        "--db-user": "",
+        "--db-pwd": "",
+        "inputPath": "./epf",
+        "outputPath": ".//."
+    },
+    "decompileepf": {
+        "--ibconnection": "/F./build/ibservice",
+        "--db-user": "",
+        "--db-pwd": "",
+        "inputPath": "./bddRunner.epf",
+        "outputPath": "./epf"
+    },
+    "compile": {
+        "-s": "./lib/CF/83NoSync",
+        "-o": "./build/1Cv8.cf"
+    },
+    "xunit": {
+        "--ibconnection": "/F./build/ibservicexdd",
+        "--db-user": "Admin",
+        "--db-pwd": "",
+        "--xddConfig": "./tools/JSON/xUnitParams.json",
+        "testsPath": "./build/tests/smoke",
+        "--testclient": "::47001",
+        "--reportsxunit": "ГенераторОтчетаJUnitXML{build/ServiceBases/junitreport/xdd/xddreport.xml};ГенераторОтчетаAllureXML{build/ServiceBases/allurereport/xdd/allure-testsuite.xml}",
+        "--xddExitCodePath": "xddExitCodePath.txt",
+        "--pathxunit": "./xddTestRunner.epf"
+    }
+}

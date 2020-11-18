@@ -439,7 +439,7 @@
 							<ContextMenu name="РеквизитМногострочнаяСтрокаКонтекстноеМеню" id="177"/>
 							<ExtendedTooltip name="РеквизитМногострочнаяСтрокаРасширеннаяПодсказка" id="178"/>
 						</InputField>
-						<LabelField name="ФорматированнаяСтрокаСсылка" id="193" DisplayImportance="VeryHigh">
+						<LabelField name="ФорматированнаяСтрокаСсылка" id="193">
 							<DataPath>ФорматированнаяСтрока</DataPath>
 							<ContextMenu name="ФорматированнаяСтрокаСсылкаКонтекстноеМеню" id="194"/>
 							<ExtendedTooltip name="ФорматированнаяСтрокаСсылкаРасширеннаяПодсказка" id="195"/>
