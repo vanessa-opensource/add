@@ -105,6 +105,7 @@
     },
 
     "smokeInputBasedOn": {
+        "Используется":true,
         "Исключения": {
             "ДокументыПроведенные": [
                 "ЧтоОткрываем/ДокументОснование",
@@ -117,6 +118,7 @@
     },
 
     "SmokeCommonModules": {
+        "Используется":true,
         "Subsystems": ["FoxyLink",
             "FoxyLink.GeneralSettings",
             "FoxyLink.Plugins.Channels",

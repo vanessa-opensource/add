@@ -143,6 +143,7 @@
     },
 
     "smokeInputBasedOn": {
+        "Используется":true,
         "Исключения": {
             "ДокументыПроведенные": [
                 "ЧтоОткрываем/ДокументОснование",
@@ -155,6 +156,7 @@
     },
 
     "SmokeCommonModules": {
+        "Используется":true,
         "Subsystems": [
          ],
         "ExcludedCommonModules": [
