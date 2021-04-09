@@ -1,3 +1,12 @@
+.only_develop: &only_develop
+  only:
+    refs:
+      - develop
+      # TODO вернуть ветку девелоп и убрать тест-ветку
+      - pull/pr-851
+    # changes:
+    #   - src/config/VERSION
+
 variables:
   CI_VRUNNER_SETTINGS: "--settings ./tools/JSON/gitlab-ci-env.json"
   EPF_CACHE_PATH: E:\vanessa-add-artifacts\develop
@@ -40,8 +49,8 @@ stages:
   tags:
     - vanessa-add
   only:
-    refs:
-      - develop
+    # refs:
+    #   - develop
     changes:
       - epf/**/*
       - lib/**/*
@@ -52,6 +61,7 @@ stages:
       - tools/**/*
       - vendor/**/*
       - .gitlab-ci.yml
+  <<: *only_develop
 
 Восстановление epf-файлов:
 
@@ -71,8 +81,8 @@ stages:
       - .\build\cache.json
       - .\**\*.epf
   only:
-    refs:
-      - develop
+    # refs:
+    #   - develop
     changes:
       - epf/**/*
       - lib/**/*
@@ -83,6 +93,7 @@ stages:
       - tools/**/*
       - vendor/**/*
       - .gitlab-ci.yml
+  <<: *only_develop
 
 Сборка файлов:
   stage: Подготовка
@@ -111,8 +122,8 @@ stages:
   tags:
     - vanessa-add
   only:
-    refs:
-      - develop
+    # refs:
+    #   - develop
     changes:
       - epf/**/*
       - lib/**/*
@@ -123,6 +134,7 @@ stages:
       - tools/**/*
       - vendor/**/*
       - .gitlab-ci.yml
+  <<: *only_develop
 
 Сохранение epf-файлов:
 
@@ -137,8 +149,8 @@ stages:
   tags:
     - vanessa-add
   only:
-    refs:
-      - develop
+    # refs:
+    #   - develop
     changes:
       - epf/**/*
       - lib/**/*
@@ -149,6 +161,7 @@ stages:
       - tools/**/*
       - vendor/**/*
       - .gitlab-ci.yml
+  <<: *only_develop
 
 Сборка пакета:
   stage: Сборка пакета
@@ -166,8 +179,8 @@ stages:
   tags:
     - vanessa-add
   only:
-    refs:
-      - develop
+    # refs:
+    #   - develop
     changes:
       - epf/**/*
       - lib/**/*
@@ -178,6 +191,7 @@ stages:
       - tools/**/*
       # - vendor/**/*
       - .gitlab-ci.yml
+  <<: *only_develop
 
 Сохранение epf-файлов для сборки пакета:
 
@@ -193,8 +207,8 @@ stages:
   tags:
     - vanessa-add
   only:
-    refs:
-      - develop
+    # refs:
+    #   - develop
     changes:
       - epf/**/*
       - lib/**/*
@@ -205,6 +219,7 @@ stages:
       - tools/**/*
       - vendor/**/*
       - .gitlab-ci.yml
+  <<: *only_develop
 
 Модульные тесты:
   stage: Тестирование
@@ -226,8 +241,8 @@ stages:
   tags:
     - vanessa-add
   only:
-    refs:
-      - develop
+    # refs:
+    #   - develop
     changes:
       - epf/**/*
       - lib/**/*
@@ -238,6 +253,7 @@ stages:
       - tools/**/*
       # - vendor/**/*
       - .gitlab-ci.yml
+  <<: *only_develop
 
 Дымовые тесты:
   stage: Тестирование
@@ -259,8 +275,8 @@ stages:
   tags:
     - vanessa-add
   only:
-    refs:
-      - develop
+    # refs:
+    #   - develop
     changes:
       - epf/xdd*/**/*
       # - lib/**/*
@@ -271,6 +287,7 @@ stages:
       - tools/**/*
       # - vendor/**/*
       - .gitlab-ci.yml
+  <<: *only_develop
 
 BDD тестирование (библиотеки):
   stage: Тестирование
@@ -292,8 +309,8 @@ BDD тестирование (библиотеки):
   tags:
     - vanessa-add
   only:
-    refs:
-      - develop
+    # refs:
+    #   - develop
     changes:
       - epf/bdd*/**/*
       - lib/**/*
@@ -304,6 +321,7 @@ BDD тестирование (библиотеки):
       - tools/**/*
       - vendor/**/*
       - .gitlab-ci.yml
+  <<: *only_develop
 
 Allure:
 
@@ -323,8 +341,8 @@ Allure:
   tags:
     - vanessa-add
   only:
-    refs:
-      - develop
+    # refs:
+    #   - develop
     changes:
       - epf/**/*
       - lib/**/*
@@ -335,3 +353,4 @@ Allure:
       - tools/**/*
       - vendor/**/*
       - .gitlab-ci.yml
+  <<: *only_develop
