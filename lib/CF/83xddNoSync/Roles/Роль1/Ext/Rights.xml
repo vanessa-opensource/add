@@ -828,6 +828,13 @@
 		</right>
 	</object>
 	<object>
+		<name>Catalog.дт_ЭлементыСхемРазмещения</name>
+		<right>
+			<name>Read</name>
+			<value>true</value>
+		</right>
+	</object>
+	<object>
 		<name>Document.Документ2</name>
 		<right>
 			<name>Read</name>

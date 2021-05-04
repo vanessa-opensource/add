@@ -6,21 +6,21 @@
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
 				<xr:ObjectId>0c32756f-68ca-4b55-9a9f-f3b415ad0b72</xr:ObjectId>
 			</xr:ContainedObject>
-			<xr:GeneratedType name="ExternalDataProcessorObject.Тесты_ПроверкаПравКУстаревшимОбъектамМетданных" category="Object">
+			<xr:GeneratedType name="ExternalDataProcessorObject.Тесты_ПроверкаПравКУстаревшимОбъектам" category="Object">
 				<xr:TypeId>374454b4-1df5-4b67-9e85-800ed93937ff</xr:TypeId>
 				<xr:ValueId>95383c60-00b2-4dc5-af00-0832ae567804</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
-			<Name>Тесты_ПроверкаПравКУстаревшимОбъектамМетданных</Name>
+			<Name>Тесты_ПроверкаПравКУстаревшимОбъектам</Name>
 			<Synonym>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Тесты "Проверка прав к устаревшим объектам метаданных"</v8:content>
+					<v8:content>Тесты "Проверка прав к устаревшим объектам"</v8:content>
 				</v8:item>
 			</Synonym>
 			<Comment/>
-			<DefaultForm>ExternalDataProcessor.Тесты_ПроверкаПравКУстаревшимОбъектамМетданных.Form.Форма</DefaultForm>
+			<DefaultForm>ExternalDataProcessor.Тесты_ПроверкаПравКУстаревшимОбъектам.Form.Форма</DefaultForm>
 			<AuxiliaryForm/>
 		</Properties>
 		<ChildObjects>
@@ -35,6 +35,44 @@
 					</Synonym>
 					<Comment/>
 					<Type/>
+					<PasswordMode>false</PasswordMode>
+					<Format/>
+					<EditFormat/>
+					<ToolTip/>
+					<MarkNegatives>false</MarkNegatives>
+					<Mask/>
+					<MultiLine>false</MultiLine>
+					<ExtendedEdit>false</ExtendedEdit>
+					<MinValue xsi:nil="true"/>
+					<MaxValue xsi:nil="true"/>
+					<FillChecking>DontCheck</FillChecking>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks/>
+					<ChoiceParameters/>
+					<QuickChoice>Auto</QuickChoice>
+					<CreateOnInput>Auto</CreateOnInput>
+					<ChoiceForm/>
+					<LinkByType/>
+					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="5928d8a7-13e3-4983-9e94-60f8da0aef74">
+				<Properties>
+					<Name>ИмяТеста</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя теста</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>250</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
 					<PasswordMode>false</PasswordMode>
 					<Format/>
 					<EditFormat/>
