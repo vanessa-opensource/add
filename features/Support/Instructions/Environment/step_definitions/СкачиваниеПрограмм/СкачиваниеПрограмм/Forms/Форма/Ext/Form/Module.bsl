@@ -30,7 +30,7 @@
 		СтрокаКоманды = "TASKKILL /F /IM chrome.exe";
 		КомандаСистемы(СтрокаКоманды);
 
-		ОткрытьСайт("https://github.com/silverbulleters/add");
+		ОткрытьСайт("https://github.com/vanessa-opensource/add");
 
 		Попытка
 			Оболочка = Новый COMОбъект("Shell.Application");

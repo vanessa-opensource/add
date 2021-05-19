@@ -7,7 +7,7 @@
 #Можно использовать вообще пустую базу.
 #TestClient должен быть в той базе, которая обновляется.
 #Параметры TestClient можно передать через json. Вот пример как это можно сделать:
-#https://github.com/silverbulleters/add/blob/develop/tools/JSON/VBParams839UF.json
+#https://github.com/vanessa-opensource/add/blob/develop/tools/JSON/VBParams839UF.json
 
 Функциональность: Закрытие окон обновления конфигурации
 	Как Разработчик

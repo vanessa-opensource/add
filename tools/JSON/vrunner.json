@@ -39,6 +39,10 @@
         "testsPath": "./tests",
         "--reportsxunit": "ГенераторОтчетаJUnitXML{build/junit.xml};ГенераторОтчетаAllureXMLВерсия2{build/allure/allure.xml}",
         "--xddExitCodePath": "./build/xddExitCodePath.txt",
-        "--pathxunit": "./xddTestRunner.epf"
+        "--pathxunit": "./xddTestRunner.epf",
+        "--testclient" : "Admin::47003",
+        "--testclient-additional" : "/iTaxi"
+        // "--testclient-additional" : "/Debug /DebuggerURL tcp://localhost:1561"
+        // "--testclient-additional" : "/debug -http -attach /debuggerURL http://127.0.0.1:2550"
     }
 }

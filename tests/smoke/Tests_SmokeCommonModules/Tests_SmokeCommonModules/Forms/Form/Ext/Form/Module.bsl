@@ -36,7 +36,12 @@ Procedure ЗаполнитьНаборТестов(TestsSet, CoreContextParam) E
     CoreContext = CoreContextParam;
     
     LoadSettings();
-    LoadSubsystemTests(TestsSet, Object.Settings.Subsystems); 
+	
+	Если Не НужноВыполнятьТест() Тогда
+		Возврат;
+	КонецЕсли;
+	
+	LoadSubsystemTests(TestsSet, Object.Settings.Subsystems); 
     LoadSmokeCommonModuleTests(TestsSet, Object.Settings.Subsystems, Object.Settings.ExcludedCommonModules);
         
 EndProcedure // ЗаполнитьНаборТестов()
@@ -489,6 +494,11 @@ Procedure Fact_FullAccessRightsGranted(CommonModuleName, Module)
     
 EndProcedure // Fact_FullAccessRightsGranted()
 
+&НаКлиенте
+Функция SettingsPath() Экспорт
+	Возврат "SmokeCommonModules";
+КонецФункции
+
 &AtClient
 // Loads smoke tests settings. 
 //
@@ -498,7 +508,7 @@ Procedure LoadSettings()
 		Return;
 	EndIf;
 	
-    SettingsPath = "SmokeCommonModules";
+    SettingsPath = SettingsPath();
     SettingsPlugin = CoreContext.Плагин("Настройки");
     SettingsPlugin.Инициализация(CoreContext);
     
@@ -519,6 +529,32 @@ Procedure LoadSettings()
     Object.Settings = New FixedStructure(Settings);
     
 EndProcedure // LoadSettings()
+
+&НаКлиенте
+Функция НужноВыполнятьТест()
+	
+	ЗначениеПоУмолчанию = Истина;
+	
+	LoadSettings();
+	
+	Настройки = Object.Settings;
+	
+	Если Не ЗначениеЗаполнено(Настройки) Тогда
+		Возврат ЗначениеПоУмолчанию;
+	КонецЕсли;
+	
+	КлючНастройки = SettingsPath();
+	
+	ВыполнятьТест = Неопределено;
+	Если ТипЗнч(Настройки) = Тип("ФиксированнаяСтруктура") 
+		И Настройки.Свойство("Используется", ВыполнятьТест) Тогда
+
+			Возврат ВыполнятьТест = Истина;	
+	КонецЕсли;
+	
+	Возврат ЗначениеПоУмолчанию;
+
+КонецФункции
 
 &AtClient
 // Only for internal use.

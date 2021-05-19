@@ -1,5 +1,5 @@
 ﻿{
-    "$schema":"https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/behavior-schema.json",
+    "$schema":"https://github.com/vanessa-opensource/vanessa-runner/develop/behavior-schema.json",
     "ИмяСборки": "8310UF",
     "ВерсияПлатформы": "8.3.10",
     "ВыводитьСообщенияВФайл": "./ServiceBases/Messages 8.3.10 UF no sync.txt",
@@ -19,7 +19,7 @@
             "ДопПараметры": "/NАдмин",
             "ТипКлиента": "Тонкий",
             "ИмяКомпьютера": "localhost",
-            "ПортЗапускаТестКлиента": "48000",
+            "ПортЗапускаТестКлиента": "48050",
             "АктивизироватьСтроку": "Ложь"
         }
     ],
@@ -29,25 +29,35 @@
     "ЗакрытьTestClientПослеЗапускаСценариев": true,
     "DebugLog": false,
     "ПриравниватьPendingКFailed": false,
+
     "ВыводитьВЛогВыполнениеШагов": true,
-    "ДелатьЛогВыполненияСценариевВЖР": "Истина",
-    "ДелатьОтчетВФорматеАллюр": "Истина",
-    "ДелатьОтчетВФорматеjUnit": "Истина",
-    "ДелатьОтчетВФорматеCucumberJson": "Истина",
-    "ДелатьЛогВыполненияСценариевВТекстовыйФайл": "Истина",
-    "СоздаватьПодкаталогВКаталогеAllureДляЭтойСборки": "Истина",
+    "ДелатьЛогВыполненияСценариевВЖР": true,
+    
+    "ДелатьЛогВыполненияСценариевВТекстовыйФайл": true,
+    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/./ServiceBases/log.txt",
+    
+    "ДелатьОтчетВФорматеАллюр": true,
+    "СоздаватьПодкаталогВКаталогеAllureДляЭтойСборки": true,
     "КаталогOutputAllure": "$workspaceRoot/./ServiceBases/allurereport",
     "КаталогOutputAllureБазовый": "$workspaceRoot/./ServiceBases/allurereport",
+    
+    "ДелатьОтчетВФорматеjUnit": true,
     "КаталогOutputjUnit": "$workspaceRoot/./ServiceBases/junitreport",
+    
+    "ДелатьОтчетВФорматеCucumberJson": false,
     "КаталогOutputCucumberJson": "$workspaceRoot/./ServiceBases/cucumber",
+
     "КаталогВнешнихОбработокEDT": "./features/Drafts/step_definitions/bin",
-    "ДелатьСкриншотПриВозникновенииОшибки": "Истина",
+    
+    "ДелатьСкриншотПриВозникновенииОшибки": false,
     "КаталогOutputСкриншоты": "$workspaceRoot/./ServiceBases/ScreenShots",
-    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/./ServiceBases/log.txt",
     "КомандаСделатьСкриншот": "\"C:\\Program Files (x86)\\IrfanView\\i_view32.exe\" /capture=1 /convert=",
-    "ВыгружатьСтатусВыполненияСценариевВФайл": "Истина",
+    
+    "ВыгружатьСтатусВыполненияСценариевВФайл": true,
     "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "$workspaceRoot/./ServiceBases/BuildStatus.log",
-    "ДобавлятьКИмениСценарияУсловияВыгрузки": "Истина",
+    
+    "ДобавлятьКИмениСценарияУсловияВыгрузки": true,
+    
     "СписокТеговИсключение": [
         "IgnoreOnCIMainBuild",
         "IgnoreOn8310",
