@@ -144,7 +144,7 @@
 
 	СоздатьКаталог(СтрШаблон("%1/vanessa-add", КаталогВременныхФайлов()));
 
-	СтрокаЗапуска = СтрШаблон("vrunner compileepf ./tools %1tools --ibname /F./build/ibservice", КаталогСборки);
+	СтрокаЗапуска = СтрШаблон("vrunner compileepf ./tools %1tools --ibconnection /F./build/ibservice", КаталогСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
 
 	СтрокаЗапуска = СтрШаблон("vrunner run --command VBParams=./tools/epf/init.json --execute %1tools/epf/init.epf", КаталогСборки);
@@ -156,17 +156,17 @@
 	СтрокаЗапуска = Исходники.СтрокаЗапускаКомандыСборки(Бинарники1СХранятсяРядомСИсходниками, ИмяКаталогаСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
 
-	СтрокаЗапуска = СтрШаблон("vrunner compileepf ./lib %1lib --ibname /F./build/ibservice", КаталогСборки);
+	СтрокаЗапуска = СтрШаблон("vrunner compileepf ./lib %1lib --ibconnection /F./build/ibservice", КаталогСборки);
 	ИсполнитьКоманду(СтрокаЗапуска);
 
 	Если НЕ Бинарники1СХранятсяРядомСИсходниками Тогда
-		СтрокаЗапуска = СтрШаблон("vrunner compileepf ./lib/TemplateEpf %1lib/TemplateEpf --onlycopy --ibname /F./build/ibservice", КаталогСборки);
+		СтрокаЗапуска = СтрШаблон("vrunner compileepf ./lib/TemplateEpf %1lib/TemplateEpf --onlycopy --ibconnection /F./build/ibservice", КаталогСборки);
 		ИсполнитьКоманду(СтрокаЗапуска);
 
-		СтрокаЗапуска = СтрШаблон("vrunner compileepf ./lib/TemplateEpfUF %1lib/TemplateEpfUF --onlycopy --ibname /F./build/ibservice", КаталогСборки);
+		СтрокаЗапуска = СтрШаблон("vrunner compileepf ./lib/TemplateEpfUF %1lib/TemplateEpfUF --onlycopy --ibconnection /F./build/ibservice", КаталогСборки);
 		ИсполнитьКоманду(СтрокаЗапуска);
 
-		СтрокаЗапуска = СтрШаблон("vrunner compileepf ./locales %1locales --onlycopy --ibname /F./build/ibservice", КаталогСборки);
+		СтрокаЗапуска = СтрШаблон("vrunner compileepf ./locales %1locales --onlycopy --ibconnection /F./build/ibservice", КаталогСборки);
 		ИсполнитьКоманду(СтрокаЗапуска);
 
 	КонецЕсли;
