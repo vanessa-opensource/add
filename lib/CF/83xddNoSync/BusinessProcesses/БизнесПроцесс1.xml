@@ -238,7 +238,7 @@
 			<BasedOn/>
 			<NumberPeriodicity>Nonperiodical</NumberPeriodicity>
 			<Task>Task.Задача1</Task>
-			<CreateTaskInPrivilegedMode>false</CreateTaskInPrivilegedMode>
+			<CreateTaskInPrivilegedMode>true</CreateTaskInPrivilegedMode>
 			<DataLockFields/>
 			<DataLockControlMode>Managed</DataLockControlMode>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
