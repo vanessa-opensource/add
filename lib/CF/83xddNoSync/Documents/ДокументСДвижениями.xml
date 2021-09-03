@@ -37,7 +37,7 @@
 			<NumberType>String</NumberType>
 			<NumberLength>9</NumberLength>
 			<NumberAllowedLength>Variable</NumberAllowedLength>
-			<NumberPeriodicity>Nonperiodical</NumberPeriodicity>
+			<NumberPeriodicity>Year</NumberPeriodicity>
 			<CheckUnique>true</CheckUnique>
 			<Autonumbering>true</Autonumbering>
 			<StandardAttributes>
