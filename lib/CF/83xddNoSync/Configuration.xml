@@ -43,7 +43,9 @@
 				<v8:Value xsi:type="app:ApplicationUsePurpose">PersonalComputer</v8:Value>
 			</UsePurposes>
 			<ScriptVariant>Russian</ScriptVariant>
-			<DefaultRoles/>
+			<DefaultRoles>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.ПолныеПрава</xr:Item>
+			</DefaultRoles>
 			<Vendor/>
 			<Version>6.7.0</Version>
 			<UpdateCatalogAddress/>
