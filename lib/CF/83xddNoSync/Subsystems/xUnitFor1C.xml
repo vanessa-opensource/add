@@ -22,6 +22,7 @@
 			<Subsystem>Plugins</Subsystem>
 			<Subsystem>Utils</Subsystem>
 			<Subsystem>Tests</Subsystem>
+			<Subsystem>forTests</Subsystem>
 		</ChildObjects>
 	</Subsystem>
 </MetaDataObject>

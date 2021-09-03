@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Subsystem uuid="50df2d42-1bc4-451e-be38-dc84b7c194c7">
+		<Properties>
+			<Name>forTests</Name>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>For tests</v8:content>
+				</v8:item>
+			</Synonym>
+			<Comment/>
+			<IncludeHelpInContents>true</IncludeHelpInContents>
+			<IncludeInCommandInterface>false</IncludeInCommandInterface>
+			<Explanation/>
+			<Picture/>
+			<Content>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Справочник1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Справочник2</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ИерархическийСправочник</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.СправочникСТабЧастью</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПодчиненныйСправочник</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.СправочникСоСсылкойНаСамогоСебя</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПодчиненныйСДвумяВладельцами</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.СправочникСОбязательнымРеквизитом</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПростойСправочник3</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.СправочникИерархияЭлементов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.Справочник3</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПростойСправочник</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.ПростойСправочник2</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Catalog.дт_ЭлементыСхемРазмещения</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ExchangePlan.ПланОбмена1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">FunctionalOption.ФункциональнаяОпция1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.ФормаОтчета</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.ФормаНастроекОтчета</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonForm.ФормаВариантаОтчета</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonTemplate.МакетВложеннаяСхема</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonAttribute.ОбщийРеквизит1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.ПолныеПрава</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.Роль1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Role.ПраваНеобходимыеДляТестирования</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.xddКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.xddВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ЗапускПриложенияКлиент</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CommonModule.ЗапускПриложенияВызовСервера</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.Документ1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.Документ2</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Document.ДокументСДвижениями</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Enum.Перечисление1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.Отчет1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ТестовыйОтчетСКДДляСравнениеСЭталоном</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.Тест_Отчет</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.Отчет2</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОтчетСОбщейФормойПоУмолчанию</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОтчетССобственнымиФормами</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ОтчетБезУказанияФорм</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.дт_ЭлементыСхемРазмещения</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Report.ВложенныеСхемыСКД</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.Тест_Обработка</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ТестОбработка_Форма_ИсключениеПриОткрытии</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.ТестПадающий_Обработка</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">DataProcessor.Тест_ЗагрузчикИзПодсистем_НовыйAPIОбъявленияТестов</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfCharacteristicTypes.ВидыСубконто1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfAccounts.ПланСчетов1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">ChartOfCalculationTypes.ПланВидовРасчета1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.РегистрСведений1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.РСПодчиненныйРегистратору</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">InformationRegister.РСПодчиненРегистраторуПериодический</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.РегистрНакопленияОбороты</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.РегистрНакопления2</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccumulationRegister.РегистрНакопленияОстатки</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">AccountingRegister.РегистрБухгалтерии1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">CalculationRegister.РегистрРасчета1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">BusinessProcess.БизнесПроцесс1</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">BusinessProcess.БизнесПроцесс2</xr:Item>
+				<xr:Item xsi:type="xr:MDObjectRef">Task.Задача1</xr:Item>
+			</Content>
+		</Properties>
+		<ChildObjects/>
+	</Subsystem>
+</MetaDataObject>
