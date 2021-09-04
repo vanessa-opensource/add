@@ -483,13 +483,13 @@ EndFunction // _StrSplit()
 // Inserts parameters into string by number.
 //
 // Parameters:
-//  Template    – String – a string containing the substitution markers of type:
+//  Template    - String - a string containing the substitution markers of type:
 //                         "%1..%N". The markers are numbered starting with 0.
 //  Value<1-10> - String - parameters containing arbitrary values possessing 
 //                         string presentations which should be presented in a 
 //                         template. 
 // Returns:
-//  String – template string with filled parameters.
+//  String - template string with filled parameters.
 //
 Function _StrTemplate(Val Template, Val Value1, Val Value2 = Undefined, 
     Val Value3 = Undefined, Val Value4 = Undefined, Val Value5 = Undefined, 
