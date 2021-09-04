@@ -295,9 +295,29 @@
 					<ChildItems>
 						<CheckBoxField name="ЗакрыватьМодальныеОкна" id="88">
 							<DataPath>ЗакрыватьМодальныеОкна</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>В файл добавляется настройка из примера официальной документации https://github.com/vanessa-opensource/add/blob/develop/tests/smoke/smoke.bsp.json</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
 							<CheckBoxType>Auto</CheckBoxType>
 							<ContextMenu name="ЗакрыватьМодальныеОкнаКонтекстноеМеню" id="89"/>
 							<ExtendedTooltip name="ЗакрыватьМодальныеОкнаРасширеннаяПодсказка" id="90"/>
+						</CheckBoxField>
+						<CheckBoxField name="ТестироватьКомандныйИнтерфейс" id="91">
+							<DataPath>ТестироватьКомандныйИнтерфейс</DataPath>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Включить использование тестов командного интерфейса. В исключения по объектам попадают объекты, указанные на вкладке Открытие форм в группах Существующие</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ToolTipRepresentation>Button</ToolTipRepresentation>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ТестироватьКомандныйИнтерфейсКонтекстноеМеню" id="92"/>
+							<ExtendedTooltip name="ТестироватьКомандныйИнтерфейсРасширеннаяПодсказка" id="93"/>
 						</CheckBoxField>
 					</ChildItems>
 				</Page>
@@ -579,6 +599,17 @@
 				<v8:item>
 					<v8:lang>ru</v8:lang>
 					<v8:content>Закрывать модальные окна</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТестироватьКомандныйИнтерфейс" id="8">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тестировать командный интерфейс</v8:content>
 				</v8:item>
 			</Title>
 			<Type>
