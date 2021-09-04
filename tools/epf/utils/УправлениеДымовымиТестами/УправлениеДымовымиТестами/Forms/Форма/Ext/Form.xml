@@ -34,183 +34,252 @@
 		<Event name="OnOpen">ПриОткрытии</Event>
 	</Events>
 	<ChildItems>
-		<Table name="ДеревоМетаданных" id="8">
-			<Representation>Tree</Representation>
-			<ChangeRowSet>false</ChangeRowSet>
-			<ChangeRowOrder>false</ChangeRowOrder>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<FileDragMode>AsFile</FileDragMode>
-			<DataPath>ДеревоМетаданных</DataPath>
-			<CommandSet>
-				<ExcludedCommand>Add</ExcludedCommand>
-				<ExcludedCommand>Copy</ExcludedCommand>
-				<ExcludedCommand>Delete</ExcludedCommand>
-			</CommandSet>
-			<ContextMenu name="ДеревоМетаданныхКонтекстноеМеню" id="9"/>
-			<AutoCommandBar name="ДеревоМетаданныхКоманднаяПанель" id="10"/>
-			<ExtendedTooltip name="ДеревоМетаданныхРасширеннаяПодсказка" id="11"/>
-			<SearchStringAddition name="ДеревоМетаданныхСтрокаПоиска" id="12">
-				<AdditionSource>
-					<Item>ДеревоМетаданных</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ДеревоМетаданныхСтрокаПоискаКонтекстноеМеню" id="13"/>
-				<ExtendedTooltip name="ДеревоМетаданныхСтрокаПоискаРасширеннаяПодсказка" id="14"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="ДеревоМетаданныхСостояниеПросмотра" id="15">
-				<AdditionSource>
-					<Item>ДеревоМетаданных</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ДеревоМетаданныхСостояниеПросмотраКонтекстноеМеню" id="16"/>
-				<ExtendedTooltip name="ДеревоМетаданныхСостояниеПросмотраРасширеннаяПодсказка" id="17"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="ДеревоМетаданныхУправлениеПоиском" id="18">
-				<AdditionSource>
-					<Item>ДеревоМетаданных</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="ДеревоМетаданныхУправлениеПоискомКонтекстноеМеню" id="19"/>
-				<ExtendedTooltip name="ДеревоМетаданныхУправлениеПоискомРасширеннаяПодсказка" id="20"/>
-			</SearchControlAddition>
-			<Events>
-				<Event name="OnActivateRow">ДеревоМетаданныхПриАктивизацииСтроки</Event>
-			</Events>
+		<Pages name="СтраницыТестов" id="74">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы тестов</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Страницы тестов</v8:content>
+				</v8:item>
+			</ToolTip>
+			<ExtendedTooltip name="СтраницыТестовРасширеннаяПодсказка" id="75"/>
 			<ChildItems>
-				<CheckBoxField name="ДеревоМетаданныхВыбор" id="21">
-					<DataPath>ДеревоМетаданных.Исключено</DataPath>
+				<Page name="СтраницаОткрытиеФорм" id="76">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Исключено из проверки</v8:content>
+							<v8:content>Открытие форм</v8:content>
 						</v8:item>
 					</Title>
-					<EditMode>EnterOnInput</EditMode>
-					<CheckBoxType>Auto</CheckBoxType>
-					<ContextMenu name="ДеревоМетаданныхВыборКонтекстноеМеню" id="22"/>
-					<ExtendedTooltip name="ДеревоМетаданныхВыборРасширеннаяПодсказка" id="23"/>
-					<Events>
-						<Event name="OnChange">ДеревоМетаданныхВыборПриИзменении</Event>
-					</Events>
-				</CheckBoxField>
-				<ColumnGroup name="ДеревоМетаданныхГруппа1" id="33">
-					<Title>
+					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Исключаемые из проверки формы</v8:content>
+							<v8:content>Страница открытие форм</v8:content>
 						</v8:item>
-					</Title>
-					<Group>InCell</Group>
-					<ExtendedTooltip name="ДеревоМетаданныхГруппа1РасширеннаяПодсказка" id="34"/>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаОткрытиеФормРасширеннаяПодсказка" id="77"/>
 					<ChildItems>
-						<InputField name="ДеревоМетаданныхВидМетаданных" id="24">
-							<DataPath>ДеревоМетаданных.ВидМетаданных</DataPath>
-							<ReadOnly>true</ReadOnly>
+						<UsualGroup name="НастройкиОткрытиеФорм" id="78">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Исключаемые из проверки формы</v8:content>
+									<v8:content>Настройки открытие форм</v8:content>
 								</v8:item>
 							</Title>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ДеревоМетаданныхВидМетаданныхКонтекстноеМеню" id="25"/>
-							<ExtendedTooltip name="ДеревоМетаданныхВидМетаданныхРасширеннаяПодсказка" id="26"/>
-						</InputField>
-						<InputField name="ДеревоМетаданныхВидПроверки" id="37">
-							<DataPath>ДеревоМетаданных.ВидПроверки</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<TitleLocation>None</TitleLocation>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ДеревоМетаданныхВидПроверкиКонтекстноеМеню" id="38"/>
-							<ExtendedTooltip name="ДеревоМетаданныхВидПроверкиРасширеннаяПодсказка" id="39"/>
-						</InputField>
-						<InputField name="ДеревоМетаданныхИмяМетаданного" id="27">
-							<DataPath>ДеревоМетаданных.ИмяМетаданного</DataPath>
-							<ReadOnly>true</ReadOnly>
-							<TitleLocation>None</TitleLocation>
-							<EditMode>EnterOnInput</EditMode>
-							<ContextMenu name="ДеревоМетаданныхИмяМетаданногоКонтекстноеМеню" id="28"/>
-							<ExtendedTooltip name="ДеревоМетаданныхИмяМетаданногоРасширеннаяПодсказка" id="29"/>
-						</InputField>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки открытие форм</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<Representation>None</Representation>
+							<ShowTitle>false</ShowTitle>
+							<ExtendedTooltip name="НастройкиОткрытиеФормРасширеннаяПодсказка" id="79"/>
+							<ChildItems>
+								<CheckBoxField name="ТестироватьОткрытиеФорм" id="80">
+									<DataPath>ТестироватьОткрытиеФорм</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТестироватьОткрытиеФормКонтекстноеМеню" id="81"/>
+									<ExtendedTooltip name="ТестироватьОткрытиеФормРасширеннаяПодсказка" id="82"/>
+								</CheckBoxField>
+								<CheckBoxField name="ОткрыватьФормыНаКлиентеТестирования" id="83">
+									<DataPath>ОткрываемФормыНаКлиентеТестирования</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ОткрыватьФормыНаКлиентеТестированияКонтекстноеМеню" id="84"/>
+									<ExtendedTooltip name="ОткрыватьФормыНаКлиентеТестированияРасширеннаяПодсказка" id="85"/>
+								</CheckBoxField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ДеревоМетаданных" id="8">
+							<Representation>Tree</Representation>
+							<ChangeRowSet>false</ChangeRowSet>
+							<ChangeRowOrder>false</ChangeRowOrder>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<SearchOnInput>Use</SearchOnInput>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ДеревоМетаданных</DataPath>
+							<CommandSet>
+								<ExcludedCommand>Add</ExcludedCommand>
+								<ExcludedCommand>Copy</ExcludedCommand>
+								<ExcludedCommand>Delete</ExcludedCommand>
+							</CommandSet>
+							<SearchStringLocation>CommandBar</SearchStringLocation>
+							<SearchControlLocation>None</SearchControlLocation>
+							<ContextMenu name="ДеревоМетаданныхКонтекстноеМеню" id="9"/>
+							<AutoCommandBar name="ДеревоМетаданныхКоманднаяПанель" id="10"/>
+							<ExtendedTooltip name="ДеревоМетаданныхРасширеннаяПодсказка" id="11"/>
+							<SearchStringAddition name="ДеревоМетаданныхСтрокаПоиска" id="12">
+								<AdditionSource>
+									<Item>ДеревоМетаданных</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоМетаданныхСтрокаПоискаКонтекстноеМеню" id="13"/>
+								<ExtendedTooltip name="ДеревоМетаданныхСтрокаПоискаРасширеннаяПодсказка" id="14"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ДеревоМетаданныхСостояниеПросмотра" id="15">
+								<AdditionSource>
+									<Item>ДеревоМетаданных</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоМетаданныхСостояниеПросмотраКонтекстноеМеню" id="16"/>
+								<ExtendedTooltip name="ДеревоМетаданныхСостояниеПросмотраРасширеннаяПодсказка" id="17"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ДеревоМетаданныхУправлениеПоиском" id="18">
+								<AdditionSource>
+									<Item>ДеревоМетаданных</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ДеревоМетаданныхУправлениеПоискомКонтекстноеМеню" id="19"/>
+								<ExtendedTooltip name="ДеревоМетаданныхУправлениеПоискомРасширеннаяПодсказка" id="20"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ДеревоМетаданныхПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<CheckBoxField name="ДеревоМетаданныхВыбор" id="21">
+									<DataPath>ДеревоМетаданных.Исключено</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Исключено из проверки</v8:content>
+										</v8:item>
+									</Title>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ДеревоМетаданныхВыборКонтекстноеМеню" id="22"/>
+									<ExtendedTooltip name="ДеревоМетаданныхВыборРасширеннаяПодсказка" id="23"/>
+									<Events>
+										<Event name="OnChange">ДеревоМетаданныхВыборПриИзменении</Event>
+									</Events>
+								</CheckBoxField>
+								<ColumnGroup name="ДеревоМетаданныхГруппа1" id="33">
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Исключаемые из проверки формы</v8:content>
+										</v8:item>
+									</Title>
+									<Group>InCell</Group>
+									<ExtendedTooltip name="ДеревоМетаданныхГруппа1РасширеннаяПодсказка" id="34"/>
+									<ChildItems>
+										<InputField name="ДеревоМетаданныхВидМетаданных" id="24">
+											<DataPath>ДеревоМетаданных.ВидМетаданных</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<Title>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Исключаемые из проверки формы</v8:content>
+												</v8:item>
+											</Title>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоМетаданныхВидМетаданныхКонтекстноеМеню" id="25"/>
+											<ExtendedTooltip name="ДеревоМетаданныхВидМетаданныхРасширеннаяПодсказка" id="26"/>
+										</InputField>
+										<InputField name="ДеревоМетаданныхВидПроверки" id="37">
+											<DataPath>ДеревоМетаданных.ВидПроверки</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоМетаданныхВидПроверкиКонтекстноеМеню" id="38"/>
+											<ExtendedTooltip name="ДеревоМетаданныхВидПроверкиРасширеннаяПодсказка" id="39"/>
+										</InputField>
+										<InputField name="ДеревоМетаданныхИмяМетаданного" id="27">
+											<DataPath>ДеревоМетаданных.ИмяМетаданного</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<TitleLocation>None</TitleLocation>
+											<EditMode>EnterOnInput</EditMode>
+											<ContextMenu name="ДеревоМетаданныхИмяМетаданногоКонтекстноеМеню" id="28"/>
+											<ExtendedTooltip name="ДеревоМетаданныхИмяМетаданногоРасширеннаяПодсказка" id="29"/>
+										</InputField>
+									</ChildItems>
+								</ColumnGroup>
+							</ChildItems>
+						</Table>
+						<Table name="ЗначенияРеквизитовНовых" id="42">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<FileDragMode>AsFile</FileDragMode>
+							<DataPath>ЗначенияРеквизитовНовых</DataPath>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ЗначенияРеквизитовНовыхКонтекстноеМеню" id="43"/>
+							<AutoCommandBar name="ЗначенияРеквизитовНовыхКоманднаяПанель" id="44"/>
+							<ExtendedTooltip name="ЗначенияРеквизитовНовыхРасширеннаяПодсказка" id="45"/>
+							<SearchStringAddition name="ЗначенияРеквизитовНовыхСтрокаПоиска" id="46">
+								<AdditionSource>
+									<Item>ЗначенияРеквизитовНовых</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗначенияРеквизитовНовыхСтрокаПоискаКонтекстноеМеню" id="47"/>
+								<ExtendedTooltip name="ЗначенияРеквизитовНовыхСтрокаПоискаРасширеннаяПодсказка" id="48"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ЗначенияРеквизитовНовыхСостояниеПросмотра" id="49">
+								<AdditionSource>
+									<Item>ЗначенияРеквизитовНовых</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗначенияРеквизитовНовыхСостояниеПросмотраКонтекстноеМеню" id="50"/>
+								<ExtendedTooltip name="ЗначенияРеквизитовНовыхСостояниеПросмотраРасширеннаяПодсказка" id="51"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ЗначенияРеквизитовНовыхУправлениеПоиском" id="52">
+								<AdditionSource>
+									<Item>ЗначенияРеквизитовНовых</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ЗначенияРеквизитовНовыхУправлениеПоискомКонтекстноеМеню" id="53"/>
+								<ExtendedTooltip name="ЗначенияРеквизитовНовыхУправлениеПоискомРасширеннаяПодсказка" id="54"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="BeforeAddRow">ЗначенияРеквизитовНовыхПередНачаломДобавления</Event>
+								<Event name="OnStartEdit">ЗначенияРеквизитовНовыхПриНачалеРедактирования</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ЗначенияРеквизитовНовыхВидМетаданных" id="69">
+									<DataPath>ЗначенияРеквизитовНовых.ВидМетаданных</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗначенияРеквизитовНовыхВидМетаданныхКонтекстноеМеню" id="70"/>
+									<ExtendedTooltip name="ЗначенияРеквизитовНовыхВидМетаданныхРасширеннаяПодсказка" id="71"/>
+								</InputField>
+								<InputField name="ЗначенияРеквизитовНовыхИмяМетаданного" id="55">
+									<DataPath>ЗначенияРеквизитовНовых.ИмяМетаданного</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗначенияРеквизитовНовыхИмяМетаданногоКонтекстноеМеню" id="56"/>
+									<ExtendedTooltip name="ЗначенияРеквизитовНовыхИмяМетаданногоРасширеннаяПодсказка" id="57"/>
+								</InputField>
+								<InputField name="ЗначенияРеквизитовНовыхРеквизит" id="58">
+									<DataPath>ЗначенияРеквизитовНовых.Реквизит</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ListChoiceMode>true</ListChoiceMode>
+									<ContextMenu name="ЗначенияРеквизитовНовыхРеквизитКонтекстноеМеню" id="59"/>
+									<ExtendedTooltip name="ЗначенияРеквизитовНовыхРеквизитРасширеннаяПодсказка" id="60"/>
+									<Events>
+										<Event name="OnChange">ЗначенияРеквизитовНовыхРеквизитПриИзменении</Event>
+									</Events>
+								</InputField>
+								<InputField name="ЗначенияРеквизитовНовыхЗначениеРеквизита" id="61">
+									<DataPath>ЗначенияРеквизитовНовых.ЗначениеРеквизита</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ЗначенияРеквизитовНовыхЗначениеРеквизитаКонтекстноеМеню" id="62"/>
+									<ExtendedTooltip name="ЗначенияРеквизитовНовыхЗначениеРеквизитаРасширеннаяПодсказка" id="63"/>
+									<Events>
+										<Event name="OnChange">ЗначенияРеквизитовНовыхЗначениеРеквизитаПриИзменении</Event>
+									</Events>
+								</InputField>
+							</ChildItems>
+						</Table>
 					</ChildItems>
-				</ColumnGroup>
+				</Page>
 			</ChildItems>
-		</Table>
-		<Table name="ЗначенияРеквизитовНовых" id="42">
-			<Representation>List</Representation>
-			<AutoInsertNewRow>true</AutoInsertNewRow>
-			<EnableStartDrag>true</EnableStartDrag>
-			<EnableDrag>true</EnableDrag>
-			<FileDragMode>AsFile</FileDragMode>
-			<DataPath>ЗначенияРеквизитовНовых</DataPath>
-			<RowFilter xsi:nil="true"/>
-			<ContextMenu name="ЗначенияРеквизитовНовыхКонтекстноеМеню" id="43"/>
-			<AutoCommandBar name="ЗначенияРеквизитовНовыхКоманднаяПанель" id="44"/>
-			<ExtendedTooltip name="ЗначенияРеквизитовНовыхРасширеннаяПодсказка" id="45"/>
-			<SearchStringAddition name="ЗначенияРеквизитовНовыхСтрокаПоиска" id="46">
-				<AdditionSource>
-					<Item>ЗначенияРеквизитовНовых</Item>
-					<Type>SearchStringRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ЗначенияРеквизитовНовыхСтрокаПоискаКонтекстноеМеню" id="47"/>
-				<ExtendedTooltip name="ЗначенияРеквизитовНовыхСтрокаПоискаРасширеннаяПодсказка" id="48"/>
-			</SearchStringAddition>
-			<ViewStatusAddition name="ЗначенияРеквизитовНовыхСостояниеПросмотра" id="49">
-				<AdditionSource>
-					<Item>ЗначенияРеквизитовНовых</Item>
-					<Type>ViewStatusRepresentation</Type>
-				</AdditionSource>
-				<ContextMenu name="ЗначенияРеквизитовНовыхСостояниеПросмотраКонтекстноеМеню" id="50"/>
-				<ExtendedTooltip name="ЗначенияРеквизитовНовыхСостояниеПросмотраРасширеннаяПодсказка" id="51"/>
-			</ViewStatusAddition>
-			<SearchControlAddition name="ЗначенияРеквизитовНовыхУправлениеПоиском" id="52">
-				<AdditionSource>
-					<Item>ЗначенияРеквизитовНовых</Item>
-					<Type>SearchControl</Type>
-				</AdditionSource>
-				<ContextMenu name="ЗначенияРеквизитовНовыхУправлениеПоискомКонтекстноеМеню" id="53"/>
-				<ExtendedTooltip name="ЗначенияРеквизитовНовыхУправлениеПоискомРасширеннаяПодсказка" id="54"/>
-			</SearchControlAddition>
-			<Events>
-				<Event name="BeforeAddRow">ЗначенияРеквизитовНовыхПередНачаломДобавления</Event>
-				<Event name="OnStartEdit">ЗначенияРеквизитовНовыхПриНачалеРедактирования</Event>
-			</Events>
-			<ChildItems>
-				<InputField name="ЗначенияРеквизитовНовыхВидМетаданных" id="69">
-					<DataPath>ЗначенияРеквизитовНовых.ВидМетаданных</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ЗначенияРеквизитовНовыхВидМетаданныхКонтекстноеМеню" id="70"/>
-					<ExtendedTooltip name="ЗначенияРеквизитовНовыхВидМетаданныхРасширеннаяПодсказка" id="71"/>
-				</InputField>
-				<InputField name="ЗначенияРеквизитовНовыхИмяМетаданного" id="55">
-					<DataPath>ЗначенияРеквизитовНовых.ИмяМетаданного</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ЗначенияРеквизитовНовыхИмяМетаданногоКонтекстноеМеню" id="56"/>
-					<ExtendedTooltip name="ЗначенияРеквизитовНовыхИмяМетаданногоРасширеннаяПодсказка" id="57"/>
-				</InputField>
-				<InputField name="ЗначенияРеквизитовНовыхРеквизит" id="58">
-					<DataPath>ЗначенияРеквизитовНовых.Реквизит</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<ListChoiceMode>true</ListChoiceMode>
-					<ContextMenu name="ЗначенияРеквизитовНовыхРеквизитКонтекстноеМеню" id="59"/>
-					<ExtendedTooltip name="ЗначенияРеквизитовНовыхРеквизитРасширеннаяПодсказка" id="60"/>
-					<Events>
-						<Event name="OnChange">ЗначенияРеквизитовНовыхРеквизитПриИзменении</Event>
-					</Events>
-				</InputField>
-				<InputField name="ЗначенияРеквизитовНовыхЗначениеРеквизита" id="61">
-					<DataPath>ЗначенияРеквизитовНовых.ЗначениеРеквизита</DataPath>
-					<EditMode>EnterOnInput</EditMode>
-					<ContextMenu name="ЗначенияРеквизитовНовыхЗначениеРеквизитаКонтекстноеМеню" id="62"/>
-					<ExtendedTooltip name="ЗначенияРеквизитовНовыхЗначениеРеквизитаРасширеннаяПодсказка" id="63"/>
-					<Events>
-						<Event name="OnChange">ЗначенияРеквизитовНовыхЗначениеРеквизитаПриИзменении</Event>
-					</Events>
-				</InputField>
-			</ChildItems>
-		</Table>
+		</Pages>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -458,6 +527,28 @@
 					<v8:Length>0</v8:Length>
 					<v8:AllowedLength>Variable</v8:AllowedLength>
 				</v8:StringQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТестироватьОткрытиеФорм" id="5">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тестировать открытие форм</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ОткрываемФормыНаКлиентеТестирования" id="6">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Открываем формы на клиенте тестирования</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
 			</Type>
 		</Attribute>
 	</Attributes>
