@@ -278,6 +278,197 @@
 						</Table>
 					</ChildItems>
 				</Page>
+				<Page name="СтраницаПроведениеПечатныеФормы" id="124">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Проведение печатные формы</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница проведение печатные формы</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаПроведениеПечатныеФормыРасширеннаяПодсказка" id="125"/>
+					<ChildItems>
+						<UsualGroup name="НастройкиПроведениеПечатныеФормы" id="126">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки проверок</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Настройки проведение печатные формы</v8:content>
+								</v8:item>
+							</ToolTip>
+							<Group>AlwaysHorizontal</Group>
+							<ExtendedTooltip name="НастройкиПроведениеПечатныеФормыРасширеннаяПодсказка" id="127"/>
+							<ChildItems>
+								<CheckBoxField name="ТестироватьПроведение" id="128">
+									<DataPath>ТестироватьПроведение</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТестироватьПроведениеКонтекстноеМеню" id="129"/>
+									<ExtendedTooltip name="ТестироватьПроведениеРасширеннаяПодсказка" id="130"/>
+								</CheckBoxField>
+								<InputField name="КоличествоДокументовПроведение" id="131">
+									<DataPath>КоличествоДокументовПроведение</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Проводить документов</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КоличествоДокументовПроведениеКонтекстноеМеню" id="132"/>
+									<ExtendedTooltip name="КоличествоДокументовПроведениеРасширеннаяПодсказка" id="133"/>
+								</InputField>
+								<CheckBoxField name="ТестироватьПечатныеФормы" id="134">
+									<DataPath>ТестироватьПечатныеФормы</DataPath>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТестироватьПечатныеФормыКонтекстноеМеню" id="135"/>
+									<ExtendedTooltip name="ТестироватьПечатныеФормыРасширеннаяПодсказка" id="136"/>
+								</CheckBoxField>
+								<InputField name="КоличествоДокументовПечатныеФормы" id="137">
+									<DataPath>КоличествоДокументовПечатныеФормы</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Открывать печатные формы документов</v8:content>
+										</v8:item>
+									</Title>
+									<ContextMenu name="КоличествоДокументовПечатныеФормыКонтекстноеМеню" id="138"/>
+									<ExtendedTooltip name="КоличествоДокументовПечатныеФормыРасширеннаяПодсказка" id="139"/>
+								</InputField>
+							</ChildItems>
+						</UsualGroup>
+						<Table name="ТаблицаДокументы" id="140">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<SearchOnInput>Use</SearchOnInput>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ТаблицаДокументы</DataPath>
+							<SearchStringLocation>CommandBar</SearchStringLocation>
+							<SearchControlLocation>CommandBar</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаДокументыКонтекстноеМеню" id="141"/>
+							<AutoCommandBar name="ТаблицаДокументыКоманднаяПанель" id="142">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТаблицаДокументыРасширеннаяПодсказка" id="143"/>
+							<SearchStringAddition name="ТаблицаДокументыСтрокаПоиска" id="144">
+								<AdditionSource>
+									<Item>ТаблицаДокументы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаДокументыСтрокаПоискаКонтекстноеМеню" id="145"/>
+								<ExtendedTooltip name="ТаблицаДокументыСтрокаПоискаРасширеннаяПодсказка" id="146"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаДокументыСостояниеПросмотра" id="147">
+								<AdditionSource>
+									<Item>ТаблицаДокументы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаДокументыСостояниеПросмотраКонтекстноеМеню" id="148"/>
+								<ExtendedTooltip name="ТаблицаДокументыСостояниеПросмотраРасширеннаяПодсказка" id="149"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаДокументыУправлениеПоиском" id="150">
+								<AdditionSource>
+									<Item>ТаблицаДокументы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаДокументыУправлениеПоискомКонтекстноеМеню" id="151"/>
+								<ExtendedTooltip name="ТаблицаДокументыУправлениеПоискомРасширеннаяПодсказка" id="152"/>
+							</SearchControlAddition>
+							<Events>
+								<Event name="OnActivateRow">ТаблицаДокументыПриАктивизацииСтроки</Event>
+							</Events>
+							<ChildItems>
+								<InputField name="ТаблицаДокументыИмяМетаданного" id="153">
+									<DataPath>ТаблицаДокументы.ИмяМетаданного</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаДокументыИмяМетаданногоКонтекстноеМеню" id="154"/>
+									<ExtendedTooltip name="ТаблицаДокументыИмяМетаданногоРасширеннаяПодсказка" id="155"/>
+								</InputField>
+								<CheckBoxField name="ТаблицаДокументыИсключеноПроведение" id="159">
+									<DataPath>ТаблицаДокументы.ИсключеноПроведение</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТаблицаДокументыИсключеноПроведениеКонтекстноеМеню" id="160"/>
+									<ExtendedTooltip name="ТаблицаДокументыИсключеноПроведениеРасширеннаяПодсказка" id="161"/>
+								</CheckBoxField>
+								<CheckBoxField name="ТаблицаДокументыИсключеноПечатныеФормы" id="162">
+									<DataPath>ТаблицаДокументы.ИсключеноПечатныеФормы</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТаблицаДокументыИсключеноПечатныеФормыКонтекстноеМеню" id="163"/>
+									<ExtendedTooltip name="ТаблицаДокументыИсключеноПечатныеФормыРасширеннаяПодсказка" id="164"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+						<Table name="ТаблицаПечатныеФормы" id="165">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<SearchOnInput>Use</SearchOnInput>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ТаблицаПечатныеФормы</DataPath>
+							<SearchStringLocation>CommandBar</SearchStringLocation>
+							<SearchControlLocation>CommandBar</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаПечатныеФормыКонтекстноеМеню" id="166"/>
+							<AutoCommandBar name="ТаблицаПечатныеФормыКоманднаяПанель" id="167">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТаблицаПечатныеФормыРасширеннаяПодсказка" id="168"/>
+							<SearchStringAddition name="ТаблицаПечатныеФормыСтрокаПоиска" id="169">
+								<AdditionSource>
+									<Item>ТаблицаПечатныеФормы</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПечатныеФормыСтрокаПоискаКонтекстноеМеню" id="170"/>
+								<ExtendedTooltip name="ТаблицаПечатныеФормыСтрокаПоискаРасширеннаяПодсказка" id="171"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаПечатныеФормыСостояниеПросмотра" id="172">
+								<AdditionSource>
+									<Item>ТаблицаПечатныеФормы</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПечатныеФормыСостояниеПросмотраКонтекстноеМеню" id="173"/>
+								<ExtendedTooltip name="ТаблицаПечатныеФормыСостояниеПросмотраРасширеннаяПодсказка" id="174"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаПечатныеФормыУправлениеПоиском" id="175">
+								<AdditionSource>
+									<Item>ТаблицаПечатныеФормы</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаПечатныеФормыУправлениеПоискомКонтекстноеМеню" id="176"/>
+								<ExtendedTooltip name="ТаблицаПечатныеФормыУправлениеПоискомРасширеннаяПодсказка" id="177"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<CheckBoxField name="ТаблицаПечатныеФормыИсключено" id="181">
+									<DataPath>ТаблицаПечатныеФормы.Исключено</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТаблицаПечатныеФормыИсключеноКонтекстноеМеню" id="182"/>
+									<ExtendedTooltip name="ТаблицаПечатныеФормыИсключеноРасширеннаяПодсказка" id="183"/>
+								</CheckBoxField>
+								<InputField name="ТаблицаПечатныеФормыИдентификатор" id="184">
+									<DataPath>ТаблицаПечатныеФормы.Идентификатор</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаПечатныеФормыИдентификаторКонтекстноеМеню" id="185"/>
+									<ExtendedTooltip name="ТаблицаПечатныеФормыИдентификаторРасширеннаяПодсказка" id="186"/>
+								</InputField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
 				<Page name="СтраницаМакетыСКД" id="94">
 					<Title>
 						<v8:item>
@@ -774,6 +965,175 @@
 							<v8:Length>0</v8:Length>
 							<v8:AllowedLength>Variable</v8:AllowedLength>
 						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="КоличествоДокументовПечатныеФормы" id="11">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество документов печатные формы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="КоличествоДокументовПроведение" id="12">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Количество документов проведение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:decimal</v8:Type>
+				<v8:NumberQualifiers>
+					<v8:Digits>10</v8:Digits>
+					<v8:FractionDigits>0</v8:FractionDigits>
+					<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+				</v8:NumberQualifiers>
+			</Type>
+		</Attribute>
+		<Attribute name="ТестироватьПроведение" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тестировать проведение</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТестироватьПечатныеФормы" id="14">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тестировать печатные формы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаПечатныеФормы" id="15">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица печатные формы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИмяМетаданного" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя метаданного</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="Исключено" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исключено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Идентификатор" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Идентификатор</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
+		</Attribute>
+		<Attribute name="ТаблицаДокументы" id="16">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица документы</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИмяМетаданного" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя метаданного</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьИзмененияРасширениями" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть изменения расширениями</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИсключеноПроведение" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исключено для проведения</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="ИсключеноПечатныеФормы" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исключено для проверки печатных форм</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
 					</Type>
 				</Column>
 			</Columns>
