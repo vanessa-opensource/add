@@ -278,6 +278,92 @@
 						</Table>
 					</ChildItems>
 				</Page>
+				<Page name="СтраницаМакетыСКД" id="94">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Макеты СКД</v8:content>
+						</v8:item>
+					</Title>
+					<ToolTip>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Страница макеты СКД</v8:content>
+						</v8:item>
+					</ToolTip>
+					<ExtendedTooltip name="СтраницаМакетыСКДРасширеннаяПодсказка" id="95"/>
+					<ChildItems>
+						<CheckBoxField name="ТестироватьМакетыСКД" id="96">
+							<DataPath>ТестироватьМакетыСКД</DataPath>
+							<CheckBoxType>Auto</CheckBoxType>
+							<ContextMenu name="ТестироватьМакетыСКДКонтекстноеМеню" id="97"/>
+							<ExtendedTooltip name="ТестироватьМакетыСКДРасширеннаяПодсказка" id="98"/>
+						</CheckBoxField>
+						<Table name="ТаблицаМакетыСКД" id="99">
+							<Representation>List</Representation>
+							<AutoInsertNewRow>true</AutoInsertNewRow>
+							<SearchOnInput>Use</SearchOnInput>
+							<EnableStartDrag>true</EnableStartDrag>
+							<EnableDrag>true</EnableDrag>
+							<DataPath>ТаблицаМакетыСКД</DataPath>
+							<SearchStringLocation>CommandBar</SearchStringLocation>
+							<SearchControlLocation>CommandBar</SearchControlLocation>
+							<RowFilter xsi:nil="true"/>
+							<ContextMenu name="ТаблицаМакетыСКДКонтекстноеМеню" id="100"/>
+							<AutoCommandBar name="ТаблицаМакетыСКДКоманднаяПанель" id="101">
+								<Autofill>false</Autofill>
+							</AutoCommandBar>
+							<ExtendedTooltip name="ТаблицаМакетыСКДРасширеннаяПодсказка" id="102"/>
+							<SearchStringAddition name="ТаблицаМакетыСКДСтрокаПоиска" id="103">
+								<AdditionSource>
+									<Item>ТаблицаМакетыСКД</Item>
+									<Type>SearchStringRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаМакетыСКДСтрокаПоискаКонтекстноеМеню" id="104"/>
+								<ExtendedTooltip name="ТаблицаМакетыСКДСтрокаПоискаРасширеннаяПодсказка" id="105"/>
+							</SearchStringAddition>
+							<ViewStatusAddition name="ТаблицаМакетыСКДСостояниеПросмотра" id="106">
+								<AdditionSource>
+									<Item>ТаблицаМакетыСКД</Item>
+									<Type>ViewStatusRepresentation</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаМакетыСКДСостояниеПросмотраКонтекстноеМеню" id="107"/>
+								<ExtendedTooltip name="ТаблицаМакетыСКДСостояниеПросмотраРасширеннаяПодсказка" id="108"/>
+							</ViewStatusAddition>
+							<SearchControlAddition name="ТаблицаМакетыСКДУправлениеПоиском" id="109">
+								<AdditionSource>
+									<Item>ТаблицаМакетыСКД</Item>
+									<Type>SearchControl</Type>
+								</AdditionSource>
+								<ContextMenu name="ТаблицаМакетыСКДУправлениеПоискомКонтекстноеМеню" id="110"/>
+								<ExtendedTooltip name="ТаблицаМакетыСКДУправлениеПоискомРасширеннаяПодсказка" id="111"/>
+							</SearchControlAddition>
+							<ChildItems>
+								<InputField name="ТаблицаМакетыСКДИмяМетаданного" id="112">
+									<DataPath>ТаблицаМакетыСКД.ИмяМетаданного</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаМакетыСКДИмяМетаданногоКонтекстноеМеню" id="113"/>
+									<ExtendedTooltip name="ТаблицаМакетыСКДИмяМетаданногоРасширеннаяПодсказка" id="114"/>
+								</InputField>
+								<InputField name="ТаблицаМакетыСКДОбъект" id="121">
+									<DataPath>ТаблицаМакетыСКД.Объект</DataPath>
+									<ReadOnly>true</ReadOnly>
+									<EditMode>EnterOnInput</EditMode>
+									<ContextMenu name="ТаблицаМакетыСКДОбъектКонтекстноеМеню" id="122"/>
+									<ExtendedTooltip name="ТаблицаМакетыСКДОбъектРасширеннаяПодсказка" id="123"/>
+								</InputField>
+								<CheckBoxField name="ТаблицаМакетыСКДИсключено" id="118">
+									<DataPath>ТаблицаМакетыСКД.Исключено</DataPath>
+									<EditMode>EnterOnInput</EditMode>
+									<CheckBoxType>Auto</CheckBoxType>
+									<ContextMenu name="ТаблицаМакетыСКДИсключеноКонтекстноеМеню" id="119"/>
+									<ExtendedTooltip name="ТаблицаМакетыСКДИсключеноРасширеннаяПодсказка" id="120"/>
+								</CheckBoxField>
+							</ChildItems>
+						</Table>
+					</ChildItems>
+				</Page>
 				<Page name="СтраницаДопНастройки" id="86">
 					<Title>
 						<v8:item>
@@ -615,6 +701,82 @@
 			<Type>
 				<v8:Type>xs:boolean</v8:Type>
 			</Type>
+		</Attribute>
+		<Attribute name="ТестироватьМакетыСКД" id="9">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Тестировать макеты СКД</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>xs:boolean</v8:Type>
+			</Type>
+		</Attribute>
+		<Attribute name="ТаблицаМакетыСКД" id="10">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Таблица макеты скд</v8:content>
+				</v8:item>
+			</Title>
+			<Type>
+				<v8:Type>v8:ValueTable</v8:Type>
+			</Type>
+			<Columns>
+				<Column name="ИмяМетаданного" id="2">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Имя метаданного</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>200</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+				<Column name="ЕстьИзмененияРасширениями" id="1">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Есть изменения расширениями</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Исключено" id="3">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Исключено</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Column>
+				<Column name="Объект" id="4">
+					<Title>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Объект</v8:content>
+						</v8:item>
+					</Title>
+					<Type>
+						<v8:Type>xs:string</v8:Type>
+						<v8:StringQualifiers>
+							<v8:Length>0</v8:Length>
+							<v8:AllowedLength>Variable</v8:AllowedLength>
+						</v8:StringQualifiers>
+					</Type>
+				</Column>
+			</Columns>
 		</Attribute>
 	</Attributes>
 	<Commands>
