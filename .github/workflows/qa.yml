@@ -1,0 +1,56 @@
+# MIT License
+# Copyright (C) 2020 Tymko Oleg <olegtymko@yandex.ru> and contributors
+# All rights reserved.
+
+name: Контроль качества
+# Любой пуш и pr в проекте но с фильтром по основному проекту
+on: [push, pull_request]
+jobs:
+  task:
+    if: github.repository == 'vanessa-opensource/add'
+    runs-on: ubuntu-20.04
+    strategy:
+      fail-fast: false
+
+    steps:
+      # Загрузка проекта
+      - name: Актуализация
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      # https://stackoverflow.com/questions/58033366/how-to-get-current-branch-within-github-actions
+      - name: Извлечение имени текущей ветки
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+
+      - name: Извлечение версии пакета
+        shell: bash
+        run: echo "##[set-output name=version;]`cat packagedef | grep "ВерсияПакета = " | sed 's|[^"]*"||' | sed -r 's/".+//'`"
+        id: extract_version
+
+      - name: Установка Sonar-scanner
+        uses: warchant/setup-sonar-scanner@v1
+
+      # Анализ проекта в SonarQube (ветка)
+      - name: Анализ в SonarQube (branch)
+        if: github.event_name == 'push'
+        run: sonar-scanner
+            -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }}
+            -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }}
+            -Dsonar.branch.name=${{ steps.extract_branch.outputs.branch }}
+            -Dsonar.projectVersion=${{ steps.extract_version.outputs.version }}
+
+      # Анализ проекта в SonarQube (PR)
+      # https://docs.sonarqube.org/latest/analysis/pull-request/
+      - name: Анализ в SonarQube (pull-request)
+        if: github.event_name == 'pull_request'
+        run: sonar-scanner
+            -Dsonar.login=${{ secrets.SONARQUBE_TOKEN }}
+            -Dsonar.host.url=${{ secrets.SONARQUBE_HOST }}
+            -Dsonar.branch.name=${{ steps.extract_branch.outputs.branch }}
+            -Dsonar.pullrequest.key=${{ github.event.pull_request.number }}
+            -Dsonar.pullrequest.branch=${{ github.event.pull_request.head.ref }}
+            -Dsonar.pullrequest.base=${{ github.event.pull_request.base.ref }}
+            -Dsonar.scm.revision=${{ github.event.pull_request.head.sha }}
