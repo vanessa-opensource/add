@@ -31,7 +31,7 @@
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
-		<Event name="OnOpen">ПриОткрытии</Event>
+		<Event name="OnCreateAtServer">ПриСозданииНаСервере</Event>
 	</Events>
 	<ChildItems>
 		<Pages name="СтраницыТестов" id="74">
@@ -1185,7 +1185,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Исключить объекты не используемые в расширение</v8:content>
+					<v8:content>Исключить объекты, не используемые в расширениях</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
