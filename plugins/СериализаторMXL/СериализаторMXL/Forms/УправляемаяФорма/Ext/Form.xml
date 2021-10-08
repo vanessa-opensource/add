@@ -53,6 +53,11 @@
 				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
 				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="456"/>
 			</Button>
+			<Button name="ФормаКонвертироватьВJSON" id="488">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КонвертироватьВJSON</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="489"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -1358,6 +1363,21 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>ПроставитьОтборПодчиненныхСсылок</Action>
+		</Command>
+		<Command name="КонвертироватьВJSON" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конвертировать в JSON</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конвертировать макет из MXL в JSON</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КонвертироватьВJSON</Action>
 		</Command>
 	</Commands>
 </Form>
