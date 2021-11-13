@@ -91,7 +91,6 @@
 				</Properties>
 			</Attribute>
 			<Form>Форма</Form>
-			<Template>СкринОшибки_png</Template>
 		</ChildObjects>
 	</ExternalDataProcessor>
 </MetaDataObject>
