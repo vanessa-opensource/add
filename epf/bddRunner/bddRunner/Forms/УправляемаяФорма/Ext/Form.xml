@@ -7886,6 +7886,94 @@
 														</InputField>
 													</ChildItems>
 												</UsualGroup>
+												<InputField name="СписокСценариевДляВыполнения" id="1855">
+													<DataPath>Объект.СписокСценариевДляВыполнения</DataPath>
+													<Title>
+														<v8:item>
+															<v8:lang>en</v8:lang>
+															<v8:content>Run only tags</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>am</v8:lang>
+															<v8:content>በቀዳሚ ግምገማዎች ጋር</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>az</v8:lang>
+															<v8:content>Tags başlamaq üçün</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>bg</v8:lang>
+															<v8:content>Тагове за стартиране</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>et</v8:lang>
+															<v8:content>Tags joosta</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>fr</v8:lang>
+															<v8:content>Étiquettes pour démarrer</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ka</v8:lang>
+															<v8:content>Tags უნდა დაიწყოს</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>de</v8:lang>
+															<v8:content>Tags zu starten</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>hu</v8:lang>
+															<v8:content>Kategória indításához</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>it</v8:lang>
+															<v8:content>Tag per eseguire</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>lv</v8:lang>
+															<v8:content>Tags, lai palaistu</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>lt</v8:lang>
+															<v8:content>Žymos paleisti</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>mn</v8:lang>
+															<v8:content>Сэдвийн эхлэх</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>pl</v8:lang>
+															<v8:content>Tagi do uruchomienia</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ro</v8:lang>
+															<v8:content>Tag-uri pentru a rula</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>sl</v8:lang>
+															<v8:content>Oznake za začetek</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>es</v8:lang>
+															<v8:content>Etiquetas para iniciar</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>sv</v8:lang>
+															<v8:content>Taggar för att starta</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>tr</v8:lang>
+															<v8:content>Etiketler başlatmak için</v8:content>
+														</v8:item>
+														<v8:item>
+															<v8:lang>ru</v8:lang>
+															<v8:content>Список/порядок сценариев для выполнения</v8:content>
+														</v8:item>
+													</Title>
+													<ClearButton>true</ClearButton>
+													<ContextMenu name="СписокСценариевДляВыполненияКонтекстноеМеню" id="1856"/>
+													<ExtendedTooltip name="СписокСценариевДляВыполненияРасширеннаяПодсказка" id="1857"/>
+												</InputField>
 												<UsualGroup name="ГруппаОтладкаTestClient" id="859">
 													<Title>
 														<v8:item>
