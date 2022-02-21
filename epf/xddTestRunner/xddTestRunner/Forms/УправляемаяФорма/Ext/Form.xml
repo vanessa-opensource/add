@@ -346,7 +346,15 @@
 						</v8:item>
 					</Title>
 					<Hyperlink>true</Hyperlink>
-					<ContextMenu name="ДекорацияНастройкиЗагруженыКонтекстноеМеню" id="483"/>
+					<ContextMenu name="ДекорацияНастройкиЗагруженыКонтекстноеМеню" id="483">
+						<ChildItems>
+							<Button name="ДекорацияНастройкиЗагруженыКонтекстноеМенюКнопка1" id="485">
+								<Type>CommandBarButton</Type>
+								<CommandName>Form.Command.УдалитьНастройку</CommandName>
+								<ExtendedTooltip name="ДекорацияНастройкиЗагруженыКонтекстноеМенюКнопка1РасширеннаяПодсказка" id="486"/>
+							</Button>
+						</ChildItems>
+					</ContextMenu>
 					<ExtendedTooltip name="ДекорацияНастройкиЗагруженыРасширеннаяПодсказка" id="484"/>
 					<Events>
 						<Event name="Click">ЗагрузитьНастройкиИзФайла</Event>
@@ -801,6 +809,21 @@
 			</Picture>
 			<Action>ТехническаяИнформация</Action>
 			<CurrentRowUse>DontUse</CurrentRowUse>
+		</Command>
+		<Command name="УдалитьНастройку" id="13">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить настройку</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Удалить настройку</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>УдалитьНастройку</Action>
 		</Command>
 	</Commands>
 	<Parameters>
