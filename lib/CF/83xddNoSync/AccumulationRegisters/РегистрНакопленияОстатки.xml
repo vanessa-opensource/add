@@ -171,7 +171,12 @@
 			<DataLockControlMode>Managed</DataLockControlMode>
 			<FullTextSearch>DontUse</FullTextSearch>
 			<EnableTotalsSplitting>true</EnableTotalsSplitting>
-			<ListPresentation/>
+			<ListPresentation>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистр накопления обороты</v8:content>
+				</v8:item>
+			</ListPresentation>
 			<ExtendedListPresentation/>
 			<Explanation/>
 		</Properties>

@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
-	<ExternalDataProcessor uuid="d33ebd66-d4fb-47b1-9880-3380522a9087">
+	<ExternalDataProcessor uuid="b6a9e448-6dc6-4ccc-b439-ce33dae44865">
 		<InternalInfo>
 			<xr:ContainedObject>
 				<xr:ClassId>c3831ec8-d8d5-4f93-8a22-f9bfae07327f</xr:ClassId>
-				<xr:ObjectId>41f963f5-e019-4079-afcc-bb17fac477ea</xr:ObjectId>
+				<xr:ObjectId>354a1948-bc41-4904-a5aa-85d178fbdd3b</xr:ObjectId>
 			</xr:ContainedObject>
 			<xr:GeneratedType name="ExternalDataProcessorObject.xddTestRunner" category="Object">
-				<xr:TypeId>32af7d54-633b-41e7-bb3c-015248e565ef</xr:TypeId>
-				<xr:ValueId>ac4a14ee-0b94-4ac7-b165-5c2f40c95e97</xr:ValueId>
+				<xr:TypeId>83d047b2-db18-44e3-a2ce-6a4cd0ada9a3</xr:TypeId>
+				<xr:ValueId>8328d349-89fd-478b-b8bf-fdbbdfdbc0b6</xr:ValueId>
 			</xr:GeneratedType>
 		</InternalInfo>
 		<Properties>
@@ -19,7 +19,7 @@
 					<v8:content>Тестирование для 1С:Предприятия 8, Vanessa-ADD</v8:content>
 				</v8:item>
 			</Synonym>
-			<Comment>https://github.com/silverbulleters/add</Comment>
+			<Comment>https://github.com/vanessa-opensource/add</Comment>
 			<DefaultForm>ExternalDataProcessor.xddTestRunner.Form.УправляемаяФорма</DefaultForm>
 			<AuxiliaryForm>ExternalDataProcessor.xddTestRunner.Form.Форма</AuxiliaryForm>
 		</Properties>
@@ -717,6 +717,40 @@
 						<v8:item>
 							<v8:lang>ru</v8:lang>
 							<v8:content>Это linux</v8:content>
+						</v8:item>
+					</Synonym>
+					<Comment/>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+					<PasswordMode>false</PasswordMode>
+					<Format/>
+					<EditFormat/>
+					<ToolTip/>
+					<MarkNegatives>false</MarkNegatives>
+					<Mask/>
+					<MultiLine>false</MultiLine>
+					<ExtendedEdit>false</ExtendedEdit>
+					<MinValue xsi:nil="true"/>
+					<MaxValue xsi:nil="true"/>
+					<FillChecking>DontCheck</FillChecking>
+					<ChoiceFoldersAndItems>Items</ChoiceFoldersAndItems>
+					<ChoiceParameterLinks/>
+					<ChoiceParameters/>
+					<QuickChoice>Auto</QuickChoice>
+					<CreateOnInput>Auto</CreateOnInput>
+					<ChoiceForm/>
+					<LinkByType/>
+					<ChoiceHistoryOnInput>Auto</ChoiceHistoryOnInput>
+				</Properties>
+			</Attribute>
+			<Attribute uuid="796ce9d5-f2ee-4fdb-aa40-90985c51246a">
+				<Properties>
+					<Name>ВыводитьПодробноеПредставлениеОшибки</Name>
+					<Synonym>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Выводить подробное представление ошибки</v8:content>
 						</v8:item>
 					</Synonym>
 					<Comment/>

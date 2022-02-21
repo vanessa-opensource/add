@@ -2898,6 +2898,31 @@
 											<ContextMenu name="ДеревоТестовИмяКонтекстноеМеню" id="70"/>
 											<ExtendedTooltip name="ДеревоТестовИмяРасширеннаяПодсказка" id="1283"/>
 										</InputField>
+										<InputField name="ДеревоТестовВремяВыполнения" id="1852">
+											<DataPath>Объект.ДеревоТестов.ВремяВыполнения</DataPath>
+											<ReadOnly>true</ReadOnly>
+											<ToolTip>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>Время выполнения теста в секундах</v8:content>
+												</v8:item>
+											</ToolTip>
+											<EditMode>EnterOnInput</EditMode>
+											<Format>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ЧН=</v8:content>
+												</v8:item>
+											</Format>
+											<EditFormat>
+												<v8:item>
+													<v8:lang>ru</v8:lang>
+													<v8:content>ЧН=</v8:content>
+												</v8:item>
+											</EditFormat>
+											<ContextMenu name="ДеревоТестовВремяВыполненияКонтекстноеМеню" id="1853"/>
+											<ExtendedTooltip name="ДеревоТестовВремяВыполненияРасширеннаяПодсказка" id="1854"/>
+										</InputField>
 										<InputField name="ДеревоТестовПолныйПуть" id="73">
 											<DataPath>Объект.ДеревоТестов.ПолныйПуть</DataPath>
 											<ReadOnly>true</ReadOnly>
@@ -14873,6 +14898,22 @@
 							</v8:item>
 						</Title>
 						<Type/>
+					</Column>
+					<Column name="ВремяВыполнения" id="11">
+						<Title>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>Время (сек)</v8:content>
+							</v8:item>
+						</Title>
+						<Type>
+							<v8:Type>xs:decimal</v8:Type>
+							<v8:NumberQualifiers>
+								<v8:Digits>10</v8:Digits>
+								<v8:FractionDigits>0</v8:FractionDigits>
+								<v8:AllowedSign>Nonnegative</v8:AllowedSign>
+							</v8:NumberQualifiers>
+						</Type>
 					</Column>
 				</AdditionalColumns>
 				<AdditionalColumns table="Объект.ДанныеАллюрМеток">

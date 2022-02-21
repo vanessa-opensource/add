@@ -33,7 +33,12 @@
 		</InternalInfo>
 		<Properties>
 			<Name>РегистрБухгалтерии1</Name>
-			<Synonym/>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистр бухгалтерии 1</v8:content>
+				</v8:item>
+			</Synonym>
 			<Comment/>
 			<UseStandardCommands>false</UseStandardCommands>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
@@ -331,7 +336,12 @@
 			<DataLockControlMode>Managed</DataLockControlMode>
 			<EnableTotalsSplitting>true</EnableTotalsSplitting>
 			<FullTextSearch>DontUse</FullTextSearch>
-			<ListPresentation/>
+			<ListPresentation>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Регистр бухгалтерии 1</v8:content>
+				</v8:item>
+			</ListPresentation>
 			<ExtendedListPresentation/>
 			<Explanation/>
 		</Properties>

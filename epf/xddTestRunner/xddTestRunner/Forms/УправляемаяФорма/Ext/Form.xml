@@ -218,15 +218,13 @@
 					<RowSelectionMode>Row</RowSelectionMode>
 					<AutoInsertNewRow>true</AutoInsertNewRow>
 					<InitialTreeView>ExpandAllLevels</InitialTreeView>
+					<FileDragMode>AsFile</FileDragMode>
 					<DataPath>ДеревоТестов</DataPath>
 					<RowPictureDataPath>ДеревоТестов.ИконкаУзла</RowPictureDataPath>
 					<RowsPicture>
 						<xr:Abs>RowsPicture.png</xr:Abs>
 						<xr:LoadTransparent>false</xr:LoadTransparent>
 					</RowsPicture>
-					<SearchStringLocation>None</SearchStringLocation>
-					<ViewStatusLocation>None</ViewStatusLocation>
-					<SearchControlLocation>None</SearchControlLocation>
 					<ContextMenu name="ДеревоТестовКонтекстноеМеню" id="405">
 						<Autofill>false</Autofill>
 						<ChildItems>
@@ -274,6 +272,7 @@
 								<xr:Abs>ValuesPicture.png</xr:Abs>
 								<xr:LoadTransparent>false</xr:LoadTransparent>
 							</ValuesPicture>
+							<FileDragMode>AsFile</FileDragMode>
 							<ContextMenu name="ДеревоТестовСостояниеКонтекстноеМеню" id="412"/>
 							<ExtendedTooltip name="ДеревоТестовСостояниеРасширеннаяПодсказка" id="458"/>
 						</PictureField>
@@ -311,14 +310,50 @@
 				</Table>
 			</ChildItems>
 		</UsualGroup>
-		<ProgressBarField name="ИндикаторВыполнения" id="129">
-			<DataPath>ИндикаторВыполнения</DataPath>
-			<TitleLocation>None</TitleLocation>
-			<Representation>Broken</Representation>
-			<ShowPercent>true</ShowPercent>
-			<ContextMenu name="ИндикаторВыполненияКонтекстноеМеню" id="130"/>
-			<ExtendedTooltip name="ИндикаторВыполненияРасширеннаяПодсказка" id="463"/>
-		</ProgressBarField>
+		<UsualGroup name="ГруппаИнформацияПодвал" id="480">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа информация подвал</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Группа информация подвал</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Group>Vertical</Group>
+			<Representation>None</Representation>
+			<ShowTitle>false</ShowTitle>
+			<ExtendedTooltip name="ГруппаИнформацияПодвалРасширеннаяПодсказка" id="481"/>
+			<ChildItems>
+				<ProgressBarField name="ИндикаторВыполнения" id="129">
+					<DataPath>ИндикаторВыполнения</DataPath>
+					<TitleLocation>None</TitleLocation>
+					<Representation>Broken</Representation>
+					<ShowPercent>true</ShowPercent>
+					<ContextMenu name="ИндикаторВыполненияКонтекстноеМеню" id="130"/>
+					<ExtendedTooltip name="ИндикаторВыполненияРасширеннаяПодсказка" id="463"/>
+				</ProgressBarField>
+				<LabelDecoration name="ДекорацияНастройкиЗагружены" id="482">
+					<AutoMaxWidth>false</AutoMaxWidth>
+					<HorizontalStretch>true</HorizontalStretch>
+					<Title formatted="false">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>&lt;Настройки не загружены&gt;</v8:content>
+						</v8:item>
+					</Title>
+					<Hyperlink>true</Hyperlink>
+					<ContextMenu name="ДекорацияНастройкиЗагруженыКонтекстноеМеню" id="483"/>
+					<ExtendedTooltip name="ДекорацияНастройкиЗагруженыРасширеннаяПодсказка" id="484"/>
+					<Events>
+						<Event name="Click">ЗагрузитьНастройкиИзФайла</Event>
+					</Events>
+				</LabelDecoration>
+			</ChildItems>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -327,10 +362,10 @@
 			</Type>
 			<MainAttribute>true</MainAttribute>
 			<Save>
-				<Field>1/0:e46a4b91-3cc7-4188-b6f0-96c31aa42e19</Field>
-				<Field>1/0:a2724854-2f5c-4048-b7b2-02cbb9cb7fa3</Field>
-				<Field>1/0:092b3fc1-7ced-4d20-8a28-79b535f8a9c4</Field>
 				<Field>1/0:07f739b4-709b-41bf-8096-032bddefd0f9</Field>
+				<Field>1/0:092b3fc1-7ced-4d20-8a28-79b535f8a9c4</Field>
+				<Field>1/0:a2724854-2f5c-4048-b7b2-02cbb9cb7fa3</Field>
+				<Field>1/0:e46a4b91-3cc7-4188-b6f0-96c31aa42e19</Field>
 			</Save>
 		</Attribute>
 		<Attribute name="ИндикаторВыполнения" id="16">
@@ -562,6 +597,7 @@
 			<Shortcut>F7</Shortcut>
 			<Action>КомандаВыполнитьВсеТесты</Action>
 			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="КомандаПерезагрузитьВсеТесты" id="4">
 			<Title>
@@ -579,6 +615,7 @@
 			<Shortcut>Ctrl+R</Shortcut>
 			<Action>ПерезагрузитьПоследниеТестыПоИстории</Action>
 			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="КомандаВыполнитьВыделенныеТесты" id="5">
 			<Title>
@@ -599,6 +636,7 @@
 			</Picture>
 			<Action>КомандаВыполнитьВыделенныеТесты</Action>
 			<Representation>TextPicture</Representation>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ГенераторМакетовДанных" id="7">
 			<Title>
@@ -614,6 +652,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ГенераторМакетовДанных</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ПоказатьГУИД" id="8">
 			<Title>
@@ -629,6 +668,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПоказатьГУИД</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="КомандаЗагрузитьТолькоВыделенныеТесты" id="11">
 			<Title>
@@ -644,6 +684,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>КомандаЗагрузитьТолькоВыделенныеТесты</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="КомандаПерезагрузитьФорму" id="15">
 			<Title>
@@ -659,6 +700,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>КомандаПерезагрузитьФорму</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ЗагрузитьТестыПоУмолчанию" id="1">
 			<Title>
@@ -674,6 +716,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ЗагрузитьТестыПоУмолчанию</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="КонвертерТестов" id="2">
 			<Title>
@@ -689,6 +732,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>КонвертерТестов</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ПреобразоватьЖурналДействийПользователяВТест" id="6">
 			<Title>
@@ -704,6 +748,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ПреобразоватьЖурналДействийПользователяВТест</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ЗагрузитьНастройкиИзФайла" id="9">
 			<Title>
@@ -719,6 +764,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ЗагрузитьНастройкиИзФайла</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ИнструментУправленияДымовымиТестами" id="10">
 			<Title>
@@ -734,6 +780,7 @@
 				</v8:item>
 			</ToolTip>
 			<Action>ИнструментУправленияДымовымиТестами</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 		<Command name="ТехническаяИнформация" id="12">
 			<Title>
@@ -753,6 +800,7 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>ТехническаяИнформация</Action>
+			<CurrentRowUse>DontUse</CurrentRowUse>
 		</Command>
 	</Commands>
 	<Parameters>

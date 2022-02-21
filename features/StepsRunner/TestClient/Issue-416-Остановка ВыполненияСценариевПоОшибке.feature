@@ -1,6 +1,6 @@
 ﻿# language: ru
 
-#https://github.com/silverbulleters/vanessa-behavior/issues/416
+#https://github.com/vanessa-opensource/vanessa-behavior/issues/416
 
 @IgnoreOn82Builds
 @IgnoreOnOFBuilds

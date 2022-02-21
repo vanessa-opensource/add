@@ -74,7 +74,7 @@ builds.each{
 }
 
 tasks["behavior video write"] = {
-        node ("video") {
+    // node ("video") {
             stage("behavior video") {
             // ws(env.WORKSPACE.replaceAll("%", "_").replaceAll(/(-[^-]+$)/, ""))
             // {
@@ -103,10 +103,10 @@ tasks["behavior video write"] = {
             // }
 
         }
-    }
+    // }
 }
 tasks["buildRelease"] = {
-    node("slave"){
+    node("vanessa-add"){
         stage("build release"){
             checkout scm
             cleanWs(patterns: [[pattern: 'build/**', type: 'INCLUDE']]);
@@ -163,7 +163,7 @@ tasks["xdd"] = {
 }
 firsttasks=[:]
 firsttasks["qa"] = {
-    node("slave"){
+    node("sonar"){
         stage ("sonar QA"){
             unix = isUnix();
             if (env.QASONAR) {
@@ -237,7 +237,7 @@ firsttasks["qa"] = {
 }
 
 firsttasks["slave"] = {
-    node("slave") {
+    node("vanessa-add") {
         stage("checkout scm"){
             checkout scm
         }
@@ -306,7 +306,7 @@ firsttasks["slave"] = {
 // }
 
 //tasks["opmrunclean"] = {
-//    node("slave"){
+//    node("vanessa-add"){
 //        checkout scm
 //        cmd "opm run clean"
 //    }
@@ -341,8 +341,8 @@ tasks["report"] = {
                 echo "allure status : ${e}"
                 currentBuild.result = 'UNSTABLE'
             }
-            junit 'build/ServiceBases/junitreport/**/*.xml'
-            //junit 'build/ServiceBases/junitreport/*.xml'
+            junit allowEmptyResults: true, testResults: 'build/ServiceBases/junitreport/**/*.xml'
+            //junit allowEmptyResults: true, testResults: 'build/ServiceBases/junitreport/*.xml'
             //cucumber fileIncludePattern: '**/*.json', jsonReportDirectory: 'build/ServiceBases/cucumber'
 
             try{
@@ -387,7 +387,7 @@ stage('Deploy') {
                 echo "Aborted by: [${user}]"
             }
             if (userInput == true ) {
-                node("slave") {
+                node("vanessa-add") {
                     unstash "deploy"
                     withCredentials([[$class: 'StringBinding', credentialsId: 'GITHUB_OAUTH_TOKEN_ADD', variable: 'GITHUB_OAUTH_TOKEN']]) {
                         if(env.BRANCH_NAME == 'master'){
