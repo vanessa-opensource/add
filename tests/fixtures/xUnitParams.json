@@ -1,0 +1,8 @@
+{
+    "$schema":"https://raw.githubusercontent.com/silverbulleters/vanessa-runner/develop/xunit-schema.json",
+    "Отладка":false,
+    "ДобавлятьИмяПользователяВПредставлениеТеста":true,
+    "ДелатьЛогВыполненияСценариевВТекстовыйФайл":true,
+    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/build/log-xunit.txt"
+    // комментарий
+}
