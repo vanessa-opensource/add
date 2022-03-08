@@ -1,0 +1,40 @@
+{
+    "ИмяСборки":"Сборка 8.3.10 UF",
+    "ВыводитьСообщенияВФайл": "$workspaceRoot/message.txt",
+    "КаталогФич": "$workspaceRoot/feature/",
+    "КаталогиБиблиотек":[
+         "$instrumentsRoot/./features/libraries/"
+    ],
+    "ВыполнитьСценарии": "Истина",
+    "ЗавершитьРаботуСистемы": "Истина",
+    "ЗакрытьTestClientПослеЗапускаСценариев": "Истина",
+    "ДелатьЛогВыполненияСценариевВЖР": "Истина",
+    "ДелатьОтчетВФорматеАллюр": "Истина",
+    "ДелатьОтчетВФорматеjUnit": "Истина",
+    "ДелатьОтчетВФорматеCucumberJson": "Истина",
+    "ДелатьЛогВыполненияСценариевВТекстовыйФайл": "Истина",
+    "КаталогOutputAllureБазовый": "$workspaceRoot/allurereport",
+    "КаталогOutputjUnit": "$workspaceRoot/junitreport",
+    "КаталогOutputCucumberJson": "$workspaceRoot/cucumber",
+    "СоздаватьПодкаталогВКаталогеAllureДляЭтойСборки": "Ложь",
+    "ДелатьСкриншотПриВозникновенииОшибки": "Ложь",
+    "КаталогOutputСкриншоты": "$workspaceRoot/allurereport/screen",
+    "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/vanessaonline.txt",
+    "КомандаСделатьСкриншот": "nircmd.exe savescreenshot ",
+    "ВыгружатьСтатусВыполненияСценариевВФайл": "Истина",
+    "ДобавлятьКИмениСценарияУсловияВыгрузки": "Ложь",
+    "ПутьКФайлуДляВыгрузкиСтатусаВыполненияСценариев": "$workspaceRoot/buildstatus.log",
+    "СписокТеговИсключение":[
+    "IgnoreOnCIMainBuild",
+    "IgnoreOn8310",
+    "IgnoreOnUFBuilds",
+    "Ignore",
+    "IgnoreIfNotIrfanView",
+    "NotOnSRC",
+    "IgnoreOnLinux",
+    "Video"
+    ],
+     "СписокТеговОтбор":[
+    ]
+ }
+ 
