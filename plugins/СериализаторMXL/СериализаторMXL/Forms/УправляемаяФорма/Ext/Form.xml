@@ -53,6 +53,11 @@
 				<CommandName>Form.StandardCommand.CustomizeForm</CommandName>
 				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="456"/>
 			</Button>
+			<Button name="ФормаКонвертироватьВJSON" id="488">
+				<Type>CommandBarButton</Type>
+				<CommandName>Form.Command.КонвертироватьВJSON</CommandName>
+				<ExtendedTooltip name="ФормаИзменитьФормуРасширеннаяПодсказка" id="489"/>
+			</Button>
 		</ChildItems>
 	</AutoCommandBar>
 	<Events>
@@ -65,7 +70,7 @@
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
-					<v8:content>Группа настройки</v8:content>
+					<v8:content>Настройки</v8:content>
 				</v8:item>
 			</Title>
 			<ToolTip>
@@ -75,24 +80,24 @@
 				</v8:item>
 			</ToolTip>
 			<Group>Horizontal</Group>
+			<Behavior>Collapsible</Behavior>
 			<Representation>None</Representation>
-			<ShowTitle>false</ShowTitle>
 			<ExtendedTooltip name="ГруппаНастройкиРасширеннаяПодсказка" id="347"/>
 			<ChildItems>
-				<Pages name="ГруппаСтраницы" id="55">
+				<Pages name="ГруппаСтраницыНастройки" id="55">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа страницы</v8:content>
+							<v8:content>Группа страницы настройки</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа страницы</v8:content>
+							<v8:content>Группа страницы настройки</v8:content>
 						</v8:item>
 					</ToolTip>
-					<ExtendedTooltip name="ГруппаСтраницыРасширеннаяПодсказка" id="348"/>
+					<ExtendedTooltip name="ГруппаСтраницыНастройкиРасширеннаяПодсказка" id="348"/>
 					<ChildItems>
 						<Page name="ГруппаМетаданные" id="57">
 							<Title>
@@ -768,7 +773,7 @@
 				</Table>
 			</ChildItems>
 		</UsualGroup>
-		<Pages name="ГруппаМакеты" id="468">
+		<UsualGroup name="ГруппаМакеты" id="486">
 			<Title>
 				<v8:item>
 					<v8:lang>ru</v8:lang>
@@ -781,70 +786,89 @@
 					<v8:content>Группа макеты</v8:content>
 				</v8:item>
 			</ToolTip>
-			<ExtendedTooltip name="ГруппаМакетыРасширеннаяПодсказка" id="469"/>
+			<Behavior>Collapsible</Behavior>
+			<Representation>None</Representation>
+			<ExtendedTooltip name="ГруппаМакетыРасширеннаяПодсказка" id="487"/>
 			<ChildItems>
-				<Page name="ГруппаТабличныйДокумент" id="470">
+				<Pages name="ГруппаСтраницыМакеты" id="468">
 					<Title>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Табличный документ</v8:content>
+							<v8:content>Макеты</v8:content>
 						</v8:item>
 					</Title>
 					<ToolTip>
 						<v8:item>
 							<v8:lang>ru</v8:lang>
-							<v8:content>Группа табличный документ</v8:content>
+							<v8:content>Группа страницы макеты</v8:content>
 						</v8:item>
 					</ToolTip>
-					<ExtendedTooltip name="ГруппаТабличныйДокументРасширеннаяПодсказка" id="471"/>
+					<ExtendedTooltip name="ГруппаСтраницыМакетыРасширеннаяПодсказка" id="469"/>
 					<ChildItems>
-						<SpreadSheetDocumentField name="Макет" id="17">
-							<DataPath>Макет</DataPath>
+						<Page name="ГруппаТабличныйДокумент" id="470">
 							<Title>
 								<v8:item>
 									<v8:lang>ru</v8:lang>
-									<v8:content>Макет данных</v8:content>
+									<v8:content>Табличный документ</v8:content>
 								</v8:item>
 							</Title>
-							<TitleLocation>None</TitleLocation>
-							<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
-							<ShowGrid>true</ShowGrid>
-							<ShowHeaders>true</ShowHeaders>
-							<VerticalScrollBar>true</VerticalScrollBar>
-							<HorizontalScrollBar>true</HorizontalScrollBar>
-							<SelectionShowMode>WhenActive</SelectionShowMode>
-							<Output>Enable</Output>
-							<Edit>true</Edit>
-							<ContextMenu name="МакетКонтекстноеМеню" id="18"/>
-							<ExtendedTooltip name="МакетРасширеннаяПодсказка" id="434"/>
-						</SpreadSheetDocumentField>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа табличный документ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаТабличныйДокументРасширеннаяПодсказка" id="471"/>
+							<ChildItems>
+								<SpreadSheetDocumentField name="Макет" id="17">
+									<DataPath>Макет</DataPath>
+									<Title>
+										<v8:item>
+											<v8:lang>ru</v8:lang>
+											<v8:content>Макет данных</v8:content>
+										</v8:item>
+									</Title>
+									<TitleLocation>None</TitleLocation>
+									<WarningOnEditRepresentation>DontShow</WarningOnEditRepresentation>
+									<ShowGrid>true</ShowGrid>
+									<ShowHeaders>true</ShowHeaders>
+									<VerticalScrollBar>true</VerticalScrollBar>
+									<HorizontalScrollBar>true</HorizontalScrollBar>
+									<SelectionShowMode>WhenActive</SelectionShowMode>
+									<Output>Enable</Output>
+									<Edit>true</Edit>
+									<ContextMenu name="МакетКонтекстноеМеню" id="18"/>
+									<ExtendedTooltip name="МакетРасширеннаяПодсказка" id="434"/>
+								</SpreadSheetDocumentField>
+							</ChildItems>
+						</Page>
+						<Page name="ГруппаТекстовыйДокумент" id="472">
+							<Title>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>JSON документ</v8:content>
+								</v8:item>
+							</Title>
+							<ToolTip>
+								<v8:item>
+									<v8:lang>ru</v8:lang>
+									<v8:content>Группа текстовый документ</v8:content>
+								</v8:item>
+							</ToolTip>
+							<ExtendedTooltip name="ГруппаТекстовыйДокументРасширеннаяПодсказка" id="473"/>
+							<ChildItems>
+								<TextDocumentField name="МакетТекстовый" id="474">
+									<DataPath>МакетТекстовый</DataPath>
+									<TitleLocation>None</TitleLocation>
+									<ContextMenu name="МакетТекстовыйКонтекстноеМеню" id="475"/>
+									<ExtendedTooltip name="МакетТекстовыйРасширеннаяПодсказка" id="476"/>
+								</TextDocumentField>
+							</ChildItems>
+						</Page>
 					</ChildItems>
-				</Page>
-				<Page name="ГруппаТекстовыйДокумент" id="472">
-					<Title>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>JSON документ</v8:content>
-						</v8:item>
-					</Title>
-					<ToolTip>
-						<v8:item>
-							<v8:lang>ru</v8:lang>
-							<v8:content>Группа текстовый документ</v8:content>
-						</v8:item>
-					</ToolTip>
-					<ExtendedTooltip name="ГруппаТекстовыйДокументРасширеннаяПодсказка" id="473"/>
-					<ChildItems>
-						<TextDocumentField name="МакетТекстовый" id="474">
-							<DataPath>МакетТекстовый</DataPath>
-							<TitleLocation>None</TitleLocation>
-							<ContextMenu name="МакетТекстовыйКонтекстноеМеню" id="475"/>
-							<ExtendedTooltip name="МакетТекстовыйРасширеннаяПодсказка" id="476"/>
-						</TextDocumentField>
-					</ChildItems>
-				</Page>
+				</Pages>
 			</ChildItems>
-		</Pages>
+		</UsualGroup>
 	</ChildItems>
 	<Attributes>
 		<Attribute name="Объект" id="1">
@@ -1339,6 +1363,21 @@
 				<xr:LoadTransparent>true</xr:LoadTransparent>
 			</Picture>
 			<Action>ПроставитьОтборПодчиненныхСсылок</Action>
+		</Command>
+		<Command name="КонвертироватьВJSON" id="17">
+			<Title>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конвертировать в JSON</v8:content>
+				</v8:item>
+			</Title>
+			<ToolTip>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Конвертировать макет из MXL в JSON</v8:content>
+				</v8:item>
+			</ToolTip>
+			<Action>КонвертироватьВJSON</Action>
 		</Command>
 	</Commands>
 </Form>

@@ -36,7 +36,12 @@ Procedure ЗаполнитьНаборТестов(TestsSet, CoreContextParam) E
     CoreContext = CoreContextParam;
     
     LoadSettings();
-    LoadSubsystemTests(TestsSet, Object.Settings.Subsystems); 
+	
+	Если Не НужноВыполнятьТест() Тогда
+		Возврат;
+	КонецЕсли;
+	
+	LoadSubsystemTests(TestsSet, Object.Settings.Subsystems); 
     LoadSmokeCommonModuleTests(TestsSet, Object.Settings.Subsystems, Object.Settings.ExcludedCommonModules);
         
 EndProcedure // ЗаполнитьНаборТестов()
@@ -489,6 +494,11 @@ Procedure Fact_FullAccessRightsGranted(CommonModuleName, Module)
     
 EndProcedure // Fact_FullAccessRightsGranted()
 
+&НаКлиенте
+Функция SettingsPath() Экспорт
+	Возврат "SmokeCommonModules";
+КонецФункции
+
 &AtClient
 // Loads smoke tests settings. 
 //
@@ -498,7 +508,7 @@ Procedure LoadSettings()
 		Return;
 	EndIf;
 	
-    SettingsPath = "SmokeCommonModules";
+    SettingsPath = SettingsPath();
     SettingsPlugin = CoreContext.Плагин("Настройки");
     SettingsPlugin.Инициализация(CoreContext);
     
@@ -519,6 +529,32 @@ Procedure LoadSettings()
     Object.Settings = New FixedStructure(Settings);
     
 EndProcedure // LoadSettings()
+
+&НаКлиенте
+Функция НужноВыполнятьТест()
+	
+	ЗначениеПоУмолчанию = Истина;
+	
+	LoadSettings();
+	
+	Настройки = Object.Settings;
+	
+	Если Не ЗначениеЗаполнено(Настройки) Тогда
+		Возврат ЗначениеПоУмолчанию;
+	КонецЕсли;
+	
+	КлючНастройки = SettingsPath();
+	
+	ВыполнятьТест = Неопределено;
+	Если ТипЗнч(Настройки) = Тип("ФиксированнаяСтруктура") 
+		И Настройки.Свойство("Используется", ВыполнятьТест) Тогда
+
+			Возврат ВыполнятьТест = Истина;	
+	КонецЕсли;
+	
+	Возврат ЗначениеПоУмолчанию;
+
+КонецФункции
 
 &AtClient
 // Only for internal use.
@@ -777,61 +813,30 @@ EndProcedure // RecursivelyLoadSmokeCommonModuleTestsFromSubsystem()
 //      * ArrayItem - String - part of string.
 //
 Function _StrSplit(Val String, Val Separator, IncludeBlank = True)
-    SplitResult = New Array;
-    
-    If IsBlankString(String) Then 
-        If IncludeBlank Then
-            SplitResult.Add(String);
-        EndIf;
-        Return SplitResult;
-    EndIf;
-        
-    Position = Find(String, Separator);
-    While Position > 0 Do
-        Substring = Left(String, Position - 1);
-        If IncludeBlank Or Not IsBlankString(Substring) Then
-            SplitResult.Add(Substring);
-        EndIf;
-        String = Mid(String, Position + StrLen(Separator));
-        Position = Find(String, Separator);
-    EndDo;
-
-    If IncludeBlank Or Not IsBlankString(String) Then
-        SplitResult.Add(String);
-    EndIf;
-
-    Return SplitResult;
+    Return Object()._StrSplit(String, Separator, IncludeBlank); 
 EndFunction // _StrSplit()
 
 &AtServer
 // Inserts parameters into string by number.
 //
 // Parameters:
-//  Template    – String – a string containing the substitution markers of type:
+//  Template    - String - a string containing the substitution markers of type:
 //                         "%1..%N". The markers are numbered starting with 0.
 //  Value<1-10> - String - parameters containing arbitrary values possessing 
 //                         string presentations which should be presented in a 
 //                         template. 
 // Returns:
-//  String – template string with filled parameters.
+//  String - template string with filled parameters.
 //
 Function _StrTemplate(Val Template, Val Value1, Val Value2 = Undefined, 
     Val Value3 = Undefined, Val Value4 = Undefined, Val Value5 = Undefined, 
     Val Value6 = Undefined, Val Value7 = Undefined, Val Value8 = Undefined, 
     Val Value9 = Undefined, Val Value10 = Undefined) 
 	
-    Template = StrReplace(Template, "%1", String(Value1));
-    Template = StrReplace(Template, "%2", String(Value2));
-    Template = StrReplace(Template, "%3", String(Value3));
-    Template = StrReplace(Template, "%4", String(Value4));
-    Template = StrReplace(Template, "%5", String(Value5));
-    Template = StrReplace(Template, "%6", String(Value6));
-    Template = StrReplace(Template, "%7", String(Value7));
-    Template = StrReplace(Template, "%8", String(Value8));
-    Template = StrReplace(Template, "%9", String(Value9));
-    Template = StrReplace(Template, "%10", String(Value10));
-
-    Return Template;
+	Return Object()._StrTemplate(Template, Value1, Value2, 
+							    Value3, Value4, Value5, 
+							    Value6, Value7, Value8, 
+							    Value9, Value10);
 								
 EndFunction // _StrTemplate()
 

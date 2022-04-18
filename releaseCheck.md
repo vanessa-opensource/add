@@ -13,7 +13,12 @@
   * [bdd 83 NoSync](./lib/CF/83NoSync/Configuration.xml)
   * [xdd 83](./lib/CF/83xdd/Configuration.xml)
   * [xdd 83 NoSync](./lib/CF/83xddNoSync/Configuration.xml)
-- убедиться, что изменено 8 файлов
+- изменить версию в расширениях - `<Version></Version>`
+  - [ВыполнениеСерверногоКодаВТестах_VanessaADD](lib\cfe\ВыполнениеСерверногоКодаВТестах_VanessaADD\Configuration.xml)
+  - [ОткрытиеВнешнихФайлов](lib\cfe\ОткрытиеВнешнихФайлов\Configuration.xml)
+  - [МокТестирование](lib\cfe\МокТестирование\Configuration.xml)
+  - [ТестМоков](lib\cfe\ТестМоков\Configuration.xml)
+- убедиться, что изменено 12 файлов
 - Выполнить разборку всех файлов на исходники
 - Выполнить commit и push для своих изменений
 - Выполнить все тесты из папки `tests`. Ошибок быть не должно.

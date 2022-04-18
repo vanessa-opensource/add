@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<MetaDataObject xmlns="http://v8.1c.ru/8.3/MDClasses" xmlns:app="http://v8.1c.ru/8.2/managed-application/core" xmlns:cfg="http://v8.1c.ru/8.1/data/enterprise/current-config" xmlns:cmi="http://v8.1c.ru/8.2/managed-application/cmi" xmlns:ent="http://v8.1c.ru/8.1/data/enterprise" xmlns:lf="http://v8.1c.ru/8.2/managed-application/logform" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xen="http://v8.1c.ru/8.3/xcf/enums" xmlns:xpr="http://v8.1c.ru/8.3/xcf/predef" xmlns:xr="http://v8.1c.ru/8.3/xcf/readable" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4">
+	<Catalog uuid="1a5996dd-b3f0-47fd-8699-a070e753b0a3">
+		<InternalInfo>
+			<xr:GeneratedType name="CatalogObject.ПростойСправочник" category="Object">
+				<xr:TypeId>f75f947a-f950-48aa-a25a-7fd6b4f37051</xr:TypeId>
+				<xr:ValueId>e677b854-69df-460f-a08a-df2b34da59f1</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogRef.ПростойСправочник" category="Ref">
+				<xr:TypeId>0148181a-24a2-4c45-9853-54ef73023818</xr:TypeId>
+				<xr:ValueId>3da8255e-74f4-481b-b3de-e33c17b84f23</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogSelection.ПростойСправочник" category="Selection">
+				<xr:TypeId>1ddb3e31-1916-4925-96eb-2c5e182b7302</xr:TypeId>
+				<xr:ValueId>def740f9-adab-431f-b8b7-9c6a561b883e</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogList.ПростойСправочник" category="List">
+				<xr:TypeId>9ec647dd-0f9c-4e3a-8281-e74850083852</xr:TypeId>
+				<xr:ValueId>015214a6-6702-48bb-91c7-f0663914d56e</xr:ValueId>
+			</xr:GeneratedType>
+			<xr:GeneratedType name="CatalogManager.ПростойСправочник" category="Manager">
+				<xr:TypeId>93db1530-252e-46d3-82d7-21e9ed24ec09</xr:TypeId>
+				<xr:ValueId>51b83c2e-2794-4bbd-9d6d-44279394a5b9</xr:ValueId>
+			</xr:GeneratedType>
+		</InternalInfo>
+		<Properties>
+			<Name>ПростойСправочник</Name>
+			<ObjectBelonging>Adopted</ObjectBelonging>
+		</Properties>
+		<ChildObjects>
+			<Attribute uuid="14120dbe-5a3b-4d3a-bc28-5e2ceabf1e80">
+				<Properties>
+					<Name>РеквизитБулево</Name>
+					<ObjectBelonging>Adopted</ObjectBelonging>
+					<Type>
+						<v8:Type>xs:boolean</v8:Type>
+					</Type>
+				</Properties>
+			</Attribute>
+		</ChildObjects>
+	</Catalog>
+</MetaDataObject>

@@ -29,7 +29,12 @@
 		</InternalInfo>
 		<Properties>
 			<Name>БизнесПроцесс2</Name>
-			<Synonym/>
+			<Synonym>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Бизнес процесс2</v8:content>
+				</v8:item>
+			</Synonym>
 			<Comment/>
 			<UseStandardCommands>false</UseStandardCommands>
 			<EditType>InDialog</EditType>
@@ -233,12 +238,17 @@
 			<BasedOn/>
 			<NumberPeriodicity>Nonperiodical</NumberPeriodicity>
 			<Task>Task.Задача1</Task>
-			<CreateTaskInPrivilegedMode>false</CreateTaskInPrivilegedMode>
+			<CreateTaskInPrivilegedMode>true</CreateTaskInPrivilegedMode>
 			<DataLockFields/>
 			<DataLockControlMode>Managed</DataLockControlMode>
 			<IncludeHelpInContents>false</IncludeHelpInContents>
 			<FullTextSearch>Use</FullTextSearch>
-			<ObjectPresentation/>
+			<ObjectPresentation>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Бизнес процесс2</v8:content>
+				</v8:item>
+			</ObjectPresentation>
 			<ExtendedObjectPresentation/>
 			<ListPresentation/>
 			<ExtendedListPresentation/>
