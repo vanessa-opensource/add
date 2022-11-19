@@ -89,7 +89,7 @@
 
 ```json
 {
-    "$schema":"https://github.com/vanessa-opensource/vanessa-runner/develop/xunit-schema.json",
+    "$schema":"https://raw.githubusercontent.com/vanessa-opensource/vanessa-runner/develop/xunit-schema.json",
     "ДелатьЛогВыполненияСценариевВТекстовыйФайл": true,
     "ИмяФайлаЛогВыполненияСценариев": "$workspaceRoot/build/ServiceBases/log-xunit.txt",
     "ОбластьДанныхМенеджера": 4512,
