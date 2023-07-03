@@ -32,6 +32,11 @@ Procedure ЗаполнитьНаборТестов(TestsSet, CoreContextParam) E
     CoreContext = CoreContextParam;
     
     LoadSettings();
+
+    If Not Settings.Используется Then
+        Return;
+    EndIf;
+
     LoadSubsystemTests(TestsSet, Settings.Subsystems); 
     LoadSmokeCommonModuleTests(TestsSet, Settings.Subsystems, 
         Settings.ExcludedCommonModules);
@@ -681,6 +686,10 @@ Procedure LoadSettings()
     
     If Not Settings.Property("ExcludedCommonModules") Then
         Settings.Insert("ExcludedCommonModules", New Array);    
+    EndIf;
+
+    If Not Settings.Property("Используется") Then
+        Settings.Insert("Используется", Истина)
     EndIf;
     
     Settings = New FixedStructure(Settings);
