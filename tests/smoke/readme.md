@@ -960,7 +960,7 @@
 		}
 	  }
 		```
-		
+	  - можно исключить целый регистр из проверки движений, указав просто пустой массив, например: `"ЦеныНоменклатуры":[]`
 
 - Пример настройки есть в файле [tests/smoke/smoke.example.json - строка настройки](https://github.com/vanessa-opensource/add/blob/develop/tests/smoke/smoke.example.json#L122)
 
