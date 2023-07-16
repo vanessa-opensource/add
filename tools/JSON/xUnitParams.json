@@ -1,6 +1,7 @@
 {
     "$schema":"https://raw.githubusercontent.com/vanessa-opensource/vanessa-runner/develop/xunit-schema.json",
     "Отладка":false,
+    "ИсключатьПропускаемыеТестыИзСписка":true,
     "ВыводитьПодробноеПредставлениеОшибки": true,
     "ДобавлятьИмяПользователяВПредставлениеТеста":true,
     "ДелатьЛогВыполненияСценариевВТекстовыйФайл":true,
