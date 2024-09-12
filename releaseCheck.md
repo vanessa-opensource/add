@@ -16,7 +16,7 @@
   * [bdd 83 NoSync](./lib/CF/83NoSync/Configuration.xml)
   * [xdd 83](./lib/CF/83xdd/Configuration.xml)
   * [xdd 83 NoSync](./lib/CF/83xddNoSync/Configuration.xml)
-- убедиться, что изменено минимум 12 файлов
+- убедиться, что изменено минимум 14 файлов - 3 модуля, 1 packagedef и 10 xml
 - Выполнить commit и push для своих изменений
 - Выполнить все тесты из папки `tests`. Ошибок быть не должно.
 - Выполнить все фичи из папки `features/libraries`. Ошибок быть не должно.
